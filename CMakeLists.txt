@@ -19,7 +19,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 # Set the project name
-set(CMAKE_PROJECT_NAME OBC_COMMS)
+set(CMAKE_PROJECT_NAME OBC_COM)
 
 # Enable compile command to ease indexing with e.g. clangd
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
@@ -60,9 +60,17 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 # Remove wrong libob.a library dependency when using cpp files
 list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
 
+add_subdirectory(modules/sx1280)
+add_subdirectory(modules/ringBuffer)
+add_subdirectory(modules/loraApi)
+add_subdirectory(wrappers/sx1280)
+
 # Add linked libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}
     stm32cubemx
-
+    sx1280
+    sx1280_wrapper
+    ringBuffer
+    LoraUtils
     # Add user defined libraries
 )
