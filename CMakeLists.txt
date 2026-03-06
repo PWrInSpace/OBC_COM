@@ -61,16 +61,23 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
 
 add_subdirectory(modules/sx1280)
-add_subdirectory(modules/ringBuffer)
-add_subdirectory(modules/loraApi)
+add_subdirectory(modules/rfm95w)
+add_subdirectory(modules/logger)
+add_subdirectory(app)
 add_subdirectory(wrappers/sx1280)
+add_subdirectory(wrappers/spi)
+add_subdirectory(wrappers/rfm95w)
+add_subdirectory(modules/USB)
 
 # Add linked libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}
     stm32cubemx
     sx1280
     sx1280_wrapper
-    ringBuffer
-    LoraUtils
+    rfm95w
+    App
+    spi_callbacks
+    logger
+    USB_Driver
     # Add user defined libraries
 )

@@ -27,7 +27,7 @@ extern "C" {
  * * \brief Define which DIOs are connected 
 */
 #define RADIO_DIO1_ENABLE	1
-#define RADIO_DIO2_ENABLE	0
+#define RADIO_DIO2_ENABLE	1
 #define RADIO_DIO3_ENABLE	0
 
 #include "sx1280-hal.h"

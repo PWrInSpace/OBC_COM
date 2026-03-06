@@ -35,6 +35,9 @@ extern "C" {
 typedef int32_t SpiWrite( void* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* out, uint16_t out_len );
 typedef int32_t SpiRead( void* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* in, uint16_t in_len );
 
+typedef int32_t SpiDMAWrite( void* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* out, uint16_t out_len );
+typedef int32_t SpiDMARead( void* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* in, uint16_t in_len );
+
 typedef int32_t PinSet( void* ctx, bool value );
 typedef int32_t PinGet( void* ctx );
 
@@ -50,10 +53,12 @@ struct SX1280_s {
 
     SpiRead     *spi_read;
     SpiWrite    *spi_write;
+    SpiDMARead  *spi_read_dma;
+    SpiDMAWrite *spi_write_dma;
     PinSet      *set_reset;
     PinGet      *get_busy;
 
-    PinGet      *get_dio[4];
+    PinGet      *get_dio[3];
 
     DelayMs     *delay_ms;
 };
@@ -291,11 +296,11 @@ typedef enum
  */
 typedef enum
 {
-    MODE_SLEEP                              = 0x00,         //! The radio is in sleep mode
+    SX1280_MODE_SLEEP                              = 0x00,         //! The radio is in sleep mode
     MODE_STDBY_RC,                                          //! The radio is in standby mode with RC oscillator
     MODE_STDBY_XOSC,                                        //! The radio is in standby mode with XOSC oscillator
     MODE_FS,                                                //! The radio is in frequency synthesis mode
-    MODE_TX,                                                //! The radio is in transmit mode
+    SX1280_MODE_TX,                                                //! The radio is in transmit mode
     MODE_RX,                                                //! The radio is in receive mode
     MODE_CAD                                                //! The radio is in channel activity detection mode
 }RadioOperatingModes_t;
@@ -1114,6 +1119,12 @@ int32_t SX1280complement2( const uint32_t num, const uint8_t bitCnt );
  * \retval loRaBw              The value of the current bandwidth in Hz
  */
 int32_t SX1280GetLoRaBandwidth( SX1280_t *sx1280 );
+
+/*!
+ * \brief Resets the radio
+ *
+ */
+void SX1280Reset( SX1280_t *sx1280 );
 
 /*!
  * \brief Returns the corrected raw value of ranging 

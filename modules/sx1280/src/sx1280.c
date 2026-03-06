@@ -98,6 +98,11 @@ void SX1280Init( SX1280_t *sx1280, RadioCallbacks_t *callbacks )
     SX1280HalInit( sx1280, DioIrq );
 }
 
+void SX1280Reset( SX1280_t *sx1280 )
+{
+    SX1280HalReset( sx1280 );
+}
+
 void SX1280SetRegistersDefault( SX1280_t *sx1280)
 {
     for( uint16_t i = 0; i < sizeof( RadioRegsInit ) / sizeof( RadioRegisters_t ); i++ )
@@ -133,7 +138,7 @@ void SX1280SetSleep( SX1280_t *sx1280, SleepParams_t sleepConfig )
                     ( sleepConfig.DataBufferRetention << 1 ) |
                     ( sleepConfig.DataRamRetention );
 
-    OperatingMode = MODE_SLEEP;
+    OperatingMode = SX1280_MODE_SLEEP;
     SX1280HalWriteCommand(sx1280, RADIO_SET_SLEEP, &sleep, 1 );
 }
 
@@ -172,7 +177,7 @@ void SX1280SetTx( SX1280_t *sx1280, TickTime_t timeout )
         SX1280SetRangingRole( sx1280, RADIO_RANGING_ROLE_MASTER );
     }
     SX1280HalWriteCommand(sx1280, RADIO_SET_TX, buf, 3 );
-    OperatingMode = MODE_TX;
+    OperatingMode = SX1280_MODE_TX;
 }
 
 void SX1280SetRx( SX1280_t *sx1280, TickTime_t timeout )
@@ -1200,7 +1205,7 @@ void SX1280ProcessIrqs( SX1280_t *sx1280)
 {
     RadioPacketTypes_t packetType = PACKET_TYPE_NONE;
 
-    if( SX1280GetOpMode( sx1280 ) == MODE_SLEEP )
+    if( SX1280GetOpMode( sx1280 ) == SX1280_MODE_SLEEP )
     {
         return; // DIO glitch on V2b :-)
     }
@@ -1284,7 +1289,7 @@ void SX1280ProcessIrqs( SX1280_t *sx1280)
                         }
                     }
                     break;
-                case MODE_TX:
+                case SX1280_MODE_TX:
                     if( ( irqRegs & IRQ_TX_DONE ) == IRQ_TX_DONE )
                     {
                         if( ( RadioCallbacks != NULL ) && ( RadioCallbacks->txDone != NULL ) )
@@ -1362,7 +1367,7 @@ void SX1280ProcessIrqs( SX1280_t *sx1280)
                         }
                     }
                     break;
-                case MODE_TX:
+                case SX1280_MODE_TX:
                     if( ( irqRegs & IRQ_TX_DONE ) == IRQ_TX_DONE )
                     {
                         if( ( RadioCallbacks != NULL ) && ( RadioCallbacks->txDone != NULL ) )
@@ -1458,7 +1463,7 @@ void SX1280ProcessIrqs( SX1280_t *sx1280)
                     }
                     break;
                 // MODE_TX indicates an IRQ on the Master side
-                case MODE_TX:
+                case SX1280_MODE_TX:
                     if( ( irqRegs & IRQ_RANGING_MASTER_RESULT_TIMEOUT ) == IRQ_RANGING_MASTER_RESULT_TIMEOUT )
                     {
                         if( ( RadioCallbacks != NULL ) && ( RadioCallbacks->rangingDone != NULL ) )

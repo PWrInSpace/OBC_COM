@@ -65,6 +65,7 @@ extern DMA_HandleTypeDef handle_GPDMA1_Channel7;
 extern DMA_HandleTypeDef handle_GPDMA1_Channel6;
 extern DMA_HandleTypeDef handle_GPDMA2_Channel1;
 extern DMA_HandleTypeDef handle_GPDMA2_Channel0;
+extern PCD_HandleTypeDef hpcd_USB_DRD_FS;
 extern TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN EV */
@@ -177,7 +178,6 @@ void GPDMA1_Channel0_IRQHandler(void)
   /* USER CODE BEGIN GPDMA1_Channel0_IRQn 0 */
 
   /* USER CODE END GPDMA1_Channel0_IRQn 0 */
-  HAL_DMA_IRQHandler(&handle_GPDMA1_Channel0);
   /* USER CODE BEGIN GPDMA1_Channel0_IRQn 1 */
 
   /* USER CODE END GPDMA1_Channel0_IRQn 1 */
@@ -191,7 +191,6 @@ void GPDMA1_Channel1_IRQHandler(void)
   /* USER CODE BEGIN GPDMA1_Channel1_IRQn 0 */
 
   /* USER CODE END GPDMA1_Channel1_IRQn 0 */
-  HAL_DMA_IRQHandler(&handle_GPDMA1_Channel1);
   /* USER CODE BEGIN GPDMA1_Channel1_IRQn 1 */
 
   /* USER CODE END GPDMA1_Channel1_IRQn 1 */
@@ -205,7 +204,6 @@ void GPDMA1_Channel2_IRQHandler(void)
   /* USER CODE BEGIN GPDMA1_Channel2_IRQn 0 */
 
   /* USER CODE END GPDMA1_Channel2_IRQn 0 */
-  HAL_DMA_IRQHandler(&handle_GPDMA1_Channel2);
   /* USER CODE BEGIN GPDMA1_Channel2_IRQn 1 */
 
   /* USER CODE END GPDMA1_Channel2_IRQn 1 */
@@ -219,7 +217,6 @@ void GPDMA1_Channel3_IRQHandler(void)
   /* USER CODE BEGIN GPDMA1_Channel3_IRQn 0 */
 
   /* USER CODE END GPDMA1_Channel3_IRQn 0 */
-  HAL_DMA_IRQHandler(&handle_GPDMA1_Channel3);
   /* USER CODE BEGIN GPDMA1_Channel3_IRQn 1 */
 
   /* USER CODE END GPDMA1_Channel3_IRQn 1 */
@@ -233,7 +230,6 @@ void GPDMA1_Channel4_IRQHandler(void)
   /* USER CODE BEGIN GPDMA1_Channel4_IRQn 0 */
 
   /* USER CODE END GPDMA1_Channel4_IRQn 0 */
-  HAL_DMA_IRQHandler(&handle_GPDMA1_Channel4);
   /* USER CODE BEGIN GPDMA1_Channel4_IRQn 1 */
 
   /* USER CODE END GPDMA1_Channel4_IRQn 1 */
@@ -247,7 +243,6 @@ void GPDMA1_Channel5_IRQHandler(void)
   /* USER CODE BEGIN GPDMA1_Channel5_IRQn 0 */
 
   /* USER CODE END GPDMA1_Channel5_IRQn 0 */
-  HAL_DMA_IRQHandler(&handle_GPDMA1_Channel5);
   /* USER CODE BEGIN GPDMA1_Channel5_IRQn 1 */
 
   /* USER CODE END GPDMA1_Channel5_IRQn 1 */
@@ -261,7 +256,6 @@ void GPDMA1_Channel6_IRQHandler(void)
   /* USER CODE BEGIN GPDMA1_Channel6_IRQn 0 */
 
   /* USER CODE END GPDMA1_Channel6_IRQn 0 */
-  HAL_DMA_IRQHandler(&handle_GPDMA1_Channel6);
   /* USER CODE BEGIN GPDMA1_Channel6_IRQn 1 */
 
   /* USER CODE END GPDMA1_Channel6_IRQn 1 */
@@ -275,7 +269,6 @@ void GPDMA1_Channel7_IRQHandler(void)
   /* USER CODE BEGIN GPDMA1_Channel7_IRQn 0 */
 
   /* USER CODE END GPDMA1_Channel7_IRQn 0 */
-  HAL_DMA_IRQHandler(&handle_GPDMA1_Channel7);
   /* USER CODE BEGIN GPDMA1_Channel7_IRQn 1 */
 
   /* USER CODE END GPDMA1_Channel7_IRQn 1 */
@@ -289,10 +282,23 @@ void TIM1_UP_IRQHandler(void)
   /* USER CODE BEGIN TIM1_UP_IRQn 0 */
 
   /* USER CODE END TIM1_UP_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim1);
   /* USER CODE BEGIN TIM1_UP_IRQn 1 */
 
   /* USER CODE END TIM1_UP_IRQn 1 */
+}
+
+/**
+  * @brief This function handles USB FS global interrupt.
+  */
+void USB_DRD_FS_IRQHandler(void)
+{
+  /* USER CODE BEGIN USB_DRD_FS_IRQn 0 */
+
+  /* USER CODE END USB_DRD_FS_IRQn 0 */
+  HAL_PCD_IRQHandler(&hpcd_USB_DRD_FS);
+  /* USER CODE BEGIN USB_DRD_FS_IRQn 1 */
+
+  /* USER CODE END USB_DRD_FS_IRQn 1 */
 }
 
 /**
@@ -303,7 +309,6 @@ void GPDMA2_Channel0_IRQHandler(void)
   /* USER CODE BEGIN GPDMA2_Channel0_IRQn 0 */
 
   /* USER CODE END GPDMA2_Channel0_IRQn 0 */
-  HAL_DMA_IRQHandler(&handle_GPDMA2_Channel0);
   /* USER CODE BEGIN GPDMA2_Channel0_IRQn 1 */
 
   /* USER CODE END GPDMA2_Channel0_IRQn 1 */
@@ -317,7 +322,6 @@ void GPDMA2_Channel1_IRQHandler(void)
   /* USER CODE BEGIN GPDMA2_Channel1_IRQn 0 */
 
   /* USER CODE END GPDMA2_Channel1_IRQn 0 */
-  HAL_DMA_IRQHandler(&handle_GPDMA2_Channel1);
   /* USER CODE BEGIN GPDMA2_Channel1_IRQn 1 */
 
   /* USER CODE END GPDMA2_Channel1_IRQn 1 */

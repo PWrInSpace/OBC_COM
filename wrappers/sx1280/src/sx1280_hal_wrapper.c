@@ -1,3 +1,9 @@
+/*
+ * Author: Mateusz Kłosiński
+ * Organization: PWr in Space
+ * Date: 27.01.2026
+ */
+
 #include "FreeRTOS.h"
 #include "semphr.h"
 #include "sx1280.h"
@@ -8,45 +14,17 @@
 #define MAX_SPI_BUFFER 260 
 
 static uint8_t spi_dma_tx_buffer[MAX_SPI_BUFFER];
+
 SemaphoreHandle_t sx1280_spi_sem = NULL;
 
-void Radio_Buffer_Init(void) {
+void sx1280_wrapper_init(void) {
     sx1280_spi_sem = xSemaphoreCreateBinary();
     xSemaphoreGive(sx1280_spi_sem); 
 }
 
-// --- CALLBACKS ---
-
-void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
-    if (hspi->Instance == SPI1) {
-        HAL_GPIO_WritePin(SX1280_CS_GPIO_Port, SX1280_CS_Pin, GPIO_PIN_SET);
-        BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-        xSemaphoreGiveFromISR(sx1280_spi_sem, &xHigherPriorityTaskWoken);
-        portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-    }
-}
-
-void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi) {
-    if (hspi->Instance == SPI1) {
-        HAL_GPIO_WritePin(SX1280_CS_GPIO_Port, SX1280_CS_Pin, GPIO_PIN_SET);
-        BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-        xSemaphoreGiveFromISR(sx1280_spi_sem, &xHigherPriorityTaskWoken);
-        portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-    }
-}
-
-void HAL_SPI_ErrorCallback(SPI_HandleTypeDef *hspi) {
-    if (hspi->Instance == SPI1) {
-        HAL_GPIO_WritePin(SX1280_CS_GPIO_Port, SX1280_CS_Pin, GPIO_PIN_SET);
-        BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-        xSemaphoreGiveFromISR(sx1280_spi_sem, &xHigherPriorityTaskWoken);
-        portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-    }
-}
-
 // --- SPI WRAPPERS ---
 
-static int32_t spi_write_dma(void* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* out, uint16_t out_len) {
+int32_t sx1280_spi_write_dma(void* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* out, uint16_t out_len) {
     SPI_HandleTypeDef* hspi = (SPI_HandleTypeDef*)ctx;
     uint16_t total_len = prefix_len + out_len;
 
@@ -70,7 +48,7 @@ static int32_t spi_write_dma(void* ctx, uint8_t *prefix, uint16_t prefix_len, ui
     return 0; 
 }
 
-static int32_t spi_read_dma(void* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* in, uint16_t in_len) {
+int32_t sx1280_spi_read_dma(void* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* in, uint16_t in_len) {
     SPI_HandleTypeDef* hspi = (SPI_HandleTypeDef*)ctx;
 
     if (xSemaphoreTake(sx1280_spi_sem, pdMS_TO_TICKS(100)) != pdTRUE) return -1;
@@ -93,7 +71,7 @@ static int32_t spi_read_dma(void* ctx, uint8_t *prefix, uint16_t prefix_len, uin
     return 0;
 }
 
-static int32_t spi_write(void* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* out, uint16_t out_len) {
+int32_t sx1280_spi_write(void* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* out, uint16_t out_len) {
     SPI_HandleTypeDef* hspi = (SPI_HandleTypeDef*)ctx;
     HAL_GPIO_WritePin(SX1280_CS_GPIO_Port, SX1280_CS_Pin, GPIO_PIN_RESET);
     HAL_SPI_Transmit(hspi, prefix, prefix_len, HAL_MAX_DELAY);
@@ -102,7 +80,7 @@ static int32_t spi_write(void* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_
     return 0;
 }
 
-static int32_t spi_read(void* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* in, uint16_t in_len) {
+int32_t sx1280_spi_read(void* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* in, uint16_t in_len) {
     SPI_HandleTypeDef* hspi = (SPI_HandleTypeDef*)ctx;
     HAL_GPIO_WritePin(SX1280_CS_GPIO_Port, SX1280_CS_Pin, GPIO_PIN_RESET);
     HAL_SPI_Transmit(hspi, prefix, prefix_len, HAL_MAX_DELAY);
@@ -111,17 +89,30 @@ static int32_t spi_read(void* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t
     return 0;
 }
 
-static void delay_ms(void* ctx, uint32_t ms) {
+void sx1280_delay_ms(void* ctx, uint32_t ms) {
     vTaskDelay(pdMS_TO_TICKS(ms));
 }
 
-// Ensure the struct uses the function names defined above
-struct SX1280_s sx1280_radio = {
-    .ctx = &hspi2,
-    .spi_read = spi_read_dma,
-    .spi_write = spi_write_dma,
-    .set_reset = NULL,
-    .get_busy = NULL,
-    .get_dio = NULL,
-    .delay_ms = delay_ms
-};
+int32_t sx1280_set_reset(void* ctx, bool value) {
+    if (value) {
+        HAL_GPIO_WritePin(SX1280_RESET_GPIO_Port, SX1280_RESET_Pin, GPIO_PIN_SET);
+    } else {
+        HAL_GPIO_WritePin(SX1280_RESET_GPIO_Port, SX1280_RESET_Pin, GPIO_PIN_RESET);
+    }
+    return 0;
+}
+
+int32_t sx1280_get_busy(void* ctx) {
+    GPIO_PinState state = HAL_GPIO_ReadPin(SX1280_BUSY_GPIO_Port, SX1280_BUSY_Pin);
+    return (state == GPIO_PIN_SET) ? 1 : 0;
+}
+
+int32_t sx1280_get_dio1(void* ctx) {
+    GPIO_PinState state = HAL_GPIO_ReadPin(SX1280_DIO1_GPIO_Port, SX1280_DIO1_Pin);
+    return (state == GPIO_PIN_SET) ? 1 : 0;
+}
+
+int32_t sx1280_get_dio2(void* ctx) {
+    GPIO_PinState state = HAL_GPIO_ReadPin(SX1280_DIO2_GPIO_Port, SX1280_DIO2_Pin);
+    return (state == GPIO_PIN_SET) ? 1 : 0;
+}

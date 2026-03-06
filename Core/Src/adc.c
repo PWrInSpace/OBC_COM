@@ -65,7 +65,7 @@ void MX_ADC1_Init(void)
 
   /** Configure Regular Channel
   */
-  sConfig.Channel = ADC_CHANNEL_10;
+  sConfig.Channel = ADC_CHANNEL_1;
   sConfig.Rank = ADC_REGULAR_RANK_1;
   sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
   sConfig.SingleDiff = ADC_SINGLE_ENDED;
@@ -118,7 +118,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     PB0     ------> ADC1_INP9
     PB1     ------> ADC1_INP5
     */
-    GPIO_InitStruct.Pin = PA1_PWR_SENSE_Pin|PA2_PWR_SENSE_Pin|PA3_PWR_SENSE_Pin|PA4_PWR_SENSE_Pin
+    GPIO_InitStruct.Pin = PA4_PWR_SENSE_Pin|PA1_PWR_SENSE_Pin|PA2_PWR_SENSE_Pin|PA3_PWR_SENSE_Pin
                           |PA1_DETECT_Pin|PA2_DETECT_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -162,7 +162,7 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
     PB0     ------> ADC1_INP9
     PB1     ------> ADC1_INP5
     */
-    HAL_GPIO_DeInit(GPIOC, PA1_PWR_SENSE_Pin|PA2_PWR_SENSE_Pin|PA3_PWR_SENSE_Pin|PA4_PWR_SENSE_Pin
+    HAL_GPIO_DeInit(GPIOC, PA4_PWR_SENSE_Pin|PA1_PWR_SENSE_Pin|PA2_PWR_SENSE_Pin|PA3_PWR_SENSE_Pin
                           |PA1_DETECT_Pin|PA2_DETECT_Pin);
 
     HAL_GPIO_DeInit(CURR_SENSE_GPIO_Port, CURR_SENSE_Pin);
