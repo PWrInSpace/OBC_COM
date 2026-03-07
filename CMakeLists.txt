@@ -33,6 +33,13 @@ enable_language(C ASM)
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME})
+# Musi być pod add_executable(OBC_COM ...)
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND arm-none-eabi-objcopy -O binary 
+            "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.elf" 
+            "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.bin"
+    COMMENT "--- Generowanie pliku BIN z ELF ---"
+)
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
@@ -81,3 +88,4 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     USB_Driver
     # Add user defined libraries
 )
+

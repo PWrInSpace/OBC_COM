@@ -124,21 +124,26 @@ void recv_once_ceiling(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_buf, ui
   }
 }
 
+
+/*
 void rfm95wTaskEntry(void *argument)
 {
+*/
 
-  //HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);
+  /*HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);*/
   /* USER CODE BEGIN rfm95wTask */
   /* Mode selector: true = SEND, false = RECV */
+  /*
    bool send_mode = false;
    LoRaDevs_t *lora_devs = get_lora_devs_instance();
    rfm95_t *rfm95_radio = lora_devs->rfm95w;
    uint8_t tx_payload[] = { 0x01, 0x05, 'H', 'e', 'l', 'l', 'o' };
    uint8_t rx_buf[255];
    uint8_t rx_size = 0;
-   
 
-   //DEBUG
+   */
+
+   /*
    uint8_t msg[] = "RFM95W WYSTARTOWAL\r\n";
    CDC_Transmit_FS(msg, strlen((char*)msg));
    uint8_t msg2[] = "RFM95W RUNNING!\r\n";
@@ -163,6 +168,7 @@ void rfm95wTaskEntry(void *argument)
     USB_Transmit(msg2, strlen((char*)msg2));
     osDelay(500);
   }
+  */
 
 //TESTOWY TASK DO ODCZYTANIA ID I SPRAWDZENIA SPI
 
@@ -194,7 +200,6 @@ void rfm95wTaskEntry(void *argument)
 }
 
   /* USER CODE END rfm95wTask */
-}
 
 void RFM95W_task_init(void){
   uint8_t msg2[] = "ZA MAŁO PAMIECI!\r\n";

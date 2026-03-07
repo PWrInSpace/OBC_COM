@@ -21,3 +21,4 @@ target_link_libraries(rfm95w_wrapper
         rfm95w
         stm32cubemx
 )
+
