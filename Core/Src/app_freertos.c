@@ -26,6 +26,7 @@
 #include "logger.h"
 #include "logger_macros.h"
 #include "main.h"
+#include "projdefs.h"
 #include "stm32h5xx_hal_gpio.h"
 #include "usb_config.h"
 #include "stm32h5xx_it.h"
@@ -34,6 +35,7 @@
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
+typedef StaticTask_t osStaticThreadDef_t;
 /* USER CODE BEGIN PTD */
 
 /* USER CODE END PTD */
@@ -54,10 +56,20 @@
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
+uint32_t MyBufferTask00[ 128 ];
+osStaticThreadDef_t MycontrolBlocTask00;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
+  .stack_mem = &MyBufferTask00[0],
+  .stack_size = sizeof(MyBufferTask00),
+  .cb_mem = &MycontrolBlocTask00,
+  .cb_size = sizeof(MycontrolBlocTask00),
   .priority = (osPriority_t) osPriorityNormal,
-  .stack_size = 128 * 4
+};
+/* Definitions for usbMutex */
+osMutexId_t usbMutexHandle;
+const osMutexAttr_t usbMutex_attributes = {
+  .name = "usbMutex"
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -73,6 +85,8 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
+  /* creation of usbMutex */
+  usbMutexHandle = osMutexNew(&usbMutex_attributes);
 
   /* USER CODE BEGIN RTOS_MUTEX */
 //   /* add mutexes, ... */
@@ -94,8 +108,9 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
 //   /* add threads, ... */
-  SX1280_task_init();
   RFM95W_task_init();
+ // SX1280_task_init();
+  
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -113,10 +128,12 @@ void MX_FREERTOS_Init(void) {
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN defaultTask */
-  /* Infinite loop */
+  USB_CDC_Config(); 
+  HAL_GPIO_WritePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin, GPIO_PIN_SET);
+  uint8_t msg[] = "Jebać kurwy z STM\r\n";
+
   for(;;)
   {
-    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
     osDelay(1000);
   }
   /* USER CODE END defaultTask */

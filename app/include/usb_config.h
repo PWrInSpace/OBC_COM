@@ -14,4 +14,6 @@
 extern USBD_HandleTypeDef hUsbDeviceFS;
 extern uint8_t CDC_InstID;
 
+
 void USB_CDC_Config(void);
+void USB_Transmit(uint8_t* Buf, uint16_t Len);

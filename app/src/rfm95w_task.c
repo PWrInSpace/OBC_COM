@@ -6,6 +6,7 @@
 
 #include "FreeRTOS.h"
 #include "cmsis_os2.h"
+#include "projdefs.h"
 #include "stm32h5xx.h"
 #include "stm32h5xx_hal_gpio.h"
 #include "task.h"
@@ -129,15 +130,22 @@ void rfm95wTaskEntry(void *argument)
   //HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);
   /* USER CODE BEGIN rfm95wTask */
   /* Mode selector: true = SEND, false = RECV */
-  bool send_mode = false;
-  LoRaDevs_t *lora_devs = get_lora_devs_instance();
-  rfm95_t *rfm95_radio = lora_devs->rfm95w;
-  uint8_t tx_payload[] = { 0x01, 0x05, 'H', 'e', 'l', 'l', 'o' };
-  uint8_t rx_buf[255];
-  uint8_t rx_size = 0;
+   bool send_mode = false;
+   LoRaDevs_t *lora_devs = get_lora_devs_instance();
+   rfm95_t *rfm95_radio = lora_devs->rfm95w;
+   uint8_t tx_payload[] = { 0x01, 0x05, 'H', 'e', 'l', 'l', 'o' };
+   uint8_t rx_buf[255];
+   uint8_t rx_size = 0;
+   
+
+   //DEBUG
+   uint8_t msg[] = "RFM95W WYSTARTOWAL\r\n";
+   CDC_Transmit_FS(msg, strlen((char*)msg));
+   uint8_t msg2[] = "RFM95W RUNNING!\r\n";
 
   for(;;)
   {
+    
     if (send_mode) {
       //LOG_INFO("Sending frames...");
       rfm95_send_window(rfm95_radio, tx_payload, (uint8_t)sizeof(tx_payload), RFM95W_TX_TIMEOUT_MS);
@@ -148,19 +156,55 @@ void rfm95wTaskEntry(void *argument)
         CDC_Transmit_FS(rx_buf, rx_size);
       }
     }
+      
 
     send_mode = !send_mode;
-    osDelay(10);
+    
+    USB_Transmit(msg2, strlen((char*)msg2));
+    osDelay(500);
   }
+
+//TESTOWY TASK DO ODCZYTANIA ID I SPRAWDZENIA SPI
+
+void rfm95wTaskEntry(void *argument)
+{
+    uint8_t tx_buf[2] = {0x42 & 0x7F, 0x00}; // Adres rejestru 0x42 (Read) + dummy byte
+    uint8_t rx_buf[2] = {0x00, 0x00};
+    char debug_msg[64];
+
+    HAL_GPIO_WritePin(RFM95W_CS_GPIO_Port, RFM95W_CS_Pin, GPIO_PIN_RESET);
+  
+    HAL_StatusTypeDef spi_status = HAL_SPI_TransmitReceive(&hspi2, tx_buf, rx_buf, 2, 100); //NA CHAMA WALNIETE ZEBY POTEM LIBKE OGARNAC
+    
+    HAL_GPIO_WritePin(RFM95W_CS_GPIO_Port, RFM95W_CS_Pin, GPIO_PIN_SET);
+
+    if (spi_status == HAL_OK) {
+        sprintf(debug_msg, "SPI OK! Reg 0x42: 0x%02X (Expected 0x12)\r\n", rx_buf[1]);
+    } else {
+        sprintf(debug_msg, "SPI ERROR! HAL Status: %d\r\n", spi_status);
+    }
+
+    for(;;)
+    {
+        USB_Transmit((uint8_t*)debug_msg, strlen(debug_msg));
+        
+        HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+        osDelay(1000);
+    }
+}
+
   /* USER CODE END rfm95wTask */
 }
 
 void RFM95W_task_init(void){
-    HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_4);
+  uint8_t msg2[] = "ZA MAŁO PAMIECI!\r\n";
+    //HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_4);
     rfm95wTaskHandle = osThreadNew(rfm95wTaskEntry, NULL, &rfm95wTask_attributes);
     if (rfm95wTaskHandle == NULL) {
+      osDelay(pdMS_TO_TICKS(3000));
+      USB_Transmit(msg2, strlen((char*)msg2));
       //HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_4);
-      LOG_ERROR("RFM95W TASK ERROR!!");
+      //LOG_ERROR("RFM95W TASK ERROR!!");
       return;
     }
     //HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);

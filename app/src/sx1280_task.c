@@ -6,13 +6,14 @@
 
 #include "FreeRTOS.h"
 #include "cmsis_os2.h"
+#include "projdefs.h"
 #include "stm32h5xx.h"
 #include "stm32h5xx_hal_gpio.h"
 #include "task.h"
 #include "sx1280.h"
 #include "main.h"
 #include "logger.h"
-
+#include "usb_config.h"
 #include <string.h>
 
 #include "sx1280_task.h"
@@ -23,8 +24,8 @@
 osThreadId_t sx1280TaskHandle = NULL;
 const osThreadAttr_t sx1280Task_attributes = {
   .name = "sx1280Task",
-  .priority = (osPriority_t) osPriorityNormal,
-  .stack_size = 4096
+  .priority = (osPriority_t) osPriorityAboveNormal,
+  .stack_size = 1024
 };
 
 static void parse_frame(uint8_t *buf, uint8_t size) {
@@ -127,7 +128,9 @@ static void sx1280_recv_once_ceiling(SX1280_t *radio, uint32_t ceiling_ms) {
 
 void sx1280TaskEntry(void *argument)
 {
-
+  uint8_t msg[] = "SX1280 WYSTARTOWAL\r\n";
+  uint8_t msg2[] = "SX1280 RUNNING\r\n";
+  CDC_Transmit_FS(msg, strlen((char*)msg));
   //HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);
   /* USER CODE BEGIN sx1280Task */
   /* Mode selector: true = SEND, false = RECV */
@@ -137,8 +140,10 @@ void sx1280TaskEntry(void *argument)
   uint8_t tx_payload[] = { 0x01, 0x05, 'H', 'e', 'l', 'l', 'o' };
 
   for(;;)
+  
   {
-    HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);
+    /*
+   // HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);
     if (send_mode) {
       //LOG_INFO("Sending frames...");
       send_window(sx1280_radio, tx_payload, (uint8_t)sizeof(tx_payload), SX1280_TX_TIMEOUT_MS);
@@ -148,19 +153,26 @@ void sx1280TaskEntry(void *argument)
     }
 
     send_mode = !send_mode;
-    osDelay(10);
+    */
+    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+    USB_Transmit(msg2, strlen((char*)msg2));
+    osDelay(500);
   }
   /* USER CODE END sx1280Task */
 }
 
 void SX1280_task_init(void){
-    HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);
+    //HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);
+    uint8_t msg2[] = "ZA MAŁO PAMIECI!\r\n";
     sx1280TaskHandle = osThreadNew(sx1280TaskEntry, NULL, &sx1280Task_attributes);
     if (sx1280TaskHandle == NULL) {
-      HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);
-      LOG_ERROR("SX1280 TASK ERROR!!");
+      osDelay(pdMS_TO_TICKS(3000));
+      //HAL_GPIO_WritePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin, GPIO_PIN_RESET);
+      //LOG_ERROR("SX1280 TASK ERROR!!");
+      USB_Transmit(msg2, strlen((char*)msg2));
       return;
-    }
+    }    
+    HAL_GPIO_WritePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin, GPIO_PIN_RESET);
     //HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);
     return;
 }

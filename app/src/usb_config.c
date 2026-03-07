@@ -11,9 +11,12 @@
 #include "usbd_cdc.h"
 #include "usbd_core.h"
 #include "usb.h"
+#include "app_freertos.h"
 
 USBD_HandleTypeDef hUsbDeviceFS;
 extern USBD_DescriptorsTypeDef FS_Desc;
+
+extern osMutexId_t usbMutexHandle;
 
 void USB_CDC_Config(void) 
 {
@@ -29,4 +32,18 @@ void USB_CDC_Config(void)
 
     if(USBD_Start(&hUsbDeviceFS) != USBD_OK)
         Error_Handler();
+}
+
+void USB_Transmit(uint8_t* Buf, uint16_t Len) {
+
+    if (osMutexAcquire(usbMutexHandle, 100) == osOK) {
+        
+        uint8_t result = CDC_Transmit_FS(Buf, Len);
+        
+        if (result == 0) { // USBD_OK
+            osDelay(10); 
+        }
+
+        osMutexRelease(usbMutexHandle);
+    }
 }

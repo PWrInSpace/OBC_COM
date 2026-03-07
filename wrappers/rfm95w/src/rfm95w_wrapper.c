@@ -6,6 +6,7 @@
 
 
 #include "rfm95w_wrapper.h"
+#include "spi.h"
 #include "stm32h5xx_hal_spi.h"
 #include <stdint.h>
 
@@ -24,7 +25,7 @@ bool rfm95w_spi_transmit(uint8_t in[2], uint8_t out[2]) {
 
     HAL_GPIO_WritePin(RFM95W_CS_GPIO_Port, RFM95W_CS_Pin, GPIO_PIN_RESET);
 
-    if (HAL_SPI_TransmitReceive_DMA(&hspi1, out, in, 2) != HAL_OK) {
+    if (HAL_SPI_TransmitReceive_DMA(&hspi2, out, in, 2) != HAL_OK) { //change to spi2
         HAL_GPIO_WritePin(RFM95W_CS_GPIO_Port, RFM95W_CS_Pin, GPIO_PIN_SET);
         xSemaphoreGive(rfm95w_spi_sem);
         return false;
