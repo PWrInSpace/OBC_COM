@@ -172,6 +172,12 @@ void rfm95wTaskEntry(void *argument)
 
 //TESTOWY TASK DO ODCZYTANIA ID I SPRAWDZENIA SPI
 
+//i get initial conditions in gaussian law and write me the solution
+//directional derrevative
+// Flux definitions
+//vectors algebra
+
+
 void rfm95wTaskEntry(void *argument)
 {
     uint8_t tx_buf[2] = {0x42 & 0x7F, 0x00}; // Adres rejestru 0x42 (Read) + dummy byte
@@ -180,9 +186,10 @@ void rfm95wTaskEntry(void *argument)
 
     HAL_GPIO_WritePin(RFM95W_CS_GPIO_Port, RFM95W_CS_Pin, GPIO_PIN_RESET);
   
-    HAL_StatusTypeDef spi_status = HAL_SPI_TransmitReceive(&hspi2, tx_buf, rx_buf, 2, 100); //NA CHAMA WALNIETE ZEBY POTEM LIBKE OGARNAC
+    HAL_StatusTypeDef spi_status = HAL_SPI_TransmitReceive(&hspi2, tx_buf, rx_buf, 2, 1000); //NA CHAMA WALNIETE ZEBY POTEM LIBKE OGARNAC
     
     HAL_GPIO_WritePin(RFM95W_CS_GPIO_Port, RFM95W_CS_Pin, GPIO_PIN_SET);
+    
 
     if (spi_status == HAL_OK) {
         sprintf(debug_msg, "SPI OK! Reg 0x42: 0x%02X (Expected 0x12)\r\n", rx_buf[1]);

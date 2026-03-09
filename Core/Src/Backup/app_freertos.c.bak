@@ -129,7 +129,6 @@ void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN defaultTask */
   USB_CDC_Config(); 
-  HAL_GPIO_WritePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin, GPIO_PIN_SET);
   uint8_t msg[] = "Jebać kurwy z STM\r\n";
 
   for(;;)

@@ -65,6 +65,8 @@ void Error_Handler(void);
 #define SW2_CTRL1_GPIO_Port GPIOE
 #define SW2_CTRL2_Pin GPIO_PIN_5
 #define SW2_CTRL2_GPIO_Port GPIOE
+#define HEADER1_Pin GPIO_PIN_13
+#define HEADER1_GPIO_Port GPIOC
 #define PA1_PWR_SENSE_Pin GPIO_PIN_1
 #define PA1_PWR_SENSE_GPIO_Port GPIOC
 #define PA2_PWR_SENSE_Pin GPIO_PIN_2
