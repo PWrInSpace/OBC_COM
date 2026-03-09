@@ -19,6 +19,21 @@
                 "isDefault": true
             },
             "problemMatcher": []
+        },
+        {
+            "label": "Open Serial COM7",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "[System.IO.Ports.SerialPort]::getportnames(); $port= new-Object System.IO.Ports.SerialPort COM7,115200,None,8,one; $port.Open(); Write-Host '--- Połączono z COM7 (115200) ---' -ForegroundColor Cyan; try { while($port.IsOpen) { Write-Host -NoNewline $port.ReadExisting() } } finally { $port.Close() }"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "focus": true
+            },
+            "problemMatcher": []
         }
     ]
 }
