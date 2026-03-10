@@ -127,13 +127,27 @@ typedef enum {
 // TODO(Glibus): check if it is ok
 typedef enum {
   RFM95_TX_POWER_14_dBm = 2,
-  RFM95_TX_POWER_20_dBm = 17
+  RFM95_TX_POWER_17_dBm = 17
 } rfm95_tx_power_t;
 
 typedef bool (*rfm95_SPI_transmit)(uint8_t *in, uint8_t *out);
 typedef void (*rfm95_delay)(uint32_t _ms);
 typedef bool (*rfm95_GPIO_set_level)(uint16_t _gpio_num, uint8_t _level);
 typedef void (*rfm95_log)(const char *info);
+
+typedef struct {
+	
+	uint64_t frequency;
+	uint8_t power;
+	uint8_t LoRa_Rate;
+	uint8_t LoRa_BW;
+	uint8_t packetLength;
+
+	uint8_t rxBuffer[256];
+	uint8_t readBytes;
+	int16_t last_pkt_RSSI;
+	float last_pkt_SNR;
+} RFM95_param_t;
 
 typedef struct {
   rfm95_SPI_transmit _spi_transmit;
@@ -145,7 +159,10 @@ typedef struct {
   uint16_t d0_gpio_num;
   int16_t implicit_header;
   int32_t frequency;
+  RFM95_param_t *param;
+
 } rfm95_t;
+
 
 /*!
  * \brief Perform hardware initialization.
@@ -348,3 +365,5 @@ int16_t rfm95_initialized(rfm95_t *rfm95);
 
 /// \brief Dump registers :D
 void rfm95_dump_registers(rfm95_t *rfm95);
+
+rfm95_err_t rfm95_default_config_param(rfm95_t *rfm);

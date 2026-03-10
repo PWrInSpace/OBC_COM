@@ -125,54 +125,83 @@ void recv_once_ceiling(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_buf, ui
 }
 
 
-
 void rfm95wTaskEntry(void *argument)
 {
+    bool send_mode = false;
+    LoRaDevs_t *lora_devs = get_lora_devs_instance();
+    rfm95_t *rfm95_radio = lora_devs->rfm95w;
+    
+    uint8_t rx_buf[255];
+    uint8_t rx_size = 0;
+
+    // Inicjalizacja
+    rfm95w_config_init(); // Reset i bazowy config
+    rfm95w_config_init_param(); // Twoje parametry customowe
+
+    // ODCZYT I WYŚWIETLENIE
+    osDelay(pdMS_TO_TICKS(5000));
+    rfm95_print_actual_settings(rfm95_radio);
+
+    uint8_t msg4[] = "Starting main loop...\r\n";
+    USB_Transmit(msg4, strlen((char*)msg4));
+
+    for(;;)
+    {
+        // ... reszta Twojej pętli ...
+        HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port,STATUS_LED_Pin);
+        osDelay(100); // Dodaj mały delay dla stabilności RTOS
+    }
+}
 
 
-  /*HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);*/
-  /* USER CODE BEGIN rfm95wTask */
-  /* Mode selector: true = SEND, false = RECV */
+// void rfm95wTaskEntry(void *argument)
+// {
 
-   bool send_mode = false;
-   LoRaDevs_t *lora_devs = get_lora_devs_instance();
-   rfm95_t *rfm95_radio = lora_devs->rfm95w;
-   uint8_t tx_payload[] = { 0x01, 0x05, 'H', 'e', 'l', 'l', 'o' };
-   uint8_t rx_buf[255];
-   uint8_t rx_size = 0;
+
+//   /*HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);*/
+//   /* USER CODE BEGIN rfm95wTask */
+//   /* Mode selector: true = SEND, false = RECV */
+
+//    bool send_mode = false;
+//    LoRaDevs_t *lora_devs = get_lora_devs_instance();
+//    rfm95_t *rfm95_radio = lora_devs->rfm95w;
+//    uint8_t tx_payload[] = { 0x01, 0x05, 'H', 'e', 'l', 'l', 'o' };
+//    uint8_t rx_buf[255];
+//    uint8_t rx_size = 0;
 
  
-   uint8_t msg[] = "RFM95W WYSTARTOWAL\r\n";
-   CDC_Transmit_FS(msg, strlen((char*)msg));
-   uint8_t msg2[] = "RFM95W RUNNING!\r\n";
-   uint8_t msg3[] = "Entered Transmit!\r\n";
-   uint8_t msg4[] = "Waiting for rx frames!\r\n";
-   char rx_msg[64];
+//    uint8_t msg[] = "RFM95W WYSTARTOWAL\r\n";
+//    CDC_Transmit_FS(msg, strlen((char*)msg));
+//    uint8_t msg2[] = "RFM95W RUNNING!\r\n";
+//    uint8_t msg3[] = "Entered Transmit!\r\n";
+//    uint8_t msg4[] = "Waiting for rx frames!\r\n";
+//    rfm95w_config_init();
+//    rfm95w_config_init_param();
 
-  for(;;)
-  {
-    
-    if (0) {
-      USB_Transmit(msg3, strlen((char*)msg3));
-      //LOG_INFO("Sending frames...");
-      rfm95_send_window(rfm95_radio, tx_payload, (uint8_t)sizeof(tx_payload), RFM95W_TX_TIMEOUT_MS);
-    } else {
-      //LOG_INFO("Waiting for frames...");
-      recv_once_ceiling(rfm95_radio, RFM95W_RX_TIMEOUT_MS, rx_buf, &rx_size);
-      if (rx_size > 0) {
-        USB_Transmit(rx_buf, rx_size);
+//   for(;;)
+//   {
+//     if (0) {
+//       USB_Transmit(msg3, strlen((char*)msg3));
+//       //LOG_INFO("Sending frames...");
+//       rfm95_send_window(rfm95_radio, tx_payload, (uint8_t)sizeof(tx_payload), RFM95W_TX_TIMEOUT_MS);
+//     } else {
+//       //LOG_INFO("Waiting for frames...");
+//       recv_once_ceiling(rfm95_radio, RFM95W_RX_TIMEOUT_MS, rx_buf, &rx_size);
+//       if (rx_size > 0) {
+//         HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+//         USB_Transmit(rx_buf, rx_size);
         
-      }
-    }
+//       }
+//     }
       
-/*
-    send_mode = !send_mode;
-    */  
-        USB_Transmit(msg4, strlen((char*)msg4));
-        HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
-        osDelay(10);
-  }
-}
+// /*
+//     send_mode = !send_mode;
+//     */  
+//         USB_Transmit(msg4, strlen((char*)msg4));
+//         HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+//         osDelay(100);
+//   }
+// }
 
 //TESTOWY TASK DO ODCZYTANIA ID I SPRAWDZENIA SPI
 

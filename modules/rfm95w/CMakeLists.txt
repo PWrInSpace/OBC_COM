@@ -8,6 +8,7 @@ target_sources(rfm95w
 target_include_directories(rfm95w
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/../../app/include
 )
 
 target_compile_options(rfm95w

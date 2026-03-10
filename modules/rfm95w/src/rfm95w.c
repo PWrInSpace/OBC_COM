@@ -34,10 +34,52 @@ rfm95_err_t rfm95_default_config(rfm95_t *rfm95) {
   ret |= rfm95_write_reg(rfm95, REG_FIFO_TX_BASE_ADDR, 0);
   ret |= rfm95_write_reg(rfm95, REG_LNA, rfm95_read_reg(rfm95, REG_LNA) | 0x03);
   ret |= rfm95_write_reg(rfm95, REG_MODEM_CONFIG_3, 0x04);
-  rfm95_set_tx_power(rfm95, 17);
+  rfm95_set_tx_power(rfm95, RFM95_TX_POWER_17_dBm);
 
   rfm95_idle(rfm95);
   return ret;
+}
+
+
+
+rfm95_err_t rfm95_default_config_param(rfm95_t *rfm) {
+    rfm95_err_t ret = RFM95_OK;
+
+    // A. Musimy być w trybie Sleep, aby przełączyć się na LoRa
+    rfm95_sleep(rfm);
+    
+    // B. Włączenie trybu LoRa (Bit 7 w REG_OP_MODE)
+    // Bez tego rejestry modemu nie będą dostępne
+    uint8_t opMode = rfm95_read_reg(rfm, 0x01);
+    ret |= rfm95_write_reg(rfm, 0x01, opMode | 0x80); 
+
+    // C. Ustawienie częstotliwości (korzysta z rfm->param->frequency)
+    // Wymaga funkcji przeliczającej Hz na rejestry FrfMsb/Mid/Lsb
+    rfm95_set_frequency(rfm, rfm->param->frequency);
+
+    // D. Konfiguracja FIFO
+    ret |= rfm95_write_reg(rfm, 0x0E, 0); // FIFO RX Base Addr
+    ret |= rfm95_write_reg(rfm, 0x0F, 0); // FIFO TX Base Addr
+
+    // E. Konfiguracja parametrów LoRa (BW i SF)
+    // REG_MODEM_CONFIG_1 (0x1D) -> Bandwidth
+    uint8_t bw_config = (rfm->param->LoRa_BW << 4) | 0x02; // + CR 4/5
+    ret |= rfm95_write_reg(rfm, 0x1D, bw_config);
+
+    // REG_MODEM_CONFIG_2 (0x1E) -> Spreading Factor (Rate)
+    uint8_t sf_config = (rfm->param->LoRa_Rate << 4) | 0x04; // + CRC On
+    ret |= rfm95_write_reg(rfm, 0x1E, sf_config);
+
+    // F. Ustawienie mocy nadawania
+    rfm95_set_tx_power(rfm, rfm->param->power);
+
+    // G. Aktywacja automatycznego wzmocnienia (AGC)
+    ret |= rfm95_write_reg(rfm, 0x26, 0x04);
+
+    // H. Powrót do trybu Standby (aktywacja oscylatora kwarcowego)
+    rfm95_idle(rfm);
+    
+    return ret;
 }
 
 rfm95_err_t rfm95_write_reg(rfm95_t *rfm95, int16_t reg, int16_t val) {
@@ -199,6 +241,20 @@ rfm95_err_t rfm95_set_preamble_length(rfm95_t *rfm95, int32_t length) {
   ret |= rfm95_write_reg(rfm95, REG_PREAMBLE_LSB, (uint8_t)(length >> 0));
   return ret;
 }
+
+// void SX1278_begin(SX1278_t *module, uint64_t frequency, uint8_t power,
+// 		uint8_t LoRa_Rate, uint8_t LoRa_BW, uint8_t packetLength) {
+// 	SX1278_hw_init(module->hw);
+// 	module->frequency = frequency;
+// 	module->power = power;
+// 	module->LoRa_Rate = LoRa_Rate;
+// 	module->LoRa_BW = LoRa_BW;
+// 	module->packetLength = packetLength;
+// 	module->last_pkt_RSSI = 0;
+// 	module->last_pkt_SNR = 0;
+// 	SX1278_defaultConfig(module);
+// }
+
 
 rfm95_err_t rfm95_set_sync_word(rfm95_t *rfm95, int16_t sw) {
   return rfm95_write_reg(rfm95, REG_SYNC_WORD, sw);
