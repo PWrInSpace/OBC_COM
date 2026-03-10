@@ -14,7 +14,7 @@
 #include "main.h"
 #include "logger.h"
 #include "usb_config.h"
-
+#include"usbd_cdc_if.h"
 #include <stdint.h>
 #include <string.h>
 
@@ -90,27 +90,28 @@ static bool rx_wait_for_event(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_
 }
 
 void rfm95_send_window(rfm95_t *radio, const uint8_t *payload, uint8_t payload_len, uint32_t window_ms) {
-  rfm95_write_reg(radio, REG_IRQ_FLAGS, IRQ_ALL);
-  uint32_t start = HAL_GetTick();
-  rfm95_set_transmit_mode(radio);
-  while ((HAL_GetTick() - start) < window_ms) {
-    rfm95_send_packet(radio, payload, payload_len);
-    /* wait for TX_DONE (short timeout) */
-    wait_for_tx_done(radio, TX_DONE_TIMEOUT_MS_DEFAULT);
+  
     rfm95_write_reg(radio, REG_IRQ_FLAGS, IRQ_ALL);
-    osDelay(200);
-  }
-  rfm95_idle(radio);
+    rfm95_set_transmit_mode(radio);
+    rfm95_send_packet(radio, (uint8_t*)payload, payload_len);
+
+    uint32_t start = HAL_GetTick();
+    while (!rfm95_check_tx_done(radio)) {
+        if ((HAL_GetTick() - start) > window_ms) {
+            break; 
+        }
+        osDelay(1);
+    }
+    
+    rfm95_write_reg(radio, REG_IRQ_FLAGS, IRQ_ALL);
+    rfm95_idle(radio);
 }
 
 void recv_once_ceiling(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_buf, uint8_t *out_size) {
 
-  /* Start RX using helper */
   rfm95_start_rx(radio, ceiling_ms);
 
-  /* Wait for event and fill buffer */
   if (rx_wait_for_event(radio, ceiling_ms, out_buf, out_size)) {
-    /* process received frame */
     if (*out_size > 0) {
         LOG_INFO("Received frame: size=%d, data=", *out_size);
         for (uint8_t i = 0; i < *out_size; i++) {
@@ -119,11 +120,13 @@ void recv_once_ceiling(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_buf, ui
         LOG_INFO("\n");
     }
   } else {
-    /* no frame received or timeout - ensure radio is in standby */
     stop_radio_standby(radio);
   }
 }
 
+
+extern volatile uint16_t USB_Rx_Data_Len; 
+extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
 
 void rfm95wTaskEntry(void *argument)
 {
@@ -134,25 +137,39 @@ void rfm95wTaskEntry(void *argument)
     uint8_t rx_buf[255];
     uint8_t rx_size = 0;
 
-    // Inicjalizacja
-    rfm95w_config_init(); // Reset i bazowy config
-    rfm95w_config_init_param(); // Twoje parametry customowe
+    rfm95w_config_init();
+    rfm95w_config_init_param();
 
-    // ODCZYT I WYŚWIETLENIE
-    osDelay(pdMS_TO_TICKS(5000));
+   // osDelay(pdMS_TO_TICKS(1000));
     rfm95_print_actual_settings(rfm95_radio);
-
+    rfm95w_read_status(rfm95_radio);
+    uint8_t msg3[] = "Sending TX...\r\n";
     uint8_t msg4[] = "Starting main loop...\r\n";
     USB_Transmit(msg4, strlen((char*)msg4));
 
     for(;;)
     {
-        // ... reszta Twojej pętli ...
-        HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port,STATUS_LED_Pin);
-        osDelay(100); // Dodaj mały delay dla stabilności RTOS
+      if(USB_Rx_Data_Len>0) {
+         USB_Transmit((uint8_t*)"TX over LoRa...\r\n", 17);
+            rfm95_send_window(rfm95_radio, UserRxBufferFS, (uint8_t)USB_Rx_Data_Len, RFM95W_TX_TIMEOUT_MS);
+            USB_Rx_Data_Len = 0;
+     }
+        recv_once_ceiling(rfm95_radio, RFM95W_RX_TIMEOUT_MS, rx_buf, &rx_size);
+       if (rx_size > 0) {
+         HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+         USB_Transmit(rx_buf, rx_size);
+         int16_t rssi = rfm95_packet_rssi(rfm95_radio);
+         /*TEST PURPOSES TO TEST RSSI*/
+         /*
+          char debug_msg[64];
+          sprintf(debug_msg, "Received %d bytes with RSSI: %d\r\n", rx_size, rssi);
+          USB_Transmit((uint8_t*)debug_msg, strlen(debug_msg));
+*/
     }
+     osDelay(100);
 }
 
+}
 
 // void rfm95wTaskEntry(void *argument)
 // {
@@ -180,10 +197,10 @@ void rfm95wTaskEntry(void *argument)
 
 //   for(;;)
 //   {
-//     if (0) {
+//     if (UserRxBufferFS[0] != ) {
 //       USB_Transmit(msg3, strlen((char*)msg3));
 //       //LOG_INFO("Sending frames...");
-//       rfm95_send_window(rfm95_radio, tx_payload, (uint8_t)sizeof(tx_payload), RFM95W_TX_TIMEOUT_MS);
+//       rfm95_send_window(rfm95_radio, UserRxBufferFS, (uint8_t)sizeof(rx_data_length), RFM95W_TX_TIMEOUT_MS);
 //     } else {
 //       //LOG_INFO("Waiting for frames...");
 //       recv_once_ceiling(rfm95_radio, RFM95W_RX_TIMEOUT_MS, rx_buf, &rx_size);

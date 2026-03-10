@@ -23,6 +23,7 @@ EndBSPDependencies */
 
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_cdc_if.h"
+#include "main.h"
 #include "usbd_cdc.h"
 #include <stdint.h>
 
@@ -52,6 +53,8 @@ EndBSPDependencies */
 /* It's up to user to redefine and/or remove those define */
 /** Received data over USB are stored in this buffer      */
 uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
+extern uint16_t rx_data_length = APP_RX_DATA_SIZE;
+volatile uint16_t USB_Rx_Data_Len = 0;
 /** Data to send over USB CDC are stored in this buffer   */
 uint8_t UserTxBufferFS[APP_TX_DATA_SIZE];
 extern USBD_HandleTypeDef hUsbDeviceFS;
@@ -220,14 +223,21 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t *pbuf, uint16_t length)
   */
 static int8_t CDC_Receive_FS(uint8_t *Buf, uint32_t *Len)
 {
-      if(Buf[0] == '1')
-             HAL_GPIO_WritePin(GPIOF, GPIO_PIN_4, GPIO_PIN_SET);
-      else if(Buf[0] == '0')
-             HAL_GPIO_WritePin(GPIOF, GPIO_PIN_4, GPIO_PIN_RESET);
-      USBD_CDC_TransmitPacket(&hUsbDeviceFS);
-      USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
-      USBD_CDC_ReceivePacket(&hUsbDeviceFS);
-      return (USBD_OK);
+    if(*Len <= APP_RX_DATA_SIZE) 
+    {
+        memcpy(UserRxBufferFS, Buf, *Len);
+        USB_Rx_Data_Len = (uint16_t)(*Len); 
+        HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+    }
+    else 
+    {
+        USB_Rx_Data_Len = 0; 
+    }
+
+    USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
+    USBD_CDC_ReceivePacket(&hUsbDeviceFS);
+
+    return (USBD_OK);
 }
 
 /**

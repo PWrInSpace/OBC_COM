@@ -30,3 +30,4 @@ void lora_config_init(void);
 void rfm95w_config_init(void);
 void rfm95w_config_init_param(void);
 void rfm95_print_actual_settings(rfm95_t *rfm);
+uint8_t rfm95w_read_status(rfm95_t *rfm);

@@ -30,7 +30,7 @@ RFM95_param_t rfm95w_param = {
     .frequency = 868000000,
     .power = 17,               // 17 dBm
     .LoRa_Rate = 7,            // SF7
-    .LoRa_BW = RFM95_BW_125_kHz,              // 125 kHz
+    .LoRa_BW = RFM95_BW_250_kHz,              // 250 kHz
     .packetLength = 256,         // 0 dla
     .readBytes = 0,
     .last_pkt_RSSI=0,
@@ -45,7 +45,7 @@ rfm95_t rfm95w_radio = {
     .rst_gpio_num = RFM95W_RST_Pin,
     .cs_gpio_num = RFM95W_CS_Pin,
     .d0_gpio_num = RFM95W_DIO_Pin,
-    .frequency = 868000000,
+    .frequency = 869525000,
     .implicit_header = 0,
     .log = rfm95w_log,
     .param = &rfm95w_param
@@ -160,7 +160,7 @@ void rfm95_print_actual_settings(rfm95_t *rfm) {
             p_max_x10 / 10, p_max_x10 % 10, max_pwr_i);
     USB_Transmit((uint8_t*)buf, strlen(buf));
 
-    sprintf(buf, "| Calculated Pout       | %2ld.%1ld dBm            |\r\n", 
+    sprintf(buf, "| Calculated Pout       | %2ld.%1d dBm            |\r\n", 
             p_out_x10 / 10, abs(p_out_x10 % 10));
     USB_Transmit((uint8_t*)buf, strlen(buf));
 
@@ -192,4 +192,32 @@ void lora_config_init(void) {
     rfm95w_config_init();
     sx1280_wrapper_init();
     rfm95w_wrapper_init();
+}
+
+uint8_t rfm95w_read_status(rfm95_t *rfm)
+{
+ uint8_t opMode    = rfm95_read_reg(rfm, 0x01);
+ opMode = opMode&0x03;
+ switch (opMode)
+ {
+  case 0x00:
+    USB_Transmit((uint8_t*)"Status: Sleep\r\n", 16);
+    break; 
+  case 0x01:
+    USB_Transmit((uint8_t*)"Status: Standby\r\n", 18);
+    break;
+  case 0x02:
+    USB_Transmit((uint8_t*)"Status: Frequency Synthesizer TX\r\n", 35);
+    break;
+  case 0x03:
+    USB_Transmit((uint8_t*)"Status: Transmit\r\n", 18);
+    break;
+  case 0x04:
+    USB_Transmit((uint8_t*)"Status: Frequency Synthesizer RX\r\n", 35);
+    break;
+  case 0x05:
+    USB_Transmit((uint8_t*)"Status: Receive\r\n", 18);
+    break;     
+ }
+ return opMode;
 }

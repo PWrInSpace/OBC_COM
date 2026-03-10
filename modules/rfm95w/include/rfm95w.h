@@ -84,6 +84,25 @@ typedef enum {
   RFM95_GPIO_MODE_OUTPUT
 } rfm95_gpio_mode_t;
 
+// Transceiver modes
+// 000 Æ Sleep mode
+// 001 Æ Stdby mode
+// 010 Æ FS mode TX (FSTx)
+// 011 Æ Transmitter mode (Tx)
+// 100 Æ FS mode RX (FSRx)
+// 101 Æ Receiver mode (Rx)
+// 110 Æ reserved
+// 111 Æ reserved
+
+typedef enum {
+  SLEEP_MODE = 0,
+  STDBY_MODE,
+  FSTx_MODE,
+  TX_MODE,
+  FSRx_MODE,
+  RX_MODE,
+} rfm95_mode_t;
+
 
 typedef enum {
   RFM95_IRQ_D0_RXDONE = 0x00,
@@ -367,3 +386,5 @@ int16_t rfm95_initialized(rfm95_t *rfm95);
 void rfm95_dump_registers(rfm95_t *rfm95);
 
 rfm95_err_t rfm95_default_config_param(rfm95_t *rfm);
+
+rfm95_err_t rfm95_get_status(rfm95_t *rfm95);
