@@ -49,7 +49,7 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, RFM95W_CS_Pin|LNA3_CTRL_Pin|PA3_CTRL_Pin|SW3_CTRL1_Pin
-                          |SW3_CTRL2_Pin|PA1_CTRL_Pin|BUZZER_Pin|GPS_RST_Pin, GPIO_PIN_RESET);
+                          |SW3_CTRL2_Pin|PA1_CTRL_Pin|GPS_RST_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(RFM95W_RST_GPIO_Port, RFM95W_RST_Pin, GPIO_PIN_SET);
@@ -96,9 +96,9 @@ void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pins : RFM95W_CS_Pin LNA3_CTRL_Pin PA3_CTRL_Pin SW3_CTRL1_Pin
-                           SW3_CTRL2_Pin PA1_CTRL_Pin BUZZER_Pin GPS_RST_Pin */
+                           SW3_CTRL2_Pin PA1_CTRL_Pin GPS_RST_Pin */
   GPIO_InitStruct.Pin = RFM95W_CS_Pin|LNA3_CTRL_Pin|PA3_CTRL_Pin|SW3_CTRL1_Pin
-                          |SW3_CTRL2_Pin|PA1_CTRL_Pin|BUZZER_Pin|GPS_RST_Pin;
+                          |SW3_CTRL2_Pin|PA1_CTRL_Pin|GPS_RST_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -113,7 +113,7 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : RFM95W_DIO_Pin */
   GPIO_InitStruct.Pin = RFM95W_DIO_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(RFM95W_DIO_GPIO_Port, &GPIO_InitStruct);
 
@@ -130,6 +130,10 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   GPIO_InitStruct.Alternate = GPIO_AF12_SDMMC1;
   HAL_GPIO_Init(SD_CMD_GPIO_Port, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI11_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(EXTI11_IRQn);
 
 }
 

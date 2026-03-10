@@ -34,6 +34,7 @@ rfm95_err_t rfm95_default_config(rfm95_t *rfm95) {
   ret |= rfm95_write_reg(rfm95, REG_FIFO_TX_BASE_ADDR, 0);
   ret |= rfm95_write_reg(rfm95, REG_LNA, rfm95_read_reg(rfm95, REG_LNA) | 0x03);
   ret |= rfm95_write_reg(rfm95, REG_MODEM_CONFIG_3, 0x04);
+  
   rfm95_set_tx_power(rfm95, RFM95_TX_POWER_17_dBm);
 
   rfm95_idle(rfm95);

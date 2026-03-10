@@ -119,6 +119,7 @@ void Error_Handler(void);
 #define RFM95W_RST_GPIO_Port GPIOD
 #define RFM95W_DIO_Pin GPIO_PIN_11
 #define RFM95W_DIO_GPIO_Port GPIOD
+#define RFM95W_DIO_EXTI_IRQn EXTI11_IRQn
 #define LNA3_CTRL_Pin GPIO_PIN_12
 #define LNA3_CTRL_GPIO_Port GPIOD
 #define PA3_CTRL_Pin GPIO_PIN_13
@@ -137,8 +138,6 @@ void Error_Handler(void);
 #define SD_CMD_GPIO_Port GPIOD
 #define PA1_CTRL_Pin GPIO_PIN_3
 #define PA1_CTRL_GPIO_Port GPIOD
-#define BUZZER_Pin GPIO_PIN_4
-#define BUZZER_GPIO_Port GPIOD
 #define GPS_RST_Pin GPIO_PIN_7
 #define GPS_RST_GPIO_Port GPIOD
 #define SW1_CTRL2_Pin GPIO_PIN_3

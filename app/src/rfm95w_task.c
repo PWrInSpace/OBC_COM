@@ -30,6 +30,15 @@ const osThreadAttr_t rfm95wTask_attributes = {
   .stack_size = 2048
 };
 
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if (GPIO_Pin == RFM95W_DIO_Pin) {
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    vTaskNotifyGiveFromISR(rfm95wTaskHandle, &xHigherPriorityTaskWoken);
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+  }
+}
+
 static bool wait_for_tx_done(rfm95_t *radio, uint32_t timeout_ms) {
   uint32_t t0 = HAL_GetTick();
   while (rfm95_check_tx_done(radio) &&
@@ -65,29 +74,67 @@ void rfm95_clear_irqs_and_standby(rfm95_t *radio) {
 }
 
 static bool rx_wait_for_event(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_buf, uint8_t *out_size) {
+    if (out_buf == NULL || out_size == NULL) return false;
+    *out_size = 0;
 
-  uint32_t start = HAL_GetTick();
-  if (out_buf == NULL || out_size == NULL) return false;
-  *out_size = 0;
+    uint32_t start_tick = HAL_GetTick();
+    
+    while ((HAL_GetTick() - start_tick) < ceiling_ms) {
+        
+        uint32_t remaining_time = ceiling_ms - (HAL_GetTick() - start_tick);
+        if (remaining_time > ceiling_ms) remaining_time = 1; // Zabezpieczenie przed overflow
 
-  for (;;) {
-    uint16_t irq = rfm95_read_reg(radio, REG_IRQ_FLAGS);
-    if ((irq & IRQ_RX_DONE_MASK) == IRQ_RX_DONE_MASK) {
-      if (handle_rx_done_and_get_payload(radio, out_buf, out_size)) return true;
-      return false;
+        uint32_t notificationValue = ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(remaining_time));
+
+        if (notificationValue > 0) {
+            if (handle_rx_done_and_get_payload(radio, out_buf, out_size)) {
+                return true;
+            } else {
+                rfm95_clear_irqs_and_standby(radio);
+                return false;
+            }
+        }
+
+        uint8_t irq = rfm95_read_reg(radio, REG_IRQ_FLAGS);
+        if (irq & IRQ_RX_DONE_MASK) {
+             if (handle_rx_done_and_get_payload(radio, out_buf, out_size)) return true;
+        }
+        
+        if (irq & IRQ_RX_TIMEOUT_MASK) {
+            rfm95_clear_irqs_and_standby(radio);
+            return false;
+        }
     }
-    if ((irq & IRQ_RX_TIMEOUT_MASK) == IRQ_RX_TIMEOUT_MASK) {
-      rfm95_clear_irqs_and_standby(radio);
-      return false;
-    }
-    if ((HAL_GetTick() - start) >= (ceiling_ms + 10)) {
-      /* safety fallback */
-      rfm95_clear_irqs_and_standby(radio);
-      return false;
-    }
-    osDelay(10);
-  }
+
+    // Jeśli wyszliśmy z pętli - to całkowity timeout
+    rfm95_clear_irqs_and_standby(radio);
+    return false;
 }
+
+// static bool rx_wait_for_event(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_buf, uint8_t *out_size) {
+
+//   uint32_t start = HAL_GetTick();
+//   if (out_buf == NULL || out_size == NULL) return false;
+//   *out_size = 0;
+
+//   for (;;) {
+//     uint16_t irq = rfm95_read_reg(radio, REG_IRQ_FLAGS);
+//     if ((irq & IRQ_RX_DONE_MASK) == IRQ_RX_DONE_MASK) {
+//       if (handle_rx_done_and_get_payload(radio, out_buf, out_size)) return true;
+//       return false;
+//     }
+//     if ((irq & IRQ_RX_TIMEOUT_MASK) == IRQ_RX_TIMEOUT_MASK) {
+//       rfm95_clear_irqs_and_standby(radio);
+//       return false;
+//     }
+//     if ((HAL_GetTick() - start) >= (ceiling_ms + 10)) {
+//       /* safety fallback */
+//       rfm95_clear_irqs_and_standby(radio);
+//       return false;
+//     }
+//     osDelay(10);
+//   }
+// }
 
 void rfm95_send_window(rfm95_t *radio, const uint8_t *payload, uint8_t payload_len, uint32_t window_ms) {
   
