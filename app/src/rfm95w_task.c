@@ -85,7 +85,7 @@ static bool rx_wait_for_event(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_
       rfm95_clear_irqs_and_standby(radio);
       return false;
     }
-    osDelay(5);
+    osDelay(10);
   }
 }
 
@@ -125,15 +125,15 @@ void recv_once_ceiling(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_buf, ui
 }
 
 
-/*
+
 void rfm95wTaskEntry(void *argument)
 {
-*/
+
 
   /*HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);*/
   /* USER CODE BEGIN rfm95wTask */
   /* Mode selector: true = SEND, false = RECV */
-  /*
+
    bool send_mode = false;
    LoRaDevs_t *lora_devs = get_lora_devs_instance();
    rfm95_t *rfm95_radio = lora_devs->rfm95w;
@@ -141,34 +141,38 @@ void rfm95wTaskEntry(void *argument)
    uint8_t rx_buf[255];
    uint8_t rx_size = 0;
 
-   */
-
-   /*
+ 
    uint8_t msg[] = "RFM95W WYSTARTOWAL\r\n";
    CDC_Transmit_FS(msg, strlen((char*)msg));
    uint8_t msg2[] = "RFM95W RUNNING!\r\n";
+   uint8_t msg3[] = "Entered Transmit!\r\n";
+   uint8_t msg4[] = "Waiting for rx frames!\r\n";
+   char rx_msg[64];
 
   for(;;)
   {
     
-    if (send_mode) {
+    if (0) {
+      USB_Transmit(msg3, strlen((char*)msg3));
       //LOG_INFO("Sending frames...");
       rfm95_send_window(rfm95_radio, tx_payload, (uint8_t)sizeof(tx_payload), RFM95W_TX_TIMEOUT_MS);
     } else {
       //LOG_INFO("Waiting for frames...");
       recv_once_ceiling(rfm95_radio, RFM95W_RX_TIMEOUT_MS, rx_buf, &rx_size);
       if (rx_size > 0) {
-        CDC_Transmit_FS(rx_buf, rx_size);
+        USB_Transmit(rx_buf, rx_size);
+        
       }
     }
       
-
+/*
     send_mode = !send_mode;
-    
-    USB_Transmit(msg2, strlen((char*)msg2));
-    osDelay(500);
+    */  
+        USB_Transmit(msg4, strlen((char*)msg4));
+        HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+        osDelay(10);
   }
-  */
+}
 
 //TESTOWY TASK DO ODCZYTANIA ID I SPRAWDZENIA SPI
 
@@ -178,6 +182,7 @@ void rfm95wTaskEntry(void *argument)
 //vectors algebra
 
 
+/*
 void rfm95wTaskEntry(void *argument)
 {
     uint8_t tx_buf[2] = {0x42 & 0x7F, 0x00}; // Adres rejestru 0x42 (Read) + dummy byte
@@ -205,6 +210,8 @@ void rfm95wTaskEntry(void *argument)
         osDelay(1000);
     }
 }
+
+*/
 
   /* USER CODE END rfm95wTask */
 

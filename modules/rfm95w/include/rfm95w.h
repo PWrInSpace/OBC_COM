@@ -130,7 +130,7 @@ typedef enum {
   RFM95_TX_POWER_20_dBm = 17
 } rfm95_tx_power_t;
 
-typedef bool (*rfm95_SPI_transmit)(uint8_t _in[2], uint8_t _val[2]);
+typedef bool (*rfm95_SPI_transmit)(uint8_t *in, uint8_t *out);
 typedef void (*rfm95_delay)(uint32_t _ms);
 typedef bool (*rfm95_GPIO_set_level)(uint16_t _gpio_num, uint8_t _level);
 typedef void (*rfm95_log)(const char *info);
