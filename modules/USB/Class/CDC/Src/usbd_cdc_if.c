@@ -95,7 +95,7 @@ USBD_CDC_ItfTypeDef USBD_CDC_Template_fops =
 
 USBD_CDC_LineCodingTypeDef linecoding =
 {
-  115200, /* baud rate*/
+  256000, /* baud rate*/
   0x00,   /* stop bits-1*/
   0x00,   /* parity - none*/
   0x08    /* nb. of bits 8*/
@@ -275,6 +275,8 @@ uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len)
 	}
 	USBD_CDC_SetTxBuffer(&hUsbDeviceFS, Buf, Len);
 	result = USBD_CDC_TransmitPacket(&hUsbDeviceFS);
+
+  
   /* USER CODE END 7 */
   return result;
 }

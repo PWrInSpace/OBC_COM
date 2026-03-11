@@ -22,6 +22,8 @@
 #include "usbd_cdc_if.h"
 
 #define TX_DONE_TIMEOUT_MS_DEFAULT 20
+extern volatile uint16_t USB_Rx_Data_Len; 
+extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
 
 osThreadId_t rfm95wTaskHandle = NULL;
 const osThreadAttr_t rfm95wTask_attributes = {
@@ -76,37 +78,40 @@ void rfm95_clear_irqs_and_standby(rfm95_t *radio) {
 static bool rx_wait_for_event(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_buf, uint8_t *out_size) {
     if (out_buf == NULL || out_size == NULL) return false;
     *out_size = 0;
-
     uint32_t start_tick = HAL_GetTick();
     
     while ((HAL_GetTick() - start_tick) < ceiling_ms) {
-        
-        uint32_t remaining_time = ceiling_ms - (HAL_GetTick() - start_tick);
-        if (remaining_time > ceiling_ms) remaining_time = 1; // Zabezpieczenie przed overflow
+        uint32_t remaining = ceiling_ms - (HAL_GetTick() - start_tick);
+        if (remaining > ceiling_ms) remaining = 1;
 
-        uint32_t notificationValue = ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(remaining_time));
+        // Czekamy na powiadomienie (z DIO radia LUB z USB)
+        uint32_t notificationValue = ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(remaining));
 
         if (notificationValue > 0) {
-            if (handle_rx_done_and_get_payload(radio, out_buf, out_size)) {
-                return true;
-            } else {
-                rfm95_clear_irqs_and_standby(radio);
-                return false;
+            // 1. Sprawdź, czy to radio ma dane (czytamy rejestr IRQ)
+            uint8_t irq = rfm95_read_reg(radio, REG_IRQ_FLAGS);
+            
+            if (irq & IRQ_RX_DONE_MASK) {
+                return handle_rx_done_and_get_payload(radio, out_buf, out_size);
+            }
+            
+            // 2. Jeśli rejestr radia jest "czysty", a dostaliśmy notify, 
+            // to znaczy, że obudziło nas USB. Wychodzimy natychmiast, by wysłać TX.
+            if (USB_Rx_Data_Len > 0) {
+                return false; 
             }
         }
 
-        uint8_t irq = rfm95_read_reg(radio, REG_IRQ_FLAGS);
-        if (irq & IRQ_RX_DONE_MASK) {
-             if (handle_rx_done_and_get_payload(radio, out_buf, out_size)) return true;
+        // Safety check (polling na wypadek zgubionego przerwania)
+        uint8_t irq_status = rfm95_read_reg(radio, REG_IRQ_FLAGS);
+        if (irq_status & IRQ_RX_DONE_MASK) {
+             return handle_rx_done_and_get_payload(radio, out_buf, out_size);
         }
-        
-        if (irq & IRQ_RX_TIMEOUT_MASK) {
+        if (irq_status & IRQ_RX_TIMEOUT_MASK) {
             rfm95_clear_irqs_and_standby(radio);
             return false;
         }
     }
-
-    // Jeśli wyszliśmy z pętli - to całkowity timeout
     rfm95_clear_irqs_and_standby(radio);
     return false;
 }
@@ -144,15 +149,17 @@ void rfm95_send_window(rfm95_t *radio, const uint8_t *payload, uint8_t payload_l
 
     uint32_t start = HAL_GetTick();
     while (!rfm95_check_tx_done(radio)) {
-        if ((HAL_GetTick() - start) > window_ms) {
+        if ((HAL_GetTick() - start) > 5) {
             break; 
         }
         osDelay(1);
-    }
+    } 
     
     rfm95_write_reg(radio, REG_IRQ_FLAGS, IRQ_ALL);
     rfm95_idle(radio);
+    
 }
+    
 
 void recv_once_ceiling(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_buf, uint8_t *out_size) {
 
@@ -170,53 +177,54 @@ void recv_once_ceiling(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_buf, ui
     stop_radio_standby(radio);
   }
 }
-
-
-extern volatile uint16_t USB_Rx_Data_Len; 
-extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
-
 void rfm95wTaskEntry(void *argument)
 {
-    bool send_mode = false;
-    LoRaDevs_t *lora_devs = get_lora_devs_instance();
-    rfm95_t *rfm95_radio = lora_devs->rfm95w;
-    
+    rfm95_t *rfm95_radio = get_lora_devs_instance()->rfm95w;
     uint8_t rx_buf[255];
     uint8_t rx_size = 0;
 
     rfm95w_config_init();
     rfm95w_config_init_param();
 
-   // osDelay(pdMS_TO_TICKS(1000));
-    rfm95_print_actual_settings(rfm95_radio);
-    rfm95w_read_status(rfm95_radio);
-    uint8_t msg3[] = "Sending TX...\r\n";
-    uint8_t msg4[] = "Starting main loop...\r\n";
-    USB_Transmit(msg4, strlen((char*)msg4));
+    // Startujemy RX Continuous raz na początku
+    rfm95_start_rx(rfm95_radio, 0); 
 
     for(;;)
-    {
-      if(USB_Rx_Data_Len>0) {
-         USB_Transmit((uint8_t*)"TX over LoRa...\r\n", 17);
-            rfm95_send_window(rfm95_radio, UserRxBufferFS, (uint8_t)USB_Rx_Data_Len, RFM95W_TX_TIMEOUT_MS);
-            USB_Rx_Data_Len = 0;
-     }
-        recv_once_ceiling(rfm95_radio, RFM95W_RX_TIMEOUT_MS, rx_buf, &rx_size);
-       if (rx_size > 0) {
-         HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
-         USB_Transmit(rx_buf, rx_size);
-         int16_t rssi = rfm95_packet_rssi(rfm95_radio);
-         /*TEST PURPOSES TO TEST RSSI*/
-         /*
-          char debug_msg[64];
-          sprintf(debug_msg, "Received %d bytes with RSSI: %d\r\n", rx_size, rssi);
-          USB_Transmit((uint8_t*)debug_msg, strlen(debug_msg));
-*/
+{
+    ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(100));
+
+    if(USB_Rx_Data_Len > 0) {
+        //USB_Transmit((uint8_t*)"TX Start\r\n", 10);
+        rfm95_send_window(rfm95_radio, UserRxBufferFS, (uint8_t)USB_Rx_Data_Len, 100);
+        USB_Rx_Data_Len = 0;
+        memset(UserRxBufferFS, 0, APP_RX_DATA_SIZE);
+        rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
+        rfm95_start_rx(rfm95_radio, 0); 
+        continue; 
     }
-     osDelay(100);
+    uint8_t irq_status = rfm95_read_reg(rfm95_radio, REG_IRQ_FLAGS);
+
+    if (irq_status & IRQ_RX_DONE_MASK) {
+        rx_size = 0;
+        if (handle_rx_done_and_get_payload(rfm95_radio, rx_buf, &rx_size)) {
+            if (rx_size > 0) {
+                HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+                USB_Transmit(rx_buf, rx_size);
+            }
+        }
+        rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
+    } 
+    else if (irq_status > 0) {
+        rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
+    }
+
+    uint8_t mode = rfm95_read_reg(rfm95_radio, 0x01);
+    if (mode != 0x85) {
+        rfm95_start_rx(rfm95_radio, 0); 
+    }
+}
 }
 
-}
 
 // void rfm95wTaskEntry(void *argument)
 // {

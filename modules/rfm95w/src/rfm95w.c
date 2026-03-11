@@ -27,20 +27,39 @@ rfm95_err_t rfm95_init(rfm95_t *rfm95) {
   return ret;
 }
 
+#define REG_DIO_MAPPING_1 0x40
+#define REG_IRQ_FLAGS_MASK 0x11
+
 rfm95_err_t rfm95_default_config(rfm95_t *rfm95) {
   rfm95_err_t ret = RFM95_OK;
   rfm95_sleep(rfm95);
+  
+  // 1. Adresy bazowe FIFO
   ret |= rfm95_write_reg(rfm95, REG_FIFO_RX_BASE_ADDR, 0);
   ret |= rfm95_write_reg(rfm95, REG_FIFO_TX_BASE_ADDR, 0);
+  
+  // 2. LNA i Modem Config
   ret |= rfm95_write_reg(rfm95, REG_LNA, rfm95_read_reg(rfm95, REG_LNA) | 0x03);
   ret |= rfm95_write_reg(rfm95, REG_MODEM_CONFIG_3, 0x04);
-  
+
+  // 3. --- KONFIGURACJA PRZERWAŃ (DIO0) ---
+  // Mapujemy DIO0 na RX_DONE w trybie LoRa (Bity 7-6 na 00)
+  // Odczytujemy, zerujemy bity 7-6 i zapisujemy
+  uint8_t mapping = rfm95_read_reg(rfm95, REG_DIO_MAPPING_1);
+  mapping &= ~(0xC0); // Zerowanie bitów 7 i 6 -> DIO0 = RxDone
+  ret |= rfm95_write_reg(rfm95, REG_DIO_MAPPING_1, mapping);
+
+  // 4. --- ODBLOKOWANIE MASKI IRQ ---
+  // W REG_IRQ_FLAGS_MASK bit ustawiony na 0 oznacza WŁĄCZONE przerwanie.
+  // Chcemy RX_DONE (bit 6) i RX_TIMEOUT (bit 7) oraz CRC_ERR (bit 5).
+  // Zapisujemy 0x00, aby odblokować WSZYSTKIE przerwania LoRa.
+  ret |= rfm95_write_reg(rfm95, REG_IRQ_FLAGS_MASK, 0x00); 
+
   rfm95_set_tx_power(rfm95, RFM95_TX_POWER_17_dBm);
 
   rfm95_idle(rfm95);
   return ret;
 }
-
 
 
 rfm95_err_t rfm95_default_config_param(rfm95_t *rfm) {
@@ -147,6 +166,8 @@ rfm95_err_t rfm95_sleep(rfm95_t *rfm95) {
 }
 
 rfm95_err_t rfm95_set_receive_mode(rfm95_t *rfm95) {
+  
+    rfm95_write_reg(rfm95, REG_DIO_MAPPING_1, 0x00); 
   rfm95_err_t ret = RFM95_OK;
   ret |= rfm95_write_reg(rfm95, REG_OP_MODE,
                         MODE_LONG_RANGE_MODE | MODE_RX_CONTINUOUS);
