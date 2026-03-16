@@ -14,12 +14,25 @@
 #include "main.h"
 #include "logger.h"
 #include "usb_config.h"
+#include"usbd_cdc_if.h"
+#include "usbd_cdc.h"
 #include <string.h>
+#include "timers.h"
 
 #include "sx1280_task.h"
 #include "lora_config.h"
+#include"stdbool.h"
 
 #define TX_DONE_TIMEOUT_MS_DEFAULT 20
+
+extern volatile uint16_t USB_Rx_Data_Len; 
+extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
+
+TimerHandle_t xTelemetryTimer;
+#define TIMER_EVENT_BIT  ( 1 << 1 ) // Bit 1 dla timera
+#define RADIO_EVENT_BIT  ( 1 << 0 ) // Bit 0 dla przerwań EXTI (DIO)
+#define USB_EVENT_BIT    ( 1 << 2 ) // Bit 2 dla danych USB
+
 
 osThreadId_t sx1280TaskHandle = NULL;
 const osThreadAttr_t sx1280Task_attributes = {
@@ -27,6 +40,10 @@ const osThreadAttr_t sx1280Task_attributes = {
   .priority = (osPriority_t) osPriorityAboveNormal,
   .stack_size = 1024
 };
+
+void vTelemetryTimerCallback(TimerHandle_t xTimer) {
+    xTaskNotify(sx1280TaskHandle, TIMER_EVENT_BIT, eSetBits);
+}
 
 static void parse_frame(uint8_t *buf, uint8_t size) {
 
@@ -126,39 +143,58 @@ static void sx1280_recv_once_ceiling(SX1280_t *radio, uint32_t ceiling_ms) {
   }
 }
 
-void sx1280TaskEntry(void *argument)
-{
-  uint8_t msg[] = "SX1280 WYSTARTOWAL\r\n";
-  uint8_t msg2[] = "SX1280 RUNNING\r\n";
-  CDC_Transmit_FS(msg, strlen((char*)msg));
-  //HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);
-  /* USER CODE BEGIN sx1280Task */
-  /* Mode selector: true = SEND, false = RECV */
-  bool send_mode = false;
-  LoRaDevs_t *lora_devs = get_lora_devs_instance();
-  SX1280_t* sx1280_radio = lora_devs->sx1280;
-  uint8_t tx_payload[] = { 0x01, 0x05, 'H', 'e', 'l', 'l', 'o' };
+void sx1280TaskEntry(void *argument) {
+    LoRaDevs_t *lora_devs = get_lora_devs_instance();
+    SX1280_t* sx1280_radio = lora_devs->sx1280;
 
-  for(;;)
-  
-  {
-    /*
-   // HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);
-    if (send_mode) {
-      //LOG_INFO("Sending frames...");
-      send_window(sx1280_radio, tx_payload, (uint8_t)sizeof(tx_payload), SX1280_TX_TIMEOUT_MS);
-    } else {
-      //LOG_INFO("Waiting for frames...");
-      sx1280_recv_once_ceiling(sx1280_radio, SX1280_RX_TIMEOUT_MS);
+    
+    uint8_t rx_buff[255];
+    uint8_t rx_size = 0;
+    sx1280_config_init();
+    SX1280ClearIrqStatus(sx1280_radio, IRQ_RADIO_ALL);
+    SX1280SetRx(sx1280_radio, RX_TX_CONTINUOUS);
+
+    xTelemetryTimer = xTimerCreate("TelTimer", pdMS_TO_TICKS(500), pdTRUE, (void*)0, vTelemetryTimerCallback);
+
+    if (xTelemetryTimer != NULL) {
+        xTimerStart(xTelemetryTimer, 0);
     }
+    uint32_t ulNotifiedValue = 0;
+    
+   for(;;) {
 
-    send_mode = !send_mode;
-    */
-    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
-    USB_Transmit(msg2, strlen((char*)msg2));
-    osDelay(500);
-  }
-  /* USER CODE END sx1280Task */
+        if (xTaskNotifyWait(0, 0xFFFFFFFF, &ulNotifiedValue, pdMS_TO_TICKS(100)) == pdTRUE) {
+
+            if (ulNotifiedValue & RADIO_EVENT_BIT) {
+                uint16_t irqStatus = SX1280GetIrqStatus(sx1280_radio);
+                SX1280ClearIrqStatus(sx1280_radio, IRQ_RADIO_ALL);
+
+                if (irqStatus & IRQ_RX_DONE) {
+                    SX1280GetPayload(sx1280_radio, rx_buff, &rx_size, 255);
+                    if(rx_size > 0) USB_Transmit(rx_buff, rx_size);
+                    USB_Transmit((uint8_t*)"RX Done\r\n", 9);
+                }
+                
+                if (irqStatus & IRQ_TX_DONE) {
+                  USB_Transmit((uint8_t*)"TX Done\r\n", 9);
+                    SX1280SetRx(sx1280_radio, RX_TX_CONTINUOUS);
+                }
+            }
+            if (ulNotifiedValue & TIMER_EVENT_BIT) {
+                uint8_t my_data[] = "PWrInSpace_Telemetry_Test";
+                SX1280SendPayload(sx1280_radio, my_data, sizeof(my_data), RX_TX_SINGLE);
+            }
+
+             if (ulNotifiedValue & USB_EVENT_BIT) {
+            if (USB_Rx_Data_Len > 0) {
+                SX1280SendPayload(sx1280_radio, UserRxBufferFS, (uint8_t)USB_Rx_Data_Len, RX_TX_SINGLE);
+                USB_Rx_Data_Len = 0;
+            }
+        }
+        }
+
+       
+    }
 }
 
 void SX1280_task_init(void){

@@ -26,7 +26,9 @@ EndBSPDependencies */
 #include "main.h"
 #include "usbd_cdc.h"
 #include <stdint.h>
-
+#include "cmsis_os2.h"
+#include "FreeRTOS.h"
+#include "task.h"
 /** @addtogroup STM32_USB_DEVICE_LIBRARY
   * @{
   */
@@ -221,6 +223,9 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t *pbuf, uint16_t length)
   * @param  Len: Number of data received (in bytes)
   * @retval Result of the operation: USBD_OK if all operations are OK else USBD_FAIL
   */
+extern osThreadId_t sx1280TaskHandle;
+#define USB_EVENT_BIT ( 1 << 2 )
+
 static int8_t CDC_Receive_FS(uint8_t *Buf, uint32_t *Len)
 {
     if(*Len <= APP_RX_DATA_SIZE) 
@@ -228,6 +233,16 @@ static int8_t CDC_Receive_FS(uint8_t *Buf, uint32_t *Len)
         memcpy(UserRxBufferFS, Buf, *Len);
         USB_Rx_Data_Len = (uint16_t)(*Len); 
         HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+
+        // --- POWIADOMIENIE TASKU ---
+        if(sx1280TaskHandle != NULL) 
+        {
+            BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+            // Ustawiamy bit USB_EVENT_BIT
+            xTaskNotifyFromISR(sx1280TaskHandle, USB_EVENT_BIT, eSetBits, &xHigherPriorityTaskWoken);
+            // Wymuszamy przełączenie kontekstu, jeśli to zadanie ma wyższy priorytet
+            portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+        }
     }
     else 
     {
@@ -239,7 +254,6 @@ static int8_t CDC_Receive_FS(uint8_t *Buf, uint32_t *Len)
 
     return (USBD_OK);
 }
-
 /**
   * @brief  CDC_TransmitCplt
   *         Data transmitted callback

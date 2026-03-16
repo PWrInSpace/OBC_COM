@@ -1,5 +1,5 @@
 /*
- * Author: Szymon Rzewuski
+ * Author: Szymon Rzewuski, Mateusz Kłosiński
  * Organization: PWr in Space
  * Date: 27.01.2026
  */
@@ -21,6 +21,8 @@
 #include "lora_config.h"
 #include "usbd_cdc_if.h"
 
+//#define TEST_RSSI
+
 #define TX_DONE_TIMEOUT_MS_DEFAULT 20
 extern volatile uint16_t USB_Rx_Data_Len; 
 extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
@@ -31,15 +33,6 @@ const osThreadAttr_t rfm95wTask_attributes = {
   .priority = (osPriority_t) osPriorityAboveNormal,
   .stack_size = 2048
 };
-
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-  if (GPIO_Pin == RFM95W_DIO_Pin) {
-    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-    vTaskNotifyGiveFromISR(rfm95wTaskHandle, &xHigherPriorityTaskWoken);
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-  }
-}
 
 static bool wait_for_tx_done(rfm95_t *radio, uint32_t timeout_ms) {
   uint32_t t0 = HAL_GetTick();
@@ -84,25 +77,21 @@ static bool rx_wait_for_event(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_
         uint32_t remaining = ceiling_ms - (HAL_GetTick() - start_tick);
         if (remaining > ceiling_ms) remaining = 1;
 
-        // Czekamy na powiadomienie (z DIO radia LUB z USB)
         uint32_t notificationValue = ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(remaining));
 
         if (notificationValue > 0) {
-            // 1. Sprawdź, czy to radio ma dane (czytamy rejestr IRQ)
+
             uint8_t irq = rfm95_read_reg(radio, REG_IRQ_FLAGS);
             
             if (irq & IRQ_RX_DONE_MASK) {
                 return handle_rx_done_and_get_payload(radio, out_buf, out_size);
             }
             
-            // 2. Jeśli rejestr radia jest "czysty", a dostaliśmy notify, 
-            // to znaczy, że obudziło nas USB. Wychodzimy natychmiast, by wysłać TX.
             if (USB_Rx_Data_Len > 0) {
                 return false; 
             }
         }
 
-        // Safety check (polling na wypadek zgubionego przerwania)
         uint8_t irq_status = rfm95_read_reg(radio, REG_IRQ_FLAGS);
         if (irq_status & IRQ_RX_DONE_MASK) {
              return handle_rx_done_and_get_payload(radio, out_buf, out_size);
@@ -209,7 +198,18 @@ void rfm95wTaskEntry(void *argument)
         if (handle_rx_done_and_get_payload(rfm95_radio, rx_buf, &rx_size)) {
             if (rx_size > 0) {
                 HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
-                USB_Transmit(rx_buf, rx_size);
+
+               #ifdef TEST_RSSI
+    // Jeśli TEST_SNR jest zdefiniowane, budujemy wiadomość tylko z parametrami
+    int16_t rssi = rfm95_packet_rssi(rfm95_radio);
+    char debug_msg[64];
+    int msg_len = snprintf(debug_msg, sizeof(debug_msg), "RSSI: %d dBm\r\n", rssi);
+    
+    USB_Transmit((uint8_t*)debug_msg, (uint16_t)msg_len);
+#else
+    // W przeciwnym razie (normalny tryb) wysyłamy dane z ramki
+    USB_Transmit(rx_buf, rx_size);
+#endif
             }
         }
         rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);

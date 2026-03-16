@@ -14,6 +14,8 @@
 #include "spi_callbacks.h"
 #include "usb_config.h"
 
+//!< SX1280 DATA
+
 SX1280_t sx1280_radio = {
     .ctx = &hspi1,
     .spi_read = sx1280_spi_read,
@@ -25,6 +27,8 @@ SX1280_t sx1280_radio = {
     .get_dio = { sx1280_get_dio1, sx1280_get_dio2, NULL,},
     .delay_ms = sx1280_delay_ms
 };
+
+//!< RFM95W DATA
 
 RFM95_param_t rfm95w_param = {
     .frequency = 868000000,
@@ -56,6 +60,59 @@ static LoRaDevs_t lora_devs_instance = {
   .rfm95w = &rfm95w_radio
 };
 
+//!< SX1280 CODE:
+
+void sx1280_config_init(void) {
+  SX1280Reset(&sx1280_radio);
+
+  
+  CalibrationParams_t calib_param = {
+    .RC64KEnable = 1,
+    .RC13MEnable = 1,
+    .PLLEnable = 1,
+    .ADCPulseEnable = 1,
+    .ADCBulkNEnable = 1,
+    .ADCBulkPEnable = 1
+};
+
+  SX1280Calibrate(&sx1280_radio, calib_param);
+  //SX1280Init(&sx1280_radio, NULL); //WARNING: This function is not implemented in the current version of the library
+  SX1280HalWaitOnBusy( &sx1280_radio );
+  SX1280SetRegulatorMode(&sx1280_radio, USE_DCDC);
+  osDelay(10);
+  uint16_t maskDio1 = IRQ_TX_DONE | IRQ_RX_DONE;
+  uint16_t maskDio2 = IRQ_CRC_ERROR | IRQ_RX_TX_TIMEOUT;
+  SX1280SetDioIrqParams(&sx1280_radio, IRQ_RADIO_ALL, maskDio1, maskDio2, IRQ_RADIO_NONE);
+  osDelay(10);
+  SX1280SetTxParams(&sx1280_radio, 13, RADIO_RAMP_20_US);
+  osDelay(10);
+  SX1280SetPacketType(&sx1280_radio, PACKET_TYPE_LORA);
+  osDelay(10);
+  SX1280SetModulationParams(&sx1280_radio, &(ModulationParams_t){
+    .PacketType = PACKET_TYPE_LORA,
+    .Params.LoRa = {
+      .SpreadingFactor = LORA_SF7,
+      .Bandwidth = LORA_BW_0800,
+      .CodingRate = LORA_CR_4_5
+    }
+  });
+  osDelay(10);
+  SX1280SetPacketParams(&sx1280_radio, &(PacketParams_t){
+    .PacketType = PACKET_TYPE_LORA,
+    .Params.LoRa = {
+      .PreambleLength = 16,
+      .HeaderType = LORA_PACKET_VARIABLE_LENGTH,
+      .PayloadLength = 255,
+      .CrcMode = LORA_CRC_ON,
+    }
+  });
+  osDelay(10);
+  SX1280SetRfFrequency( &sx1280_radio, 2450000000 );
+}
+
+
+
+ //!< RFM95W CODE:
 
 void rfm95w_config_init_param(void) {
     LoRaDevs_t *lora_devs = get_lora_devs_instance();
@@ -73,40 +130,6 @@ LoRaDevs_t* get_lora_devs_instance(void) {
 void rfm95w_config_init(void) {
   rfm95_reset(&rfm95w_radio);
   rfm95_default_config(&rfm95w_radio);
-}
-
-static void sx1280_config_init(void) {
-  SX1280Reset(&sx1280_radio);
-  osDelay(10);
-  SX1280Init(&sx1280_radio, NULL);
-  osDelay(10);
-  SX1280SetRegulatorMode(&sx1280_radio, USE_LDO);
-  osDelay(10);
-  SX1280SetDioIrqParams(&sx1280_radio, IRQ_RADIO_ALL, IRQ_RADIO_ALL, IRQ_RADIO_NONE, IRQ_RADIO_NONE);
-  osDelay(10);
-  SX1280SetTxParams(&sx1280_radio, 14, RADIO_RAMP_20_US);
-  osDelay(10);
-  SX1280SetPacketType(&sx1280_radio, PACKET_TYPE_LORA);
-  osDelay(10);
-  SX1280SetModulationParams(&sx1280_radio, &(ModulationParams_t){
-    .PacketType = PACKET_TYPE_LORA,
-    .Params.LoRa = {
-      .SpreadingFactor = LORA_SF7,
-      .Bandwidth = LORA_BW_0800,
-      .CodingRate = LORA_CR_4_5
-    }
-  });
-  osDelay(10);
-  SX1280SetPacketParams(&sx1280_radio, &(PacketParams_t){
-    .PacketType = PACKET_TYPE_LORA,
-    .Params.LoRa = {
-      .PreambleLength = 3,
-      .HeaderType = LORA_PACKET_VARIABLE_LENGTH,
-      .PayloadLength = 255,
-      .CrcMode = LORA_CRC_ON,
-    }
-  });
-  osDelay(10);
 }
 
 void rfm95_print_actual_settings(rfm95_t *rfm) {
@@ -187,13 +210,6 @@ void rfm95_print_actual_settings(rfm95_t *rfm) {
     USB_Transmit((uint8_t*)"+-----------------------+-----------------------+\r\n", 51);
 }
 
-void lora_config_init(void) {
-    sx1280_config_init();
-    rfm95w_config_init();
-    sx1280_wrapper_init();
-    rfm95w_wrapper_init();
-}
-
 uint8_t rfm95w_read_status(rfm95_t *rfm)
 {
  uint8_t opMode    = rfm95_read_reg(rfm, 0x01);
@@ -220,4 +236,11 @@ uint8_t rfm95w_read_status(rfm95_t *rfm)
     break;     
  }
  return opMode;
+}
+
+void lora_config_init(void) {
+    sx1280_config_init();
+    rfm95w_config_init();
+    sx1280_wrapper_init();
+    rfm95w_wrapper_init();
 }

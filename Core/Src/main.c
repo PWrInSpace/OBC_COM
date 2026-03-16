@@ -31,7 +31,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "cmsis_os2.h"
+#include "FreeRTOS.h"
+#include "task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -65,6 +67,31 @@ void MX_FREERTOS_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+extern osThreadId_t sx1280TaskHandle;
+extern osThreadId_t rfm95wTaskHandle;
+
+#define RADIO_EVENT_BIT (1 << 0)
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    // --- Obsługa SX1280 ---
+    if (GPIO_Pin == SX1280_DIO1_Pin || GPIO_Pin == SX1280_DIO2_Pin) {
+        if (sx1280TaskHandle != NULL) {
+            xTaskNotifyFromISR(sx1280TaskHandle, RADIO_EVENT_BIT, eSetBits, &xHigherPriorityTaskWoken);
+        }
+    }
+
+    // --- Obsługa RFM95W ---
+    if (GPIO_Pin == RFM95W_DIO_Pin) {
+        if (rfm95wTaskHandle != NULL) {
+    vTaskNotifyGiveFromISR(rfm95wTaskHandle, &xHigherPriorityTaskWoken);
+        }
+    }
+
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
 /* USER CODE END 0 */
 
 /**
