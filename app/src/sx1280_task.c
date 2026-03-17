@@ -29,7 +29,7 @@ extern volatile uint16_t USB_Rx_Data_Len;
 extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
 
 //#define USB_FLAG   //!< USB COMMUNICATION uncomment flag to use WARNING: this might corrupt the OBC timings dont use in flight setup
-#define GroundStationFlag //!< Ground Station Setup // uncomment to use module as ground station
+#define GroundStationFlag 1 //!< Ground Station Setup // uncomment to use module as ground station
 //! Later on add runtime variables to modify the state or setup
 TimerHandle_t xTelemetryTimer;
 #define TIMER_EVENT_BIT  ( 1 << 1 ) // Bit 1 timera
@@ -183,7 +183,10 @@ void sx1280TaskEntry(void *argument) {
                     SX1280SetRx(sx1280_radio, RX_TX_CONTINUOUS);
                 }
             }
-            if (ulNotifiedValue & TIMER_EVENT_BIT) {
+
+            //! TUTAJ POWINNO BYĆ OCZEKIWANIE NA IRQ Z USARTA WSM ZAMIAST TIMERA ALE NA RAZIE NIE MAMY USARTA PODŁĄCZONEGO DO SX1280
+            //! JEŚLI DOSTANE DANE OD MCB TO POWINNO PAKOWAĆ SIĘ DO DO KOLEJKI Z BUFFER POOLA I TUTAJ POWINIENEM SCIAGAC TE DANE I ZWRACAC WSKAZNIK DO WOLNEGO BUFFFER POOLA
+            if ((ulNotifiedValue & TIMER_EVENT_BIT) & GroundStationFlag) { //! Add flag t be read from nvs EEPROM Emulator
                 uint8_t my_data[] = "PWrInSpace_Telemetry_Test";
                 SX1280SendPayload(sx1280_radio, my_data, sizeof(my_data), RX_TX_SINGLE);
             }

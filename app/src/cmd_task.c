@@ -22,6 +22,7 @@ void CMD_Task_Init(void) {
     osThreadNew(usb_cmd_task, NULL, &cmdTask_attributes);
 }
 
+//! DODAĆ BUFFER POOL WYGODA ZE ZMIENNA DLUGOŚCIĄ DANYCH I BARDZIEJ EFEKTYWNE
 void usb_cmd_task(void *argument) {
     (void)argument;
     char rx_buf[128];
