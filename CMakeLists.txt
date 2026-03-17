@@ -75,6 +75,8 @@ add_subdirectory(wrappers/sx1280)
 add_subdirectory(wrappers/spi)
 add_subdirectory(wrappers/rfm95w)
 add_subdirectory(modules/USB)
+add_subdirectory(nvs)
+add_subdirectory(cmd)
 
 # Add linked libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}

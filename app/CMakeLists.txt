@@ -6,6 +6,7 @@ target_sources(App
         src/rfm95w_task.c
         src/lora_config.c
         src/usb_config.c
+        src/cmd_task.c
 )
 
 target_include_directories(App
@@ -29,4 +30,5 @@ target_link_libraries(App
         rfm95w_wrapper
         logger
         USB_Driver
+        cmd
 )

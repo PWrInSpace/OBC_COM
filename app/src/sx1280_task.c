@@ -28,10 +28,13 @@
 extern volatile uint16_t USB_Rx_Data_Len; 
 extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
 
+//#define USB_FLAG   //!< USB COMMUNICATION uncomment flag to use WARNING: this might corrupt the OBC timings dont use in flight setup
+#define GroundStationFlag //!< Ground Station Setup // uncomment to use module as ground station
+//! Later on add runtime variables to modify the state or setup
 TimerHandle_t xTelemetryTimer;
-#define TIMER_EVENT_BIT  ( 1 << 1 ) // Bit 1 dla timera
-#define RADIO_EVENT_BIT  ( 1 << 0 ) // Bit 0 dla przerwań EXTI (DIO)
-#define USB_EVENT_BIT    ( 1 << 2 ) // Bit 2 dla danych USB
+#define TIMER_EVENT_BIT  ( 1 << 1 ) // Bit 1 timera
+#define RADIO_EVENT_BIT  ( 1 << 0 ) // Bit 0 EXTI (DIO)
+#define USB_EVENT_BIT    ( 1 << 2 ) // Bit 2 USB Data
 
 
 osThreadId_t sx1280TaskHandle = NULL;
@@ -185,12 +188,16 @@ void sx1280TaskEntry(void *argument) {
                 SX1280SendPayload(sx1280_radio, my_data, sizeof(my_data), RX_TX_SINGLE);
             }
 
+
+             //!< USB COMMUNICATION oncomment flag on top of file to use
+            #ifdef USB_FLAG
              if (ulNotifiedValue & USB_EVENT_BIT) {
             if (USB_Rx_Data_Len > 0) {
                 SX1280SendPayload(sx1280_radio, UserRxBufferFS, (uint8_t)USB_Rx_Data_Len, RX_TX_SINGLE);
                 USB_Rx_Data_Len = 0;
             }
         }
+        #endif
         }
 
        

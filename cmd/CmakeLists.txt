@@ -1,0 +1,30 @@
+add_library(cmd STATIC)
+
+
+target_sources(cmd
+    PRIVATE
+        Src/cmd_interface.c
+)
+
+target_include_directories(cmd
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/Inc
+)
+
+target_compile_options(cmd
+    PRIVATE
+        -Wall
+        -Wextra
+)
+
+target_link_libraries(cmd
+    PUBLIC
+        stm32cubemx
+        sx1280
+        rfm95w
+        sx1280_wrapper
+        spi_callbacks
+        rfm95w_wrapper
+        logger
+        USB_Driver
+)

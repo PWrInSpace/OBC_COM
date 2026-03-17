@@ -29,6 +29,7 @@ EndBSPDependencies */
 #include "cmsis_os2.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "queue.h"
 /** @addtogroup STM32_USB_DEVICE_LIBRARY
   * @{
   */
@@ -60,7 +61,7 @@ volatile uint16_t USB_Rx_Data_Len = 0;
 /** Data to send over USB CDC are stored in this buffer   */
 uint8_t UserTxBufferFS[APP_TX_DATA_SIZE];
 extern USBD_HandleTypeDef hUsbDeviceFS;
-
+uint8_t UserRxCmdBufferFS[128];
 uint8_t cdc_line_ready = 0;
 /**
   * @}
@@ -225,7 +226,7 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t *pbuf, uint16_t length)
   */
 extern osThreadId_t sx1280TaskHandle;
 #define USB_EVENT_BIT ( 1 << 2 )
-
+extern QueueHandle_t cmd_queue;
 static int8_t CDC_Receive_FS(uint8_t *Buf, uint32_t *Len)
 {
     if(*Len <= APP_RX_DATA_SIZE) 
@@ -234,24 +235,26 @@ static int8_t CDC_Receive_FS(uint8_t *Buf, uint32_t *Len)
         USB_Rx_Data_Len = (uint16_t)(*Len); 
         HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
 
-        // --- POWIADOMIENIE TASKU ---
+        uint32_t cmd_len = (*Len < 128) ? *Len : 127;
+        memcpy(UserRxCmdBufferFS, Buf, cmd_len);
+        UserRxCmdBufferFS[cmd_len] = '\0';
+
+        if(strncmp((char*)UserRxCmdBufferFS, "CMD:", 4) == 0) 
+        {
+            BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+            xQueueSendFromISR(cmd_queue, UserRxCmdBufferFS, &xHigherPriorityTaskWoken);
+            portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+        }
+        
         if(sx1280TaskHandle != NULL) 
         {
             BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-            // Ustawiamy bit USB_EVENT_BIT
             xTaskNotifyFromISR(sx1280TaskHandle, USB_EVENT_BIT, eSetBits, &xHigherPriorityTaskWoken);
-            // Wymuszamy przełączenie kontekstu, jeśli to zadanie ma wyższy priorytet
             portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
         }
     }
-    else 
-    {
-        USB_Rx_Data_Len = 0; 
-    }
-
     USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
     USBD_CDC_ReceivePacket(&hUsbDeviceFS);
-
     return (USBD_OK);
 }
 /**
