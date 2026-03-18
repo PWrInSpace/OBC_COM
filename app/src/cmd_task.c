@@ -19,24 +19,36 @@ void CMD_Task_Init(void) {
         .stack_size = 1024,
         .priority = (osPriority_t) osPriorityNormal,
     };
-    osThreadNew(usb_cmd_task, NULL, &cmdTask_attributes);
+    osThreadNew(cmd_task, NULL, &cmdTask_attributes);
 }
 
 //! DODAĆ BUFFER POOL WYGODA ZE ZMIENNA DLUGOŚCIĄ DANYCH I BARDZIEJ EFEKTYWNE
-void usb_cmd_task(void *argument) {
+void cmd_task(void *argument) {
     (void)argument;
-    char rx_buf[128];
-    char log_msg[128];
+    uint8_t rx_buf[MAX_CMD_LEN]; 
+    char log_msg[64];
 
     for(;;) {
-
         if(cmd_queue != NULL && xQueueReceive(cmd_queue, rx_buf, portMAX_DELAY) == pdPASS) {
             
-            snprintf(log_msg, sizeof(log_msg), "Recv: %s\r\n", rx_buf);
-            USB_Transmit((uint8_t*)log_msg, strlen(log_msg));
+            uint16_t actual_len = 0;
+            if (rx_buf[0] == 0x32) {
+                // Format BINARNY LCDC
+                // rx_buf[1] to długość pola DATA
+                // Całość to: Header(1) + Len(1) + ID(1) + Data(N) + CRC(1) + EOF(1) = N + 5
+                actual_len = rx_buf[1] + 5;
+                if (actual_len > MAX_CMD_LEN) actual_len = MAX_CMD_LEN;
 
-            process_command(rx_buf);
-            USB_Transmit((uint8_t*)log_msg, strlen(log_msg));
+                int log_len = snprintf(log_msg, sizeof(log_msg), "LCDC Bin Recv: ID 0x%02X, Len %d\r\n", rx_buf[2], actual_len);
+                USB_Transmit((uint8_t*)log_msg, log_len);
+            } 
+            else {
+                actual_len = (uint16_t)strlen((char*)rx_buf);
+                int log_len = snprintf(log_msg, sizeof(log_msg), "Text Recv: %s\r\n", (char*)rx_buf);
+                USB_Transmit((uint8_t*)log_msg, log_len);
+            }
+            process_command(rx_buf, actual_len);
+            memset(rx_buf, 0, MAX_CMD_LEN);
         }
     }
 }

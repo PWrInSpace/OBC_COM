@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include "FreeRTOS.h"
 #include "queue.h"
+#include "stdbool.h"
 
 #define MAX_CMD_LEN  512
 
@@ -15,15 +16,33 @@ typedef enum {
     CMD_SX1280_PWR = 0x03,
     CMD_RESET = 0x04,
     CMD_STATUS = 0x05,
-    CMD_SX1280_SEND_DATA = 0x06,
+    CMD_SX1280_TX = 0x06,
     CMD_COUNT
 } Command_t;
 
-void process_command(char *rx_buf);
-void handle_help(char *val);
-void handle_freq(char *val);
-void handle_power(char *val);
-void handle_reset(char *val);
-void handle_status(char *val);
+typedef struct {
+    uint8_t *data;    
+    uint16_t len;     
+    bool is_binary;   
+} cmd_params_t;
+
+typedef void (*cmd_handler_t)(cmd_params_t *params);
+
+typedef struct {
+    const char *name;
+    Command_t id;
+    cmd_handler_t handler;
+    const char *help;
+} CommandMap_t;
+
+void process_command(uint8_t *rx_buf, uint16_t len);
+void handle_help(cmd_params_t *params);
+void handle_freq(cmd_params_t *params);
+void handle_power(cmd_params_t *params);
+void handle_reset(cmd_params_t *params);
+void handle_status(cmd_params_t *params);
+void handle_sx1280_tx(cmd_params_t *params);
+
+
 
 #endif

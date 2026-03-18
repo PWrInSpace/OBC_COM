@@ -14,7 +14,7 @@ extern "C" {
 extern QueueHandle_t cmd_queue;
 
 void CMD_Task_Init(void);
-void usb_cmd_task(void *argument);
+void cmd_task(void *argument);
 
 #ifdef __cplusplus
 }
