@@ -3,6 +3,8 @@ add_library(Nvs STATIC)
 target_sources(Nvs
     PRIVATE
         src/flash.c
+        src/flash_interface.c
+        src/eeprom_emul.c
 )
 
 target_include_directories(Nvs

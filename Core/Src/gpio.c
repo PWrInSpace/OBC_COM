@@ -18,7 +18,6 @@
      PH1-OSC_OUT(PH1)   ------> RCC_OSC_OUT
      PA13(JTMS/SWDIO)   ------> DEBUG_JTMS-SWDIO
      PA14(JTCK/SWCLK)   ------> DEBUG_JTCK-SWCLK
-     PD2   ------> SDMMC1_CMD
 */
 void MX_GPIO_Init(void)
 {
@@ -54,9 +53,6 @@ void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(RFM95W_RST_GPIO_Port, RFM95W_RST_Pin, GPIO_PIN_SET);
 
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin, GPIO_PIN_RESET);
-
   /*Configure GPIO pins : LNA2_CTRL_Pin PA2_CTRL_Pin SW2_CTRL1_Pin SW2_CTRL2_Pin
                            SX1280_CS_Pin PA4_CTRL_Pin SW4_CTRL1_Pin SW4_CTRL2_Pin
                            LNA4_CTRL_Pin GPS_INIT_Pin */
@@ -68,12 +64,12 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : HEADER1_Pin SD_STATUS_Pin */
-  GPIO_InitStruct.Pin = HEADER1_Pin|SD_STATUS_Pin;
+  /*Configure GPIO pin : HEADER1_Pin */
+  GPIO_InitStruct.Pin = HEADER1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+  HAL_GPIO_Init(HEADER1_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : SX1280_RESET_Pin STATUS_LED_Pin */
   GPIO_InitStruct.Pin = SX1280_RESET_Pin|STATUS_LED_Pin;
@@ -120,16 +116,8 @@ void MX_GPIO_Init(void)
   /*Configure GPIO pin : SD_DETECT_Pin */
   GPIO_InitStruct.Pin = SD_DETECT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(SD_DETECT_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : SD_CMD_Pin */
-  GPIO_InitStruct.Pin = SD_CMD_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-  GPIO_InitStruct.Alternate = GPIO_AF12_SDMMC1;
-  HAL_GPIO_Init(SD_CMD_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI11_IRQn, 5, 0);

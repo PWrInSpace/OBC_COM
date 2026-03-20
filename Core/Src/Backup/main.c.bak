@@ -20,17 +20,22 @@
 #include "main.h"
 #include "cmsis_os2.h"
 #include "adc.h"
+#include "crc.h"
 #include "fdcan.h"
 #include "gpdma.h"
 #include "i2c.h"
+#include "sdmmc.h"
 #include "spi.h"
+#include "tim.h"
 #include "usart.h"
 #include "usb.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "cmsis_os2.h"
+#include "FreeRTOS.h"
+#include "task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -64,6 +69,31 @@ void MX_FREERTOS_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+extern osThreadId_t sx1280TaskHandle;
+extern osThreadId_t rfm95wTaskHandle;
+
+#define RADIO_EVENT_BIT (1 << 0)
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    // --- Obsługa SX1280 ---
+    if (GPIO_Pin == SX1280_DIO1_Pin || GPIO_Pin == SX1280_DIO2_Pin) {
+        if (sx1280TaskHandle != NULL) {
+            xTaskNotifyFromISR(sx1280TaskHandle, RADIO_EVENT_BIT, eSetBits, &xHigherPriorityTaskWoken);
+        }
+    }
+
+    // --- Obsługa RFM95W ---
+    if (GPIO_Pin == RFM95W_DIO_Pin) {
+        if (rfm95wTaskHandle != NULL) {
+    vTaskNotifyGiveFromISR(rfm95wTaskHandle, &xHigherPriorityTaskWoken);
+        }
+    }
+
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
 /* USER CODE END 0 */
 
 /**
@@ -105,6 +135,9 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USB_PCD_Init();
   MX_USART2_UART_Init();
+  MX_TIM2_Init();
+  MX_SDMMC1_SDIO_Init();
+  MX_CRC_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */

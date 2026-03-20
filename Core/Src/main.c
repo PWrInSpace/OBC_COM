@@ -20,9 +20,11 @@
 #include "main.h"
 #include "cmsis_os2.h"
 #include "adc.h"
+#include "crc.h"
 #include "fdcan.h"
 #include "gpdma.h"
 #include "i2c.h"
+#include "sdmmc.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -134,6 +136,8 @@ int main(void)
   MX_USB_PCD_Init();
   MX_USART2_UART_Init();
   MX_TIM2_Init();
+  MX_SDMMC1_SDIO_Init();
+  MX_CRC_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */

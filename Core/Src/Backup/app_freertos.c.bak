@@ -32,6 +32,7 @@
 #include "stm32h5xx_it.h"
 #include "sx1280_task.h"
 #include "rfm95w_task.h"
+#include "cmd_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -108,6 +109,7 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
 //   /* add threads, ... */
+  CMD_Task_Init();
   RFM95W_task_init();
  // SX1280_task_init();
   

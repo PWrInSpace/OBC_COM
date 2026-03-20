@@ -29,6 +29,18 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "stm32h5xx_hal.h"
 
+#include "stm32h5xx_ll_crc.h"
+#include "stm32h5xx_ll_bus.h"
+#include "stm32h5xx_ll_cortex.h"
+#include "stm32h5xx_ll_rcc.h"
+#include "stm32h5xx_ll_system.h"
+#include "stm32h5xx_ll_utils.h"
+#include "stm32h5xx_ll_pwr.h"
+#include "stm32h5xx_ll_gpio.h"
+#include "stm32h5xx_ll_dma.h"
+
+#include "stm32h5xx_ll_exti.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -128,8 +140,6 @@ void Error_Handler(void);
 #define SW3_CTRL1_GPIO_Port GPIOD
 #define SW3_CTRL2_Pin GPIO_PIN_15
 #define SW3_CTRL2_GPIO_Port GPIOD
-#define SD_STATUS_Pin GPIO_PIN_7
-#define SD_STATUS_GPIO_Port GPIOC
 #define SD_DETECT_Pin GPIO_PIN_9
 #define SD_DETECT_GPIO_Port GPIOA
 #define STATUS_LED_Pin GPIO_PIN_10
