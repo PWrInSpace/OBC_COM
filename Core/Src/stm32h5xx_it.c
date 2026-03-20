@@ -66,9 +66,12 @@ extern DMA_HandleTypeDef handle_GPDMA1_Channel4;
 extern DMA_HandleTypeDef handle_GPDMA1_Channel1;
 extern SPI_HandleTypeDef hspi2;
 extern DMA_HandleTypeDef handle_GPDMA1_Channel7;
+extern DMA_NodeTypeDef Node_GPDMA1_Channel6;
+extern DMA_QListTypeDef List_GPDMA1_Channel6;
 extern DMA_HandleTypeDef handle_GPDMA1_Channel6;
 extern DMA_HandleTypeDef handle_GPDMA2_Channel1;
 extern DMA_HandleTypeDef handle_GPDMA2_Channel0;
+extern UART_HandleTypeDef huart1;
 extern PCD_HandleTypeDef hpcd_USB_DRD_FS;
 extern TIM_HandleTypeDef htim1;
 
@@ -272,7 +275,8 @@ void GPDMA1_Channel5_IRQHandler(void)
 void GPDMA1_Channel6_IRQHandler(void)
 {
   /* USER CODE BEGIN GPDMA1_Channel6_IRQn 0 */
-
+  
+   HAL_DMA_IRQHandler(&handle_GPDMA1_Channel6);
   /* USER CODE END GPDMA1_Channel6_IRQn 0 */
   /* USER CODE BEGIN GPDMA1_Channel6_IRQn 1 */
 
@@ -285,7 +289,7 @@ void GPDMA1_Channel6_IRQHandler(void)
 void GPDMA1_Channel7_IRQHandler(void)
 {
   /* USER CODE BEGIN GPDMA1_Channel7_IRQn 0 */
-
+  HAL_DMA_IRQHandler(&handle_GPDMA1_Channel7);
   /* USER CODE END GPDMA1_Channel7_IRQn 0 */
   /* USER CODE BEGIN GPDMA1_Channel7_IRQn 1 */
 
@@ -345,6 +349,20 @@ void SPI2_IRQHandler(void)
   /* USER CODE BEGIN SPI2_IRQn 1 */
 
   /* USER CODE END SPI2_IRQn 1 */
+}
+
+/**
+  * @brief This function handles USART1 global interrupt.
+  */
+void USART1_IRQHandler(void)
+{
+  /* USER CODE BEGIN USART1_IRQn 0 */
+
+  /* USER CODE END USART1_IRQn 0 */
+  HAL_UART_IRQHandler(&huart1);
+  /* USER CODE BEGIN USART1_IRQn 1 */
+
+  /* USER CODE END USART1_IRQn 1 */
 }
 
 /**

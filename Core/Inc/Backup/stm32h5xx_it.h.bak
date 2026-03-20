@@ -65,6 +65,7 @@ void TIM1_UP_IRQHandler(void);
 void I2C1_EV_IRQHandler(void);
 void I2C1_ER_IRQHandler(void);
 void SPI2_IRQHandler(void);
+void USART1_IRQHandler(void);
 void USB_DRD_FS_IRQHandler(void);
 void SDMMC1_IRQHandler(void);
 void GPDMA2_Channel0_IRQHandler(void);

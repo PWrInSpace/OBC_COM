@@ -7,6 +7,7 @@ target_sources(App
         src/lora_config.c
         src/usb_config.c
         src/cmd_task.c
+        src/gps_task.c
 )
 
 target_include_directories(App
@@ -31,4 +32,5 @@ target_link_libraries(App
         logger
         USB_Driver
         cmd
+        gps
 )
