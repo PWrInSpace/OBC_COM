@@ -92,7 +92,6 @@ void GNSS_LoadConfig(GNSS_StateHandle *GNSS) {
         }
     }
     HAL_Delay(50);
-
     HAL_UART_Transmit(GNSS->huart, (uint8_t*)disableNmeaUart1, sizeof(disableNmeaUart1), 100);
     HAL_Delay(50);
     HAL_UART_Transmit(GNSS->huart, (uint8_t*)setRocketMode4G, sizeof(setRocketMode4G), 100);
