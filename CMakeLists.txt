@@ -44,6 +44,9 @@ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
 
+# Add FatFs liblary (DO NOT MOVE THIS TO THE BOTTOM OF THE FILE)
+add_subdirectory(Middlewares/Third_Party/FatFs)
+
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined library search paths
@@ -51,11 +54,13 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+    Core/Src/user_diskio.c
     # Add user sources here
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
+    Middlewares/Third_Party/FatFs/Src
     # Add user defined include paths
 )
 
@@ -89,7 +94,6 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     spi_callbacks
     logger
     USB_Driver
+    FatFs
     # Add user defined libraries
 )
-
-
