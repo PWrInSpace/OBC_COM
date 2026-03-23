@@ -44,9 +44,6 @@ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
 
-# Add FatFs liblary (DO NOT MOVE THIS TO THE BOTTOM OF THE FILE)
-add_subdirectory(Middlewares/Third_Party/FatFs)
-
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined library search paths
@@ -72,6 +69,7 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 # Remove wrong libob.a library dependency when using cpp files
 list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
 
+add_subdirectory(Middlewares/Third_Party/FatFs)
 add_subdirectory(modules/sx1280)
 add_subdirectory(modules/rfm95w)
 add_subdirectory(modules/logger)
