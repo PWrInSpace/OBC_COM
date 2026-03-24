@@ -62,9 +62,9 @@ bool sd_logger_mount(void) {
 
 void sd_logger_unmount(void) {
     if (!is_mounted) return;
-    is_mounted = false;
-
     sd_logger_sync();
+
+    is_mounted = false;
     
     f_close(&log_file);
     f_mount(NULL, "", 0);
@@ -106,13 +106,13 @@ HAL_StatusTypeDef sd_logger_init(void) {
 HAL_StatusTypeDef sd_logger_log_data(const BoardData_t *data) {
     if (!is_mounted) return HAL_ERROR; 
     
-    return ((xQueueSend(log_queue, data, 0) == pdTRUE) ? HAL_OK : HAL_ERROR); 
+    return ((xQueueSend(log_queue, data, 0) == pdPASS) ? HAL_OK : HAL_ERROR); 
 }
 
 static void packer_task_thread(void *arg) {
     (void)arg;
     BoardData_t temp_data;
-    char temp_str[128]; 
+    char temp_str[256]; 
 
     xSemaphoreTake(buffer_free_sem[active_idx], portMAX_DELAY);
     while(1) {
@@ -154,7 +154,7 @@ static void sd_task_thread(void *arg) {
         FRESULT res = f_write(&log_file, double_buffer[ready_buffer_idx], write_size, &bytes_written);
 
         if (res != FR_OK || bytes_written != write_size) {
-            // WRITE ERROR
+            // HANDLE WRITE ERROR
         }
 
         xSemaphoreGive(buffer_free_sem[ready_buffer_idx]);
