@@ -4,7 +4,7 @@
         {
             "label": "Flash DFU",
             "type": "shell",
-            "command": "STM32_Programmer_CLI",
+            "command": "C:/Program Files/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_Programmer_CLI.exe",
             "args": [
                 "-c", "port=USB1",
                 "-w", "${workspaceFolder}\\build\\Debug\\OBC_COM.bin", "0x08000000",

@@ -109,8 +109,8 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
 //   /* add threads, ... */
-  CMD_Task_Init();
-  RFM95W_task_init();
+  //CMD_Task_Init();
+  //RFM95W_task_init();
  // SX1280_task_init();
   
   /* USER CODE END RTOS_THREADS */
@@ -135,6 +135,7 @@ void StartDefaultTask(void *argument)
 
   for(;;)
   {
+    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
     osDelay(1000);
   }
   /* USER CODE END defaultTask */

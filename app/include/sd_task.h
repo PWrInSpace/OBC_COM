@@ -6,10 +6,10 @@
 #pragma once
 
 #include "main.h"
+#include "FreeRTOS.h"
 #include "queue.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "FreeRTOS.h"
 #include "board_data.h"
 
 #define LOG_FILE_NAME "data.csv"
