@@ -33,10 +33,13 @@
 #include "sx1280_task.h"
 #include "rfm95w_task.h"
 #include "cmd_task.h"
+#include "eeprom_emul.h"
+#include "semphr.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 typedef StaticTask_t osStaticThreadDef_t;
+SemaphoreHandle_t xEEPROMMutex;
 /* USER CODE BEGIN PTD */
 
 /* USER CODE END PTD */
@@ -57,7 +60,7 @@ typedef StaticTask_t osStaticThreadDef_t;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
-uint32_t MyBufferTask00[ 128 ];
+uint32_t MyBufferTask00[1024];
 osStaticThreadDef_t MycontrolBlocTask00;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
@@ -126,19 +129,27 @@ void MX_FREERTOS_Init(void) {
 // * @param argument: Not used
 // * @retval None
 // */
-/* USER CODE END Header_StartDefaultTask */
+static char msg_buf[128]; // Increased size to fit more data
+static uint32_t read_value = 0;
+
 void StartDefaultTask(void *argument)
 {
-  /* USER CODE BEGIN defaultTask */
-  USB_CDC_Config(); 
-  uint8_t msg[] = "Jebać kurwy z STM\r\n";
+  USB_CDC_Config();
+  HAL_FLASH_Unlock();
+
+  EE_Status init_status = EE_Init(EE_FORCED_ERASE);
+  if (init_status != EE_OK)
+  {
+    Error_Handler();
+  }
 
   for(;;)
   {
-    osDelay(1000);
+  
+    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+    osDelay(1000); 
   }
-  /* USER CODE END defaultTask */
-}
+  }
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */

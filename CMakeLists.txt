@@ -89,6 +89,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     spi_callbacks
     logger
     USB_Driver
+    Nvs
     # Add user defined libraries
 )
 
