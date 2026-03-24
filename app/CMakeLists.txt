@@ -9,6 +9,7 @@ target_sources(App
         src/cmd_task.c
         src/gps_task.c
         src/sd_task.c
+        src/board_data.c
 )
 
 target_include_directories(App
