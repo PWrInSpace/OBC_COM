@@ -11,7 +11,7 @@
  * Scalability: Add new parameters to the END of this list.
  */
 typedef enum {
-    PARAM_MODE = 0,
+    PARAM_MODE = 1,
     PARAM_FREQ,
     PARAM_BW,
     PARAM_SF,
@@ -38,6 +38,6 @@ EE_Status NVS_Write(uint16_t virt_addr, uint32_t data);
 EE_Status NVS_Read(uint16_t virt_addr, uint32_t* data);
 
 void nvs_get_rfm95_settings(rfm95_t * dev);
-void nvs_set_rfm95_settings(rfm95_t * dev, uint32_t data);
+void nvs_save_rfm95_settings(rfm95_t * dev);
 
 #endif /* NVS_CONFIG_H */

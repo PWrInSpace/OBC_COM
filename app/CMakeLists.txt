@@ -33,4 +33,5 @@ target_link_libraries(App
         USB_Driver
         cmd
         gps
+        Nvs
 )

@@ -35,6 +35,7 @@
 #include "cmd_task.h"
 #include "eeprom_emul.h"
 #include "semphr.h"
+#include "nvs_config.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -112,7 +113,7 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
 //   /* add threads, ... */
-  CMD_Task_Init();
+ // CMD_Task_Init();
   RFM95W_task_init();
  // SX1280_task_init();
   
@@ -129,27 +130,26 @@ void MX_FREERTOS_Init(void) {
 // * @param argument: Not used
 // * @retval None
 // */
-static char msg_buf[128]; // Increased size to fit more data
 static uint32_t read_value = 0;
 
 void StartDefaultTask(void *argument)
 {
+  /* 1. Inicjalizacja systemów */
   USB_CDC_Config();
-  HAL_FLASH_Unlock();
 
-  EE_Status init_status = EE_Init(EE_FORCED_ERASE);
-  if (init_status != EE_OK)
-  {
-    Error_Handler();
-  }
 
+  /* 4. Pętla wyświetlająca */
   for(;;)
   {
-  
-    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
-    osDelay(1000); 
+    // Przygotowanie stringa z zapamiętanej w RAM zmiennej data_from_nvs
+ //   int len = snprintf(msg, sizeof(msg), "Live NVS Data (Addr 1): 0x%08lX\r\n", data_from_nvs);
+    
+    // Wysyłka przez USB
+   // USB_Transmit((uint8_t*)msg, (uint16_t)len);
+
+    osDelay(2000); 
   }
-  }
+}
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */

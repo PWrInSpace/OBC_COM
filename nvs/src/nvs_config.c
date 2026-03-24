@@ -2,6 +2,7 @@
 #include "FreeRTOS.h"
 #include "semphr.h"
 #include "rfm95w.h"
+#include "usb_config.h"
 
 static SemaphoreHandle_t xNvsMutex = NULL;
 
@@ -49,24 +50,44 @@ EE_Status NVS_Read(uint16_t virt_addr, uint32_t* data) {
 
 void nvs_get_rfm95_settings(rfm95_t * dev)
 {
-    uint8_t status = 1;
+    if (dev == NULL || dev->param == NULL) return;
+
     uint32_t tmp = 0;
-    status|= NVS_Read(PARAM_FREQ,&tmp); //test for frequency
-    dev->param->frequency = tmp;
-    if (status!=EE_OK)
-    {
-        /* code */return;
-    }
-    return;
+    char msg[64];
+
+    // 2. ODCZYT (teraz powinien już odczytać to, co zapisaliśmy wyżej)
+    if (NVS_Read(PARAM_FREQ, &tmp) == EE_OK) {
+        // Formatuje wynik do wyświetlenia, żebyś widział co jest w pamięci
+        int len = snprintf(msg, sizeof(msg), "NVS READ: %lu Hz\r\n", tmp);
+        USB_Transmit((uint8_t*)msg, (uint16_t)len);
+
+        // Przypisanie do radia
+        dev->param->frequency = (uint32_t)tmp;
 }
 
-void nvs_set_rfm95_settings(rfm95_t * dev, uint32_t data)
-{
-    uint8_t status = 1;
-    status|= NVS_Write(PARAM_FREQ, data); //test for saving the frequency parameter in nvs
-    if (status!=EE_OK)
-    {
-        /* code */return;
+    // --- TX POWER (PARAM_PWR) ---
+    if (NVS_Read((PARAM_PWR), &tmp) == EE_OK) {
+        dev->param->power = (uint8_t)tmp;
     }
-    return;
+
+    if (NVS_Read((PARAM_SF), &tmp) == EE_OK) {
+        dev->param->LoRa_Rate = (uint8_t)tmp;
+    }
+
+     if (NVS_Read((PARAM_BW), &tmp) == EE_OK) {
+        dev->param->LoRa_BW = (uint8_t)tmp;
+    }
 }
+
+
+void nvs_save_rfm95_settings(rfm95_t * dev)
+{
+    if (dev == NULL || dev->param == NULL) return;
+    NVS_Write((PARAM_FREQ), (uint32_t)dev->param->frequency);
+    NVS_Write((PARAM_PWR),  (uint32_t)dev->param->power);
+    NVS_Write((PARAM_SF),   (uint32_t)dev->param->LoRa_Rate);
+    NVS_Write((PARAM_BW),   (uint32_t)dev->param->LoRa_BW);
+   return;
+}
+
+
