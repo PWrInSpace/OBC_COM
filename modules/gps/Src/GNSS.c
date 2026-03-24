@@ -35,7 +35,7 @@ union i_Short iShort;
 union u_Long uLong;
 union i_Long iLong;
 
-
+GNSS_StateHandle GNSS_Handle;
 
 /*!
  * Structure initialization.
@@ -85,21 +85,16 @@ void GNSS_ParsePVTData(GNSS_StateHandle *GNSS) {
 
 void GNSS_LoadConfig(GNSS_StateHandle *GNSS) {
 
-    HAL_UART_Transmit(GNSS->huart, (uint8_t*)getDeviceID_M10, 8, 100);
-    if(HAL_UART_Receive(GNSS->huart, GNSS->uartWorkingBuffer, 18, 200) == HAL_OK) {
-        for (int i = 0; i < 6; i++) {
-            GNSS->uniqueID[i] = GNSS->uartWorkingBuffer[10 + i];
-        }
-    }
-    HAL_Delay(50);
+   uint8_t dummy;
+    // Opróżnij bufor sprzętowy UART
+    while(HAL_UART_Receive(GNSS->huart, &dummy, 1, 10) == HAL_OK);
+    
+    // Teraz wyślij komendę wyłączającą NMEA JAKO PIERWSZĄ
     HAL_UART_Transmit(GNSS->huart, (uint8_t*)disableNmeaUart1, sizeof(disableNmeaUart1), 100);
-    HAL_Delay(50);
-    HAL_UART_Transmit(GNSS->huart, (uint8_t*)setRocketMode4G, sizeof(setRocketMode4G), 100);
-    HAL_Delay(50);
-    HAL_UART_Transmit(GNSS->huart, (uint8_t*)setRate1Hz_M10, sizeof(setRate1Hz_M10), 100);
-    HAL_Delay(50);
-    HAL_UART_Transmit(GNSS->huart, (uint8_t*)enableNavPvt, sizeof(enableNavPvt), 100);
-    HAL_Delay(50);
+    HAL_Delay(100); 
+    
+    // Teraz zapytaj o ID - powinno już być "czysto" na linii
+    HAL_UART_Transmit(GNSS->huart, (uint8_t*)getDeviceID_M10, 8, 100);
 }
 
 

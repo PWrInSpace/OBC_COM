@@ -48,10 +48,10 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, RFM95W_CS_Pin|LNA3_CTRL_Pin|PA3_CTRL_Pin|SW3_CTRL1_Pin
-                          |SW3_CTRL2_Pin|PA1_CTRL_Pin|GPS_RST_Pin, GPIO_PIN_RESET);
+                          |SW3_CTRL2_Pin|PA1_CTRL_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(RFM95W_RST_GPIO_Port, RFM95W_RST_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOD, RFM95W_RST_Pin|GPS_RST_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pins : LNA2_CTRL_Pin PA2_CTRL_Pin SW2_CTRL1_Pin SW2_CTRL2_Pin
                            SX1280_CS_Pin PA4_CTRL_Pin SW4_CTRL1_Pin SW4_CTRL2_Pin

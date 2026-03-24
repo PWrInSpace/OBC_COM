@@ -36,6 +36,7 @@
 #include "eeprom_emul.h"
 #include "semphr.h"
 #include "nvs_config.h"
+#include "gps_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -114,8 +115,9 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_THREADS */
 //   /* add threads, ... */
  // CMD_Task_Init();
-  RFM95W_task_init();
+ // RFM95W_task_init();
  // SX1280_task_init();
+ start_gps_task();
   
   /* USER CODE END RTOS_THREADS */
 
@@ -146,8 +148,9 @@ void StartDefaultTask(void *argument)
     
     // Wysyłka przez USB
    // USB_Transmit((uint8_t*)msg, (uint16_t)len);
-
-    osDelay(2000); 
+    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port,STATUS_LED_Pin);
+   // USB_Transmit((uint8_t*)"\r\n--- GPS M10 CONFIG START ---\r\n", 32);
+    osDelay(1000); 
   }
 }
 

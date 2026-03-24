@@ -33,10 +33,15 @@
 #include "sx1280_task.h"
 #include "rfm95w_task.h"
 #include "cmd_task.h"
+#include "eeprom_emul.h"
+#include "semphr.h"
+#include "nvs_config.h"
+#include "gps_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 typedef StaticTask_t osStaticThreadDef_t;
+SemaphoreHandle_t xEEPROMMutex;
 /* USER CODE BEGIN PTD */
 
 /* USER CODE END PTD */
@@ -57,7 +62,7 @@ typedef StaticTask_t osStaticThreadDef_t;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
-uint32_t MyBufferTask00[ 128 ];
+uint32_t MyBufferTask00[1024];
 osStaticThreadDef_t MycontrolBlocTask00;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
@@ -109,9 +114,10 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
 //   /* add threads, ... */
-  CMD_Task_Init();
-  RFM95W_task_init();
+ // CMD_Task_Init();
+ // RFM95W_task_init();
  // SX1280_task_init();
+ start_gps_task();
   
   /* USER CODE END RTOS_THREADS */
 
@@ -126,18 +132,25 @@ void MX_FREERTOS_Init(void) {
 // * @param argument: Not used
 // * @retval None
 // */
-/* USER CODE END Header_StartDefaultTask */
+static uint32_t read_value = 0;
+
 void StartDefaultTask(void *argument)
 {
-  /* USER CODE BEGIN defaultTask */
-  USB_CDC_Config(); 
-  uint8_t msg[] = "Jebać kurwy z STM\r\n";
+  /* 1. Inicjalizacja systemów */
+  USB_CDC_Config();
 
+
+  /* 4. Pętla wyświetlająca */
   for(;;)
   {
-    osDelay(1000);
+    // Przygotowanie stringa z zapamiętanej w RAM zmiennej data_from_nvs
+ //   int len = snprintf(msg, sizeof(msg), "Live NVS Data (Addr 1): 0x%08lX\r\n", data_from_nvs);
+    
+    // Wysyłka przez USB
+   // USB_Transmit((uint8_t*)msg, (uint16_t)len);
+    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port,STATUS_LED_Pin);
+    osDelay(2000); 
   }
-  /* USER CODE END defaultTask */
 }
 
 /* Private application code --------------------------------------------------*/

@@ -275,7 +275,8 @@ void GPDMA1_Channel5_IRQHandler(void)
 void GPDMA1_Channel6_IRQHandler(void)
 {
   /* USER CODE BEGIN GPDMA1_Channel6_IRQn 0 */
-
+  
+   HAL_DMA_IRQHandler(&handle_GPDMA1_Channel6);
   /* USER CODE END GPDMA1_Channel6_IRQn 0 */
   /* USER CODE BEGIN GPDMA1_Channel6_IRQn 1 */
 
@@ -288,7 +289,7 @@ void GPDMA1_Channel6_IRQHandler(void)
 void GPDMA1_Channel7_IRQHandler(void)
 {
   /* USER CODE BEGIN GPDMA1_Channel7_IRQn 0 */
-
+  HAL_DMA_IRQHandler(&handle_GPDMA1_Channel7);
   /* USER CODE END GPDMA1_Channel7_IRQn 0 */
   /* USER CODE BEGIN GPDMA1_Channel7_IRQn 1 */
 
