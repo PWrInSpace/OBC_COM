@@ -17,7 +17,7 @@ void start_telemetry_task(void) {
     //HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_4);
     telemetryTaskHandle = osThreadNew(telemetry_task_thread, NULL, &telemetryTask_attributes);
     if (telemetryTaskHandle == NULL) {
-      HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+     // HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
       //LOG_ERROR("RFM95W TASK ERROR!!");
       return;
     }
