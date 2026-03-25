@@ -8,7 +8,7 @@ osThreadId_t telemetryTaskHandle;
 
 const osThreadAttr_t telemetryTask_attributes = {
     .name = "telemetryTask",
-    .stack_size = 4096,
+    .stack_size = 1024,
     .priority = (osPriority_t) osPriorityAboveNormal,
 };
 
