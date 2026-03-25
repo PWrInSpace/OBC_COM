@@ -60,6 +60,7 @@ bool sd_mount(void) {
         if (len > 0) {
             UINT bw;
             f_write(&log_file, header, len, &bw);
+            f_sync(&log_file);
         }
     }
 

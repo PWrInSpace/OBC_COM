@@ -12,7 +12,7 @@
 #include <stdbool.h>
 #include "board_data.h"
 
-#define LOG_FILE_NAME "data_WOW.csv"
+#define LOG_FILE_NAME "data_wow.csv"
 #define SD_QUEUE_LENGTH 50
 #define SD_BUFFER_BYTES 4096
 
