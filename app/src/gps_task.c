@@ -5,6 +5,7 @@
 #include "usart.h"
 #include "GNSS.h"
 #include "usb_config.h"
+#include "sd_task.h"
 
 GNSS_StateHandle gpsHandle;
 osThreadId_t gpsTaskHandle;
@@ -117,9 +118,21 @@ void gps_task(void *argument) {
         if (ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(1100)) > 0) {
             
             if (GPS_AlignBuffer(&gpsHandle)) {
-                GNSS_ParsePVTData(&gpsHandle);
-                GPS_PrintStatus(&gpsHandle);
-            }
+    GNSS_ParsePVTData(&gpsHandle);
+    
+    if (xSemaphoreTake(g_state_mutex, portMAX_DELAY) == pdTRUE) {
+        g_system_state.lat = gpsHandle.lat;
+        g_system_state.lon = gpsHandle.lon;
+        g_system_state.hMSL = gpsHandle.hMSL;
+        g_system_state.gSpeed = gpsHandle.gSpeed;
+        g_system_state.numSV = gpsHandle.numSV;
+        g_system_state.fixType = gpsHandle.fixType;
+        xSemaphoreGive(g_state_mutex);
+        
+    }
+        
+       GPS_PrintStatus(&gpsHandle);
+}
 
             HAL_UART_AbortReceive(&huart1);
             __HAL_UART_SEND_REQ(&huart1, UART_RXDATA_FLUSH_REQUEST);

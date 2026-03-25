@@ -10,6 +10,7 @@ target_sources(App
         src/gps_task.c
         src/sd_task.c
         src/board_data.c
+        src/telemetry_task.c
 )
 
 target_include_directories(App
