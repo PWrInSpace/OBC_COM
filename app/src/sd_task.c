@@ -185,6 +185,7 @@ static void packer_task_thread(void *arg) {
         BaseType_t xStatus = xQueueReceive(log_queue, &temp_data, pdMS_TO_TICKS(SD_FORCE_WRITE_TIMEOUT_MS));
 
         if (xStatus == pdPASS) {
+            continue;
             if (!is_mounted) continue;
             // HAL_GPIO_WritePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin, GPIO_PIN_RESET);
 
@@ -194,15 +195,15 @@ static void packer_task_thread(void *arg) {
                     uint8_t ready_idx = active_idx;
                     bytes_to_write[ready_idx] = active_buffer_pos; 
 
-                    //active_idx = !active_idx;
-                    //active_buffer_pos = 0;                  
+                    // active_idx = !active_idx;
+                    // active_buffer_pos = 0;                  
 
                     // xSemaphoreTake(buffer_free_sem[active_idx], portMAX_DELAY);
                     // xTaskNotify(sd_task_handle, ready_idx, eSetValueWithOverwrite);
                 }
 
-                memcpy(&double_buffer[active_idx][active_buffer_pos], temp_str, len);
-                active_buffer_pos += len;
+                // memcpy(&double_buffer[active_idx][active_buffer_pos], temp_str, len);
+                // active_buffer_pos += len;
             }
         } else {
             if (is_mounted && active_buffer_pos > 0) {

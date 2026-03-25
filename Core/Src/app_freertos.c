@@ -129,7 +129,7 @@ board_data_init();
  // CMD_Task_Init();
  // RFM95W_task_init();
  // SX1280_task_init();
- //start_telemetry_task();
+ start_telemetry_task();
  start_gps_task();
   
   /* USER CODE END RTOS_THREADS */
@@ -152,28 +152,15 @@ void StartDefaultTask(void *argument)
   /* 1. Inicjalizacja systemów */
   USB_CDC_Config();
 
-  BoardData_t data = { HAL_GetTick(), 1.23f, 4.56f, 1 };
-   // sd_logger_log_data(&data);
-
-   // osDelay(1000);
-   // data.pressure = 12.5f;
-   // sd_logger_log_data(&data);
-
-    // osDelay(1000);
+  // BoardData_t data = { HAL_GetTick(), 1.23f, 4.56f, 1, 0, 0, 0, 0, 12, 0, 0 };
 
   /* 4. Pętla wyświetlająca */
   for(;;)
   {
     HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
 
-    // UINT bytes_written;
-    data.timestamp_ms = HAL_GetTick();
-    // char temp_str[256];
-    // int len = board_data_serialize(&data, temp_str, sizeof(temp_str));
-
-    // FRESULT res = f_write(&log_file, temp_str, len, &bytes_written);
-    // f_sync(&log_file); 
-    sd_logger_log_data(&data);
+    // data.timestamp_ms = HAL_GetTick();
+    // sd_logger_log_data(&data);
 
     osDelay(1000);
   }

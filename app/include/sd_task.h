@@ -19,9 +19,6 @@
 #define SD_BUFFER_BYTES 4096
 #define SD_FORCE_WRITE_TIMEOUT_MS 5000
 
-static FIL log_file;
-static volatile bool is_mounted;
-
 HAL_StatusTypeDef sd_logger_init(void);
 HAL_StatusTypeDef sd_logger_log_data(const BoardData_t *data);
 

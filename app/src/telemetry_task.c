@@ -17,7 +17,7 @@ void start_telemetry_task(void) {
 
 void telemetry_task_thread(void *arg) {
     (void)arg;
-    BoardData_t snapshot;
+    BoardData_t snapshot = { 0 };
     vTaskDelay(pdMS_TO_TICKS(100));
 
     while(1) {
