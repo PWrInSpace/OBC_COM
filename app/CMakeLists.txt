@@ -36,4 +36,5 @@ target_link_libraries(App
         cmd
         gps
         FatFs
+        Nvs
 )

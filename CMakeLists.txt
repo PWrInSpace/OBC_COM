@@ -93,5 +93,6 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     logger
     USB_Driver
     FatFs
+    Nvs
     # Add user defined libraries
 )

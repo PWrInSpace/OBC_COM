@@ -34,59 +34,49 @@ union i_Long
 
 typedef struct
 {
-	UART_HandleTypeDef *huart;
+    UART_HandleTypeDef *huart;
 
-	uint8_t uniqueID[6];
-	uint8_t uartWorkingBuffer[101];
+    uint8_t uniqueID[6];
+    uint8_t uartWorkingBuffer[256]; // Zwiększony bufor dla DMA Idle
 
-	unsigned short year;
-	uint8_t yearBytes[2];
-	uint8_t month;
-	uint8_t day;
-	uint8_t hour;
-	uint8_t min;
-	uint8_t sec;
-	uint8_t fixType;
+    // Czas i Data (UTC)
+    unsigned short year;
+    uint8_t month;
+    uint8_t day;
+    uint8_t hour;
+    uint8_t min;
+    uint8_t sec;
 
-	signed long lon;
-	uint8_t lonBytes[4];
-	signed long lat;
-	uint8_t latBytes[4];
-	float fLon;
-	float fLat;
+    // Status Fixa
+    uint8_t fixType;    // 0: no fix, 3: 3D fix
+    uint8_t numSV;      // Liczba satelitów użytych w rozwiązaniu (NAV-PVT offset 23)
+    
+    // Współrzędne (Raw i Float)
+    signed long lon;    // stopnie * 1e-7
+    signed long lat;    // stopnie * 1e-7
+    float fLon;         // stopnie (decimal)
+    float fLat;         // stopnie (decimal)
 
-	signed long height;
-	signed long hMSL;
-	uint8_t hMSLBytes[4];
-	unsigned long hAcc;
-	unsigned long vAcc;
+    // Wysokość
+    signed long height; // Wysokość nad elipsoidą [mm]
+    signed long hMSL;   // Wysokość nad poziomem morza [mm]
+    unsigned long hAcc; // Dokładność pozioma [mm]
+    unsigned long vAcc; // Dokładność pionowa [mm]
 
-	signed long gSpeed;
-	uint8_t gSpeedBytes[4];
-	signed long headMot;
-	float fGSpeedKmH;
+    // Dynamika (Prędkość i Kurs)
+    signed long gSpeed;      // Prędkość względem ziemi [mm/s]
+    float fGSpeedKmH;        // Prędkość względem ziemi [km/h]
+    signed long headMot;     // Kurs poruszania się [deg * 1e-5]
+    float fHeadMot;          // Kurs poruszania się [deg]
 
-}GNSS_StateHandle;
+    // Diagnostyka ramki
+    uint8_t checksumCKA;     // Odebrana suma kontrolna A
+    uint8_t checksumCKB;     // Odebrana suma kontrolna B
+    uint8_t isDataValid;     // Flaga poprawności (1 = checksum OK, 0 = błąd)
 
-GNSS_StateHandle GNSS_Handle;
+} GNSS_StateHandle;
 
-// 1. Wyłączenie NMEA na UART1 (aby nie śmieciło w DMA)
-static const uint8_t disableNmeaUart1[] = {0xB5, 0x62, 0x06, 0x8B, 0x09, 0x00, 0x01, 0x01, 0x00, 0x00, 0x20, 0x91, 0x01, 0x00, 0x00, 0x46, 0x51};
-
-// 2. Model Dynamiczny AIR4 (Airborne < 4g) - KRYTYCZNE DLA RAKIETY
-// Pozwala na pracę przy dużych prędkościach i wysokościach (Klucz: 0x20110021, Wartość: 8)
-static const uint8_t setRocketMode4G[] = {0xB5, 0x62, 0x06, 0x8A, 0x09, 0x00, 0x00, 0x01, 0x00, 0x00, 0x21, 0x00, 0x11, 0x20, 0x08, 0x94, 0xB7};
-
-//!:PRZY STARCIE ZMIENIĆ NA 10Hz (komenda z MCB)
-// 3. Ustawienie 1Hz (1000ms) - system VALSET dla M10
-static const uint8_t setRate1Hz_M10[] = {0xB5, 0x62, 0x06, 0x8A, 0x09, 0x00, 0x00, 0x01, 0x00, 0x00, 0x01, 0x00, 0x21, 0x30, 0xE8, 0x03, 0xF1, 0xAE};
-
-// 4. Włączenie wiadomości binarnej NAV-PVT (Pozycja, Czas, Prędkość)
-static const uint8_t enableNavPvt[] = {0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x01, 0x07, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x18, 0xE1};
-
-// Komenda zapytania o ID (UBX-SEC-UNIQID): Class 0x27, ID 0x03
-static const uint8_t getDeviceID_M10[] = {0xB5, 0x62, 0x27, 0x03, 0x00, 0x00, 0x2A, 0xA5};
-
+extern GNSS_StateHandle GNSS_Handle;
 
 
 enum GNSSMode{Portable=0, Stationary=1, Pedestrian=2, Automotiv=3, Airbone1G=5, Airbone2G=6,Airbone4G=7,Wirst=8,Bike=9};
