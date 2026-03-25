@@ -137,13 +137,17 @@ void StartDefaultTask(void *argument)
   USB_CDC_Config(); 
   uint8_t msg[] = "Jebać kurwy z STM\r\n";
 
-  for(;;)
-  {
+  while(!sd_is_mounted()) {
+    osDelay(100);
+  }
+
+  for(;;) {
     HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
-    BoardData_t data = { HAL_GetTick(), 0.0f, 0.0f, 1 };
+
+    BoardData_t data = { HAL_GetTick(), 1.23f, 4.56f, 1 };
     sd_logger_log_data(&data);
 
-    osDelay(1000);
+    osDelay(950);
   }
   /* USER CODE END defaultTask */
 }
