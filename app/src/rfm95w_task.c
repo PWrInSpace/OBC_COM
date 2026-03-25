@@ -21,6 +21,7 @@
 #include "lora_config.h"
 #include "usbd_cdc_if.h"
 #include "nvs_config.h"
+#include "board_data.h"
 
 //#define TEST_RSSI
 
@@ -204,6 +205,10 @@ void rfm95wTaskEntry(void *argument)
         rx_size = 0;
         if (handle_rx_done_and_get_payload(rfm95_radio, rx_buf, &rx_size)) {
             if (rx_size > 0) {
+
+                if (xSemaphoreTake(g_state_mutex, portMAX_DELAY) == pdTRUE) {
+    g_system_state.RSSI = rfm95_packet_rssi(rfm95_radio);
+    xSemaphoreGive(g_state_mutex);
                 HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
 
                #ifdef TEST_RSSI
@@ -229,6 +234,7 @@ void rfm95wTaskEntry(void *argument)
     if (mode != 0x85) {
         rfm95_start_rx(rfm95_radio, 0); 
     }
+}
 }
 }
 

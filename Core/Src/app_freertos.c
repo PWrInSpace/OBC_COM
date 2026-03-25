@@ -42,6 +42,8 @@
 #include "semphr.h"
 #include "nvs_config.h"
 #include "gps_task.h"
+#include "telemetry_task.h"
+#include "board_data.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -122,10 +124,12 @@ void MX_FREERTOS_Init(void) {
   //CMD_Task_Init();
   //RFM95W_task_init();
   //SX1280_task_init();
-
+  //sd_logger_init();
+board_data_init();
  // CMD_Task_Init();
  // RFM95W_task_init();
  // SX1280_task_init();
+ //start_telemetry_task();
  start_gps_task();
   
   /* USER CODE END RTOS_THREADS */
