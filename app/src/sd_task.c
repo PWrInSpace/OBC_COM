@@ -10,6 +10,7 @@
 #include "main.h"
 #include "stm32h5xx_hal_gpio.h"
 #include "task.h"
+#include <stdint.h>
 #include <stdio.h>
 #include "semphr.h"
 #include <string.h>
@@ -31,8 +32,10 @@ static size_t bytes_to_write[2] = {0, 0};
 static QueueHandle_t log_queue;
 static TaskHandle_t packer_task_handle;
 static TaskHandle_t sd_task_handle;
+// static TaskHandle_t monitor_task_handle;
 
 static SemaphoreHandle_t buffer_free_sem[2];
+static SemaphoreHandle_t sd_mutex;
 
 static FATFS fs;
 static FIL log_file;
@@ -43,14 +46,24 @@ char SDPath[4];
 
 static void packer_task_thread(void *arg);
 static void sd_task_thread(void *arg);
+static void monitor_task_thread(void *arg);
 
 bool sd_mount(void) {
-    if (is_mounted) return true;
-    if (f_mount(&fs, SDPath, 1) != FR_OK) return false;
+    xSemaphoreTake(sd_mutex, portMAX_DELAY);
+    if (is_mounted) {
+        xSemaphoreGive(sd_mutex);
+        return true;
+    }
+
+    if (f_mount(&fs, SDPath, 1) != FR_OK) {
+        xSemaphoreGive(sd_mutex);
+        return false;
+    }
 
     FRESULT res = f_open(&log_file, LOG_FILE_NAME, FA_WRITE | FA_OPEN_APPEND);
     if (res != FR_OK) {
         f_mount(NULL, SDPath, 0);
+        xSemaphoreGive(sd_mutex);
         return false;
     }
 
@@ -66,18 +79,27 @@ bool sd_mount(void) {
 
     is_mounted = true;
     HAL_GPIO_WritePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin, GPIO_PIN_SET);
+
+    xSemaphoreGive(sd_mutex);
     return true;
 }
 
 void sd_unmount(void) {
-    if (!is_mounted) return;
-    sd_sync();
+    xSemaphoreTake(sd_mutex, portMAX_DELAY);
+
+    if (!is_mounted) {
+        xSemaphoreGive(sd_mutex);
+        return;
+    }
+    f_sync(&log_file);
 
     is_mounted = false;
     
     f_close(&log_file);
     f_mount(NULL, SDPath, 0);
     HAL_GPIO_WritePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin, GPIO_PIN_RESET);
+
+    xSemaphoreGive(sd_mutex);
 }
 
 bool sd_remount(void) {
@@ -86,9 +108,9 @@ bool sd_remount(void) {
 }
 
 void sd_sync(void) {
-    if (is_mounted) {
-        f_sync(&log_file);
-    }
+    xSemaphoreTake(sd_mutex, portMAX_DELAY);
+    if (is_mounted) f_sync(&log_file);
+    xSemaphoreGive(sd_mutex);
 }
 
 bool sd_is_mounted(void) {
@@ -100,15 +122,19 @@ HAL_StatusTypeDef sd_logger_init(void) {
     if (log_queue == NULL) {
         return HAL_ERROR;
     }
-
-    buffer_free_sem[0] = xSemaphoreCreateBinary();
-    buffer_free_sem[1] = xSemaphoreCreateBinary();
-
+    
     if (FATFS_LinkDriver(&USER_Driver, SDPath) != 0) {
         return HAL_ERROR;
     }
 
+    buffer_free_sem[0] = xSemaphoreCreateBinary();
+    buffer_free_sem[1] = xSemaphoreCreateBinary();
     if (buffer_free_sem[0] == NULL || buffer_free_sem[1] == NULL) {
+        return HAL_ERROR;
+    }
+
+    sd_mutex = xSemaphoreCreateMutex();
+    if (sd_mutex == NULL) {
         return HAL_ERROR;
     }
 
@@ -117,6 +143,7 @@ HAL_StatusTypeDef sd_logger_init(void) {
 
     xTaskCreate(packer_task_thread, "sd_packer_task", 1024, NULL, osPriorityAboveNormal, &packer_task_handle);
     xTaskCreate(sd_task_thread, "sd_write_task", 2048, NULL, osPriorityNormal, &sd_task_handle);
+    // xTaskCreate(monitor_task_thread, "sd_monitor", 512, NULL, osPriorityLow, &monitor_task_handle);
 
     return HAL_OK;
 }
@@ -130,7 +157,7 @@ HAL_StatusTypeDef sd_logger_log_data(const BoardData_t *data) {
 static void packer_task_thread(void *arg) {
     (void)arg;
     BoardData_t temp_data;
-    char temp_str[256]; 
+    char temp_str[256];
 
     while (!sd_mount()) {
         vTaskDelay(pdMS_TO_TICKS(1000));
@@ -138,7 +165,9 @@ static void packer_task_thread(void *arg) {
 
     xSemaphoreTake(buffer_free_sem[active_idx], portMAX_DELAY);
     while(1) {
-        if (xQueueReceive(log_queue, &temp_data, portMAX_DELAY) == pdTRUE) {
+        BaseType_t xStatus = xQueueReceive(log_queue, &temp_data, pdMS_TO_TICKS(SD_FORCE_WRITE_TIMEOUT_MS));
+
+        if (xStatus == pdTRUE) {
             if (!is_mounted) continue;
 
             int len = board_data_serialize(&temp_data, temp_str, sizeof(temp_str));
@@ -157,6 +186,17 @@ static void packer_task_thread(void *arg) {
                 memcpy(&double_buffer[active_idx][active_buffer_pos], temp_str, len);
                 active_buffer_pos += len;
             }
+        } else {
+            if (is_mounted && active_buffer_pos > 0) {
+                uint8_t ready_idx = active_idx;
+                bytes_to_write[ready_idx] = active_buffer_pos; 
+
+                active_idx = !active_idx;
+                active_buffer_pos = 0; 
+
+                xTaskNotify(sd_task_handle, ready_idx, eSetValueWithOverwrite);
+                xSemaphoreTake(buffer_free_sem[active_idx], portMAX_DELAY);
+            }
         }
     }
 }
@@ -168,17 +208,35 @@ static void sd_task_thread(void *arg) {
 
     while(1) {
         xTaskNotifyWait(0x00, 0xFFFFFFFF, &ready_buffer_idx, portMAX_DELAY);
-        if (!is_mounted) continue; 
-
         size_t write_size = bytes_to_write[ready_buffer_idx];
 
-        // HAL_DCACHE_CleanByAddr((uint32_t*)double_buffer[ready_buffer_idx], write_size);
-        FRESULT res = f_write(&log_file, double_buffer[ready_buffer_idx], write_size, &bytes_written);
+        xSemaphoreTake(sd_mutex, portMAX_DELAY);
+        if (is_mounted) {
+            FRESULT res = f_write(&log_file, double_buffer[ready_buffer_idx], write_size, &bytes_written);
+            f_sync(&log_file); 
 
-        if (res != FR_OK || bytes_written != write_size) {
-            // HANDLE WRITE ERROR
+            if (res != FR_OK || bytes_written != write_size) {
+                // HANDLE WRITE ERROR
+            }
         }
+        xSemaphoreGive(sd_mutex);
 
         xSemaphoreGive(buffer_free_sem[ready_buffer_idx]);
+    }
+}
+
+static void monitor_task_thread(void *arg) {
+    (void)arg;
+
+    while(1) {
+        bool is_card_inserted = (HAL_GPIO_ReadPin(SD_DETECT_GPIO_Port, SD_DETECT_Pin) == GPIO_PIN_RESET);
+
+        if (is_card_inserted && !is_mounted) {
+            sd_mount();
+        } else if (!is_card_inserted && is_mounted) {
+            sd_unmount();
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(500));
     }
 }

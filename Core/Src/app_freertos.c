@@ -22,6 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "board_data.h"
 #include "cmsis_os2.h"
 #include "logger.h"
 #include "logger_macros.h"
@@ -139,7 +140,9 @@ void StartDefaultTask(void *argument)
   for(;;)
   {
     HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
-    // HAL_GPIO_TogglePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin);
+    BoardData_t data = { HAL_GetTick(), 0.0f, 0.0f, 1 };
+    sd_logger_log_data(&data);
+
     osDelay(1000);
   }
   /* USER CODE END defaultTask */
