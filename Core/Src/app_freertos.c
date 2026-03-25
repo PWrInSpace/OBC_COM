@@ -22,11 +22,14 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "board_data.h"
 #include "cmsis_os2.h"
+#include "ff.h"
 #include "logger.h"
 #include "logger_macros.h"
 #include "main.h"
 #include "projdefs.h"
+#include "stm32h5xx_hal.h"
 #include "stm32h5xx_hal_gpio.h"
 #include "stm32h5xx_hal_sd.h"
 #include "usb_config.h"
@@ -93,7 +96,7 @@ const osMutexAttr_t usbMutex_attributes = {
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-
+  sd_logger_init();
   /* USER CODE END Init */
   /* creation of usbMutex */
   usbMutexHandle = osMutexNew(&usbMutex_attributes);
@@ -149,12 +152,29 @@ void StartDefaultTask(void *argument)
   /* 1. Inicjalizacja systemów */
   USB_CDC_Config();
 
+  BoardData_t data = { HAL_GetTick(), 1.23f, 4.56f, 1 };
+   // sd_logger_log_data(&data);
+
+   // osDelay(1000);
+   // data.pressure = 12.5f;
+   // sd_logger_log_data(&data);
+
+    // osDelay(1000);
 
   /* 4. Pętla wyświetlająca */
   for(;;)
   {
     HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
-    // HAL_GPIO_TogglePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin);
+
+    // UINT bytes_written;
+    data.timestamp_ms = HAL_GetTick();
+    // char temp_str[256];
+    // int len = board_data_serialize(&data, temp_str, sizeof(temp_str));
+
+    // FRESULT res = f_write(&log_file, temp_str, len, &bytes_written);
+    // f_sync(&log_file); 
+    sd_logger_log_data(&data);
+
     osDelay(1000);
   }
 }
