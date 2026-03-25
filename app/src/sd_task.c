@@ -151,8 +151,24 @@ HAL_StatusTypeDef sd_logger_init(void) {
 
 HAL_StatusTypeDef sd_logger_log_data(const BoardData_t *data) {
     if (!is_mounted) return HAL_ERROR; 
-    
-    return ((xQueueSend(log_queue, data, 0) == pdPASS) ? HAL_OK : HAL_ERROR); 
+
+    char temp_str[256];
+    int len = board_data_serialize(data, temp_str, sizeof(temp_str));
+
+    UINT bytes_written;
+    //xSemaphoreTake(sd_mutex, portMAX_DELAY);
+    if (is_mounted) {
+        FRESULT res = f_write(&log_file, temp_str, len, &bytes_written);
+        f_sync(&log_file); 
+
+        if (res != FR_OK || bytes_written != len) {
+            // HANDLE WRITE ERROR
+        }
+    }
+    //xSemaphoreGive(sd_mutex); 
+
+    return HAL_OK;
+    //return ((xQueueSend(log_queue, data, 0) == pdPASS) ? HAL_OK : HAL_ERROR); 
 }
 
 static void packer_task_thread(void *arg) {
@@ -179,20 +195,7 @@ static void packer_task_thread(void *arg) {
                     bytes_to_write[ready_idx] = active_buffer_pos; 
 
                     //active_idx = !active_idx;
-                    //active_buffer_pos = 0;
-
-                    UINT bytes_written;
-                    size_t write_size = bytes_to_write[ready_idx];
-                    xSemaphoreTake(sd_mutex, portMAX_DELAY);
-                    if (is_mounted) {
-                        FRESULT res = f_write(&log_file, double_buffer[ready_idx], write_size, &bytes_written);
-                        f_sync(&log_file); 
-
-                        if (res != FR_OK || bytes_written != write_size) {
-                            // HANDLE WRITE ERROR
-                        }
-                    }
-                    xSemaphoreGive(sd_mutex);                    
+                    //active_buffer_pos = 0;                  
 
                     // xSemaphoreTake(buffer_free_sem[active_idx], portMAX_DELAY);
                     // xTaskNotify(sd_task_handle, ready_idx, eSetValueWithOverwrite);
@@ -209,19 +212,6 @@ static void packer_task_thread(void *arg) {
                 //active_idx = !active_idx;
                 //active_buffer_pos = 0; 
 
-                UINT bytes_written;
-                size_t write_size = bytes_to_write[ready_idx];
-                xSemaphoreTake(sd_mutex, portMAX_DELAY);
-                if (is_mounted) {
-                    FRESULT res = f_write(&log_file, double_buffer[ready_idx], write_size, &bytes_written);
-                    f_sync(&log_file); 
-
-                    if (res != FR_OK || bytes_written != write_size) {
-                        // HANDLE WRITE ERROR
-                    }
-                }
-                xSemaphoreGive(sd_mutex);
-
                 //xSemaphoreTake(buffer_free_sem[active_idx], portMAX_DELAY);
                 //xTaskNotify(sd_task_handle, ready_idx, eSetValueWithOverwrite);
             }
@@ -236,20 +226,20 @@ static void sd_task_thread(void *arg) {
 
     while(1) {
         xTaskNotifyWait(0x00, 0xFFFFFFFF, &ready_buffer_idx, portMAX_DELAY);
-        size_t write_size = bytes_to_write[ready_buffer_idx];
+        // size_t write_size = bytes_to_write[ready_buffer_idx];
 
-        xSemaphoreTake(sd_mutex, portMAX_DELAY);
-        if (is_mounted) {
-            FRESULT res = f_write(&log_file, double_buffer[ready_buffer_idx], write_size, &bytes_written);
-            f_sync(&log_file); 
+        // xSemaphoreTake(sd_mutex, portMAX_DELAY);
+        // if (is_mounted) {
+        //     FRESULT res = f_write(&log_file, double_buffer[ready_buffer_idx], write_size, &bytes_written);
+        //     f_sync(&log_file); 
 
-            if (res != FR_OK || bytes_written != write_size) {
-                // HANDLE WRITE ERROR
-            }
-        }
-        xSemaphoreGive(sd_mutex);
+        //     if (res != FR_OK || bytes_written != write_size) {
+        //         // HANDLE WRITE ERROR
+        //     }
+        // }
+        // xSemaphoreGive(sd_mutex);
 
-        xSemaphoreGive(buffer_free_sem[ready_buffer_idx]);
+        // xSemaphoreGive(buffer_free_sem[ready_buffer_idx]);
     }
 }
 
