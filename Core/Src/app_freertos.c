@@ -148,8 +148,8 @@ void StartDefaultTask(void *argument)
     
     // Wysyłka przez USB
    // USB_Transmit((uint8_t*)msg, (uint16_t)len);
-    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port,STATUS_LED_Pin);
-   // USB_Transmit((uint8_t*)"\r\n--- GPS M10 CONFIG START ---\r\n", 32);
+    //HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port,STATUS_LED_Pin);
+    //USB_Transmit((uint8_t*)"\r\napp\r\n", 5);
     osDelay(1000); 
   }
 }
