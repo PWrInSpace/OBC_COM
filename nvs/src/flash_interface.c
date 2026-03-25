@@ -19,6 +19,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "eeprom_emul.h"
+#include "main.h"
 #include "flash_interface.h"
 
 /** @addtogroup EEPROM_Emulation
@@ -46,6 +47,8 @@ const uint32_t QuadWord[4] =
 #ifdef FLASH_BANK_2
 static uint32_t GetBankNumber(uint32_t Address);
 #endif
+
+extern void Error_Handler();
 
 /* Exported functions --------------------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -390,13 +393,7 @@ void OB_Init( void )
   * @brief  This function is executed in case of error occurrence.
   * @retval None
   */
-static void Error_Handler(void)
-{
-  while(1)
-  {
 
-  }
-}
 
 /**
   * @}

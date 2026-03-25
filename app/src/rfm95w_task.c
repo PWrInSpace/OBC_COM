@@ -20,6 +20,7 @@
 
 #include "lora_config.h"
 #include "usbd_cdc_if.h"
+#include "nvs_config.h"
 
 //#define TEST_RSSI
 
@@ -172,8 +173,14 @@ void rfm95wTaskEntry(void *argument)
     uint8_t rx_buf[255];
     uint8_t rx_size = 0;
 
+    NVS_Init();
     rfm95w_config_init();
+   // nvs_save_rfm95_settings(rfm95_radio);
+    osDelay(2000);
+    nvs_get_rfm95_settings(rfm95_radio);
+    osDelay(100);
     rfm95w_config_init_param();
+    
 
     // Startujemy RX Continuous raz na początku
     rfm95_start_rx(rfm95_radio, 0); 

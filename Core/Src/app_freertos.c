@@ -36,10 +36,15 @@
 #include "rfm95w_task.h"
 #include "sd_task.h"
 #include "cmd_task.h"
+#include "eeprom_emul.h"
+#include "semphr.h"
+#include "nvs_config.h"
+#include "gps_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 typedef StaticTask_t osStaticThreadDef_t;
+SemaphoreHandle_t xEEPROMMutex;
 /* USER CODE BEGIN PTD */
 
 /* USER CODE END PTD */
@@ -60,7 +65,7 @@ typedef StaticTask_t osStaticThreadDef_t;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
-uint32_t MyBufferTask00[ 128 ];
+uint32_t MyBufferTask00[1024];
 osStaticThreadDef_t MycontrolBlocTask00;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
@@ -117,6 +122,11 @@ void MX_FREERTOS_Init(void) {
   //SX1280_task_init();
   sd_logger_init();
 
+ // CMD_Task_Init();
+ // RFM95W_task_init();
+ // SX1280_task_init();
+ start_gps_task();
+  
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -130,18 +140,17 @@ void MX_FREERTOS_Init(void) {
 // * @param argument: Not used
 // * @retval None
 // */
-/* USER CODE END Header_StartDefaultTask */
+static uint32_t read_value = 0;
+
 void StartDefaultTask(void *argument)
 {
-  /* USER CODE BEGIN defaultTask */
-  USB_CDC_Config(); 
-  uint8_t msg[] = "Jebać kurwy z STM\r\n";
+  /* 1. Inicjalizacja systemów */
+  USB_CDC_Config();
 
-  while(!sd_is_mounted()) {
-    osDelay(100);
-  }
 
-  for(;;) {
+  /* 4. Pętla wyświetlająca */
+  for(;;)
+  {
     HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
 
     BoardData_t data = { HAL_GetTick(), 1.23f, 4.56f, 1 };
@@ -149,7 +158,6 @@ void StartDefaultTask(void *argument)
 
     osDelay(950);
   }
-  /* USER CODE END defaultTask */
 }
 
 /* Private application code --------------------------------------------------*/
