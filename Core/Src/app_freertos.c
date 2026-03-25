@@ -96,7 +96,9 @@ const osMutexAttr_t usbMutex_attributes = {
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-  sd_logger_init();
+  
+  //sd_logger_init();
+  
   /* USER CODE END Init */
   /* creation of usbMutex */
   usbMutexHandle = osMutexNew(&usbMutex_attributes);
@@ -121,16 +123,13 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
 //   /* add threads, ... */
-  //CMD_Task_Init();
-  //RFM95W_task_init();
-  //SX1280_task_init();
-  //sd_logger_init();
-board_data_init();
- // CMD_Task_Init();
- // RFM95W_task_init();
- // SX1280_task_init();
- start_telemetry_task();
- start_gps_task();
+  board_data_init();
+  // CMD_Task_Init();
+  RFM95W_task_init();
+  // SX1280_task_init();
+  start_gps_task();
+  osDelay(500);
+  //start_telemetry_task();
   
   /* USER CODE END RTOS_THREADS */
 
@@ -157,7 +156,7 @@ void StartDefaultTask(void *argument)
   /* 4. Pętla wyświetlająca */
   for(;;)
   {
-    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+    // HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
 
     // data.timestamp_ms = HAL_GetTick();
     // sd_logger_log_data(&data);

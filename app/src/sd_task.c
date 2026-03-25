@@ -143,7 +143,7 @@ HAL_StatusTypeDef sd_logger_init(void) {
     xSemaphoreGive(buffer_free_sem[1]);
 
     xTaskCreate(packer_task_thread, "sd_packer_task", 1024, NULL, osPriorityAboveNormal, &packer_task_handle);
-    xTaskCreate(sd_task_thread, "sd_write_task", 4096, NULL, osPriorityNormal, &sd_task_handle);
+    // xTaskCreate(sd_task_thread, "sd_write_task", 4096, NULL, osPriorityNormal, &sd_task_handle);
     // xTaskCreate(monitor_task_thread, "sd_monitor", 512, NULL, osPriorityLow, &monitor_task_handle);
 
     return HAL_OK;
