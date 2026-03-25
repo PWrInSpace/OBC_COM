@@ -6,6 +6,9 @@
 #include "sd_task.h"
 
 #include "ff.h"
+#include "logger_macros.h"
+#include "main.h"
+#include "stm32h5xx_hal_gpio.h"
 #include "task.h"
 #include <stdio.h>
 #include "semphr.h"
@@ -36,10 +39,10 @@ static volatile bool is_mounted = false;
 static void packer_task_thread(void *arg);
 static void sd_task_thread(void *arg);
 
-bool sd_logger_mount(void) {
+bool sd_mount(void) {
     if (is_mounted) return true;
 
-    if (f_mount(&fs, "", 1) != FR_OK) return false;
+    if (f_mount(&fs, "", 0) != FR_OK) return false;
 
     FRESULT res = f_open(&log_file, LOG_FILE_NAME, FA_WRITE | FA_OPEN_APPEND);
     if (res != FR_OK) {
@@ -57,31 +60,33 @@ bool sd_logger_mount(void) {
     }
 
     is_mounted = true;
+    HAL_GPIO_WritePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin, GPIO_PIN_SET);
     return true;
 }
 
-void sd_logger_unmount(void) {
+void sd_unmount(void) {
     if (!is_mounted) return;
-    sd_logger_sync();
+    sd_sync();
 
     is_mounted = false;
     
     f_close(&log_file);
     f_mount(NULL, "", 0);
+    HAL_GPIO_WritePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin, GPIO_PIN_RESET);
 }
 
-bool sd_logger_remount(void) {
-    sd_logger_unmount();
-    return sd_logger_mount();
+bool sd_remount(void) {
+    sd_unmount();
+    return sd_mount();
 }
 
-void sd_logger_sync(void) {
+void sd_sync(void) {
     if (is_mounted) {
         f_sync(&log_file);
     }
 }
 
-bool sd_logger_is_mounted(void) {
+bool sd_is_mounted(void) {
     return is_mounted;
 }
 
@@ -93,6 +98,10 @@ HAL_StatusTypeDef sd_logger_init(void) {
 
     buffer_free_sem[0] = xSemaphoreCreateBinary();
     buffer_free_sem[1] = xSemaphoreCreateBinary();
+
+    if (buffer_free_sem[0] == NULL || buffer_free_sem[1] == NULL) {
+        return HAL_ERROR;
+    }
 
     xSemaphoreGive(buffer_free_sem[0]);
     xSemaphoreGive(buffer_free_sem[1]);
@@ -113,6 +122,10 @@ static void packer_task_thread(void *arg) {
     (void)arg;
     BoardData_t temp_data;
     char temp_str[256]; 
+
+    while (!sd_mount()) {
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
 
     xSemaphoreTake(buffer_free_sem[active_idx], portMAX_DELAY);
     while(1) {

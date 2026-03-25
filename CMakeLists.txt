@@ -57,7 +57,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
-    Middlewares/Third_Party/FatFs/Src
+    My_Middlewares/FatFs/Src
     # Add user defined include paths
 )
 
@@ -69,7 +69,7 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 # Remove wrong libob.a library dependency when using cpp files
 list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
 
-add_subdirectory(Middlewares/Third_Party/FatFs)
+add_subdirectory(My_Middlewares/FatFs)
 add_subdirectory(modules/sx1280)
 add_subdirectory(modules/rfm95w)
 add_subdirectory(modules/logger)

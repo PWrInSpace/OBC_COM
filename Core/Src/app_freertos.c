@@ -28,10 +28,12 @@
 #include "main.h"
 #include "projdefs.h"
 #include "stm32h5xx_hal_gpio.h"
+#include "stm32h5xx_hal_sd.h"
 #include "usb_config.h"
 #include "stm32h5xx_it.h"
 #include "sx1280_task.h"
 #include "rfm95w_task.h"
+#include "sd_task.h"
 #include "cmd_task.h"
 /* USER CODE END Includes */
 
@@ -111,8 +113,10 @@ void MX_FREERTOS_Init(void) {
 //   /* add threads, ... */
   //CMD_Task_Init();
   //RFM95W_task_init();
- // SX1280_task_init();
-  
+  //SX1280_task_init();
+  sd_logger_init();
+  //sd_logger_unmount();
+
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -136,6 +140,7 @@ void StartDefaultTask(void *argument)
   for(;;)
   {
     HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+    // HAL_GPIO_TogglePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin);
     osDelay(1000);
   }
   /* USER CODE END defaultTask */

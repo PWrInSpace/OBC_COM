@@ -50,8 +50,8 @@ DRESULT USER_read(BYTE pdrv, BYTE *buff, DWORD sector, UINT count) {
     uint32_t tickstart = HAL_GetTick();
 
     while (HAL_SD_GetCardState(&hsd1) != HAL_SD_CARD_TRANSFER) {
-      while (HAL_SD_GetCardState(&hsd1) != HAL_SD_CARD_TRANSFER) {
-        ;
+      if ((HAL_GetTick() - tickstart) > 500) {
+        return RES_ERROR;
       }
     }
     res = RES_OK;
@@ -67,8 +67,8 @@ DRESULT USER_write(BYTE pdrv, const BYTE *buff, DWORD sector, UINT count) {
     uint32_t tickstart = HAL_GetTick();
     
     while (HAL_SD_GetCardState(&hsd1) != HAL_SD_CARD_TRANSFER) {
-      while (HAL_SD_GetCardState(&hsd1) != HAL_SD_CARD_TRANSFER) {
-        ;
+      if ((HAL_GetTick() - tickstart) > 500) {
+        return RES_ERROR;
       }
     }
     res = RES_OK;
