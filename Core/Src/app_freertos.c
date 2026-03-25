@@ -115,7 +115,6 @@ void MX_FREERTOS_Init(void) {
   //RFM95W_task_init();
   //SX1280_task_init();
   sd_logger_init();
-  //sd_logger_unmount();
 
   /* USER CODE END RTOS_THREADS */
 

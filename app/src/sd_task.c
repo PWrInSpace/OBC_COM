@@ -17,6 +17,8 @@
 #include "stm32h5xx_hal.h"
 #include "FreeRTOSConfig.h"
 #include "stm32h5xx_hal_def.h"
+#include "ff_gen_drv.h"
+#include "user_diskio.h"
 
 static char buffer_A[SD_BUFFER_BYTES];
 static char buffer_B[SD_BUFFER_BYTES];
@@ -36,17 +38,19 @@ static FATFS fs;
 static FIL log_file;
 static volatile bool is_mounted = false;
 
+extern Diskio_drvTypeDef USER_Driver;
+char SDPath[4];
+
 static void packer_task_thread(void *arg);
 static void sd_task_thread(void *arg);
 
 bool sd_mount(void) {
     if (is_mounted) return true;
-
-    if (f_mount(&fs, "", 0) != FR_OK) return false;
+    if (f_mount(&fs, SDPath, 1) != FR_OK) return false;
 
     FRESULT res = f_open(&log_file, LOG_FILE_NAME, FA_WRITE | FA_OPEN_APPEND);
     if (res != FR_OK) {
-        f_mount(NULL, "", 0);
+        f_mount(NULL, SDPath, 0);
         return false;
     }
 
@@ -71,7 +75,7 @@ void sd_unmount(void) {
     is_mounted = false;
     
     f_close(&log_file);
-    f_mount(NULL, "", 0);
+    f_mount(NULL, SDPath, 0);
     HAL_GPIO_WritePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin, GPIO_PIN_RESET);
 }
 
@@ -98,6 +102,10 @@ HAL_StatusTypeDef sd_logger_init(void) {
 
     buffer_free_sem[0] = xSemaphoreCreateBinary();
     buffer_free_sem[1] = xSemaphoreCreateBinary();
+
+    if (FATFS_LinkDriver(&USER_Driver, SDPath) != 0) {
+        return HAL_ERROR;
+    }
 
     if (buffer_free_sem[0] == NULL || buffer_free_sem[1] == NULL) {
         return HAL_ERROR;
