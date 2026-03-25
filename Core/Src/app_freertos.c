@@ -97,7 +97,7 @@ const osMutexAttr_t usbMutex_attributes = {
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
   
-  //sd_logger_init();
+  sd_logger_init();
   
   /* USER CODE END Init */
   /* creation of usbMutex */
@@ -129,7 +129,7 @@ void MX_FREERTOS_Init(void) {
   // SX1280_task_init();
   start_gps_task();
   osDelay(500);
-  //start_telemetry_task();
+  start_telemetry_task();
   
   /* USER CODE END RTOS_THREADS */
 

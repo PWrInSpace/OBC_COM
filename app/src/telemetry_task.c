@@ -8,7 +8,7 @@ osThreadId_t telemetryTaskHandle;
 
 const osThreadAttr_t telemetryTask_attributes = {
     .name = "telemetryTask",
-    .stack_size = 1024,
+    .stack_size = 4096,
     .priority = (osPriority_t) osPriorityAboveNormal,
 };
 
@@ -27,15 +27,26 @@ void telemetry_task_thread(void *arg) {
     (void)arg;
     BoardData_t snapshot = { 0 };
     osDelay(100);
-
-    while(1) {
-        if (g_state_mutex != NULL) {
+HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+osDelay(200);
+HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+osDelay(200);
+HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+osDelay(200);
+HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+osDelay(200);
+HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+osDelay(200);
+    for (;;) {
+        if (g_state_mutex != NULL && xSemaphoreTake(g_state_mutex, pdMS_TO_TICKS(100)) == pdTRUE) {
+           
             memcpy(&snapshot, &g_system_state, sizeof(BoardData_t));
-           // xSemaphoreGive(g_state_mutex);
+            xSemaphoreGive(g_state_mutex);
             snapshot.timestamp_ms = osKernelGetTickCount();
             if (sd_logger_log_data(&snapshot) != HAL_OK) {
             }
         }
+         HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
         osDelay(1000);
     }
 }

@@ -31,11 +31,9 @@ Diskio_drvTypeDef USER_Driver = {
 
 DSTATUS USER_initialize(BYTE pdrv) {
   Stat = STA_NOINIT;
-  
-  // EXAMPLE FOR SDMMC:
-  // if (HAL_SD_Init(&hsd1) == HAL_OK) { Stat &= ~STA_NOINIT; }
-  
-  Stat &= ~STA_NOINIT; 
+  if (HAL_SD_Init(&hsd1) == HAL_OK) { 
+    Stat &= ~STA_NOINIT;
+  }
   return Stat;
 }
 
@@ -44,36 +42,30 @@ DSTATUS USER_status(BYTE pdrv) {
 }
 
 DRESULT USER_read(BYTE pdrv, BYTE *buff, DWORD sector, UINT count) {
-  DRESULT res = RES_ERROR;
-  
   if (HAL_SD_ReadBlocks(&hsd1, buff, sector, count, 1000) == HAL_OK) {
-    uint32_t tickstart = HAL_GetTick();
-
+    uint32_t timeout = HAL_GetTick();
     while (HAL_SD_GetCardState(&hsd1) != HAL_SD_CARD_TRANSFER) {
-      if ((HAL_GetTick() - tickstart) > 500) {
+      if ((HAL_GetTick() - timeout) > 1000) {
         return RES_ERROR;
       }
     }
-    res = RES_OK;
+    return RES_OK;
   }
-  return res;
+  return RES_ERROR;
 }
 
 #if _USE_WRITE == 1
 DRESULT USER_write(BYTE pdrv, const BYTE *buff, DWORD sector, UINT count) {
-  DRESULT res = RES_ERROR;
-
   if (HAL_SD_WriteBlocks(&hsd1, (uint8_t*)buff, sector, count, 1000) == HAL_OK) {
-    uint32_t tickstart = HAL_GetTick();
-    
+    uint32_t timeout = HAL_GetTick();
     while (HAL_SD_GetCardState(&hsd1) != HAL_SD_CARD_TRANSFER) {
-      if ((HAL_GetTick() - tickstart) > 500) {
+      if ((HAL_GetTick() - timeout) > 1000) {
         return RES_ERROR;
       }
     }
-    res = RES_OK;
+    return RES_OK;
   }
-  return res;
+  return RES_ERROR;
 }
 #endif
 

@@ -45,6 +45,13 @@ static volatile bool is_mounted = false;
 extern Diskio_drvTypeDef USER_Driver;
 char SDPath[4];
 
+osThreadId_t sdTaskHandle = NULL;
+const osThreadAttr_t sdTask_attributes = {
+  .name = "sdTask",
+  .priority = (osPriority_t) osPriorityAboveNormal,
+  .stack_size = 2048
+};
+
 static void packer_task_thread(void *arg);
 static void sd_task_thread(void *arg);
 static void monitor_task_thread(void *arg);
@@ -142,7 +149,8 @@ HAL_StatusTypeDef sd_logger_init(void) {
     xSemaphoreGive(buffer_free_sem[0]);
     xSemaphoreGive(buffer_free_sem[1]);
 
-    xTaskCreate(packer_task_thread, "sd_packer_task", 1024, NULL, osPriorityAboveNormal, &packer_task_handle);
+    osThreadNew(packer_task_thread,NULL,&sdTask_attributes);
+    //xTaskCreate(packer_task_thread, "sd_packer_task", 2048, NULL, osPriorityNormal, &packer_task_handle);
     // xTaskCreate(sd_task_thread, "sd_write_task", 4096, NULL, osPriorityNormal, &sd_task_handle);
     // xTaskCreate(monitor_task_thread, "sd_monitor", 512, NULL, osPriorityLow, &monitor_task_handle);
 
@@ -152,11 +160,11 @@ HAL_StatusTypeDef sd_logger_init(void) {
 HAL_StatusTypeDef sd_logger_log_data(const BoardData_t *data) {
     if (!is_mounted) return HAL_ERROR; 
 
-    char temp_str[256];
+    char temp_str[128];
     int len = board_data_serialize(data, temp_str, sizeof(temp_str));
 
     UINT bytes_written;
-    //xSemaphoreTake(sd_mutex, portMAX_DELAY);
+    xSemaphoreTake(sd_mutex, portMAX_DELAY);
     if (is_mounted) {
         FRESULT res = f_write(&log_file, temp_str, len, &bytes_written);
         f_sync(&log_file); 
@@ -165,7 +173,7 @@ HAL_StatusTypeDef sd_logger_log_data(const BoardData_t *data) {
             // HANDLE WRITE ERROR
         }
     }
-    //xSemaphoreGive(sd_mutex); 
+    xSemaphoreGive(sd_mutex); 
 
     return HAL_OK;
     //return ((xQueueSend(log_queue, data, 0) == pdPASS) ? HAL_OK : HAL_ERROR); 
@@ -174,13 +182,13 @@ HAL_StatusTypeDef sd_logger_log_data(const BoardData_t *data) {
 static void packer_task_thread(void *arg) {
     (void)arg;
     BoardData_t temp_data;
-    char temp_str[512];
+    char temp_str[128];
 
     while (!sd_mount()) {
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        osDelay(1000);
     }
 
-    xSemaphoreTake(buffer_free_sem[active_idx], portMAX_DELAY);
+    //xSemaphoreTake(buffer_free_sem[active_idx], portMAX_DELAY);
     while(1) {
         BaseType_t xStatus = xQueueReceive(log_queue, &temp_data, pdMS_TO_TICKS(SD_FORCE_WRITE_TIMEOUT_MS));
 
@@ -217,6 +225,7 @@ static void packer_task_thread(void *arg) {
                 //xTaskNotify(sd_task_handle, ready_idx, eSetValueWithOverwrite);
             }
         }
+        osDelay(100);
     }
 }
 
@@ -241,6 +250,7 @@ static void sd_task_thread(void *arg) {
         // xSemaphoreGive(sd_mutex);
 
         // xSemaphoreGive(buffer_free_sem[ready_buffer_idx]);
+        osDelay(500);
     }
 }
 
