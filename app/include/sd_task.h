@@ -13,7 +13,7 @@
 #include "board_data.h"
 
 #define LOG_FILE_NAME "data.csv"
-#define SD_QUEUE_LENGTH 50
+#define SD_QUEUE_LENGTH 25
 #define SD_BUFFER_BYTES 4096
 #define SD_FORCE_WRITE_TIMEOUT_MS 5000
 

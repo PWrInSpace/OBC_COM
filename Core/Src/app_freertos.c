@@ -92,7 +92,7 @@ const osMutexAttr_t usbMutex_attributes = {
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-
+  sd_logger_init();
   /* USER CODE END Init */
   /* creation of usbMutex */
   usbMutexHandle = osMutexNew(&usbMutex_attributes);
@@ -120,7 +120,6 @@ void MX_FREERTOS_Init(void) {
   //CMD_Task_Init();
   //RFM95W_task_init();
   //SX1280_task_init();
-  sd_logger_init();
 
  // CMD_Task_Init();
  // RFM95W_task_init();
