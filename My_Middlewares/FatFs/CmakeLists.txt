@@ -1,0 +1,23 @@
+add_library(FatFs STATIC)
+
+target_sources(FatFs PRIVATE
+    Src/ff.c
+    Src/diskio.c
+    Src/ff_gen_drv.c
+    Src/ffunicode.c
+    Src/ffsystem.c
+)
+
+target_include_directories(FatFs PUBLIC Src)
+target_link_libraries(FatFs PRIVATE stm32cubemx)
+
+target_include_directories(FatFs PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/Src
+)
+
+target_include_directories(FatFs PRIVATE 
+    ${CMAKE_SOURCE_DIR}/Core/Inc
+    ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/Include
+    ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/include
+    ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure
+)

@@ -59,7 +59,7 @@
 extern DMA_HandleTypeDef handle_GPDMA1_Channel5;
 extern DMA_HandleTypeDef handle_GPDMA1_Channel2;
 extern I2C_HandleTypeDef hi2c1;
-extern SDIO_HandleTypeDef hsdio1;
+extern SD_HandleTypeDef hsd1;
 extern DMA_HandleTypeDef handle_GPDMA1_Channel3;
 extern DMA_HandleTypeDef handle_GPDMA1_Channel0;
 extern DMA_HandleTypeDef handle_GPDMA1_Channel4;
@@ -387,7 +387,7 @@ void SDMMC1_IRQHandler(void)
   /* USER CODE BEGIN SDMMC1_IRQn 0 */
 
   /* USER CODE END SDMMC1_IRQn 0 */
-  HAL_SDIO_IRQHandler(&hsdio1);
+  HAL_SD_IRQHandler(&hsd1);
   /* USER CODE BEGIN SDMMC1_IRQn 1 */
 
   /* USER CODE END SDMMC1_IRQn 1 */

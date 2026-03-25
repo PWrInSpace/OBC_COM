@@ -8,6 +8,8 @@ target_sources(App
         src/usb_config.c
         src/cmd_task.c
         src/gps_task.c
+        src/sd_task.c
+        src/board_data.c
 )
 
 target_include_directories(App
@@ -33,5 +35,6 @@ target_link_libraries(App
         USB_Driver
         cmd
         gps
+        FatFs
         Nvs
 )

@@ -140,6 +140,8 @@ void Error_Handler(void);
 #define SW3_CTRL1_GPIO_Port GPIOD
 #define SW3_CTRL2_Pin GPIO_PIN_15
 #define SW3_CTRL2_GPIO_Port GPIOD
+#define SD_STATUS_Pin GPIO_PIN_7
+#define SD_STATUS_GPIO_Port GPIOC
 #define SD_DETECT_Pin GPIO_PIN_9
 #define SD_DETECT_GPIO_Port GPIOA
 #define STATUS_LED_Pin GPIO_PIN_10

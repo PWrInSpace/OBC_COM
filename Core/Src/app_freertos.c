@@ -28,10 +28,12 @@
 #include "main.h"
 #include "projdefs.h"
 #include "stm32h5xx_hal_gpio.h"
+#include "stm32h5xx_hal_sd.h"
 #include "usb_config.h"
 #include "stm32h5xx_it.h"
 #include "sx1280_task.h"
 #include "rfm95w_task.h"
+#include "sd_task.h"
 #include "cmd_task.h"
 #include "eeprom_emul.h"
 #include "semphr.h"
@@ -114,6 +116,11 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
 //   /* add threads, ... */
+  //CMD_Task_Init();
+  //RFM95W_task_init();
+  //SX1280_task_init();
+  sd_logger_init();
+
  // CMD_Task_Init();
  // RFM95W_task_init();
  // SX1280_task_init();
@@ -143,14 +150,9 @@ void StartDefaultTask(void *argument)
   /* 4. Pętla wyświetlająca */
   for(;;)
   {
-    // Przygotowanie stringa z zapamiętanej w RAM zmiennej data_from_nvs
- //   int len = snprintf(msg, sizeof(msg), "Live NVS Data (Addr 1): 0x%08lX\r\n", data_from_nvs);
-    
-    // Wysyłka przez USB
-   // USB_Transmit((uint8_t*)msg, (uint16_t)len);
-    //HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port,STATUS_LED_Pin);
-    //USB_Transmit((uint8_t*)"\r\napp\r\n", 5);
-    osDelay(1000); 
+    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+    // HAL_GPIO_TogglePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin);
+    osDelay(1000);
   }
 }
 

@@ -51,11 +51,13 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+    Core/Src/user_diskio.c
     # Add user sources here
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
+    My_Middlewares/FatFs/Src
     # Add user defined include paths
 )
 
@@ -67,6 +69,7 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 # Remove wrong libob.a library dependency when using cpp files
 list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
 
+add_subdirectory(My_Middlewares/FatFs)
 add_subdirectory(modules/sx1280)
 add_subdirectory(modules/rfm95w)
 add_subdirectory(modules/logger)
@@ -89,8 +92,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     spi_callbacks
     logger
     USB_Driver
+    FatFs
     Nvs
     # Add user defined libraries
 )
-
-
