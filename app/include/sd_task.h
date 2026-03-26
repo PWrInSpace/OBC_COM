@@ -14,13 +14,13 @@
 #include "ff_gen_drv.h"
 #include "user_diskio.h"
 
-// uncomment when SD_DETECT pin actually changes state if sd card is inserted
+// uncomment when SD_DETECT pin actually changes state if sd card is inserted/taken out
 // #define SD_DETECT_PIN_OPERATIONAL
 
-#define LOG_FILE_NAME "Atest.csv"
+#define LOG_FILE_NAME "data.csv"
 #define SD_QUEUE_LENGTH 25
 #define SD_BUFFER_BYTES 4096
-#define SD_FORCE_WRITE_TIMEOUT_MS 5000
+#define SD_FORCE_FLUSH_INTERVAL_MS 5000
 
 HAL_StatusTypeDef sd_logger_init(void);
 HAL_StatusTypeDef sd_logger_log_data(const BoardData_t *data);
