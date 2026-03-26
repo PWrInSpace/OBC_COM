@@ -60,7 +60,7 @@ static void monitor_task_thread(void *arg);
 #endif
 
 bool sd_mount(void) {
-    if (is_mounted) return true
+    if (is_mounted) return true;
     
     osMutexAcquire(sd_mutex_id, osWaitForever);
     if (f_mount(&fs, SDPath, 1) != FR_OK) {
