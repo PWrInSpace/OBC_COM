@@ -14,7 +14,10 @@
 #include "ff_gen_drv.h"
 #include "user_diskio.h"
 
-#define LOG_FILE_NAME "data.csv"
+// uncomment when SD_DETECT pin actually changes state if sd card is inserted
+// #define SD_DETECT_PIN_OPERATIONAL
+
+#define LOG_FILE_NAME "Atest.csv"
 #define SD_QUEUE_LENGTH 25
 #define SD_BUFFER_BYTES 4096
 #define SD_FORCE_WRITE_TIMEOUT_MS 5000
