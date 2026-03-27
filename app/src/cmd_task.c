@@ -1,3 +1,8 @@
+/*
+ * Author: Mateusz Kłosiński
+ * Organization: PWr in Space
+ * Date: 26.03.2026
+ */
 #include "cmd_task.h"
 #include "cmd_interface.h"
 #include <stdio.h>
@@ -6,6 +11,7 @@
 #include "FreeRTOS.h"
 #include "queue.h"
 #include "usb_config.h"
+#include "usart.h"
 QueueHandle_t cmd_queue = NULL; 
 
 void CMD_Task_Init(void) {
@@ -16,7 +22,7 @@ void CMD_Task_Init(void) {
 
     const osThreadAttr_t cmdTask_attributes = {
         .name = "usbCmdTask",
-        .stack_size = 1024,
+        .stack_size = 4096,
         .priority = (osPriority_t) osPriorityNormal,
     };
     osThreadNew(cmd_task, NULL, &cmdTask_attributes);
@@ -25,6 +31,7 @@ void CMD_Task_Init(void) {
 //! DODAĆ BUFFER POOL WYGODA ZE ZMIENNA DLUGOŚCIĄ DANYCH I BARDZIEJ EFEKTYWNE
 void cmd_task(void *argument) {
     (void)argument;
+   // Start_UART2_DMA_Receiver();
     uint8_t rx_buf[MAX_CMD_LEN]; 
     char log_msg[64];
 

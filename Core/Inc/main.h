@@ -53,7 +53,8 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-
+#define RX_BUF_SIZE 512
+extern volatile uint8_t rx_buffer[RX_BUF_SIZE];
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

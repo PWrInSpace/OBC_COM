@@ -11,12 +11,12 @@ static void process_text_packet(char *raw_str);
 static void process_binary_packet(uint8_t *buf, uint16_t len);
 
 static const CommandMap_t cmd_map[] = {
-    {"help",   CMD_HELP,         handle_help,   "- Show menu"},
-    {"freq",   CMD_SX1280_FREQ,   handle_freq,   ":Hz - Set freq"},
-    {"power",  CMD_SX1280_PWR,    handle_power,  ":dBm - Set TX power"},
-    {"reset",  CMD_RESET,        handle_reset,  "- System reboot"},
-    {"status", CMD_STATUS,       handle_status, "- Radio status"},
-    {"send",   CMD_SX1280_TX,    handle_sx1280_tx, ":data - Send via LoRa"}
+    {"HELP",   CMD_HELP,         handle_help,   "- Show menu"},
+    {"FREQ",   CMD_SX1280_FREQ,   handle_freq,   ":Hz - Set freq"},
+    {"POWER",  CMD_SX1280_PWR,    handle_power,  ":dBm - Set TX power"},
+    {"RESET",  CMD_RESET,        handle_reset,  "- System reboot"},
+    {"STATUS", CMD_STATUS,       handle_status, "- Radio status"},
+    {"HELP",   CMD_SX1280_TX,    handle_sx1280_tx, ":data - Send via LoRa"}
 };
 
 const size_t cmd_map_size = sizeof(cmd_map) / sizeof(CommandMap_t);

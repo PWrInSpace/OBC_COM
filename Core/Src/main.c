@@ -37,6 +37,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "core_cm33.h"
+#include "usb_config.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,7 +58,11 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+/* W sekcji Private variables (PV) */
+#define RX_BUF_SIZE 512
+uint8_t volatile rx_buffer[RX_BUF_SIZE];
+uint8_t main_data_buffer[RX_BUF_SIZE]; // Bufor do "pracy" na danych
+uint16_t last_packet_size = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -72,29 +77,67 @@ void MX_FREERTOS_Init(void);
 
 extern osThreadId_t sx1280TaskHandle;
 extern osThreadId_t rfm95wTaskHandle;
+extern osThreadId_t gpsTaskHandle;
 
 #define RADIO_EVENT_BIT (1 << 0)
 
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+// void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+// {
+//     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+//     // --- Obsługa SX1280 ---
+//     if (GPIO_Pin == SX1280_DIO1_Pin || GPIO_Pin == SX1280_DIO2_Pin) {
+//         if (sx1280TaskHandle != NULL) {
+//             xTaskNotifyFromISR(sx1280TaskHandle, RADIO_EVENT_BIT, eSetBits, &xHigherPriorityTaskWoken);
+//         }
+//     }
+
+//     // --- Obsługa RFM95W ---
+//     if (GPIO_Pin == RFM95W_DIO_Pin) {
+//         if (rfm95wTaskHandle != NULL) {
+//     vTaskNotifyGiveFromISR(rfm95wTaskHandle, &xHigherPriorityTaskWoken);
+//         }
+//     }
+
+//     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+// }
+
+/**
+  * @brief  Obsługa zdarzenia Idle Line lub Full Buffer na USART2
+  * @param  huart: wskaźnik na strukturę UART
+  * @param  Size: liczba bajtów obliczona przez HAL (ile faktycznie wpadło)
+  */
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    if (huart->Instance == USART2)
+    {
+        // 1. Wizualne potwierdzenie (miganie diodą)
+        HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+        __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_IDLEF);
 
-    // --- Obsługa SX1280 ---
-    if (GPIO_Pin == SX1280_DIO1_Pin || GPIO_Pin == SX1280_DIO2_Pin) {
-        if (sx1280TaskHandle != NULL) {
-            xTaskNotifyFromISR(sx1280TaskHandle, RADIO_EVENT_BIT, eSetBits, &xHigherPriorityTaskWoken);
+        // 4. PONOWNE UZBROJENIE
+        // Upewnij się, że używasz pełnego rozmiaru bufora (512)
+        HAL_StatusTypeDef status = HAL_UARTEx_ReceiveToIdle_DMA(huart, rx_buffer, 512);
+
+        if (status == HAL_OK)
+        {
+            // Ponownie wyłączamy Half-Transfer (HT), bo HAL go domyślnie włącza
+            __HAL_DMA_DISABLE_IT(huart->hdmarx, DMA_IT_HT);
+        }
+        else if (huart->Instance == USART1) {
+        BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+        vTaskNotifyGiveFromISR(gpsTaskHandle, &xHigherPriorityTaskWoken);
+        portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+    }
+        else
+        {
+            // Jeśli status nie jest OK (np. HAL_BUSY), oznacza to, że UART ma błąd
+            // Wywołujemy procedurę ratunkową
+            HAL_UART_ErrorCallback(huart);
         }
     }
-
-    // --- Obsługa RFM95W ---
-    if (GPIO_Pin == RFM95W_DIO_Pin) {
-        if (rfm95wTaskHandle != NULL) {
-    vTaskNotifyGiveFromISR(rfm95wTaskHandle, &xHigherPriorityTaskWoken);
-        }
-    }
-
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
+
 /* USER CODE END 0 */
 
 /**
@@ -127,7 +170,6 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_GPDMA1_Init();
-  MX_GPDMA2_Init();
   MX_ADC1_Init();
   MX_FDCAN1_Init();
   MX_I2C1_Init();
@@ -140,7 +182,8 @@ int main(void)
   MX_SDMMC1_SD_Init();
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
-  HAL_Delay(100);
+  HAL_Delay(50);
+  HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t*)rx_buffer, 16);
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -246,7 +289,7 @@ void SystemClock_Config(void)
 
 /**
   * @brief  Period elapsed callback in non blocking mode
-  * @note   This function is called  when TIM1 interrupt took place, inside
+  * @note   This function is called  when TIM6 interrupt took place, inside
   * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
   * a global variable "uwTick" used as application time base.
   * @param  htim : TIM handle
@@ -257,7 +300,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE BEGIN Callback 0 */
 
   /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM1)
+  if (htim->Instance == TIM6)
   {
     HAL_IncTick();
   }

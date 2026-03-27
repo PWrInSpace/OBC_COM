@@ -1,3 +1,8 @@
+/*
+ * Author: Mateusz Kłosiński
+ * Organization: PWr in Space
+ * Date: 26.03.2026
+ */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -29,14 +34,6 @@ void start_gps_task() {
 
 GNSS_StateHandle gpsHandle;
 osThreadId_t gpsTaskHandle;
-
-void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
-    if (huart->Instance == USART1) {
-        BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-        vTaskNotifyGiveFromISR(gpsTaskHandle, &xHigherPriorityTaskWoken);
-        portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-    }
-}
 
 
 /**

@@ -1,3 +1,8 @@
+/*
+ * Author: Mateusz Kłosiński
+ * Organization: PWr in Space
+ * Date: 26.03.2026
+ */
 #ifndef CMD_TASK_H
 #define CMD_TASK_H
 
@@ -8,8 +13,6 @@ extern "C" {
 #include "FreeRTOS.h"
 #include "queue.h"
 #include "cmsis_os2.h"
-
-#define MAX_CMD_LEN 128
 
 extern QueueHandle_t cmd_queue;
 

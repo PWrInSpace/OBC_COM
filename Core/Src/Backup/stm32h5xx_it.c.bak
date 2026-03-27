@@ -22,12 +22,20 @@
 #include "stm32h5xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "cmsis_os2.h"
+
+/* USER CODE BEGIN Includes */
+#include "FreeRTOS.h"    // Musi być PIERWSZY przed innymi plikami FreeRTOS
+#include "queue.h"       // Teraz kompilator zrozumie typ QueueHandle_t
+#include "cmsis_os2.h"   // Jeśli używasz wrappera CMSIS-RTOS v2
+#include "stm32h5xx_hal_gpio.h"
+#include "usart.h"
+#include "usb_config.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
-
+extern QueueHandle_t cmd_queue;
+extern uint8_t uart2_rx_buf[UART2_RX_BUF_SIZE];
 /* USER CODE END TD */
 
 /* Private define ------------------------------------------------------------*/
@@ -56,27 +64,21 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern DMA_HandleTypeDef handle_GPDMA1_Channel5;
-extern DMA_HandleTypeDef handle_GPDMA1_Channel2;
 extern I2C_HandleTypeDef hi2c1;
 extern SD_HandleTypeDef hsd1;
-extern DMA_HandleTypeDef handle_GPDMA1_Channel3;
-extern DMA_HandleTypeDef handle_GPDMA1_Channel0;
-extern DMA_HandleTypeDef handle_GPDMA1_Channel4;
-extern DMA_HandleTypeDef handle_GPDMA1_Channel1;
 extern SPI_HandleTypeDef hspi2;
 extern DMA_HandleTypeDef handle_GPDMA1_Channel7;
 extern DMA_NodeTypeDef Node_GPDMA1_Channel6;
 extern DMA_QListTypeDef List_GPDMA1_Channel6;
 extern DMA_HandleTypeDef handle_GPDMA1_Channel6;
-extern DMA_HandleTypeDef handle_GPDMA2_Channel1;
-extern DMA_HandleTypeDef handle_GPDMA2_Channel0;
+extern DMA_HandleTypeDef handle_GPDMA1_Channel5;
+extern DMA_HandleTypeDef handle_GPDMA1_Channel2;
 extern UART_HandleTypeDef huart1;
+extern UART_HandleTypeDef huart2;
 extern PCD_HandleTypeDef hpcd_USB_DRD_FS;
-extern TIM_HandleTypeDef htim1;
+extern TIM_HandleTypeDef htim6;
 
 /* USER CODE BEGIN EV */
-
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -192,68 +194,17 @@ void EXTI11_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles GPDMA1 Channel 0 global interrupt.
-  */
-void GPDMA1_Channel0_IRQHandler(void)
-{
-  /* USER CODE BEGIN GPDMA1_Channel0_IRQn 0 */
-
-  /* USER CODE END GPDMA1_Channel0_IRQn 0 */
-  /* USER CODE BEGIN GPDMA1_Channel0_IRQn 1 */
-
-  /* USER CODE END GPDMA1_Channel0_IRQn 1 */
-}
-
-/**
-  * @brief This function handles GPDMA1 Channel 1 global interrupt.
-  */
-void GPDMA1_Channel1_IRQHandler(void)
-{
-  /* USER CODE BEGIN GPDMA1_Channel1_IRQn 0 */
-
-  /* USER CODE END GPDMA1_Channel1_IRQn 0 */
-  /* USER CODE BEGIN GPDMA1_Channel1_IRQn 1 */
-
-  /* USER CODE END GPDMA1_Channel1_IRQn 1 */
-}
-
-/**
   * @brief This function handles GPDMA1 Channel 2 global interrupt.
   */
 void GPDMA1_Channel2_IRQHandler(void)
 {
   /* USER CODE BEGIN GPDMA1_Channel2_IRQn 0 */
-
+  //HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin); // Zamigaj diodą, aby zasygnalizować przerwanie DMA
+  HAL_DMA_IRQHandler(&handle_GPDMA1_Channel2);
   /* USER CODE END GPDMA1_Channel2_IRQn 0 */
   /* USER CODE BEGIN GPDMA1_Channel2_IRQn 1 */
 
   /* USER CODE END GPDMA1_Channel2_IRQn 1 */
-}
-
-/**
-  * @brief This function handles GPDMA1 Channel 3 global interrupt.
-  */
-void GPDMA1_Channel3_IRQHandler(void)
-{
-  /* USER CODE BEGIN GPDMA1_Channel3_IRQn 0 */
-
-  /* USER CODE END GPDMA1_Channel3_IRQn 0 */
-  /* USER CODE BEGIN GPDMA1_Channel3_IRQn 1 */
-
-  /* USER CODE END GPDMA1_Channel3_IRQn 1 */
-}
-
-/**
-  * @brief This function handles GPDMA1 Channel 4 global interrupt.
-  */
-void GPDMA1_Channel4_IRQHandler(void)
-{
-  /* USER CODE BEGIN GPDMA1_Channel4_IRQn 0 */
-
-  /* USER CODE END GPDMA1_Channel4_IRQn 0 */
-  /* USER CODE BEGIN GPDMA1_Channel4_IRQn 1 */
-
-  /* USER CODE END GPDMA1_Channel4_IRQn 1 */
 }
 
 /**
@@ -262,7 +213,8 @@ void GPDMA1_Channel4_IRQHandler(void)
 void GPDMA1_Channel5_IRQHandler(void)
 {
   /* USER CODE BEGIN GPDMA1_Channel5_IRQn 0 */
-
+ // HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+  HAL_DMA_IRQHandler(&handle_GPDMA1_Channel5);
   /* USER CODE END GPDMA1_Channel5_IRQn 0 */
   /* USER CODE BEGIN GPDMA1_Channel5_IRQn 1 */
 
@@ -297,16 +249,17 @@ void GPDMA1_Channel7_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles TIM1 Update interrupt.
+  * @brief This function handles TIM6 global interrupt.
   */
-void TIM1_UP_IRQHandler(void)
+void TIM6_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM1_UP_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim1);
-  /* USER CODE END TIM1_UP_IRQn 0 */
-  /* USER CODE BEGIN TIM1_UP_IRQn 1 */
+  /* USER CODE BEGIN TIM6_IRQn 0 */
 
-  /* USER CODE END TIM1_UP_IRQn 1 */
+  /* USER CODE END TIM6_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim6);
+  /* USER CODE BEGIN TIM6_IRQn 1 */
+
+  /* USER CODE END TIM6_IRQn 1 */
 }
 
 /**
@@ -366,6 +319,20 @@ void USART1_IRQHandler(void)
 }
 
 /**
+  * @brief This function handles USART2 global interrupt.
+  */
+void USART2_IRQHandler(void)
+{
+  /* USER CODE BEGIN USART2_IRQn 0 */
+
+  /* USER CODE END USART2_IRQn 0 */
+  HAL_UART_IRQHandler(&huart2);
+  /* USER CODE BEGIN USART2_IRQn 1 */
+
+  /* USER CODE END USART2_IRQn 1 */
+}
+
+/**
   * @brief This function handles USB FS global interrupt.
   */
 void USB_DRD_FS_IRQHandler(void)
@@ -391,32 +358,6 @@ void SDMMC1_IRQHandler(void)
   /* USER CODE BEGIN SDMMC1_IRQn 1 */
 
   /* USER CODE END SDMMC1_IRQn 1 */
-}
-
-/**
-  * @brief This function handles GPDMA2 Channel 0 global interrupt.
-  */
-void GPDMA2_Channel0_IRQHandler(void)
-{
-  /* USER CODE BEGIN GPDMA2_Channel0_IRQn 0 */
-
-  /* USER CODE END GPDMA2_Channel0_IRQn 0 */
-  /* USER CODE BEGIN GPDMA2_Channel0_IRQn 1 */
-
-  /* USER CODE END GPDMA2_Channel0_IRQn 1 */
-}
-
-/**
-  * @brief This function handles GPDMA2 Channel 1 global interrupt.
-  */
-void GPDMA2_Channel1_IRQHandler(void)
-{
-  /* USER CODE BEGIN GPDMA2_Channel1_IRQn 0 */
-
-  /* USER CODE END GPDMA2_Channel1_IRQn 0 */
-  /* USER CODE BEGIN GPDMA2_Channel1_IRQn 1 */
-
-  /* USER CODE END GPDMA2_Channel1_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

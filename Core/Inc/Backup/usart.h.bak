@@ -37,14 +37,15 @@ extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN Private defines */
-
+#define UART2_RX_BUF_SIZE 512
+extern uint8_t uart2_rx_buf[UART2_RX_BUF_SIZE];
 /* USER CODE END Private defines */
 
 void MX_USART1_UART_Init(void);
 void MX_USART2_UART_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+void Start_UART2_DMA_Receiver(void);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

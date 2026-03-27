@@ -1,5 +1,5 @@
 /*
- * Author: Szymon Rzewuski
+ * Author: Szymon Rzewuski, Mateusz Kłosiński
  * Organization: PWr in Space
  * Date: 27.01.2026
  */

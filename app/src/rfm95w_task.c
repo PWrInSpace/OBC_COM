@@ -214,9 +214,12 @@ void rfm95wTaskEntry(void *argument)
 #ifdef TEST_RSSI
                     // Jeśli TEST_SNR jest zdefiniowane, budujemy wiadomość tylko z parametrami
                     int16_t rssi = rfm95_packet_rssi(rfm95_radio);
+                    float snr = rfm95_packet_snr(rfm95_radio);
                     char debug_msg[64];
                     int msg_len = snprintf(debug_msg, sizeof(debug_msg), "RSSI: %d dBm\r\n", rssi);
                     
+                    USB_Transmit((uint8_t*)debug_msg, (uint16_t)msg_len);
+                    msg_len = snprintf(debug_msg, sizeof(debug_msg), "SNR: %.2f dB\r\n", snr);
                     USB_Transmit((uint8_t*)debug_msg, (uint16_t)msg_len);
 #else
                      // W przeciwnym razie (normalny tryb) wysyłamy dane z ramki

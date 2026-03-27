@@ -37,6 +37,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "core_cm33.h"
+#include "usb_config.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,7 +58,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+uint8_t volatile rx_buffer[16];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -75,26 +76,41 @@ extern osThreadId_t rfm95wTaskHandle;
 
 #define RADIO_EVENT_BIT (1 << 0)
 
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+// void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+// {
+//     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+//     // --- Obsługa SX1280 ---
+//     if (GPIO_Pin == SX1280_DIO1_Pin || GPIO_Pin == SX1280_DIO2_Pin) {
+//         if (sx1280TaskHandle != NULL) {
+//             xTaskNotifyFromISR(sx1280TaskHandle, RADIO_EVENT_BIT, eSetBits, &xHigherPriorityTaskWoken);
+//         }
+//     }
+
+//     // --- Obsługa RFM95W ---
+//     if (GPIO_Pin == RFM95W_DIO_Pin) {
+//         if (rfm95wTaskHandle != NULL) {
+//     vTaskNotifyGiveFromISR(rfm95wTaskHandle, &xHigherPriorityTaskWoken);
+//         }
+//     }
+
+//     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+// }
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+  if(huart->Instance == USART2)
+  {
+    USB_Transmit("Received data on USART2\r\n", 27);
+    // 1. Blink LD1 (Usually PB0 or similar on H5 Nucleo - check your main.h)
+    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+    
 
-    // --- Obsługa SX1280 ---
-    if (GPIO_Pin == SX1280_DIO1_Pin || GPIO_Pin == SX1280_DIO2_Pin) {
-        if (sx1280TaskHandle != NULL) {
-            xTaskNotifyFromISR(sx1280TaskHandle, RADIO_EVENT_BIT, eSetBits, &xHigherPriorityTaskWoken);
-        }
-    }
-
-    // --- Obsługa RFM95W ---
-    if (GPIO_Pin == RFM95W_DIO_Pin) {
-        if (rfm95wTaskHandle != NULL) {
-    vTaskNotifyGiveFromISR(rfm95wTaskHandle, &xHigherPriorityTaskWoken);
-        }
-    }
-
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+    // 2. Restart DMA to receive the next 8 bytes
+    HAL_UART_Receive_DMA(&huart2, rx_buffer, 16);
+  }
 }
+
 /* USER CODE END 0 */
 
 /**
@@ -127,7 +143,6 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_GPDMA1_Init();
-  MX_GPDMA2_Init();
   MX_ADC1_Init();
   MX_FDCAN1_Init();
   MX_I2C1_Init();
@@ -137,10 +152,18 @@ int main(void)
   MX_USB_PCD_Init();
   MX_USART2_UART_Init();
   MX_TIM2_Init();
-  MX_SDMMC1_SD_Init();
+  //MX_SDMMC1_SD_Init();
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
   HAL_Delay(100);
+  if (HAL_UART_Receive_DMA(&huart2, rx_buffer, 16) == HAL_OK) {
+    // WYŁĄCZAMY przerwanie Half Transfer, żeby callback nie strzelał w połowie
+    __HAL_DMA_DISABLE_IT(huart2.hdmarx, DMA_IT_HT); 
+} else {
+    Error_Handler();
+}
+
+
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -246,7 +269,7 @@ void SystemClock_Config(void)
 
 /**
   * @brief  Period elapsed callback in non blocking mode
-  * @note   This function is called  when TIM1 interrupt took place, inside
+  * @note   This function is called  when TIM6 interrupt took place, inside
   * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
   * a global variable "uwTick" used as application time base.
   * @param  htim : TIM handle
@@ -257,7 +280,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE BEGIN Callback 0 */
 
   /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM1)
+  if (htim->Instance == TIM6)
   {
     HAL_IncTick();
   }

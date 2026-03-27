@@ -225,34 +225,52 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t *pbuf, uint16_t length)
   * @retval Result of the operation: USBD_OK if all operations are OK else USBD_FAIL
   */
 extern osThreadId_t sx1280TaskHandle;
+extern osThreadId_t rfm95wTaskHandle;
 #define USB_EVENT_BIT ( 1 << 2 )
 extern QueueHandle_t cmd_queue;
 static int8_t CDC_Receive_FS(uint8_t *Buf, uint32_t *Len)
 {
-    if(*Len <= APP_RX_DATA_SIZE) 
+    if(*Len > 0 && *Len <= APP_RX_DATA_SIZE) 
     {
-        memcpy(UserRxBufferFS, Buf, *Len);
-        USB_Rx_Data_Len = (uint16_t)(*Len); 
-        HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
-
+        // 1. Najpierw przygotuj bufor pomocniczy do parsowania (string)
         uint32_t cmd_len = (*Len < 128) ? *Len : 127;
         memcpy(UserRxCmdBufferFS, Buf, cmd_len);
         UserRxCmdBufferFS[cmd_len] = '\0';
 
+        // 2. SPRAWDZENIE: Czy to komenda systemowa?
         if(strncmp((char*)UserRxCmdBufferFS, "CMD:", 4) == 0) 
         {
-            BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-            xQueueSendFromISR(cmd_queue, UserRxCmdBufferFS, &xHigherPriorityTaskWoken);
-            portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+            if(cmd_queue != NULL) 
+            {
+                BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+                // Wysyłamy do cmd_task
+                xQueueSendFromISR(cmd_queue, UserRxCmdBufferFS, &xHigherPriorityTaskWoken);
+                portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+            }
+
+            // KLUCZOWE: Czyścimy flagi i wychodzimy, aby rfm95wTask nie zareagował
+            USB_Rx_Data_Len = 0; 
+            
+            // Przygotuj USB na następny pakiet i zakończ funkcję tutaj
+            USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
+            USBD_CDC_ReceivePacket(&hUsbDeviceFS);
+            return (USBD_OK);
         }
-        
-        if(sx1280TaskHandle != NULL) 
+
+        // 3. Jeśli to NIE jest "CMD:", procesuj jako dane do wysłania przez LoRa
+        memcpy(UserRxBufferFS, Buf, *Len);
+        USB_Rx_Data_Len = (uint16_t)(*Len);
+        HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+
+        // Powiadom zadanie LoRa (rfm95wTaskEntry)
+        if(rfm95wTaskHandle != NULL) // Upewnij się, że nazwa handle jest poprawna
         {
             BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-            xTaskNotifyFromISR(sx1280TaskHandle, USB_EVENT_BIT, eSetBits, &xHigherPriorityTaskWoken);
+            vTaskNotifyGiveFromISR(rfm95wTaskHandle, &xHigherPriorityTaskWoken);
             portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
         }
     }
+
     USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
     USBD_CDC_ReceivePacket(&hUsbDeviceFS);
     return (USBD_OK);
