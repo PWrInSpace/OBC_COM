@@ -123,6 +123,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
         // WYSYŁAMY odebrany bufor (lub jego fragment o długości 'Size') do kolejki
         // Uwaga: Kolejka musi być zainicjalizowana na odpowiedni rozmiar elementu!
         xQueueSendFromISR(cmd_queue, (void *)rx_buffer, &xHigherPriorityTaskWoken);
+        memset(rx_buffer, 0, 512);
         
         // Wymuszenie przełączenia kontekstu, jeśli zadanie czekające na kolejkę ma wyższy priorytet
         portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
