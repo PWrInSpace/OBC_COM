@@ -7,6 +7,7 @@ SemaphoreHandle_t g_state_mutex = NULL;
 
 void board_data_init(void) {
     g_state_mutex = xSemaphoreCreateMutex();
+    xSemaphoreGive(g_state_mutex);
 }
 
 int board_data_serialize(const BoardData_t *data, char *out_buffer, size_t buffer_size) {

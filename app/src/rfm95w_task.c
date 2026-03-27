@@ -23,7 +23,7 @@
 #include "nvs_config.h"
 #include "board_data.h"
 
-//#define TEST_RSSI
+#define TEST_RSSI
 
 #define TX_DONE_TIMEOUT_MS_DEFAULT 20
 extern volatile uint16_t USB_Rx_Data_Len; 
@@ -207,22 +207,22 @@ void rfm95wTaskEntry(void *argument)
             if (rx_size > 0) {
 
                 if (xSemaphoreTake(g_state_mutex, portMAX_DELAY) == pdTRUE) {
-    g_system_state.RSSI = rfm95_packet_rssi(rfm95_radio);
-    xSemaphoreGive(g_state_mutex);
-                HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+                    g_system_state.RSSI = rfm95_packet_rssi(rfm95_radio);
+                    xSemaphoreGive(g_state_mutex);
+                    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
 
-               #ifdef TEST_RSSI
-    // Jeśli TEST_SNR jest zdefiniowane, budujemy wiadomość tylko z parametrami
-    int16_t rssi = rfm95_packet_rssi(rfm95_radio);
-    char debug_msg[64];
-    int msg_len = snprintf(debug_msg, sizeof(debug_msg), "RSSI: %d dBm\r\n", rssi);
-    
-    USB_Transmit((uint8_t*)debug_msg, (uint16_t)msg_len);
+#ifdef TEST_RSSI
+                    // Jeśli TEST_SNR jest zdefiniowane, budujemy wiadomość tylko z parametrami
+                    int16_t rssi = rfm95_packet_rssi(rfm95_radio);
+                    char debug_msg[64];
+                    int msg_len = snprintf(debug_msg, sizeof(debug_msg), "RSSI: %d dBm\r\n", rssi);
+                    
+                    USB_Transmit((uint8_t*)debug_msg, (uint16_t)msg_len);
 #else
-    // W przeciwnym razie (normalny tryb) wysyłamy dane z ramki
-    USB_Transmit(rx_buf, rx_size);
+                     // W przeciwnym razie (normalny tryb) wysyłamy dane z ramki
+                    USB_Transmit(rx_buf, rx_size);
 #endif
-            }
+                }
         }
         rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
     } 
