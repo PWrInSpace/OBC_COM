@@ -58,7 +58,7 @@ typedef StaticTask_t osStaticThreadDef_t;
 
 /* USER CODE END PD */
 
-/* Private macro -------------------------------------------------------------*/
+/* Private macro ------------------------------------------git log-------------------*/
 /* USER CODE BEGIN PM */
 
 /* USER CODE END PM */
@@ -126,7 +126,7 @@ void MX_FREERTOS_Init(void) {
   board_data_init();
   CMD_Task_Init();
   RFM95W_task_init();
-  // SX1280_task_init();
+  //SX1280_task_init();
   start_gps_task();
   osDelay(50);
   start_telemetry_task();

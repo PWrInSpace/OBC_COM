@@ -146,62 +146,87 @@ static void sx1280_recv_once_ceiling(SX1280_t *radio, uint32_t ceiling_ms) {
   }
 }
 
+void verify_freq(SX1280_t *sx1280_radio)
+{
+  // --- SEKCJA KONFIGURACJI (RAZ) ---
+SX1280Reset(sx1280_radio);
+SX1280SetStandby(sx1280_radio, STDBY_RC);
+SX1280SetPacketType(sx1280_radio, PACKET_TYPE_LORA); 
+SX1280SetRfFrequency(sx1280_radio, 2450000000); // 2.45 GHz
+SX1280SetTxParams(sx1280_radio, 13, RADIO_RAMP_20_US);
+
+// Uruchom nadawanie
+//SX1280SetTxContinuousWave(sx1280_radio);
+}
+
 void sx1280TaskEntry(void *argument) {
     LoRaDevs_t *lora_devs = get_lora_devs_instance();
     SX1280_t* sx1280_radio = lora_devs->sx1280;
 
     
-    uint8_t rx_buff[255];
-    uint8_t rx_size = 0;
-    sx1280_config_init();
-    SX1280ClearIrqStatus(sx1280_radio, IRQ_RADIO_ALL);
-    SX1280SetRx(sx1280_radio, RX_TX_CONTINUOUS);
+    // uint8_t rx_buff[255];
+    // uint8_t rx_size = 0;
+    // sx1280_config_init();
+    // SX1280ClearIrqStatus(sx1280_radio, IRQ_RADIO_ALL);
+    // SX1280SetRx(sx1280_radio, RX_TX_CONTINUOUS);
 
-    xTelemetryTimer = xTimerCreate("TelTimer", pdMS_TO_TICKS(500), pdTRUE, (void*)0, vTelemetryTimerCallback);
+    // xTelemetryTimer = xTimerCreate("TelTimer", pdMS_TO_TICKS(500), pdTRUE, (void*)0, vTelemetryTimerCallback);
 
-    if (xTelemetryTimer != NULL) {
-        xTimerStart(xTelemetryTimer, 0);
-    }
-    uint32_t ulNotifiedValue = 0;
+    // if (xTelemetryTimer != NULL) {
+    //     xTimerStart(xTelemetryTimer, 0);
+    // }
+    // uint32_t ulNotifiedValue = 0;
+    verify_freq(sx1280_radio);
     
    for(;;) {
+      // 1. Daj radiu czas na stabilizację po resecie
+osDelay(100); 
 
-        if (xTaskNotifyWait(0, 0xFFFFFFFF, &ulNotifiedValue, pdMS_TO_TICKS(100)) == pdTRUE) {
+// 2. Pobierz wersję firmware (funkcja sama obsługuje SPI)
+uint16_t fw_version = SX1280GetFirmwareVersion(sx1280_radio);
 
-            if (ulNotifiedValue & RADIO_EVENT_BIT) {
-                uint16_t irqStatus = SX1280GetIrqStatus(sx1280_radio);
-                SX1280ClearIrqStatus(sx1280_radio, IRQ_RADIO_ALL);
+// 3. Przygotuj czytelny komunikat tekstowy
+char debug_msg[50];
+int msg_len = snprintf(debug_msg, sizeof(debug_msg), "SX1280 FW Version: 0x%04X\r\n", fw_version);
 
-                if (irqStatus & IRQ_RX_DONE) {
-                    SX1280GetPayload(sx1280_radio, rx_buff, &rx_size, 255);
-                    if(rx_size > 0) USB_Transmit(rx_buff, rx_size);
-                    USB_Transmit((uint8_t*)"RX Done\r\n", 9);
-                }
+// 4. Wyślij przez USB (zakładając, że USB_Transmit przyjmuje wskaźnik i długość)
+USB_Transmit((uint8_t*)debug_msg, msg_len);
+        // if (xTaskNotifyWait(0, 0xFFFFFFFF, &ulNotifiedValue, pdMS_TO_TICKS(100)) == pdTRUE) {
+
+        //     if (ulNotifiedValue & RADIO_EVENT_BIT) {
+        //         uint16_t irqStatus = SX1280GetIrqStatus(sx1280_radio);
+        //         SX1280ClearIrqStatus(sx1280_radio, IRQ_RADIO_ALL);
+
+        //         if (irqStatus & IRQ_RX_DONE) {
+        //             SX1280GetPayload(sx1280_radio, rx_buff, &rx_size, 255);
+        //             if(rx_size > 0) USB_Transmit(rx_buff, rx_size);
+        //             USB_Transmit((uint8_t*)"RX Done\r\n", 9);
+        //         }
                 
-                if (irqStatus & IRQ_TX_DONE) {
-                  USB_Transmit((uint8_t*)"TX Done\r\n", 9);
-                    SX1280SetRx(sx1280_radio, RX_TX_CONTINUOUS);
-                }
-            }
+        //         if (irqStatus & IRQ_TX_DONE) {
+        //           USB_Transmit((uint8_t*)"TX Done\r\n", 9);
+        //             SX1280SetRx(sx1280_radio, RX_TX_CONTINUOUS);
+        //         }
+        //     }
 
-            //! TUTAJ POWINNO BYĆ OCZEKIWANIE NA IRQ Z USARTA WSM ZAMIAST TIMERA ALE NA RAZIE NIE MAMY USARTA PODŁĄCZONEGO DO SX1280
-            //! JEŚLI DOSTANE DANE OD MCB TO POWINNO PAKOWAĆ SIĘ DO DO KOLEJKI Z BUFFER POOLA I TUTAJ POWINIENEM SCIAGAC TE DANE I ZWRACAC WSKAZNIK DO WOLNEGO BUFFFER POOLA
-            if ((ulNotifiedValue & TIMER_EVENT_BIT) & GroundStationFlag) { //! Add flag t be read from nvs EEPROM Emulator
-                uint8_t my_data[] = "PWrInSpace_Telemetry_Test";
-                SX1280SendPayload(sx1280_radio, my_data, sizeof(my_data), RX_TX_SINGLE);
-            }
+        //     //! TUTAJ POWINNO BYĆ OCZEKIWANIE NA IRQ Z USARTA WSM ZAMIAST TIMERA ALE NA RAZIE NIE MAMY USARTA PODŁĄCZONEGO DO SX1280
+        //     //! JEŚLI DOSTANE DANE OD MCB TO POWINNO PAKOWAĆ SIĘ DO DO KOLEJKI Z BUFFER POOLA I TUTAJ POWINIENEM SCIAGAC TE DANE I ZWRACAC WSKAZNIK DO WOLNEGO BUFFFER POOLA
+        //     if ((ulNotifiedValue & TIMER_EVENT_BIT) & GroundStationFlag) { //! Add flag t be read from nvs EEPROM Emulator
+        //         uint8_t my_data[] = "PWrInSpace_Telemetry_Test";
+        //         SX1280SendPayload(sx1280_radio, my_data, sizeof(my_data), RX_TX_SINGLE);
+        //     }
 
 
-             //!< USB COMMUNICATION oncomment flag on top of file to use
-            #ifdef USB_FLAG
-             if (ulNotifiedValue & USB_EVENT_BIT) {
-            if (USB_Rx_Data_Len > 0) {
-                SX1280SendPayload(sx1280_radio, UserRxBufferFS, (uint8_t)USB_Rx_Data_Len, RX_TX_SINGLE);
-                USB_Rx_Data_Len = 0;
-            }
-        }
-        #endif
-        }
+        //      //!< USB COMMUNICATION oncomment flag on top of file to use
+        //     #ifdef USB_FLAG
+        //      if (ulNotifiedValue & USB_EVENT_BIT) {
+        //     if (USB_Rx_Data_Len > 0) {
+        //         SX1280SendPayload(sx1280_radio, UserRxBufferFS, (uint8_t)USB_Rx_Data_Len, RX_TX_SINGLE);
+        //         USB_Rx_Data_Len = 0;
+        //     }
+        // }
+        // #endif
+        // }
 
        
     }
