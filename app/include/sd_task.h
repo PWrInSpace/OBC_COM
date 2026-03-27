@@ -17,7 +17,11 @@
 // uncomment when SD_DETECT pin actually changes state if sd card is inserted/taken out
 // #define SD_DETECT_PIN_OPERATIONAL
 
-#define LOG_FILE_NAME "data.csv"
+#define LOG_DIR "OBC-COM"
+#define LOG_FILENAME_PREFIX "data_"
+#define LOG_FILENAME_EXT ".csv"
+#define LOG_MAX_FILES 1000
+
 #define SD_QUEUE_LENGTH 25
 #define SD_BUFFER_BYTES 4096
 #define SD_FORCE_FLUSH_INTERVAL_MS 5000
