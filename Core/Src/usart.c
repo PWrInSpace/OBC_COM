@@ -300,7 +300,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     handle_GPDMA1_Channel2.Init.BlkHWRequest = DMA_BREQ_SINGLE_BURST;
     handle_GPDMA1_Channel2.Init.Direction = DMA_PERIPH_TO_MEMORY;
     handle_GPDMA1_Channel2.Init.SrcInc = DMA_SINC_FIXED;
-    handle_GPDMA1_Channel2.Init.DestInc = DMA_DINC_FIXED;
+    handle_GPDMA1_Channel2.Init.DestInc = DMA_DINC_INCREMENTED;
     handle_GPDMA1_Channel2.Init.SrcDataWidth = DMA_SRC_DATAWIDTH_BYTE;
     handle_GPDMA1_Channel2.Init.DestDataWidth = DMA_DEST_DATAWIDTH_BYTE;
     handle_GPDMA1_Channel2.Init.Priority = DMA_HIGH_PRIORITY;

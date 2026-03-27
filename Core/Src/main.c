@@ -38,6 +38,7 @@
 #include "task.h"
 #include "core_cm33.h"
 #include "usb_config.h"
+#include "cmd_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -109,21 +110,32 @@ extern osThreadId_t gpsTaskHandle;
   */
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-    if (huart->Instance == USART2)
+   if (huart->Instance == USART2)
+{
+    // 1. Wizualne potwierdzenie
+    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+    
+    // 2. Wysłanie danych do kolejki (jeśli kolejka istnieje)
+    if (cmd_queue != NULL) 
     {
-        // 1. Wizualne potwierdzenie (miganie diodą)
-        HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
-        __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_IDLEF);
+        BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+        
+        // WYSYŁAMY odebrany bufor (lub jego fragment o długości 'Size') do kolejki
+        // Uwaga: Kolejka musi być zainicjalizowana na odpowiedni rozmiar elementu!
+        xQueueSendFromISR(cmd_queue, (void *)rx_buffer, &xHigherPriorityTaskWoken);
+        
+        // Wymuszenie przełączenia kontekstu, jeśli zadanie czekające na kolejkę ma wyższy priorytet
+        portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+    }
 
-        // 4. PONOWNE UZBROJENIE
-        // Upewnij się, że używasz pełnego rozmiaru bufora (512)
-        HAL_StatusTypeDef status = HAL_UARTEx_ReceiveToIdle_DMA(huart, rx_buffer, 512);
-
-        if (status == HAL_OK)
-        {
-            // Ponownie wyłączamy Half-Transfer (HT), bo HAL go domyślnie włącza
-            __HAL_DMA_DISABLE_IT(huart->hdmarx, DMA_IT_HT);
-        }
+    // 3. Czyścimy flagi i uzbrajamy ponownie
+    __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_IDLEF);
+    
+    if (HAL_UARTEx_ReceiveToIdle_DMA(huart, rx_buffer, 512) == HAL_OK)
+    {
+        __HAL_DMA_DISABLE_IT(huart->hdmarx, DMA_IT_HT);
+    }
+}
         else if (huart->Instance == USART1) {
         BaseType_t xHigherPriorityTaskWoken = pdFALSE;
         vTaskNotifyGiveFromISR(gpsTaskHandle, &xHigherPriorityTaskWoken);
@@ -136,7 +148,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
             HAL_UART_ErrorCallback(huart);
         }
     }
-}
+
 
 /* USER CODE END 0 */
 
@@ -179,7 +191,7 @@ int main(void)
   MX_USB_PCD_Init();
   MX_USART2_UART_Init();
   MX_TIM2_Init();
-  MX_SDMMC1_SD_Init();
+  //MX_SDMMC1_SD_Init();
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
   HAL_Delay(50);
