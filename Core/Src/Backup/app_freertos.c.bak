@@ -44,11 +44,11 @@
 #include "gps_task.h"
 #include "telemetry_task.h"
 #include "board_data.h"
+#include "usart.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 typedef StaticTask_t osStaticThreadDef_t;
-SemaphoreHandle_t xEEPROMMutex;
 /* USER CODE BEGIN PTD */
 
 /* USER CODE END PTD */
@@ -69,7 +69,7 @@ SemaphoreHandle_t xEEPROMMutex;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
-uint32_t MyBufferTask00[1024];
+uint32_t MyBufferTask00[ 128 ];
 osStaticThreadDef_t MycontrolBlocTask00;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
@@ -124,11 +124,11 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_THREADS */
 //   /* add threads, ... */
   board_data_init();
-  // CMD_Task_Init();
+  CMD_Task_Init();
   RFM95W_task_init();
   // SX1280_task_init();
   start_gps_task();
-  osDelay(500);
+  osDelay(50);
   start_telemetry_task();
   
   /* USER CODE END RTOS_THREADS */
@@ -139,30 +139,24 @@ void MX_FREERTOS_Init(void) {
 
 }
 /* USER CODE BEGIN Header_StartDefaultTask */
-// /**
-// * @brief Function implementing the defaultTask thread.
-// * @param argument: Not used
-// * @retval None
-// */
-static uint32_t read_value = 0;
-
+/**
+* @brief Function implementing the defaultTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void *argument)
 {
-  /* 1. Inicjalizacja systemów */
-  USB_CDC_Config();
-
-  // BoardData_t data = { HAL_GetTick(), 1.23f, 4.56f, 1, 0, 0, 0, 0, 12, 0, 0 };
-
-  /* 4. Pętla wyświetlająca */
+  /* USER CODE BEGIN defaultTask */
+   USB_CDC_Config();
+  /* Infinite loop */
   for(;;)
   {
-    // HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
-
-    // data.timestamp_ms = HAL_GetTick();
-    // sd_logger_log_data(&data);
-
+   // HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+    USB_Transmit("Default task alive\r\n", 21);
     osDelay(1000);
   }
+  /* USER CODE END defaultTask */
 }
 
 /* Private application code --------------------------------------------------*/

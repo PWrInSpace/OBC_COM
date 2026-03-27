@@ -1,3 +1,8 @@
+/*
+ * Author: Mateusz Kłosiński
+ * Organization: PWr in Space
+ * Date: 26.03.2026
+ */
 #include "telemetry_task.h"
 #include "board_data.h"
 #include "sd_task.h"
@@ -37,7 +42,7 @@ void telemetry_task_thread(void *arg) {
             if (sd_logger_log_data(&snapshot) != HAL_OK) {
             }
         }
-         HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+       //  HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
         osDelay(1000);
     }
 }

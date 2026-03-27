@@ -1,3 +1,8 @@
+/*
+ * Author: Mateusz Kłosiński
+ * Organization: PWr in Space
+ * Date: 26.03.2026
+ */
 #ifndef TELEMETRY_TASK_H
 #define TELEMETRY_TASK_H
 

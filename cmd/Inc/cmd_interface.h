@@ -17,6 +17,7 @@ typedef enum {
     CMD_RESET = 0x04,
     CMD_STATUS = 0x05,
     CMD_SX1280_TX = 0x06,
+    CMD_LORA_TX = 0x07,
     CMD_COUNT
 } Command_t;
 
@@ -42,6 +43,7 @@ void handle_power(cmd_params_t *params);
 void handle_reset(cmd_params_t *params);
 void handle_status(cmd_params_t *params);
 void handle_sx1280_tx(cmd_params_t *params);
+void handle_lora_tx(cmd_params_t *params);
 
 
 

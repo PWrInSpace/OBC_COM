@@ -1,3 +1,8 @@
+/*
+ * Author: Mateusz Kłosiński
+ * Organization: PWr in Space
+ * Date: 26.03.2026
+ */
 #include "board_data.h"
 #include <stdio.h>
 #include <stdlib.h>

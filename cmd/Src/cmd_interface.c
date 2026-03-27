@@ -6,18 +6,51 @@
 #include <stdio.h>
 #include "main.h"
 #include "usb_config.h"
-
+#include "FreeRTOSConfig.h"
+#include "task.h"
+#include "cmsis_os2.h"
 static void process_text_packet(char *raw_str);
 static void process_binary_packet(uint8_t *buf, uint16_t len);
 
 static const CommandMap_t cmd_map[] = {
-    {"help",   CMD_HELP,         handle_help,   "- Show menu"},
-    {"freq",   CMD_SX1280_FREQ,   handle_freq,   ":Hz - Set freq"},
-    {"power",  CMD_SX1280_PWR,    handle_power,  ":dBm - Set TX power"},
-    {"reset",  CMD_RESET,        handle_reset,  "- System reboot"},
-    {"status", CMD_STATUS,       handle_status, "- Radio status"},
-    {"send",   CMD_SX1280_TX,    handle_sx1280_tx, ":data - Send via LoRa"}
+    {"HELP",   CMD_HELP,         handle_help,   "- Show menu"},
+    {"FREQ",   CMD_SX1280_FREQ,   handle_freq,   ":Hz - Set freq"},
+    {"POWER",  CMD_SX1280_PWR,    handle_power,  ":dBm - Set TX power"},
+    {"RESET",  CMD_RESET,        handle_reset,  "- System reboot"},
+    {"STATUS", CMD_STATUS,       handle_status, "- Radio status"},
+    {"HELP",   CMD_SX1280_TX,    handle_sx1280_tx, ":data - Send via LoRa"},
+    {"LORATX",   CMD_LORA_TX,    handle_lora_tx, ":data - Send via LoRa"}
 };
+
+extern osThreadId_t rfm95wTaskHandle;
+extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
+extern volatile uint16_t USB_Rx_Data_Len;
+
+void handle_lora_tx(cmd_params_t *params)
+{
+    // 1. Sprawdź czy mamy dane (np. CMD:LORATX:TEST)
+    if (params->len == 0 || params->data == NULL) {
+        USB_Transmit((uint8_t*)"ERR: No data to send\r\n", 22);
+        return;
+    }
+
+    // 2. Skopiuj dane do bufora radiowego (używamy UserRxBufferFS, bo task go czyta)
+    uint16_t copy_len = (params->len < APP_RX_DATA_SIZE) ? params->len : APP_RX_DATA_SIZE;
+    memcpy(UserRxBufferFS, params->data, copy_len);
+    
+    // 3. Ustaw długość (to aktywuje 'if' w Twoim rfm95wTaskEntry)
+    USB_Rx_Data_Len = copy_len;
+
+    // 4. Powiadom zadanie rfm95w, żeby przerwało ulTaskNotifyTake
+    if (rfm95wTaskHandle != NULL) {
+        xTaskNotifyGive(rfm95wTaskHandle);
+    }
+
+    if (!params->is_binary) {
+        USB_Transmit((uint8_t*)"OK: Data queued for RFM95W TX\r\n", 31);
+    }
+}
+
 
 const size_t cmd_map_size = sizeof(cmd_map) / sizeof(CommandMap_t);
 

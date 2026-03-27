@@ -22,6 +22,7 @@
 #include "usbd_cdc_if.h"
 #include "nvs_config.h"
 #include "board_data.h"
+#include "usart.h"
 
 #define TEST_RSSI
 
@@ -168,6 +169,8 @@ void recv_once_ceiling(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_buf, ui
     stop_radio_standby(radio);
   }
 }
+
+
 void rfm95wTaskEntry(void *argument)
 {
     rfm95_t *rfm95_radio = get_lora_devs_instance()->rfm95w;
@@ -205,7 +208,7 @@ void rfm95wTaskEntry(void *argument)
         rx_size = 0;
         if (handle_rx_done_and_get_payload(rfm95_radio, rx_buf, &rx_size)) {
             if (rx_size > 0) {
-
+                HAL_UART_Transmit_DMA(&huart2, rx_buf, rx_size);
                 if (xSemaphoreTake(g_state_mutex, portMAX_DELAY) == pdTRUE) {
                     g_system_state.RSSI = rfm95_packet_rssi(rfm95_radio);
                     xSemaphoreGive(g_state_mutex);
@@ -214,9 +217,12 @@ void rfm95wTaskEntry(void *argument)
 #ifdef TEST_RSSI
                     // Jeśli TEST_SNR jest zdefiniowane, budujemy wiadomość tylko z parametrami
                     int16_t rssi = rfm95_packet_rssi(rfm95_radio);
+                    float snr = rfm95_packet_snr(rfm95_radio);
                     char debug_msg[64];
                     int msg_len = snprintf(debug_msg, sizeof(debug_msg), "RSSI: %d dBm\r\n", rssi);
                     
+                    USB_Transmit((uint8_t*)debug_msg, (uint16_t)msg_len);
+                    msg_len = snprintf(debug_msg, sizeof(debug_msg), "SNR: %.2f dB\r\n", snr);
                     USB_Transmit((uint8_t*)debug_msg, (uint16_t)msg_len);
 #else
                      // W przeciwnym razie (normalny tryb) wysyłamy dane z ramki
