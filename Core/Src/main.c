@@ -192,7 +192,7 @@ int main(void)
   MX_USB_PCD_Init();
   MX_USART2_UART_Init();
   MX_TIM2_Init();
-  //MX_SDMMC1_SD_Init();
+  MX_SDMMC1_SD_Init();
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
   HAL_Delay(50);
@@ -329,6 +329,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
+  if (HAL_SD_Init(&hsd1) != HAL_OK)
+  {
+    HAL_SD_DeInit(&hsd1);
+    return;
+  }
   /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
   while (1)
