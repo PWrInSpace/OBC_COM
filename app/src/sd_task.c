@@ -22,6 +22,8 @@
 #include "ff_gen_drv.h"
 #include "user_diskio.h"
 
+static char filename[32] = {};
+
 static char buffer_A[SD_BUFFER_BYTES];
 static char buffer_B[SD_BUFFER_BYTES];
 static char* double_buffer[2] = {buffer_A, buffer_B};
@@ -59,16 +61,41 @@ static void sd_task_thread(void *arg);
 static void monitor_task_thread(void *arg);
 #endif
 
+static bool find_next_filename() {
+    for (int i = 0; i < LOG_MAX_FILES; i++) {
+        snprintf(filename, sizeof(filename), "%s/%s%03d%s", LOG_DIR, LOG_FILENAME_PREFIX, i, LOG_FILENAME_EXT);
+
+        FILINFO fno;
+        if (f_stat(filename, &fno) == FR_NO_FILE) return true;
+    }
+
+    return false;
+}
+
 bool sd_mount(void) {
     if (is_mounted) return true;
     
     osMutexAcquire(sd_mutex_id, osWaitForever);
-    if (f_mount(&fs, SDPath, 1) != FR_OK) {
+    FRESULT res = f_mount(&fs, SDPath, 1);
+    if (res != FR_OK) {
         osMutexRelease(sd_mutex_id);
         return false;
     }
 
-    FRESULT res = f_open(&log_file, LOG_FILE_NAME, FA_WRITE | FA_OPEN_APPEND);
+    res = f_mkdir(LOG_DIR);
+    if (res != FR_OK && res != FR_EXIST) {
+        f_mount(NULL, SDPath, 0);
+        osMutexRelease(sd_mutex_id);
+        return false;
+    }
+
+    if (!find_next_filename()) {
+        f_mount(NULL, SDPath, 0);
+        osMutexRelease(sd_mutex_id);
+        return false;
+    }
+
+    res = f_open(&log_file, filename, FA_WRITE | FA_CREATE_NEW);
     if (res != FR_OK) {
         f_mount(NULL, SDPath, 0);
         osMutexRelease(sd_mutex_id);
@@ -179,7 +206,7 @@ static void packer_task_thread(void *arg) {
 
     osSemaphoreAcquire(buffer_free_sem_id[active_idx], osWaitForever);
     for(;;) {
-        osStatus_t status = osMessageQueueGet(log_queue_id, &data_item, NULL, SD_FORCE_FLUSH_INTERVAL_MS);
+        osStatus_t status = osMessageQueueGet(log_queue_id, &data_item, NULL, flush_interval);
 
         if (status == osOK) {
             int len = board_data_serialize(&data_item, temp_str, sizeof(temp_str));
