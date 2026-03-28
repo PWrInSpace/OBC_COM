@@ -96,7 +96,7 @@ const osMutexAttr_t usbMutex_attributes = {
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-  
+  logger_init();
   sd_logger_init();
   
   /* USER CODE END Init */
@@ -153,7 +153,7 @@ void StartDefaultTask(void *argument)
   for(;;)
   {
    // HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
-    USB_Transmit("Default task alive\r\n", 21);
+    //USB_Transmit("Default task alive\r\n", 21);
     osDelay(1000);
   }
   /* USER CODE END defaultTask */

@@ -9,6 +9,8 @@
 #include "FreeRTOSConfig.h"
 #include "task.h"
 #include "cmsis_os2.h"
+#include "logger.h"
+
 static void process_text_packet(char *raw_str);
 static void process_binary_packet(uint8_t *buf, uint16_t len);
 
@@ -19,7 +21,11 @@ static const CommandMap_t cmd_map[] = {
     {"RESET",  CMD_RESET,        handle_reset,  "- System reboot"},
     {"STATUS", CMD_STATUS,       handle_status, "- Radio status"},
     {"HELP",   CMD_SX1280_TX,    handle_sx1280_tx, ":data - Send via LoRa"},
-    {"LORATX",   CMD_LORA_TX,    handle_lora_tx, ":data - Send via LoRa"}
+    {"LORATX",   CMD_LORA_TX,    handle_lora_tx, ":data - Send via LoRa"},
+    {"LOGON",  CMD_LOG_ON,       handle_log_on,    "- Enable all logs"},
+    {"LOGOFF", CMD_LOG_OFF,      handle_log_off,   "- Disable all logs"},
+    {"LOGMUTE",   CMD_LOG_MUTE,     handle_log_mute,  ":TAG - Mute specific tag"},
+    {"LOGUNMUTE", CMD_LOG_UNMUTE,   handle_log_unmute, "- Clear all mutes"}
 };
 
 extern osThreadId_t rfm95wTaskHandle;
@@ -28,20 +34,15 @@ extern volatile uint16_t USB_Rx_Data_Len;
 
 void handle_lora_tx(cmd_params_t *params)
 {
-    // 1. Sprawdź czy mamy dane (np. CMD:LORATX:TEST)
     if (params->len == 0 || params->data == NULL) {
         USB_Transmit((uint8_t*)"ERR: No data to send\r\n", 22);
         return;
     }
-
-    // 2. Skopiuj dane do bufora radiowego (używamy UserRxBufferFS, bo task go czyta)
     uint16_t copy_len = (params->len < APP_RX_DATA_SIZE) ? params->len : APP_RX_DATA_SIZE;
     memcpy(UserRxBufferFS, params->data, copy_len);
     
-    // 3. Ustaw długość (to aktywuje 'if' w Twoim rfm95wTaskEntry)
     USB_Rx_Data_Len = copy_len;
 
-    // 4. Powiadom zadanie rfm95w, żeby przerwało ulTaskNotifyTake
     if (rfm95wTaskHandle != NULL) {
         xTaskNotifyGive(rfm95wTaskHandle);
     }
@@ -107,10 +108,9 @@ void process_command(uint8_t *rx_buf, uint16_t len) {
     }
 }
 
-// HANDLER IMPLEMENTATIONS
 
 void handle_help(cmd_params_t *params) {
-    (void)params; // Unused
+    (void)params;
     char help_line[128];
     USB_Transmit((uint8_t*)"\r\n--- OBC HELP ---\r\n", 19);
 
@@ -169,4 +169,35 @@ void handle_sx1280_tx(cmd_params_t *params) {
     if (!params->is_binary) {
         USB_Transmit((uint8_t*)"OK: Text data queued for LoRa\r\n", 31);
     }
+}
+
+void handle_log_on(cmd_params_t *params) {
+    (void)params;
+    logger_set_level(LOG_LEVEL_INFO);
+    USB_Transmit((uint8_t*)"LOG: All logs ENABLED\r\n", 23);
+}
+
+void handle_log_off(cmd_params_t *params) {
+    (void)params;
+    logger_set_level(LOG_LEVEL_NONE);
+    USB_Transmit((uint8_t*)"LOG: All logs DISABLED\r\n", 24);
+}
+
+void handle_log_mute(cmd_params_t *params) {
+    if (params->len == 0 || params->data == NULL) {
+        USB_Transmit((uint8_t*)"ERR: Provide TAG to mute\r\n", 26);
+        return;
+    }
+
+    logger_filter_add((char*)params->data);
+
+    char resp[64];
+    int len = snprintf(resp, sizeof(resp), "LOG: Muted tag [%s]\r\n", (char*)params->data);
+    USB_Transmit((uint8_t*)resp, len);
+}
+
+void handle_log_unmute(cmd_params_t *params) {
+    (void)params;
+    logger_filter_clear();
+    USB_Transmit((uint8_t*)"LOG: All filters cleared (Unmuted all)\r\n", 40);
 }

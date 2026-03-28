@@ -18,6 +18,10 @@ typedef enum {
     CMD_STATUS = 0x05,
     CMD_SX1280_TX = 0x06,
     CMD_LORA_TX = 0x07,
+    CMD_LOG_ON = 0x08,
+    CMD_LOG_OFF = 0x09,
+    CMD_LOG_MUTE = 0x0A,
+    CMD_LOG_UNMUTE = 0x0B,
     CMD_COUNT
 } Command_t;
 
@@ -44,6 +48,10 @@ void handle_reset(cmd_params_t *params);
 void handle_status(cmd_params_t *params);
 void handle_sx1280_tx(cmd_params_t *params);
 void handle_lora_tx(cmd_params_t *params);
+void handle_log_on(cmd_params_t *params);
+void handle_log_off(cmd_params_t *params);
+void handle_log_mute(cmd_params_t *params);
+void handle_log_unmute(cmd_params_t *params);
 
 
 

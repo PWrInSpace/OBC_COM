@@ -11,6 +11,9 @@
 #include "GNSS.h"
 #include "usb_config.h"
 #include "sd_task.h"
+#include "logger.h"
+
+#define TAG "GPS"
 
 GNSS_StateHandle gpsHandle;
 osThreadId_t gpsTaskHandle;
@@ -65,18 +68,19 @@ uint8_t GPS_AlignBuffer(GNSS_StateHandle *GNSS) {
 }
 
 void GPS_PrintStatus(GNSS_StateHandle *GNSS) {
-    char log_msg[160];
+    // Logujemy bezpośrednio przez LOG_INFO, aby uniknąć podwójnego buforowania 
+    // i marnowania stosu na char log_msg[160]
     
-    int len = snprintf(log_msg, sizeof(log_msg), 
-        "GNSS > SVs:%u Fix:%u | %.7f, %.7f | Alt:%.2fm | Spd:%.1f km/h\r\n", 
+    LOG_INFO("GNSS > [%02u:%02u:%02u] SVs:%u Fix:%u | %.7f, %.7f | Alt:%.2fm | Spd:%.1f km/h", 
+        (unsigned int)GNSS->hour, 
+        (unsigned int)GNSS->min, 
+        (unsigned int)GNSS->sec,
         (unsigned int)GNSS->numSV, 
         (unsigned int)GNSS->fixType, 
         GNSS->fLat, 
         GNSS->fLon, 
         (float)GNSS->hMSL / 1000.0f,
         GNSS->fGSpeedKmH);
-
-    USB_Transmit((uint8_t*)log_msg, len);
 }
 
 void configure_gps() {

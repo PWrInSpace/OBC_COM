@@ -24,6 +24,7 @@
 #include "board_data.h"
 #include "usart.h"
 
+#define TAG "RFM95"
 #define TEST_RSSI
 
 #define TX_DONE_TIMEOUT_MS_DEFAULT 20
@@ -220,10 +221,7 @@ void rfm95wTaskEntry(void *argument)
                     float snr = rfm95_packet_snr(rfm95_radio);
                     char debug_msg[64];
                     int msg_len = snprintf(debug_msg, sizeof(debug_msg), "RSSI: %d dBm\r\n", rssi);
-                    
-                    USB_Transmit((uint8_t*)debug_msg, (uint16_t)msg_len);
-                    msg_len = snprintf(debug_msg, sizeof(debug_msg), "SNR: %.2f dB\r\n", snr);
-                    USB_Transmit((uint8_t*)debug_msg, (uint16_t)msg_len);
+                    LOG_INFO("Received frame: size=%d, RSSI=%d dBm, SNR=%.2f dB", rx_size, rssi, snr);
 #else
                      // W przeciwnym razie (normalny tryb) wysyłamy dane z ramki
                     USB_Transmit(rx_buf, rx_size);
