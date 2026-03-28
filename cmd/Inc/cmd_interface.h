@@ -53,6 +53,10 @@ void handle_log_off(cmd_params_t *params);
 void handle_log_mute(cmd_params_t *params);
 void handle_log_unmute(cmd_params_t *params);
 
+#define LORA_BUFF_SIZE 512
+extern uint8_t LoraRxBuffer[LORA_BUFF_SIZE];
+extern volatile uint16_t lora_cmd_len;
+
 
 
 #endif

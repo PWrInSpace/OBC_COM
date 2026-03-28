@@ -14,6 +14,9 @@
 static void process_text_packet(char *raw_str);
 static void process_binary_packet(uint8_t *buf, uint16_t len);
 
+uint8_t LoraRxBuffer[LORA_BUFF_SIZE] = {0};
+uint16_t volatile lora_cmd_len = 0;
+
 static const CommandMap_t cmd_map[] = {
     {"HELP",   CMD_HELP,         handle_help,   "- Show menu"},
     {"FREQ",   CMD_SX1280_FREQ,   handle_freq,   ":Hz - Set freq"},
@@ -29,7 +32,6 @@ static const CommandMap_t cmd_map[] = {
 };
 
 extern osThreadId_t rfm95wTaskHandle;
-extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
 extern volatile uint16_t USB_Rx_Data_Len;
 
 void handle_lora_tx(cmd_params_t *params)
@@ -38,11 +40,10 @@ void handle_lora_tx(cmd_params_t *params)
         USB_Transmit((uint8_t*)"ERR: No data to send\r\n", 22);
         return;
     }
-    uint16_t copy_len = (params->len < APP_RX_DATA_SIZE) ? params->len : APP_RX_DATA_SIZE;
-    memcpy(UserRxBufferFS, params->data, copy_len);
+    uint16_t copy_len = (params->len < LORA_BUFF_SIZE) ? params->len : LORA_BUFF_SIZE;
+    memcpy(LoraRxBuffer, params->data, copy_len);
     
-    USB_Rx_Data_Len = copy_len;
-
+    lora_cmd_len = copy_len;
     if (rfm95wTaskHandle != NULL) {
         xTaskNotifyGive(rfm95wTaskHandle);
     }

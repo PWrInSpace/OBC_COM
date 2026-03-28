@@ -23,6 +23,7 @@
 #include "nvs_config.h"
 #include "board_data.h"
 #include "usart.h"
+#include "cmd_interface.h"
 
 #define TAG "RFM95"
 #define TEST_RSSI
@@ -30,6 +31,8 @@
 #define TX_DONE_TIMEOUT_MS_DEFAULT 20
 extern volatile uint16_t USB_Rx_Data_Len; 
 extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
+extern uint8_t LoraRxBuffer[LORA_BUFF_SIZE];
+extern volatile uint16_t lora_cmd_len;
 
 osThreadId_t rfm95wTaskHandle = NULL;
 const osThreadAttr_t rfm95wTask_attributes = {
@@ -194,11 +197,17 @@ void rfm95wTaskEntry(void *argument)
 {
     ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(100));
 
-    if(USB_Rx_Data_Len > 0) {
+    if(USB_Rx_Data_Len > 0 || lora_cmd_len > 0) {
         //USB_Transmit((uint8_t*)"TX Start\r\n", 10);
-        rfm95_send_window(rfm95_radio, UserRxBufferFS, (uint8_t)USB_Rx_Data_Len, 100);
-        USB_Rx_Data_Len = 0;
-        memset(UserRxBufferFS, 0, APP_RX_DATA_SIZE);
+        if(lora_cmd_len > 0) {
+            rfm95_send_window(rfm95_radio, LoraRxBuffer, (uint8_t)lora_cmd_len, 100);
+            lora_cmd_len = 0;
+            memset(LoraRxBuffer, 0, LORA_BUFF_SIZE);
+        } else {
+            rfm95_send_window(rfm95_radio, UserRxBufferFS, (uint8_t)USB_Rx_Data_Len, 100);
+            USB_Rx_Data_Len = 0;
+            memset(UserRxBufferFS, 0, APP_RX_DATA_SIZE);
+        }
         rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
         rfm95_start_rx(rfm95_radio, 0); 
         continue; 
