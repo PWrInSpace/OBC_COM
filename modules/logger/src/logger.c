@@ -5,8 +5,7 @@
 
 #include <stdarg.h>
 #include <stdio.h>
-#include <string.h>
-#include <stdbool.h>
+#include "nvs_config.h"
 
 
 
@@ -116,6 +115,12 @@ static void logger_send_via_callback(const char* msg) {
 }
 
 void logger_init(void) {
+   // uint32_t default_muted = true; // Tworzymy zmienną w RAM
+   // nvs_set_log_muted(default_muted); // Przekazujemy adres (&)
+    bool is_muted = false;
+   nvs_get_log_muted(&is_muted);
+    global_log_enabled = !is_muted;
+
     logger_set_level(LOG_LEVEL_INFO);
     memset(log_ring_buffer, 0, LOGGER_BUFFER_SIZE);
     ring_write_pos = 0;
@@ -172,3 +177,7 @@ void logger_clear(void) {
     ring_write_pos = 0;
 }
 
+/**
+ * @brief Włącza lub wyłącza proces logowania globalnie.
+ * @param enable true aby włączyć, false aby wyłączyć.
+ */

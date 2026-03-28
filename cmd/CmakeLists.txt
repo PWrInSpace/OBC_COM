@@ -27,4 +27,5 @@ target_link_libraries(cmd
         rfm95w_wrapper
         logger
         USB_Driver
+        Nvs
 )

@@ -181,7 +181,6 @@ void rfm95wTaskEntry(void *argument)
     uint8_t rx_buf[255];
     uint8_t rx_size = 0;
 
-    NVS_Init();
     rfm95w_config_init();
    // nvs_save_rfm95_settings(rfm95_radio);
     osDelay(2000);

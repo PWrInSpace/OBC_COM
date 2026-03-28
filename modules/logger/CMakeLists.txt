@@ -22,4 +22,5 @@ target_link_libraries(logger
         stm32cubemx
         USB_Driver
         App
+        Nvs
 )

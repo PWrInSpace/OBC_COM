@@ -96,6 +96,7 @@ const osMutexAttr_t usbMutex_attributes = {
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
+  NVS_Init();
   logger_init();
   sd_logger_init();
   
@@ -123,6 +124,7 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
 //   /* add threads, ... */
+ 
   board_data_init();
   CMD_Task_Init();
   RFM95W_task_init();

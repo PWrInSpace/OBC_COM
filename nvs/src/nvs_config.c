@@ -90,4 +90,17 @@ void nvs_save_rfm95_settings(rfm95_t * dev)
    return;
 }
 
+void nvs_set_log_muted(uint32_t muted) {
+    NVS_Write(PARAM_LOG_MUTED, (uint32_t)muted);
+}
+
+void nvs_get_log_muted(bool *muted) {
+    uint32_t val = 0;
+    if (NVS_Read(PARAM_LOG_MUTED, &val) == EE_OK) {
+        *muted = (val != 0);
+    } else {
+        *muted = false; // Domyślnie odblokowane
+    }
+}
+
 

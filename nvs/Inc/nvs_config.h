@@ -19,6 +19,7 @@ typedef enum {
     PARAM_PWR,
     PARAM_SYNC,
     PARAM_CRC,
+    PARAM_LOG_MUTED,
     PARAM_MAX_COUNT
 } NVS_Param_t;
 
@@ -39,5 +40,9 @@ EE_Status NVS_Read(uint16_t virt_addr, uint32_t* data);
 
 void nvs_get_rfm95_settings(rfm95_t * dev);
 void nvs_save_rfm95_settings(rfm95_t * dev);
+
+void nvs_set_log_muted(uint32_t muted);
+void nvs_get_log_muted(bool *muted);
+
 
 #endif /* NVS_CONFIG_H */

@@ -7,6 +7,7 @@
 #pragma once
 
 #include <stdint.h>
+#include <stdbool.h>
 
 #ifndef TAG
 #define TAG "SYS"
@@ -50,5 +51,6 @@ void log_debug(const char* tag, const char* level, const char* file, int line, c
 void logger_set_level(log_level_t level);
 void logger_filter_add(const char* tag);
 void logger_filter_clear(void);
+void logger_enable(bool enable);
 
 // #endif

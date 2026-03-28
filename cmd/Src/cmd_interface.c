@@ -10,6 +10,7 @@
 #include "task.h"
 #include "cmsis_os2.h"
 #include "logger.h"
+#include "nvs_config.h"
 
 static void process_text_packet(char *raw_str);
 static void process_binary_packet(uint8_t *buf, uint16_t len);
@@ -171,17 +172,32 @@ void handle_sx1280_tx(cmd_params_t *params) {
         USB_Transmit((uint8_t*)"OK: Text data queued for LoRa\r\n", 31);
     }
 }
-
 void handle_log_on(cmd_params_t *params) {
     (void)params;
+    
+    // 1. Aktywuj logger w RAM
+    logger_enable(true); 
     logger_set_level(LOG_LEVEL_INFO);
-    USB_Transmit((uint8_t*)"LOG: All logs ENABLED\r\n", 23);
+    
+    // 2. Zapisz stan do NVS, aby po resecie logi były włączone
+    uint32_t muted = 0;
+    nvs_set_log_muted(muted); 
+    
+    USB_Transmit((uint8_t*)"LOG: All logs ENABLED & Saved to NVS\r\n", 38);
 }
 
 void handle_log_off(cmd_params_t *params) {
     (void)params;
+    
+    // 1. Dezaktywuj logger w RAM
+    logger_enable(false);
     logger_set_level(LOG_LEVEL_NONE);
-    USB_Transmit((uint8_t*)"LOG: All logs DISABLED\r\n", 24);
+    
+    // 2. Zapisz stan do NVS, aby po resecie logi były wyłączone
+    uint32_t muted = 1;
+    nvs_set_log_muted(muted);
+    
+    USB_Transmit((uint8_t*)"LOG: All logs DISABLED & Saved to NVS\r\n", 39);
 }
 
 void handle_log_mute(cmd_params_t *params) {
