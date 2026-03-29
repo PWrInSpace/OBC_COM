@@ -5,6 +5,7 @@
  */
 #include "sd_task.h"
 
+#include "board_data.h"
 #include "ff.h"
 #include "logger_macros.h"
 #include "main.h"
@@ -27,12 +28,16 @@ static char filename[32] = {};
 static char buffer_A[SD_BUFFER_BYTES] __attribute__((section(".sram3")));
 static char buffer_B[SD_BUFFER_BYTES] __attribute__((section(".sram3")));
 static char* double_buffer[2] = {buffer_A, buffer_B};
+static uint8_t log_pool_mem[SD_QUEUE_LENGTH * sizeof(BoardData_t)] __attribute__((section(".sram3")));
 
 static uint8_t active_idx = 0;
 static size_t active_buffer_pos = 0;
 static size_t bytes_to_write[2] = {0, 0};
 
+const osMemoryPoolAttr_t pool_attr = { .mp_mem = log_pool_mem, .mp_size = sizeof(log_pool_mem) };
+static osMemoryPoolId_t log_pool_id;
 static osMessageQueueId_t log_queue_id;
+
 static osThreadId_t packer_task_id;
 static osThreadId_t sd_task_id;
 #ifdef SD_DETECT_PIN_OPERATIONAL
@@ -149,38 +154,72 @@ bool sd_is_mounted(void) {
 }
 
 HAL_StatusTypeDef sd_logger_init(void) {
-    log_queue_id = osMessageQueueNew(SD_QUEUE_LENGTH, sizeof(BoardData_t), NULL);
-    if (log_queue_id == NULL) {
-        return HAL_ERROR;
-    }
+    log_pool_id = osMemoryPoolNew(SD_QUEUE_LENGTH, sizeof(BoardData_t), &pool_attr);
+    if (log_pool_id == NULL) goto error_exit;
+
+    log_queue_id = osMessageQueueNew(SD_QUEUE_LENGTH, sizeof(BoardData_t*), NULL);
+    if (log_queue_id == NULL) goto error_exit;
     
-    if (FATFS_LinkDriver(&USER_Driver, SDPath) != 0) return HAL_ERROR;
+    if (FATFS_LinkDriver(&USER_Driver, SDPath) != 0) goto error_exit;
 
     buffer_free_sem_id[0] = osSemaphoreNew(1, 1, NULL);
     buffer_free_sem_id[1] = osSemaphoreNew(1, 1, NULL);
-    if (buffer_free_sem_id[0] == NULL || buffer_free_sem_id[1] == NULL) {
-        return HAL_ERROR;
-    }
+    if (buffer_free_sem_id[0] == NULL || buffer_free_sem_id[1] == NULL) goto error_exit;
 
     sd_mutex_id = osMutexNew(NULL);
-    if (sd_mutex_id == NULL) {
-        return HAL_ERROR;
-    }
+    if (sd_mutex_id == NULL) goto error_exit;
 
     packer_task_id = osThreadNew(packer_task_thread, NULL, &packer_attr);
+    if (packer_task_id == NULL) goto error_exit;
+
     sd_task_id = osThreadNew(sd_task_thread, NULL, &sd_write_attr);
+    if (sd_task_id == NULL) goto error_exit;
+
 #ifdef SD_DETECT_PIN_OPERATIONAL
     monitor_task_id = osThreadNew(monitor_task_thread, NULL, &monitor_attr);
+    if (monitor_task_id == NULL) goto error_exit;
 #endif
 
     return HAL_OK;
+
+error_exit:
+    if (packer_task_id) osThreadTerminate(packer_task_id);
+    if (sd_task_id) osThreadTerminate(sd_task_id);
+#ifdef SD_DETECT_PIN_OPERATIONAL
+    if (monitor_task_id)   osThreadTerminate(monitor_task_id);
+#endif
+    
+    if (sd_mutex_id) osMutexDelete(sd_mutex_id);
+    if (buffer_free_sem_id[0]) osSemaphoreDelete(buffer_free_sem_id[0]);
+    if (buffer_free_sem_id[1]) osSemaphoreDelete(buffer_free_sem_id[1]);
+    
+    FATFS_UnLinkDriver(SDPath);
+    
+    if (log_queue_id) osMessageQueueDelete(log_queue_id);
+    if (log_pool_id) osMemoryPoolDelete(log_pool_id);
+
+    log_pool_id = NULL;
+    log_queue_id = NULL;
+    sd_mutex_id = NULL;
+    packer_task_id = NULL;
+
+    return HAL_ERROR;
 }
 
 HAL_StatusTypeDef sd_logger_log_data(const BoardData_t *data) {
-    if (!is_mounted) return HAL_ERROR;
+    if (!is_mounted || data == NULL) return HAL_ERROR;
 
-    osStatus_t status = osMessageQueuePut(log_queue_id, data, 0, 0);
-    return (status == osOK) ? HAL_OK : HAL_ERROR;
+    BoardData_t *p_data = osMemoryPoolAlloc(log_pool_id, 0); 
+    if (p_data == NULL) return HAL_ERROR;
+
+    memcpy(p_data, data, sizeof(BoardData_t));
+
+    if (osMessageQueuePut(log_queue_id, &p_data, 0, 0) != osOK) {
+        osMemoryPoolFree(log_pool_id, p_data);
+        return HAL_ERROR;
+    }
+
+    return HAL_OK;
 }
 
 static void flush_active_buffer(void) {
@@ -198,27 +237,24 @@ static void flush_active_buffer(void) {
 
 static void packer_task_thread(void *arg) {
     (void)arg;
-    BoardData_t data_item;
-    char temp_str[256];
+    BoardData_t *p_item;
     
     uint32_t last_flush_tick = osKernelGetTickCount();
     const uint32_t flush_interval = (SD_FORCE_FLUSH_INTERVAL_MS * osKernelGetTickFreq()) / 1000U;
 
     osSemaphoreAcquire(buffer_free_sem_id[active_idx], osWaitForever);
     for(;;) {
-        osStatus_t status = osMessageQueueGet(log_queue_id, &data_item, NULL, flush_interval);
+        osStatus_t status = osMessageQueueGet(log_queue_id, &p_item, NULL, flush_interval);
 
         if (status == osOK) {
-            int len = board_data_serialize(&data_item, temp_str, sizeof(temp_str));
-            if (len <= 0) continue;
-
-            if ((active_buffer_pos + len) >= SD_BUFFER_BYTES) {
+            if (active_buffer_pos > (SD_BUFFER_BYTES - SD_BUFFER_MARGIN)) {
                 flush_active_buffer();
                 last_flush_tick = osKernelGetTickCount();
             }
 
-            memcpy(&double_buffer[active_idx][active_buffer_pos], temp_str, len);
-            active_buffer_pos += len;
+            int len = board_data_serialize(p_item, &double_buffer[active_idx][active_buffer_pos], SD_BUFFER_BYTES - active_buffer_pos);
+            if (len > 0) active_buffer_pos += len;
+            osMemoryPoolFree(log_pool_id, p_item);
 
             if ((osKernelGetTickCount() - last_flush_tick) >= flush_interval) {
                 flush_active_buffer();
