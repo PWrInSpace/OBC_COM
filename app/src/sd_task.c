@@ -28,7 +28,7 @@ static char filename[32] = {};
 static char buffer_A[SD_BUFFER_BYTES] __attribute__((section(".sram3")));
 static char buffer_B[SD_BUFFER_BYTES] __attribute__((section(".sram3")));
 static char* double_buffer[2] = {buffer_A, buffer_B};
-static uint8_t log_pool_mem[SD_QUEUE_LENGTH * sizeof(BoardData_t)] __attribute__((section(".sram3")));
+static BoardData_t log_pool_mem[SD_QUEUE_LENGTH] __attribute__((section(".sram3")));
 
 static uint8_t active_idx = 0;
 static size_t active_buffer_pos = 0;
@@ -253,7 +253,7 @@ static void packer_task_thread(void *arg) {
             }
 
             int len = board_data_serialize(p_item, &double_buffer[active_idx][active_buffer_pos], SD_BUFFER_BYTES - active_buffer_pos);
-            if (len > 0) active_buffer_pos += len;
+            if (len > 0) active_buffer_pos += (size_t)len;
             osMemoryPoolFree(log_pool_id, p_item);
 
             if ((osKernelGetTickCount() - last_flush_tick) >= flush_interval) {
