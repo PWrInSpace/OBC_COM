@@ -24,8 +24,8 @@
 
 static char filename[32] = {};
 
-static char buffer_A[SD_BUFFER_BYTES];
-static char buffer_B[SD_BUFFER_BYTES];
+static char buffer_A[SD_BUFFER_BYTES] __attribute__((section(".sram3")));
+static char buffer_B[SD_BUFFER_BYTES] __attribute__((section(".sram3")));
 static char* double_buffer[2] = {buffer_A, buffer_B};
 
 static uint8_t active_idx = 0;
