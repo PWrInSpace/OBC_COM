@@ -199,7 +199,7 @@ void EXTI11_IRQHandler(void)
 void GPDMA1_Channel2_IRQHandler(void)
 {
   /* USER CODE BEGIN GPDMA1_Channel2_IRQn 0 */
-  //HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin); // Zamigaj diodą, aby zasygnalizować przerwanie DMA
+  HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin); // Zamigaj diodą, aby zasygnalizować przerwanie DMA
   HAL_DMA_IRQHandler(&handle_GPDMA1_Channel2);
   /* USER CODE END GPDMA1_Channel2_IRQn 0 */
   /* USER CODE BEGIN GPDMA1_Channel2_IRQn 1 */
