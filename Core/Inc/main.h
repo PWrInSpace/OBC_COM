@@ -43,7 +43,8 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "FreeRTOS.h"
+#include "queue.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -55,6 +56,15 @@ extern "C" {
 /* USER CODE BEGIN EC */
 #define RX_BUF_SIZE 512
 extern volatile uint8_t rx_buffer[RX_BUF_SIZE];
+
+#define POOL_SIZE 8
+#define BUFFER_SIZE 512
+
+typedef struct {
+    uint8_t data[BUFFER_SIZE];
+    uint16_t len;
+} UART_Buffer_t;
+extern QueueHandle_t free_pool_queue;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

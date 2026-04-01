@@ -29,33 +29,45 @@ void CMD_Task_Init(void) {
 }
 
 //! DODAĆ BUFFER POOL WYGODA ZE ZMIENNA DLUGOŚCIĄ DANYCH I BARDZIEJ EFEKTYWNE
+/**
+ * @brief Zadanie przetwarzające komendy z UART przy użyciu puli buforów.
+ */
 void cmd_task(void *argument) {
     (void)argument;
-   // Start_UART2_DMA_Receiver();
-    uint8_t rx_buf[MAX_CMD_LEN]; 
-    char log_msg[64];
+    
+    UART_Buffer_t *received_ptr = NULL;
+    char log_msg[128];
 
     for(;;) {
-        if(cmd_queue != NULL && xQueueReceive(cmd_queue, rx_buf, portMAX_DELAY) == pdPASS) {
+        // Czekamy na wskaźnik do wypełnionego bufora z kolejki
+        if (cmd_queue != NULL && xQueueReceive(cmd_queue, &received_ptr, portMAX_DELAY) == pdPASS) {
             
-            uint16_t actual_len = 0;
-            if (rx_buf[0] == 0x32) {
-                // Format BINARNY LCDC
-                // rx_buf[1] to długość pola DATA
-                // Całość to: Header(1) + Len(1) + ID(1) + Data(N) + CRC(1) + EOF(1) = N + 5
-                actual_len = rx_buf[1] + 5;
-                if (actual_len > MAX_CMD_LEN) actual_len = MAX_CMD_LEN;
+            if (received_ptr != NULL) {
+                
+                uint16_t actual_len = 0;
+                uint8_t *data = received_ptr->data;
+                
+                if (data[0] == 0x32) {
+                    // Format BINARNY LCDC: Header(0x32) + Len(1) + ID(1) + Data(N) + CRC(1) + EOF(1)
+                    // actual_len = N + 5 (gdzie N to data[1])
+                    actual_len = data[1] + 5;
+                    if (actual_len > BUFFER_SIZE) actual_len = BUFFER_SIZE;
 
-                int log_len = snprintf(log_msg, sizeof(log_msg), "LCDC Bin Recv: ID 0x%02X, Len %d\r\n", rx_buf[2], actual_len);
-                USB_Transmit((uint8_t*)log_msg, log_len);
-            } 
-            else {
-                actual_len = (uint16_t)strlen((char*)rx_buf);
-                int log_len = snprintf(log_msg, sizeof(log_msg), "Text Recv: %s\r\n", (char*)rx_buf);
-                USB_Transmit((uint8_t*)log_msg, log_len);
+                    int log_len = snprintf(log_msg, sizeof(log_msg), 
+                                           "LCDC Bin Recv: ID 0x%02X, Len %d\r\n", 
+                                           data[2], actual_len);
+                    USB_Transmit((uint8_t*)log_msg, log_len);
+                } 
+                else {
+                    actual_len = received_ptr->len;
+                    int log_len = snprintf(log_msg, sizeof(log_msg), "Text Recv: %.*s\r\n", 
+                                           actual_len, (char*)data);
+                    USB_Transmit((uint8_t*)log_msg, log_len);
+                }
+                process_command(data, actual_len);
+                memset(data, 0, BUFFER_SIZE);
+                xQueueSend(free_pool_queue, &received_ptr, 0);
             }
-            process_command(rx_buf, actual_len);
-            memset(rx_buf, 0, MAX_CMD_LEN);
         }
     }
 }

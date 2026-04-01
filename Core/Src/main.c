@@ -62,8 +62,22 @@
 /* W sekcji Private variables (PV) */
 #define RX_BUF_SIZE 512
 uint8_t volatile rx_buffer[RX_BUF_SIZE];
-uint8_t main_data_buffer[RX_BUF_SIZE]; // Bufor do "pracy" na danych
 uint16_t last_packet_size = 0;
+
+
+UART_Buffer_t pool[POOL_SIZE];
+QueueHandle_t free_pool_queue = NULL;
+extern QueueHandle_t cmd_queue;
+
+void BufferPool_Init(void) {
+    free_pool_queue = xQueueCreate(POOL_SIZE, sizeof(UART_Buffer_t*));
+    cmd_queue = xQueueCreate(POOL_SIZE, sizeof(UART_Buffer_t*));
+
+    for (int i = 0; i < POOL_SIZE; i++) {
+        UART_Buffer_t *ptr = &pool[i];
+        xQueueSend(free_pool_queue, &ptr, 0);
+    }
+}
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -196,7 +210,8 @@ int main(void)
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
   HAL_Delay(50);
-  HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t*)rx_buffer, 16);
+  HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t*)rx_buffer, RX_BUF_SIZE);
+  BufferPool_Init();
   /* USER CODE END 2 */
 
   /* Init scheduler */
