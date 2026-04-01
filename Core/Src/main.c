@@ -70,13 +70,51 @@ QueueHandle_t free_pool_queue = NULL;
 extern QueueHandle_t cmd_queue;
 UART_Buffer_t *current_dma_buffer = NULL;
 
-void BufferPool_Init(void) {
+/**
+ * @brief Kompleksowa inicjalizacja puli buforów i pierwsze uruchomienie DMA dla UART.
+ * @param huart Wskaźnik na skonfigurowany uchwyt UART (np. &huart2)
+ */
+void BufferPool_UART_Start(UART_HandleTypeDef *huart) {
+    // 1. Tworzenie kolejek dla wskaźników (rozmiar POOL_SIZE)
     free_pool_queue = xQueueCreate(POOL_SIZE, sizeof(UART_Buffer_t*));
     cmd_queue = xQueueCreate(POOL_SIZE, sizeof(UART_Buffer_t*));
 
+    // HardFault/Error jeśli zabrakło RAM na kolejki
+    if (free_pool_queue == NULL || cmd_queue == NULL) {
+        Error_Handler();
+    }
+
+    // 2. Wypełnienie puli adresami z tablicy statycznej 'pool'
     for (int i = 0; i < POOL_SIZE; i++) {
         UART_Buffer_t *ptr = &pool[i];
-        xQueueSend(free_pool_queue, &ptr, 0);
+        
+        // Resetujemy strukturę przed użyciem
+        memset(ptr->data, 0, BUFFER_SIZE);
+        ptr->len = 0;
+
+        if (xQueueSend(free_pool_queue, &ptr, 0) != pdPASS) {
+            Error_Handler();
+        }
+    }
+
+    // 3. Pobranie PIERWSZEGO bufora dla DMA
+    // Wyciągamy wskaźnik z kolejki wolnych i przypisujemy do globalnego current_dma_buffer
+    if (xQueueReceive(free_pool_queue, &current_dma_buffer, 0) != pdPASS) {
+        Error_Handler();
+    }
+
+    // 4. URUCHOMIENIE SPRZĘTU (DMA)
+    // Teraz uzbrajamy UART, używając adresu z pobranego właśnie bufora
+    if (current_dma_buffer != NULL) {
+        // Czyścimy flagi IDLE przed startem
+        __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_IDLEF);
+
+        if (HAL_UARTEx_ReceiveToIdle_DMA(huart, current_dma_buffer->data, BUFFER_SIZE) == HAL_OK) {
+            // Wyłączamy przerwanie Half-Transfer (HT) - chcemy tylko Idle lub Full
+            __HAL_DMA_DISABLE_IT(huart->hdmarx, DMA_IT_HT);
+        } else {
+            Error_Handler();
+        }
     }
 }
 /* USER CODE END PV */
@@ -208,8 +246,7 @@ int main(void)
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
   HAL_Delay(50);
-  HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t*)rx_buffer, RX_BUF_SIZE);
-  BufferPool_Init();
+  BufferPool_UART_Start(&huart2);
   /* USER CODE END 2 */
 
   /* Init scheduler */
