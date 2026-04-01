@@ -160,18 +160,18 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    memcpy(LoraRxBuffer, test_data, test_len);
-    lora_cmd_len = test_len;
-   // HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
-    //USB_Transmit("Default task alive\r\n", 21);
-    if (rfm95wTaskHandle != NULL) 
-    {
-        // Używamy xTaskNotify, ponieważ działamy w zadaniu (nie w ISR), 
-        // więc nie potrzebujemy końcówki "FromISR"
-        xTaskNotify(rfm95wTaskHandle, 
-                    USART_LORA_EVENT_BIT, 
-                    eSetBits);
-    }
+  //   memcpy(LoraRxBuffer, test_data, test_len);
+  //   lora_cmd_len = test_len;
+  //  // HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+  //   //USB_Transmit("Default task alive\r\n", 21);
+  //   if (rfm95wTaskHandle != NULL) 
+  //   {
+  //       // Używamy xTaskNotify, ponieważ działamy w zadaniu (nie w ISR), 
+  //       // więc nie potrzebujemy końcówki "FromISR"
+  //       xTaskNotify(rfm95wTaskHandle, 
+  //                   USART_LORA_EVENT_BIT, 
+  //                   eSetBits);
+  //   }
     osDelay(1000);
   }
   /* USER CODE END defaultTask */
