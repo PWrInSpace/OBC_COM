@@ -41,19 +41,22 @@ void handle_lora_tx(cmd_params_t *params)
         USB_Transmit((uint8_t*)"ERR: No data to send\r\n", 22);
         return;
     }
+    
+    // Kopiujemy dane do bufora komend Lora
     uint16_t copy_len = (params->len < LORA_BUFF_SIZE) ? params->len : LORA_BUFF_SIZE;
     memcpy(LoraRxBuffer, params->data, copy_len);
-    
     lora_cmd_len = copy_len;
+    
+    // POWIADOMIENIE BITOWE (USART/CMD EVENT)
     if (rfm95wTaskHandle != NULL) {
-        xTaskNotifyGive(rfm95wTaskHandle);
+        // Używamy bitu USART_LORA_EVENT_BIT, bo LoraRxBuffer to Twój bufor "interfejsowy"
+        xTaskNotify(rfm95wTaskHandle, USART_LORA_EVENT_BIT, eSetBits);
     }
 
     if (!params->is_binary) {
         USB_Transmit((uint8_t*)"OK: Data queued for RFM95W TX\r\n", 31);
     }
 }
-
 
 const size_t cmd_map_size = sizeof(cmd_map) / sizeof(CommandMap_t);
 

@@ -174,9 +174,9 @@ void recv_once_ceiling(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_buf, ui
   }
 }
 
-
 void rfm95wTaskEntry(void *argument)
 {
+    uint32_t ulNotifiedValue;
     rfm95_t *rfm95_radio = get_lora_devs_instance()->rfm95w;
     uint8_t rx_buf[255];
     uint8_t rx_size = 0;
@@ -194,23 +194,57 @@ void rfm95wTaskEntry(void *argument)
 
     for(;;)
 {
-    ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(100));
+        BaseType_t xResult = xTaskNotifyWait(0, 0xFFFFFFFF, &ulNotifiedValue, pdMS_TO_TICKS(100));
 
-    if(USB_Rx_Data_Len > 0 || lora_cmd_len > 0) {
-        //USB_Transmit((uint8_t*)"TX Start\r\n", 10);
-        if(lora_cmd_len > 0) {
-            rfm95_send_window(rfm95_radio, LoraRxBuffer, (uint8_t)lora_cmd_len, 100);
-            lora_cmd_len = 0;
-            memset(LoraRxBuffer, 0, LORA_BUFF_SIZE);
-        } else {
-            rfm95_send_window(rfm95_radio, UserRxBufferFS, (uint8_t)USB_Rx_Data_Len, 100);
-            USB_Rx_Data_Len = 0;
-            memset(UserRxBufferFS, 0, APP_RX_DATA_SIZE);
+        if (xResult == pdPASS) 
+        {
+            if (ulNotifiedValue & USART_LORA_EVENT_BIT) 
+            {
+                if (lora_cmd_len > 0) {
+                    rfm95_send_window(rfm95_radio, LoraRxBuffer, (uint8_t)lora_cmd_len, 100);
+                    lora_cmd_len = 0;
+                    memset(LoraRxBuffer, 0, LORA_BUFF_SIZE);
+                    
+                    rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
+                    rfm95_start_rx(rfm95_radio, 0); 
+                    LOG_INFO("Sent packet from USART (LoraRxBuffer)");
+                    continue;
+                }
+            }
+
+            if (ulNotifiedValue & USB_EVENT_BIT) 
+            {
+                if (USB_Rx_Data_Len > 0) {
+                    rfm95_send_window(rfm95_radio, UserRxBufferFS, (uint8_t)USB_Rx_Data_Len, 100);
+                    USB_Rx_Data_Len = 0;
+                    memset(UserRxBufferFS, 0, APP_RX_DATA_SIZE);
+                    
+                    rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
+                    rfm95_start_rx(rfm95_radio, 0); 
+                    LOG_INFO("Sent packet from USB, waiting for next frames...");
+                    continue; 
+                }
+            }
         }
-        rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
-        rfm95_start_rx(rfm95_radio, 0); 
-        continue; 
-    }
+
+
+    // ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(100));
+
+    // if(USB_Rx_Data_Len > 0 || lora_cmd_len > 0) {
+    //     //USB_Transmit((uint8_t*)"TX Start\r\n", 10);
+    //     if(lora_cmd_len > 0) {
+    //         rfm95_send_window(rfm95_radio, LoraRxBuffer, (uint8_t)lora_cmd_len, 100);
+    //         lora_cmd_len = 0;
+    //         memset(LoraRxBuffer, 0, LORA_BUFF_SIZE);
+    //     } else {
+    //         rfm95_send_window(rfm95_radio, UserRxBufferFS, (uint8_t)USB_Rx_Data_Len, 100);
+    //         USB_Rx_Data_Len = 0;
+    //         memset(UserRxBufferFS, 0, APP_RX_DATA_SIZE);
+    //     }
+    //     rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
+    //     rfm95_start_rx(rfm95_radio, 0); 
+    //     continue; 
+    // }
     uint8_t irq_status = rfm95_read_reg(rfm95_radio, REG_IRQ_FLAGS);
 
     if (irq_status & IRQ_RX_DONE_MASK) {

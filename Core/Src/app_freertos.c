@@ -141,6 +141,9 @@ void MX_FREERTOS_Init(void) {
 
 }
 /* USER CODE BEGIN Header_StartDefaultTask */
+extern osThreadId_t rfm95wTaskHandle;
+extern uint8_t LoraRxBuffer[256];
+extern uint16_t lora_cmd_len;
 /**
 * @brief Function implementing the defaultTask thread.
 * @param argument: Not used
@@ -151,11 +154,24 @@ void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN defaultTask */
    USB_CDC_Config();
+   const char* test_data = "TEST LORA EVENT";
+  uint16_t test_len = strlen(test_data);
+  
   /* Infinite loop */
   for(;;)
   {
+    memcpy(LoraRxBuffer, test_data, test_len);
+    lora_cmd_len = test_len;
    // HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
     //USB_Transmit("Default task alive\r\n", 21);
+    if (rfm95wTaskHandle != NULL) 
+    {
+        // Używamy xTaskNotify, ponieważ działamy w zadaniu (nie w ISR), 
+        // więc nie potrzebujemy końcówki "FromISR"
+        xTaskNotify(rfm95wTaskHandle, 
+                    USART_LORA_EVENT_BIT, 
+                    eSetBits);
+    }
     osDelay(1000);
   }
   /* USER CODE END defaultTask */

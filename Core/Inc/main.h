@@ -60,6 +60,10 @@ extern volatile uint8_t rx_buffer[RX_BUF_SIZE];
 #define POOL_SIZE 8
 #define BUFFER_SIZE 512
 
+#define USB_EVENT_BIT ( 1 << 2 )
+#define USART_LORA_EVENT_BIT  ( 1 << 3 )
+#define USART_LORA_EVENT_BIT  ( 1 << 3 )
+
 typedef struct {
     uint8_t data[BUFFER_SIZE];
     uint16_t len;

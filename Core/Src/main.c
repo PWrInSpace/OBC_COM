@@ -353,6 +353,10 @@ void Error_Handler(void)
   __disable_irq();
   while (1)
   {
+      GPIOA->BSRR = (1U << (10 + 16)); // Zapal
+        for(volatile int i = 0; i < 1000000; i++);
+        GPIOA->BSRR = (1U << 10);         // Zgaś
+        for(volatile int i = 0; i < 1000000; i++);
   }
   /* USER CODE END Error_Handler_Debug */
 }
