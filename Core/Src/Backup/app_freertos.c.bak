@@ -58,7 +58,7 @@ typedef StaticTask_t osStaticThreadDef_t;
 
 /* USER CODE END PD */
 
-/* Private macro ------------------------------------------git log-------------------*/
+/* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 
 /* USER CODE END PM */

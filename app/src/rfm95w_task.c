@@ -26,7 +26,7 @@
 #include "cmd_interface.h"
 
 #define TAG "RFM95"
-#define TEST_RSSI
+//#define TEST_RSSI
 
 #define TX_DONE_TIMEOUT_MS_DEFAULT 20
 extern volatile uint16_t USB_Rx_Data_Len; 
