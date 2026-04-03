@@ -244,7 +244,7 @@ uint16_t length = (uint16_t)*Len;
       if (cmdTaskHandle != NULL) {
     xTaskNotifyFromISR((TaskHandle_t)cmdTaskHandle, 0, eNoAction, &xHigherPriorityTaskWoken);
 }
-      HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+      
   }
 
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);

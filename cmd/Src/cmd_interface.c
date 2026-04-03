@@ -44,15 +44,18 @@ void handle_lora_tx(cmd_params_t *params)
     }
     uint16_t copy_len = (params->len < LORA_BUFF_SIZE) ? params->len : LORA_BUFF_SIZE;
     memcpy(LoraRxBuffer, params->data, copy_len);
-    
+    sniprintf((char*)LoraRxBuffer, copy_len + 1, "%.*s", copy_len, params->data);
+    USB_Transmit(LoraRxBuffer, copy_len);
+  //  USB_Rx_Data_Len = copy_len;
     lora_cmd_len = copy_len;
     if (rfm95wTaskHandle != NULL) {
-        xTaskNotifyGive(rfm95wTaskHandle);
+        xTaskNotify(rfm95wTaskHandle, LORA_TX_EVENT_BIT, eSetBits);
     }
 
     if (!params->is_binary) {
         USB_Transmit((uint8_t*)"OK: Data queued for RFM95W TX\r\n", 31);
     }
+    
 }
 
 // void handle_lora_tx(cmd_params_t *params)

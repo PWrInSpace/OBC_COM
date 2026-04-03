@@ -62,10 +62,7 @@ void cmd_task(void *argument) {
                     USB_Rx_Data_Len = lora_len;
 
                     if (rfm95wTaskHandle != NULL) {
-                        xTaskNotifyFromISR(rfm95wTaskHandle, 
-                                           USB_EVENT_BIT, 
-                                           eSetBits, 
-                                           NULL);
+                        xTaskNotify(rfm95wTaskHandle, LORA_TX_EVENT_BIT, eSetBits);
                     }
                 }
                 memset(usb_frame_buf, 0, BUFFER_SIZE);
