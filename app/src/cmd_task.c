@@ -12,10 +12,11 @@
 #include "queue.h"
 #include "usb_config.h"
 #include "usart.h"
+#include "stream_buffer.h"
 QueueHandle_t cmd_queue = NULL; 
+osThreadId_t cmdTaskHandle = NULL;
 
 void CMD_Task_Init(void) {
-
     if (cmd_queue == NULL) {
         cmd_queue = xQueueCreate(POOL_SIZE, sizeof(CMD_Buffer_t*));
     }
@@ -25,45 +26,65 @@ void CMD_Task_Init(void) {
         .stack_size = 4096,
         .priority = (osPriority_t) osPriorityNormal,
     };
-    osThreadNew(cmd_task, NULL, &cmdTask_attributes);
-}
 
-//! DODAĆ BUFFER POOL WYGODA ZE ZMIENNA DLUGOŚCIĄ DANYCH I BARDZIEJ EFEKTYWNE
-/**
- * @brief Zadanie przetwarzające komendy z UART przy użyciu puli buforów.
- */
+    cmdTaskHandle = osThreadNew(cmd_task, NULL, &cmdTask_attributes);
+}
+extern osThreadId_t rfm95wTaskHandle;
+extern volatile uint16_t USB_Rx_Data_Len;
+extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
 void cmd_task(void *argument) {
     (void)argument;
     
     CMD_Buffer_t *received_ptr = NULL;
-    char log_msg[128];
+    uint8_t usb_byte;
+    static uint8_t usb_frame_buf[BUFFER_SIZE];
+    static uint16_t usb_idx = 0;
+    uint32_t ulNotifiedValue;
 
     for(;;) {
-        // Czekamy na wskaźnik do wypełnionego bufora z kolejki
-        if (cmd_queue != NULL && xQueueReceive(cmd_queue, &received_ptr, portMAX_DELAY) == pdPASS) {
-            
+
+        xTaskNotifyWait(0, 0xFFFFFFFF, &ulNotifiedValue, portMAX_DELAY);
+
+        while (xStreamBufferReceive(xUsbStreamBuffer, &usb_byte, 1, 0) > 0) {
+            if (usb_idx < BUFFER_SIZE - 1) {
+                usb_frame_buf[usb_idx++] = usb_byte;
+            }
+
+            if (usb_byte == '\n' || usb_byte == '\r') {
+                if (usb_idx > 4 && memcmp(usb_frame_buf, "CMD:", 4) == 0) {
+                    process_command(usb_frame_buf, usb_idx);
+                }
+
+                //TODO! REMOVE IT IN FUTURE ADD HEADER WITH COMMAND ID FRO APP ITS NO SENSE TO SEND EVERYTHING ON SERIAL
+                else{
+                    uint16_t lora_len = (usb_idx < APP_RX_DATA_SIZE) ? usb_idx : APP_RX_DATA_SIZE;
+                    memcpy(UserRxBufferFS, usb_frame_buf, lora_len);
+                    USB_Rx_Data_Len = lora_len;
+
+                    if (rfm95wTaskHandle != NULL) {
+                        xTaskNotifyFromISR(rfm95wTaskHandle, 
+                                           USB_EVENT_BIT, 
+                                           eSetBits, 
+                                           NULL);
+                    }
+                }
+                memset(usb_frame_buf, 0, BUFFER_SIZE);
+                usb_idx = 0;
+            }
+        }
+
+        while (cmd_queue != NULL && xQueueReceive(cmd_queue, &received_ptr, 0) == pdPASS) {
             if (received_ptr != NULL) {
-                
                 uint16_t actual_len = 0;
                 uint8_t *data = received_ptr->data;
-                
+
                 if (data[0] == 0x32) {
-                    // Format BINARNY LCDC: Header(0x32) + Len(1) + ID(1) + Data(N) + CRC(1) + EOF(1)
-                    // actual_len = N + 5 (gdzie N to data[1])
                     actual_len = data[1] + 5;
                     if (actual_len > BUFFER_SIZE) actual_len = BUFFER_SIZE;
-
-                    int log_len = snprintf(log_msg, sizeof(log_msg), 
-                                           "LCDC Bin Recv: ID 0x%02X, Len %d\r\n", 
-                                           data[2], actual_len);
-                    USB_Transmit((uint8_t*)log_msg, log_len);
-                } 
-                else {
+                } else {
                     actual_len = received_ptr->len;
-                    int log_len = snprintf(log_msg, sizeof(log_msg), "Text Recv: %.*s\r\n", 
-                                           actual_len, (char*)data);
-                    USB_Transmit((uint8_t*)log_msg, log_len);
                 }
+
                 process_command(data, actual_len);
                 memset(data, 0, BUFFER_SIZE);
                 xQueueSend(free_pool_queue, &received_ptr, 0);

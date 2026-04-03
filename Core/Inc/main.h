@@ -45,6 +45,7 @@ extern "C" {
 /* USER CODE BEGIN Includes */
 #include "FreeRTOS.h"
 #include "queue.h"
+#include "stream_buffer.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -69,6 +70,8 @@ typedef struct {
     uint16_t len;
 } CMD_Buffer_t;
 extern QueueHandle_t free_pool_queue;
+
+extern StreamBufferHandle_t xUsbStreamBuffer;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

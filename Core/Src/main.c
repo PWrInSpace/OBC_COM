@@ -59,7 +59,19 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-/* W sekcji Private variables (PV) */
+
+StreamBufferHandle_t xUsbStreamBuffer = NULL;
+
+const size_t xStreamBufferSizeBytes = 1024;
+const size_t xTriggerLevel = 1; 
+
+void USB_StreamBuffer_Init(void) {
+    xUsbStreamBuffer = xStreamBufferCreate(xStreamBufferSizeBytes, xTriggerLevel);
+    if (xUsbStreamBuffer == NULL) {
+        Error_Handler();
+    }
+}
+
 #define RX_BUF_SIZE 512
 uint8_t volatile rx_buffer[RX_BUF_SIZE];
 uint16_t last_packet_size = 0;
@@ -161,6 +173,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
             current_dma_buffer->len = Size;
             if (cmd_queue != NULL) {
                 xQueueSendFromISR(cmd_queue, &current_dma_buffer, &xHigherPriorityTaskWoken);
+                xTaskNotifyFromISR(cmdTaskHandle, 0, eNoAction, &xHigherPriorityTaskWoken);
             }
 
             current_dma_buffer = NULL;
@@ -238,6 +251,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_Delay(50);
   BufferPool_UART_Start(&huart2);
+  xUsbStreamBuffer = xStreamBufferCreate(xStreamBufferSizeBytes, xTriggerLevel);
   /* USER CODE END 2 */
 
   /* Init scheduler */

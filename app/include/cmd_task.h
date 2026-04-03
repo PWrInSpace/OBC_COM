@@ -15,6 +15,7 @@ extern "C" {
 #include "cmsis_os2.h"
 
 extern QueueHandle_t cmd_queue;
+extern osThreadId_t cmdTaskHandle;
 
 void CMD_Task_Init(void);
 void cmd_task(void *argument);
