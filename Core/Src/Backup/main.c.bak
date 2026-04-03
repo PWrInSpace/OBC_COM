@@ -115,6 +115,14 @@ void BufferPool_UART_Start(UART_HandleTypeDef *huart) {
         } else {
             Error_Handler();
         }
+
+void BufferPool_Init(void) {
+    free_pool_queue = xQueueCreate(POOL_SIZE, sizeof(UART_Buffer_t*));
+    cmd_queue = xQueueCreate(POOL_SIZE, sizeof(UART_Buffer_t*));
+
+    for (int i = 0; i < POOL_SIZE; i++) {
+        UART_Buffer_t *ptr = &pool[i];
+        xQueueSend(free_pool_queue, &ptr, 0);
     }
 }
 /* USER CODE END PV */
@@ -247,6 +255,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_Delay(50);
   BufferPool_UART_Start(&huart2);
+  HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t*)rx_buffer, RX_BUF_SIZE);
+  BufferPool_Init();
   /* USER CODE END 2 */
 
   /* Init scheduler */
