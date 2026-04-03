@@ -58,8 +58,8 @@ void cmd_task(void *argument) {
                 //TODO! REMOVE IT IN FUTURE ADD HEADER WITH COMMAND ID FRO APP ITS NO SENSE TO SEND EVERYTHING ON SERIAL
                 else{
                     uint16_t lora_len = (usb_idx < APP_RX_DATA_SIZE) ? usb_idx : APP_RX_DATA_SIZE;
-                    memcpy(UserRxBufferFS, usb_frame_buf, lora_len);
-                    USB_Rx_Data_Len = lora_len;
+                    memcpy(LoraRxBuffer, usb_frame_buf, lora_len);
+                    lora_cmd_len = lora_len;
 
                     if (rfm95wTaskHandle != NULL) {
                         xTaskNotify(rfm95wTaskHandle, LORA_TX_EVENT_BIT, eSetBits);
