@@ -17,7 +17,7 @@ QueueHandle_t cmd_queue = NULL;
 void CMD_Task_Init(void) {
 
     if (cmd_queue == NULL) {
-        cmd_queue = xQueueCreate(10, MAX_CMD_LEN);
+        cmd_queue = xQueueCreate(POOL_SIZE, sizeof(CMD_Buffer_t*));
     }
 
     const osThreadAttr_t cmdTask_attributes = {
@@ -35,7 +35,7 @@ void CMD_Task_Init(void) {
 void cmd_task(void *argument) {
     (void)argument;
     
-    UART_Buffer_t *received_ptr = NULL;
+    CMD_Buffer_t *received_ptr = NULL;
     char log_msg[128];
 
     for(;;) {

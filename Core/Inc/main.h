@@ -67,7 +67,7 @@ extern volatile uint8_t rx_buffer[RX_BUF_SIZE];
 typedef struct {
     uint8_t data[BUFFER_SIZE];
     uint16_t len;
-} UART_Buffer_t;
+} CMD_Buffer_t;
 extern QueueHandle_t free_pool_queue;
 /* USER CODE END EC */
 

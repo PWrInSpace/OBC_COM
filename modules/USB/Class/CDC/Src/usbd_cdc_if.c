@@ -243,7 +243,7 @@ static int8_t CDC_Receive_FS(uint8_t *Buf, uint32_t *Len)
 
     if (strncmp((char*)Buf, "CMD:", 4) == 0)
     {
-      UART_Buffer_t *usb_buffer = NULL;
+      CMD_Buffer_t *usb_buffer = NULL;
       if (xQueueReceiveFromISR(free_pool_queue, &usb_buffer, &xHigherPriorityTaskWoken) == pdPASS)
       {
         uint16_t copy_len = (length < BUFFER_SIZE) ? length : BUFFER_SIZE;

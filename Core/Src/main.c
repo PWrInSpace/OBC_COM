@@ -65,30 +65,27 @@ uint8_t volatile rx_buffer[RX_BUF_SIZE];
 uint16_t last_packet_size = 0;
 
 
-UART_Buffer_t pool[POOL_SIZE];
+CMD_Buffer_t pool[POOL_SIZE];
 QueueHandle_t free_pool_queue = NULL;
 extern QueueHandle_t cmd_queue;
-UART_Buffer_t *current_dma_buffer = NULL;
+CMD_Buffer_t *current_dma_buffer = NULL;
 
 /**
  * @brief Kompleksowa inicjalizacja puli buforów i pierwsze uruchomienie DMA dla UART.
  * @param huart Wskaźnik na skonfigurowany uchwyt UART (np. &huart2)
  */
 void BufferPool_UART_Start(UART_HandleTypeDef *huart) {
-    // 1. Tworzenie kolejek dla wskaźników (rozmiar POOL_SIZE)
-    free_pool_queue = xQueueCreate(POOL_SIZE, sizeof(UART_Buffer_t*));
-    cmd_queue = xQueueCreate(POOL_SIZE, sizeof(UART_Buffer_t*));
 
-    // HardFault/Error jeśli zabrakło RAM na kolejki
+    free_pool_queue = xQueueCreate(POOL_SIZE, sizeof(CMD_Buffer_t*));
+    cmd_queue = xQueueCreate(POOL_SIZE, sizeof(CMD_Buffer_t*));
+
     if (free_pool_queue == NULL || cmd_queue == NULL) {
         Error_Handler();
     }
 
-    // 2. Wypełnienie puli adresami z tablicy statycznej 'pool'
     for (int i = 0; i < POOL_SIZE; i++) {
-        UART_Buffer_t *ptr = &pool[i];
+        CMD_Buffer_t *ptr = &pool[i];
         
-        // Resetujemy strukturę przed użyciem
         memset(ptr->data, 0, BUFFER_SIZE);
         ptr->len = 0;
 
@@ -97,20 +94,14 @@ void BufferPool_UART_Start(UART_HandleTypeDef *huart) {
         }
     }
 
-    // 3. Pobranie PIERWSZEGO bufora dla DMA
-    // Wyciągamy wskaźnik z kolejki wolnych i przypisujemy do globalnego current_dma_buffer
     if (xQueueReceive(free_pool_queue, &current_dma_buffer, 0) != pdPASS) {
         Error_Handler();
     }
 
-    // 4. URUCHOMIENIE SPRZĘTU (DMA)
-    // Teraz uzbrajamy UART, używając adresu z pobranego właśnie bufora
     if (current_dma_buffer != NULL) {
-        // Czyścimy flagi IDLE przed startem
         __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_IDLEF);
 
         if (HAL_UARTEx_ReceiveToIdle_DMA(huart, current_dma_buffer->data, BUFFER_SIZE) == HAL_OK) {
-            // Wyłączamy przerwanie Half-Transfer (HT) - chcemy tylko Idle lub Full
             __HAL_DMA_DISABLE_IT(huart->hdmarx, DMA_IT_HT);
         } else {
             Error_Handler();
@@ -175,7 +166,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
             current_dma_buffer = NULL;
         }
 
-        UART_Buffer_t *next_buf = NULL;
+        CMD_Buffer_t *next_buf = NULL;
         if (free_pool_queue != NULL && xQueueReceiveFromISR(free_pool_queue, &next_buf, &xHigherPriorityTaskWoken) == pdPASS)
         {
             current_dma_buffer = next_buf;
