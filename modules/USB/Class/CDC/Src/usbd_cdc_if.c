@@ -226,7 +226,6 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t *pbuf, uint16_t length)
   */
 extern osThreadId_t sx1280TaskHandle;
 extern osThreadId_t rfm95wTaskHandle;
-#define USB_EVENT_BIT ( 1 << 2 )
 extern QueueHandle_t cmd_queue;/**
   * @brief  Odbiór danych przez USB CDC.
   * @param  Buf: Wskaźnik do bufora odebranych danych
@@ -261,11 +260,20 @@ static int8_t CDC_Receive_FS(uint8_t *Buf, uint32_t *Len)
       USB_Rx_Data_Len = lora_len;
       
       HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
-      if(rfm95wTaskHandle != NULL)
-      {
-        vTaskNotifyGiveFromISR(rfm95wTaskHandle, &xHigherPriorityTaskWoken);
-      }
+
+if (rfm95wTaskHandle != NULL)
+{
+    xTaskNotifyFromISR(rfm95wTaskHandle, 
+                       USB_EVENT_BIT, 
+                       eSetBits, 
+                       &xHigherPriorityTaskWoken);
+}
+else 
+{
+    Error_Handler(); 
+}
       
+
     }
   }
 

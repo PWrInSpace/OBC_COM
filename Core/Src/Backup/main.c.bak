@@ -68,6 +68,53 @@ uint16_t last_packet_size = 0;
 UART_Buffer_t pool[POOL_SIZE];
 QueueHandle_t free_pool_queue = NULL;
 extern QueueHandle_t cmd_queue;
+UART_Buffer_t *current_dma_buffer = NULL;
+
+/**
+ * @brief Kompleksowa inicjalizacja puli buforów i pierwsze uruchomienie DMA dla UART.
+ * @param huart Wskaźnik na skonfigurowany uchwyt UART (np. &huart2)
+ */
+void BufferPool_UART_Start(UART_HandleTypeDef *huart) {
+    // 1. Tworzenie kolejek dla wskaźników (rozmiar POOL_SIZE)
+    free_pool_queue = xQueueCreate(POOL_SIZE, sizeof(UART_Buffer_t*));
+    cmd_queue = xQueueCreate(POOL_SIZE, sizeof(UART_Buffer_t*));
+
+    // HardFault/Error jeśli zabrakło RAM na kolejki
+    if (free_pool_queue == NULL || cmd_queue == NULL) {
+        Error_Handler();
+    }
+
+    // 2. Wypełnienie puli adresami z tablicy statycznej 'pool'
+    for (int i = 0; i < POOL_SIZE; i++) {
+        UART_Buffer_t *ptr = &pool[i];
+        
+        // Resetujemy strukturę przed użyciem
+        memset(ptr->data, 0, BUFFER_SIZE);
+        ptr->len = 0;
+
+        if (xQueueSend(free_pool_queue, &ptr, 0) != pdPASS) {
+            Error_Handler();
+        }
+    }
+
+    // 3. Pobranie PIERWSZEGO bufora dla DMA
+    // Wyciągamy wskaźnik z kolejki wolnych i przypisujemy do globalnego current_dma_buffer
+    if (xQueueReceive(free_pool_queue, &current_dma_buffer, 0) != pdPASS) {
+        Error_Handler();
+    }
+
+    // 4. URUCHOMIENIE SPRZĘTU (DMA)
+    // Teraz uzbrajamy UART, używając adresu z pobranego właśnie bufora
+    if (current_dma_buffer != NULL) {
+        // Czyścimy flagi IDLE przed startem
+        __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_IDLEF);
+
+        if (HAL_UARTEx_ReceiveToIdle_DMA(huart, current_dma_buffer->data, BUFFER_SIZE) == HAL_OK) {
+            // Wyłączamy przerwanie Half-Transfer (HT) - chcemy tylko Idle lub Full
+            __HAL_DMA_DISABLE_IT(huart->hdmarx, DMA_IT_HT);
+        } else {
+            Error_Handler();
+        }
 
 void BufferPool_Init(void) {
     free_pool_queue = xQueueCreate(POOL_SIZE, sizeof(UART_Buffer_t*));
@@ -116,54 +163,51 @@ extern osThreadId_t gpsTaskHandle;
 
 //     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 // }
-
 /**
-  * @brief  Obsługa zdarzenia Idle Line lub Full Buffer na USART2
-  * @param  huart: wskaźnik na strukturę UART
-  * @param  Size: liczba bajtów obliczona przez HAL (ile faktycznie wpadło)
+  * @brief  Obsługa zdarzenia Idle Line lub Full Buffer na USART2/USART1
   */
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-   if (huart->Instance == USART2)
-{
-    // 1. Wizualne potwierdzenie
-    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
-    
-    // 2. Wysłanie danych do kolejki (jeśli kolejka istnieje)
-    if (cmd_queue != NULL) 
-    {
-        BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-        
-        // WYSYŁAMY odebrany bufor (lub jego fragment o długości 'Size') do kolejki
-        // Uwaga: Kolejka musi być zainicjalizowana na odpowiedni rozmiar elementu!
-        xQueueSendFromISR(cmd_queue, (void *)rx_buffer, &xHigherPriorityTaskWoken);
-        memset(rx_buffer, 0, 512);
-        
-        // Wymuszenie przełączenia kontekstu, jeśli zadanie czekające na kolejkę ma wyższy priorytet
-        portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-    }
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
-    // 3. Czyścimy flagi i uzbrajamy ponownie
-    __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_IDLEF);
-    
-    if (HAL_UARTEx_ReceiveToIdle_DMA(huart, rx_buffer, 512) == HAL_OK)
+    if (huart->Instance == USART2)
     {
-        __HAL_DMA_DISABLE_IT(huart->hdmarx, DMA_IT_HT);
-    }
-}
-        else if (huart->Instance == USART1) {
-        BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-        vTaskNotifyGiveFromISR(gpsTaskHandle, &xHigherPriorityTaskWoken);
-        portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-    }
-        else
+        HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+        if (current_dma_buffer != NULL) 
         {
-            // Jeśli status nie jest OK (np. HAL_BUSY), oznacza to, że UART ma błąd
-            // Wywołujemy procedurę ratunkową
-            HAL_UART_ErrorCallback(huart);
+            current_dma_buffer->len = Size;
+            if (cmd_queue != NULL) {
+                xQueueSendFromISR(cmd_queue, &current_dma_buffer, &xHigherPriorityTaskWoken);
+            }
+
+            current_dma_buffer = NULL;
+        }
+
+        UART_Buffer_t *next_buf = NULL;
+        if (free_pool_queue != NULL && xQueueReceiveFromISR(free_pool_queue, &next_buf, &xHigherPriorityTaskWoken) == pdPASS)
+        {
+            current_dma_buffer = next_buf;
+
+            __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_IDLEF);
+
+            if (HAL_UARTEx_ReceiveToIdle_DMA(huart, current_dma_buffer->data, 512) == HAL_OK)
+            {
+                __HAL_DMA_DISABLE_IT(huart->hdmarx, DMA_IT_HT);
+            }
+        }
+        else 
+        {
+            // Brak dostępnych buforów
         }
     }
-
+    else if (huart->Instance == USART1) 
+    {
+        if (gpsTaskHandle != NULL) {
+            vTaskNotifyGiveFromISR(gpsTaskHandle, &xHigherPriorityTaskWoken);
+        }
+    }
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
 
 /* USER CODE END 0 */
 
@@ -210,6 +254,7 @@ int main(void)
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
   HAL_Delay(50);
+  BufferPool_UART_Start(&huart2);
   HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t*)rx_buffer, RX_BUF_SIZE);
   BufferPool_Init();
   /* USER CODE END 2 */
@@ -353,6 +398,10 @@ void Error_Handler(void)
   __disable_irq();
   while (1)
   {
+      GPIOA->BSRR = (1U << (10 + 16)); // Zapal
+        for(volatile int i = 0; i < 1000000; i++);
+        GPIOA->BSRR = (1U << 10);         // Zgaś
+        for(volatile int i = 0; i < 1000000; i++);
   }
   /* USER CODE END Error_Handler_Debug */
 }
