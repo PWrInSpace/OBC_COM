@@ -44,9 +44,6 @@ void handle_lora_tx(cmd_params_t *params)
     }
     uint16_t copy_len = (params->len < LORA_BUFF_SIZE) ? params->len : LORA_BUFF_SIZE;
     memcpy(LoraRxBuffer, params->data, copy_len);
-    sniprintf((char*)LoraRxBuffer, copy_len + 1, "%.*s", copy_len, params->data);
-    USB_Transmit(LoraRxBuffer, copy_len);
-  //  USB_Rx_Data_Len = copy_len;
     lora_cmd_len = copy_len;
     if (rfm95wTaskHandle != NULL) {
         xTaskNotify(rfm95wTaskHandle, LORA_TX_EVENT_BIT, eSetBits);
