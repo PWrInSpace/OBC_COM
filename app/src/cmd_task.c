@@ -92,7 +92,10 @@ void cmd_task(void *argument) {
                 } else {
                     actual_len = received_ptr->len;
                 }
-
+                // Zawsze najpierw \r (powrót), potem \n (nowa linia)
+                USB_Transmit((uint8_t*)"RX CMD: ", 11); 
+                USB_Transmit(data, actual_len);
+                USB_Transmit((uint8_t*)"\r\n", 2);  
                 process_command(data, actual_len);
                 memset(data, 0, BUFFER_SIZE);
                 xQueueSend(free_pool_queue, &received_ptr, 0);

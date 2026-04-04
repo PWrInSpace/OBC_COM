@@ -77,7 +77,7 @@ static void stop_radio_standby(SX1280_t *radio) {
 static bool handle_rx_done_and_get_payload(SX1280_t *radio, uint8_t *out_buf, uint8_t *out_size) {
   if (out_buf == NULL || out_size == NULL) return false;
   uint8_t rx_size = 0;
-  SX1280GetPayload(radio, out_buf, &rx_size, (uint8_t)255);
+  SX1280GetPayload(radio, out_buf, &rx_size, (uint8_t)512);
   SX1280ClearIrqStatus(radio, IRQ_RADIO_ALL);
   if (rx_size == 0) return false;
   *out_size = rx_size;
