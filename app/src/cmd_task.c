@@ -45,19 +45,28 @@ void cmd_task(void *argument) {
 
         xTaskNotifyWait(0, 0xFFFFFFFF, &ulNotifiedValue, portMAX_DELAY);
 
-        while (xStreamBufferReceive(xUsbStreamBuffer, &usb_byte, 1, 0) > 0) {
+         while (xStreamBufferReceive(xUsbStreamBuffer, &usb_byte, 1, 0) > 0) {
+            // Ignoruj znaki sterujące na samym początku nowej ramki
+            if (usb_idx == 0 && (usb_byte == '\n' || usb_byte == '\r' || usb_byte == ' ')) {
+                continue; 
+            }
+
             if (usb_idx < BUFFER_SIZE - 1) {
                 usb_frame_buf[usb_idx++] = usb_byte;
             }
 
             if (usb_byte == '\n' || usb_byte == '\r') {
-                if (usb_idx > 4 && memcmp(usb_frame_buf, "CMD:", 4) == 0) {
-                    process_command(usb_frame_buf, usb_idx);
-                }
+                // Usuń znak końca linii z bufora przed przetwarzaniem
+                usb_idx--; 
+                usb_frame_buf[usb_idx] = '\0';
 
-                //TODO! REMOVE IT IN FUTURE ADD HEADER WITH COMMAND ID FRO APP ITS NO SENSE TO SEND EVERYTHING ON SERIAL
-                else{
-                    uint16_t lora_len = (usb_idx < APP_RX_DATA_SIZE) ? usb_idx : APP_RX_DATA_SIZE;
+                if (usb_idx >= 4 && memcmp(usb_frame_buf, "CMD:", 4) == 0) {
+                    // Logika dla komend
+                    process_command(usb_frame_buf, usb_idx);
+                } 
+                else if (usb_idx > 0) {
+                    // Logika dla surowych danych LORA (tylko jeśli bufor nie jest pusty)
+                    uint16_t lora_len = (usb_idx < LORA_BUFF_SIZE) ? usb_idx : LORA_BUFF_SIZE;
                     memcpy(LoraRxBuffer, usb_frame_buf, lora_len);
                     lora_cmd_len = lora_len;
 
@@ -65,8 +74,10 @@ void cmd_task(void *argument) {
                         xTaskNotify(rfm95wTaskHandle, LORA_TX_EVENT_BIT, eSetBits);
                     }
                 }
-                memset(usb_frame_buf, 0, BUFFER_SIZE);
+
+                // Pełny reset przed następną paczką
                 usb_idx = 0;
+                memset(usb_frame_buf, 0, BUFFER_SIZE);
             }
         }
 
