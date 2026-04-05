@@ -1,32 +1,53 @@
 # OBC_COM
 
-![STM32H5](https://img.shields.io/badge/MCU-STM32H563-blue.svg)
+![MCU](https://img.shields.io/badge/MCU-STM32H563-blue.svg)
 ![RTOS](https://img.shields.io/badge/RTOS-FreeRTOS%20CMSIS--V2-green.svg)
 ![Build](https://img.shields.io/badge/Build-CMake-orange.svg)
 
-This repository contains the firmware for the **On-Board Computer Communication (OBC_COM)** system. 
-
-The project is built on the **STM32H563** processor, chosen for its high reliability and advanced security features, which are essential requirements for robust communication systems in aerospace applications.
+Firmware for the On-Board Computer (OBC) communication subsystem. This project is based on the **STM32H563** processor, chosen for its high reliability and integrated security features—essential requirements for robust communication systems in aerospace.
 
 ---
 
 ## 📂 Project Structure
 
-The codebase is organized into modular layers to ensure scalability and ease of testing:
-
 | Directory | Description |
 | :--- | :--- |
 | **`app/`** | High-level application logic and FreeRTOS task initializations (CMSIS V2). |
-| **`modules/`** | Hardware abstraction drivers for components (RF drivers, GPS, USB, NVS, etc.). |
-| **`cmd/`** | Command-line interface logic and instruction processing. |
-| **`wrappers/`** | Utility wrappers for simplified hardware interaction. |
-| **`Core/`** | Standard STM32 HAL/LL initialization and interrupt handlers. |
+| **`modules/`** | Component drivers (RF_driver, GPS, USB, logger, NVS, etc.). |
+| **`cmd/`** | Command handling and instruction parsing logic. |
+| **`wrappers/`** | Hardware abstraction layers for simplified peripheral access. |
 
 ---
 
-## 🛠 Setup & Workflow
+## 🛠 VS Code Automation (tasks.json)
 
-### 1. Installation
-Clone the repository to your local machine:
-```bash
-git clone [https://github.com/PWrInSpace/OBC_COM.git](https://github.com/PWrInSpace/OBC_COM.git)
+The repository is configured to streamline the flashing process using the **`CTRL + SHIFT + B`** shortcut.
+
+### Required Configuration:
+1. Open the `.vscode/tasks.json` file.
+2. **Programmer Path**: Ensure the path to the `STM32_Programmer_CLI` matches your local **STM32CubeProgrammer** installation.
+3. **COM Port**: Set the specific **COM port** (e.g., `COM3`) assigned to your device.
+
+> [!IMPORTANT]  
+> **Build before flashing:** The flash task targets the **`.bin`** file. You must successfully build the project before flashing to ensure the binary is up-to-date.
+
+---
+
+## 🚀 Flashing Instructions (USB DFU Mode)
+
+The board uses USB DFU for firmware updates. Follow these steps to toggle between programming and execution modes:
+
+### Step 1: Programming Mode (Bootloader)
+1. Set the **BOOT0** jumper/switch to **GND**.
+2. Press the **RESET (RST)** button.
+3. In VS Code, press **`CTRL + SHIFT + B`**. The system will automatically upload the binary via the configured COM port.
+
+### Step 2: Execution Mode (Run)
+1. Once the upload is complete, move the **BOOT0** switch to **3V3 (VCC)**.
+2. Press the **RESET (RST)** button again.
+3. The firmware will now start executing from the Flash memory.
+
+---
+
+## 🏗 Building the Project
+This project uses **CMake**. It is recommended to use the *CMake Tools* extension in VS Code. Simply select your kit, configure the project, and build to generate the necessary `.bin` files for flashing.
