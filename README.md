@@ -56,7 +56,8 @@ set(MX_LINK_LIBS
     RTOS2
     "-u _printf_float"
 	
-)```
+)
+```
 
 ## 🏗 Building the Project
 This project uses **CMake**. It is recommended to use the *CMake Tools* extension in VS Code. Simply select your kit, configure the project, and build to generate the necessary `.bin` files for flashing.
