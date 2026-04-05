@@ -49,19 +49,20 @@ typedef enum {
     CMD_MY_NEW_COMMAND = 0x0A, // Your new ID here
     CMD_NUM
 } Command_t;
-```c
+```
 
 ### Step 2: Define Command Struct
-
+```c
 add in CommandMap_t cmd_map[] the command with handler etc...
 
 static const CommandMap_t cmd_map[] = {
     // ...
     {"CMD_NAME", CMD_MY_NEW_ACTION, my__new_handler, "- Description for help menu"},
 };
-
+```
 ### Step 3: Define Command Handler
-
+```c
 void my_new_handler(cmd_params_t *params) {
 
 }
+```
