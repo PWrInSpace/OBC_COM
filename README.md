@@ -47,6 +47,18 @@ The board uses USB DFU for firmware updates. Follow these steps to toggle betwee
 2. Press the **RESET (RST)** button again.
 3. The firmware will now start executing from the Flash memory.
 
+## 🛠 STM32CubeMX
+1. After STM32CubeMX code generation chnage the cmake/stm32cubemx/Cmakelists.txt file as follows:
+```c
+set(MX_LINK_LIBS 
+    STM32_Drivers
+    ${TOOLCHAIN_LINK_LIBRARIES}
+    RTOS2
+    "-u _printf_float"
+	
+)```
+
+
 ---
 
 ## 🏗 Building the Project
