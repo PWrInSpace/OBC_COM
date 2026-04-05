@@ -58,8 +58,5 @@ set(MX_LINK_LIBS
 	
 )```
 
-
----
-
 ## 🏗 Building the Project
 This project uses **CMake**. It is recommended to use the *CMake Tools* extension in VS Code. Simply select your kit, configure the project, and build to generate the necessary `.bin` files for flashing.
