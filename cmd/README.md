@@ -49,8 +49,10 @@ typedef enum {
     CMD_MY_NEW_COMMAND = 0x0A, // Your new ID here
     CMD_NUM
 } Command_t;
+```c
 
 ### Step 2: Define Command Struct
+
 add in CommandMap_t cmd_map[] the command with handler etc...
 
 static const CommandMap_t cmd_map[] = {
