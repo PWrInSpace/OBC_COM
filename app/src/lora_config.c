@@ -13,6 +13,7 @@
 #include "spi.h"
 #include "spi_callbacks.h"
 #include "usb_config.h"
+#include "nvs_config.h"
 
 //!< SX1280 DATA
 
@@ -34,8 +35,8 @@ RFM95_param_t rfm95w_param = {
     .frequency = 868000000,
     .power = 17,               // 17 dBm
     .LoRa_Rate = 7,            // SF7
-    .LoRa_BW = RFM95_BW_250_kHz,              // 250 kHz
-    .packetLength = 256,         // 0 dla
+    .LoRa_BW = RFM95_BW_250_kHz,
+    .packetLength = 256,
     .readBytes = 0,
     .last_pkt_RSSI=0,
     .last_pkt_SNR = 0
@@ -117,7 +118,7 @@ void sx1280_config_init(void) {
 void rfm95w_config_init_param(void) {
     LoRaDevs_t *lora_devs = get_lora_devs_instance();
     rfm95_t *radio = lora_devs->rfm95w;
-    // 5. Wywołanie konfiguracji domyślnej bazującej na rfm95w_param
+    nvs_get_rfm95_settings(radio);
     if (rfm95_default_config_param(radio) == RFM95_OK) {
         if (radio->log) radio->log("RFM95W: Configured successfully with parameters.\r\n");
     }

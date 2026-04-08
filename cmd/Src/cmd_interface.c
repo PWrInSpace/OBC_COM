@@ -82,9 +82,10 @@ const size_t cmd_map_size = sizeof(cmd_map) / sizeof(CommandMap_t);
 
 
 void process_text_packet(char *raw_str) {
-    strtok(raw_str, ":"); // Skip "CMD"
-    char *cmd_str = strtok(NULL, ":");
-    char *val_str = strtok(NULL, ":");
+    // Add \r and \n to the delimiter list to strip them from the end of the strings
+    char *prefix = strtok(raw_str, ":\r\n"); // Returns "CMD"
+    char *cmd_str = strtok(NULL, ":\r\n");   // Returns "HELP" (strips the \n!)
+    char *val_str = strtok(NULL, ":\r\n");   // Returns arguments if they exist
 
     if (cmd_str == NULL) return;
 
@@ -102,9 +103,9 @@ void process_text_packet(char *raw_str) {
 }
 
 void process_binary_packet(uint8_t *buf, uint16_t len) {
-    if (len < 3) return; // Minimum: Header + Len + ID
-    uint8_t data_len = buf[1]; 
-    uint8_t cmd_id = buf[2];
+    if (len < 5) return; 
+    uint8_t cmd_id = buf[1];
+    uint8_t data_len = buf[2];
 
     for (size_t i = 0; i < cmd_map_size; i++) {
         if (cmd_map[i].id == (Command_t)cmd_id) {
@@ -146,6 +147,7 @@ void handle_help(cmd_params_t *params) {
     }
 }
 
+extern rfm95_t rfm95w_radio;
 void handle_freq(cmd_params_t *params) {
     uint32_t freq = 0;
     if (params->is_binary && params->len >= 4) {
@@ -153,7 +155,8 @@ void handle_freq(cmd_params_t *params) {
     } else if (params->data) {
         freq = strtoul((char*)params->data, NULL, 10);
     }
-
+    rfm95_set_frequency(&rfm95w_radio, freq);
+    nvs_save_rfm95_settings(&rfm95w_radio);
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: Freq set to %lu Hz\r\n", freq);
     USB_Transmit((uint8_t*)resp, len);

@@ -187,9 +187,6 @@ void rfm95wTaskEntry(void *argument)
     nvs_get_rfm95_settings(rfm95_radio);
     osDelay(100);
     rfm95w_config_init_param();
-    
-
-    // Startujemy RX Continuous raz na początku
     rfm95_start_rx(rfm95_radio, 0); 
 
     for(;;)
@@ -214,24 +211,6 @@ void rfm95wTaskEntry(void *argument)
             
         }
 
-
-    // ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(100));
-
-    // if(USB_Rx_Data_Len > 0 || lora_cmd_len > 0) {
-    //     //USB_Transmit((uint8_t*)"TX Start\r\n", 10);
-    //     if(lora_cmd_len > 0) {
-    //         rfm95_send_window(rfm95_radio, LoraRxBuffer, (uint8_t)lora_cmd_len, 100);
-    //         lora_cmd_len = 0;
-    //         memset(LoraRxBuffer, 0, LORA_BUFF_SIZE);
-    //     } else {
-    //         rfm95_send_window(rfm95_radio, UserRxBufferFS, (uint8_t)USB_Rx_Data_Len, 100);
-    //         USB_Rx_Data_Len = 0;
-    //         memset(UserRxBufferFS, 0, APP_RX_DATA_SIZE);
-    //     }
-    //     rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
-    //     rfm95_start_rx(rfm95_radio, 0); 
-    //     continue; 
-    // }
      uint8_t irq_status = rfm95_read_reg(rfm95_radio, REG_IRQ_FLAGS);
 
     if (irq_status & IRQ_RX_DONE_MASK) {
