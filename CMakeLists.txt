@@ -96,3 +96,14 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     Nvs
     # Add user defined libraries
 )
+
+# Add this after your OBC_COM executable definition
+if(UNIX AND NOT APPLE)
+    set(OBJCOPY "arm-none-eabi-objcopy")
+
+    add_custom_command(TARGET OBC_COM POST_BUILD
+        COMMAND ${OBJCOPY} -O binary $<TARGET_FILE:OBC_COM> ${CMAKE_CURRENT_BINARY_DIR}/OBC_COM.bin
+        COMMAND ${OBJCOPY} -O ihex $<TARGET_FILE:OBC_COM> ${CMAKE_CURRENT_BINARY_DIR}/OBC_COM.hex
+        COMMENT "Linux Post-Build: Generating .bin and .hex files from ELF"
+    )
+endif()

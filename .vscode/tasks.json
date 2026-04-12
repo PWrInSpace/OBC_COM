@@ -4,36 +4,47 @@
         {
             "label": "Flash DFU",
             "type": "shell",
-            "command": "C:/Program Files/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_Programmer_CLI.exe",
+            "command": "STM32_Programmer_CLI",
+            "windows": {
+                "command": "C:/Program Files/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_Programmer_CLI.exe"
+            },
             "args": [
-                "-c", "port=USB1",
-                "-w", "${workspaceFolder}\\build\\Debug\\OBC_COM.bin", "0x08000000",
+                "-c", "port=usb1",
+                "-w", "${workspaceFolder}/build/Debug/OBC_COM.bin", "0x08000000",
                 "-v",
                 "-s"
             ],
-            "options": {
-                "cwd": "${workspaceFolder}"
+            "linux": {
+                "args": [
+                    "-c", "port=usb1",
+                    "-w", "${workspaceFolder}/build/Debug/OBC_COM.bin", "0x08000000",
+                    "-v",
+                    "-s"
+                ]
             },
             "group": {
                 "kind": "build",
                 "isDefault": true
-            },
-            "problemMatcher": []
+            }
         },
         {
-            "label": "Open Serial COM7",
+            "label": "Serial Monitor",
             "type": "shell",
-            "command": "powershell",
-            "args": [
-                "-Command",
-                "[System.IO.Ports.SerialPort]::getportnames(); $port= new-Object System.IO.Ports.SerialPort COM7,115200,None,8,one; $port.Open(); Write-Host '--- Połączono z COM7 (115200) ---' -ForegroundColor Cyan; try { while($port.IsOpen) { Write-Host -NoNewline $port.ReadExisting() } } finally { $port.Close() }"
-            ],
+            "linux": {
+                "command": "screen",
+                "args": ["/dev/ttyACM0", "115200"]
+            },
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-Command",
+                    "$port= new-Object System.IO.Ports.SerialPort COM7,115200,None,8,one; $port.Open(); try { while($port.IsOpen) { Write-Host -NoNewline $port.ReadExisting() } } finally { $port.Close() }"
+                ]
+            },
             "presentation": {
                 "reveal": "always",
-                "panel": "new",
-                "focus": true
-            },
-            "problemMatcher": []
+                "panel": "new"
+            }
         }
     ]
 }
