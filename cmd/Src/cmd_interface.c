@@ -50,7 +50,10 @@ void handle_lora_tx(cmd_params_t *params)
     }
 
     if (!params->is_binary) {
-        USB_Transmit((uint8_t*)"OK: Data queued for RFM95W TX\r\n", 31);
+        USB_Transmit((uint8_t*)"OK: Data queued  text for RFM95W TX\r\n", 31);
+    }
+    else {
+        USB_Transmit((uint8_t*)"OK: Data queued binary for RFM95W TX\r\n", 34); 
     }
     
 }
@@ -102,9 +105,10 @@ void process_text_packet(char *raw_str) {
 }
 
 void process_binary_packet(uint8_t *buf, uint16_t len) {
-    if (len < 3) return; // Minimum: Header + Len + ID
-    uint8_t data_len = buf[1]; 
-    uint8_t cmd_id = buf[2];
+    if (len < 3) return; 
+    
+    uint8_t cmd_id = buf[1];
+    uint8_t data_len = buf[2];
 
     for (size_t i = 0; i < cmd_map_size; i++) {
         if (cmd_map[i].id == (Command_t)cmd_id) {

@@ -46,7 +46,6 @@ void cmd_task(void *argument) {
         xTaskNotifyWait(0, 0xFFFFFFFF, &ulNotifiedValue, portMAX_DELAY);
 
          while (xStreamBufferReceive(xUsbStreamBuffer, &usb_byte, 1, 0) > 0) {
-            // Ignoruj znaki sterujące na samym początku nowej ramki
             if (usb_idx == 0 && (usb_byte == '\n' || usb_byte == '\r' || usb_byte == ' ')) {
                 continue; 
             }
@@ -56,16 +55,13 @@ void cmd_task(void *argument) {
             }
 
             if (usb_byte == '\n' || usb_byte == '\r') {
-                // Usuń znak końca linii z bufora przed przetwarzaniem
                 usb_idx--; 
                 usb_frame_buf[usb_idx] = '\0';
 
                 if (usb_idx >= 4 && memcmp(usb_frame_buf, "CMD:", 4) == 0) {
-                    // Logika dla komend
                     process_command(usb_frame_buf, usb_idx);
                 } 
                 else if (usb_idx > 0) {
-                    // Logika dla surowych danych LORA (tylko jeśli bufor nie jest pusty)
                     uint16_t lora_len = (usb_idx < LORA_BUFF_SIZE) ? usb_idx : LORA_BUFF_SIZE;
                     memcpy(LoraRxBuffer, usb_frame_buf, lora_len);
                     lora_cmd_len = lora_len;
@@ -75,7 +71,6 @@ void cmd_task(void *argument) {
                     }
                 }
 
-                // Pełny reset przed następną paczką
                 usb_idx = 0;
                 memset(usb_frame_buf, 0, BUFFER_SIZE);
             }
@@ -87,15 +82,20 @@ void cmd_task(void *argument) {
                 uint8_t *data = received_ptr->data;
 
                 if (data[0] == 0x32) {
-                    actual_len = data[1] + 5;
+                    // Binary frame detected
+                    actual_len = data[2] + 5;
                     if (actual_len > BUFFER_SIZE) actual_len = BUFFER_SIZE;
+
+                    USB_Transmit((uint8_t*)"RX BIN CMD (HEX): ", 18); 
+                    //USB_Transmit_Hex(data, actual_len);
                 } else {
+                    // Regular text command
                     actual_len = received_ptr->len;
+                    USB_Transmit((uint8_t*)"RX CMD: ", 8); 
+                    USB_Transmit(data, actual_len);
                 }
-                // Zawsze najpierw \r (powrót), potem \n (nowa linia)
-                USB_Transmit((uint8_t*)"RX CMD: ", 11); 
-                USB_Transmit(data, actual_len);
-                USB_Transmit((uint8_t*)"\r\n", 2);  
+
+                USB_Transmit((uint8_t*)"\r\n", 2);
                 process_command(data, actual_len);
                 memset(data, 0, BUFFER_SIZE);
                 xQueueSend(free_pool_queue, &received_ptr, 0);

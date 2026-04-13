@@ -47,3 +47,11 @@ void USB_Transmit(uint8_t* Buf, uint16_t Len) {
         osMutexRelease(usbMutexHandle);
     }
 }
+
+void USB_Transmit_Hex(uint8_t* data, uint16_t len) {
+    char hex_buf[4]; // Holds "XX " and null terminator
+    for (uint16_t i = 0; i < len; i++) {
+        sprintf(hex_buf, "%02X ", data[i]);
+        USB_Transmit((uint8_t*)hex_buf, 3); // Transmit "XX "
+    }
+}
