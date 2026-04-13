@@ -167,6 +167,10 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 
     if (huart->Instance == USART2)
     {
+
+        if (HAL_UART_GetError(huart) != HAL_UART_ERROR_NONE) {
+            __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_OREF | UART_CLEAR_NEF | UART_CLEAR_FEF);
+        }
         HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
         if (current_dma_buffer != NULL) 
         {
@@ -203,6 +207,18 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
         }
     }
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
+{
+    if (huart->Instance == USART2)
+    {
+        __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_OREF | UART_CLEAR_FEF | UART_CLEAR_NEF);
+        if (current_dma_buffer != NULL) {
+             HAL_UARTEx_ReceiveToIdle_DMA(huart, current_dma_buffer->data, 512);
+             __HAL_DMA_DISABLE_IT(huart->hdmarx, DMA_IT_HT);
+        }
+    }
 }
 
 /* USER CODE END 0 */
