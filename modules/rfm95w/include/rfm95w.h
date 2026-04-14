@@ -161,6 +161,9 @@ typedef struct {
 	uint8_t power;
 	uint8_t LoRa_Rate;
 	uint8_t LoRa_BW;
+  bool crc;
+  int16_t CR;
+  int16_t sync;
 	uint8_t packetLength;
 
 	uint8_t rxBuffer[256];

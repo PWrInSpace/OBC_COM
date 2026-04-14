@@ -159,7 +159,7 @@ void handle_freq(cmd_params_t *params) {
     } else if (params->data) {
         freq = strtoul((char*)params->data, NULL, 10);
     }
-    NVS_Write((PARAM_FREQ), (uint32_t)freq);
+    NVS_Write((RFM95W_PARAM_FREQ), (uint32_t)freq);
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: Freq set to %lu Hz\r\n", freq);
     USB_Transmit((uint8_t*)resp, len);
@@ -172,7 +172,7 @@ void handle_power(cmd_params_t *params) {
     } else if (params->data) {
         pwr = (int8_t)atoi((char*)params->data);
     }
-    NVS_Write((PARAM_PWR), (uint32_t)pwr);
+    NVS_Write((RFM95W_PARAM_PWR), (uint32_t)pwr);
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: Power set to %d dBm\r\n", pwr);
     USB_Transmit((uint8_t*)resp, len);
@@ -185,7 +185,7 @@ void handle_sf(cmd_params_t *params) {
     } else if (params->data) {
         sf = (int8_t)atoi((char*)params->data);
     }
-    NVS_Write((PARAM_SF), (uint32_t)sf);
+    NVS_Write((RFM95W_PARAM_SF), (uint32_t)sf);
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: Power set to %d dBm\r\n", sf);
     USB_Transmit((uint8_t*)resp, len);
@@ -198,11 +198,54 @@ void handle_bw(cmd_params_t *params) {
     } else if (params->data) {
         bw = (int8_t)atoi((char*)params->data);
     }
-    NVS_Write((PARAM_BW), (uint32_t)bw);
+    NVS_Write((RFM95W_PARAM_BW), (uint32_t)bw);
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: Power set to %d dBm\r\n", bw);
     USB_Transmit((uint8_t*)resp, len);
 }
+
+void handle_cr(cmd_params_t *params) {
+    int8_t cr = 0;
+    if (params->is_binary && params->len >= 1) {
+        cr = (int8_t)params->data[0];
+    } else if (params->data) {
+        cr = (int8_t)atoi((char*)params->data);
+    }
+    NVS_Write((RFM95W_PARAM_CRC), (uint32_t)cr);
+    char resp[64];
+    int len = snprintf(resp, sizeof(resp), "OK: Power set to %d dBm\r\n", cr);
+    USB_Transmit((uint8_t*)resp, len);
+}
+
+void handle_crc(cmd_params_t *params) {
+    int8_t crc = 0;
+    if (params->is_binary && params->len >= 1) {
+        crc = (int8_t)params->data[0];
+    } else if (params->data) {
+        crc = (int8_t)atoi((char*)params->data);
+    }
+    NVS_Write((RFM95W_PARAM_CRC), (uint32_t)crc);
+    char resp[64];
+    int len = snprintf(resp, sizeof(resp), "OK: Power set to %d dBm\r\n", crc);
+    USB_Transmit((uint8_t*)resp, len);
+}
+
+void handle_sync(cmd_params_t *params) {
+    int8_t sync = 0;
+    if (params->is_binary && params->len >= 1) {
+        sync = (int8_t)params->data[0];
+    } else if (params->data) {
+        sync = (int8_t)atoi((char*)params->data);
+    }
+    NVS_Write((RFM95W_PARAM_CRC), (uint32_t)sync);
+    char resp[64];
+    int len = snprintf(resp, sizeof(resp), "OK: Power set to %d dBm\r\n", sync);
+    USB_Transmit((uint8_t*)resp, len);
+}
+
+
+
+
 
 void handle_reset(cmd_params_t *params) {
     (void)params;

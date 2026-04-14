@@ -11,14 +11,14 @@
  * Scalability: Add new parameters to the END of this list.
  */
 typedef enum {
-    PARAM_MODE = 1,
-    PARAM_FREQ,
-    PARAM_BW,
-    PARAM_SF,
-    PARAM_CR,
-    PARAM_PWR,
-    PARAM_SYNC,
-    PARAM_CRC,
+    RFM95W_PARAM_MODE = 1,
+    RFM95W_PARAM_FREQ,
+    RFM95W_PARAM_BW,
+    RFM95W_PARAM_SF,
+    RFM95W_PARAM_CR,
+    RFM95W_PARAM_PWR,
+    RFM95W_PARAM_SYNC,
+    RFM95W_PARAM_CRC,
     PARAM_LOG_MUTED,
     PARAM_MAX_COUNT
 } NVS_Param_t;

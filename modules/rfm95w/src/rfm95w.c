@@ -1,6 +1,6 @@
 // Copyright 2023 PWr in Space, Krzysztof Gliwiński
 #include "rfm95w.h"
-
+#include "logger.h"
 rfm95_err_t rfm95_init(rfm95_t *rfm95) {
   rfm95_err_t ret = RFM95_OK;
 
@@ -95,6 +95,24 @@ rfm95_err_t rfm95_default_config_param(rfm95_t *rfm) {
 
     // F. Ustawienie mocy nadawania
     rfm95_set_tx_power(rfm, rfm->param->power);
+
+    if(rfm->param->crc)
+    {
+    rfm95_enable_crc(rfm);
+    }
+    else
+    {
+    rfm95_disable_crc(rfm);
+    }
+
+    rfm95_err_t err = 0;
+    err = rfm95_set_coding_rate(rfm,rfm->param->CR);
+    err = rfm95_set_sync_word(rfm,rfm->param->sync);
+    if (err !=0)
+    {
+      LOG_ERROR("rfm95w.c", "Error with setting CR or sync word in rfm95_default_config_param\n");
+    }
+
 
     // G. Aktywacja automatycznego wzmocnienia (AGC)
     ret |= rfm95_write_reg(rfm, 0x26, 0x04);

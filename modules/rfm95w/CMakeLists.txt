@@ -20,5 +20,6 @@ target_compile_options(rfm95w
 target_link_libraries(rfm95w
     PUBLIC
         USB_Driver
+        logger
         
 )
