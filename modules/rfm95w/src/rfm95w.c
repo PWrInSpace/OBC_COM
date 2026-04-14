@@ -103,15 +103,15 @@ rfm95_err_t rfm95_default_config_param(rfm95_t *rfm) {
     else
     {
     rfm95_disable_crc(rfm);
-    }
+     }
 
-    rfm95_err_t err = 0;
-    err = rfm95_set_coding_rate(rfm,rfm->param->CR);
-    err = rfm95_set_sync_word(rfm,rfm->param->sync);
-    if (err !=0)
-    {
-      LOG_ERROR("rfm95w.c", "Error with setting CR or sync word in rfm95_default_config_param\n");
-    }
+    // rfm95_err_t err = 0;
+    // err = rfm95_set_coding_rate(rfm,rfm->param->CR);
+    // err = rfm95_set_sync_word(rfm,rfm->param->sync);
+    // if (err !=0)
+    // {
+    //   LOG_ERROR("rfm95w.c", "Error with setting CR or sync word in rfm95_default_config_param\n");
+    // }
 
 
     // G. Aktywacja automatycznego wzmocnienia (AGC)
