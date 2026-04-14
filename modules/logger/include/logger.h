@@ -26,6 +26,7 @@ typedef void (*logger_output_callback_t)(const char* data, uint16_t len);
 
 void logger_init(void);
 void logger_set_level(log_level_t level);
+uint32_t logger_get_bit_from_tag(const char* tag);
 
 void logger_set_output_callback(logger_output_callback_t callback);
 

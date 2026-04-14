@@ -19,9 +19,20 @@ typedef enum {
     RFM95W_PARAM_PWR,
     RFM95W_PARAM_SYNC,
     RFM95W_PARAM_CRC,
+    RFM95W_PARAM_STATE,
     PARAM_LOG_MUTED,
+    PARAM_LOG_TAG_MUTE,
     PARAM_MAX_COUNT
 } NVS_Param_t;
+
+typedef enum {
+    LOG_TAG_GPS     = (1 << 0),  // 0x00000001
+    LOG_TAG_RFM95   = (1 << 1),  // 0x00000002
+    LOG_TAG_USB     = (1 << 2),  // 0x00000004
+    LOG_TAG_SYSTEM  = (1 << 3),  // 0x00000008
+    LOG_TAG_PWR     = (1 << 4),  // 0x00000010
+    LOG_TAG_ALL     = 0xFFFFFFFF
+} LogTag_t;
 
 /**
  * @brief Virtual Address Base Mapping

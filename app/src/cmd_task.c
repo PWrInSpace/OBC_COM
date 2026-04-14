@@ -58,10 +58,11 @@ void cmd_task(void *argument) {
                 usb_idx--; 
                 usb_frame_buf[usb_idx] = '\0';
 
-                if (usb_idx >= 4 && memcmp(usb_frame_buf, "CMD:", 4) == 0) {
+                if (usb_idx >= 4 && memcmp(usb_frame_buf, "CMD;", 4) == 0) {
                     process_command(usb_frame_buf, usb_idx);
                 } 
                 else if (usb_idx > 0) {
+                    USB_Transmit((uint8_t*)"Unknown command format\r\n", 24);
                     uint16_t lora_len = (usb_idx < LORA_BUFF_SIZE) ? usb_idx : LORA_BUFF_SIZE;
                     memcpy(LoraRxBuffer, usb_frame_buf, lora_len);
                     lora_cmd_len = lora_len;

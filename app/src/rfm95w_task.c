@@ -190,95 +190,111 @@ void rfm95wTaskEntry(void *argument)
     rfm95_t *rfm95_radio = get_lora_devs_instance()->rfm95w;
     uint8_t rx_buf[255];
     uint8_t rx_size = 0;
-
+    
     rfm95w_config_init();
-    nvs_save_rfm95_settings(rfm95_radio);
-    osDelay(500);
+    osDelay(2000);
     nvs_get_rfm95_settings(rfm95_radio);
     osDelay(100);
     rfm95w_config_init_param();
-    
-
-    // Startujemy RX Continuous raz na początku
-    rfm95_start_rx(rfm95_radio, 0); 
+    if (rfm95_radio->param->state == 0) {
+        LOG_INFO("LoRa initialized in SLEEP mode");
+        rfm95_sleep(rfm95_radio);
+    } else {
+        LOG_INFO("LoRa initialized in RX mode");
+        rfm95_start_rx(rfm95_radio, 0); 
+    }
 
     for(;;)
-{
+    {
         BaseType_t xResult = xTaskNotifyWait(0, 0xFFFFFFFF, &ulNotifiedValue, pdMS_TO_TICKS(100));
 
         if (xResult == pdPASS) 
         {
+            if (ulNotifiedValue & SETTINGS_CHANGE_EVENT_BIT)
+            {
+                LOG_INFO("Settings change detected, reloading...");
+                rfm95_sleep(rfm95_radio);
+                nvs_get_rfm95_settings(rfm95_radio); 
+                osDelay(50);
+                rfm95w_config_init_param();
+
+                if (rfm95_radio->param->state == 0) {
+                    LOG_INFO("LoRa entering SLEEP mode");
+                    rfm95_sleep(rfm95_radio);
+                } else {
+                    LOG_INFO("LoRa entering RX mode");
+                    rfm95_start_rx(rfm95_radio, 0); 
+                }
+                continue;
+            }
+
             if (ulNotifiedValue & LORA_TX_EVENT_BIT) 
             {
                 if (lora_cmd_len > 0) {
+                    LOG_INFO("Sending LoRa packet...");
                     rfm95_send_window(rfm95_radio, LoraRxBuffer, (uint8_t)lora_cmd_len, 100);
+                    
+                    // Czyścimy bufor
                     lora_cmd_len = 0;
                     memset(LoraRxBuffer, 0, LORA_BUFF_SIZE);
-                    
                     rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
-                    rfm95_start_rx(rfm95_radio, 0); 
-                    LOG_INFO("Sent packet from USART (LoraRxBuffer)");
+
+                    // Powrót do poprzedniego stanu po wysłaniu
+                    if (rfm95_radio->param->state == 0) {
+                        rfm95_sleep(rfm95_radio);
+                    } else {
+                        rfm95_start_rx(rfm95_radio, 0); 
+                    }
                     continue;
                 }
             }
-            
         }
 
+        if (rfm95_radio->param->state != 0) 
+        {
+            uint8_t irq_status = rfm95_read_reg(rfm95_radio, REG_IRQ_FLAGS);
 
-    // ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(100));
-
-    // if(USB_Rx_Data_Len > 0 || lora_cmd_len > 0) {
-    //     //USB_Transmit((uint8_t*)"TX Start\r\n", 10);
-    //     if(lora_cmd_len > 0) {
-    //         rfm95_send_window(rfm95_radio, LoraRxBuffer, (uint8_t)lora_cmd_len, 100);
-    //         lora_cmd_len = 0;
-    //         memset(LoraRxBuffer, 0, LORA_BUFF_SIZE);
-    //     } else {
-    //         rfm95_send_window(rfm95_radio, UserRxBufferFS, (uint8_t)USB_Rx_Data_Len, 100);
-    //         USB_Rx_Data_Len = 0;
-    //         memset(UserRxBufferFS, 0, APP_RX_DATA_SIZE);
-    //     }
-    //     rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
-    //     rfm95_start_rx(rfm95_radio, 0); 
-    //     continue; 
-    // }
-     uint8_t irq_status = rfm95_read_reg(rfm95_radio, REG_IRQ_FLAGS);
-
-    if (irq_status & IRQ_RX_DONE_MASK) {
-        rx_size = 0;
-        if (handle_rx_done_and_get_payload(rfm95_radio, rx_buf, &rx_size)) {
-            if (rx_size > 0) {
-                HAL_UART_Transmit_DMA(&huart2, rx_buf, rx_size);
-                if (xSemaphoreTake(g_state_mutex, portMAX_DELAY) == pdTRUE) {
-                    g_system_state.RSSI = rfm95_packet_rssi(rfm95_radio);
-                    xSemaphoreGive(g_state_mutex);
-                    HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+            if (irq_status & IRQ_RX_DONE_MASK) 
+            {
+                rx_size = 0;
+                if (handle_rx_done_and_get_payload(rfm95_radio, rx_buf, &rx_size)) 
+                {
+                    if (rx_size > 0) 
+                    {
+                        HAL_UART_Transmit_DMA(&huart2, rx_buf, rx_size);
+                        
+                        if (xSemaphoreTake(g_state_mutex, portMAX_DELAY) == pdTRUE) {
+                            g_system_state.RSSI = rfm95_packet_rssi(rfm95_radio);
+                            xSemaphoreGive(g_state_mutex);
+                            HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
 
 #ifdef TEST_RSSI
-                    // Jeśli TEST_SNR jest zdefiniowane, budujemy wiadomość tylko z parametrami
-                    int16_t rssi = rfm95_packet_rssi(rfm95_radio);
-                    float snr = rfm95_packet_snr(rfm95_radio);
-                    char debug_msg[64];
-                    int msg_len = snprintf(debug_msg, sizeof(debug_msg), "RSSI: %d dBm\r\n", rssi);
-                    LOG_INFO("Received frame: size=%d, RSSI=%d dBm, SNR=%.2f dB", rx_size, rssi, snr);
+                            int16_t rssi = rfm95_packet_rssi(rfm95_radio);
+                            float snr = rfm95_packet_snr(rfm95_radio);
+                            LOG_INFO("Received frame: size=%d, RSSI=%d dBm, SNR=%.2f dB", rx_size, rssi, snr);
 #else
-                     // W przeciwnym razie (normalny tryb) wysyłamy dane z ramki
-                    USB_Transmit(rx_buf, rx_size);
+                            USB_Transmit(rx_buf, rx_size);
 #endif
+                        }
+                    }
                 }
-        }
-        rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
-    } 
-    else if (irq_status > 0) {
-        rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
-    }
+                rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
+            } 
+            else if (irq_status > 0) 
+            {
+                rfm95_write_reg(rfm95_radio, REG_IRQ_FLAGS, IRQ_ALL);
+            }
 
-    uint8_t mode = rfm95_read_reg(rfm95_radio, 0x01);
-    if (mode != 0x85) {
-        rfm95_start_rx(rfm95_radio, 0); 
+            uint8_t mode = rfm95_read_reg(rfm95_radio, 0x01);
+            if (mode != 0x85) {
+                rfm95_start_rx(rfm95_radio, 0); 
+            }
+        }
+        else 
+        {
+            osDelay(100);
+        }
     }
-}
-}
 }
 
 

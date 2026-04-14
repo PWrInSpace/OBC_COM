@@ -8,8 +8,6 @@
 #include "nvs_config.h"
 
 
-
-/* Ring buffer do logowania bez używania UART */
 #define LOGGER_BUFFER_SIZE 4096
 //#define EXTENDED_LOG 1
 
@@ -23,13 +21,34 @@ static logger_output_callback_t output_callback = NULL;
 static char filtered_tags[MAX_FILTERED_TAGS][12]; // Tablica 10 tagów po max 12 znaków
 static uint8_t filtered_tags_count = 0;
 
-
+uint32_t current_log_mute_mask = 0;
 static bool global_log_enabled = true;
+
+void logger_sync_mask_from_nvs(void) {
+    uint32_t val = 0;
+    if (NVS_Read(PARAM_LOG_TAG_MUTE, &val) == EE_OK) {
+        current_log_mute_mask = val;
+    }
+}
+
+uint32_t logger_get_bit_from_tag(const char* tag) {
+    if (strcmp(tag, "GPS") == 0)    return (1 << 0);
+    if (strcmp(tag, "RFM95") == 0)  return (1 << 1);
+    if (strcmp(tag, "USB") == 0)    return (1 << 2);
+    if (strcmp(tag, "SYSTEM") == 0) return (1 << 3);
+    return 0;
+}
+
+static bool is_tag_muted(const char* tag) {
+    uint32_t bit = logger_get_bit_from_tag(tag);
+    if (bit == 0) return false;
+    return (current_log_mute_mask & bit) != 0;
+}
 
 void logger_enable(bool enable) {
     global_log_enabled = enable;
 }
-/* Funkcja pomocnicza do zapisu do ring buffera */
+
 static void logger_write_to_ring(const char* msg) {
     if (msg == NULL) return;
     
@@ -41,7 +60,6 @@ static void logger_write_to_ring(const char* msg) {
     }
 }
 
-// Funkcja do dodawania taga do czarnej listy
 void logger_filter_add(const char* tag) {
     if (filtered_tags_count < MAX_FILTERED_TAGS) {
         strncpy(filtered_tags[filtered_tags_count], tag, 11);
@@ -50,14 +68,12 @@ void logger_filter_add(const char* tag) {
     }
 }
 
-// Funkcja do czyszczenia filtrów
 void logger_filter_clear(void) {
     filtered_tags_count = 0;
 }
 
 
 
-/* Funkcja pomocnicza do wysyłania przez callback */
 static void logger_send_via_callback(const char* msg) {
     if (output_callback != NULL && msg != NULL) {
         uint16_t len = strlen(msg);
@@ -71,15 +87,9 @@ static void logger_send_via_callback(const char* msg) {
                                     va_list args)
 {
 
-    // 1. Sprawdź, czy logowanie ogólne jest włączone
     if (!global_log_enabled) return;
 
-    // 2. FILTROWANIE PO TAGU
-    for (uint8_t i = 0; i < filtered_tags_count; i++) {
-        if (strcmp(tag, filtered_tags[i]) == 0) {
-            return; // Ten tag jest zablokowany - wyjdź z funkcji
-        }
-    }
+    if (is_tag_muted(tag)) return;
     /* 1. Formatuj treść użytkownika */
     vsnprintf(logger_buffer, sizeof(logger_buffer), fmt, args);
 
@@ -115,11 +125,11 @@ static void logger_send_via_callback(const char* msg) {
 }
 
 void logger_init(void) {
-   // uint32_t default_muted = true; // Tworzymy zmienną w RAM
-   // nvs_set_log_muted(default_muted); // Przekazujemy adres (&)
+
     bool is_muted = false;
-   nvs_get_log_muted(&is_muted);
+    nvs_get_log_muted(&is_muted);
     global_log_enabled = !is_muted;
+    logger_sync_mask_from_nvs();
 
     logger_set_level(LOG_LEVEL_INFO);
     memset(log_ring_buffer, 0, LOGGER_BUFFER_SIZE);

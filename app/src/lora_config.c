@@ -41,7 +41,8 @@ RFM95_param_t rfm95w_param = {
     .last_pkt_SNR = 0,
     .CR = 0,
     .crc = 0,
-    .sync = 0
+    .sync = 0,
+    .state = 1 
 };
 
 // 2. Główna struktura radia

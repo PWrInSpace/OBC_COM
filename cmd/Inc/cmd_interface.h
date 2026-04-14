@@ -24,6 +24,10 @@ typedef enum {
     CMD_LOG_UNMUTE = 0x0B,
     CMD_SF = 0x0C,
     CMD_BW = 0x0D,
+    CMD_CR = 0x0E,
+    CMD_CRC = 0x0F,
+    CMD_SYNC = 0x10,
+    CMD_LORA_MODE = 0x11,
     CMD_COUNT
 } Command_t;
 
@@ -56,6 +60,11 @@ void handle_log_mute(cmd_params_t *params);
 void handle_log_unmute(cmd_params_t *params);
 void handle_sf(cmd_params_t *params);
 void handle_bw(cmd_params_t *params);
+void handle_cr(cmd_params_t *params);
+void handle_crc(cmd_params_t *params);
+void handle_sync(cmd_params_t *params);
+void handle_lora_mode(cmd_params_t *params);
+
 
 #define LORA_BUFF_SIZE 512
 extern uint8_t LoraRxBuffer[LORA_BUFF_SIZE];

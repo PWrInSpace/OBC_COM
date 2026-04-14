@@ -157,6 +157,7 @@ typedef void (*rfm95_log)(const char *info);
 
 typedef struct {
 	
+  uint8_t state;
 	uint64_t frequency;
 	uint8_t power;
 	uint8_t LoRa_Rate;
