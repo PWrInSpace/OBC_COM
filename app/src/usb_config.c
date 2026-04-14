@@ -48,10 +48,28 @@ void USB_Transmit(uint8_t* Buf, uint16_t Len) {
     }
 }
 
+//CZACIOR NASZPONCIL COS DO DEBUGOWANIA
 void USB_Transmit_Hex(uint8_t* data, uint16_t len) {
-    char hex_buf[4]; // Holds "XX " and null terminator
-    for (uint16_t i = 0; i < len; i++) {
-        sprintf(hex_buf, "%02X ", data[i]);
-        USB_Transmit((uint8_t*)hex_buf, 3); // Transmit "XX "
+    static char large_hex_buf[1024]; 
+    char header_buf[48];
+    static const char hex_chars[] = "0123456789ABCDEF";
+    
+    if (data == NULL || len == 0) return;
+    int header_len = snprintf(header_buf, sizeof(header_buf), "Sent %u bytes as hex:\r\n", (unsigned int)len);
+    //USB_Transmit((uint8_t*)header_buf, (uint16_t)header_len);
+    if (len * 3 >= sizeof(large_hex_buf)) {
+        len = (sizeof(large_hex_buf) - 1) / 3;
     }
+    char *ptr = large_hex_buf;
+    for (uint16_t i = 0; i < len; i++) {
+        *ptr++ = hex_chars[(data[i] >> 4) & 0x0F];
+        *ptr++ = hex_chars[data[i] & 0x0F];
+        *ptr++ = ' ';
+    }
+    *ptr++ = '\r'; 
+    *ptr++ = '\n';
+    *ptr = '\0';
+
+    // 4. Wysyłka całego bufora danych
+    USB_Transmit((uint8_t*)large_hex_buf, (uint16_t)(ptr - large_hex_buf));
 }

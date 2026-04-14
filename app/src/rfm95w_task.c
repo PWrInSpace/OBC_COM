@@ -174,14 +174,22 @@ void recv_once_ceiling(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_buf, ui
   }
 }
 
-static void create_usb_frame(uint8_t* Buf, uint16_t Len)
+static void create_usb_frame_and_send(uint8_t cmd, uint8_t* Buf, uint16_t Len)
 {
+
     uint16_t frame_size = Len + 5;
     uint8_t USB_BUFFER[frame_size];
-    memcpy((USB_BUFFER+3), Buf, Len);
-    USB_BUFFER[0] = 0x32; USB_BUFFER[1] = 0xFE; USB_BUFFER[0] = Len;  USB_BUFFER[frame_size-1] = 0x00; USB_BUFFER[frame_size-2] = 0x00;
+
+    USB_BUFFER[0] = 0x32;          // Header
+    USB_BUFFER[1] = cmd;           // Komenda (np. przekazane 0xFE)
+    USB_BUFFER[2] = (uint8_t)Len;  // Długość danych
+
+    memcpy(&USB_BUFFER[3], Buf, Len);
+    USB_BUFFER[frame_size - 2] = 0x00;
+    USB_BUFFER[frame_size - 1] = 0x00;
+
+    //USB_Transmit_Hex(USB_BUFFER, frame_size); // for debugging
     USB_Transmit(USB_BUFFER, frame_size);
-    return;
 }
 
 void rfm95wTaskEntry(void *argument)
@@ -273,7 +281,7 @@ void rfm95wTaskEntry(void *argument)
                             float snr = rfm95_packet_snr(rfm95_radio);
                             LOG_INFO("Received frame: size=%d, RSSI=%d dBm, SNR=%.2f dB", rx_size, rssi, snr);
 #else
-                            USB_Transmit(rx_buf, rx_size);
+                            create_usb_frame_and_send(0xFE, rx_buf, rx_size);
 #endif
                         }
                     }
