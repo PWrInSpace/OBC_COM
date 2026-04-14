@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <assert.h>
+#include "usb_config.h"
 
 /*
  * IRQ masks

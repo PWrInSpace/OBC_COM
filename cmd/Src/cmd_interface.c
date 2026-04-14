@@ -19,15 +19,17 @@ uint8_t LoraRxBuffer[LORA_BUFF_SIZE] = {0};
 uint16_t volatile lora_cmd_len = 0;
 
 static const CommandMap_t cmd_map[] = {
-    {"HELP",   CMD_HELP,         handle_help,   "- Show menu"},
-    {"FREQ",   CMD_SX1280_FREQ,   handle_freq,   ":Hz - Set freq"},
-    {"POWER",  CMD_SX1280_PWR,    handle_power,  ":dBm - Set TX power"},
-    {"RESET",  CMD_RESET,        handle_reset,  "- System reboot"},
-    {"STATUS", CMD_STATUS,       handle_status, "- Radio status"},
-    {"HELP",   CMD_SX1280_TX,    handle_sx1280_tx, ":data - Send via LoRa"},
-    {"LORATX",   CMD_LORA_TX,    handle_lora_tx, ":data - Send via LoRa"},
-    {"LOGON",  CMD_LOG_ON,       handle_log_on,    "- Enable all logs"},
-    {"LOGOFF", CMD_LOG_OFF,      handle_log_off,   "- Disable all logs"},
+    {"HELP",      CMD_HELP,         handle_help,   "- Show menu"},
+    {"FREQ",      CMD_SX1280_FREQ,   handle_freq,   ":Hz - Set freq"},
+    {"POWER",     CMD_SX1280_PWR,    handle_power,  ":dBm - Set TX power"},
+    { "SF"  ,     CMD_SF,           handle_sf,       "change SF Lora"},
+    { "SF"  ,     CMD_BW,           handle_bw,       "change BW Lora"},
+    {"RESET",     CMD_RESET,        handle_reset,  "- System reboot"},
+    {"STATUS",    CMD_STATUS,       handle_status, "- Radio status"},
+    {"HELP",      CMD_SX1280_TX,    handle_sx1280_tx, ":data - Send via LoRa"},
+    {"LORATX",    CMD_LORA_TX,      handle_lora_tx, ":data - Send via LoRa"},
+    {"LOGON",     CMD_LOG_ON,       handle_log_on,    "- Enable all logs"},
+    {"LOGOFF",    CMD_LOG_OFF,      handle_log_off,   "- Disable all logs"},
     {"LOGMUTE",   CMD_LOG_MUTE,     handle_log_mute,  ":TAG - Mute specific tag"},
     {"LOGUNMUTE", CMD_LOG_UNMUTE,   handle_log_unmute, "- Clear all mutes"}
 };
@@ -157,7 +159,7 @@ void handle_freq(cmd_params_t *params) {
     } else if (params->data) {
         freq = strtoul((char*)params->data, NULL, 10);
     }
-
+    NVS_Write((PARAM_FREQ), (uint32_t)freq);
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: Freq set to %lu Hz\r\n", freq);
     USB_Transmit((uint8_t*)resp, len);
@@ -170,8 +172,35 @@ void handle_power(cmd_params_t *params) {
     } else if (params->data) {
         pwr = (int8_t)atoi((char*)params->data);
     }
+    NVS_Write((PARAM_PWR), (uint32_t)pwr);
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: Power set to %d dBm\r\n", pwr);
+    USB_Transmit((uint8_t*)resp, len);
+}
+
+void handle_sf(cmd_params_t *params) {
+    int8_t sf = 0;
+    if (params->is_binary && params->len >= 1) {
+        sf = (int8_t)params->data[0];
+    } else if (params->data) {
+        sf = (int8_t)atoi((char*)params->data);
+    }
+    NVS_Write((PARAM_SF), (uint32_t)sf);
+    char resp[64];
+    int len = snprintf(resp, sizeof(resp), "OK: Power set to %d dBm\r\n", sf);
+    USB_Transmit((uint8_t*)resp, len);
+}
+
+void handle_bw(cmd_params_t *params) {
+    int8_t bw = 0;
+    if (params->is_binary && params->len >= 1) {
+        bw = (int8_t)params->data[0];
+    } else if (params->data) {
+        bw = (int8_t)atoi((char*)params->data);
+    }
+    NVS_Write((PARAM_BW), (uint32_t)bw);
+    char resp[64];
+    int len = snprintf(resp, sizeof(resp), "OK: Power set to %d dBm\r\n", bw);
     USB_Transmit((uint8_t*)resp, len);
 }
 

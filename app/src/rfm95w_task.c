@@ -174,6 +174,16 @@ void recv_once_ceiling(rfm95_t *radio, uint32_t ceiling_ms, uint8_t *out_buf, ui
   }
 }
 
+static void create_usb_frame(uint8_t* Buf, uint16_t Len)
+{
+    uint16_t frame_size = Len + 5;
+    uint8_t USB_BUFFER[frame_size];
+    memcpy((USB_BUFFER+3), Buf, Len);
+    USB_BUFFER[0] = 0x32; USB_BUFFER[1] = 0xFE; USB_BUFFER[0] = Len;  USB_BUFFER[frame_size-1] = 0x00; USB_BUFFER[frame_size-2] = 0x00;
+    USB_Transmit(USB_BUFFER, frame_size);
+    return;
+}
+
 void rfm95wTaskEntry(void *argument)
 {
     uint32_t ulNotifiedValue;
@@ -368,7 +378,7 @@ void RFM95W_task_init(void){
     rfm95wTaskHandle = osThreadNew(rfm95wTaskEntry, NULL, &rfm95wTask_attributes);
     if (rfm95wTaskHandle == NULL) {
       osDelay(pdMS_TO_TICKS(3000));
-      USB_Transmit(msg2, strlen((char*)msg2));
+      LOG_ERROR(TAG,"NO MEMORY TO CREATE TASK");
       //HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_4);
       //LOG_ERROR("RFM95W TASK ERROR!!");
       return;

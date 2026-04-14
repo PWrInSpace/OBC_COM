@@ -34,6 +34,7 @@ EE_Status NVS_Write(uint16_t virt_addr, uint32_t data) {
         }
         xSemaphoreGive(xNvsMutex);
     }
+    HAL_Delay(10); // wait for save the data
     return status;
 }
 
@@ -55,17 +56,12 @@ void nvs_get_rfm95_settings(rfm95_t * dev)
     uint32_t tmp = 0;
     char msg[64];
 
-    // 2. ODCZYT (teraz powinien już odczytać to, co zapisaliśmy wyżej)
     if (NVS_Read(PARAM_FREQ, &tmp) == EE_OK) {
-        // Formatuje wynik do wyświetlenia, żebyś widział co jest w pamięci
         int len = snprintf(msg, sizeof(msg), "NVS READ: %lu Hz\r\n", tmp);
         USB_Transmit((uint8_t*)msg, (uint16_t)len);
-
-        // Przypisanie do radia
         dev->param->frequency = (uint32_t)tmp;
 }
 
-    // --- TX POWER (PARAM_PWR) ---
     if (NVS_Read((PARAM_PWR), &tmp) == EE_OK) {
         dev->param->power = (uint8_t)tmp;
     }

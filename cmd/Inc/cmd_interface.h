@@ -22,6 +22,8 @@ typedef enum {
     CMD_LOG_OFF = 0x09,
     CMD_LOG_MUTE = 0x0A,
     CMD_LOG_UNMUTE = 0x0B,
+    CMD_SF = 0x0C,
+    CMD_BW = 0x0D,
     CMD_COUNT
 } Command_t;
 
@@ -52,6 +54,8 @@ void handle_log_on(cmd_params_t *params);
 void handle_log_off(cmd_params_t *params);
 void handle_log_mute(cmd_params_t *params);
 void handle_log_unmute(cmd_params_t *params);
+void handle_sf(cmd_params_t *params);
+void handle_bw(cmd_params_t *params);
 
 #define LORA_BUFF_SIZE 512
 extern uint8_t LoraRxBuffer[LORA_BUFF_SIZE];

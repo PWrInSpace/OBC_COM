@@ -117,7 +117,6 @@ void sx1280_config_init(void) {
 void rfm95w_config_init_param(void) {
     LoRaDevs_t *lora_devs = get_lora_devs_instance();
     rfm95_t *radio = lora_devs->rfm95w;
-    // 5. Wywołanie konfiguracji domyślnej bazującej na rfm95w_param
     if (rfm95_default_config_param(radio) == RFM95_OK) {
         if (radio->log) radio->log("RFM95W: Configured successfully with parameters.\r\n");
     }

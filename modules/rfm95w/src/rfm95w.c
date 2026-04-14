@@ -76,6 +76,9 @@ rfm95_err_t rfm95_default_config_param(rfm95_t *rfm) {
     // C. Ustawienie częstotliwości (korzysta z rfm->param->frequency)
     // Wymaga funkcji przeliczającej Hz na rejestry FrfMsb/Mid/Lsb
     rfm95_set_frequency(rfm, rfm->param->frequency);
+    char buf[128] = {0};
+    sprintf(buf, "| Frequency | %-18lu Hz |\r\n", rfm->param->frequency);
+    USB_Transmit((uint8_t*)buf, strlen(buf));
 
     // D. Konfiguracja FIFO
     ret |= rfm95_write_reg(rfm, 0x0E, 0); // FIFO RX Base Addr
