@@ -26,7 +26,7 @@
 #include "cmd_interface.h"
 
 #define TAG "RFM95"
-//#define TEST_RSSI
+#define TEST_RSSI
 
 #define TX_DONE_TIMEOUT_MS_DEFAULT 20
 extern volatile uint16_t USB_Rx_Data_Len; 
@@ -199,9 +199,9 @@ void rfm95wTaskEntry(void *argument)
     uint8_t rx_buf[255];
     uint8_t rx_size = 0;
     
-    rfm95w_config_init();
+            rfm95w_config_init();
     osDelay(2000);
-    nvs_get_rfm95_settings(rfm95_radio);
+   // nvs_get_rfm95_settings(rfm95_radio);
     osDelay(100);
     rfm95w_config_init_param();
     if (rfm95_radio->param->state == 0) {
@@ -280,6 +280,8 @@ void rfm95wTaskEntry(void *argument)
                             int16_t rssi = rfm95_packet_rssi(rfm95_radio);
                             float snr = rfm95_packet_snr(rfm95_radio);
                             LOG_INFO("Received frame: size=%d, RSSI=%d dBm, SNR=%.2f dB", rx_size, rssi, snr);
+                        //     osDelay(100);
+                        //    create_usb_frame_and_send(0xFE, rx_buf, rx_size);
 #else
                             create_usb_frame_and_send(0xFE, rx_buf, rx_size);
 #endif
