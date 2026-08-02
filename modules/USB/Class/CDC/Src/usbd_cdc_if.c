@@ -23,15 +23,8 @@ EndBSPDependencies */
 
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_cdc_if.h"
-#include "main.h"
 #include "usbd_cdc.h"
 #include <stdint.h>
-#include "cmsis_os2.h"
-#include "FreeRTOS.h"
-#include "task.h"
-#include "queue.h"
-#include "stream_buffer.h"
-
 
 /** @addtogroup STM32_USB_DEVICE_LIBRARY
   * @{
@@ -59,10 +52,10 @@ EndBSPDependencies */
 /* It's up to user to redefine and/or remove those define */
 /** Received data over USB are stored in this buffer      */
 uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
-volatile uint16_t USB_Rx_Data_Len = 0;
 /** Data to send over USB CDC are stored in this buffer   */
 uint8_t UserTxBufferFS[APP_TX_DATA_SIZE];
 extern USBD_HandleTypeDef hUsbDeviceFS;
+
 uint8_t cdc_line_ready = 0;
 /**
   * @}
@@ -99,7 +92,7 @@ USBD_CDC_ItfTypeDef USBD_CDC_Template_fops =
 
 USBD_CDC_LineCodingTypeDef linecoding =
 {
-  256000, /* baud rate*/
+  115200, /* baud rate*/
   0x00,   /* stop bits-1*/
   0x00,   /* parity - none*/
   0x08    /* nb. of bits 8*/
@@ -115,7 +108,7 @@ USBD_CDC_LineCodingTypeDef linecoding =
   */
 static int8_t CDC_Init_FS(void)
 {
-    
+
       USBD_CDC_ReceivePacket(&hUsbDeviceFS);
       USBD_CDC_SetTxBuffer(&hUsbDeviceFS, UserTxBufferFS, 0);
       USBD_CDC_SetRxBuffer(&hUsbDeviceFS, UserRxBufferFS);
@@ -225,35 +218,17 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t *pbuf, uint16_t length)
   * @param  Len: Number of data received (in bytes)
   * @retval Result of the operation: USBD_OK if all operations are OK else USBD_FAIL
   */
-
-extern osThreadId_t cmdTaskHandle;
-/**
-  * @brief  Odbiór danych przez USB CDC.
-  * @param  Buf: Wskaźnik do bufora odebranych danych
-  * @param  Len: Wskaźnik do liczby odebranych bajtów
-  * @retval USBD_OK if all operations are OK else USBD_FAIL
-  */
- static int8_t CDC_Receive_FS(uint8_t *Buf, uint32_t *Len)
+static int8_t CDC_Receive_FS(uint8_t *Buf, uint32_t *Len)
 {
-uint16_t length = (uint16_t)*Len;
-  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-
-  if (length > 0 && xUsbStreamBuffer != NULL)
-  {
-      xStreamBufferSendFromISR(xUsbStreamBuffer, Buf, length, &xHigherPriorityTaskWoken);
-      if (cmdTaskHandle != NULL) {
-    xTaskNotifyFromISR((TaskHandle_t)cmdTaskHandle, 0, eNoAction, &xHigherPriorityTaskWoken);
+      if(Buf[0] == '1')
+             HAL_GPIO_WritePin(GPIOF, GPIO_PIN_4, GPIO_PIN_SET);
+      else if(Buf[0] == '0')
+             HAL_GPIO_WritePin(GPIOF, GPIO_PIN_4, GPIO_PIN_RESET);
+      USBD_CDC_TransmitPacket(&hUsbDeviceFS);
+      USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
+      USBD_CDC_ReceivePacket(&hUsbDeviceFS);
+      return (USBD_OK);
 }
-     
-  }
-
-  USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
-  USBD_CDC_ReceivePacket(&hUsbDeviceFS);
-  portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-
-  return (USBD_OK);
- }
-
 
 /**
   * @brief  CDC_TransmitCplt
@@ -290,8 +265,6 @@ uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len)
 	}
 	USBD_CDC_SetTxBuffer(&hUsbDeviceFS, Buf, Len);
 	result = USBD_CDC_TransmitPacket(&hUsbDeviceFS);
-
-  
   /* USER CODE END 7 */
   return result;
 }

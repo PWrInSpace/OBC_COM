@@ -145,7 +145,7 @@ void process_binary_packet(uint8_t *buf, uint16_t len) {
 void process_command(uint8_t *rx_buf, uint16_t len) {
     if (len == 0) return;
 
-    if (rx_buf[0] == 0x32 && len >= 5) {
+    if (rx_buf[0] == 0x32 && len >= 3) {
         process_binary_packet(rx_buf, len);
     }
     else if (len >= 4 && memcmp(rx_buf, "CMD;", 4) == 0) {
