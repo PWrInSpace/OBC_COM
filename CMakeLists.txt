@@ -81,6 +81,7 @@ add_subdirectory(modules/USB)
 add_subdirectory(nvs)
 add_subdirectory(cmd)
 add_subdirectory(modules/gps)
+add_subdirectory(modules/sky66114)
 
 # Add linked libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}

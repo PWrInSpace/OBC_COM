@@ -31,10 +31,10 @@ SX1280_t sx1280_radio = {
 //!< RFM95W DATA
 
 RFM95_param_t rfm95w_param = {
-    .frequency = 868000000,
+    .frequency = 916250000,        // 916.25 MHz
     .power = 17,               // 17 dBm
     .LoRa_Rate = 7,            // SF7
-    .LoRa_BW = RFM95_BW_250_kHz,              // 250 kHz
+    .LoRa_BW = RFM95_BW_500_kHz,              // 250 kHz
     .packetLength = 256,         // 0 dla
     .readBytes = 0,
     .last_pkt_RSSI=0,
