@@ -13,6 +13,7 @@
 #include "usb_config.h"
 #include "usart.h"
 #include "stream_buffer.h"
+#include "csp_task.h"
 QueueHandle_t cmd_queue = NULL; 
 osThreadId_t cmdTaskHandle = NULL;
 
@@ -46,6 +47,10 @@ void cmd_task(void *argument) {
         xTaskNotifyWait(0, 0xFFFFFFFF, &ulNotifiedValue, portMAX_DELAY);
 
          while (xStreamBufferReceive(xUsbStreamBuffer, &usb_byte, 1, 0) > 0) {
+            /* CSP/KISS frames are delimited by 0xC0 and otherwise ignored, so this is safe to
+             * run alongside the ASCII command framer below on the same USB byte stream. */
+            CSP_USB_Kiss_Feed(&usb_byte, 1);
+
             if (usb_idx == 0 && (usb_byte == '\n' || usb_byte == '\r' || usb_byte == ' ')) {
                 continue; 
             }
