@@ -68,7 +68,14 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 
 # Remove wrong libob.a library dependency when using cpp files
 list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
+set(CSP_FREERTOS ON CACHE BOOL "" FORCE)
+set(CSP_POSIX OFF CACHE BOOL "" FORCE)
+# Dodaj te linie, aby zablokować szukanie zewnętrznego kernela przez LibCSP:
+set(FREERTOS_KERNEL_LIBRARIES "" CACHE STRING "" FORCE) 
 
+add_library(freertos_kernel ALIAS stm32cubemx)
+add_subdirectory(My_Middlewares/libcsp)
+target_include_directories(csp PRIVATE include_compat)
 add_subdirectory(My_Middlewares/FatFs)
 add_subdirectory(modules/sx1280)
 add_subdirectory(modules/rfm95w)
@@ -108,3 +115,6 @@ if(UNIX AND NOT APPLE)
         COMMENT "Linux Post-Build: Generating .bin and .hex files from ELF"
     )
 endif()
+
+target_link_libraries(csp PRIVATE stm32cubemx)
+target_compile_definitions(csp PRIVATE OS_FREERTOS)

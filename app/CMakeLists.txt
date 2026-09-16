@@ -11,6 +11,7 @@ target_sources(App
         src/sd_task.c
         src/board_data.c
         src/telemetry_task.c
+        src/csp_task.c
 )
 
 target_include_directories(App
@@ -38,4 +39,5 @@ target_link_libraries(App
         gps
         FatFs
         Nvs
+        csp
 )

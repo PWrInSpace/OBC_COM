@@ -43,6 +43,7 @@
 #include "nvs_config.h"
 #include "gps_task.h"
 #include "telemetry_task.h"
+#include "csp_task.h"
 #include "board_data.h"
 #include "usart.h"
 /* USER CODE END Includes */
@@ -132,6 +133,7 @@ void MX_FREERTOS_Init(void) {
   //start_gps_task();
   osDelay(50);
   start_telemetry_task();
+  CSP_Task_Init();
   
   /* USER CODE END RTOS_THREADS */
 
