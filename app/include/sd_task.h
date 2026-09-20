@@ -25,6 +25,7 @@
 #define SD_QUEUE_LENGTH 25
 #define SD_BUFFER_BYTES 4096
 #define SD_FORCE_FLUSH_INTERVAL_MS 5000
+#define SD_BUFFER_MARGIN 256
 
 HAL_StatusTypeDef sd_logger_init(void);
 HAL_StatusTypeDef sd_logger_log_data(const BoardData_t *data);
