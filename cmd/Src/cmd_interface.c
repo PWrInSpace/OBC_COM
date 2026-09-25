@@ -12,6 +12,9 @@
 #include "logger.h"
 #include "nvs_config.h"
 
+extern bool lora_gs_tx_enqueue(const uint8_t *buf, uint16_t len);
+extern void lora_gs_mark_settings_dirty(void);
+
 static void process_text_packet(char *raw_str);
 static void process_binary_packet(uint8_t *buf, uint16_t len);
 
@@ -50,7 +53,7 @@ void handle_lora_mode(cmd_params_t *params) {
         mode = (int16_t)atoi((char*)params->data);
     }
     NVS_Write((RFM95W_PARAM_STATE), (uint32_t)mode);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: LoRa mode set to %d\r\n", mode);
     USB_Transmit((uint8_t*)resp, len);
@@ -61,11 +64,9 @@ void handle_lora_tx(cmd_params_t *params)
         USB_Transmit((uint8_t*)"ERR: No data to send\r\n", 22);
         return;
     }
-    uint16_t copy_len = (params->len < LORA_BUFF_SIZE) ? params->len : LORA_BUFF_SIZE;
-    memcpy(LoraRxBuffer, params->data, copy_len);
-    lora_cmd_len = copy_len;
-    if (rfm95wTaskHandle != NULL) {
-        xTaskNotify(rfm95wTaskHandle, LORA_TX_EVENT_BIT, eSetBits);
+    if (!lora_gs_tx_enqueue(params->data, params->len)) {
+        USB_Transmit((uint8_t*)"ERR: TX queue full\r\n", 20);
+        return;
     }
 
     if (!params->is_binary) {
@@ -177,7 +178,7 @@ void handle_freq(cmd_params_t *params) {
         freq = strtoul((char*)params->data, NULL, 10);
     }
     NVS_Write((RFM95W_PARAM_FREQ), (uint32_t)freq);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: Freq set to %lu Hz\r\n", freq);
     USB_Transmit((uint8_t*)resp, len);
@@ -191,7 +192,7 @@ void handle_power(cmd_params_t *params) {
         pwr = (int8_t)atoi((char*)params->data);
     }
     NVS_Write((RFM95W_PARAM_PWR), (uint32_t)pwr);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: Power set to %d dBm\r\n", pwr);
     USB_Transmit((uint8_t*)resp, len);
@@ -205,7 +206,7 @@ void handle_sf(cmd_params_t *params) {
         sf = (int8_t)atoi((char*)params->data);
     }
     NVS_Write((RFM95W_PARAM_SF), (uint32_t)sf);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: SF set to %d\r\n", sf);
     USB_Transmit((uint8_t*)resp, len);
@@ -219,7 +220,7 @@ void handle_bw(cmd_params_t *params) {
         bw = (int8_t)atoi((char*)params->data);
     }
     NVS_Write((RFM95W_PARAM_BW), (uint32_t)bw);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: BW set to %d\r\n", bw);
     USB_Transmit((uint8_t*)resp, len);
@@ -233,7 +234,7 @@ void handle_cr(cmd_params_t *params) {
         cr = (int8_t)atoi((char*)params->data);
     }
     NVS_Write((RFM95W_PARAM_CR), (uint32_t)cr);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: CR set to %d\r\n", cr);
     USB_Transmit((uint8_t*)resp, len);
@@ -247,7 +248,7 @@ void handle_crc(cmd_params_t *params) {
         crc = (int8_t)atoi((char*)params->data);
     }
     NVS_Write((RFM95W_PARAM_CRC), (uint32_t)crc);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: CRC set to %d\r\n", crc);
     USB_Transmit((uint8_t*)resp, len);
@@ -261,7 +262,7 @@ void handle_sync(cmd_params_t *params) {
         sync = (int8_t)atoi((char*)params->data);
     }
     NVS_Write((RFM95W_PARAM_CRC), (uint32_t)sync);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: Power set to %d dBm\r\n", sync);
     USB_Transmit((uint8_t*)resp, len);

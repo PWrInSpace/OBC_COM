@@ -5,6 +5,7 @@
  */
 #include "cmd_task.h"
 #include "cmd_interface.h"
+#include "rfm95w_task.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -45,7 +46,7 @@ void cmd_task(void *argument) {
 
         xTaskNotifyWait(0, 0xFFFFFFFF, &ulNotifiedValue, portMAX_DELAY);
 
-         while (xStreamBufferReceive(xUsbStreamBuffer, &usb_byte, 1, 0) > 0) {
+        while (xStreamBufferReceive(xUsbStreamBuffer, &usb_byte, 1, 0) > 0) {
             if (usb_idx == 0 && (usb_byte == '\n' || usb_byte == '\r' || usb_byte == ' ')) {
                 continue; 
             }
@@ -63,13 +64,7 @@ void cmd_task(void *argument) {
                 } 
                 else if (usb_idx > 0) {
                     USB_Transmit((uint8_t*)"Unknown command format\r\n", 24);
-                    uint16_t lora_len = (usb_idx < LORA_BUFF_SIZE) ? usb_idx : LORA_BUFF_SIZE;
-                    memcpy(LoraRxBuffer, usb_frame_buf, lora_len);
-                    lora_cmd_len = lora_len;
-
-                    if (rfm95wTaskHandle != NULL) {
-                        xTaskNotify(rfm95wTaskHandle, LORA_TX_EVENT_BIT, eSetBits);
-                    }
+                    lora_gs_tx_enqueue(usb_frame_buf, usb_idx);
                 }
 
                 usb_idx = 0;
