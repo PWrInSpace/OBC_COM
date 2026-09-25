@@ -97,14 +97,13 @@ static size_t gs_poll_rx(void *ctx, uint8_t *buf, size_t cap) {
         g_system_state.RSSI = rssi;
         xSemaphoreGive(g_state_mutex);
     }
-    HAL_GPIO_TogglePin(STATUS_LED2_GPIO_Port, STATUS_LED2_Pin);
-    // HAL_GPIO_TogglePin(RX_LED_GPIO_Port, RX_LED_Pin)
+    HAL_GPIO_TogglePin(RX_RFM_GPIO_Port, RX_RFM_Pin);
     LOG_INFO("RX len=%u rssi=%d", (unsigned)n, (int)rssi);
     return n;
 }
 
 static void gs_send(void *ctx, const uint8_t *buf, size_t len) {
-    // HAL_GPIO_TogglePin(TX_LED_GPIO_Port, TX_LED_Pin);
+    HAL_GPIO_TogglePin(TX_RFM_GPIO_Port, TX_RFM_Pin);
     LOG_INFO("TX len=%u", (unsigned)len);
     rfm95_send_window((rfm95_t *)ctx, buf, (uint8_t)len, 0);
 }
