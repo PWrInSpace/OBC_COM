@@ -186,7 +186,7 @@ error_exit:
     if (packer_task_id) osThreadTerminate(packer_task_id);
     if (sd_task_id) osThreadTerminate(sd_task_id);
 #ifdef SD_DETECT_PIN_OPERATIONAL
-    if (monitor_task_id)   osThreadTerminate(monitor_task_id);
+    if (monitor_task_id) osThreadTerminate(monitor_task_id);
 #endif
     
     if (sd_mutex_id) osMutexDelete(sd_mutex_id);
@@ -292,16 +292,38 @@ static void sd_task_thread(void *arg) {
 }
 
 #ifdef SD_DETECT_PIN_OPERATIONAL
+
+#define SD_DETECT_EVENT_FLAG 0x01U
+#define SD_DEBOUNCE_MS 50U
+
+static void sd_detect_sync(void) {
+    bool inserted = (HAL_GPIO_ReadPin(SD_DETECT_GPIO_Port, SD_DETECT_Pin) == GPIO_PIN_RESET);
+    if (inserted && !is_mounted) sd_mount();
+    else if (!inserted && is_mounted) sd_unmount();
+}
+
 static void monitor_task_thread(void *arg) {
     (void)arg;
 
+    sd_detect_sync();
+
     for(;;) {
-        bool inserted = (HAL_GPIO_ReadPin(SD_DETECT_GPIO_Port, SD_DETECT_Pin) == GPIO_PIN_RESET);
+        osThreadFlagsWait(SD_DETECT_EVENT_FLAG, osFlagsWaitAny, osWaitForever);
 
-        if (inserted && !is_mounted) sd_mount();
-        else if (!inserted && is_mounted) sd_unmount();
+        osDelay(SD_DEBOUNCE_MS);
+        osThreadFlagsClear(SD_DETECT_EVENT_FLAG);
 
-        osDelay(500);
+        sd_detect_sync();
     }
 }
+
+static inline void sd_detect_isr_notify(uint16_t GPIO_Pin) {
+    if (GPIO_Pin == SD_DETECT_Pin && monitor_task_id != NULL) {
+        osThreadFlagsSet(monitor_task_id, SD_DETECT_EVENT_FLAG);
+    }
+}
+
+void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin) { sd_detect_isr_notify(GPIO_Pin); }
+void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin) { sd_detect_isr_notify(GPIO_Pin); }
+
 #endif

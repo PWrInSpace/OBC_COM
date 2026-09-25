@@ -96,6 +96,7 @@ const osMutexAttr_t usbMutex_attributes = {
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
+  HAL_GPIO_WritePin(STATUS_LED1_GPIO_Port, STATUS_LED1_Pin, GPIO_PIN_RESET); // active-low
   NVS_Init();
   logger_init();
 
@@ -133,6 +134,7 @@ void MX_FREERTOS_Init(void) {
   osDelay(50);
   start_telemetry_task();
   
+  HAL_GPIO_WritePin(STATUS_LED1_GPIO_Port, STATUS_LED1_Pin, GPIO_PIN_SET); // active-low
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */

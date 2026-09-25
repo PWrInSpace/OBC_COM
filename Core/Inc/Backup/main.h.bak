@@ -159,8 +159,6 @@ void Error_Handler(void);
 #define LED_ADDR_GPIO_Port GPIOD
 #define SD_STATUS_Pin GPIO_PIN_7
 #define SD_STATUS_GPIO_Port GPIOC
-#define SD_DETECT_Pin GPIO_PIN_8
-#define SD_DETECT_GPIO_Port GPIOA
 #define STATUS_LED2_Pin GPIO_PIN_9
 #define STATUS_LED2_GPIO_Port GPIOA
 #define STATUS_LED1_Pin GPIO_PIN_10
