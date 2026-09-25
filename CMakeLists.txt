@@ -82,6 +82,7 @@ add_subdirectory(nvs)
 add_subdirectory(cmd)
 add_subdirectory(modules/gps)
 add_subdirectory(modules/sky66114)
+add_subdirectory(proto)
 
 # Add linked libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}
@@ -95,6 +96,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     USB_Driver
     FatFs
     Nvs
+    Proto
     # Add user defined libraries
 )
 
