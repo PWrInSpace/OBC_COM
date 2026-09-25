@@ -98,8 +98,7 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
   NVS_Init();
   logger_init();
-  sd_logger_init();
-  
+
   /* USER CODE END Init */
   /* creation of usbMutex */
   usbMutexHandle = osMutexNew(&usbMutex_attributes);
@@ -130,6 +129,7 @@ void MX_FREERTOS_Init(void) {
   RFM95W_task_init();
   // SX1280_task_init();
   // start_gps_task();
+  sd_logger_init();
   osDelay(50);
   start_telemetry_task();
   

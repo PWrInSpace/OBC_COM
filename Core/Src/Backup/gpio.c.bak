@@ -42,17 +42,16 @@ void MX_GPIO_Init(void)
                           |GPS_INIT_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(SCREEN_RST_GPIO_Port, SCREEN_RST_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOC, SCREEN_RST_Pin|TX_RFM_Pin|RX_RFM_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, SX1280_RESET_Pin|STATUS_LED2_Pin|STATUS_LED1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(SX1280_RESET_GPIO_Port, SX1280_RESET_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, TX_RFM_Pin|RX_RFM_Pin|SD_STATUS_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, TX_SX_Pin|RX_SX_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, TX_SX_Pin|RX_SX_Pin|CAN_STANDBY_Pin|CPS_Pin
-                          |RF1_EN_Pin|GPS_RST_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, CAN_STANDBY_Pin|CPS_Pin|RF1_EN_Pin|GPS_RST_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, RFM95W_CS_Pin|RF3_EN_Pin|LED_ADDR_Pin|CRX_Pin
@@ -60,6 +59,12 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, RFM95W_RST_Pin|CTX_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, STATUS_LED2_Pin|STATUS_LED1_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pins : SCREEN_SCK_Pin SCREEN_MISO_Pin SCREEN_MOSI_Pin */
   GPIO_InitStruct.Pin = SCREEN_SCK_Pin|SCREEN_MISO_Pin|SCREEN_MOSI_Pin;

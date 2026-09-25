@@ -15,7 +15,7 @@
 #include "user_diskio.h"
 
 // uncomment when SD_DETECT pin actually changes state if sd card is inserted/taken out
-// #define SD_DETECT_PIN_OPERATIONAL
+#define SD_DETECT_PIN_OPERATIONAL
 
 #define LOG_DIR "OBC-COM"
 #define LOG_FILENAME_PREFIX "data_"
