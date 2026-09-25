@@ -14,8 +14,13 @@
 /* USER CODE END 1 */
 
 /** Configure pins
+     PE2   ------> SPI4_SCK
+     PE5   ------> SPI4_MISO
+     PE6   ------> SPI4_MOSI
      PH0-OSC_IN(PH0)   ------> RCC_OSC_IN
      PH1-OSC_OUT(PH1)   ------> RCC_OSC_OUT
+     PD12   ------> I2C4_SCL
+     PD13   ------> I2C4_SDA
      PA13(JTMS/SWDIO)   ------> DEBUG_JTMS-SWDIO
      PA14(JTCK/SWCLK)   ------> DEBUG_JTCK-SWCLK
 */
@@ -33,71 +38,91 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, LNA2_CTRL_Pin|PA2_CTRL_Pin|SW2_CTRL1_Pin|SW2_CTRL2_Pin
-                          |SX1280_CS_Pin|PA4_CTRL_Pin|SW4_CTRL1_Pin|SW4_CTRL2_Pin
-                          |LNA4_CTRL_Pin|GPS_INIT_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, RF2_EN_Pin|SCREEN_CS_Pin|SX1280_CS_Pin|RF4_EN_Pin
+                          |GPS_INIT_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(HEADER1_GPIO_Port, HEADER1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(SCREEN_RST_GPIO_Port, SCREEN_RST_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, SX1280_RESET_Pin|STATUS_LED_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, SX1280_RESET_Pin|STATUS_LED2_Pin|STATUS_LED1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, CAN_STANDBY_Pin|SW1_CTRL2_Pin|SW1_CTRL1_Pin|LNA1_CTRL_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, TX_RFM_Pin|RX_RFM_Pin|SD_STATUS_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, RFM95W_CS_Pin|LNA3_CTRL_Pin|PA3_CTRL_Pin|SW3_CTRL1_Pin
-                          |SW3_CTRL2_Pin|PA1_CTRL_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, TX_SX_Pin|RX_SX_Pin|CAN_STANDBY_Pin|CPS_Pin
+                          |RF1_EN_Pin|GPS_RST_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, RFM95W_RST_Pin|GPS_RST_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOD, RFM95W_CS_Pin|RF3_EN_Pin|LED_ADDR_Pin|CRX_Pin
+                          |CHL_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, RFM95W_RST_Pin|CTX_Pin, GPIO_PIN_SET);
 
-  /*Configure GPIO pins : LNA2_CTRL_Pin PA2_CTRL_Pin SW2_CTRL1_Pin SW2_CTRL2_Pin
-                           SX1280_CS_Pin PA4_CTRL_Pin SW4_CTRL1_Pin SW4_CTRL2_Pin
-                           LNA4_CTRL_Pin GPS_INIT_Pin */
-  GPIO_InitStruct.Pin = LNA2_CTRL_Pin|PA2_CTRL_Pin|SW2_CTRL1_Pin|SW2_CTRL2_Pin
-                          |SX1280_CS_Pin|PA4_CTRL_Pin|SW4_CTRL1_Pin|SW4_CTRL2_Pin
-                          |LNA4_CTRL_Pin|GPS_INIT_Pin;
+  /*Configure GPIO pins : SCREEN_SCK_Pin SCREEN_MISO_Pin SCREEN_MOSI_Pin */
+  GPIO_InitStruct.Pin = SCREEN_SCK_Pin|SCREEN_MISO_Pin|SCREEN_MOSI_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Alternate = GPIO_AF5_SPI4;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : RF2_EN_Pin SCREEN_CS_Pin SX1280_CS_Pin RF4_EN_Pin
+                           GPS_INIT_Pin */
+  GPIO_InitStruct.Pin = RF2_EN_Pin|SCREEN_CS_Pin|SX1280_CS_Pin|RF4_EN_Pin
+                          |GPS_INIT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : HEADER1_Pin SD_STATUS_Pin */
-  GPIO_InitStruct.Pin = HEADER1_Pin|SD_STATUS_Pin;
+  /*Configure GPIO pins : SCREEN_RST_Pin TX_RFM_Pin RX_RFM_Pin SD_STATUS_Pin */
+  GPIO_InitStruct.Pin = SCREEN_RST_Pin|TX_RFM_Pin|RX_RFM_Pin|SD_STATUS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : SX1280_RESET_Pin STATUS_LED_Pin */
-  GPIO_InitStruct.Pin = SX1280_RESET_Pin|STATUS_LED_Pin;
+  /*Configure GPIO pin : VBAT_SENSE_Pin */
+  GPIO_InitStruct.Pin = VBAT_SENSE_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(VBAT_SENSE_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : SX1280_RESET_Pin STATUS_LED2_Pin STATUS_LED1_Pin */
+  GPIO_InitStruct.Pin = SX1280_RESET_Pin|STATUS_LED2_Pin|STATUS_LED1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : SX1280_DIO1_Pin SX1280_DIO2_Pin SX1280_BUSY_Pin */
-  GPIO_InitStruct.Pin = SX1280_DIO1_Pin|SX1280_DIO2_Pin|SX1280_BUSY_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : CAN_STANDBY_Pin SW1_CTRL2_Pin SW1_CTRL1_Pin LNA1_CTRL_Pin */
-  GPIO_InitStruct.Pin = CAN_STANDBY_Pin|SW1_CTRL2_Pin|SW1_CTRL1_Pin|LNA1_CTRL_Pin;
+  /*Configure GPIO pins : TX_SX_Pin RX_SX_Pin CAN_STANDBY_Pin CPS_Pin
+                           RF1_EN_Pin GPS_RST_Pin */
+  GPIO_InitStruct.Pin = TX_SX_Pin|RX_SX_Pin|CAN_STANDBY_Pin|CPS_Pin
+                          |RF1_EN_Pin|GPS_RST_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : RFM95W_CS_Pin LNA3_CTRL_Pin PA3_CTRL_Pin SW3_CTRL1_Pin
-                           SW3_CTRL2_Pin PA1_CTRL_Pin GPS_RST_Pin */
-  GPIO_InitStruct.Pin = RFM95W_CS_Pin|LNA3_CTRL_Pin|PA3_CTRL_Pin|SW3_CTRL1_Pin
-                          |SW3_CTRL2_Pin|PA1_CTRL_Pin|GPS_RST_Pin;
+  /*Configure GPIO pins : SX1280_BUSY_Pin SX1280_DIO1_Pin SX1280_DIO2_Pin */
+  GPIO_InitStruct.Pin = SX1280_BUSY_Pin|SX1280_DIO1_Pin|SX1280_DIO2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : RFM95W_DIO_Pin */
+  GPIO_InitStruct.Pin = RFM95W_DIO_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(RFM95W_DIO_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : RFM95W_CS_Pin RF3_EN_Pin LED_ADDR_Pin CRX_Pin
+                           CHL_Pin CTX_Pin */
+  GPIO_InitStruct.Pin = RFM95W_CS_Pin|RF3_EN_Pin|LED_ADDR_Pin|CRX_Pin
+                          |CHL_Pin|CTX_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -110,21 +135,19 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(RFM95W_RST_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : RFM95W_DIO_Pin */
-  GPIO_InitStruct.Pin = RFM95W_DIO_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  /*Configure GPIO pins : I2C_PANDORA_Pin I2C_PANDORAD13_Pin */
+  GPIO_InitStruct.Pin = I2C_PANDORA_Pin|I2C_PANDORAD13_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(RFM95W_DIO_GPIO_Port, &GPIO_InitStruct);
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Alternate = GPIO_AF4_I2C4;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /*Configure GPIO pin : SD_DETECT_Pin */
   GPIO_InitStruct.Pin = SD_DETECT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(SD_DETECT_GPIO_Port, &GPIO_InitStruct);
-
-  /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI11_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(EXTI11_IRQn);
 
 }
 

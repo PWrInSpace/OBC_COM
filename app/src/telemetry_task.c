@@ -42,7 +42,7 @@ void telemetry_task_thread(void *arg) {
             if (sd_logger_log_data(&snapshot) != HAL_OK) {
             }
         }
-       //  HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+       //  HAL_GPIO_TogglePin(STATUS_LED2_GPIO_Port, STATUS_LED2_Pin);
         osDelay(1000);
     }
 }
