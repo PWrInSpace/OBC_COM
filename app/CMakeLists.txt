@@ -11,6 +11,9 @@ target_sources(App
         src/sd_task.c
         src/board_data.c
         src/telemetry_task.c
+        src/lora_frame.c
+        src/lora_tx_queue.c
+        src/gs_scheduler.c
 )
 
 target_include_directories(App
@@ -38,4 +41,5 @@ target_link_libraries(App
         gps
         FatFs
         Nvs
+        Proto
 )
