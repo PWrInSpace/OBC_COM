@@ -27,7 +27,7 @@ static const CommandMap_t cmd_map[] = {
     {"FREQ",      CMD_SX1280_FREQ,   handle_freq,   ":Hz - Set freq"},
     {"POWER",     CMD_SX1280_PWR,    handle_power,  ":dBm - Set TX power"},
     { "SF"  ,     CMD_SF,           handle_sf,       "change SF Lora"},
-    { "SF"  ,     CMD_BW,           handle_bw,       "change BW Lora"},
+    { "BW"  ,     CMD_BW,           handle_bw,       "change BW Lora"},
     { "CR"  ,     CMD_CR,           handle_cr,       "change CR Lora"},
     { "CRC" ,     CMD_CRC,          handle_crc,      "change CRC Lora"},
     { "SYNC",     CMD_SYNC,         handle_sync,     "change SYNC Lora"},
@@ -157,17 +157,19 @@ void process_command(uint8_t *rx_buf, uint16_t len) {
     }
 }
 
-
 void handle_help(cmd_params_t *params) {
     (void)params;
-    char help_line[128];
-    USB_Transmit((uint8_t*)"\r\n--- OBC HELP ---\r\n", 19);
+    static char help_buf[1024];
+    int off = snprintf(help_buf, sizeof(help_buf), "\r\n--- OBC HELP ---\r\n");
 
-    for (size_t i = 0; i < cmd_map_size; i++) {
-        int len = snprintf(help_line, sizeof(help_line), "ID:0x%02X | %s %s\r\n", 
-                           cmd_map[i].id, cmd_map[i].name, cmd_map[i].help);
-        USB_Transmit((uint8_t*)help_line, len);
+    for (size_t i = 0; i < cmd_map_size && off > 0 && off < (int)sizeof(help_buf); i++) {
+        off += snprintf(help_buf + off, sizeof(help_buf) - (size_t)off,
+                        "ID:0x%02X | %s %s\r\n",
+                        cmd_map[i].id, cmd_map[i].name, cmd_map[i].help);
     }
+
+    if (off > (int)sizeof(help_buf)) off = (int)sizeof(help_buf);
+    USB_Transmit((uint8_t*)help_buf, (uint16_t)off);
 }
 
 void handle_freq(cmd_params_t *params) {
@@ -177,6 +179,7 @@ void handle_freq(cmd_params_t *params) {
     } else if (params->data) {
         freq = strtoul((char*)params->data, NULL, 10);
     }
+
     NVS_Write((RFM95W_PARAM_FREQ), (uint32_t)freq);
     lora_gs_mark_settings_dirty();
     char resp[64];
