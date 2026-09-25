@@ -261,7 +261,7 @@ void handle_sync(cmd_params_t *params) {
     } else if (params->data) {
         sync = (int8_t)atoi((char*)params->data);
     }
-    NVS_Write((RFM95W_PARAM_CRC), (uint32_t)sync);
+    NVS_Write((RFM95W_PARAM_SYNC), (uint32_t)sync);
     lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: Power set to %d dBm\r\n", sync);
