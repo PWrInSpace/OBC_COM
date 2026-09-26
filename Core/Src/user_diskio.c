@@ -30,8 +30,9 @@ Diskio_drvTypeDef USER_Driver = {
 };
 
 DSTATUS USER_initialize(BYTE pdrv) {
+  (void)pdrv;
   Stat = STA_NOINIT;
-  if (HAL_SD_Init(&hsd1) == HAL_OK) { 
+  if (HAL_SD_Init(&hsd1) == HAL_OK) {
     Stat &= ~STA_NOINIT;
   }
   return Stat;

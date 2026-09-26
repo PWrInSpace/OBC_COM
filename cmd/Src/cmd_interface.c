@@ -12,6 +12,9 @@
 #include "logger.h"
 #include "nvs_config.h"
 
+extern bool lora_gs_tx_enqueue(const uint8_t *buf, uint16_t len);
+extern void lora_gs_mark_settings_dirty(void);
+
 static void process_text_packet(char *raw_str);
 static void process_binary_packet(uint8_t *buf, uint16_t len);
 
@@ -24,7 +27,7 @@ static const CommandMap_t cmd_map[] = {
     {"FREQ",      CMD_SX1280_FREQ,   handle_freq,   ":Hz - Set freq"},
     {"POWER",     CMD_SX1280_PWR,    handle_power,  ":dBm - Set TX power"},
     { "SF"  ,     CMD_SF,           handle_sf,       "change SF Lora"},
-    { "SF"  ,     CMD_BW,           handle_bw,       "change BW Lora"},
+    { "BW"  ,     CMD_BW,           handle_bw,       "change BW Lora"},
     { "CR"  ,     CMD_CR,           handle_cr,       "change CR Lora"},
     { "CRC" ,     CMD_CRC,          handle_crc,      "change CRC Lora"},
     { "SYNC",     CMD_SYNC,         handle_sync,     "change SYNC Lora"},
@@ -35,7 +38,8 @@ static const CommandMap_t cmd_map[] = {
     {"LOGOFF",    CMD_LOG_OFF,      handle_log_off,   "- Disable all logs"},
     {"LOGMUTE",   CMD_LOG_MUTE,     handle_log_mute,  ":TAG - Mute specific tag"},
     {"LOGUNMUTE", CMD_LOG_UNMUTE,   handle_log_unmute, "- Clear all mutes"},
-    {"LORA_MODE", CMD_LORA_MODE,    handle_lora_mode, "- Switch LoRa mode (0 -> sleep mode / 1 -> normal mode)"}
+    {"LORA_MODE", CMD_LORA_MODE,    handle_lora_mode, "- Switch LoRa mode (0 -> sleep mode / 1 -> normal mode)"},
+    {"LOGDUMP",   CMD_LOGDUMP,      handle_logdump,   "- Dump the RAM log buffer over USB"}
 };
 
 extern osThreadId_t rfm95wTaskHandle;
@@ -50,7 +54,7 @@ void handle_lora_mode(cmd_params_t *params) {
         mode = (int16_t)atoi((char*)params->data);
     }
     NVS_Write((RFM95W_PARAM_STATE), (uint32_t)mode);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: LoRa mode set to %d\r\n", mode);
     USB_Transmit((uint8_t*)resp, len);
@@ -61,11 +65,9 @@ void handle_lora_tx(cmd_params_t *params)
         USB_Transmit((uint8_t*)"ERR: No data to send\r\n", 22);
         return;
     }
-    uint16_t copy_len = (params->len < LORA_BUFF_SIZE) ? params->len : LORA_BUFF_SIZE;
-    memcpy(LoraRxBuffer, params->data, copy_len);
-    lora_cmd_len = copy_len;
-    if (rfm95wTaskHandle != NULL) {
-        xTaskNotify(rfm95wTaskHandle, LORA_TX_EVENT_BIT, eSetBits);
+    if (!lora_gs_tx_enqueue(params->data, params->len)) {
+        USB_Transmit((uint8_t*)"ERR: TX queue full\r\n", 20);
+        return;
     }
 
     if (!params->is_binary) {
@@ -156,17 +158,35 @@ void process_command(uint8_t *rx_buf, uint16_t len) {
     }
 }
 
+void handle_logdump(cmd_params_t *params) {
+    (void)params;
+    const char *hdr = "\r\n--- LOG DUMP ---\r\n";
+    const char *ftr = "\r\n--- END DUMP ---\r\n";
+    const char *buf = logger_get_buffer();
+    uint32_t pos = logger_get_write_position();
+
+    USB_Transmit((uint8_t*)hdr, (uint16_t)strlen(hdr));
+    for (uint32_t i = 0; i < pos; ) {
+        uint16_t chunk = (uint16_t)((pos - i > 256u) ? 256u : (pos - i));
+        USB_Transmit((uint8_t*)(buf + i), chunk);
+        i += chunk;
+    }
+    USB_Transmit((uint8_t*)ftr, (uint16_t)strlen(ftr));
+}
 
 void handle_help(cmd_params_t *params) {
     (void)params;
-    char help_line[128];
-    USB_Transmit((uint8_t*)"\r\n--- OBC HELP ---\r\n", 19);
+    static char help_buf[1024];
+    int off = snprintf(help_buf, sizeof(help_buf), "\r\n--- OBC HELP ---\r\n");
 
-    for (size_t i = 0; i < cmd_map_size; i++) {
-        int len = snprintf(help_line, sizeof(help_line), "ID:0x%02X | %s %s\r\n", 
-                           cmd_map[i].id, cmd_map[i].name, cmd_map[i].help);
-        USB_Transmit((uint8_t*)help_line, len);
+    for (size_t i = 0; i < cmd_map_size && off > 0 && off < (int)sizeof(help_buf); i++) {
+        off += snprintf(help_buf + off, sizeof(help_buf) - (size_t)off,
+                        "ID:0x%02X | %s %s\r\n",
+                        cmd_map[i].id, cmd_map[i].name, cmd_map[i].help);
     }
+
+    if (off > (int)sizeof(help_buf)) off = (int)sizeof(help_buf);
+    USB_Transmit((uint8_t*)help_buf, (uint16_t)off);
 }
 
 void handle_freq(cmd_params_t *params) {
@@ -176,8 +196,9 @@ void handle_freq(cmd_params_t *params) {
     } else if (params->data) {
         freq = strtoul((char*)params->data, NULL, 10);
     }
+
     NVS_Write((RFM95W_PARAM_FREQ), (uint32_t)freq);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: Freq set to %lu Hz\r\n", freq);
     USB_Transmit((uint8_t*)resp, len);
@@ -191,7 +212,7 @@ void handle_power(cmd_params_t *params) {
         pwr = (int8_t)atoi((char*)params->data);
     }
     NVS_Write((RFM95W_PARAM_PWR), (uint32_t)pwr);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: Power set to %d dBm\r\n", pwr);
     USB_Transmit((uint8_t*)resp, len);
@@ -205,7 +226,7 @@ void handle_sf(cmd_params_t *params) {
         sf = (int8_t)atoi((char*)params->data);
     }
     NVS_Write((RFM95W_PARAM_SF), (uint32_t)sf);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: SF set to %d\r\n", sf);
     USB_Transmit((uint8_t*)resp, len);
@@ -219,7 +240,7 @@ void handle_bw(cmd_params_t *params) {
         bw = (int8_t)atoi((char*)params->data);
     }
     NVS_Write((RFM95W_PARAM_BW), (uint32_t)bw);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: BW set to %d\r\n", bw);
     USB_Transmit((uint8_t*)resp, len);
@@ -233,7 +254,7 @@ void handle_cr(cmd_params_t *params) {
         cr = (int8_t)atoi((char*)params->data);
     }
     NVS_Write((RFM95W_PARAM_CR), (uint32_t)cr);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: CR set to %d\r\n", cr);
     USB_Transmit((uint8_t*)resp, len);
@@ -247,7 +268,7 @@ void handle_crc(cmd_params_t *params) {
         crc = (int8_t)atoi((char*)params->data);
     }
     NVS_Write((RFM95W_PARAM_CRC), (uint32_t)crc);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    lora_gs_mark_settings_dirty();
     char resp[64];
     int len = snprintf(resp, sizeof(resp), "OK: CRC set to %d\r\n", crc);
     USB_Transmit((uint8_t*)resp, len);
@@ -260,16 +281,12 @@ void handle_sync(cmd_params_t *params) {
     } else if (params->data) {
         sync = (int8_t)atoi((char*)params->data);
     }
-    NVS_Write((RFM95W_PARAM_CRC), (uint32_t)sync);
-    xTaskNotify(rfm95wTaskHandle, SETTINGS_CHANGE_EVENT_BIT, eSetBits);
+    NVS_Write((RFM95W_PARAM_SYNC), (uint32_t)sync);
+    lora_gs_mark_settings_dirty();
     char resp[64];
-    int len = snprintf(resp, sizeof(resp), "OK: Power set to %d dBm\r\n", sync);
+    int len = snprintf(resp, sizeof(resp), "OK: SYNC set to %d\r\n", sync);
     USB_Transmit((uint8_t*)resp, len);
 }
-
-
-
-
 
 void handle_reset(cmd_params_t *params) {
     (void)params;

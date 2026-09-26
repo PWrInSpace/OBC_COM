@@ -64,7 +64,6 @@ extern uint8_t uart2_rx_buf[UART2_RX_BUF_SIZE];
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern I2C_HandleTypeDef hi2c1;
 extern SD_HandleTypeDef hsd1;
 extern SPI_HandleTypeDef hspi2;
 extern DMA_HandleTypeDef handle_GPDMA1_Channel7;
@@ -180,17 +179,31 @@ void DebugMon_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles EXTI Line11 interrupt.
+  * @brief This function handles EXTI Line8 interrupt.
   */
-void EXTI11_IRQHandler(void)
+void EXTI8_IRQHandler(void)
 {
-  /* USER CODE BEGIN EXTI11_IRQn 0 */
+  /* USER CODE BEGIN EXTI8_IRQn 0 */
 
-  /* USER CODE END EXTI11_IRQn 0 */
+  /* USER CODE END EXTI8_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(SD_DETECT_Pin);
+  /* USER CODE BEGIN EXTI8_IRQn 1 */
+
+  /* USER CODE END EXTI8_IRQn 1 */
+}
+
+/**
+  * @brief This function handles EXTI Line12 interrupt.
+  */
+void EXTI12_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI12_IRQn 0 */
+
+  /* USER CODE END EXTI12_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(RFM95W_DIO_Pin);
-  /* USER CODE BEGIN EXTI11_IRQn 1 */
+  /* USER CODE BEGIN EXTI12_IRQn 1 */
 
-  /* USER CODE END EXTI11_IRQn 1 */
+  /* USER CODE END EXTI12_IRQn 1 */
 }
 
 /**
@@ -199,7 +212,7 @@ void EXTI11_IRQHandler(void)
 void GPDMA1_Channel2_IRQHandler(void)
 {
   /* USER CODE BEGIN GPDMA1_Channel2_IRQn 0 */
-  HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin); // Zamigaj diodą, aby zasygnalizować przerwanie DMA
+  // HAL_GPIO_TogglePin(STATUS_LED1_GPIO_Port, STATUS_LED1_Pin);
   HAL_DMA_IRQHandler(&handle_GPDMA1_Channel2);
   /* USER CODE END GPDMA1_Channel2_IRQn 0 */
   /* USER CODE BEGIN GPDMA1_Channel2_IRQn 1 */
@@ -213,7 +226,7 @@ void GPDMA1_Channel2_IRQHandler(void)
 void GPDMA1_Channel5_IRQHandler(void)
 {
   /* USER CODE BEGIN GPDMA1_Channel5_IRQn 0 */
- // HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+ // HAL_GPIO_TogglePin(STATUS_LED1_GPIO_Port, STATUS_LED1_Pin);
   HAL_DMA_IRQHandler(&handle_GPDMA1_Channel5);
   /* USER CODE END GPDMA1_Channel5_IRQn 0 */
   /* USER CODE BEGIN GPDMA1_Channel5_IRQn 1 */
@@ -260,34 +273,6 @@ void TIM6_IRQHandler(void)
   /* USER CODE BEGIN TIM6_IRQn 1 */
 
   /* USER CODE END TIM6_IRQn 1 */
-}
-
-/**
-  * @brief This function handles I2C1 Event interrupt.
-  */
-void I2C1_EV_IRQHandler(void)
-{
-  /* USER CODE BEGIN I2C1_EV_IRQn 0 */
-
-  /* USER CODE END I2C1_EV_IRQn 0 */
-  HAL_I2C_EV_IRQHandler(&hi2c1);
-  /* USER CODE BEGIN I2C1_EV_IRQn 1 */
-
-  /* USER CODE END I2C1_EV_IRQn 1 */
-}
-
-/**
-  * @brief This function handles I2C1 Error interrupt.
-  */
-void I2C1_ER_IRQHandler(void)
-{
-  /* USER CODE BEGIN I2C1_ER_IRQn 0 */
-
-  /* USER CODE END I2C1_ER_IRQn 0 */
-  HAL_I2C_ER_IRQHandler(&hi2c1);
-  /* USER CODE BEGIN I2C1_ER_IRQn 1 */
-
-  /* USER CODE END I2C1_ER_IRQn 1 */
 }
 
 /**

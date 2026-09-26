@@ -171,7 +171,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
         if (HAL_UART_GetError(huart) != HAL_UART_ERROR_NONE) {
             __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_OREF | UART_CLEAR_NEF | UART_CLEAR_FEF);
         }
-        HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);
+        HAL_GPIO_TogglePin(STATUS_LED1_GPIO_Port, STATUS_LED1_Pin);
         if (current_dma_buffer != NULL) 
         {
             current_dma_buffer->len = Size;
@@ -255,7 +255,6 @@ int main(void)
   MX_GPDMA1_Init();
   MX_ADC1_Init();
   MX_FDCAN1_Init();
-  MX_I2C1_Init();
   MX_SPI1_Init();
   MX_SPI2_Init();
   MX_USART1_UART_Init();
@@ -264,6 +263,8 @@ int main(void)
   MX_TIM2_Init();
   MX_SDMMC1_SD_Init();
   MX_CRC_Init();
+  MX_I2C4_Init();
+  MX_SPI4_Init();
   /* USER CODE BEGIN 2 */
   HAL_Delay(50);
   BufferPool_UART_Start(&huart2);

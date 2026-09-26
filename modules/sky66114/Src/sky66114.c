@@ -34,7 +34,7 @@ sky66114_error_t sky66114_init_all(void) {
     for (size_t i = 0; i < SKY66114_MODULES_COUNT; ++i) {
         sky66114_t cfg = shared_config;
         cfg.enable_port = en_ports[i];
-        cfg.enable_pin  = en_pins[i];
+        cfg.enable_pin = en_pins[i];
 
         if (sky66114_init(&sky66114[i], &cfg) != SKY66114_OK) {
             LOG_ERROR("Failed to initialize SKY66114 instance %d", i);

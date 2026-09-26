@@ -65,7 +65,7 @@ void MX_ADC1_Init(void)
 
   /** Configure Regular Channel
   */
-  sConfig.Channel = ADC_CHANNEL_4;
+  sConfig.Channel = ADC_CHANNEL_1;
   sConfig.Rank = ADC_REGULAR_RANK_1;
   sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
   sConfig.SingleDiff = ADC_SINGLE_ENDED;
@@ -104,34 +104,16 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     /* ADC1 clock enable */
     __HAL_RCC_ADC_CLK_ENABLE();
 
-    __HAL_RCC_GPIOC_CLK_ENABLE();
     __HAL_RCC_GPIOA_CLK_ENABLE();
-    __HAL_RCC_GPIOB_CLK_ENABLE();
     /**ADC1 GPIO Configuration
-    PC1     ------> ADC1_INP11
-    PC2     ------> ADC1_INP12
-    PC3     ------> ADC1_INP13
     PA1     ------> ADC1_INP1
-    PC4     ------> ADC1_INP4
-    PC5     ------> ADC1_INP8
-    PB0     ------> ADC1_INP9
-    PB1     ------> ADC1_INP5
+    PA2     ------> ADC1_INP14
+    PA3     ------> ADC1_INP15
     */
-    GPIO_InitStruct.Pin = PA1_PWR_SENSE_Pin|PA2_PWR_SENSE_Pin|PA3_PWR_SENSE_Pin|PA1_DETECT_Pin
-                          |PA2_DETECT_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
-
-    GPIO_InitStruct.Pin = GPIO_PIN_1;
+    GPIO_InitStruct.Pin = CURR_SENSE_5V_Pin|CURR_SENSE_RF_Pin|CURR_SENSE_BAT_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-    GPIO_InitStruct.Pin = PA3_DETECT_Pin|PA4_DETECT_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /* USER CODE BEGIN ADC1_MspInit 1 */
 
@@ -151,21 +133,11 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
     __HAL_RCC_ADC_CLK_DISABLE();
 
     /**ADC1 GPIO Configuration
-    PC1     ------> ADC1_INP11
-    PC2     ------> ADC1_INP12
-    PC3     ------> ADC1_INP13
     PA1     ------> ADC1_INP1
-    PC4     ------> ADC1_INP4
-    PC5     ------> ADC1_INP8
-    PB0     ------> ADC1_INP9
-    PB1     ------> ADC1_INP5
+    PA2     ------> ADC1_INP14
+    PA3     ------> ADC1_INP15
     */
-    HAL_GPIO_DeInit(GPIOC, PA1_PWR_SENSE_Pin|PA2_PWR_SENSE_Pin|PA3_PWR_SENSE_Pin|PA1_DETECT_Pin
-                          |PA2_DETECT_Pin);
-
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_1);
-
-    HAL_GPIO_DeInit(GPIOB, PA3_DETECT_Pin|PA4_DETECT_Pin);
+    HAL_GPIO_DeInit(GPIOA, CURR_SENSE_5V_Pin|CURR_SENSE_RF_Pin|CURR_SENSE_BAT_Pin);
 
   /* USER CODE BEGIN ADC1_MspDeInit 1 */
 

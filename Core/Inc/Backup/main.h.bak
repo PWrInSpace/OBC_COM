@@ -45,6 +45,7 @@ extern "C" {
 /* USER CODE BEGIN Includes */
 #include "FreeRTOS.h"
 #include "queue.h"
+#include "stream_buffer.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -60,11 +61,19 @@ extern volatile uint8_t rx_buffer[RX_BUF_SIZE];
 #define POOL_SIZE 8
 #define BUFFER_SIZE 512
 
+#define USB_EVENT_BIT                 ( 1 << 2 )
+#define USART_LORA_EVENT_BIT          ( 1 << 3 )
+#define USART_LORA_EVENT_BIT          ( 1 << 3 )
+#define LORA_TX_EVENT_BIT             ( 1 << 4 )
+#define SETTINGS_CHANGE_EVENT_BIT     ( 1 << 5 )
+
 typedef struct {
     uint8_t data[BUFFER_SIZE];
     uint16_t len;
-} UART_Buffer_t;
+} CMD_Buffer_t;
 extern QueueHandle_t free_pool_queue;
+
+extern StreamBufferHandle_t xUsbStreamBuffer;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/
@@ -80,22 +89,26 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define LNA2_CTRL_Pin GPIO_PIN_2
-#define LNA2_CTRL_GPIO_Port GPIOE
-#define PA2_CTRL_Pin GPIO_PIN_3
-#define PA2_CTRL_GPIO_Port GPIOE
-#define SW2_CTRL1_Pin GPIO_PIN_4
-#define SW2_CTRL1_GPIO_Port GPIOE
-#define SW2_CTRL2_Pin GPIO_PIN_5
-#define SW2_CTRL2_GPIO_Port GPIOE
-#define HEADER1_Pin GPIO_PIN_13
-#define HEADER1_GPIO_Port GPIOC
-#define PA1_PWR_SENSE_Pin GPIO_PIN_1
-#define PA1_PWR_SENSE_GPIO_Port GPIOC
-#define PA2_PWR_SENSE_Pin GPIO_PIN_2
-#define PA2_PWR_SENSE_GPIO_Port GPIOC
-#define PA3_PWR_SENSE_Pin GPIO_PIN_3
-#define PA3_PWR_SENSE_GPIO_Port GPIOC
+#define SCREEN_SCK_Pin GPIO_PIN_2
+#define SCREEN_SCK_GPIO_Port GPIOE
+#define RF2_EN_Pin GPIO_PIN_3
+#define RF2_EN_GPIO_Port GPIOE
+#define SCREEN_CS_Pin GPIO_PIN_4
+#define SCREEN_CS_GPIO_Port GPIOE
+#define SCREEN_MISO_Pin GPIO_PIN_5
+#define SCREEN_MISO_GPIO_Port GPIOE
+#define SCREEN_MOSI_Pin GPIO_PIN_6
+#define SCREEN_MOSI_GPIO_Port GPIOE
+#define SCREEN_RST_Pin GPIO_PIN_13
+#define SCREEN_RST_GPIO_Port GPIOC
+#define VBAT_SENSE_Pin GPIO_PIN_0
+#define VBAT_SENSE_GPIO_Port GPIOC
+#define CURR_SENSE_5V_Pin GPIO_PIN_1
+#define CURR_SENSE_5V_GPIO_Port GPIOA
+#define CURR_SENSE_RF_Pin GPIO_PIN_2
+#define CURR_SENSE_RF_GPIO_Port GPIOA
+#define CURR_SENSE_BAT_Pin GPIO_PIN_3
+#define CURR_SENSE_BAT_GPIO_Port GPIOA
 #define SX1280_RESET_Pin GPIO_PIN_4
 #define SX1280_RESET_GPIO_Port GPIOA
 #define SX1280_SCK_Pin GPIO_PIN_5
@@ -104,32 +117,29 @@ void Error_Handler(void);
 #define SX1280_MISO_GPIO_Port GPIOA
 #define SX1280_MOSI_Pin GPIO_PIN_7
 #define SX1280_MOSI_GPIO_Port GPIOA
-#define PA1_DETECT_Pin GPIO_PIN_4
-#define PA1_DETECT_GPIO_Port GPIOC
-#define PA2_DETECT_Pin GPIO_PIN_5
-#define PA2_DETECT_GPIO_Port GPIOC
-#define PA3_DETECT_Pin GPIO_PIN_0
-#define PA3_DETECT_GPIO_Port GPIOB
-#define PA4_DETECT_Pin GPIO_PIN_1
-#define PA4_DETECT_GPIO_Port GPIOB
+#define TX_RFM_Pin GPIO_PIN_4
+#define TX_RFM_GPIO_Port GPIOC
+#define RX_RFM_Pin GPIO_PIN_5
+#define RX_RFM_GPIO_Port GPIOC
+#define TX_SX_Pin GPIO_PIN_0
+#define TX_SX_GPIO_Port GPIOB
+#define RX_SX_Pin GPIO_PIN_1
+#define RX_SX_GPIO_Port GPIOB
 #define SX1280_CS_Pin GPIO_PIN_7
 #define SX1280_CS_GPIO_Port GPIOE
-#define SX1280_DIO1_Pin GPIO_PIN_8
-#define SX1280_DIO1_GPIO_Port GPIOE
-#define SX1280_DIO2_Pin GPIO_PIN_9
-#define SX1280_DIO2_GPIO_Port GPIOE
-#define SX1280_BUSY_Pin GPIO_PIN_10
+#define SX1280_BUSY_Pin GPIO_PIN_8
 #define SX1280_BUSY_GPIO_Port GPIOE
-#define PA4_CTRL_Pin GPIO_PIN_11
-#define PA4_CTRL_GPIO_Port GPIOE
-#define SW4_CTRL1_Pin GPIO_PIN_12
-#define SW4_CTRL1_GPIO_Port GPIOE
-#define SW4_CTRL2_Pin GPIO_PIN_13
-#define SW4_CTRL2_GPIO_Port GPIOE
-#define LNA4_CTRL_Pin GPIO_PIN_14
-#define LNA4_CTRL_GPIO_Port GPIOE
+#define SX1280_DIO1_Pin GPIO_PIN_9
+#define SX1280_DIO1_GPIO_Port GPIOE
+#define SX1280_DIO2_Pin GPIO_PIN_10
+#define SX1280_DIO2_GPIO_Port GPIOE
+#define RF4_EN_Pin GPIO_PIN_13
+#define RF4_EN_GPIO_Port GPIOE
 #define CAN_STANDBY_Pin GPIO_PIN_10
 #define CAN_STANDBY_GPIO_Port GPIOB
+#define RFM95W_DIO_Pin GPIO_PIN_12
+#define RFM95W_DIO_GPIO_Port GPIOB
+#define RFM95W_DIO_EXTI_IRQn EXTI12_IRQn
 #define RFM95W_SCK_Pin GPIO_PIN_13
 #define RFM95W_SCK_GPIO_Port GPIOB
 #define RFM95W_MISO_Pin GPIO_PIN_14
@@ -140,43 +150,47 @@ void Error_Handler(void);
 #define RFM95W_CS_GPIO_Port GPIOD
 #define RFM95W_RST_Pin GPIO_PIN_10
 #define RFM95W_RST_GPIO_Port GPIOD
-#define RFM95W_DIO_Pin GPIO_PIN_11
-#define RFM95W_DIO_GPIO_Port GPIOD
-#define RFM95W_DIO_EXTI_IRQn EXTI11_IRQn
-#define LNA3_CTRL_Pin GPIO_PIN_12
-#define LNA3_CTRL_GPIO_Port GPIOD
-#define PA3_CTRL_Pin GPIO_PIN_13
-#define PA3_CTRL_GPIO_Port GPIOD
-#define SW3_CTRL1_Pin GPIO_PIN_14
-#define SW3_CTRL1_GPIO_Port GPIOD
-#define SW3_CTRL2_Pin GPIO_PIN_15
-#define SW3_CTRL2_GPIO_Port GPIOD
+#define RF3_EN_Pin GPIO_PIN_11
+#define RF3_EN_GPIO_Port GPIOD
+#define I2C_PANDORA_Pin GPIO_PIN_12
+#define I2C_PANDORA_GPIO_Port GPIOD
+#define I2C_PANDORAD13_Pin GPIO_PIN_13
+#define I2C_PANDORAD13_GPIO_Port GPIOD
+#define LED_ADDR_Pin GPIO_PIN_15
+#define LED_ADDR_GPIO_Port GPIOD
 #define SD_STATUS_Pin GPIO_PIN_7
 #define SD_STATUS_GPIO_Port GPIOC
-#define SD_DETECT_Pin GPIO_PIN_9
+#define SD_DETECT_Pin GPIO_PIN_8
 #define SD_DETECT_GPIO_Port GPIOA
-#define STATUS_LED_Pin GPIO_PIN_10
-#define STATUS_LED_GPIO_Port GPIOA
+#define SD_DETECT_EXTI_IRQn EXTI8_IRQn
+#define STATUS_LED2_Pin GPIO_PIN_9
+#define STATUS_LED2_GPIO_Port GPIOA
+#define STATUS_LED1_Pin GPIO_PIN_10
+#define STATUS_LED1_GPIO_Port GPIOA
+#define BUZZER_Pin GPIO_PIN_15
+#define BUZZER_GPIO_Port GPIOA
 #define SD_CMD_Pin GPIO_PIN_2
 #define SD_CMD_GPIO_Port GPIOD
-#define PA1_CTRL_Pin GPIO_PIN_3
-#define PA1_CTRL_GPIO_Port GPIOD
-#define GPS_RST_Pin GPIO_PIN_7
-#define GPS_RST_GPIO_Port GPIOD
-#define SW1_CTRL2_Pin GPIO_PIN_3
-#define SW1_CTRL2_GPIO_Port GPIOB
-#define SW1_CTRL1_Pin GPIO_PIN_4
-#define SW1_CTRL1_GPIO_Port GPIOB
-#define LNA1_CTRL_Pin GPIO_PIN_5
-#define LNA1_CTRL_GPIO_Port GPIOB
+#define CRX_Pin GPIO_PIN_3
+#define CRX_GPIO_Port GPIOD
+#define CHL_Pin GPIO_PIN_4
+#define CHL_GPIO_Port GPIOD
+#define MCB_UART_TX_Pin GPIO_PIN_5
+#define MCB_UART_TX_GPIO_Port GPIOD
+#define MCB_UART_RX_Pin GPIO_PIN_6
+#define MCB_UART_RX_GPIO_Port GPIOD
+#define CTX_Pin GPIO_PIN_7
+#define CTX_GPIO_Port GPIOD
+#define CPS_Pin GPIO_PIN_3
+#define CPS_GPIO_Port GPIOB
+#define RF1_EN_Pin GPIO_PIN_4
+#define RF1_EN_GPIO_Port GPIOB
 #define GPS_UART_TX_Pin GPIO_PIN_6
 #define GPS_UART_TX_GPIO_Port GPIOB
 #define GPS_UART_RX_Pin GPIO_PIN_7
 #define GPS_UART_RX_GPIO_Port GPIOB
-#define GPS_I2C_SCL_Pin GPIO_PIN_8
-#define GPS_I2C_SCL_GPIO_Port GPIOB
-#define GPS_I2C_SDA_Pin GPIO_PIN_9
-#define GPS_I2C_SDA_GPIO_Port GPIOB
+#define GPS_RST_Pin GPIO_PIN_9
+#define GPS_RST_GPIO_Port GPIOB
 #define GPS_INIT_Pin GPIO_PIN_0
 #define GPS_INIT_GPIO_Port GPIOE
 

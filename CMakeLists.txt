@@ -31,12 +31,15 @@ message("Build type: " ${CMAKE_BUILD_TYPE})
 # Enable CMake support for ASM and C languages
 enable_language(C ASM)
 
+get_filename_component(_toolchain_bin "${CMAKE_C_COMPILER}" DIRECTORY)
+set(CMAKE_OBJCOPY "${_toolchain_bin}/arm-none-eabi-objcopy${CMAKE_EXECUTABLE_SUFFIX}")
+
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME})
 # Musi być pod add_executable(OBC_COM ...)
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-    COMMAND arm-none-eabi-objcopy -O binary 
-            "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.elf" 
+    COMMAND "${CMAKE_OBJCOPY}" -O binary
+            "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.elf"
             "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.bin"
     COMMENT "--- Generowanie pliku BIN z ELF ---"
 )
@@ -82,6 +85,8 @@ add_subdirectory(nvs)
 add_subdirectory(cmd)
 add_subdirectory(modules/gps)
 add_subdirectory(modules/sky66114)
+add_subdirectory(modules/buzzer)
+add_subdirectory(proto)
 
 # Add linked libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}
@@ -95,16 +100,17 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     USB_Driver
     FatFs
     Nvs
+    Proto
+    buzzer
+    sky66114
     # Add user defined libraries
 )
 
 # Add this after your OBC_COM executable definition
 if(UNIX AND NOT APPLE)
-    set(OBJCOPY "arm-none-eabi-objcopy")
-
     add_custom_command(TARGET OBC_COM POST_BUILD
-        COMMAND ${OBJCOPY} -O binary $<TARGET_FILE:OBC_COM> ${CMAKE_CURRENT_BINARY_DIR}/OBC_COM.bin
-        COMMAND ${OBJCOPY} -O ihex $<TARGET_FILE:OBC_COM> ${CMAKE_CURRENT_BINARY_DIR}/OBC_COM.hex
+        COMMAND "${CMAKE_OBJCOPY}" -O binary $<TARGET_FILE:OBC_COM> ${CMAKE_CURRENT_BINARY_DIR}/OBC_COM.bin
+        COMMAND "${CMAKE_OBJCOPY}" -O ihex $<TARGET_FILE:OBC_COM> ${CMAKE_CURRENT_BINARY_DIR}/OBC_COM.hex
         COMMENT "Linux Post-Build: Generating .bin and .hex files from ELF"
     )
 endif()

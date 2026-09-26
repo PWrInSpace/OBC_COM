@@ -77,7 +77,7 @@ rfm95_err_t rfm95_default_config_param(rfm95_t *rfm) {
     // Wymaga funkcji przeliczającej Hz na rejestry FrfMsb/Mid/Lsb
     rfm95_set_frequency(rfm, rfm->param->frequency);
     char buf[128] = {0};
-    sprintf(buf, "| Frequency | %-18lu Hz |\r\n", rfm->param->frequency);
+    sprintf(buf, "| Frequency | %-18lu Hz |\r\n", (unsigned long)rfm->param->frequency);
     USB_Transmit((uint8_t*)buf, strlen(buf));
 
     // D. Konfiguracja FIFO
@@ -90,7 +90,7 @@ rfm95_err_t rfm95_default_config_param(rfm95_t *rfm) {
     ret |= rfm95_write_reg(rfm, 0x1D, bw_config);
 
     // REG_MODEM_CONFIG_2 (0x1E) -> Spreading Factor (Rate)
-    uint8_t sf_config = (rfm->param->LoRa_Rate << 4) | 0x04; // + CRC On
+    uint8_t sf_config = (rfm->param->LoRa_Rate << 4);
     ret |= rfm95_write_reg(rfm, 0x1E, sf_config);
 
     // F. Ustawienie mocy nadawania
@@ -105,13 +105,13 @@ rfm95_err_t rfm95_default_config_param(rfm95_t *rfm) {
     rfm95_disable_crc(rfm);
      }
 
-    // rfm95_err_t err = 0;
-    // err = rfm95_set_coding_rate(rfm,rfm->param->CR);
-    // err = rfm95_set_sync_word(rfm,rfm->param->sync);
-    // if (err !=0)
-    // {
-    //   LOG_ERROR("rfm95w.c", "Error with setting CR or sync word in rfm95_default_config_param\n");
-    // }
+    rfm95_err_t err = RFM95_OK;
+    err |= rfm95_set_coding_rate(rfm, rfm->param->CR);
+    err |= rfm95_set_sync_word(rfm, rfm->param->sync);
+    if (err != RFM95_OK)
+    {
+      LOG_ERROR("Error setting CR or sync word in rfm95_default_config_param");
+    }
 
 
     // G. Aktywacja automatycznego wzmocnienia (AGC)

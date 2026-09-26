@@ -38,6 +38,7 @@
 #include "rfm95w_task.h"
 #include "sd_task.h"
 #include "cmd_task.h"
+#include "sound.h"
 #include "eeprom_emul.h"
 #include "semphr.h"
 #include "nvs_config.h"
@@ -45,6 +46,7 @@
 #include "telemetry_task.h"
 #include "board_data.h"
 #include "usart.h"
+#include "sky66114.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,10 +98,10 @@ const osMutexAttr_t usbMutex_attributes = {
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
+  HAL_GPIO_WritePin(STATUS_LED1_GPIO_Port, STATUS_LED1_Pin, GPIO_PIN_RESET); // active-low
   NVS_Init();
   logger_init();
-  sd_logger_init();
-  
+
   /* USER CODE END Init */
   /* creation of usbMutex */
   usbMutexHandle = osMutexNew(&usbMutex_attributes);
@@ -126,13 +128,18 @@ void MX_FREERTOS_Init(void) {
 //   /* add threads, ... */
  
   board_data_init();
+  sound_init();
+  //sky66114_init_all();
   CMD_Task_Init();
-  RFM95W_task_init();
-  //SX1280_task_init();
+  // RFM95W_task_init();
+  SX1280_task_init();
   start_gps_task();
+  //sd_logger_init();
   osDelay(50);
   start_telemetry_task();
-  
+
+  sound_play(SOUND_STARTUP);
+  HAL_GPIO_WritePin(STATUS_LED1_GPIO_Port, STATUS_LED1_Pin, GPIO_PIN_SET); // active-low
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */

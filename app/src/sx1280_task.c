@@ -243,7 +243,7 @@ void SX1280_task_init(void){
       USB_Transmit(msg2, strlen((char*)msg2));
       return;
     }    
-    HAL_GPIO_WritePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(STATUS_LED2_GPIO_Port, STATUS_LED2_Pin, GPIO_PIN_RESET);
     //HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_4);
     return;
 }
