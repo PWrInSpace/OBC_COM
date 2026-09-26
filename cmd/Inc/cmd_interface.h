@@ -28,6 +28,7 @@ typedef enum {
     CMD_CRC = 0x0F,
     CMD_SYNC = 0x10,
     CMD_LORA_MODE = 0x11,
+    CMD_LOGDUMP = 0x12,
     CMD_COUNT
 } Command_t;
 
@@ -64,6 +65,7 @@ void handle_cr(cmd_params_t *params);
 void handle_crc(cmd_params_t *params);
 void handle_sync(cmd_params_t *params);
 void handle_lora_mode(cmd_params_t *params);
+void handle_logdump(cmd_params_t *params);
 
 
 #define LORA_BUFF_SIZE 512

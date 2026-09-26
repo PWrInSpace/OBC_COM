@@ -82,6 +82,7 @@ static size_t gs_poll_rx(void *ctx, uint8_t *buf, size_t cap) {
 
     uint8_t irq = rfm95_read_reg(radio, REG_IRQ_FLAGS);
     if (!(irq & IRQ_RX_DONE_MASK)) {
+        osDelay(1);
         return 0;
     }
 

@@ -38,7 +38,8 @@ static const CommandMap_t cmd_map[] = {
     {"LOGOFF",    CMD_LOG_OFF,      handle_log_off,   "- Disable all logs"},
     {"LOGMUTE",   CMD_LOG_MUTE,     handle_log_mute,  ":TAG - Mute specific tag"},
     {"LOGUNMUTE", CMD_LOG_UNMUTE,   handle_log_unmute, "- Clear all mutes"},
-    {"LORA_MODE", CMD_LORA_MODE,    handle_lora_mode, "- Switch LoRa mode (0 -> sleep mode / 1 -> normal mode)"}
+    {"LORA_MODE", CMD_LORA_MODE,    handle_lora_mode, "- Switch LoRa mode (0 -> sleep mode / 1 -> normal mode)"},
+    {"LOGDUMP",   CMD_LOGDUMP,      handle_logdump,   "- Dump the RAM log buffer over USB"}
 };
 
 extern osThreadId_t rfm95wTaskHandle;
@@ -155,6 +156,22 @@ void process_command(uint8_t *rx_buf, uint16_t len) {
             process_text_packet((char*)rx_buf);
         }
     }
+}
+
+void handle_logdump(cmd_params_t *params) {
+    (void)params;
+    const char *hdr = "\r\n--- LOG DUMP ---\r\n";
+    const char *ftr = "\r\n--- END DUMP ---\r\n";
+    const char *buf = logger_get_buffer();
+    uint32_t pos = logger_get_write_position();
+
+    USB_Transmit((uint8_t*)hdr, (uint16_t)strlen(hdr));
+    for (uint32_t i = 0; i < pos; ) {
+        uint16_t chunk = (uint16_t)((pos - i > 256u) ? 256u : (pos - i));
+        USB_Transmit((uint8_t*)(buf + i), chunk);
+        i += chunk;
+    }
+    USB_Transmit((uint8_t*)ftr, (uint16_t)strlen(ftr));
 }
 
 void handle_help(cmd_params_t *params) {
