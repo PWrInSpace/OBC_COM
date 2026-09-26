@@ -139,6 +139,7 @@ void Error_Handler(void);
 #define CAN_STANDBY_GPIO_Port GPIOB
 #define RFM95W_DIO_Pin GPIO_PIN_12
 #define RFM95W_DIO_GPIO_Port GPIOB
+#define RFM95W_DIO_EXTI_IRQn EXTI12_IRQn
 #define RFM95W_SCK_Pin GPIO_PIN_13
 #define RFM95W_SCK_GPIO_Port GPIOB
 #define RFM95W_MISO_Pin GPIO_PIN_14
