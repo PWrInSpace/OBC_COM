@@ -90,6 +90,7 @@ static size_t gs_poll_rx(void *ctx, uint8_t *buf, size_t cap) {
     uint8_t n = rfm95_receive_packet(radio, buf, max);
     rfm95_write_reg(radio, REG_IRQ_FLAGS, IRQ_ALL);
     if (n == 0U) {
+        osDelay(1);
         return 0;
     }
 
@@ -138,7 +139,7 @@ void rfm95wTaskEntry(void *argument) {
         .enter_rx = gs_enter_rx,
         .poll_rx = gs_poll_rx,
         .send = gs_send,
-        .forward  = gs_forward,
+        .forward = gs_forward,
         .ctx = radio,
         .txq = &s_txq,
     };

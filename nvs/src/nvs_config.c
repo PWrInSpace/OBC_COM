@@ -69,7 +69,7 @@ void nvs_get_rfm95_settings(rfm95_t * dev)
         int len = snprintf(msg, sizeof(msg), "NVS READ: %lu Hz\r\n", tmp);
         USB_Transmit((uint8_t*)msg, (uint16_t)len);
         dev->param->frequency = (uint32_t)tmp;
-}
+    }
 
     if (NVS_Read((RFM95W_PARAM_PWR), &tmp) == EE_OK) {
         int len = snprintf(msg, sizeof(msg), "NVS READ: Power %d dBm\r\n", (int8_t)tmp);
@@ -83,7 +83,7 @@ void nvs_get_rfm95_settings(rfm95_t * dev)
         dev->param->LoRa_Rate = (uint8_t)tmp;
     }
 
-     if (NVS_Read((RFM95W_PARAM_BW), &tmp) == EE_OK) {
+    if (NVS_Read((RFM95W_PARAM_BW), &tmp) == EE_OK) {
             int len = snprintf(msg, sizeof(msg), "NVS READ: BW %d\r\n", (int8_t)tmp);
             USB_Transmit((uint8_t*)msg, (uint16_t)len); 
         dev->param->LoRa_BW = (uint8_t)tmp;
@@ -100,23 +100,24 @@ void nvs_get_rfm95_settings(rfm95_t * dev)
             USB_Transmit((uint8_t*)msg, (uint16_t)len); 
         dev->param->crc= (bool)tmp;
     }
+
     if (NVS_Read((RFM95W_PARAM_SYNC), &tmp) == EE_OK) {
             int len = snprintf(msg, sizeof(msg), "NVS READ: SYNC %d\r\n", (int16_t)tmp);
             USB_Transmit((uint8_t*)msg, (uint16_t)len);
         dev->param->sync= (int16_t)tmp;
     }
+    
     if (NVS_Read(RFM95W_PARAM_STATE, &tmp) == EE_OK) {
             int len = snprintf(msg, sizeof(msg), "NVS READ: STATE %d\r\n", (uint8_t)tmp);
             USB_Transmit((uint8_t*)msg, (uint16_t)len);
         dev->param->state = (uint8_t)tmp;
     }
-     return;
 
+    return;
 }
 
 
-void nvs_save_rfm95_settings(rfm95_t * dev)
-{
+void nvs_save_rfm95_settings(rfm95_t * dev) {
     if (dev == NULL || dev->param == NULL) return;
     NVS_Write((RFM95W_PARAM_FREQ), (uint32_t)dev->param->frequency);
     NVS_Write((RFM95W_PARAM_PWR),  (uint32_t)dev->param->power);
@@ -126,7 +127,7 @@ void nvs_save_rfm95_settings(rfm95_t * dev)
     NVS_Write((RFM95W_PARAM_CRC),   (uint32_t)dev->param->crc);
     NVS_Write((RFM95W_PARAM_SYNC),   (uint32_t)dev->param->sync);
     NVS_Write((RFM95W_PARAM_STATE),   (uint32_t)dev->param->state);
-   return;
+    return;
 }
 
 void nvs_set_log_muted(uint32_t muted) {
