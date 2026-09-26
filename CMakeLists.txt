@@ -102,6 +102,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     Nvs
     Proto
     buzzer
+    sky66114
     # Add user defined libraries
 )
 
