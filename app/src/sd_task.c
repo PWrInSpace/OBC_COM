@@ -4,6 +4,8 @@
  * Date: 23.03.2026
  */
 #include "sd_task.h"
+#include "sound.h"
+#include "logger.h"
 
 #include "board_data.h"
 #include "ff.h"
@@ -57,7 +59,7 @@ char SDPath[4];
 const osThreadAttr_t packer_attr = { .name = "packer_task", .priority = osPriorityAboveNormal, .stack_size = 2048 };
 const osThreadAttr_t sd_write_attr = { .name = "sd_task", .priority = osPriorityNormal, .stack_size = 4096 };
 #ifdef SD_DETECT_PIN_OPERATIONAL
-const osThreadAttr_t monitor_attr = { .name = "monitor_task", .priority = osPriorityLow, .stack_size = 1024 };
+const osThreadAttr_t monitor_attr = { .name = "monitor_task", .priority = osPriorityLow, .stack_size = 2048 };
 #endif
 
 static void packer_task_thread(void *arg);
@@ -83,12 +85,14 @@ bool sd_mount(void) {
     osMutexAcquire(sd_mutex_id, osWaitForever);
     FRESULT res = f_mount(&fs, SDPath, 1);
     if (res != FR_OK) {
+        LOG_ERROR("sd_mount: f_mount res=%d", (int)res);
         osMutexRelease(sd_mutex_id);
         return false;
     }
 
     res = f_mkdir(LOG_DIR);
     if (res != FR_OK && res != FR_EXIST) {
+        LOG_ERROR("sd_mount: f_mkdir res=%d", (int)res);
         f_mount(NULL, SDPath, 0);
         osMutexRelease(sd_mutex_id);
         return false;
@@ -102,6 +106,7 @@ bool sd_mount(void) {
 
     res = f_open(&log_file, filename, FA_WRITE | FA_CREATE_NEW);
     if (res != FR_OK) {
+        LOG_ERROR("sd_mount: f_open res=%d", (int)res);
         f_mount(NULL, SDPath, 0);
         osMutexRelease(sd_mutex_id);
         return false;
@@ -296,16 +301,28 @@ static void sd_task_thread(void *arg) {
 #define SD_DETECT_EVENT_FLAG 0x01U
 #define SD_DEBOUNCE_MS 50U
 
-static void sd_detect_sync(void) {
+static void sd_unmount_removed(void) {
+    osMutexAcquire(sd_mutex_id, osWaitForever);
+    f_mount(NULL, SDPath, 0);
+    is_mounted = false;
+    HAL_GPIO_WritePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin, GPIO_PIN_RESET);
+    osMutexRelease(sd_mutex_id);
+}
+
+static void sd_detect_sync(bool announce) {
     bool inserted = (HAL_GPIO_ReadPin(SD_DETECT_GPIO_Port, SD_DETECT_Pin) == GPIO_PIN_RESET);
-    if (inserted && !is_mounted) sd_mount();
-    else if (!inserted && is_mounted) sd_unmount();
+    if (inserted && !is_mounted) {
+        if (sd_mount() && announce) sound_play(SOUND_SD_MOUNT);
+    } else if (!inserted && is_mounted) {
+        if (announce) sound_play(SOUND_SD_UNMOUNT);
+        sd_unmount_removed();
+    }
 }
 
 static void monitor_task_thread(void *arg) {
     (void)arg;
 
-    sd_detect_sync();
+    sd_detect_sync(false);
 
     for(;;) {
         osThreadFlagsWait(SD_DETECT_EVENT_FLAG, osFlagsWaitAny, osWaitForever);
@@ -313,7 +330,7 @@ static void monitor_task_thread(void *arg) {
         osDelay(SD_DEBOUNCE_MS);
         osThreadFlagsClear(SD_DETECT_EVENT_FLAG);
 
-        sd_detect_sync();
+        sd_detect_sync(true);
     }
 }
 
