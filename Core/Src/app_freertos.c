@@ -129,12 +129,12 @@ void MX_FREERTOS_Init(void) {
  
   board_data_init();
   sound_init();
-  sky66114_init_all();
+  //sky66114_init_all();
   CMD_Task_Init();
   // RFM95W_task_init();
   SX1280_task_init();
   start_gps_task();
-  sd_logger_init();
+  //sd_logger_init();
   osDelay(50);
   start_telemetry_task();
 

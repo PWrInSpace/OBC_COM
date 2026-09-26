@@ -14,6 +14,9 @@ target_sources(App
         src/lora_frame.c
         src/lora_tx_queue.c
         src/gs_scheduler.c
+        src/rx_scheduler.c
+        src/mcb_link.c
+        src/exti_callbacks.c
         src/sound.c
 )
 
