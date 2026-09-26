@@ -38,6 +38,7 @@
 #include "rfm95w_task.h"
 #include "sd_task.h"
 #include "cmd_task.h"
+#include "sound.h"
 #include "eeprom_emul.h"
 #include "semphr.h"
 #include "nvs_config.h"
@@ -126,6 +127,7 @@ void MX_FREERTOS_Init(void) {
 //   /* add threads, ... */
  
   board_data_init();
+  sound_init();
   CMD_Task_Init();
   RFM95W_task_init();
   // SX1280_task_init();
@@ -133,7 +135,8 @@ void MX_FREERTOS_Init(void) {
   sd_logger_init();
   osDelay(50);
   start_telemetry_task();
-  
+
+  sound_play(SOUND_STARTUP);
   HAL_GPIO_WritePin(STATUS_LED1_GPIO_Port, STATUS_LED1_Pin, GPIO_PIN_SET); // active-low
   /* USER CODE END RTOS_THREADS */
 

@@ -14,6 +14,7 @@ target_sources(App
         src/lora_frame.c
         src/lora_tx_queue.c
         src/gs_scheduler.c
+        src/sound.c
 )
 
 target_include_directories(App
@@ -42,4 +43,5 @@ target_link_libraries(App
         FatFs
         Nvs
         Proto
+        buzzer
 )

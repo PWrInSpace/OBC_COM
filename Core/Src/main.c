@@ -23,6 +23,7 @@
 #include "crc.h"
 #include "fdcan.h"
 #include "gpdma.h"
+#include "i2c.h"
 #include "sdmmc.h"
 #include "spi.h"
 #include "tim.h"
@@ -262,6 +263,8 @@ int main(void)
   MX_TIM2_Init();
   MX_SDMMC1_SD_Init();
   MX_CRC_Init();
+  MX_I2C4_Init();
+  MX_SPI4_Init();
   /* USER CODE BEGIN 2 */
   HAL_Delay(50);
   BufferPool_UART_Start(&huart2);

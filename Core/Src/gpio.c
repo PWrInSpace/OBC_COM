@@ -14,13 +14,8 @@
 /* USER CODE END 1 */
 
 /** Configure pins
-     PE2   ------> SPI4_SCK
-     PE5   ------> SPI4_MISO
-     PE6   ------> SPI4_MOSI
      PH0-OSC_IN(PH0)   ------> RCC_OSC_IN
      PH1-OSC_OUT(PH1)   ------> RCC_OSC_OUT
-     PD12   ------> I2C4_SCL
-     PD13   ------> I2C4_SDA
      PA13(JTMS/SWDIO)   ------> DEBUG_JTMS-SWDIO
      PA14(JTCK/SWCLK)   ------> DEBUG_JTCK-SWCLK
 */
@@ -65,14 +60,6 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, STATUS_LED2_Pin|STATUS_LED1_Pin, GPIO_PIN_SET);
-
-  /*Configure GPIO pins : SCREEN_SCK_Pin SCREEN_MISO_Pin SCREEN_MOSI_Pin */
-  GPIO_InitStruct.Pin = SCREEN_SCK_Pin|SCREEN_MISO_Pin|SCREEN_MOSI_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  GPIO_InitStruct.Alternate = GPIO_AF5_SPI4;
-  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /*Configure GPIO pins : RF2_EN_Pin SCREEN_CS_Pin SX1280_CS_Pin RF4_EN_Pin
                            GPS_INIT_Pin */
@@ -139,14 +126,6 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(RFM95W_RST_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : I2C_PANDORA_Pin I2C_PANDORAD13_Pin */
-  GPIO_InitStruct.Pin = I2C_PANDORA_Pin|I2C_PANDORAD13_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  GPIO_InitStruct.Alternate = GPIO_AF4_I2C4;
-  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /*Configure GPIO pin : SD_DETECT_Pin */
   GPIO_InitStruct.Pin = SD_DETECT_Pin;

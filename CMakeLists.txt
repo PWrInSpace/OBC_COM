@@ -85,6 +85,7 @@ add_subdirectory(nvs)
 add_subdirectory(cmd)
 add_subdirectory(modules/gps)
 add_subdirectory(modules/sky66114)
+add_subdirectory(modules/buzzer)
 add_subdirectory(proto)
 
 # Add linked libraries
@@ -100,6 +101,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     FatFs
     Nvs
     Proto
+    buzzer
     # Add user defined libraries
 )
 
