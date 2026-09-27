@@ -30,6 +30,7 @@
 #include "stm32h5xx_hal_gpio.h"
 #include "usart.h"
 #include "usb_config.h"
+#include "led.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -105,7 +106,7 @@ void NMI_Handler(void)
 void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
-
+  led_fault_color(LED_COLOR_RED);
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {

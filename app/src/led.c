@@ -140,3 +140,9 @@ void led_set(uint16_t index, led_effect_t effect, led_color_t color) {
 
 void led_set_all(led_effect_t effect, led_color_t color) { for (uint16_t i = 0; i < LED_COUNT; i++) led_set(i, effect, color); }
 void led_stop(void) { led_set_all(LED_EFFECT_OFF, LED_COLOR_OFF); }
+
+void led_fault_color(led_color_t color) {
+    uint8_t r, g, b;
+    unpack(color, &r, &g, &b);
+    ws2812_set_color_blocking(&g_ws, r, g, b);
+}

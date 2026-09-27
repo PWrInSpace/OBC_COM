@@ -48,10 +48,9 @@ void ws2812_clear(ws2812_t *dev) {
     memset(s_grb, 0, sizeof(s_grb));
 }
 
-ws2812_error_t ws2812_show(ws2812_t *dev) {
-    if (dev == NULL || dev->htim == NULL) return WS2812_ERROR;
-    if (s_busy) return WS2812_BUSY;
-
+// Encode the frame buffer (s_grb) into per-bit PWM duties + reset slots.
+// Returns the number of half-word slots written.
+static uint16_t ws2812_encode(ws2812_t *dev) {
     uint16_t k = 0;
     for (uint16_t led = 0; led < dev->num_leds; led++) {
         for (uint8_t byte = 0; byte < 3; byte++) {
@@ -62,7 +61,14 @@ ws2812_error_t ws2812_show(ws2812_t *dev) {
         }
     }
     for (uint16_t i = 0; i < WS2812_RESET_SLOTS; i++) s_dma[k++] = 0;
+    return k;
+}
 
+ws2812_error_t ws2812_show(ws2812_t *dev) {
+    if (dev == NULL || dev->htim == NULL) return WS2812_ERROR;
+    if (s_busy) return WS2812_BUSY;
+
+    uint16_t k = ws2812_encode(dev);
     s_active = dev;
     s_busy = true;
 
@@ -77,6 +83,46 @@ ws2812_error_t ws2812_show(ws2812_t *dev) {
 }
 
 bool ws2812_is_busy(void) { return s_busy; }
+
+// Map a timer channel to the DMA handle HAL linked to it.
+static DMA_HandleTypeDef *ws2812_hdma(ws2812_t *dev) {
+    switch (dev->channel) {
+        case TIM_CHANNEL_1: return dev->htim->hdma[TIM_DMA_ID_CC1];
+        case TIM_CHANNEL_2: return dev->htim->hdma[TIM_DMA_ID_CC2];
+        case TIM_CHANNEL_3: return dev->htim->hdma[TIM_DMA_ID_CC3];
+        default: return dev->htim->hdma[TIM_DMA_ID_CC4];
+    }
+}
+
+ws2812_error_t ws2812_set_color_blocking(ws2812_t *dev, uint8_t r, uint8_t g, uint8_t b) {
+    if (dev == NULL || dev->htim == NULL) return WS2812_ERROR;
+
+    // Emergency use (e.g. fault handler): RTOS and the DMA IRQ are assumed dead.
+    // Force any in-flight transfer to stop so the channel is usable again.
+    HAL_TIM_PWM_Stop_DMA(dev->htim, dev->channel);
+    s_busy = false;
+
+    ws2812_set_all(dev, r, g, b);
+    uint16_t k = ws2812_encode(dev);
+
+    s_active = dev;
+    if (HAL_TIM_PWM_Start_DMA(dev->htim, dev->channel,
+                              (const uint32_t *)s_dma,
+                              (uint16_t)(k * sizeof(uint16_t))) != HAL_OK) {
+        return WS2812_ERROR;
+    }
+
+    // Poll the DMA byte counter to completion instead of waiting on the IRQ.
+    DMA_HandleTypeDef *hdma = ws2812_hdma(dev);
+    uint32_t guard = 0;
+    while ((hdma->Instance->CBR1 & DMA_CBR1_BNDT) != 0u) {
+        if (++guard > 2000000u) break;   // safety: never hang the caller
+    }
+
+    HAL_TIM_PWM_Stop_DMA(dev->htim, dev->channel);
+    s_busy = false;
+    return WS2812_OK;
+}
 
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
     if (s_active != NULL && htim->Instance == s_active->htim->Instance) {

@@ -36,4 +36,8 @@ void led_set(uint16_t index, led_effect_t effect, led_color_t color);
 void led_set_all(led_effect_t effect, led_color_t color);
 void led_stop(void);
 
+// Set all LEDs to a solid colour synchronously; safe from a fault handler (no RTOS)
+// use ONLY in emergency when system is presumed dead
+void led_fault_color(led_color_t color);
+
 #endif /* LED_H */

@@ -36,3 +36,6 @@ void ws2812_clear(ws2812_t *dev);
 ws2812_error_t ws2812_show(ws2812_t *dev);
 
 bool ws2812_is_busy(void);
+
+// use ONLY in emergency when system is presumed dead (e.g. hardfault)
+ws2812_error_t ws2812_set_color_blocking(ws2812_t *dev, uint8_t r, uint8_t g, uint8_t b);
