@@ -11,6 +11,7 @@
 #include "stm32h5xx_hal_gpio.h"
 #include "task.h"
 #include "sx1280.h"
+#include "sky66114.h"
 #include "main.h"
 #include "logger.h"
 #include "usb_config.h"
@@ -30,6 +31,10 @@ extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
 
 //#define USB_FLAG   //!< USB COMMUNICATION uncomment flag to use WARNING: this might corrupt the OBC timings dont use in flight setup
 #define GroundStationFlag 1 //!< Ground Station Setup // uncomment to use module as ground station
+
+// --- Simple TX/RX test: define = transmit a fixed packet; undefine = receive + print over USB ---
+#define SX1280_TEST_TX
+#define USB_PRINT(s) USB_Transmit((uint8_t *)(s), strlen(s))
 //! Later on add runtime variables to modify the state or setup
 TimerHandle_t xTelemetryTimer;
 #define TIMER_EVENT_BIT  ( 1 << 1 ) // Bit 1 timera
@@ -160,6 +165,7 @@ SX1280SetTxParams(sx1280_radio, 13, RADIO_RAMP_20_US);
 }
 
 void sx1280TaskEntry(void *argument) {
+    (void)argument;
     LoRaDevs_t *lora_devs = get_lora_devs_instance();
     SX1280_t* sx1280_radio = lora_devs->sx1280;
 
@@ -176,21 +182,38 @@ void sx1280TaskEntry(void *argument) {
     //     xTimerStart(xTelemetryTimer, 0);
     // }
     // uint32_t ulNotifiedValue = 0;
-    verify_freq(sx1280_radio);
-    
-   for(;;) {
-      // 1. Daj radiu czas na stabilizację po resecie
-osDelay(100); 
+    sx1280_config_init();   // full LoRa config: SF7 / BW800 / CR4.5, CRC on, 2.45 GHz
+    osDelay(100);           // let the radio settle after reset
 
-// 2. Pobierz wersję firmware (funkcja sama obsługuje SPI)
-uint16_t fw_version = SX1280GetFirmwareVersion(sx1280_radio);
+#ifdef SX1280_TEST_TX
+    sky66114_set_mode(&sky66114[0], SKY66114_MODE_TX_HIGH);
+    static const uint8_t test_packet[] = "PWrInSpace SX1280 TEST";
+    USB_PRINT("SX1280 mode: TX\r\n");
 
-// 3. Przygotuj czytelny komunikat tekstowy
-char debug_msg[50];
-int msg_len = snprintf(debug_msg, sizeof(debug_msg), "SX1280 FW Version: 0x%04X\r\n", fw_version);
+    for (;;) {
+        SX1280SendPayload(sx1280_radio, (uint8_t *)test_packet, sizeof(test_packet), RX_TX_SINGLE);
+        bool ok = wait_for_tx_done(sx1280_radio, TX_DONE_TIMEOUT_MS_DEFAULT);
+        SX1280ClearIrqStatus(sx1280_radio, IRQ_RADIO_ALL);
+        HAL_GPIO_TogglePin(TX_SX_GPIO_Port, TX_SX_Pin);
+        USB_PRINT(ok ? "TX done\r\n" : "TX timeout\r\n");
+        osDelay(1000);
+    }
+#else
+    sky66114_set_mode(&sky66114[0], SKY66114_MODE_RX_LNA);
+    uint8_t rx_buf[255];
+    uint8_t rx_size = 0;
+    USB_PRINT("SX1280 mode: RX\r\n");
 
-// 4. Wyślij przez USB (zakładając, że USB_Transmit przyjmuje wskaźnik i długość)
-USB_Transmit((uint8_t*)debug_msg, msg_len);
+    for (;;) {
+        start_rx(sx1280_radio, 1000);
+        if (rx_wait_for_event(sx1280_radio, 1000, rx_buf, &rx_size) && rx_size > 0) {
+            HAL_GPIO_TogglePin(RX_SX_GPIO_Port, RX_SX_Pin);
+            USB_PRINT("RX: ");
+            USB_Transmit(rx_buf, rx_size);
+            USB_PRINT("\r\n");
+        }
+    }
+#endif
         // if (xTaskNotifyWait(0, 0xFFFFFFFF, &ulNotifiedValue, pdMS_TO_TICKS(100)) == pdTRUE) {
 
         //     if (ulNotifiedValue & RADIO_EVENT_BIT) {
@@ -229,7 +252,6 @@ USB_Transmit((uint8_t*)debug_msg, msg_len);
         // }
 
        
-    }
 }
 
 void SX1280_task_init(void){

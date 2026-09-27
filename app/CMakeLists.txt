@@ -46,4 +46,5 @@ target_link_libraries(App
         Proto
         buzzer
         ws2812
+        sky66114
 )
