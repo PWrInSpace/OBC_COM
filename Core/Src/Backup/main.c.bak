@@ -265,6 +265,7 @@ int main(void)
   MX_CRC_Init();
   MX_I2C4_Init();
   MX_SPI4_Init();
+  MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
   HAL_Delay(50);
   BufferPool_UART_Start(&huart2);

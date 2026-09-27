@@ -86,6 +86,7 @@ add_subdirectory(cmd)
 add_subdirectory(modules/gps)
 add_subdirectory(modules/sky66114)
 add_subdirectory(modules/buzzer)
+add_subdirectory(modules/ws2812)
 add_subdirectory(proto)
 
 # Add linked libraries
@@ -102,6 +103,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     Nvs
     Proto
     buzzer
+    ws2812
     sky66114
     # Add user defined libraries
 )
