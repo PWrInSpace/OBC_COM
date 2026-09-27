@@ -6,15 +6,14 @@
 #include "cmd_task.h"
 #include "cmd_interface.h"
 #include "rfm95w_task.h"
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include "FreeRTOS.h"
 #include "queue.h"
 #include "usb_config.h"
 #include "usart.h"
 #include "stream_buffer.h"
-QueueHandle_t cmd_queue = NULL; 
+
+QueueHandle_t cmd_queue = NULL;
 osThreadId_t cmdTaskHandle = NULL;
 
 void CMD_Task_Init(void) {
@@ -30,43 +29,44 @@ void CMD_Task_Init(void) {
 
     cmdTaskHandle = osThreadNew(cmd_task, NULL, &cmdTask_attributes);
 }
-extern osThreadId_t rfm95wTaskHandle;
-extern volatile uint16_t USB_Rx_Data_Len;
-extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
+
 void cmd_task(void *argument) {
     (void)argument;
-    
+
     CMD_Buffer_t *received_ptr = NULL;
     uint8_t usb_byte;
     static uint8_t usb_frame_buf[BUFFER_SIZE];
     static uint16_t usb_idx = 0;
     uint32_t ulNotifiedValue;
 
-    for(;;) {
-
+    for (;;) {
         xTaskNotifyWait(0, 0xFFFFFFFF, &ulNotifiedValue, portMAX_DELAY);
 
-        while (xStreamBufferReceive(xUsbStreamBuffer, &usb_byte, 1, 0) > 0) {
-            if (usb_idx == 0 && (usb_byte == '\n' || usb_byte == '\r' || usb_byte == ' ')) {
-                continue; 
+        for (;;) {
+            if (xStreamBufferReceive(xUsbStreamBuffer, &usb_byte, 1, pdMS_TO_TICKS(4)) == 0) {
+                if (usb_idx > 0) {
+                    bool stray_nl = (usb_idx == 1 && (usb_frame_buf[0] == '\n' || usb_frame_buf[0] == '\r'));
+                    if (usb_idx >= 4 && memcmp(usb_frame_buf, "CMD;", 4) == 0) {
+                        usb_frame_buf[usb_idx] = '\0';
+                        process_command(usb_frame_buf, usb_idx);
+                    } else if (!stray_nl) {
+                        lora_gs_tx_enqueue(usb_frame_buf, usb_idx);
+                    }
+                    usb_idx = 0;
+                    memset(usb_frame_buf, 0, BUFFER_SIZE);
+                }
+                break;
             }
 
             if (usb_idx < BUFFER_SIZE - 1) {
                 usb_frame_buf[usb_idx++] = usb_byte;
             }
 
-            if (usb_byte == '\n' || usb_byte == '\r') {
-                usb_idx--; 
+            if ((usb_byte == '\n' || usb_byte == '\r') &&
+                usb_idx >= 5 && memcmp(usb_frame_buf, "CMD;", 4) == 0) {
+                usb_idx--;
                 usb_frame_buf[usb_idx] = '\0';
-
-                if (usb_idx >= 4 && memcmp(usb_frame_buf, "CMD;", 4) == 0) {
-                    process_command(usb_frame_buf, usb_idx);
-                } 
-                else if (usb_idx > 0) {
-                    USB_Transmit((uint8_t*)"Unknown command format\r\n", 24);
-                    lora_gs_tx_enqueue(usb_frame_buf, usb_idx);
-                }
-
+                process_command(usb_frame_buf, usb_idx);
                 usb_idx = 0;
                 memset(usb_frame_buf, 0, BUFFER_SIZE);
             }
@@ -74,24 +74,10 @@ void cmd_task(void *argument) {
 
         while (cmd_queue != NULL && xQueueReceive(cmd_queue, &received_ptr, 0) == pdPASS) {
             if (received_ptr != NULL) {
-                uint16_t actual_len = 0;
                 uint8_t *data = received_ptr->data;
+                uint16_t actual_len = (data[0] == 0x32) ? (uint16_t)(data[2] + 5) : received_ptr->len;
+                if (actual_len > BUFFER_SIZE) actual_len = BUFFER_SIZE;
 
-                if (data[0] == 0x32) {
-                    // Binary frame detected
-                    actual_len = data[2] + 5;
-                    if (actual_len > BUFFER_SIZE) actual_len = BUFFER_SIZE;
-
-                    USB_Transmit((uint8_t*)"RX BIN CMD (HEX): ", 18); 
-                    //USB_Transmit_Hex(data, actual_len);
-                } else {
-                    // Regular text command
-                    actual_len = received_ptr->len;
-                    USB_Transmit((uint8_t*)"RX CMD: ", 8); 
-                    USB_Transmit(data, actual_len);
-                }
-
-                USB_Transmit((uint8_t*)"\r\n", 2);
                 process_command(data, actual_len);
                 memset(data, 0, BUFFER_SIZE);
                 xQueueSend(free_pool_queue, &received_ptr, 0);
@@ -99,4 +85,3 @@ void cmd_task(void *argument) {
         }
     }
 }
-

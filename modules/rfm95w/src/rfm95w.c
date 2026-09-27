@@ -350,9 +350,14 @@ rfm95_err_t rfm95_send_packet(rfm95_t *rfm95, uint8_t *buf, int16_t size) {
   ret |= rfm95_fill_fifo_buf_to_send(rfm95, buf, size);
   ret |= rfm95_start_transmission(rfm95);
 
+  uint16_t tx_guard = 0;
   while (!rfm95_check_tx_done(rfm95)) {
-    int8_t read_reg = rfm95_read_reg(rfm95,REG_IRQ_FLAGS);
+    (void)rfm95_read_reg(rfm95, REG_IRQ_FLAGS);
     rfm95->_delay(2);
+    if (++tx_guard > 250U) {
+      ret |= RFM95_TRANSMIT_ERR;
+      break;
+    }
   }
 
   ret |= rfm95_write_irq_flags(rfm95);

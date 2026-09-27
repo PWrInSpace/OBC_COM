@@ -225,6 +225,12 @@ void handle_sf(cmd_params_t *params) {
     } else if (params->data) {
         sf = (int8_t)atoi((char*)params->data);
     }
+    if (sf < 6 || sf > 12) {
+        char e[48];
+        int el = snprintf(e, sizeof(e), "ERR: SF %d out of range (6-12)\r\n", sf);
+        USB_Transmit((uint8_t*)e, el);
+        return;
+    }
     NVS_Write((RFM95W_PARAM_SF), (uint32_t)sf);
     lora_gs_mark_settings_dirty();
     char resp[64];
@@ -239,6 +245,12 @@ void handle_bw(cmd_params_t *params) {
     } else if (params->data) {
         bw = (int8_t)atoi((char*)params->data);
     }
+    if (bw < 0 || bw > 9) {
+        char e[48];
+        int el = snprintf(e, sizeof(e), "ERR: BW %d out of range (0-9)\r\n", bw);
+        USB_Transmit((uint8_t*)e, el);
+        return;
+    }
     NVS_Write((RFM95W_PARAM_BW), (uint32_t)bw);
     lora_gs_mark_settings_dirty();
     char resp[64];
@@ -252,6 +264,12 @@ void handle_cr(cmd_params_t *params) {
         cr = (int8_t)params->data[0];
     } else if (params->data) {
         cr = (int8_t)atoi((char*)params->data);
+    }
+    if (cr < 5 || cr > 8) {
+        char e[48];
+        int el = snprintf(e, sizeof(e), "ERR: CR %d out of range (5-8)\r\n", cr);
+        USB_Transmit((uint8_t*)e, el);
+        return;
     }
     NVS_Write((RFM95W_PARAM_CR), (uint32_t)cr);
     lora_gs_mark_settings_dirty();
