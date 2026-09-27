@@ -30,6 +30,7 @@
 #include "stm32h5xx_hal_gpio.h"
 #include "usart.h"
 #include "usb_config.h"
+#include "led.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -66,6 +67,7 @@ extern uint8_t uart2_rx_buf[UART2_RX_BUF_SIZE];
 /* External variables --------------------------------------------------------*/
 extern SD_HandleTypeDef hsd1;
 extern SPI_HandleTypeDef hspi2;
+extern DMA_HandleTypeDef handle_GPDMA1_Channel0;
 extern DMA_HandleTypeDef handle_GPDMA1_Channel7;
 extern DMA_NodeTypeDef Node_GPDMA1_Channel6;
 extern DMA_QListTypeDef List_GPDMA1_Channel6;
@@ -104,7 +106,7 @@ void NMI_Handler(void)
 void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
-
+  led_fault_color(LED_COLOR_RED);
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {
@@ -204,6 +206,20 @@ void EXTI12_IRQHandler(void)
   /* USER CODE BEGIN EXTI12_IRQn 1 */
 
   /* USER CODE END EXTI12_IRQn 1 */
+}
+
+/**
+  * @brief This function handles GPDMA1 Channel 0 global interrupt.
+  */
+void GPDMA1_Channel0_IRQHandler(void)
+{
+  /* USER CODE BEGIN GPDMA1_Channel0_IRQn 0 */
+
+  /* USER CODE END GPDMA1_Channel0_IRQn 0 */
+  HAL_DMA_IRQHandler(&handle_GPDMA1_Channel0);
+  /* USER CODE BEGIN GPDMA1_Channel0_IRQn 1 */
+
+  /* USER CODE END GPDMA1_Channel0_IRQn 1 */
 }
 
 /**

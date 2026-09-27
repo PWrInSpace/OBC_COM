@@ -49,8 +49,7 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOB, CAN_STANDBY_Pin|CPS_Pin|RF1_EN_Pin|GPS_RST_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, RFM95W_CS_Pin|RF3_EN_Pin|LED_ADDR_Pin|CRX_Pin
-                          |CHL_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, RFM95W_CS_Pin|RF3_EN_Pin|CRX_Pin|CHL_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, RFM95W_RST_Pin|CTX_Pin, GPIO_PIN_SET);
@@ -111,10 +110,10 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(RFM95W_DIO_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : RFM95W_CS_Pin RF3_EN_Pin LED_ADDR_Pin CRX_Pin
-                           CHL_Pin CTX_Pin */
-  GPIO_InitStruct.Pin = RFM95W_CS_Pin|RF3_EN_Pin|LED_ADDR_Pin|CRX_Pin
-                          |CHL_Pin|CTX_Pin;
+  /*Configure GPIO pins : RFM95W_CS_Pin RF3_EN_Pin CRX_Pin CHL_Pin
+                           CTX_Pin */
+  GPIO_InitStruct.Pin = RFM95W_CS_Pin|RF3_EN_Pin|CRX_Pin|CHL_Pin
+                          |CTX_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
