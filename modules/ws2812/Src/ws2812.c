@@ -94,7 +94,7 @@ static DMA_HandleTypeDef *ws2812_hdma(ws2812_t *dev) {
     }
 }
 
-ws2812_error_t ws2812_set_color_blocking(ws2812_t *dev, uint8_t r, uint8_t g, uint8_t b) {
+ws2812_error_t ws2812_show_blocking(ws2812_t *dev) {
     if (dev == NULL || dev->htim == NULL) return WS2812_ERROR;
 
     // Emergency use (e.g. fault handler): RTOS and the DMA IRQ are assumed dead.
@@ -102,8 +102,7 @@ ws2812_error_t ws2812_set_color_blocking(ws2812_t *dev, uint8_t r, uint8_t g, ui
     HAL_TIM_PWM_Stop_DMA(dev->htim, dev->channel);
     s_busy = false;
 
-    ws2812_set_all(dev, r, g, b);
-    uint16_t k = ws2812_encode(dev);
+    uint16_t k = ws2812_encode(dev);   // sends the current buffer (per-LED colours)
 
     s_active = dev;
     if (HAL_TIM_PWM_Start_DMA(dev->htim, dev->channel,
@@ -122,6 +121,12 @@ ws2812_error_t ws2812_set_color_blocking(ws2812_t *dev, uint8_t r, uint8_t g, ui
     HAL_TIM_PWM_Stop_DMA(dev->htim, dev->channel);
     s_busy = false;
     return WS2812_OK;
+}
+
+ws2812_error_t ws2812_set_color_blocking(ws2812_t *dev, uint8_t r, uint8_t g, uint8_t b) {
+    if (dev == NULL) return WS2812_ERROR;
+    ws2812_set_all(dev, r, g, b);
+    return ws2812_show_blocking(dev);
 }
 
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {

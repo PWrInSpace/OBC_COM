@@ -36,8 +36,12 @@ void led_set(uint16_t index, led_effect_t effect, led_color_t color);
 void led_set_all(led_effect_t effect, led_color_t color);
 void led_stop(void);
 
-// Set all LEDs to a solid colour synchronously; safe from a fault handler (no RTOS)
-// use ONLY in emergency when system is presumed dead
+// Emergency (fault handler) helpers: synchronous, no RTOS. Use ONLY when the
+// system is presumed dead (e.g. hardfault). 
+// Whole strip one colour
 void led_fault_color(led_color_t color);
+// Per-LED: set individual pixels, then flush them with led_fault_show()
+void led_fault_pixel(uint16_t index, led_color_t color);
+void led_fault_show(void);
 
 #endif /* LED_H */

@@ -146,3 +146,11 @@ void led_fault_color(led_color_t color) {
     unpack(color, &r, &g, &b);
     ws2812_set_color_blocking(&g_ws, r, g, b);
 }
+
+void led_fault_pixel(uint16_t index, led_color_t color) {
+    uint8_t r, g, b;
+    unpack(color, &r, &g, &b);
+    ws2812_set_pixel(&g_ws, index, r, g, b);
+}
+
+void led_fault_show(void) { ws2812_show_blocking(&g_ws); }
