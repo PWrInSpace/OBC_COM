@@ -1,11 +1,15 @@
 #include "user_diskio.h"
 #include "stm32h5xx_hal.h"
+#include "logger.h"
 
 #define _USE_WRITE 1
 #define _USE_IOCTL 1
 
 extern SD_HandleTypeDef hsd1;
+extern Disk_drvTypeDef disk;
 static volatile DSTATUS Stat = STA_NOINIT;
+
+#define SD_IO_TIMEOUT_MS 250U
 
 DSTATUS USER_initialize (BYTE pdrv);
 DSTATUS USER_status (BYTE pdrv);
@@ -32,7 +36,13 @@ Diskio_drvTypeDef USER_Driver = {
 DSTATUS USER_initialize(BYTE pdrv) {
   (void)pdrv;
   Stat = STA_NOINIT;
-  if (HAL_SD_Init(&hsd1) == HAL_OK) {
+  HAL_NVIC_DisableIRQ(SDMMC1_IRQn);
+  HAL_SD_DeInit(&hsd1);
+  HAL_Delay(2);
+  HAL_StatusTypeDef st = HAL_SD_Init(&hsd1);
+  LOG_INFO("SD init: st=%d err=0x%lx state=%d", (int)st,
+           (unsigned long)HAL_SD_GetError(&hsd1), (int)hsd1.State);
+  if (st == HAL_OK) {
     Stat &= ~STA_NOINIT;
   }
   return Stat;
@@ -42,25 +52,34 @@ DSTATUS USER_status(BYTE pdrv) {
   return Stat;
 }
 
+void USER_diskio_invalidate(void) {
+  Stat = STA_NOINIT;
+  for (int i = 0; i < FF_VOLUMES; i++) {
+    disk.is_initialized[i] = 0;
+  }
+}
+
 DRESULT USER_read(BYTE pdrv, BYTE *buff, DWORD sector, UINT count) {
-  if (HAL_SD_ReadBlocks(&hsd1, buff, sector, count, 1000) == HAL_OK) {
+  if (HAL_SD_ReadBlocks(&hsd1, buff, sector, count, SD_IO_TIMEOUT_MS) == HAL_OK) {
     uint32_t timeout = HAL_GetTick();
     while (HAL_SD_GetCardState(&hsd1) != HAL_SD_CARD_TRANSFER) {
-      if ((HAL_GetTick() - timeout) > 1000) {
+      if ((HAL_GetTick() - timeout) > SD_IO_TIMEOUT_MS) {
         return RES_ERROR;
       }
     }
     return RES_OK;
   }
+  LOG_ERROR("SD read fail: sector=%lu err=0x%lx", (unsigned long)sector,
+            (unsigned long)HAL_SD_GetError(&hsd1));
   return RES_ERROR;
 }
 
 #if _USE_WRITE == 1
 DRESULT USER_write(BYTE pdrv, const BYTE *buff, DWORD sector, UINT count) {
-  if (HAL_SD_WriteBlocks(&hsd1, (uint8_t*)buff, sector, count, 1000) == HAL_OK) {
+  if (HAL_SD_WriteBlocks(&hsd1, (uint8_t*)buff, sector, count, SD_IO_TIMEOUT_MS) == HAL_OK) {
     uint32_t timeout = HAL_GetTick();
     while (HAL_SD_GetCardState(&hsd1) != HAL_SD_CARD_TRANSFER) {
-      if ((HAL_GetTick() - timeout) > 1000) {
+      if ((HAL_GetTick() - timeout) > SD_IO_TIMEOUT_MS) {
         return RES_ERROR;
       }
     }

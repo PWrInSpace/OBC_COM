@@ -73,7 +73,9 @@ static bool find_next_filename() {
         snprintf(filename, sizeof(filename), "%s/%s%03d%s", LOG_DIR, LOG_FILENAME_PREFIX, i, LOG_FILENAME_EXT);
 
         FILINFO fno;
-        if (f_stat(filename, &fno) == FR_NO_FILE) return true;
+        FRESULT res = f_stat(filename, &fno);
+        if (res == FR_NO_FILE) return true;
+        if (res != FR_OK) return false;
     }
 
     return false;
@@ -136,6 +138,7 @@ void sd_unmount(void) {
 
     f_close(&log_file);
     f_mount(NULL, SDPath, 0);
+    USER_diskio_invalidate();
 
     is_mounted = false;
     HAL_GPIO_WritePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin, GPIO_PIN_RESET);
@@ -287,8 +290,16 @@ static void sd_task_thread(void *arg) {
 
         osMutexAcquire(sd_mutex_id, osWaitForever);
         if (is_mounted) {
-            f_write(&log_file, double_buffer[idx], bytes_to_write[idx], &bw);
-            f_sync(&log_file);
+            FRESULT wr = f_write(&log_file, double_buffer[idx], bytes_to_write[idx], &bw);
+            if (wr == FR_OK) wr = f_sync(&log_file);
+            if (wr != FR_OK) {
+                LOG_ERROR("sd write fail res=%d, unmounting", (int)wr);
+                f_close(&log_file);
+                f_mount(NULL, SDPath, 0);
+                USER_diskio_invalidate();
+                is_mounted = false;
+                HAL_GPIO_WritePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin, GPIO_PIN_RESET);
+            }
         }
         osMutexRelease(sd_mutex_id);
 
@@ -304,6 +315,7 @@ static void sd_task_thread(void *arg) {
 static void sd_unmount_removed(void) {
     osMutexAcquire(sd_mutex_id, osWaitForever);
     f_mount(NULL, SDPath, 0);
+    USER_diskio_invalidate();
     is_mounted = false;
     HAL_GPIO_WritePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin, GPIO_PIN_RESET);
     osMutexRelease(sd_mutex_id);
