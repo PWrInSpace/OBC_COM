@@ -310,7 +310,7 @@ static void sd_task_thread(void *arg) {
 #ifdef SD_DETECT_PIN_OPERATIONAL
 
 #define SD_DETECT_EVENT_FLAG 0x01U
-#define SD_DEBOUNCE_MS 50U
+#define SD_DEBOUNCE_MS 300U
 
 static void sd_unmount_removed(void) {
     osMutexAcquire(sd_mutex_id, osWaitForever);
