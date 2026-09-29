@@ -299,6 +299,7 @@ static void sd_task_thread(void *arg) {
                 USER_diskio_invalidate();
                 is_mounted = false;
                 HAL_GPIO_WritePin(SD_STATUS_GPIO_Port, SD_STATUS_Pin, GPIO_PIN_RESET);
+                sound_play(SOUND_SD_UNMOUNT);  // signal glitch (monitor_task will retry mount)
             }
         }
         osMutexRelease(sd_mutex_id);
@@ -311,6 +312,7 @@ static void sd_task_thread(void *arg) {
 
 #define SD_DETECT_EVENT_FLAG 0x01U
 #define SD_DEBOUNCE_MS 300U
+#define SD_REMOUNT_POLL_MS 1000U
 
 static void sd_unmount_removed(void) {
     osMutexAcquire(sd_mutex_id, osWaitForever);
@@ -337,12 +339,18 @@ static void monitor_task_thread(void *arg) {
     sd_detect_sync(false);
 
     for(;;) {
-        osThreadFlagsWait(SD_DETECT_EVENT_FLAG, osFlagsWaitAny, osWaitForever);
+        uint32_t fl = osThreadFlagsWait(SD_DETECT_EVENT_FLAG, osFlagsWaitAny, pdMS_TO_TICKS(SD_REMOUNT_POLL_MS));
 
-        osDelay(SD_DEBOUNCE_MS);
-        osThreadFlagsClear(SD_DETECT_EVENT_FLAG);
-
-        sd_detect_sync(true);
+        if ((fl & osFlagsError) == 0U) {
+            osDelay(SD_DEBOUNCE_MS);
+            osThreadFlagsClear(SD_DETECT_EVENT_FLAG);
+            sd_detect_sync(true);
+        } else {
+            bool inserted = (HAL_GPIO_ReadPin(SD_DETECT_GPIO_Port, SD_DETECT_Pin) == GPIO_PIN_RESET);
+            if (inserted && !is_mounted) {
+                if (sd_mount()) sound_play(SOUND_SD_MOUNT);
+            }
+        }
     }
 }
 
