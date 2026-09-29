@@ -131,7 +131,7 @@ rfm95_err_t rfm95_write_reg(rfm95_t *rfm95, int16_t reg, int16_t val) {
       return RFM95_WRITE_ERR;
     }
 
-    return rfm95->_spi_transmit(in, out) == 1 ? RFM95_OK : RFM95_WRITE_ERR;
+    return rfm95->_spi_transmit(in, out) ? RFM95_OK : RFM95_WRITE_ERR;
 }
 
 uint8_t rfm95_read_reg(rfm95_t *rfm95, int16_t reg) {
