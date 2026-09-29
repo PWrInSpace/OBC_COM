@@ -15,6 +15,11 @@ void RFM95W_task_init(void);
 void rfm95_send_window(rfm95_t *radio, const uint8_t *payload, uint8_t payload_len, uint32_t window_ms);
 
 /**
+ * @brief Notify the RFM task from the DIO0 EXTI ISR (TxDone/RxDone).
+ */
+void rfm95_dio0_isr_notify(void);
+
+/**
  * @brief Queue a fully-formed frame for the GS to transmit in its next slot.
  * @return false if the queue is full.
  */
