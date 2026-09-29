@@ -128,7 +128,6 @@ static void gs_forward(void *ctx, const uint8_t *buf, size_t len) {
 static void apply_nvs_settings(rfm95_t *radio) {
     rfm95_sleep(radio);
     nvs_get_rfm95_settings(radio);
-    osDelay(50);
     rfm95w_config_init_param();
 }
 
@@ -139,9 +138,7 @@ void rfm95wTaskEntry(void *argument) {
     lora_txq_init(&s_txq);
 
     rfm95w_config_init();
-    osDelay(2000);
     nvs_get_rfm95_settings(radio);
-    osDelay(100);
     rfm95w_config_init_param();
 
     gs_radio_iface_t io = {
@@ -170,7 +167,6 @@ void rfm95wTaskEntry(void *argument) {
 void RFM95W_task_init(void) {
     rfm95wTaskHandle = osThreadNew(rfm95wTaskEntry, NULL, &rfm95wTask_attributes);
     if (rfm95wTaskHandle == NULL) {
-        osDelay(pdMS_TO_TICKS(3000));
         LOG_ERROR(TAG, "NO MEMORY TO CREATE TASK");
         return;
     }
