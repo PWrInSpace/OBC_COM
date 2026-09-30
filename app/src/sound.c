@@ -60,6 +60,16 @@ static const note_t snd_error[] = { {NOTE_A4, 200}, {REST, 60}, {NOTE_F4, 260} }
 static const note_t snd_warning[] = { {NOTE_B5, 110}, {REST, 70}, {NOTE_B5, 110} };
 static const note_t snd_sd_mount[] = { {NOTE_C6, 60}, {NOTE_G6, 90} };
 static const note_t snd_sd_unmount[] = { {NOTE_G6, 60}, {NOTE_C6, 90} };
+static const note_t snd_bluegej[] = {
+    {NOTE_B4, 105},  {REST, 15},
+    {NOTE_E5, 105},  {REST, 15},
+    {NOTE_B4, 105},  {REST, 15},
+    {NOTE_FS5, 105},
+    {REST, 210},
+    {NOTE_E5, 105},
+    {NOTE_B5, 210},
+    {NOTE_B5, 105}
+};
 static const note_t snd_rickroll[] = {
     {NOTE_A5, 150},  // Ne-
     {NOTE_B5, 150},  // -ver
@@ -214,6 +224,7 @@ static const melody_t g_melodies[SOUND_COUNT] = {
     [SOUND_WARNING] = MELODY(snd_warning),
     [SOUND_SD_MOUNT] = MELODY(snd_sd_mount),
     [SOUND_SD_UNMOUNT] = MELODY(snd_sd_unmount),
+    [SOUND_BLUEGEJ] = MELODY(snd_bluegej),
     [SOUND_RICKROLL] = MELODY(snd_rickroll),
     [SOUND_X_GON_GIVE_IT_TO_YA] = MELODY(snd_x_gon_give_it),
     [SOUND_DOOM_E1M1] = MELODY(snd_doom_e1m1),
