@@ -21,19 +21,23 @@ typedef struct {
 } note_t;
 
 #define REST     0u
+#define NOTE_C4  262u
 #define NOTE_DS4 311u   // D#4
 #define NOTE_F4  349u
+#define NOTE_G4  392u
 #define NOTE_FS4 370u   // F#4
 #define NOTE_GS4 415u   // G#4
 #define NOTE_A4  440u
 #define NOTE_AS4 466u   // A#4
-// #define NOTE_C5  523u
-// #define NOTE_D5  587u
+#define NOTE_B4  494u
+#define NOTE_C5  523u
+#define NOTE_CS5 554u
+#define NOTE_D5  587u
 #define NOTE_DS5 622u   // D#5
-// #define NOTE_E5  659u
+#define NOTE_E5  659u
 // #define NOTE_F5  698u
 #define NOTE_FS5 740u   // F#5
-// #define NOTE_G5  784u
+#define NOTE_G5  784u
 #define NOTE_GS5 831u   // G#5
 #define NOTE_A5  880u
 #define NOTE_AS5 932u   // A#5
@@ -151,6 +155,50 @@ static const note_t snd_x_gon_give_it[] = {
     {NOTE_DS5, 140}, {REST, 30},
     {NOTE_DS5, 140}, {REST, 30}
 };
+static const note_t snd_doom_e1m1[] = {
+    {NOTE_C4, 70}, {REST, 70}, {NOTE_C4, 140}, {NOTE_C5, 140},
+    {NOTE_C4, 70}, {REST, 70}, {NOTE_C4, 140}, {NOTE_AS4, 140},
+    {NOTE_C4, 70}, {REST, 70}, {NOTE_C4, 140}, {NOTE_GS4, 140},
+    {NOTE_C4, 70}, {REST, 70}, {NOTE_C4, 140}, {NOTE_FS4, 140},
+    {NOTE_C4, 70}, {REST, 70}, {NOTE_C4, 140}, {NOTE_G4, 140}, {NOTE_GS4, 140},
+    
+    {NOTE_C4, 70}, {REST, 70}, {NOTE_C4, 140}, {NOTE_C5, 140},
+    {NOTE_C4, 70}, {REST, 70}, {NOTE_C4, 140}, {NOTE_AS4, 140},
+    {NOTE_C4, 70}, {REST, 70}, {NOTE_C4, 140}, {NOTE_GS4, 140},
+    {NOTE_C4, 70}, {REST, 70}, {NOTE_C4, 140}, {NOTE_FS4, 570}
+};
+static const note_t snd_brainpower[] = {
+    {NOTE_E5, 88}, {REST, 88},
+    {NOTE_FS5, 88}, {REST, 88},
+    {NOTE_FS5, 44}, {REST, 44}, {NOTE_FS5, 44}, {REST, 44},
+    {NOTE_FS5, 44}, {REST, 44}, {NOTE_FS5, 44}, {REST, 44},
+    {NOTE_FS5, 44}, {REST, 44}, {NOTE_FS5, 44}, {REST, 44},
+    {NOTE_FS5, 44}, {REST, 44}, {NOTE_FS5, 44}, {REST, 44},
+    {NOTE_FS5, 44}, {REST, 44}, {NOTE_FS5, 44}, {REST, 44},
+    {NOTE_FS5, 44}, {REST, 44}, {NOTE_FS5, 44}, {REST, 44},
+    {NOTE_E5, 44}, {REST, 44}, {NOTE_E5, 44}, {REST, 44},
+    {NOTE_E5, 44}, {REST, 44}, {NOTE_E5, 44}, {REST, 44},
+    {NOTE_B4, 88}, {REST, 88},
+    {NOTE_CS5, 88}, {REST, 88},
+    {NOTE_A4, 88}, {REST, 88},
+    {NOTE_FS5, 88}, {REST, 88},
+    {NOTE_FS5, 88}, {REST, 88},
+    {NOTE_E5, 88}, {REST, 88},
+    {NOTE_FS5, 44}, {REST, 44}, {NOTE_FS5, 44}, {REST, 44},
+    {NOTE_FS5, 44}, {REST, 44}, {NOTE_FS5, 44}, {REST, 44},
+    {NOTE_FS5, 44}, {REST, 44}, {NOTE_FS5, 44}, {REST, 44},
+    {NOTE_FS5, 44}, {REST, 44}, {NOTE_FS5, 44}, {REST, 44},
+    {NOTE_FS5, 44}, {REST, 44}, {NOTE_FS5, 44}, {REST, 44},
+    {NOTE_FS5, 44}, {REST, 44}, {NOTE_FS5, 44}, {REST, 44},
+    {NOTE_D5, 44}, {REST, 44}, {NOTE_D5, 44}, {REST, 44},
+    {NOTE_D5, 44}, {REST, 44}, {NOTE_D5, 44}, {REST, 44},
+    {NOTE_FS5, 88}, {REST, 88},
+    {NOTE_A5, 88}, {REST, 88},
+    {NOTE_GS5, 88}, {REST, 88},
+    {NOTE_A5, 88}, {REST, 88},
+    {NOTE_GS5, 88}, {REST, 88},
+    {NOTE_CS5, 88}
+};
 
 typedef struct {
     const note_t *seq;
@@ -167,7 +215,9 @@ static const melody_t g_melodies[SOUND_COUNT] = {
     [SOUND_SD_MOUNT] = MELODY(snd_sd_mount),
     [SOUND_SD_UNMOUNT] = MELODY(snd_sd_unmount),
     [SOUND_RICKROLL] = MELODY(snd_rickroll),
-    [SOUND_X_GON_GIVE_IT_TO_YA] = MELODY(snd_x_gon_give_it)
+    [SOUND_X_GON_GIVE_IT_TO_YA] = MELODY(snd_x_gon_give_it),
+    [SOUND_DOOM_E1M1] = MELODY(snd_doom_e1m1),
+    [SOUND_BRAINPOWER] = MELODY(snd_brainpower)
 };
 
 static buzzer_t g_buzzer;

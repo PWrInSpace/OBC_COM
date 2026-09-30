@@ -15,6 +15,8 @@ typedef enum {
     SOUND_SD_UNMOUNT,
     SOUND_RICKROLL,
     SOUND_X_GON_GIVE_IT_TO_YA,
+    SOUND_DOOM_E1M1,
+    SOUND_BRAINPOWER,
     SOUND_COUNT
 } sound_id_t;
 
