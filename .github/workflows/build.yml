@@ -1,0 +1,34 @@
+name: STM32 Build CI
+
+# Kiedy ma się uruchamiać? Przy każdym pushu i pull requeście na gałąź main/master
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Używamy darmowego serwera z Linuxem Ubuntu
+
+    steps:
+    # 1. Pobranie Twojego kodu z repozytorium
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # 2. Instalacja narzędzi: kompilatora ARM, CMake i Ninja (szybszy niż Make)
+    - name: Install ARM GCC Toolchain & Build Tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc-arm-none-eabi ninja-build cmake
+
+    # 3. Konfiguracja CMake (przygotowanie plików do budowania)
+    - name: Configure CMake
+      run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+      # UWAGA: Jeśli Twój projekt wymaga pliku toolchaina (np. wygenerowanego przez CubeMX), 
+      # zmień tę linijkę na: 
+      # run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=ścieżka/do/toolchain.cmake
+
+    # 4. Właściwa kompilacja (tworzenie plików .elf / .bin / .hex)
+    - name: Build project
+      run: cmake --build build
