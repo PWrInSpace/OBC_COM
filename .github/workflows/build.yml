@@ -42,7 +42,5 @@ jobs:
 
     # Przykładowe sprawdzenie formatowania (wymaga pliku .clang-format w repozytorium)
     - name: Run clang-format check
-      # Znajduje wszystkie pliki .c i .h (oprócz folderu build i bibliotek) i sprawdza ich format
-      # Zmień ścieżki (Core/Src, Core/Inc), jeśli Twoje foldery z kodem nazywają się inaczej
       run: |
-        find Core/Src Core/Inc modules -name '*.c' -o -name '*.h' | xargs clang-format --dry-run --Wer
+        find Core/Src Core/Inc modules -name '*.c' -o -name '*.h' | xargs clang-format --dry-run --Werror
