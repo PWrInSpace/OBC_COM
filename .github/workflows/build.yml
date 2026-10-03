@@ -1,34 +1,49 @@
 name: STM32 Build CI
 
-# Kiedy ma się uruchamiać? Przy każdym pushu i pull requeście na gałąź main/master
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ "main", "master", "dev/*" ] # Dodane dev/* aby łapało Twoją obecną gałąź
   pull_request:
     branches: [ "main", "master" ]
 
 jobs:
+  # ==========================================
+  # ZADANIE 1: KOMPILACJA (GCC ARM)
+  # ==========================================
   build:
-    runs-on: ubuntu-latest # Używamy darmowego serwera z Linuxem Ubuntu
+    runs-on: ubuntu-latest 
 
     steps:
-    # 1. Pobranie Twojego kodu z repozytorium
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # 2. Instalacja narzędzi: kompilatora ARM, CMake i Ninja (szybszy niż Make)
     - name: Install ARM GCC Toolchain & Build Tools
       run: |
         sudo apt-get update
         sudo apt-get install -y gcc-arm-none-eabi ninja-build cmake
 
-    # 3. Konfiguracja CMake (przygotowanie plików do budowania)
     - name: Configure CMake
-      #run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
-      # UWAGA: Jeśli Twój projekt wymaga pliku toolchaina (np. wygenerowanego przez CubeMX), 
-      # zmień tę linijkę na: 
-       run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=ścieżka/do/toolchain.cmake
+      run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=cmake/gcc-arm-none-eabi.cmake
 
-    # 4. Właściwa kompilacja (tworzenie plików .elf / .bin / .hex)
     - name: Build project
       run: cmake --build build
+
+  # ==========================================
+  # ZADANIE 2: ANALIZA KODU (Clang)
+  # ==========================================
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Clang
+      uses: egor-tensin/setup-clang@v2
+      with:
+        version: 17
+        platform: x64
+
+    - name: Run clang-format check
+      run: |
+        find Core/Src Core/Inc modules -type f \( -name '*.c' -o -name '*.h' \) | grep -v -E "system_stm32|stm32h5xx_it|stm32h5xx_hal_msp" | xargs clang-format --dry-run --Werror
