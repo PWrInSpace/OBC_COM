@@ -2,6 +2,29 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Format Code",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build", "build", "--target", "format"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build", "build"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": ["Format Code"],
+            "problemMatcher": ["$gcc"]
+        },
+        {
             "label": "Flash DFU",
             "type": "shell",
             "command": "STM32_Programmer_CLI",
@@ -23,28 +46,10 @@
                 ]
             },
             "group": {
-                "kind": "build",
+                "kind": "test",
                 "isDefault": true
-            }
-        },
-        {
-            "label": "Serial Monitor",
-            "type": "shell",
-            "linux": {
-                "command": "screen",
-                "args": ["/dev/ttyACM0", "115200"]
             },
-            "windows": {
-                "command": "powershell",
-                "args": [
-                    "-Command",
-                    "$port= new-Object System.IO.Ports.SerialPort COM7,115200,None,8,one; $port.Open(); try { while($port.IsOpen) { Write-Host -NoNewline $port.ReadExisting() } } finally { $port.Close() }"
-                ]
-            },
-            "presentation": {
-                "reveal": "always",
-                "panel": "new"
-            }
+            "problemMatcher": []
         }
     ]
 }

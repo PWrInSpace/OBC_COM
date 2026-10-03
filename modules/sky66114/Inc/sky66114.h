@@ -1,55 +1,61 @@
 #pragma once
 
-#include <stdint.h>
 #include "main.h"
+#include <stdint.h>
 
 #define SKY66114_MODULES_COUNT 4
 
 #ifndef SHARED_CSD_GPIO_Port
-#define SHARED_CSD_GPIO_Port  ANT1_EN_GPIO_Port //tmp
-#define SHARED_CSD_Pin        ANT1_EN_Pin //tmp
-#define SHARED_CPS_GPIO_Port  GPIOB
-#define SHARED_CPS_Pin        GPIO_PIN_3
-#define SHARED_CRX_GPIO_Port  GPIOD
-#define SHARED_CRX_Pin        GPIO_PIN_3
-#define SHARED_CTX_GPIO_Port  GPIOD
-#define SHARED_CTX_Pin        GPIO_PIN_7
-#define SHARED_CHL_GPIO_Port  GPIOD
-#define SHARED_CHL_Pin        GPIO_PIN_4
+#define SHARED_CSD_GPIO_Port ANT1_EN_GPIO_Port // tmp
+#define SHARED_CSD_Pin ANT1_EN_Pin             // tmp
+#define SHARED_CPS_GPIO_Port GPIOB
+#define SHARED_CPS_Pin GPIO_PIN_3
+#define SHARED_CRX_GPIO_Port GPIOD
+#define SHARED_CRX_Pin GPIO_PIN_3
+#define SHARED_CTX_GPIO_Port GPIOD
+#define SHARED_CTX_Pin GPIO_PIN_7
+#define SHARED_CHL_GPIO_Port GPIOD
+#define SHARED_CHL_Pin GPIO_PIN_4
 
-#define ANT1_EN_GPIO_Port     GPIOB
-#define ANT1_EN_Pin           GPIO_PIN_4
-#define ANT2_EN_GPIO_Port     GPIOE
-#define ANT2_EN_Pin           GPIO_PIN_3
-#define ANT3_EN_GPIO_Port     GPIOD
-#define ANT3_EN_Pin           GPIO_PIN_11
-#define ANT4_EN_GPIO_Port     GPIOE
-#define ANT4_EN_Pin           GPIO_PIN_13
+#define ANT1_EN_GPIO_Port GPIOB
+#define ANT1_EN_Pin GPIO_PIN_4
+#define ANT2_EN_GPIO_Port GPIOE
+#define ANT2_EN_Pin GPIO_PIN_3
+#define ANT3_EN_GPIO_Port GPIOD
+#define ANT3_EN_Pin GPIO_PIN_11
+#define ANT4_EN_GPIO_Port GPIOE
+#define ANT4_EN_Pin GPIO_PIN_13
 #endif
 
 typedef enum {
-    SKY66114_MODE_SLEEP_0 = 0,
-    SKY66114_MODE_RX_LNA  = 1,
-    SKY66114_MODE_TX_HIGH = 2,
-    SKY66114_MODE_TX_LOW  = 3,
-    SKY66114_MODE_RX_BYP  = 4,
-    SKY66114_MODE_TX_BYP  = 5,
-    SKY66114_MODE_SLEEP_6 = 6
+  SKY66114_MODE_SLEEP_0 = 0,
+  SKY66114_MODE_RX_LNA = 1,
+  SKY66114_MODE_TX_HIGH = 2,
+  SKY66114_MODE_TX_LOW = 3,
+  SKY66114_MODE_RX_BYP = 4,
+  SKY66114_MODE_TX_BYP = 5,
+  SKY66114_MODE_SLEEP_6 = 6
 } sky66114_mode_t;
 
 typedef enum {
-    SKY66114_OK = 0,
-    SKY66114_ERROR = 1,
+  SKY66114_OK = 0,
+  SKY66114_ERROR = 1,
 } sky66114_error_t;
 
 typedef struct {
-    GPIO_TypeDef *csd_port; uint16_t csd_pin;
-    GPIO_TypeDef *cps_port; uint16_t cps_pin;
-    GPIO_TypeDef *crx_port; uint16_t crx_pin;
-    GPIO_TypeDef *ctx_port; uint16_t ctx_pin;
-    GPIO_TypeDef *chl_port; uint16_t chl_pin;
+  GPIO_TypeDef *csd_port;
+  uint16_t csd_pin;
+  GPIO_TypeDef *cps_port;
+  uint16_t cps_pin;
+  GPIO_TypeDef *crx_port;
+  uint16_t crx_pin;
+  GPIO_TypeDef *ctx_port;
+  uint16_t ctx_pin;
+  GPIO_TypeDef *chl_port;
+  uint16_t chl_pin;
 
-    GPIO_TypeDef *enable_port; uint16_t enable_pin;
+  GPIO_TypeDef *enable_port;
+  uint16_t enable_pin;
 } sky66114_t;
 
 extern sky66114_t sky66114_default_config;

@@ -10,8 +10,7 @@ PCD_HandleTypeDef hpcd_USB_DRD_FS;
 
 /* USB init function */
 
-void MX_USB_PCD_Init(void)
-{
+void MX_USB_PCD_Init(void) {
 
   /* USER CODE BEGIN USB_Init 0 */
   /* USER CODE END USB_Init 0 */
@@ -29,30 +28,25 @@ void MX_USB_PCD_Init(void)
   hpcd_USB_DRD_FS.Init.vbus_sensing_enable = DISABLE;
   hpcd_USB_DRD_FS.Init.bulk_doublebuffer_enable = DISABLE;
   hpcd_USB_DRD_FS.Init.iso_singlebuffer_enable = DISABLE;
-  if (HAL_PCD_Init(&hpcd_USB_DRD_FS) != HAL_OK)
-  {
+  if (HAL_PCD_Init(&hpcd_USB_DRD_FS) != HAL_OK) {
     Error_Handler();
   }
   /* USER CODE BEGIN USB_Init 2 */
   /* USER CODE END USB_Init 2 */
-
 }
 
-void HAL_PCD_MspInit(PCD_HandleTypeDef* pcdHandle)
-{
+void HAL_PCD_MspInit(PCD_HandleTypeDef *pcdHandle) {
 
   RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
-  if(pcdHandle->Instance==USB_DRD_FS)
-  {
-  /* USER CODE BEGIN USB_DRD_FS_MspInit 0 */
-  /* USER CODE END USB_DRD_FS_MspInit 0 */
+  if (pcdHandle->Instance == USB_DRD_FS) {
+    /* USER CODE BEGIN USB_DRD_FS_MspInit 0 */
+    /* USER CODE END USB_DRD_FS_MspInit 0 */
 
-  /** Initializes the peripherals clock
-  */
+    /** Initializes the peripherals clock
+     */
     PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USB;
     PeriphClkInitStruct.UsbClockSelection = RCC_USBCLKSOURCE_HSI48;
-    if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
-    {
+    if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK) {
       Error_Handler();
     }
 
@@ -64,25 +58,23 @@ void HAL_PCD_MspInit(PCD_HandleTypeDef* pcdHandle)
     /* USB_DRD_FS interrupt Init */
     HAL_NVIC_SetPriority(USB_DRD_FS_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(USB_DRD_FS_IRQn);
-  /* USER CODE BEGIN USB_DRD_FS_MspInit 1 */
-  /* USER CODE END USB_DRD_FS_MspInit 1 */
+    /* USER CODE BEGIN USB_DRD_FS_MspInit 1 */
+    /* USER CODE END USB_DRD_FS_MspInit 1 */
   }
 }
 
-void HAL_PCD_MspDeInit(PCD_HandleTypeDef* pcdHandle)
-{
+void HAL_PCD_MspDeInit(PCD_HandleTypeDef *pcdHandle) {
 
-  if(pcdHandle->Instance==USB_DRD_FS)
-  {
-  /* USER CODE BEGIN USB_DRD_FS_MspDeInit 0 */
-  /* USER CODE END USB_DRD_FS_MspDeInit 0 */
+  if (pcdHandle->Instance == USB_DRD_FS) {
+    /* USER CODE BEGIN USB_DRD_FS_MspDeInit 0 */
+    /* USER CODE END USB_DRD_FS_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_USB_CLK_DISABLE();
 
     /* USB_DRD_FS interrupt Deinit */
     HAL_NVIC_DisableIRQ(USB_DRD_FS_IRQn);
-  /* USER CODE BEGIN USB_DRD_FS_MspDeInit 1 */
-  /* USER CODE END USB_DRD_FS_MspDeInit 1 */
+    /* USER CODE BEGIN USB_DRD_FS_MspDeInit 1 */
+    /* USER CODE END USB_DRD_FS_MspDeInit 1 */
   }
 }
 

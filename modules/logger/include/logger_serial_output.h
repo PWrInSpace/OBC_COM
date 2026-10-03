@@ -12,4 +12,4 @@
 void logger_serial_init(void);
 
 /* Callback dla serial output - implementacja zależy od interfejsu */
-void logger_serial_output_callback(const char* data, uint16_t len);
+void logger_serial_output_callback(const char *data, uint16_t len);

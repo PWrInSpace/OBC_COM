@@ -1,11 +1,11 @@
 // Copyright 2023 PWr in Space, Krzysztof Gliwiński
 #pragma once
 
+#include "usb_config.h"
+#include <assert.h>
+#include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
-#include <stdbool.h>
-#include <assert.h>
-#include "usb_config.h"
 
 /*
  * IRQ masks
@@ -104,7 +104,6 @@ typedef enum {
   RX_MODE,
 } rfm95_mode_t;
 
-
 typedef enum {
   RFM95_IRQ_D0_RXDONE = 0x00,
   RFM95_IRQ_D0_TXDONE = 0x01,
@@ -156,21 +155,21 @@ typedef bool (*rfm95_GPIO_set_level)(uint16_t _gpio_num, uint8_t _level);
 typedef void (*rfm95_log)(const char *info);
 
 typedef struct {
-	
+
   uint8_t state;
-	uint64_t frequency;
-	uint8_t power;
-	uint8_t LoRa_Rate;
-	uint8_t LoRa_BW;
+  uint64_t frequency;
+  uint8_t power;
+  uint8_t LoRa_Rate;
+  uint8_t LoRa_BW;
   bool crc;
   int16_t CR;
   int16_t sync;
-	uint8_t packetLength;
+  uint8_t packetLength;
 
-	uint8_t rxBuffer[256];
-	uint8_t readBytes;
-	int16_t last_pkt_RSSI;
-	float last_pkt_SNR;
+  uint8_t rxBuffer[256];
+  uint8_t readBytes;
+  int16_t last_pkt_RSSI;
+  float last_pkt_SNR;
 } RFM95_param_t;
 
 typedef struct {
@@ -186,7 +185,6 @@ typedef struct {
   RFM95_param_t *param;
 
 } rfm95_t;
-
 
 /*!
  * \brief Perform hardware initialization.
@@ -280,7 +278,7 @@ int32_t rfm95_get_frequency(rfm95_t *rfm95);
  * \returns RFM95_OK if operation successful, RFM95_CONFIG_ERR otherwise
  */
 rfm95_err_t rfm95_set_spreading_factor(rfm95_t *rfm95,
-                                     rfm95_spreading_factor_t sf);
+                                       rfm95_spreading_factor_t sf);
 
 /*!
  * \brief Set bandwidth (bit rate)
@@ -327,7 +325,7 @@ rfm95_err_t rfm95_disable_crc(rfm95_t *rfm95);
  * RFM95_WRITE_ERR otherwise
  */
 rfm95_err_t rfm95_fill_fifo_buf_to_send(rfm95_t *rfm95, uint8_t *buf,
-                                      int16_t size);
+                                        int16_t size);
 
 /*!
  * \brief Writes the REG_OP_MODE to mode TX

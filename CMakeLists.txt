@@ -116,3 +116,20 @@ if(UNIX AND NOT APPLE)
         COMMENT "Linux Post-Build: Generating .bin and .hex files from ELF"
     )
 endif()
+
+file(GLOB_RECURSE FORMAT_SOURCES
+    "Core/Src/*.c"
+    "Core/Inc/*.h"
+    "modules/*.c"
+    "modules/*.h"
+)
+
+# 2. Usuń z listy pliki wygenerowane przez CubeMX
+list(FILTER FORMAT_SOURCES EXCLUDE REGEX "system_stm32.*|stm32h5xx_it.*|stm32h5xx_hal_msp.*")
+
+# 3. Utwórz cel wywołujący clang-format
+add_custom_target(format
+    COMMAND clang-format -i ${FORMAT_SOURCES}
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    COMMENT "Formatowanie plików źródłowych za pomocą clang-format..."
+)
