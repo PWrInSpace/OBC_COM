@@ -6,6 +6,7 @@ Core/Inc/system_stm32*.h
 Core/Src/stm32*_it.c
 Core/Inc/stm32*_it.h
 Core/Src/stm32*_hal_msp.c
+Core/Inc/stm32*_hal_conf.h   <-- DODAJ TO TUTAJ
 
 # Ignoruj cały folder Drivers (HAL / CMSIS), gdyby narzędzie tam zajrzało
 Drivers/**
