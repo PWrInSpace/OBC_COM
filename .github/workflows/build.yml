@@ -24,10 +24,10 @@ jobs:
 
     # 3. Konfiguracja CMake (przygotowanie plików do budowania)
     - name: Configure CMake
-      run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+      #run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
       # UWAGA: Jeśli Twój projekt wymaga pliku toolchaina (np. wygenerowanego przez CubeMX), 
       # zmień tę linijkę na: 
-      # run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=ścieżka/do/toolchain.cmake
+       run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=ścieżka/do/toolchain.cmake
 
     # 4. Właściwa kompilacja (tworzenie plików .elf / .bin / .hex)
     - name: Build project
