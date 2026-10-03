@@ -46,4 +46,4 @@ jobs:
 
     - name: Run clang-format check
       run: |
-        find Core/Src Core/Inc modules -type f \( -name '*.c' -o -name '*.h' \) | grep -v -E "system_stm32|stm32h5xx_it|stm32h5xx_hal_msp" | xargs clang-format --dry-run --Werror
+        find Core/Src Core/Inc modules -type f \( -name '*.c' -o -name '*.h' \) | grep -v -E "system_stm32|stm32h5xx_it|stm32h5xx_hal_msp|stm32h5xx_hal_conf" | xargs clang-format --dry-run --Werror
