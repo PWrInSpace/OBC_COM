@@ -6,7 +6,7 @@ var searchData=
   ['nb_5fmax_5fwritten_5felements_3',['NB_MAX_WRITTEN_ELEMENTS',['../group__Private__Other__Constants.html#ga3ea15479b3f99af1bfe7db6f1ef3e14b',1,'eeprom_emul.h']]],
   ['nb_5fof_5fvariables_4',['NB_OF_VARIABLES',['../group__Exported__Configuration__Constants.html#ga133aca0c2df2a223be79142fff44bd88',1,'eeprom_emul_conf.h']]],
   ['nbsteps_5',['NbSteps',['../structTickTime__t.html#ab2881861c5667ae38f19d6f56e9960b7',1,'TickTime_t']]],
-  ['new_20commands_6',['🛠 Developer Guide: Adding New Commands',['../cmd_module.html#autotoc_md9',1,'']]],
+  ['new_20commands_6',['🛠 Developer Guide: Adding New Commands',['../cmd_module.html#autotoc_md14',1,'']]],
   ['next_5findex_7',['next_index',['../lora__tx__queue_8c.html#a94059b396c7488833c7050b56acfc2dc',1,'lora_tx_queue.c']]],
   ['nmi_5fhandler_8',['nmi_handler',['../stm32h5xx__it_8c.html#a6ad7a5e3ee69cb6db6a6b9111ba898bc',1,'NMI_Handler(void):&#160;stm32h5xx_it.c'],['../stm32h5xx__it_8h.html#a6ad7a5e3ee69cb6db6a6b9111ba898bc',1,'NMI_Handler(void):&#160;stm32h5xx_it.c']]],
   ['node_5fgpdma1_5fchannel6_9',['node_gpdma1_channel6',['../usart_8c.html#a14efdb6f0ffd6862d0ce711f62d261d4',1,'Node_GPDMA1_Channel6:&#160;usart.c'],['../stm32h5xx__it_8c.html#a14efdb6f0ffd6862d0ce711f62d261d4',1,'Node_GPDMA1_Channel6:&#160;usart.c']]],

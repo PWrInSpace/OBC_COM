@@ -102,15 +102,15 @@ $(document).ready(function(){initNavTree('main_8h.html',''); initResizable(); })
 <p>: Header for <a class="el" href="main_8c.html" title=": Main program body">main.c</a> file.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;stm32h5xx_hal.h&quot;</code><br />
+<code>#include &quot;stm32h5xx_ll_crc.h&quot;</code><br />
 <code>#include &quot;stm32h5xx_ll_bus.h&quot;</code><br />
 <code>#include &quot;stm32h5xx_ll_cortex.h&quot;</code><br />
-<code>#include &quot;stm32h5xx_ll_crc.h&quot;</code><br />
-<code>#include &quot;stm32h5xx_ll_dma.h&quot;</code><br />
-<code>#include &quot;stm32h5xx_ll_gpio.h&quot;</code><br />
-<code>#include &quot;stm32h5xx_ll_pwr.h&quot;</code><br />
 <code>#include &quot;stm32h5xx_ll_rcc.h&quot;</code><br />
 <code>#include &quot;stm32h5xx_ll_system.h&quot;</code><br />
 <code>#include &quot;stm32h5xx_ll_utils.h&quot;</code><br />
+<code>#include &quot;stm32h5xx_ll_pwr.h&quot;</code><br />
+<code>#include &quot;stm32h5xx_ll_gpio.h&quot;</code><br />
+<code>#include &quot;stm32h5xx_ll_dma.h&quot;</code><br />
 <code>#include &quot;stm32h5xx_ll_exti.h&quot;</code><br />
 <code>#include &quot;FreeRTOS.h&quot;</code><br />
 <code>#include &quot;queue.h&quot;</code><br />
@@ -141,15 +141,15 @@ Macros</h2></td></tr>
 <tr class="separator:aa2ac54564b3514084afd2c5dafe9d232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b20d41d6252e9871430c242cb1a56e7" id="r_a6b20d41d6252e9871430c242cb1a56e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>&#160;&#160;&#160;512</td></tr>
 <tr class="separator:a6b20d41d6252e9871430c242cb1a56e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0faca5fd33e0f8bb20eb73cebb4a9005" id="r_a0faca5fd33e0f8bb20eb73cebb4a9005"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a0faca5fd33e0f8bb20eb73cebb4a9005">USB_EVENT_BIT</a>&#160;&#160;&#160;(1 &lt;&lt; 2)</td></tr>
+<tr class="memitem:a0faca5fd33e0f8bb20eb73cebb4a9005" id="r_a0faca5fd33e0f8bb20eb73cebb4a9005"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a0faca5fd33e0f8bb20eb73cebb4a9005">USB_EVENT_BIT</a>&#160;&#160;&#160;( 1 &lt;&lt; 2 )</td></tr>
 <tr class="separator:a0faca5fd33e0f8bb20eb73cebb4a9005"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46bf56a22aa28010d1823652b85f8ad6" id="r_a46bf56a22aa28010d1823652b85f8ad6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a46bf56a22aa28010d1823652b85f8ad6">USART_LORA_EVENT_BIT</a>&#160;&#160;&#160;(1 &lt;&lt; 3)</td></tr>
+<tr class="memitem:a46bf56a22aa28010d1823652b85f8ad6" id="r_a46bf56a22aa28010d1823652b85f8ad6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a46bf56a22aa28010d1823652b85f8ad6">USART_LORA_EVENT_BIT</a>&#160;&#160;&#160;( 1 &lt;&lt; 3 )</td></tr>
 <tr class="separator:a46bf56a22aa28010d1823652b85f8ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46bf56a22aa28010d1823652b85f8ad6" id="r_a46bf56a22aa28010d1823652b85f8ad6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a46bf56a22aa28010d1823652b85f8ad6">USART_LORA_EVENT_BIT</a>&#160;&#160;&#160;(1 &lt;&lt; 3)</td></tr>
+<tr class="memitem:a46bf56a22aa28010d1823652b85f8ad6" id="r_a46bf56a22aa28010d1823652b85f8ad6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a46bf56a22aa28010d1823652b85f8ad6">USART_LORA_EVENT_BIT</a>&#160;&#160;&#160;( 1 &lt;&lt; 3 )</td></tr>
 <tr class="separator:a46bf56a22aa28010d1823652b85f8ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b60b900af3dfd199bd747e1a1a4aba5" id="r_a7b60b900af3dfd199bd747e1a1a4aba5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a7b60b900af3dfd199bd747e1a1a4aba5">LORA_TX_EVENT_BIT</a>&#160;&#160;&#160;(1 &lt;&lt; 4)</td></tr>
+<tr class="memitem:a7b60b900af3dfd199bd747e1a1a4aba5" id="r_a7b60b900af3dfd199bd747e1a1a4aba5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a7b60b900af3dfd199bd747e1a1a4aba5">LORA_TX_EVENT_BIT</a>&#160;&#160;&#160;( 1 &lt;&lt; 4 )</td></tr>
 <tr class="separator:a7b60b900af3dfd199bd747e1a1a4aba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b0cbc8dd94e5aee69ae2ff4d034a1ff" id="r_a1b0cbc8dd94e5aee69ae2ff4d034a1ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a1b0cbc8dd94e5aee69ae2ff4d034a1ff">SETTINGS_CHANGE_EVENT_BIT</a>&#160;&#160;&#160;(1 &lt;&lt; 5)</td></tr>
+<tr class="memitem:a1b0cbc8dd94e5aee69ae2ff4d034a1ff" id="r_a1b0cbc8dd94e5aee69ae2ff4d034a1ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a1b0cbc8dd94e5aee69ae2ff4d034a1ff">SETTINGS_CHANGE_EVENT_BIT</a>&#160;&#160;&#160;( 1 &lt;&lt; 5 )</td></tr>
 <tr class="separator:a1b0cbc8dd94e5aee69ae2ff4d034a1ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad80eddb2cffe614202fe1752aa28ce72" id="r_ad80eddb2cffe614202fe1752aa28ce72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#ad80eddb2cffe614202fe1752aa28ce72">SCREEN_SCK_Pin</a>&#160;&#160;&#160;GPIO_PIN_2</td></tr>
 <tr class="separator:ad80eddb2cffe614202fe1752aa28ce72"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -919,7 +919,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LORA_TX_EVENT_BIT&#160;&#160;&#160;(1 &lt;&lt; 4)</td>
+          <td class="memname">#define LORA_TX_EVENT_BIT&#160;&#160;&#160;( 1 &lt;&lt; 4 )</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1703,7 +1703,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SETTINGS_CHANGE_EVENT_BIT&#160;&#160;&#160;(1 &lt;&lt; 5)</td>
+          <td class="memname">#define SETTINGS_CHANGE_EVENT_BIT&#160;&#160;&#160;( 1 &lt;&lt; 5 )</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2103,7 +2103,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define USART_LORA_EVENT_BIT&#160;&#160;&#160;(1 &lt;&lt; 3)</td>
+          <td class="memname">#define USART_LORA_EVENT_BIT&#160;&#160;&#160;( 1 &lt;&lt; 3 )</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2119,7 +2119,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define USART_LORA_EVENT_BIT&#160;&#160;&#160;(1 &lt;&lt; 3)</td>
+          <td class="memname">#define USART_LORA_EVENT_BIT&#160;&#160;&#160;( 1 &lt;&lt; 3 )</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2135,7 +2135,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define USB_EVENT_BIT&#160;&#160;&#160;(1 &lt;&lt; 2)</td>
+          <td class="memname">#define USB_EVENT_BIT&#160;&#160;&#160;( 1 &lt;&lt; 2 )</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2197,9 +2197,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00080">80</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00081">81</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00089">BufferPool_UART_Start()</a>, <a class="el" href="cmd__task_8c_source.html#l00036">cmd_task()</a>, and <a class="el" href="main_8c_source.html#l00166">HAL_UARTEx_RxEventCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00089">BufferPool_UART_Start()</a>, <a class="el" href="cmd__task_8c_source.html#l00036">cmd_task()</a>, and <a class="el" href="main_8c_source.html#l00164">HAL_UARTEx_RxEventCallback()</a>.</p>
 
 </div>
 </div>
@@ -2249,7 +2249,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00063">63</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="usbd__cdc__if_8c_source.html#l00224">CDC_Receive_FS()</a>, <a class="el" href="cmd__task_8c_source.html#l00036">cmd_task()</a>, <a class="el" href="main_8c_source.html#l00228">main()</a>, and <a class="el" href="main_8c_source.html#l00068">USB_StreamBuffer_Init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="usbd__cdc__if_8c_source.html#l00236">CDC_Receive_FS()</a>, <a class="el" href="cmd__task_8c_source.html#l00036">cmd_task()</a>, <a class="el" href="main_8c_source.html#l00230">main()</a>, and <a class="el" href="main_8c_source.html#l00068">USB_StreamBuffer_Init()</a>.</p>
 
 </div>
 </div>

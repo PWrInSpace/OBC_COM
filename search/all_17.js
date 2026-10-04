@@ -11,6 +11,6 @@ var searchData=
   ['verifypagesfullwritevariable_8',['VerifyPagesFullWriteVariable',['../group__EEPROM__Private__Functions.html#gaf47e9f09b5a17c1e9fafbd1ca8e967cc',1,'eeprom_emul.c']]],
   ['virt_5fbase_5frfm95w_9',['VIRT_BASE_RFM95W',['../nvs__config_8h.html#ac2bb99458a84a3ed419265bdcf8c6b7c',1,'nvs_config.h']]],
   ['virt_5fbase_5fsx1280_10',['VIRT_BASE_SX1280',['../nvs__config_8h.html#a12beb00ad8ca144e3dc0e8a371c4aabf',1,'nvs_config.h']]],
-  ['vs_20code_20automation_20build_20process_11',['🛠 VS Code Automation &amp; Build Process',['../index.html#autotoc_md12',1,'']]],
+  ['vs_20code_20automation_20build_20process_11',['🛠 VS Code Automation &amp; Build Process',['../index.html#autotoc_md9',1,'']]],
   ['vtelemetrytimercallback_12',['vTelemetryTimerCallback',['../sx1280__task_8c.html#a359f79d78599c3e6c95df28ac3f4b7fe',1,'sx1280_task.c']]]
 ];

@@ -21,7 +21,7 @@ var searchData=
   ['usart_5flora_5fevent_5fbit_18',['usart_lora_event_bit',['../main_8h.html#a46bf56a22aa28010d1823652b85f8ad6',1,'USART_LORA_EVENT_BIT:&#160;main.h'],['../main_8h.html#a46bf56a22aa28010d1823652b85f8ad6',1,'USART_LORA_EVENT_BIT:&#160;main.h']]],
   ['usart_5ftask_19',['usart_task',['../uart__task_8h.html#aab01f662e1d321db145a32beb121d3d5',1,'uart_task.h']]],
   ['usart_5ftask_5finit_20',['USART_Task_Init',['../uart__task_8h.html#adcc1e9abb6b16137aa4b5c792ef17f93',1,'uart_task.h']]],
-  ['usb_20dfu_20mode_21',['🚀 Flashing Instructions (USB DFU Mode)',['../index.html#autotoc_md17',1,'']]],
+  ['usb_20dfu_20mode_21',['🚀 Flashing Instructions (USB DFU Mode)',['../index.html#autotoc_md12',1,'']]],
   ['usb_2ec_22',['usb.c',['../usb_8c.html',1,'']]],
   ['usb_2eh_23',['usb.h',['../usb_8h.html',1,'']]],
   ['usb_5fcdc_5fconfig_24',['usb_cdc_config',['../usb__config_8c.html#a81616d4ccb93cf271a9b9c382f2dc01b',1,'USB_CDC_Config(void):&#160;usb_config.c'],['../usb__config_8h.html#a81616d4ccb93cf271a9b9c382f2dc01b',1,'USB_CDC_Config(void):&#160;usb_config.c']]],

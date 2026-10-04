@@ -1,8 +1,8 @@
 <map id="modules/sx1280/include/sx1280&#45;hal.h" name="modules/sx1280/include/sx1280&#45;hal.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="7,5,187,45"/>
-<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="188,9,206,14,214,25,211,33,202,38,200,34,207,30,209,26,203,19,187,14"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,88,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,47,64,83,59,80,83,44"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="113,93,183,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,44,135,80,131,83,107,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,185,45"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="186,9,204,14,212,25,209,33,200,38,198,34,205,30,207,26,201,19,185,14"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="9,93,80,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,47,62,83,57,80,81,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="105,93,187,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="110,44,133,80,129,83,105,47"/>
 </map>

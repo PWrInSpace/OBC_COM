@@ -113,23 +113,24 @@ $(document).ready(function(){initNavTree('usbd__cdc__if_8h_source.html',''); ini
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/* Exported types ------------------------------------------------------------*/</span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/* Exported constants --------------------------------------------------------*/</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="usbd__cdc__if_8h.html#af3db03a3d03a80e1ec7a0a9c470d9692">   33</a></span><span class="preprocessor">#define APP_RX_DATA_SIZE 1024</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="usbd__cdc__if_8h.html#aff35924b436331d533599db9489c79ee">   34</a></span><span class="preprocessor">#define APP_TX_DATA_SIZE 1024</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="usbd__cdc__if_8h.html#af3db03a3d03a80e1ec7a0a9c470d9692">   33</a></span><span class="preprocessor">#define APP_RX_DATA_SIZE  1024</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="usbd__cdc__if_8h.html#aff35924b436331d533599db9489c79ee">   34</a></span><span class="preprocessor">#define APP_TX_DATA_SIZE  1024</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">extern</span> USBD_CDC_ItfTypeDef <a class="code hl_variable" href="group__USBD__CDC__Private__FunctionPrototypes.html#ga167eb86b5f25d20e1128dfc1dc25c66b">USBD_CDC_Template_fops</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">extern</span> USBD_CDC_ItfTypeDef  <a class="code hl_variable" href="group__USBD__CDC__Private__FunctionPrototypes.html#ga167eb86b5f25d20e1128dfc1dc25c66b">USBD_CDC_Template_fops</a>;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">/* Exported macro ------------------------------------------------------------*/</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">/* Exported functions ------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>uint8_t <a class="code hl_function" href="group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4">CDC_Transmit_FS</a>(uint8_t *Buf, uint16_t Len);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>uint8_t <a class="code hl_function" href="group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4">CDC_Transmit_FS</a>(uint8_t* Buf, uint16_t Len);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif </span><span class="comment">/* __USBD_CDC_IF_TEMPLATE_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="agroup__USBD__CDC__Private__FunctionPrototypes_html_ga167eb86b5f25d20e1128dfc1dc25c66b"><div class="ttname"><a href="group__USBD__CDC__Private__FunctionPrototypes.html#ga167eb86b5f25d20e1128dfc1dc25c66b">USBD_CDC_Template_fops</a></div><div class="ttdeci">USBD_CDC_ItfTypeDef USBD_CDC_Template_fops</div><div class="ttdef"><b>Definition</b> <a href="usbd__cdc__if_8c_source.html#l00086">usbd_cdc_if.c:86</a></div></div>
-<div class="ttc" id="agroup__USBD__CDC__Private__FunctionPrototypes_html_ga5137d6201dbdef2bf351c5b4941c24f4"><div class="ttname"><a href="group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4">CDC_Transmit_FS</a></div><div class="ttdeci">uint8_t CDC_Transmit_FS(uint8_t *Buf, uint16_t Len)</div><div class="ttdef"><b>Definition</b> <a href="usbd__cdc__if_8c_source.html#l00265">usbd_cdc_if.c:265</a></div></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="ttc" id="agroup__USBD__CDC__Private__FunctionPrototypes_html_ga167eb86b5f25d20e1128dfc1dc25c66b"><div class="ttname"><a href="group__USBD__CDC__Private__FunctionPrototypes.html#ga167eb86b5f25d20e1128dfc1dc25c66b">USBD_CDC_Template_fops</a></div><div class="ttdeci">USBD_CDC_ItfTypeDef USBD_CDC_Template_fops</div><div class="ttdef"><b>Definition</b> <a href="usbd__cdc__if_8c_source.html#l00091">usbd_cdc_if.c:91</a></div></div>
+<div class="ttc" id="agroup__USBD__CDC__Private__FunctionPrototypes_html_ga5137d6201dbdef2bf351c5b4941c24f4"><div class="ttname"><a href="group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4">CDC_Transmit_FS</a></div><div class="ttdeci">uint8_t CDC_Transmit_FS(uint8_t *Buf, uint16_t Len)</div><div class="ttdef"><b>Definition</b> <a href="usbd__cdc__if_8c_source.html#l00279">usbd_cdc_if.c:279</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

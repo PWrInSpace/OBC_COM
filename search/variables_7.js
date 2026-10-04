@@ -15,7 +15,7 @@ var searchData=
   ['gamma8_12',['gamma8',['../led_8c.html#ac562c1358c09744b2f80de9683fb964f',1,'led.c']]],
   ['get_5fbusy_13',['get_busy',['../structSX1280__s.html#aefe599cfe03058afb20160219a599edc',1,'SX1280_s']]],
   ['get_5fdio_14',['get_dio',['../structSX1280__s.html#a2a60d180f72195a09dcd7418dbd03a37',1,'SX1280_s']]],
-  ['gfsk_15',['gfsk',['../structRxCounter__t.html#a8f4acfa422fa4abb866c3e2b6b1e5232',1,'RxCounter_t::Gfsk'],['../structPacketStatus__t.html#aa8fea1cefb4d766bc86d260f7b1f424f',1,'PacketStatus_t::Gfsk'],['../structPacketParams__t.html#a9f9a3a2ee88e8feafb796c814ea2a8f6',1,'PacketParams_t::Gfsk'],['../structModulationParams__t.html#a4c7917646507de3ab213e336c7653a66',1,'ModulationParams_t::Gfsk']]],
+  ['gfsk_15',['gfsk',['../structRxCounter__t.html#a8f4acfa422fa4abb866c3e2b6b1e5232',1,'RxCounter_t::Gfsk'],['../structPacketStatus__t.html#aa8fea1cefb4d766bc86d260f7b1f424f',1,'PacketStatus_t::Gfsk'],['../structPacketParams__t.html#a9f9a3a2ee88e8feafb796c814ea2a8f6',1,'PacketParams_t::Gfsk'],['../structModulationParams__t.html#adbd392cb606e8f2e5f9e8e79fbbb54b9',1,'ModulationParams_t::Gfsk']]],
   ['global_5flog_5fenabled_16',['global_log_enabled',['../logger_8c.html#a6a4c838e5637b5d479b70c160e593134',1,'logger.c']]],
   ['gnss_5fhandle_17',['gnss_handle',['../GNSS_8h.html#af8a58a51146501ff33031512a5c6595b',1,'GNSS_Handle:&#160;GNSS.c'],['../GNSS_8c.html#af8a58a51146501ff33031512a5c6595b',1,'GNSS_Handle:&#160;GNSS.c']]],
   ['gps_5flat_18',['gps_lat',['../structobc__mcb__frame__t.html#a10d319915d06745aaeed236a971b8922',1,'obc_mcb_frame_t']]],

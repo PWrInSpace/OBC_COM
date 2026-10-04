@@ -19,7 +19,7 @@ var searchData=
   ['get_5frfm95_5fid_16',['GET_RFM95_ID',['../nvs__config_8h.html#a05b56bbd84b352b718378a345b3b3044',1,'nvs_config.h']]],
   ['get_5fsx1280_5fid_17',['GET_SX1280_ID',['../nvs__config_8h.html#abadf5841214a04705dc91d18a497c01f',1,'nvs_config.h']]],
   ['getpagestate_18',['GetPageState',['../group__EEPROM__Private__Functions.html#ga2304deed602aa5aa10ecebbf7de5352c',1,'eeprom_emul.c']]],
-  ['gfsk_19',['gfsk',['../structPacketStatus__t.html#aa8fea1cefb4d766bc86d260f7b1f424f',1,'PacketStatus_t::Gfsk'],['../structRxCounter__t.html#a8f4acfa422fa4abb866c3e2b6b1e5232',1,'RxCounter_t::Gfsk'],['../structPacketParams__t.html#a9f9a3a2ee88e8feafb796c814ea2a8f6',1,'PacketParams_t::Gfsk'],['../structModulationParams__t.html#a4c7917646507de3ab213e336c7653a66',1,'ModulationParams_t::Gfsk']]],
+  ['gfsk_19',['gfsk',['../structPacketStatus__t.html#aa8fea1cefb4d766bc86d260f7b1f424f',1,'PacketStatus_t::Gfsk'],['../structRxCounter__t.html#a8f4acfa422fa4abb866c3e2b6b1e5232',1,'RxCounter_t::Gfsk'],['../structPacketParams__t.html#a9f9a3a2ee88e8feafb796c814ea2a8f6',1,'PacketParams_t::Gfsk'],['../structModulationParams__t.html#adbd392cb606e8f2e5f9e8e79fbbb54b9',1,'ModulationParams_t::Gfsk']]],
   ['gfsk_5fble_5fbr_5f0_5f125_5fbw_5f0_5f3_20',['GFSK_BLE_BR_0_125_BW_0_3',['../sx1280_8h.html#ae60e06224cbad7d557048bb9b26741a3a2eade7439915113f7dd8f0e2444cf889',1,'sx1280.h']]],
   ['gfsk_5fble_5fbr_5f0_5f250_5fbw_5f0_5f3_21',['GFSK_BLE_BR_0_250_BW_0_3',['../sx1280_8h.html#ae60e06224cbad7d557048bb9b26741a3a4df89561222ac00ef1d2feb3ce034ab7',1,'sx1280.h']]],
   ['gfsk_5fble_5fbr_5f0_5f250_5fbw_5f0_5f6_22',['GFSK_BLE_BR_0_250_BW_0_6',['../sx1280_8h.html#ae60e06224cbad7d557048bb9b26741a3a8b9c6502e063c55fa7060cd427d7000a',1,'sx1280.h']]],
@@ -113,5 +113,5 @@ var searchData=
   ['gs_5fsend_110',['gs_send',['../rfm95w__task_8c.html#ad09b3088ae86c18f441bef09676c7933',1,'rfm95w_task.c']]],
   ['gspeed_111',['gspeed',['../structGNSS__StateHandle.html#aa6b5b757e969e8b39dc57fb12a35c1cc',1,'GNSS_StateHandle::gSpeed'],['../structBoardData__t.html#a6a75b2f83273b109281e5e1e1f0d0452',1,'BoardData_t::gSpeed']]],
   ['guard_5fpages_5fnumber_112',['GUARD_PAGES_NUMBER',['../group__Private__Configuration__Constants.html#ga1756db6f424bbf876480d37774828ca8',1,'eeprom_emul_conf.h']]],
-  ['guide_3a_20adding_20new_20commands_113',['🛠 Developer Guide: Adding New Commands',['../cmd_module.html#autotoc_md9',1,'']]]
+  ['guide_3a_20adding_20new_20commands_113',['🛠 Developer Guide: Adding New Commands',['../cmd_module.html#autotoc_md14',1,'']]]
 ];

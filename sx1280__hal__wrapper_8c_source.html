@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('sx1280__hal__wrapper_8c_source.html','
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="spi_8h.html">spi.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8c.html#a2839a847d15d712d8e679a5738ba209b">   14</a></span><span class="preprocessor">#define MAX_SPI_BUFFER 260 </span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8c.html#a2839a847d15d712d8e679a5738ba209b">   14</a></span><span class="preprocessor">#define MAX_SPI_BUFFER 260</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8c.html#a0ca0df428f0c20901ab0e3c4cfed64b2">   16</a></span><span class="keyword">static</span> uint8_t <a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a0ca0df428f0c20901ab0e3c4cfed64b2">spi_dma_tx_buffer</a>[<a class="code hl_define" href="sx1280__hal__wrapper_8c.html#a2839a847d15d712d8e679a5738ba209b">MAX_SPI_BUFFER</a>];</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
@@ -120,121 +120,124 @@ $(document).ready(function(){initNavTree('sx1280__hal__wrapper_8c_source.html','
 <div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#a92cf59f4fdbb9f06f0d421fa3ec8af30">   20</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#a92cf59f4fdbb9f06f0d421fa3ec8af30">sx1280_wrapper_init</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a34e076f35d57a466f8839dd9adc6f1bd">sx1280_spi_sem</a> = xSemaphoreCreateBinary();</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    xSemaphoreGive(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a34e076f35d57a466f8839dd9adc6f1bd">sx1280_spi_sem</a>); </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    xSemaphoreGive(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a34e076f35d57a466f8839dd9adc6f1bd">sx1280_spi_sem</a>);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
 </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// --- SPI WRAPPERS ---</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#a11472d290017b973b19ffecd71ca3d6c">   27</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#a11472d290017b973b19ffecd71ca3d6c">sx1280_spi_write_dma</a>(<span class="keywordtype">void</span>* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* out, uint16_t out_len) {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    SPI_HandleTypeDef* hspi = (SPI_HandleTypeDef*)ctx;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#a11472d290017b973b19ffecd71ca3d6c">   27</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#a11472d290017b973b19ffecd71ca3d6c">sx1280_spi_write_dma</a>(<span class="keywordtype">void</span> *ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t *out, uint16_t out_len) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    SPI_HandleTypeDef *hspi = (SPI_HandleTypeDef *)ctx;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    uint16_t total_len = prefix_len + out_len;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span> (xSemaphoreTake(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a34e076f35d57a466f8839dd9adc6f1bd">sx1280_spi_sem</a>, pdMS_TO_TICKS(100)) != pdTRUE) <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span> (total_len &gt; <a class="code hl_define" href="sx1280__hal__wrapper_8c.html#a2839a847d15d712d8e679a5738ba209b">MAX_SPI_BUFFER</a>) { xSemaphoreGive(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a34e076f35d57a466f8839dd9adc6f1bd">sx1280_spi_sem</a>); <span class="keywordflow">return</span> -2; }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// while(HAL_GPIO_ReadPin(BUSY_SX1280_GPIO_Port, BUSY_SX1280_Pin) == GPIO_PIN_SET);</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    memcpy(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a0ca0df428f0c20901ab0e3c4cfed64b2">spi_dma_tx_buffer</a>, prefix, prefix_len);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (out != NULL &amp;&amp; out_len &gt; 0) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        memcpy(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a0ca0df428f0c20901ab0e3c4cfed64b2">spi_dma_tx_buffer</a> + prefix_len, out, out_len);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_RESET);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (HAL_SPI_Transmit_DMA(hspi, <a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a0ca0df428f0c20901ab0e3c4cfed64b2">spi_dma_tx_buffer</a>, total_len) != HAL_OK) {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_SET);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        xSemaphoreGive(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a34e076f35d57a466f8839dd9adc6f1bd">sx1280_spi_sem</a>);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span> -3;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">return</span> 0; </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span> (total_len &gt; <a class="code hl_define" href="sx1280__hal__wrapper_8c.html#a2839a847d15d712d8e679a5738ba209b">MAX_SPI_BUFFER</a>) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        xSemaphoreGive(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a34e076f35d57a466f8839dd9adc6f1bd">sx1280_spi_sem</a>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">return</span> -2;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">// while(HAL_GPIO_ReadPin(BUSY_SX1280_GPIO_Port, BUSY_SX1280_Pin) == GPIO_PIN_SET);</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    memcpy(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a0ca0df428f0c20901ab0e3c4cfed64b2">spi_dma_tx_buffer</a>, prefix, prefix_len);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span> (out != NULL &amp;&amp; out_len &gt; 0) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        memcpy(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a0ca0df428f0c20901ab0e3c4cfed64b2">spi_dma_tx_buffer</a> + prefix_len, out, out_len);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_RESET);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">if</span> (HAL_SPI_Transmit_DMA(hspi, <a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a0ca0df428f0c20901ab0e3c4cfed64b2">spi_dma_tx_buffer</a>, total_len) != HAL_OK) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_SET);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        xSemaphoreGive(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a34e076f35d57a466f8839dd9adc6f1bd">sx1280_spi_sem</a>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span> -3;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
 </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#ab8478d2dce4bb3c35421a4bfe49957e9">   51</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#ab8478d2dce4bb3c35421a4bfe49957e9">sx1280_spi_read_dma</a>(<span class="keywordtype">void</span>* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* in, uint16_t in_len) {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    SPI_HandleTypeDef* hspi = (SPI_HandleTypeDef*)ctx;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">if</span> (xSemaphoreTake(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a34e076f35d57a466f8839dd9adc6f1bd">sx1280_spi_sem</a>, pdMS_TO_TICKS(100)) != pdTRUE) <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="comment">// while(HAL_GPIO_ReadPin(BUSY_SX1280_GPIO_Port, BUSY_SX1280_Pin) == GPIO_PIN_SET);</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_RESET);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    HAL_SPI_Transmit(hspi, prefix, prefix_len, HAL_MAX_DELAY);</div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#ab8478d2dce4bb3c35421a4bfe49957e9">   54</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#ab8478d2dce4bb3c35421a4bfe49957e9">sx1280_spi_read_dma</a>(<span class="keywordtype">void</span> *ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t *in, uint16_t in_len) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    SPI_HandleTypeDef *hspi = (SPI_HandleTypeDef *)ctx;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">if</span> (xSemaphoreTake(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a34e076f35d57a466f8839dd9adc6f1bd">sx1280_spi_sem</a>, pdMS_TO_TICKS(100)) != pdTRUE) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">// while(HAL_GPIO_ReadPin(BUSY_SX1280_GPIO_Port, BUSY_SX1280_Pin) == GPIO_PIN_SET);</span></div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> (in != NULL &amp;&amp; in_len &gt; 0) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">if</span> (HAL_SPI_Receive_DMA(hspi, in, in_len) != HAL_OK) {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_SET);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            xSemaphoreGive(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a34e076f35d57a466f8839dd9adc6f1bd">sx1280_spi_sem</a>);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">return</span> -3;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_SET);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        xSemaphoreGive(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a34e076f35d57a466f8839dd9adc6f1bd">sx1280_spi_sem</a>);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_RESET);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    HAL_SPI_Transmit(hspi, prefix, prefix_len, HAL_MAX_DELAY);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">if</span> (in != NULL &amp;&amp; in_len &gt; 0) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">if</span> (HAL_SPI_Receive_DMA(hspi, in, in_len) != HAL_OK) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_SET);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            xSemaphoreGive(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a34e076f35d57a466f8839dd9adc6f1bd">sx1280_spi_sem</a>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">return</span> -3;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_SET);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        xSemaphoreGive(<a class="code hl_variable" href="sx1280__hal__wrapper_8c.html#a34e076f35d57a466f8839dd9adc6f1bd">sx1280_spi_sem</a>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
 </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#a3c7a2ad21cb8a59c651d5fc2355df6b3">   74</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#a3c7a2ad21cb8a59c651d5fc2355df6b3">sx1280_spi_write</a>(<span class="keywordtype">void</span>* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* out, uint16_t out_len) {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    SPI_HandleTypeDef* hspi = (SPI_HandleTypeDef*)ctx;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_RESET);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    HAL_SPI_Transmit(hspi, prefix, prefix_len, HAL_MAX_DELAY);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">if</span> (out != NULL &amp;&amp; out_len &gt; 0) HAL_SPI_Transmit(hspi, out, out_len, HAL_MAX_DELAY);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_SET);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#a3c7a2ad21cb8a59c651d5fc2355df6b3">   77</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#a3c7a2ad21cb8a59c651d5fc2355df6b3">sx1280_spi_write</a>(<span class="keywordtype">void</span> *ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t *out, uint16_t out_len) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    SPI_HandleTypeDef *hspi = (SPI_HandleTypeDef *)ctx;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_RESET);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    HAL_SPI_Transmit(hspi, prefix, prefix_len, HAL_MAX_DELAY);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">if</span> (out != NULL &amp;&amp; out_len &gt; 0) HAL_SPI_Transmit(hspi, out, out_len, HAL_MAX_DELAY);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_SET);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
 </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#a877be19611dfb83a5d90953bc47fbb10">   83</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#a877be19611dfb83a5d90953bc47fbb10">sx1280_spi_read</a>(<span class="keywordtype">void</span>* ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t* in, uint16_t in_len) {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    SPI_HandleTypeDef* hspi = (SPI_HandleTypeDef*)ctx;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_RESET);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    HAL_SPI_Transmit(hspi, prefix, prefix_len, HAL_MAX_DELAY);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">if</span> (in != NULL &amp;&amp; in_len &gt; 0) HAL_SPI_Receive(hspi, in, in_len, HAL_MAX_DELAY);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_SET);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#a877be19611dfb83a5d90953bc47fbb10">   86</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#a877be19611dfb83a5d90953bc47fbb10">sx1280_spi_read</a>(<span class="keywordtype">void</span> *ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t *in, uint16_t in_len) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    SPI_HandleTypeDef *hspi = (SPI_HandleTypeDef *)ctx;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_RESET);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    HAL_SPI_Transmit(hspi, prefix, prefix_len, HAL_MAX_DELAY);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">if</span> (in != NULL &amp;&amp; in_len &gt; 0) HAL_SPI_Receive(hspi, in, in_len, HAL_MAX_DELAY);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#a4e0b816d1f34b4466bdda7eab83105fc">SX1280_CS_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#aa5108e10cdfb7e20871f5f59dccc1eb5">SX1280_CS_Pin</a>, GPIO_PIN_SET);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}</div>
 </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#af5056fc5085c914a4229c712307af987">   92</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#af5056fc5085c914a4229c712307af987">sx1280_delay_ms</a>(<span class="keywordtype">void</span>* ctx, uint32_t ms) {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    vTaskDelay(pdMS_TO_TICKS(ms));</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#af5056fc5085c914a4229c712307af987">   95</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#af5056fc5085c914a4229c712307af987">sx1280_delay_ms</a>(<span class="keywordtype">void</span> *ctx, uint32_t ms) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    vTaskDelay(pdMS_TO_TICKS(ms));</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
 </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#a417de486ecdb3e148edafbe2b1753ec1">   96</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#a417de486ecdb3e148edafbe2b1753ec1">sx1280_set_reset</a>(<span class="keywordtype">void</span>* ctx, <span class="keywordtype">bool</span> value) {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">if</span> (value) {</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#ab49abfd24e9bdf4297dc22cbd96f1ca5">SX1280_RESET_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#a8cc72f216f2f2cf77daea8436747bf11">SX1280_RESET_Pin</a>, GPIO_PIN_SET);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#ab49abfd24e9bdf4297dc22cbd96f1ca5">SX1280_RESET_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#a8cc72f216f2f2cf77daea8436747bf11">SX1280_RESET_Pin</a>, GPIO_PIN_RESET);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#a417de486ecdb3e148edafbe2b1753ec1">   99</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#a417de486ecdb3e148edafbe2b1753ec1">sx1280_set_reset</a>(<span class="keywordtype">void</span> *ctx, <span class="keywordtype">bool</span> value) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">if</span> (value) {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#ab49abfd24e9bdf4297dc22cbd96f1ca5">SX1280_RESET_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#a8cc72f216f2f2cf77daea8436747bf11">SX1280_RESET_Pin</a>, GPIO_PIN_SET);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        HAL_GPIO_WritePin(<a class="code hl_define" href="main_8h.html#ab49abfd24e9bdf4297dc22cbd96f1ca5">SX1280_RESET_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#a8cc72f216f2f2cf77daea8436747bf11">SX1280_RESET_Pin</a>, GPIO_PIN_RESET);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
 </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#a7bef1a617e678c5d92c9678304f68da5">  105</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#a7bef1a617e678c5d92c9678304f68da5">sx1280_get_busy</a>(<span class="keywordtype">void</span>* ctx) {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    GPIO_PinState state = HAL_GPIO_ReadPin(<a class="code hl_define" href="main_8h.html#a01ee09a65740ce0ba5b38761a3b8fd3a">SX1280_BUSY_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#a451e873161d9dfbf67a287cff17f464f">SX1280_BUSY_Pin</a>);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">return</span> (state == GPIO_PIN_SET) ? 1 : 0;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#a7bef1a617e678c5d92c9678304f68da5">  108</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#a7bef1a617e678c5d92c9678304f68da5">sx1280_get_busy</a>(<span class="keywordtype">void</span> *ctx) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    GPIO_PinState state = HAL_GPIO_ReadPin(<a class="code hl_define" href="main_8h.html#a01ee09a65740ce0ba5b38761a3b8fd3a">SX1280_BUSY_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#a451e873161d9dfbf67a287cff17f464f">SX1280_BUSY_Pin</a>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">return</span> (state == GPIO_PIN_SET) ? 1 : 0;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
 </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="foldopen" id="foldopen00110" data-start="{" data-end="}">
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#ab7c31fdc0296e796f1f6a37d062243b6">  110</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#ab7c31fdc0296e796f1f6a37d062243b6">sx1280_get_dio1</a>(<span class="keywordtype">void</span>* ctx) {</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    GPIO_PinState state = HAL_GPIO_ReadPin(<a class="code hl_define" href="main_8h.html#a521fd3ab16abca229a6b8f2d1068998b">SX1280_DIO1_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#a406f782d74a8dfa1b62b92df475147aa">SX1280_DIO1_Pin</a>);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">return</span> (state == GPIO_PIN_SET) ? 1 : 0;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#ab7c31fdc0296e796f1f6a37d062243b6">  113</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#ab7c31fdc0296e796f1f6a37d062243b6">sx1280_get_dio1</a>(<span class="keywordtype">void</span> *ctx) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    GPIO_PinState state = HAL_GPIO_ReadPin(<a class="code hl_define" href="main_8h.html#a521fd3ab16abca229a6b8f2d1068998b">SX1280_DIO1_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#a406f782d74a8dfa1b62b92df475147aa">SX1280_DIO1_Pin</a>);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">return</span> (state == GPIO_PIN_SET) ? 1 : 0;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
 </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#ae931bcde8e5386d12c6b62325595d8d4">  115</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#ae931bcde8e5386d12c6b62325595d8d4">sx1280_get_dio2</a>(<span class="keywordtype">void</span>* ctx) {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    GPIO_PinState state = HAL_GPIO_ReadPin(<a class="code hl_define" href="main_8h.html#a68f4558582e0fa43a170323a15956bac">SX1280_DIO2_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#af5c40760465dbe6e325606f29af86cd2">SX1280_DIO2_Pin</a>);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">return</span> (state == GPIO_PIN_SET) ? 1 : 0;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="sx1280__hal__wrapper_8h.html#ae931bcde8e5386d12c6b62325595d8d4">  118</a></span>int32_t <a class="code hl_function" href="sx1280__hal__wrapper_8c.html#ae931bcde8e5386d12c6b62325595d8d4">sx1280_get_dio2</a>(<span class="keywordtype">void</span> *ctx) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    GPIO_PinState state = HAL_GPIO_ReadPin(<a class="code hl_define" href="main_8h.html#a68f4558582e0fa43a170323a15956bac">SX1280_DIO2_GPIO_Port</a>, <a class="code hl_define" href="main_8h.html#af5c40760465dbe6e325606f29af86cd2">SX1280_DIO2_Pin</a>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">return</span> (state == GPIO_PIN_SET) ? 1 : 0;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
 </div>
 <div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">: Header for main.c file.</div></div>
 <div class="ttc" id="amain_8h_html_a01ee09a65740ce0ba5b38761a3b8fd3a"><div class="ttname"><a href="main_8h.html#a01ee09a65740ce0ba5b38761a3b8fd3a">SX1280_BUSY_GPIO_Port</a></div><div class="ttdeci">#define SX1280_BUSY_GPIO_Port</div><div class="ttdef"><b>Definition</b> <a href="main_8h_source.html#l00131">main.h:131</a></div></div>
@@ -253,15 +256,15 @@ $(document).ready(function(){initNavTree('sx1280__hal__wrapper_8c_source.html','
 <div class="ttc" id="asx1280__hal__wrapper_8c_html_a11472d290017b973b19ffecd71ca3d6c"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#a11472d290017b973b19ffecd71ca3d6c">sx1280_spi_write_dma</a></div><div class="ttdeci">int32_t sx1280_spi_write_dma(void *ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t *out, uint16_t out_len)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00027">sx1280_hal_wrapper.c:27</a></div></div>
 <div class="ttc" id="asx1280__hal__wrapper_8c_html_a2839a847d15d712d8e679a5738ba209b"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#a2839a847d15d712d8e679a5738ba209b">MAX_SPI_BUFFER</a></div><div class="ttdeci">#define MAX_SPI_BUFFER</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00014">sx1280_hal_wrapper.c:14</a></div></div>
 <div class="ttc" id="asx1280__hal__wrapper_8c_html_a34e076f35d57a466f8839dd9adc6f1bd"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#a34e076f35d57a466f8839dd9adc6f1bd">sx1280_spi_sem</a></div><div class="ttdeci">SemaphoreHandle_t sx1280_spi_sem</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00018">sx1280_hal_wrapper.c:18</a></div></div>
-<div class="ttc" id="asx1280__hal__wrapper_8c_html_a3c7a2ad21cb8a59c651d5fc2355df6b3"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#a3c7a2ad21cb8a59c651d5fc2355df6b3">sx1280_spi_write</a></div><div class="ttdeci">int32_t sx1280_spi_write(void *ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t *out, uint16_t out_len)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00074">sx1280_hal_wrapper.c:74</a></div></div>
-<div class="ttc" id="asx1280__hal__wrapper_8c_html_a417de486ecdb3e148edafbe2b1753ec1"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#a417de486ecdb3e148edafbe2b1753ec1">sx1280_set_reset</a></div><div class="ttdeci">int32_t sx1280_set_reset(void *ctx, bool value)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00096">sx1280_hal_wrapper.c:96</a></div></div>
-<div class="ttc" id="asx1280__hal__wrapper_8c_html_a7bef1a617e678c5d92c9678304f68da5"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#a7bef1a617e678c5d92c9678304f68da5">sx1280_get_busy</a></div><div class="ttdeci">int32_t sx1280_get_busy(void *ctx)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00105">sx1280_hal_wrapper.c:105</a></div></div>
-<div class="ttc" id="asx1280__hal__wrapper_8c_html_a877be19611dfb83a5d90953bc47fbb10"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#a877be19611dfb83a5d90953bc47fbb10">sx1280_spi_read</a></div><div class="ttdeci">int32_t sx1280_spi_read(void *ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t *in, uint16_t in_len)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00083">sx1280_hal_wrapper.c:83</a></div></div>
+<div class="ttc" id="asx1280__hal__wrapper_8c_html_a3c7a2ad21cb8a59c651d5fc2355df6b3"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#a3c7a2ad21cb8a59c651d5fc2355df6b3">sx1280_spi_write</a></div><div class="ttdeci">int32_t sx1280_spi_write(void *ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t *out, uint16_t out_len)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00077">sx1280_hal_wrapper.c:77</a></div></div>
+<div class="ttc" id="asx1280__hal__wrapper_8c_html_a417de486ecdb3e148edafbe2b1753ec1"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#a417de486ecdb3e148edafbe2b1753ec1">sx1280_set_reset</a></div><div class="ttdeci">int32_t sx1280_set_reset(void *ctx, bool value)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00099">sx1280_hal_wrapper.c:99</a></div></div>
+<div class="ttc" id="asx1280__hal__wrapper_8c_html_a7bef1a617e678c5d92c9678304f68da5"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#a7bef1a617e678c5d92c9678304f68da5">sx1280_get_busy</a></div><div class="ttdeci">int32_t sx1280_get_busy(void *ctx)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00108">sx1280_hal_wrapper.c:108</a></div></div>
+<div class="ttc" id="asx1280__hal__wrapper_8c_html_a877be19611dfb83a5d90953bc47fbb10"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#a877be19611dfb83a5d90953bc47fbb10">sx1280_spi_read</a></div><div class="ttdeci">int32_t sx1280_spi_read(void *ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t *in, uint16_t in_len)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00086">sx1280_hal_wrapper.c:86</a></div></div>
 <div class="ttc" id="asx1280__hal__wrapper_8c_html_a92cf59f4fdbb9f06f0d421fa3ec8af30"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#a92cf59f4fdbb9f06f0d421fa3ec8af30">sx1280_wrapper_init</a></div><div class="ttdeci">void sx1280_wrapper_init(void)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00020">sx1280_hal_wrapper.c:20</a></div></div>
-<div class="ttc" id="asx1280__hal__wrapper_8c_html_ab7c31fdc0296e796f1f6a37d062243b6"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#ab7c31fdc0296e796f1f6a37d062243b6">sx1280_get_dio1</a></div><div class="ttdeci">int32_t sx1280_get_dio1(void *ctx)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00110">sx1280_hal_wrapper.c:110</a></div></div>
-<div class="ttc" id="asx1280__hal__wrapper_8c_html_ab8478d2dce4bb3c35421a4bfe49957e9"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#ab8478d2dce4bb3c35421a4bfe49957e9">sx1280_spi_read_dma</a></div><div class="ttdeci">int32_t sx1280_spi_read_dma(void *ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t *in, uint16_t in_len)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00051">sx1280_hal_wrapper.c:51</a></div></div>
-<div class="ttc" id="asx1280__hal__wrapper_8c_html_ae931bcde8e5386d12c6b62325595d8d4"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#ae931bcde8e5386d12c6b62325595d8d4">sx1280_get_dio2</a></div><div class="ttdeci">int32_t sx1280_get_dio2(void *ctx)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00115">sx1280_hal_wrapper.c:115</a></div></div>
-<div class="ttc" id="asx1280__hal__wrapper_8c_html_af5056fc5085c914a4229c712307af987"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#af5056fc5085c914a4229c712307af987">sx1280_delay_ms</a></div><div class="ttdeci">void sx1280_delay_ms(void *ctx, uint32_t ms)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00092">sx1280_hal_wrapper.c:92</a></div></div>
+<div class="ttc" id="asx1280__hal__wrapper_8c_html_ab7c31fdc0296e796f1f6a37d062243b6"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#ab7c31fdc0296e796f1f6a37d062243b6">sx1280_get_dio1</a></div><div class="ttdeci">int32_t sx1280_get_dio1(void *ctx)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00113">sx1280_hal_wrapper.c:113</a></div></div>
+<div class="ttc" id="asx1280__hal__wrapper_8c_html_ab8478d2dce4bb3c35421a4bfe49957e9"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#ab8478d2dce4bb3c35421a4bfe49957e9">sx1280_spi_read_dma</a></div><div class="ttdeci">int32_t sx1280_spi_read_dma(void *ctx, uint8_t *prefix, uint16_t prefix_len, uint8_t *in, uint16_t in_len)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00054">sx1280_hal_wrapper.c:54</a></div></div>
+<div class="ttc" id="asx1280__hal__wrapper_8c_html_ae931bcde8e5386d12c6b62325595d8d4"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#ae931bcde8e5386d12c6b62325595d8d4">sx1280_get_dio2</a></div><div class="ttdeci">int32_t sx1280_get_dio2(void *ctx)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00118">sx1280_hal_wrapper.c:118</a></div></div>
+<div class="ttc" id="asx1280__hal__wrapper_8c_html_af5056fc5085c914a4229c712307af987"><div class="ttname"><a href="sx1280__hal__wrapper_8c.html#af5056fc5085c914a4229c712307af987">sx1280_delay_ms</a></div><div class="ttdeci">void sx1280_delay_ms(void *ctx, uint32_t ms)</div><div class="ttdef"><b>Definition</b> <a href="sx1280__hal__wrapper_8c_source.html#l00095">sx1280_hal_wrapper.c:95</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

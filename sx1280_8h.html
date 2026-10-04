@@ -99,14 +99,14 @@ $(document).ready(function(){initNavTree('sx1280_8h.html',''); initResizable(); 
   <div class="headertitle"><div class="title">sx1280.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;math.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
-<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="sx1280-hal_8h_source.html">sx1280-hal.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for sx1280.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="sx1280_8h__incl.svg" width="328" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="sx1280_8h__incl.svg" width="279" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -157,7 +157,7 @@ Macros</h2></td></tr>
 <tr class="memitem:a3d24a8ac8f673b60ac35b6d92fe72747" id="r_a3d24a8ac8f673b60ac35b6d92fe72747"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280_8h.html#a3d24a8ac8f673b60ac35b6d92fe72747">XTAL_FREQ</a>&#160;&#160;&#160;52000000</td></tr>
 <tr class="memdesc:a3d24a8ac8f673b60ac35b6d92fe72747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the frequency of the chip running on the radio and the frequency step.  <br /></td></tr>
 <tr class="separator:a3d24a8ac8f673b60ac35b6d92fe72747"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7977f4d7c0acbc564d01fb225f94630" id="r_ad7977f4d7c0acbc564d01fb225f94630"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280_8h.html#ad7977f4d7c0acbc564d01fb225f94630">FREQ_STEP</a>&#160;&#160;&#160;((double)(<a class="el" href="sx1280_8h.html#a3d24a8ac8f673b60ac35b6d92fe72747">XTAL_FREQ</a> / pow(2.0, 18.0)))</td></tr>
+<tr class="memitem:ad7977f4d7c0acbc564d01fb225f94630" id="r_ad7977f4d7c0acbc564d01fb225f94630"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280_8h.html#ad7977f4d7c0acbc564d01fb225f94630">FREQ_STEP</a>&#160;&#160;&#160;( ( double )( <a class="el" href="sx1280_8h.html#a3d24a8ac8f673b60ac35b6d92fe72747">XTAL_FREQ</a> / pow( 2.0, 18.0 ) ) )</td></tr>
 <tr class="separator:ad7977f4d7c0acbc564d01fb225f94630"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab43b6e1bb3aa8f22f649ae8ec82da53c" id="r_ab43b6e1bb3aa8f22f649ae8ec82da53c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280_8h.html#ab43b6e1bb3aa8f22f649ae8ec82da53c">AUTO_RX_TX_OFFSET</a>&#160;&#160;&#160;33</td></tr>
 <tr class="memdesc:ab43b6e1bb3aa8f22f649ae8ec82da53c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compensation delay for SetAutoTx/Rx functions in microseconds.  <br /></td></tr>
@@ -259,10 +259,10 @@ Macros</h2></td></tr>
 <tr class="separator:afeafafaaea589d8b8feadd93263226ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a960790d1c28142982c2b0629791e7bf0" id="r_a960790d1c28142982c2b0629791e7bf0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280_8h.html#a960790d1c28142982c2b0629791e7bf0">MASK_MANUAL_GAIN_VALUE</a>&#160;&#160;&#160;0xF0</td></tr>
 <tr class="separator:a960790d1c28142982c2b0629791e7bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a517b724b930e95c8dd4aba22b566955b" id="r_a517b724b930e95c8dd4aba22b566955b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280_8h.html#a517b724b930e95c8dd4aba22b566955b">RX_TX_CONTINUOUS</a>&#160;&#160;&#160;  (<a class="el" href="structTickTime__t.html">TickTime_t</a>) { <a class="el" href="sx1280_8h.html#ac4c3d6e4b5a1a739ee585d3d89fb5457a2ed6c56cbe56585ccba5ea392034e0d0">RADIO_TICK_SIZE_0015_US</a>, 0xFFFF }</td></tr>
+<tr class="memitem:a517b724b930e95c8dd4aba22b566955b" id="r_a517b724b930e95c8dd4aba22b566955b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280_8h.html#a517b724b930e95c8dd4aba22b566955b">RX_TX_CONTINUOUS</a>&#160;&#160;&#160;( <a class="el" href="structTickTime__t.html">TickTime_t</a> ){ <a class="el" href="sx1280_8h.html#ac4c3d6e4b5a1a739ee585d3d89fb5457a2ed6c56cbe56585ccba5ea392034e0d0">RADIO_TICK_SIZE_0015_US</a>, 0xFFFF }</td></tr>
 <tr class="memdesc:a517b724b930e95c8dd4aba22b566955b"><td class="mdescLeft">&#160;</td><td class="mdescRight">RX_TX_CONTINUOUS and RX_TX_SINGLE are two particular values for TickTime.  <br /></td></tr>
 <tr class="separator:a517b724b930e95c8dd4aba22b566955b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81867641163d73ef995945ae1e721a20" id="r_a81867641163d73ef995945ae1e721a20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280_8h.html#a81867641163d73ef995945ae1e721a20">RX_TX_SINGLE</a>&#160;&#160;&#160;  (<a class="el" href="structTickTime__t.html">TickTime_t</a>) { <a class="el" href="sx1280_8h.html#ac4c3d6e4b5a1a739ee585d3d89fb5457a2ed6c56cbe56585ccba5ea392034e0d0">RADIO_TICK_SIZE_0015_US</a>, 0 }</td></tr>
+<tr class="memitem:a81867641163d73ef995945ae1e721a20" id="r_a81867641163d73ef995945ae1e721a20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280_8h.html#a81867641163d73ef995945ae1e721a20">RX_TX_SINGLE</a>&#160;&#160;&#160;( <a class="el" href="structTickTime__t.html">TickTime_t</a> ){ <a class="el" href="sx1280_8h.html#ac4c3d6e4b5a1a739ee585d3d89fb5457a2ed6c56cbe56585ccba5ea392034e0d0">RADIO_TICK_SIZE_0015_US</a>, 0 }</td></tr>
 <tr class="separator:a81867641163d73ef995945ae1e721a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -495,7 +495,7 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:aa231b3aa032cf7fa92ddd3a35f117841"><td class="mdescLeft">&#160;</td><td class="mdescRight">The length of sync words for GFSK packet type.  <a href="sx1280_8h.html#aa231b3aa032cf7fa92ddd3a35f117841">More...</a><br /></td></tr>
 <tr class="separator:aa231b3aa032cf7fa92ddd3a35f117841"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0177c4999ed4e4ab96e34ec13183ed43" id="r_a0177c4999ed4e4ab96e34ec13183ed43"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43">RadioSyncWordRxMatchs_t</a> { <br />
-&#160;&#160;<a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43aba429f7628d9dc2c5ed04a0ceac1ffa1">RADIO_RX_MATCH_SYNCWORD_OFF</a>
+&#160;&#160;<a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43aba429f7628d9dc2c5ed04a0ceac1ffa1">RADIO_RX_MATCH_SYNCWORD_OFF</a> = 0x00
 , <a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43a511da33b5c76d81518323d84d07a0423">RADIO_RX_MATCH_SYNCWORD_1</a> = 0x10
 , <a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43a013fd0bea4fa47689b83e308a20d4e3a">RADIO_RX_MATCH_SYNCWORD_2</a> = 0x20
 , <a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43aa2eaa95ba140af44c9434e7579bc7938">RADIO_RX_MATCH_SYNCWORD_1_2</a> = 0x30
@@ -509,7 +509,7 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:a0177c4999ed4e4ab96e34ec13183ed43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the possible combinations of SyncWord correlators activated for GFSK and FLRC packet types.  <a href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43">More...</a><br /></td></tr>
 <tr class="separator:a0177c4999ed4e4ab96e34ec13183ed43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c1d244a48abeb98b6bf3f0ada087df6" id="r_a7c1d244a48abeb98b6bf3f0ada087df6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280_8h.html#a7c1d244a48abeb98b6bf3f0ada087df6">RadioPacketLengthModes_t</a> { <a class="el" href="sx1280_8h.html#a7c1d244a48abeb98b6bf3f0ada087df6aad7bf546a6d287d025a16a742e6f2bcd">RADIO_PACKET_FIXED_LENGTH</a> = 0x00
-, <a class="el" href="sx1280_8h.html#a7c1d244a48abeb98b6bf3f0ada087df6a902ce14d15f16ba1b3bea47fe9d88fd4">RADIO_PACKET_VARIABLE_LENGTH</a>
+, <a class="el" href="sx1280_8h.html#a7c1d244a48abeb98b6bf3f0ada087df6a902ce14d15f16ba1b3bea47fe9d88fd4">RADIO_PACKET_VARIABLE_LENGTH</a> = 0x20
  }</td></tr>
 <tr class="memdesc:a7c1d244a48abeb98b6bf3f0ada087df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Radio packet length mode for GFSK and FLRC packet types.  <a href="sx1280_8h.html#a7c1d244a48abeb98b6bf3f0ada087df6">More...</a><br /></td></tr>
 <tr class="separator:a7c1d244a48abeb98b6bf3f0ada087df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -525,7 +525,7 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:aaa95872408de7f5248fbb08a29ec92b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Radio whitening mode activated or deactivated for GFSK, FLRC and BLE packet types.  <a href="sx1280_8h.html#aaa95872408de7f5248fbb08a29ec92b2">More...</a><br /></td></tr>
 <tr class="separator:aaa95872408de7f5248fbb08a29ec92b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f09d0d8dc9e0e113a1d864f1c67707e" id="r_a3f09d0d8dc9e0e113a1d864f1c67707e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280_8h.html#a3f09d0d8dc9e0e113a1d864f1c67707e">RadioLoRaPacketLengthsModes_t</a> { <a class="el" href="sx1280_8h.html#a3f09d0d8dc9e0e113a1d864f1c67707ead152eaad9d30522916a44076b83ffe92">LORA_PACKET_VARIABLE_LENGTH</a>
+<tr class="memitem:a3f09d0d8dc9e0e113a1d864f1c67707e" id="r_a3f09d0d8dc9e0e113a1d864f1c67707e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280_8h.html#a3f09d0d8dc9e0e113a1d864f1c67707e">RadioLoRaPacketLengthsModes_t</a> { <a class="el" href="sx1280_8h.html#a3f09d0d8dc9e0e113a1d864f1c67707ead152eaad9d30522916a44076b83ffe92">LORA_PACKET_VARIABLE_LENGTH</a> = 0x00
 , <a class="el" href="sx1280_8h.html#a3f09d0d8dc9e0e113a1d864f1c67707ea954ba80eba09e82c7578776985ae64cb">LORA_PACKET_FIXED_LENGTH</a> = 0x80
 , <a class="el" href="sx1280_8h.html#a3f09d0d8dc9e0e113a1d864f1c67707eae68661df52892ea0708a648914a135ca">LORA_PACKET_EXPLICIT</a> = LORA_PACKET_VARIABLE_LENGTH
 , <a class="el" href="sx1280_8h.html#a3f09d0d8dc9e0e113a1d864f1c67707ea3aa0cb2152d21f5bea4b0c305a40258a">LORA_PACKET_IMPLICIT</a> = LORA_PACKET_FIXED_LENGTH
@@ -569,8 +569,8 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:a68e5ec8239d71bebcc07fb2536a55e26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the CRC field length for BLE packet type.  <a href="sx1280_8h.html#a68e5ec8239d71bebcc07fb2536a55e26">More...</a><br /></td></tr>
 <tr class="separator:a68e5ec8239d71bebcc07fb2536a55e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afce664bcc1f0b8e5d7d9db9656398b44" id="r_afce664bcc1f0b8e5d7d9db9656398b44"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280_8h.html#afce664bcc1f0b8e5d7d9db9656398b44">RadioBlePacketTypes_t</a> { <br />
-&#160;&#160;<a class="el" href="sx1280_8h.html#afce664bcc1f0b8e5d7d9db9656398b44a04c323e5aa9502f15823362e5dbba8a4">BLE_PRBS_9</a>
-, <a class="el" href="sx1280_8h.html#afce664bcc1f0b8e5d7d9db9656398b44a63a7024c9222f33fecb1d60d94d8e7b1">BLE_PRBS_15</a>
+&#160;&#160;<a class="el" href="sx1280_8h.html#afce664bcc1f0b8e5d7d9db9656398b44a04c323e5aa9502f15823362e5dbba8a4">BLE_PRBS_9</a> = 0x00
+, <a class="el" href="sx1280_8h.html#afce664bcc1f0b8e5d7d9db9656398b44a63a7024c9222f33fecb1d60d94d8e7b1">BLE_PRBS_15</a> = 0x0C
 , <a class="el" href="sx1280_8h.html#afce664bcc1f0b8e5d7d9db9656398b44a500cfe2e8e1c1378183e44e3bdc0f757">BLE_EYELONG_1_0</a> = 0x04
 , <a class="el" href="sx1280_8h.html#afce664bcc1f0b8e5d7d9db9656398b44a3b55a27f4eee7c548904eb195083424b">BLE_EYELONG_0_1</a> = 0x18
 , <br />
@@ -922,7 +922,7 @@ Functions</h2></td></tr>
 
 <p>Compensation delay for SetAutoTx/Rx functions in microseconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00090">90</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00084">84</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -938,7 +938,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00237">237</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00227">227</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -956,7 +956,7 @@ Functions</h2></td></tr>
 
 <p>The default number of samples considered in built-in ranging filter. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00191">191</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00181">181</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -967,12 +967,12 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FREQ_STEP&#160;&#160;&#160;((double)(<a class="el" href="sx1280_8h.html#a3d24a8ac8f673b60ac35b6d92fe72747">XTAL_FREQ</a> / pow(2.0, 18.0)))</td>
+          <td class="memname">#define FREQ_STEP&#160;&#160;&#160;( ( double )( <a class="el" href="sx1280_8h.html#a3d24a8ac8f673b60ac35b6d92fe72747">XTAL_FREQ</a> / pow( 2.0, 18.0 ) ) )</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00085">85</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00079">79</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -988,7 +988,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00209">209</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00199">199</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1006,7 +1006,7 @@ Functions</h2></td></tr>
 
 <p>The address of the instruction RAM and its size. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00208">208</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00198">198</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1022,7 +1022,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00255">255</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00245">245</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1038,7 +1038,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00243">243</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00233">233</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1054,7 +1054,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00249">249</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00239">239</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1070,7 +1070,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00261">261</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00251">251</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1086,7 +1086,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00149">149</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00140">140</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1104,7 +1104,7 @@ Functions</h2></td></tr>
 
 <p>Register and mask controlling demodulation detection. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00254">254</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00244">244</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1122,7 +1122,7 @@ Functions</h2></td></tr>
 
 <p>Register and mask enabling manual gain control. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00248">248</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00238">238</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1140,7 +1140,7 @@ Functions</h2></td></tr>
 
 <p>Register address and mask for LNA regime selection. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00242">242</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00232">232</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1158,7 +1158,7 @@ Functions</h2></td></tr>
 
 <p>Register for MSB Access Address (BLE) </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00236">236</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00226">226</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1177,7 +1177,7 @@ Functions</h2></td></tr>
 <p>The address of the register holding the first byte defining the CRC polynomial. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Only used for packet types GFSK and Flrc </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00111">111</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00103">103</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1196,7 +1196,7 @@ Functions</h2></td></tr>
 <p>The address of the register holding the first byte defining the CRC seed. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Only used for packet types GFSK and Flrc </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00103">103</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00096">96</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1215,7 +1215,7 @@ Functions</h2></td></tr>
 <p>The address of the register holding the device ranging id. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Only used for packet type Ranging </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00133">133</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00124">124</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1231,7 +1231,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00226">226</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00216">216</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1249,7 +1249,7 @@ Functions</h2></td></tr>
 
 <p>The MSB address and mask used to read the estimated frequency error. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00225">225</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00215">215</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1267,7 +1267,7 @@ Functions</h2></td></tr>
 
 <p>The address of the register holding the firmware version MSB. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00095">95</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00089">89</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1285,7 +1285,7 @@ Functions</h2></td></tr>
 
 <p>The address of the register holding LORA packet parameters. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00196">196</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00186">186</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1304,7 +1304,7 @@ Functions</h2></td></tr>
 <p>The address of the register holding payload length. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Do NOT try to read it directly. Use GetRxBuffer( ) instead. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00203">203</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00193">193</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1323,7 +1323,7 @@ Functions</h2></td></tr>
 <p>The address of the register holding the ranging filter window size. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Only used for packet type Ranging </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00177">177</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00167">167</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1342,7 +1342,7 @@ Functions</h2></td></tr>
 <p>The address of the register holding the ranging id check length. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Only used for packet type Ranging </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00126">126</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00117">117</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1361,7 +1361,7 @@ Functions</h2></td></tr>
 <p>The address of the register holding the first byte of ranging calibration. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Only used for packet type Ranging </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00170">170</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00160">160</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1379,7 +1379,7 @@ Functions</h2></td></tr>
 
 <p>The address of the register holding the first byte of ranging results Only used for packet type Ranging. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00155">155</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00146">146</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1398,7 +1398,7 @@ Functions</h2></td></tr>
 <p>The address of the register to reset for clearing ranging filter. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Only used for packet type Ranging </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00184">184</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00174">174</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1417,7 +1417,7 @@ Functions</h2></td></tr>
 <p>The address of the register holding ranging results configuration and the corresponding mask. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Only used for packet type Ranging </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00148">148</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00139">139</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1436,7 +1436,7 @@ Functions</h2></td></tr>
 <p>The address of the register allowing to read ranging results. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Only used for packet type Ranging </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00162">162</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00153">153</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1455,7 +1455,7 @@ Functions</h2></td></tr>
 <p>The address of the register holding the device ranging id. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Only used for packet type Ranging </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00140">140</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00131">131</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1474,7 +1474,7 @@ Functions</h2></td></tr>
 <p>The addresses of the registers holding SyncWords values. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>The addresses depends on the Packet Type in use, and not all SyncWords are available for every Packet Type </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00217">217</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00207">207</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1490,7 +1490,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00218">218</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00208">208</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1506,7 +1506,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00219">219</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00209">209</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1524,7 +1524,7 @@ Functions</h2></td></tr>
 
 <p>Defines how many bit errors are tolerated in sync word detection. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00231">231</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00221">221</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1543,7 +1543,7 @@ Functions</h2></td></tr>
 <p>The address of the register holding the first byte defining the whitening seed. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Only used for packet types GFSK, FLRC and BLE </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00119">119</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00110">110</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1561,7 +1561,7 @@ Functions</h2></td></tr>
 
 <p>Register and mask setting manual gain value. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00260">260</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00250">250</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1577,7 +1577,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00186">186</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00176">176</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1588,7 +1588,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define RX_TX_CONTINUOUS&#160;&#160;&#160;  (<a class="el" href="structTickTime__t.html">TickTime_t</a>) { <a class="el" href="sx1280_8h.html#ac4c3d6e4b5a1a739ee585d3d89fb5457a2ed6c56cbe56585ccba5ea392034e0d0">RADIO_TICK_SIZE_0015_US</a>, 0xFFFF }</td>
+          <td class="memname">#define RX_TX_CONTINUOUS&#160;&#160;&#160;( <a class="el" href="structTickTime__t.html">TickTime_t</a> ){ <a class="el" href="sx1280_8h.html#ac4c3d6e4b5a1a739ee585d3d89fb5457a2ed6c56cbe56585ccba5ea392034e0d0">RADIO_TICK_SIZE_0015_US</a>, 0xFFFF }</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1596,7 +1596,7 @@ Functions</h2></td></tr>
 <p>RX_TX_CONTINUOUS and RX_TX_SINGLE are two particular values for TickTime. </p>
 <p>The former keep the radio in Rx or Tx mode, even after successfull reception or transmission. It should never generate Timeout interrupt. The later let the radio enought time to make one reception or transmission. No Timeout interrupt is generated, and the radio fall in StandBy mode after reception or transmission. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00784">784</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00802">802</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1607,12 +1607,12 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define RX_TX_SINGLE&#160;&#160;&#160;  (<a class="el" href="structTickTime__t.html">TickTime_t</a>) { <a class="el" href="sx1280_8h.html#ac4c3d6e4b5a1a739ee585d3d89fb5457a2ed6c56cbe56585ccba5ea392034e0d0">RADIO_TICK_SIZE_0015_US</a>, 0 }</td>
+          <td class="memname">#define RX_TX_SINGLE&#160;&#160;&#160;( <a class="el" href="structTickTime__t.html">TickTime_t</a> ){ <a class="el" href="sx1280_8h.html#ac4c3d6e4b5a1a739ee585d3d89fb5457a2ed6c56cbe56585ccba5ea392034e0d0">RADIO_TICK_SIZE_0015_US</a>, 0 }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00786">786</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00803">803</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1630,7 +1630,7 @@ Functions</h2></td></tr>
 
 <p>Enables/disables driver debug features. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00032">32</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00033">33</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1649,7 +1649,7 @@ Functions</h2></td></tr>
 <p>Provides the frequency of the chip running on the radio and the frequency step. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>These defines are used for computing the frequency divider to set the RF frequency </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00084">84</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00078">78</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1666,7 +1666,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00047">47</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00044">44</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1684,7 +1684,7 @@ Functions</h2></td></tr>
 
 <p>Hardware IO IRQ callback function definition. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00075">75</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00071">71</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1700,7 +1700,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00045">45</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00042">42</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1716,7 +1716,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00044">44</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00041">41</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1732,7 +1732,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00041">41</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00039">39</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1748,7 +1748,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00039">39</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00038">38</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1780,7 +1780,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00034">34</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00035">35</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1805,7 +1805,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a772139bff523bea5802741572f6a9b70a2cfdc698267a17aa72c784e7461d6120" name="a772139bff523bea5802741572f6a9b70a2cfdc698267a17aa72c784e7461d6120"></a>IRQ_RANGING_ON_LORA_ERROR_CODE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00860">860</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00864">864</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1829,7 +1829,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="aa8e3240e528be668366db6ca72091e3da3d6b78d28e09cb074387d31882782836" name="aa8e3240e528be668366db6ca72091e3da3d6b78d28e09cb074387d31882782836"></a>IRQ_RANGING_MASTER_VALID_CODE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00870">870</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00875">875</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1853,7 +1853,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="abfe3d3956f451b205c4f735351ed6e35a2327f9845af4f69b512fb5dbd4d3d730" name="abfe3d3956f451b205c4f735351ed6e35a2327f9845af4f69b512fb5dbd4d3d730"></a>BLE_PAYLOAD_LENGTH_MAX_255_BYTES&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00627">627</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00639">639</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1875,7 +1875,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a68e5ec8239d71bebcc07fb2536a55e26ade3eb9d40979787f2e54a5c3423f6fb5" name="a68e5ec8239d71bebcc07fb2536a55e26ade3eb9d40979787f2e54a5c3423f6fb5"></a>BLE_CRC_3B&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00637">637</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00650">650</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1911,7 +1911,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00645">645</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00659">659</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1967,7 +1967,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a7a29eba4eba7a75ad05805ee42d6d1aea036988c2f5d9378a7a2a74c9b69d9fa3" name="a7a29eba4eba7a75ad05805ee42d6d1aea036988c2f5d9378a7a2a74c9b69d9fa3"></a>RADIO_SET_RANGING_ROLE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00715">715</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00731">731</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -1993,7 +1993,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a95490d3a239c9354c0e0781c88037c91a7b45fcc09fc5981bbbed5410ee4d7e21" name="a95490d3a239c9354c0e0781c88037c91a7b45fcc09fc5981bbbed5410ee4d7e21"></a>RADIO_CRC_3_BYTES&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00560">560</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00567">567</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2016,7 +2016,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a6d040e08f3ff6163ba3d44bc3f657bbba3658bee25f8a5315a295063d16ac8340" name="a6d040e08f3ff6163ba3d44bc3f657bbba3658bee25f8a5315a295063d16ac8340"></a>RADIO_DIO3&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00688">688</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00701">701</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2045,7 +2045,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a0eec6eb76c5b1580e3607ba44396fa1dab398794b8acd451b73c100340f810df2" name="a0eec6eb76c5b1580e3607ba44396fa1dab398794b8acd451b73c100340f810df2"></a>FLRC_BR_0_260_BW_0_3&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00426">426</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00425">425</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2090,7 +2090,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a89bc43fbfde7dcfd4eb69b6558d195a2a1c0cd6e9636fca81eef972c10e3909db" name="a89bc43fbfde7dcfd4eb69b6558d195a2a1c0cd6e9636fca81eef972c10e3909db"></a>FLRC_SYNCWORD_LENGTH_4_BYTE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00512">512</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00518">518</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2124,7 +2124,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="ae60e06224cbad7d557048bb9b26741a3a2eade7439915113f7dd8f0e2444cf889" name="ae60e06224cbad7d557048bb9b26741a3a2eade7439915113f7dd8f0e2444cf889"></a>GFSK_BLE_BR_0_125_BW_0_3&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00381">381</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00378">378</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2160,7 +2160,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a9e3f0305d8e5a324cd4e2eff94fb02d0a795594ae4edfffaebd2655fb281567df" name="a9e3f0305d8e5a324cd4e2eff94fb02d0a795594ae4edfffaebd2655fb281567df"></a>GFSK_BLE_MOD_IND_4_00&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00401">401</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00399">399</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2199,7 +2199,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="afa7b9d25c4305b92ca3ae2249dc9e09ba99c2782809aadc0f021ae53f3ed7ad0a" name="afa7b9d25c4305b92ca3ae2249dc9e09ba99c2782809aadc0f021ae53f3ed7ad0a"></a>IRQ_RADIO_ALL&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00664">664</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00676">676</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2223,7 +2223,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00266">266</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00256">256</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2247,7 +2247,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a27de5d6cb21c6986e6f609bd97caa5baa8414dcde2d841569df9c96a4936c654b" name="a27de5d6cb21c6986e6f609bd97caa5baa8414dcde2d841569df9c96a4936c654b"></a>LORA_BW_1600&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00474">474</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00477">477</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2272,7 +2272,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a82c98e353fc8a7955a8e92a62f66445da90f9b96b4431d3dfa3afc49ab3bc90ed" name="a82c98e353fc8a7955a8e92a62f66445da90f9b96b4431d3dfa3afc49ab3bc90ed"></a>LORA_CAD_16_SYMBOL&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00367">367</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00363">363</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2299,7 +2299,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a4bad90d9ae6081d8dc0cb92623e681b4ae4b4f1877bd573245ac5f4db7a332a79" name="a4bad90d9ae6081d8dc0cb92623e681b4ae4b4f1877bd573245ac5f4db7a332a79"></a>LORA_CR_LI_4_7&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00484">484</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00488">488</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2323,7 +2323,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00591">591</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00599">599</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2345,7 +2345,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a6a276b14912d46ab79330d9572503162a273f00ac155214f0be6de3f015078311" name="a6a276b14912d46ab79330d9572503162a273f00ac155214f0be6de3f015078311"></a>LORA_IQ_INVERTED&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00599">599</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00608">608</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2371,7 +2371,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a3f09d0d8dc9e0e113a1d864f1c67707ea3aa0cb2152d21f5bea4b0c305a40258a" name="a3f09d0d8dc9e0e113a1d864f1c67707ea3aa0cb2152d21f5bea4b0c305a40258a"></a>LORA_PACKET_IMPLICIT&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00579">579</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00588">588</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2399,7 +2399,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="abe9569be8b685cd334494ce8ec5b3ce5a5b2451cb3fae097662e1f72b2562c517" name="abe9569be8b685cd334494ce8ec5b3ce5a5b2451cb3fae097662e1f72b2562c517"></a>LORA_SF12&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00460">460</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00462">462</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2423,7 +2423,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a75861340797b61727c732cd276a6ae77a50ae880d9929d6df9f076c9d439f449b" name="a75861340797b61727c732cd276a6ae77a50ae880d9929d6df9f076c9d439f449b"></a>RADIO_MOD_SHAPING_BT_0_5&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00451">451</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00452">452</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2457,7 +2457,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00305">305</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00297">297</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2481,7 +2481,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00547">547</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00555">555</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2508,7 +2508,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="aa28671d92415a1b4b16724c72128cdc1a7bc0b281e9e7e0ef0dfb2ffb37655333" name="aa28671d92415a1b4b16724c72128cdc1a7bc0b281e9e7e0ef0dfb2ffb37655333"></a>PACKET_TYPE_NONE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00340">340</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00335">335</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2544,7 +2544,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00498">498</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00503">503</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2572,7 +2572,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a8f1d07f2043b67f4c220abed47f7ea97a40522ccd1dc276eadf6ae21a03003e7e" name="a8f1d07f2043b67f4c220abed47f7ea97a40522ccd1dc276eadf6ae21a03003e7e"></a>RADIO_RAMP_20_US&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00352">352</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00348">348</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2596,7 +2596,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a7233bbefdc52d07cbbb03a1e49443b0ca3f281e4e85b61f4ecd4cbedfa07d01aa" name="a7233bbefdc52d07cbbb03a1e49443b0ca3f281e4e85b61f4ecd4cbedfa07d01aa"></a>RANGING_IDCHECK_LENGTH_32_BITS&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00607">607</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00617">617</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2620,7 +2620,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="ac6196080616f02f608b5ad6ec233fc4ba5307a074a6fb9602e09475f3186948b5" name="ac6196080616f02f608b5ad6ec233fc4ba5307a074a6fb9602e09475f3186948b5"></a>RANGING_RESULT_FILTERED&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00617">617</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00628">628</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2642,7 +2642,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="af8dfcc3848324814e51c7fa81af51839a3b64e255729345bab0430d59593a8d64" name="af8dfcc3848324814e51c7fa81af51839a3b64e255729345bab0430d59593a8d64"></a>RADIO_RANGING_ROLE_MASTER&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00707">707</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00722">722</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2666,7 +2666,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00332">332</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00326">326</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2689,7 +2689,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a9f5dbc987101afb80ca72ccd80db33a9a28790a7a2429dbb1fea0367ed9dfba5d" name="a9f5dbc987101afb80ca72ccd80db33a9a28790a7a2429dbb1fea0367ed9dfba5d"></a>STDBY_XOSC&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00321">321</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00314">314</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2717,7 +2717,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00295">295</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00286">286</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2747,7 +2747,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00520">520</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00527">527</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2777,7 +2777,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a0177c4999ed4e4ab96e34ec13183ed43aeed00d746a4014ef2aef5bb0aa9cc9bb" name="a0177c4999ed4e4ab96e34ec13183ed43aeed00d746a4014ef2aef5bb0aa9cc9bb"></a>RADIO_RX_MATCH_SYNCWORD_1_2_3&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00532">532</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00540">540</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2801,7 +2801,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="ac4c3d6e4b5a1a739ee585d3d89fb5457a272053943f42da10b41c61077b436829" name="ac4c3d6e4b5a1a739ee585d3d89fb5457a272053943f42da10b41c61077b436829"></a>RADIO_TICK_SIZE_4000_US&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00697">697</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00711">711</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2823,7 +2823,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="aaa95872408de7f5248fbb08a29ec92b2a348e4038352afe4b3f9350cf486290a8" name="aaa95872408de7f5248fbb08a29ec92b2a348e4038352afe4b3f9350cf486290a8"></a>RADIO_WHITENING_OFF&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00571">571</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00579">579</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -2862,9 +2862,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00522">522</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00557">557</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l01106">CalibrationParams_t::ADCBulkNEnable</a>, <a class="el" href="sx1280_8h_source.html#l01107">CalibrationParams_t::ADCBulkPEnable</a>, <a class="el" href="sx1280_8h_source.html#l01105">CalibrationParams_t::ADCPulseEnable</a>, <a class="el" href="sx1280_8h_source.html#l01104">CalibrationParams_t::PLLEnable</a>, <a class="el" href="sx1280_8h_source.html#l00744">RADIO_CALIBRATE</a>, <a class="el" href="sx1280_8h_source.html#l01103">CalibrationParams_t::RC13MEnable</a>, <a class="el" href="sx1280_8h_source.html#l01102">CalibrationParams_t::RC64KEnable</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l01088">CalibrationParams_t::ADCBulkNEnable</a>, <a class="el" href="sx1280_8h_source.html#l01089">CalibrationParams_t::ADCBulkPEnable</a>, <a class="el" href="sx1280_8h_source.html#l01087">CalibrationParams_t::ADCPulseEnable</a>, <a class="el" href="sx1280_8h_source.html#l01086">CalibrationParams_t::PLLEnable</a>, <a class="el" href="sx1280_8h_source.html#l00761">RADIO_CALIBRATE</a>, <a class="el" href="sx1280_8h_source.html#l01085">CalibrationParams_t::RC13MEnable</a>, <a class="el" href="sx1280_8h_source.html#l01084">CalibrationParams_t::RC64KEnable</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="lora__config_8c_source.html#l00069">sx1280_config_init()</a>.</p>
 <div class="dynheader">
@@ -2934,11 +2934,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00514">514</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00548">548</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00743">RADIO_CLR_IRQSTATUS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00760">RADIO_CLR_IRQSTATUS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00087">clear_irqs_and_standby()</a>, <a class="el" href="sx1280__task_8c_source.html#l00077">handle_rx_done_and_get_payload()</a>, <a class="el" href="sx1280__task_8c_source.html#l00117">send_window()</a>, <a class="el" href="sx1280__task_8c_source.html#l00066">start_rx()</a>, <a class="el" href="sx1280__task_8c_source.html#l00072">stop_radio_standby()</a>, <a class="el" href="sx1280_8c_source.html#l01155">SX1280ProcessIrqs()</a>, <a class="el" href="sx1280_8c_source.html#l00168">SX1280SetRx()</a>, and <a class="el" href="sx1280_8c_source.html#l00151">SX1280SetTx()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00084">clear_irqs_and_standby()</a>, <a class="el" href="sx1280__task_8c_source.html#l00074">handle_rx_done_and_get_payload()</a>, <a class="el" href="sx1280__task_8c_source.html#l00113">send_window()</a>, <a class="el" href="sx1280__task_8c_source.html#l00063">start_rx()</a>, <a class="el" href="sx1280__task_8c_source.html#l00069">stop_radio_standby()</a>, <a class="el" href="sx1280_8c_source.html#l01204">SX1280ProcessIrqs()</a>, <a class="el" href="sx1280_8c_source.html#l00183">SX1280SetRx()</a>, and <a class="el" href="sx1280_8c_source.html#l00164">SX1280SetTx()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2989,7 +2989,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00084">84</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00981">SX1280GetFrequencyError()</a>, and <a class="el" href="sx1280_8c_source.html#l00807">SX1280GetRangingResult()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l01025">SX1280GetFrequencyError()</a>, and <a class="el" href="sx1280_8c_source.html#l00851">SX1280GetRangingResult()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3059,9 +3059,9 @@ Here is the caller graph for this function:</div>
 <p>Disable the manual gain control and enable AGC. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="sx1280_8h.html#a5750a2fb3ceb08f2452659d3d0f27bec" title="Enable manual gain and disable AGC.">SX1280EnableManualGain</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00730">730</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00780">780</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00255">MASK_DEMOD_DETECTION</a>, <a class="el" href="sx1280_8h_source.html#l00249">MASK_MANUAL_GAIN_CONTROL</a>, <a class="el" href="sx1280_8h_source.html#l00254">REG_DEMOD_DETECTION</a>, <a class="el" href="sx1280_8h_source.html#l00248">REG_ENABLE_MANUAL_GAIN_CONTROL</a>, <a class="el" href="sx1280-hal_8c_source.html#l00174">SX1280HalReadRegister()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00153">SX1280HalWriteRegister()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00245">MASK_DEMOD_DETECTION</a>, <a class="el" href="sx1280_8h_source.html#l00239">MASK_MANUAL_GAIN_CONTROL</a>, <a class="el" href="sx1280_8h_source.html#l00244">REG_DEMOD_DETECTION</a>, <a class="el" href="sx1280_8h_source.html#l00238">REG_ENABLE_MANUAL_GAIN_CONTROL</a>, <a class="el" href="sx1280-hal_8c_source.html#l00182">SX1280HalReadRegister()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00160">SX1280HalWriteRegister()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3089,9 +3089,9 @@ Here is the call graph for this function:</div>
 <p>Enable manual gain and disable AGC. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="sx1280_8h.html#ab37a43d55219dcc4967108b13c1c6f87" title="Set the gain for LNA.">SX1280SetManualGainValue</a>, <a class="el" href="sx1280_8h.html#ab20bd70738864a9b138c4011737564f6" title="Disable the manual gain control and enable AGC.">SX1280DisableManualGain</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00720">720</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00774">774</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00255">MASK_DEMOD_DETECTION</a>, <a class="el" href="sx1280_8h_source.html#l00249">MASK_MANUAL_GAIN_CONTROL</a>, <a class="el" href="sx1280_8h_source.html#l00254">REG_DEMOD_DETECTION</a>, <a class="el" href="sx1280_8h_source.html#l00248">REG_ENABLE_MANUAL_GAIN_CONTROL</a>, <a class="el" href="sx1280-hal_8c_source.html#l00174">SX1280HalReadRegister()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00153">SX1280HalWriteRegister()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00245">MASK_DEMOD_DETECTION</a>, <a class="el" href="sx1280_8h_source.html#l00239">MASK_MANUAL_GAIN_CONTROL</a>, <a class="el" href="sx1280_8h_source.html#l00244">REG_DEMOD_DETECTION</a>, <a class="el" href="sx1280_8h_source.html#l00238">REG_ENABLE_MANUAL_GAIN_CONTROL</a>, <a class="el" href="sx1280-hal_8c_source.html#l00182">SX1280HalReadRegister()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00160">SX1280HalWriteRegister()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3124,11 +3124,11 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00108">108</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00114">114</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00095">REG_LR_FIRMWARE_VERSION_MSB</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00174">SX1280HalReadRegister()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00089">REG_LR_FIRMWARE_VERSION_MSB</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00182">SX1280HalReadRegister()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00162">sx1280TaskEntry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00157">sx1280TaskEntry()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3166,9 +3166,9 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00981">981</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l01025">1025</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00345">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00344">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00342">PACKET_TYPE_LORA</a>, <a class="el" href="sx1280_8h_source.html#l00346">PACKET_TYPE_NONE</a>, <a class="el" href="sx1280_8h_source.html#l00343">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00226">REG_LR_ESTIMATED_FREQUENCY_ERROR_MASK</a>, <a class="el" href="sx1280_8h_source.html#l00225">REG_LR_ESTIMATED_FREQUENCY_ERROR_MSB</a>, <a class="el" href="sx1280_8c_source.html#l00084">SX1280complement2()</a>, <a class="el" href="sx1280_8c_source.html#l01014">SX1280GetLoRaBandwidth()</a>, <a class="el" href="sx1280_8c_source.html#l00219">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00174">SX1280HalReadRegister()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00340">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00337">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00338">PACKET_TYPE_LORA</a>, <a class="el" href="sx1280_8h_source.html#l00342">PACKET_TYPE_NONE</a>, <a class="el" href="sx1280_8h_source.html#l00339">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00216">REG_LR_ESTIMATED_FREQUENCY_ERROR_MASK</a>, <a class="el" href="sx1280_8h_source.html#l00215">REG_LR_ESTIMATED_FREQUENCY_ERROR_MSB</a>, <a class="el" href="sx1280_8c_source.html#l00084">SX1280complement2()</a>, <a class="el" href="sx1280_8c_source.html#l01059">SX1280GetLoRaBandwidth()</a>, <a class="el" href="sx1280_8c_source.html#l00239">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00182">SX1280HalReadRegister()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3231,8 +3231,8 @@ Here is the call graph for this function:</div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">line</td><td>HEX file line string </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">bytes</td><td>Bytes array to be written to the instruction memory</td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">addr</td><td>Instruction memory address where to write the bytes array</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">bytes</td><td>Bytes array to be written to the instruction memory </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">addr</td><td>Instruction memory address where to write the bytes array </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">num</td><td>Number of bytes in Bytes array </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">code</td><td>HEX file line type [0: instruction, 1: end of file, 2: begin of file]</td></tr>
   </table>
@@ -3245,9 +3245,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00929">929</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00964">964</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00900">SX1280ParseHexFileLine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00927">SX1280ParseHexFileLine()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3280,11 +3280,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00506">506</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00539">539</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00742">RADIO_GET_IRQSTATUS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00126">SX1280HalReadCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00759">RADIO_GET_IRQSTATUS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00133">SX1280HalReadCommand()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00092">rx_wait_for_event()</a>, <a class="el" href="sx1280_8c_source.html#l01155">SX1280ProcessIrqs()</a>, and <a class="el" href="sx1280__task_8c_source.html#l00057">wait_for_tx_done()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00089">rx_wait_for_event()</a>, <a class="el" href="sx1280_8c_source.html#l01204">SX1280ProcessIrqs()</a>, and <a class="el" href="sx1280__task_8c_source.html#l00054">wait_for_tx_done()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3323,11 +3323,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l01014">1014</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l01059">1059</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00475">LORA_BW_0200</a>, <a class="el" href="sx1280_8h_source.html#l00476">LORA_BW_0400</a>, <a class="el" href="sx1280_8h_source.html#l00477">LORA_BW_0800</a>, <a class="el" href="sx1280_8h_source.html#l00478">LORA_BW_1600</a>, and <a class="el" href="sx1280_8c_source.html#l00063">LoRaBandwidth</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00479">LORA_BW_0200</a>, <a class="el" href="sx1280_8h_source.html#l00480">LORA_BW_0400</a>, <a class="el" href="sx1280_8h_source.html#l00481">LORA_BW_0800</a>, <a class="el" href="sx1280_8h_source.html#l00482">LORA_BW_1600</a>, and <a class="el" href="sx1280_8c_source.html#l00063">LoRaBandwidth</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00981">SX1280GetFrequencyError()</a>, and <a class="el" href="sx1280_8c_source.html#l00807">SX1280GetRangingResult()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l01025">SX1280GetFrequencyError()</a>, and <a class="el" href="sx1280_8c_source.html#l00851">SX1280GetRangingResult()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3360,11 +3360,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00122">122</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00129">129</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
 <p class="reference">References <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l01155">SX1280ProcessIrqs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l01204">SX1280ProcessIrqs()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3407,9 +3407,9 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00390">390</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00423">423</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l01000">PacketStatus_t::AbortError</a>, <a class="el" href="structPacketStatus__t.html#a53f05f65c4a661b7239953bc47689f4c">PacketStatus_t::Ble</a>, <a class="el" href="sx1280_8h_source.html#l00999">PacketStatus_t::CrcError</a>, <a class="el" href="structPacketStatus__t.html#aef089e8ce2c5f60f2dc7f0167ec7ea81">PacketStatus_t::ErrorStatus</a>, <a class="el" href="structPacketStatus__t.html#a1b58742caa1fa51599c05929fdd73b1b">PacketStatus_t::Flrc</a>, <a class="el" href="structPacketStatus__t.html#aa8fea1cefb4d766bc86d260f7b1f424f">PacketStatus_t::Gfsk</a>, <a class="el" href="sx1280_8h_source.html#l01001">PacketStatus_t::HeaderReceived</a>, <a class="el" href="sx1280_8h_source.html#l00998">PacketStatus_t::LengthError</a>, <a class="el" href="structPacketStatus__t.html#ad9c113eb99d8442a47defcc31d3d65dd">PacketStatus_t::LoRa</a>, <a class="el" href="sx1280_8h_source.html#l00345">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00344">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00342">PACKET_TYPE_LORA</a>, <a class="el" href="sx1280_8h_source.html#l00346">PACKET_TYPE_NONE</a>, <a class="el" href="sx1280_8h_source.html#l00343">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l01003">PacketStatus_t::PacketControlerBusy</a>, <a class="el" href="sx1280_8h_source.html#l01002">PacketStatus_t::PacketReceived</a>, <a class="el" href="sx1280_8h_source.html#l01008">PacketStatus_t::PacketSent</a>, <a class="el" href="sx1280_8h_source.html#l00991">PacketStatus_t::packetType</a>, <a class="el" href="structPacketStatus__t.html#aba616f9d2f3582f87fb6d8f1b444338e">PacketStatus_t::Params</a>, <a class="el" href="sx1280_8h_source.html#l00739">RADIO_GET_PACKETSTATUS</a>, <a class="el" href="sx1280_8h_source.html#l00994">PacketStatus_t::RssiAvg</a>, <a class="el" href="sx1280_8h_source.html#l01014">PacketStatus_t::RssiPkt</a>, <a class="el" href="sx1280_8h_source.html#l00995">PacketStatus_t::RssiSync</a>, <a class="el" href="sx1280_8h_source.html#l01006">PacketStatus_t::RxNoAck</a>, <a class="el" href="sx1280_8h_source.html#l01046">PacketStatus_t::RxPid</a>, <a class="el" href="sx1280_8h_source.html#l01049">PacketStatus_t::RxPidErr</a>, <a class="el" href="sx1280_8h_source.html#l01015">PacketStatus_t::SnrPkt</a>, <a class="el" href="sx1280_8c_source.html#l00219">SX1280GetPacketType()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00126">SX1280HalReadCommand()</a>, <a class="el" href="sx1280_8h_source.html#l01011">PacketStatus_t::SyncAddrStatus</a>, <a class="el" href="sx1280_8h_source.html#l00997">PacketStatus_t::SyncError</a>, and <a class="el" href="structPacketStatus__t.html#a031d939178b4f0daad346a0a0e213f58">PacketStatus_t::TxRxStatus</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00976">PacketStatus_t::AbortError</a>, <a class="el" href="structPacketStatus__t.html#a53f05f65c4a661b7239953bc47689f4c">PacketStatus_t::Ble</a>, <a class="el" href="sx1280_8h_source.html#l00975">PacketStatus_t::CrcError</a>, <a class="el" href="structPacketStatus__t.html#aef089e8ce2c5f60f2dc7f0167ec7ea81">PacketStatus_t::ErrorStatus</a>, <a class="el" href="structPacketStatus__t.html#a1b58742caa1fa51599c05929fdd73b1b">PacketStatus_t::Flrc</a>, <a class="el" href="structPacketStatus__t.html#aa8fea1cefb4d766bc86d260f7b1f424f">PacketStatus_t::Gfsk</a>, <a class="el" href="sx1280_8h_source.html#l00977">PacketStatus_t::HeaderReceived</a>, <a class="el" href="sx1280_8h_source.html#l00974">PacketStatus_t::LengthError</a>, <a class="el" href="structPacketStatus__t.html#ad9c113eb99d8442a47defcc31d3d65dd">PacketStatus_t::LoRa</a>, <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00340">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00337">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00338">PACKET_TYPE_LORA</a>, <a class="el" href="sx1280_8h_source.html#l00342">PACKET_TYPE_NONE</a>, <a class="el" href="sx1280_8h_source.html#l00339">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00979">PacketStatus_t::PacketControlerBusy</a>, <a class="el" href="sx1280_8h_source.html#l00978">PacketStatus_t::PacketReceived</a>, <a class="el" href="sx1280_8h_source.html#l00984">PacketStatus_t::PacketSent</a>, <a class="el" href="sx1280_8h_source.html#l00964">PacketStatus_t::packetType</a>, <a class="el" href="structPacketStatus__t.html#aba616f9d2f3582f87fb6d8f1b444338e">PacketStatus_t::Params</a>, <a class="el" href="sx1280_8h_source.html#l00756">RADIO_GET_PACKETSTATUS</a>, <a class="el" href="sx1280_8h_source.html#l00969">PacketStatus_t::RssiAvg</a>, <a class="el" href="sx1280_8h_source.html#l00990">PacketStatus_t::RssiPkt</a>, <a class="el" href="sx1280_8h_source.html#l00970">PacketStatus_t::RssiSync</a>, <a class="el" href="sx1280_8h_source.html#l00983">PacketStatus_t::RxNoAck</a>, <a class="el" href="sx1280_8h_source.html#l01025">PacketStatus_t::RxPid</a>, <a class="el" href="sx1280_8h_source.html#l01027">PacketStatus_t::RxPidErr</a>, <a class="el" href="sx1280_8h_source.html#l00991">PacketStatus_t::SnrPkt</a>, <a class="el" href="sx1280_8c_source.html#l00239">SX1280GetPacketType()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00133">SX1280HalReadCommand()</a>, <a class="el" href="sx1280_8h_source.html#l00986">PacketStatus_t::SyncAddrStatus</a>, <a class="el" href="sx1280_8h_source.html#l00973">PacketStatus_t::SyncError</a>, and <a class="el" href="structPacketStatus__t.html#a031d939178b4f0daad346a0a0e213f58">PacketStatus_t::TxRxStatus</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3442,11 +3442,11 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00219">219</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00239">239</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
 <p class="reference">References <a class="el" href="sx1280_8c_source.html#l00058">PacketType</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00981">SX1280GetFrequencyError()</a>, <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>, <a class="el" href="sx1280_8c_source.html#l00807">SX1280GetRangingResult()</a>, <a class="el" href="sx1280_8c_source.html#l00368">SX1280GetRxBufferStatus()</a>, <a class="el" href="sx1280_8c_source.html#l01155">SX1280ProcessIrqs()</a>, <a class="el" href="sx1280_8c_source.html#l00690">SX1280SetCrcPolynomial()</a>, <a class="el" href="sx1280_8c_source.html#l00658">SX1280SetCrcSeed()</a>, <a class="el" href="sx1280_8c_source.html#l00781">SX1280SetDeviceRangingAddress()</a>, <a class="el" href="sx1280_8c_source.html#l00869">SX1280SetRangingCalibration()</a>, <a class="el" href="sx1280_8c_source.html#l00765">SX1280SetRangingIdLength()</a>, <a class="el" href="sx1280_8c_source.html#l00794">SX1280SetRangingRequestAddress()</a>, <a class="el" href="sx1280_8c_source.html#l00168">SX1280SetRx()</a>, <a class="el" href="sx1280_8c_source.html#l00583">SX1280SetSyncWord()</a>, <a class="el" href="sx1280_8c_source.html#l00151">SX1280SetTx()</a>, and <a class="el" href="sx1280_8c_source.html#l00707">SX1280SetWhiteningSeed()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l01025">SX1280GetFrequencyError()</a>, <a class="el" href="sx1280_8c_source.html#l00423">SX1280GetPacketStatus()</a>, <a class="el" href="sx1280_8c_source.html#l00851">SX1280GetRangingResult()</a>, <a class="el" href="sx1280_8c_source.html#l00397">SX1280GetRxBufferStatus()</a>, <a class="el" href="sx1280_8c_source.html#l01204">SX1280ProcessIrqs()</a>, <a class="el" href="sx1280_8c_source.html#l00740">SX1280SetCrcPolynomial()</a>, <a class="el" href="sx1280_8c_source.html#l00708">SX1280SetCrcSeed()</a>, <a class="el" href="sx1280_8c_source.html#l00821">SX1280SetDeviceRangingAddress()</a>, <a class="el" href="sx1280_8c_source.html#l00898">SX1280SetRangingCalibration()</a>, <a class="el" href="sx1280_8c_source.html#l00808">SX1280SetRangingIdLength()</a>, <a class="el" href="sx1280_8c_source.html#l00836">SX1280SetRangingRequestAddress()</a>, <a class="el" href="sx1280_8c_source.html#l00183">SX1280SetRx()</a>, <a class="el" href="sx1280_8c_source.html#l00629">SX1280SetSyncWord()</a>, <a class="el" href="sx1280_8c_source.html#l00164">SX1280SetTx()</a>, and <a class="el" href="sx1280_8c_source.html#l00759">SX1280SetWhiteningSeed()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3497,18 +3497,18 @@ Here is the caller graph for this function:</div>
 <p>If the received payload is longer than maxSize, then the method returns 1 and do not set size and payload.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">payload</td><td>A pointer to a buffer into which the payload will be copied</td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">size</td><td>A pointer to the size of the payload received</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">payload</td><td>A pointer to a buffer into which the payload will be copied </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">size</td><td>A pointer to the size of the payload received </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">maxSize</td><td>The maximal size allowed to copy into the buffer </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00565">565</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00610">610</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8c_source.html#l00368">SX1280GetRxBufferStatus()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00195">SX1280HalReadBuffer()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8c_source.html#l00397">SX1280GetRxBufferStatus()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00204">SX1280HalReadBuffer()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00077">handle_rx_done_and_get_payload()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00074">handle_rx_done_and_get_payload()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3595,9 +3595,9 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00856">856</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00890">890</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00149">MASK_RANGINGMUXSEL</a>, <a class="el" href="sx1280_8h_source.html#l00618">RANGING_RESULT_RAW</a>, <a class="el" href="sx1280_8h_source.html#l00148">REG_LR_RANGINGRESULTCONFIG</a>, <a class="el" href="sx1280_8h_source.html#l00186">REG_RANGING_RSSI</a>, <a class="el" href="sx1280_8h_source.html#l00323">STDBY_XOSC</a>, <a class="el" href="sx1280-hal_8c_source.html#l00174">SX1280HalReadRegister()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00153">SX1280HalWriteRegister()</a>, and <a class="el" href="sx1280_8c_source.html#l00136">SX1280SetStandby()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00140">MASK_RANGINGMUXSEL</a>, <a class="el" href="sx1280_8h_source.html#l00630">RANGING_RESULT_RAW</a>, <a class="el" href="sx1280_8h_source.html#l00139">REG_LR_RANGINGRESULTCONFIG</a>, <a class="el" href="sx1280_8h_source.html#l00176">REG_RANGING_RSSI</a>, <a class="el" href="sx1280_8h_source.html#l00317">STDBY_XOSC</a>, <a class="el" href="sx1280-hal_8c_source.html#l00182">SX1280HalReadRegister()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00160">SX1280HalWriteRegister()</a>, and <a class="el" href="sx1280_8c_source.html#l00145">SX1280SetStandby()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3646,9 +3646,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00807">807</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00851">851</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00149">MASK_RANGINGMUXSEL</a>, <a class="el" href="sx1280_8h_source.html#l00343">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00619">RANGING_RESULT_AVERAGED</a>, <a class="el" href="sx1280_8h_source.html#l00620">RANGING_RESULT_DEBIASED</a>, <a class="el" href="sx1280_8h_source.html#l00621">RANGING_RESULT_FILTERED</a>, <a class="el" href="sx1280_8h_source.html#l00618">RANGING_RESULT_RAW</a>, <a class="el" href="sx1280_8h_source.html#l00155">REG_LR_RANGINGRESULTBASEADDR</a>, <a class="el" href="sx1280_8h_source.html#l00148">REG_LR_RANGINGRESULTCONFIG</a>, <a class="el" href="sx1280_8h_source.html#l00322">STDBY_RC</a>, <a class="el" href="sx1280_8h_source.html#l00323">STDBY_XOSC</a>, <a class="el" href="sx1280_8c_source.html#l00084">SX1280complement2()</a>, <a class="el" href="sx1280_8c_source.html#l01014">SX1280GetLoRaBandwidth()</a>, <a class="el" href="sx1280_8c_source.html#l00219">SX1280GetPacketType()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00174">SX1280HalReadRegister()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00153">SX1280HalWriteRegister()</a>, and <a class="el" href="sx1280_8c_source.html#l00136">SX1280SetStandby()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00140">MASK_RANGINGMUXSEL</a>, <a class="el" href="sx1280_8h_source.html#l00339">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00631">RANGING_RESULT_AVERAGED</a>, <a class="el" href="sx1280_8h_source.html#l00632">RANGING_RESULT_DEBIASED</a>, <a class="el" href="sx1280_8h_source.html#l00633">RANGING_RESULT_FILTERED</a>, <a class="el" href="sx1280_8h_source.html#l00630">RANGING_RESULT_RAW</a>, <a class="el" href="sx1280_8h_source.html#l00146">REG_LR_RANGINGRESULTBASEADDR</a>, <a class="el" href="sx1280_8h_source.html#l00139">REG_LR_RANGINGRESULTCONFIG</a>, <a class="el" href="sx1280_8h_source.html#l00316">STDBY_RC</a>, <a class="el" href="sx1280_8h_source.html#l00317">STDBY_XOSC</a>, <a class="el" href="sx1280_8c_source.html#l00084">SX1280complement2()</a>, <a class="el" href="sx1280_8c_source.html#l01059">SX1280GetLoRaBandwidth()</a>, <a class="el" href="sx1280_8c_source.html#l00239">SX1280GetPacketType()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00182">SX1280HalReadRegister()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00160">SX1280HalWriteRegister()</a>, and <a class="el" href="sx1280_8c_source.html#l00145">SX1280SetStandby()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3681,9 +3681,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00482">482</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00515">515</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00740">RADIO_GET_RSSIINST</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00126">SX1280HalReadCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00757">RADIO_GET_RSSIINST</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00133">SX1280HalReadCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3733,11 +3733,11 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00368">368</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00397">397</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00345">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00342">PACKET_TYPE_LORA</a>, <a class="el" href="sx1280_8h_source.html#l00738">RADIO_GET_RXBUFFERSTATUS</a>, <a class="el" href="sx1280_8h_source.html#l00196">REG_LR_PACKETPARAMS</a>, <a class="el" href="sx1280_8h_source.html#l00203">REG_LR_PAYLOADLENGTH</a>, <a class="el" href="sx1280_8c_source.html#l00219">SX1280GetPacketType()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00126">SX1280HalReadCommand()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00174">SX1280HalReadRegister()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00338">PACKET_TYPE_LORA</a>, <a class="el" href="sx1280_8h_source.html#l00755">RADIO_GET_RXBUFFERSTATUS</a>, <a class="el" href="sx1280_8h_source.html#l00186">REG_LR_PACKETPARAMS</a>, <a class="el" href="sx1280_8h_source.html#l00193">REG_LR_PAYLOADLENGTH</a>, <a class="el" href="sx1280_8c_source.html#l00239">SX1280GetPacketType()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00133">SX1280HalReadCommand()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00182">SX1280HalReadRegister()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00565">SX1280GetPayload()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00610">SX1280GetPayload()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3775,9 +3775,9 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00113">113</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00119">119</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00716">RADIO_GET_STATUS</a>, <a class="el" href="sx1280-hal_8c_source.html#l00126">SX1280HalReadCommand()</a>, and <a class="el" href="sx1280_8h_source.html#l00289">RadioStatus_t::Value</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00733">RADIO_GET_STATUS</a>, <a class="el" href="sx1280-hal_8c_source.html#l00133">SX1280HalReadCommand()</a>, and <a class="el" href="sx1280_8h_source.html#l00280">RadioStatus_t::Value</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3814,9 +3814,9 @@ Here is the call graph for this function:</div>
 
 <p>Initializes the radio driver. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00092">92</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00094">94</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8c_source.html#l00073">DioIrq</a>, <a class="el" href="sx1280_8c_source.html#l00082">RadioCallbacks</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00044">SX1280HalInit()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8c_source.html#l00073">DioIrq</a>, <a class="el" href="sx1280_8c_source.html#l00082">RadioCallbacks</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00045">SX1280HalInit()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3844,9 +3844,9 @@ Here is the call graph for this function:</div>
 <p>DIOs interrupt callback. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Called to handle all 3 DIOs pins </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l01142">1142</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l01187">1187</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8c_source.html#l00080">IrqState</a>, <a class="el" href="sx1280_8c_source.html#l00068">PollingMode</a>, and <a class="el" href="sx1280_8c_source.html#l01155">SX1280ProcessIrqs()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8c_source.html#l00080">IrqState</a>, <a class="el" href="sx1280_8c_source.html#l00068">PollingMode</a>, and <a class="el" href="sx1280_8c_source.html#l01204">SX1280ProcessIrqs()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3895,9 +3895,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00900">900</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00927">927</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8c_source.html#l00929">SX1280GetHexFileLineFields()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00139">SX1280HalWriteRegisters()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8c_source.html#l00964">SX1280GetHexFileLineFields()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00146">SX1280HalWriteRegisters()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3924,11 +3924,11 @@ Here is the call graph for this function:</div>
 
 <p>Process the analysis of radio IRQs and calls callback functions depending on radio state. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l01155">1155</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l01204">1204</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00900">RadioCallbacks_t::cadDone</a>, <a class="el" href="sx1280_8c_source.html#l00022">DISABLE_IRQ</a>, <a class="el" href="sx1280_8c_source.html#l00026">ENABLE_IRQ</a>, <a class="el" href="sx1280_8h_source.html#l00679">IRQ_CAD_ACTIVITY_DETECTED</a>, <a class="el" href="sx1280_8h_source.html#l00678">IRQ_CAD_DONE</a>, <a class="el" href="sx1280_8h_source.html#l00672">IRQ_CRC_ERROR</a>, <a class="el" href="sx1280_8h_source.html#l00863">IRQ_CRC_ERROR_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00671">IRQ_HEADER_ERROR</a>, <a class="el" href="sx1280_8h_source.html#l00861">IRQ_HEADER_ERROR_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00670">IRQ_HEADER_VALID</a>, <a class="el" href="sx1280_8h_source.html#l00682">IRQ_RADIO_ALL</a>, <a class="el" href="sx1280_8h_source.html#l00873">IRQ_RANGING_MASTER_ERROR_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00676">IRQ_RANGING_MASTER_RESULT_TIMEOUT</a>, <a class="el" href="sx1280_8h_source.html#l00675">IRQ_RANGING_MASTER_RESULT_VALID</a>, <a class="el" href="sx1280_8h_source.html#l00874">IRQ_RANGING_MASTER_VALID_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00864">IRQ_RANGING_ON_LORA_ERROR_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00871">IRQ_RANGING_SLAVE_ERROR_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00674">IRQ_RANGING_SLAVE_REQUEST_DISCARDED</a>, <a class="el" href="sx1280_8h_source.html#l00677">IRQ_RANGING_SLAVE_REQUEST_VALID</a>, <a class="el" href="sx1280_8h_source.html#l00673">IRQ_RANGING_SLAVE_RESPONSE_DONE</a>, <a class="el" href="sx1280_8h_source.html#l00872">IRQ_RANGING_SLAVE_VALID_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00667">IRQ_RX_DONE</a>, <a class="el" href="sx1280_8h_source.html#l00680">IRQ_RX_TX_TIMEOUT</a>, <a class="el" href="sx1280_8h_source.html#l00669">IRQ_SYNCWORD_ERROR</a>, <a class="el" href="sx1280_8h_source.html#l00862">IRQ_SYNCWORD_ERROR_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00668">IRQ_SYNCWORD_VALID</a>, <a class="el" href="sx1280_8h_source.html#l00666">IRQ_TX_DONE</a>, <a class="el" href="sx1280_8c_source.html#l00080">IrqState</a>, <a class="el" href="sx1280_8h_source.html#l00312">MODE_CAD</a>, <a class="el" href="sx1280_8h_source.html#l00311">MODE_RX</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00345">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00344">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00342">PACKET_TYPE_LORA</a>, <a class="el" href="sx1280_8h_source.html#l00346">PACKET_TYPE_NONE</a>, <a class="el" href="sx1280_8h_source.html#l00343">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8c_source.html#l00068">PollingMode</a>, <a class="el" href="sx1280_8c_source.html#l00082">RadioCallbacks</a>, <a class="el" href="sx1280_8h_source.html#l00897">RadioCallbacks_t::rangingDone</a>, <a class="el" href="sx1280_8h_source.html#l00884">RadioCallbacks_t::rxDone</a>, <a class="el" href="sx1280_8h_source.html#l00894">RadioCallbacks_t::rxError</a>, <a class="el" href="sx1280_8h_source.html#l00888">RadioCallbacks_t::rxHeaderDone</a>, <a class="el" href="sx1280_8h_source.html#l00886">RadioCallbacks_t::rxSyncWordDone</a>, <a class="el" href="sx1280_8h_source.html#l00892">RadioCallbacks_t::rxTimeout</a>, <a class="el" href="sx1280_8h_source.html#l00306">SX1280_MODE_SLEEP</a>, <a class="el" href="sx1280_8h_source.html#l00310">SX1280_MODE_TX</a>, <a class="el" href="sx1280_8c_source.html#l00514">SX1280ClearIrqStatus()</a>, <a class="el" href="sx1280_8c_source.html#l00506">SX1280GetIrqStatus()</a>, <a class="el" href="sx1280_8c_source.html#l00122">SX1280GetOpMode()</a>, <a class="el" href="sx1280_8c_source.html#l00219">SX1280GetPacketType()</a>, <a class="el" href="sx1280_8h_source.html#l00882">RadioCallbacks_t::txDone</a>, and <a class="el" href="sx1280_8h_source.html#l00890">RadioCallbacks_t::txTimeout</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00897">RadioCallbacks_t::cadDone</a>, <a class="el" href="sx1280_8c_source.html#l00022">DISABLE_IRQ</a>, <a class="el" href="sx1280_8c_source.html#l00026">ENABLE_IRQ</a>, <a class="el" href="sx1280_8h_source.html#l00692">IRQ_CAD_ACTIVITY_DETECTED</a>, <a class="el" href="sx1280_8h_source.html#l00691">IRQ_CAD_DONE</a>, <a class="el" href="sx1280_8h_source.html#l00685">IRQ_CRC_ERROR</a>, <a class="el" href="sx1280_8h_source.html#l00868">IRQ_CRC_ERROR_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00684">IRQ_HEADER_ERROR</a>, <a class="el" href="sx1280_8h_source.html#l00866">IRQ_HEADER_ERROR_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00683">IRQ_HEADER_VALID</a>, <a class="el" href="sx1280_8h_source.html#l00695">IRQ_RADIO_ALL</a>, <a class="el" href="sx1280_8h_source.html#l00879">IRQ_RANGING_MASTER_ERROR_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00689">IRQ_RANGING_MASTER_RESULT_TIMEOUT</a>, <a class="el" href="sx1280_8h_source.html#l00688">IRQ_RANGING_MASTER_RESULT_VALID</a>, <a class="el" href="sx1280_8h_source.html#l00880">IRQ_RANGING_MASTER_VALID_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00869">IRQ_RANGING_ON_LORA_ERROR_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00877">IRQ_RANGING_SLAVE_ERROR_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00687">IRQ_RANGING_SLAVE_REQUEST_DISCARDED</a>, <a class="el" href="sx1280_8h_source.html#l00690">IRQ_RANGING_SLAVE_REQUEST_VALID</a>, <a class="el" href="sx1280_8h_source.html#l00686">IRQ_RANGING_SLAVE_RESPONSE_DONE</a>, <a class="el" href="sx1280_8h_source.html#l00878">IRQ_RANGING_SLAVE_VALID_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00680">IRQ_RX_DONE</a>, <a class="el" href="sx1280_8h_source.html#l00693">IRQ_RX_TX_TIMEOUT</a>, <a class="el" href="sx1280_8h_source.html#l00682">IRQ_SYNCWORD_ERROR</a>, <a class="el" href="sx1280_8h_source.html#l00867">IRQ_SYNCWORD_ERROR_CODE</a>, <a class="el" href="sx1280_8h_source.html#l00681">IRQ_SYNCWORD_VALID</a>, <a class="el" href="sx1280_8h_source.html#l00679">IRQ_TX_DONE</a>, <a class="el" href="sx1280_8c_source.html#l00080">IrqState</a>, <a class="el" href="sx1280_8h_source.html#l00305">MODE_CAD</a>, <a class="el" href="sx1280_8h_source.html#l00304">MODE_RX</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00340">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00337">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00338">PACKET_TYPE_LORA</a>, <a class="el" href="sx1280_8h_source.html#l00342">PACKET_TYPE_NONE</a>, <a class="el" href="sx1280_8h_source.html#l00339">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8c_source.html#l00068">PollingMode</a>, <a class="el" href="sx1280_8c_source.html#l00082">RadioCallbacks</a>, <a class="el" href="sx1280_8h_source.html#l00896">RadioCallbacks_t::rangingDone</a>, <a class="el" href="sx1280_8h_source.html#l00890">RadioCallbacks_t::rxDone</a>, <a class="el" href="sx1280_8h_source.html#l00895">RadioCallbacks_t::rxError</a>, <a class="el" href="sx1280_8h_source.html#l00892">RadioCallbacks_t::rxHeaderDone</a>, <a class="el" href="sx1280_8h_source.html#l00891">RadioCallbacks_t::rxSyncWordDone</a>, <a class="el" href="sx1280_8h_source.html#l00894">RadioCallbacks_t::rxTimeout</a>, <a class="el" href="sx1280_8h_source.html#l00299">SX1280_MODE_SLEEP</a>, <a class="el" href="sx1280_8h_source.html#l00303">SX1280_MODE_TX</a>, <a class="el" href="sx1280_8c_source.html#l00548">SX1280ClearIrqStatus()</a>, <a class="el" href="sx1280_8c_source.html#l00539">SX1280GetIrqStatus()</a>, <a class="el" href="sx1280_8c_source.html#l00129">SX1280GetOpMode()</a>, <a class="el" href="sx1280_8c_source.html#l00239">SX1280GetPacketType()</a>, <a class="el" href="sx1280_8h_source.html#l00889">RadioCallbacks_t::txDone</a>, and <a class="el" href="sx1280_8h_source.html#l00893">RadioCallbacks_t::txTimeout</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l01142">SX1280OnDioIrq()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l01187">SX1280OnDioIrq()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3960,9 +3960,9 @@ Here is the caller graph for this function:</div>
 
 <p>Clears the ranging filter. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00883">883</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00912">912</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00184">REG_LR_RANGINGRESULTCLEARREG</a>, <a class="el" href="sx1280-hal_8c_source.html#l00174">SX1280HalReadRegister()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00153">SX1280HalWriteRegister()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00174">REG_LR_RANGINGRESULTCLEARREG</a>, <a class="el" href="sx1280-hal_8c_source.html#l00182">SX1280HalReadRegister()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00160">SX1280HalWriteRegister()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4006,9 +4006,9 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Value inferior to 8 will be silently set to 8 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00893">893</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00921">921</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00191">DEFAULT_RANGING_FILTER_SIZE</a>, <a class="el" href="sx1280_8h_source.html#l00177">REG_LR_RANGINGFILTERWINDOWSIZE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00153">SX1280HalWriteRegister()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00181">DEFAULT_RANGING_FILTER_SIZE</a>, <a class="el" href="sx1280_8h_source.html#l00167">REG_LR_RANGINGFILTERWINDOWSIZE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00160">SX1280HalWriteRegister()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4035,11 +4035,11 @@ Here is the call graph for this function:</div>
 
 <p>Resets the radio. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00098">98</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00101">101</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280-hal_8c_source.html#l00069">SX1280HalReset()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280-hal_8c_source.html#l00072">SX1280HalReset()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lora__config_8c_source.html#l00069">sx1280_config_init()</a>, and <a class="el" href="sx1280__task_8c_source.html#l00149">verify_freq()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lora__config_8c_source.html#l00069">sx1280_config_init()</a>, and <a class="el" href="sx1280__task_8c_source.html#l00145">verify_freq()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4101,11 +4101,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00577">577</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00623">623</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8c_source.html#l00561">SX1280SetPayload()</a>, and <a class="el" href="sx1280_8c_source.html#l00151">SX1280SetTx()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8c_source.html#l00605">SX1280SetPayload()</a>, and <a class="el" href="sx1280_8c_source.html#l00164">SX1280SetTx()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00117">send_window()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00113">send_window()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4154,9 +4154,9 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00553">553</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00595">595</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00748">RADIO_SET_AUTOFS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00765">RADIO_SET_AUTOFS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4200,9 +4200,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00539">539</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00579">579</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00090">AUTO_RX_TX_OFFSET</a>, <a class="el" href="sx1280_8h_source.html#l00747">RADIO_SET_AUTOTX</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00084">AUTO_RX_TX_OFFSET</a>, <a class="el" href="sx1280_8h_source.html#l00764">RADIO_SET_AUTOTX</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4245,11 +4245,11 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00675">675</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00727">727</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00236">REG_LR_BLE_ACCESS_ADDRESS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00153">SX1280HalWriteRegister()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00226">REG_LR_BLE_ACCESS_ADDRESS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00160">SX1280HalWriteRegister()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00686">SX1280SetBleAdvertizerAccessAddress()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00735">SX1280SetBleAdvertizerAccessAddress()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4283,9 +4283,9 @@ Here is the caller graph for this function:</div>
 <p>All advertizer BLE packets must use a particular value for Access Address field. This method sets it.</p>
 <dl class="section see"><dt>See also</dt><dd>SX1280::SetBleAccessAddress </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00686">686</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00735">735</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00237">BLE_ADVERTIZER_ACCESS_ADDRESS</a>, and <a class="el" href="sx1280_8c_source.html#l00675">SX1280SetBleAccessAddress()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00227">BLE_ADVERTIZER_ACCESS_ADDRESS</a>, and <a class="el" href="sx1280_8c_source.html#l00727">SX1280SetBleAccessAddress()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4335,9 +4335,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00249">249</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00273">273</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00735">RADIO_SET_BUFFERBASEADDRESS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00752">RADIO_SET_BUFFERBASEADDRESS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4365,9 +4365,9 @@ Here is the call graph for this function:</div>
 <p>Sets the radio in CAD mode. </p>
 <dl class="section see"><dt>See also</dt><dd>SX1280::SetCadParams </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00198">198</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00215">215</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00312">MODE_CAD</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00727">RADIO_SET_CAD</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00305">MODE_CAD</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00744">RADIO_SET_CAD</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4410,9 +4410,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00243">243</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00267">267</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00312">MODE_CAD</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00734">RADIO_SET_CADPARAMS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00305">MODE_CAD</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00751">RADIO_SET_CADPARAMS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4455,9 +4455,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00690">690</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00740">740</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00344">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00111">REG_LR_CRCPOLYBASEADDR</a>, <a class="el" href="sx1280_8c_source.html#l00219">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00139">SX1280HalWriteRegisters()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00340">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00337">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00103">REG_LR_CRCPOLYBASEADDR</a>, <a class="el" href="sx1280_8c_source.html#l00239">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00146">SX1280HalWriteRegisters()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4500,9 +4500,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00658">658</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00708">708</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00344">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00103">REG_LR_CRCSEEDBASEADDR</a>, <a class="el" href="sx1280_8c_source.html#l00219">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00139">SX1280HalWriteRegisters()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00340">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00337">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00096">REG_LR_CRCSEEDBASEADDR</a>, <a class="el" href="sx1280_8c_source.html#l00239">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00146">SX1280HalWriteRegisters()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4545,9 +4545,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00781">781</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00821">821</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00343">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00133">REG_LR_DEVICERANGINGADDR</a>, <a class="el" href="sx1280_8c_source.html#l00219">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00139">SX1280HalWriteRegisters()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00339">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00124">REG_LR_DEVICERANGINGADDR</a>, <a class="el" href="sx1280_8c_source.html#l00239">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00146">SX1280HalWriteRegisters()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4611,9 +4611,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00490">490</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00524">524</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00741">RADIO_SET_DIOIRQPARAMS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00758">RADIO_SET_DIOIRQPARAMS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="lora__config_8c_source.html#l00069">sx1280_config_init()</a>.</p>
 <div class="dynheader">
@@ -4647,9 +4647,9 @@ Here is the caller graph for this function:</div>
 
 <p>Sets the radio in FS mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00146">146</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00158">158</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00309">MODE_FS</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00723">RADIO_SET_FS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00302">MODE_FS</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00740">RADIO_SET_FS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4676,9 +4676,9 @@ Here is the call graph for this function:</div>
 
 <p>Set the driver in interrupt mode. </p>
 <p>In interrupt mode, the driver communicate with the radio during the interruption by direct calls to ProcessIrqs( ). The main advantage is the possibility to have low power application architecture. This is the default mode. </p><div class="fragment"><div class="line"><span class="comment">// Initializations and callbacks declaration/definition</span></div>
-<div class="line">radio = SX1280( mosi, miso, sclk, nss, busy, int1, int2, int3, rst,</div>
-<div class="line">&amp;callbacks ); radio.Init( ); radio.SetInterruptMode( );   <span class="comment">// Optionnal.</span></div>
-<div class="line">Driver <span class="keywordflow">default</span> behavior</div>
+<div class="line">radio = SX1280( mosi, miso, sclk, nss, busy, int1, int2, int3, rst, &amp;callbacks );</div>
+<div class="line">radio.Init( );</div>
+<div class="line">radio.SetInterruptMode( );   <span class="comment">// Optionnal. Driver default behavior</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordflow">while</span>( <span class="keyword">true</span> )</div>
 <div class="line">{</div>
@@ -4686,7 +4686,7 @@ Here is the call graph for this function:</div>
 <div class="line">}</div>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="sx1280_8h.html#afa7c975cd55c78d0d67d5deb1ce8f861" title="Set the driver in polling mode.">SX1280SetPollingMode</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l01140">1140</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l01182">1182</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
 <p class="reference">References <a class="el" href="sx1280_8c_source.html#l00068">PollingMode</a>.</p>
 
@@ -4726,9 +4726,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00747">747</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00791">791</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00268">LNA_HIGH_SENSITIVITY_MODE</a>, <a class="el" href="sx1280_8h_source.html#l00267">LNA_LOW_POWER_MODE</a>, <a class="el" href="sx1280_8h_source.html#l00243">MASK_LNA_REGIME</a>, <a class="el" href="sx1280_8h_source.html#l00242">REG_LNA_REGIME</a>, <a class="el" href="sx1280-hal_8c_source.html#l00174">SX1280HalReadRegister()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00153">SX1280HalWriteRegister()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00258">LNA_HIGH_SENSITIVITY_MODE</a>, <a class="el" href="sx1280_8h_source.html#l00257">LNA_LOW_POWER_MODE</a>, <a class="el" href="sx1280_8h_source.html#l00233">MASK_LNA_REGIME</a>, <a class="el" href="sx1280_8h_source.html#l00232">REG_LNA_REGIME</a>, <a class="el" href="sx1280-hal_8c_source.html#l00182">SX1280HalReadRegister()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00160">SX1280HalWriteRegister()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4771,9 +4771,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00557">557</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00600">600</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00749">RADIO_SET_LONGPREAMBLE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00766">RADIO_SET_LONGPREAMBLE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4818,9 +4818,9 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="sx1280_8h.html#a5750a2fb3ceb08f2452659d3d0f27bec" title="Enable manual gain and disable AGC.">SX1280EnableManualGain</a>, <a class="el" href="sx1280_8h.html#ab20bd70738864a9b138c4011737564f6" title="Disable the manual gain control and enable AGC.">SX1280DisableManualGain</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00740">740</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00786">786</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00261">MASK_MANUAL_GAIN_VALUE</a>, <a class="el" href="sx1280_8h_source.html#l00260">REG_MANUAL_GAIN_VALUE</a>, <a class="el" href="sx1280-hal_8c_source.html#l00174">SX1280HalReadRegister()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00153">SX1280HalWriteRegister()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00251">MASK_MANUAL_GAIN_VALUE</a>, <a class="el" href="sx1280_8h_source.html#l00250">REG_MANUAL_GAIN_VALUE</a>, <a class="el" href="sx1280-hal_8c_source.html#l00182">SX1280HalReadRegister()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00160">SX1280HalWriteRegister()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4863,9 +4863,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00258">258</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00282">282</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00821">ModulationParams_t::Bandwidth</a>, <a class="el" href="sx1280_8h_source.html#l00805">ModulationParams_t::BitrateBandwidth</a>, <a class="el" href="structModulationParams__t.html#afc7e01bbd40902bf9c6b73733ff0edd2">ModulationParams_t::Ble</a>, <a class="el" href="sx1280_8h_source.html#l00823">ModulationParams_t::CodingRate</a>, <a class="el" href="structModulationParams__t.html#aa83f1da4ae07b80e1e64d346ca94e69d">ModulationParams_t::Flrc</a>, <a class="el" href="structModulationParams__t.html#a4c7917646507de3ab213e336c7653a66">ModulationParams_t::Gfsk</a>, <a class="el" href="structModulationParams__t.html#a299bbfe0f9dd9e659b0c556440556f31">ModulationParams_t::LoRa</a>, <a class="el" href="sx1280_8c_source.html#l00063">LoRaBandwidth</a>, <a class="el" href="sx1280_8h_source.html#l00808">ModulationParams_t::ModulationIndex</a>, <a class="el" href="sx1280_8h_source.html#l00809">ModulationParams_t::ModulationShaping</a>, <a class="el" href="sx1280_8h_source.html#l00345">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00344">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00342">PACKET_TYPE_LORA</a>, <a class="el" href="sx1280_8h_source.html#l00346">PACKET_TYPE_NONE</a>, <a class="el" href="sx1280_8h_source.html#l00343">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00793">ModulationParams_t::PacketType</a>, <a class="el" href="sx1280_8c_source.html#l00058">PacketType</a>, <a class="el" href="structModulationParams__t.html#a4afe1ac45c4b76fa0efc342b647f2807">ModulationParams_t::Params</a>, <a class="el" href="sx1280_8h_source.html#l00736">RADIO_SET_MODULATIONPARAMS</a>, <a class="el" href="sx1280_8h_source.html#l00820">ModulationParams_t::SpreadingFactor</a>, <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>, and <a class="el" href="sx1280_8c_source.html#l00211">SX1280SetPacketType()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00833">ModulationParams_t::Bandwidth</a>, <a class="el" href="sx1280_8h_source.html#l00821">ModulationParams_t::BitrateBandwidth</a>, <a class="el" href="structModulationParams__t.html#a0728689fefb6a144d79e69022be80fc5">ModulationParams_t::Ble</a>, <a class="el" href="sx1280_8h_source.html#l00834">ModulationParams_t::CodingRate</a>, <a class="el" href="structModulationParams__t.html#a25ce302ed7679d10be2bb0f8d71f1da5">ModulationParams_t::Flrc</a>, <a class="el" href="structModulationParams__t.html#adbd392cb606e8f2e5f9e8e79fbbb54b9">ModulationParams_t::Gfsk</a>, <a class="el" href="structModulationParams__t.html#a2dece31b539b0346866717ab9f6dd523">ModulationParams_t::LoRa</a>, <a class="el" href="sx1280_8c_source.html#l00063">LoRaBandwidth</a>, <a class="el" href="sx1280_8h_source.html#l00822">ModulationParams_t::ModulationIndex</a>, <a class="el" href="sx1280_8h_source.html#l00823">ModulationParams_t::ModulationShaping</a>, <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00340">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00337">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00338">PACKET_TYPE_LORA</a>, <a class="el" href="sx1280_8h_source.html#l00342">PACKET_TYPE_NONE</a>, <a class="el" href="sx1280_8h_source.html#l00339">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00810">ModulationParams_t::PacketType</a>, <a class="el" href="sx1280_8c_source.html#l00058">PacketType</a>, <a class="el" href="structModulationParams__t.html#a023fe17ad9c32657dfac6f110e82c6a3">ModulationParams_t::Params</a>, <a class="el" href="sx1280_8h_source.html#l00753">RADIO_SET_MODULATIONPARAMS</a>, <a class="el" href="sx1280_8h_source.html#l00832">ModulationParams_t::SpreadingFactor</a>, <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>, and <a class="el" href="sx1280_8c_source.html#l00231">SX1280SetPacketType()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="lora__config_8c_source.html#l00069">sx1280_config_init()</a>.</p>
 <div class="dynheader">
@@ -4915,9 +4915,9 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00304">304</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00330">330</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="structPacketParams__t.html#a313d4283f806f54128677e11fb1a92ed">PacketParams_t::Ble</a>, <a class="el" href="sx1280_8h_source.html#l00979">PacketParams_t::BlePacketType</a>, <a class="el" href="sx1280_8h_source.html#l00977">PacketParams_t::ConnectionState</a>, <a class="el" href="sx1280_8h_source.html#l00978">PacketParams_t::CrcField</a>, <a class="el" href="sx1280_8h_source.html#l00929">PacketParams_t::CrcLength</a>, <a class="el" href="sx1280_8h_source.html#l00948">PacketParams_t::CrcMode</a>, <a class="el" href="structPacketParams__t.html#aaa42bc225785520655903c66db899c60">PacketParams_t::Flrc</a>, <a class="el" href="structPacketParams__t.html#a9f9a3a2ee88e8feafb796c814ea2a8f6">PacketParams_t::Gfsk</a>, <a class="el" href="sx1280_8h_source.html#l00925">PacketParams_t::HeaderType</a>, <a class="el" href="sx1280_8h_source.html#l00949">PacketParams_t::InvertIQ</a>, <a class="el" href="structPacketParams__t.html#ad1a96d1d20de8ae01b25dd2e7a7c1dbd">PacketParams_t::LoRa</a>, <a class="el" href="sx1280_8h_source.html#l00345">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00344">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00342">PACKET_TYPE_LORA</a>, <a class="el" href="sx1280_8h_source.html#l00346">PACKET_TYPE_NONE</a>, <a class="el" href="sx1280_8h_source.html#l00343">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00910">PacketParams_t::PacketType</a>, <a class="el" href="sx1280_8c_source.html#l00058">PacketType</a>, <a class="el" href="structPacketParams__t.html#a05f226fb50b38d2ac012912ca46a15e3">PacketParams_t::Params</a>, <a class="el" href="sx1280_8h_source.html#l00928">PacketParams_t::PayloadLength</a>, <a class="el" href="sx1280_8h_source.html#l00918">PacketParams_t::PreambleLength</a>, <a class="el" href="sx1280_8h_source.html#l00737">RADIO_SET_PACKETPARAMS</a>, <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>, <a class="el" href="sx1280_8c_source.html#l00211">SX1280SetPacketType()</a>, <a class="el" href="sx1280_8h_source.html#l00919">PacketParams_t::SyncWordLength</a>, <a class="el" href="sx1280_8h_source.html#l00922">PacketParams_t::SyncWordMatch</a>, and <a class="el" href="sx1280_8h_source.html#l00931">PacketParams_t::Whitening</a>.</p>
+<p class="reference">References <a class="el" href="structPacketParams__t.html#a313d4283f806f54128677e11fb1a92ed">PacketParams_t::Ble</a>, <a class="el" href="sx1280_8h_source.html#l00953">PacketParams_t::BlePacketType</a>, <a class="el" href="sx1280_8h_source.html#l00951">PacketParams_t::ConnectionState</a>, <a class="el" href="sx1280_8h_source.html#l00952">PacketParams_t::CrcField</a>, <a class="el" href="sx1280_8h_source.html#l00919">PacketParams_t::CrcLength</a>, <a class="el" href="sx1280_8h_source.html#l00930">PacketParams_t::CrcMode</a>, <a class="el" href="structPacketParams__t.html#aaa42bc225785520655903c66db899c60">PacketParams_t::Flrc</a>, <a class="el" href="structPacketParams__t.html#a9f9a3a2ee88e8feafb796c814ea2a8f6">PacketParams_t::Gfsk</a>, <a class="el" href="sx1280_8h_source.html#l00917">PacketParams_t::HeaderType</a>, <a class="el" href="sx1280_8h_source.html#l00931">PacketParams_t::InvertIQ</a>, <a class="el" href="structPacketParams__t.html#ad1a96d1d20de8ae01b25dd2e7a7c1dbd">PacketParams_t::LoRa</a>, <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00340">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00337">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00338">PACKET_TYPE_LORA</a>, <a class="el" href="sx1280_8h_source.html#l00342">PACKET_TYPE_NONE</a>, <a class="el" href="sx1280_8h_source.html#l00339">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00905">PacketParams_t::PacketType</a>, <a class="el" href="sx1280_8c_source.html#l00058">PacketType</a>, <a class="el" href="structPacketParams__t.html#a05f226fb50b38d2ac012912ca46a15e3">PacketParams_t::Params</a>, <a class="el" href="sx1280_8h_source.html#l00918">PacketParams_t::PayloadLength</a>, <a class="el" href="sx1280_8h_source.html#l00914">PacketParams_t::PreambleLength</a>, <a class="el" href="sx1280_8h_source.html#l00754">RADIO_SET_PACKETPARAMS</a>, <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>, <a class="el" href="sx1280_8c_source.html#l00231">SX1280SetPacketType()</a>, <a class="el" href="sx1280_8h_source.html#l00915">PacketParams_t::SyncWordLength</a>, <a class="el" href="sx1280_8h_source.html#l00916">PacketParams_t::SyncWordMatch</a>, and <a class="el" href="sx1280_8h_source.html#l00920">PacketParams_t::Whitening</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="lora__config_8c_source.html#l00069">sx1280_config_init()</a>.</p>
 <div class="dynheader">
@@ -4968,11 +4968,11 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method has to be called before SetRfFrequency, SetModulationParams and SetPacketParams </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00211">211</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00231">231</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8c_source.html#l00058">PacketType</a>, <a class="el" href="sx1280_8h_source.html#l00730">RADIO_SET_PACKETTYPE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8c_source.html#l00058">PacketType</a>, <a class="el" href="sx1280_8h_source.html#l00747">RADIO_SET_PACKETTYPE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lora__config_8c_source.html#l00069">sx1280_config_init()</a>, <a class="el" href="sx1280_8c_source.html#l00258">SX1280SetModulationParams()</a>, <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>, and <a class="el" href="sx1280__task_8c_source.html#l00149">verify_freq()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lora__config_8c_source.html#l00069">sx1280_config_init()</a>, <a class="el" href="sx1280_8c_source.html#l00282">SX1280SetModulationParams()</a>, <a class="el" href="sx1280_8c_source.html#l00330">SX1280SetPacketParams()</a>, and <a class="el" href="sx1280__task_8c_source.html#l00145">verify_freq()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5027,11 +5027,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00561">561</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00605">605</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280-hal_8c_source.html#l00182">SX1280HalWriteBuffer()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280-hal_8c_source.html#l00191">SX1280HalWriteBuffer()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00577">SX1280SendPayload()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00623">SX1280SendPayload()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5063,8 +5063,9 @@ Here is the caller graph for this function:</div>
 
 <p>Set the driver in polling mode. </p>
 <p>In polling mode the application is responsible to call ProcessIrqs( ) to execute callbacks functions. The default mode is Interrupt Mode. </p><div class="fragment"><div class="line"><span class="comment">// Initializations and callbacks declaration/definition</span></div>
-<div class="line">radio = SX1280( mosi, miso, sclk, nss, busy, int1, int2, int3, rst,</div>
-<div class="line">&amp;callbacks ); radio.Init( ); radio.SetPollingMode( );</div>
+<div class="line">radio = SX1280( mosi, miso, sclk, nss, busy, int1, int2, int3, rst, &amp;callbacks );</div>
+<div class="line">radio.Init( );</div>
+<div class="line">radio.SetPollingMode( );</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordflow">while</span>( <span class="keyword">true</span> )</div>
 <div class="line">{</div>
@@ -5075,7 +5076,7 @@ Here is the caller graph for this function:</div>
 <div class="line">}</div>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="sx1280_8h.html#a01ccc77d25dc9175056165d79b9b3502" title="Set the driver in interrupt mode.">SX1280SetInterruptMode</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l01012">1012</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l01054">1054</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
 <p class="reference">References <a class="el" href="sx1280_8c_source.html#l00068">PollingMode</a>.</p>
 
@@ -5137,9 +5138,9 @@ Here is the caller graph for this function:</div>
 <td class="markdownTableBodyNone">SF12   </td><td class="markdownTableBodyNone">13120   </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00869">869</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00898">898</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00343">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00170">REG_LR_RANGINGRERXTXDELAYCAL</a>, <a class="el" href="sx1280_8c_source.html#l00219">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00153">SX1280HalWriteRegister()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00339">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00160">REG_LR_RANGINGRERXTXDELAYCAL</a>, <a class="el" href="sx1280_8c_source.html#l00239">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00160">SX1280HalWriteRegister()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5182,9 +5183,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00765">765</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00808">808</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00343">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00126">REG_LR_RANGINGIDCHECKLENGTH</a>, <a class="el" href="sx1280_8c_source.html#l00219">SX1280GetPacketType()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00174">SX1280HalReadRegister()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00153">SX1280HalWriteRegister()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00339">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00117">REG_LR_RANGINGIDCHECKLENGTH</a>, <a class="el" href="sx1280_8c_source.html#l00239">SX1280GetPacketType()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00182">SX1280HalReadRegister()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00160">SX1280HalWriteRegister()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5227,9 +5228,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00794">794</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00836">836</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00343">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00140">REG_LR_REQUESTRANGINGADDR</a>, <a class="el" href="sx1280_8c_source.html#l00219">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00139">SX1280HalWriteRegisters()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00339">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00131">REG_LR_REQUESTRANGINGADDR</a>, <a class="el" href="sx1280_8c_source.html#l00239">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00146">SX1280HalWriteRegisters()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5272,11 +5273,11 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00922">922</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00956">956</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00751">RADIO_SET_RANGING_ROLE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00768">RADIO_SET_RANGING_ROLE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00168">SX1280SetRx()</a>, and <a class="el" href="sx1280_8c_source.html#l00151">SX1280SetTx()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00183">SX1280SetRx()</a>, and <a class="el" href="sx1280_8c_source.html#l00164">SX1280SetTx()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5308,9 +5309,9 @@ Here is the caller graph for this function:</div>
 
 <p>Initializes the radio registers to the recommended default values. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00100">100</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00106">106</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8c_source.html#l00048">RadioRegsInit</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00153">SX1280HalWriteRegister()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8c_source.html#l00048">RadioRegsInit</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00160">SX1280HalWriteRegister()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5353,9 +5354,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00531">531</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00569">569</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00745">RADIO_SET_REGULATORMODE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00762">RADIO_SET_REGULATORMODE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="lora__config_8c_source.html#l00069">sx1280_config_init()</a>.</p>
 <div class="dynheader">
@@ -5405,11 +5406,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00221">221</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00244">244</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00085">FREQ_STEP</a>, <a class="el" href="sx1280_8h_source.html#l00732">RADIO_SET_RFFREQUENCY</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00079">FREQ_STEP</a>, <a class="el" href="sx1280_8h_source.html#l00749">RADIO_SET_RFFREQUENCY</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lora__config_8c_source.html#l00069">sx1280_config_init()</a>, and <a class="el" href="sx1280__task_8c_source.html#l00149">verify_freq()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lora__config_8c_source.html#l00069">sx1280_config_init()</a>, and <a class="el" href="sx1280__task_8c_source.html#l00145">verify_freq()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5457,11 +5458,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00168">168</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00183">183</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00682">IRQ_RADIO_ALL</a>, <a class="el" href="sx1280_8h_source.html#l00311">MODE_RX</a>, <a class="el" href="sx1280_8h_source.html#l00773">TickTime_t::NbSteps</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00343">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00708">RADIO_RANGING_ROLE_SLAVE</a>, <a class="el" href="sx1280_8h_source.html#l00725">RADIO_SET_RX</a>, <a class="el" href="sx1280_8h_source.html#l00766">TickTime_t::Step</a>, <a class="el" href="sx1280_8c_source.html#l00514">SX1280ClearIrqStatus()</a>, <a class="el" href="sx1280_8c_source.html#l00219">SX1280GetPacketType()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>, and <a class="el" href="sx1280_8c_source.html#l00922">SX1280SetRangingRole()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00695">IRQ_RADIO_ALL</a>, <a class="el" href="sx1280_8h_source.html#l00304">MODE_RX</a>, <a class="el" href="sx1280_8h_source.html#l00791">TickTime_t::NbSteps</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00339">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00724">RADIO_RANGING_ROLE_SLAVE</a>, <a class="el" href="sx1280_8h_source.html#l00742">RADIO_SET_RX</a>, <a class="el" href="sx1280_8h_source.html#l00784">TickTime_t::Step</a>, <a class="el" href="sx1280_8c_source.html#l00548">SX1280ClearIrqStatus()</a>, <a class="el" href="sx1280_8c_source.html#l00239">SX1280GetPacketType()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>, and <a class="el" href="sx1280_8c_source.html#l00956">SX1280SetRangingRole()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00066">start_rx()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00063">start_rx()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5522,9 +5523,9 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00185">185</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00202">202</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00311">MODE_RX</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00726">RADIO_SET_RXDUTYCYCLE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00304">MODE_RX</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00743">RADIO_SET_RXDUTYCYCLE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5551,9 +5552,9 @@ Here is the call graph for this function:</div>
 
 <p>Saves the current selected modem configuration into data RAM. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00535">535</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00574">574</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00746">RADIO_SET_SAVECONTEXT</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00763">RADIO_SET_SAVECONTEXT</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5596,9 +5597,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00126">126</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00134">134</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l01118">SleepParams_t::DataBufferRetention</a>, <a class="el" href="sx1280_8h_source.html#l01119">SleepParams_t::DataRamRetention</a>, <a class="el" href="sx1280_8h_source.html#l01117">SleepParams_t::InstructionRamRetention</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00721">RADIO_SET_SLEEP</a>, <a class="el" href="sx1280_8h_source.html#l00306">SX1280_MODE_SLEEP</a>, <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>, and <a class="el" href="sx1280_8h_source.html#l01114">SleepParams_t::WakeUpRTC</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l01099">SleepParams_t::DataBufferRetention</a>, <a class="el" href="sx1280_8h_source.html#l01100">SleepParams_t::DataRamRetention</a>, <a class="el" href="sx1280_8h_source.html#l01098">SleepParams_t::InstructionRamRetention</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00738">RADIO_SET_SLEEP</a>, <a class="el" href="sx1280_8h_source.html#l00299">SX1280_MODE_SLEEP</a>, <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>, and <a class="el" href="sx1280_8h_source.html#l01097">SleepParams_t::WakeUpRTC</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5641,11 +5642,11 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00136">136</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00145">145</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00307">MODE_STDBY_RC</a>, <a class="el" href="sx1280_8h_source.html#l00308">MODE_STDBY_XOSC</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00722">RADIO_SET_STANDBY</a>, <a class="el" href="sx1280_8h_source.html#l00322">STDBY_RC</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00300">MODE_STDBY_RC</a>, <a class="el" href="sx1280_8h_source.html#l00301">MODE_STDBY_XOSC</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00739">RADIO_SET_STANDBY</a>, <a class="el" href="sx1280_8h_source.html#l00316">STDBY_RC</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00087">clear_irqs_and_standby()</a>, <a class="el" href="sx1280__task_8c_source.html#l00117">send_window()</a>, <a class="el" href="sx1280__task_8c_source.html#l00072">stop_radio_standby()</a>, <a class="el" href="sx1280_8c_source.html#l00856">SX1280GetRangingPowerDeltaThresholdIndicator()</a>, <a class="el" href="sx1280_8c_source.html#l00807">SX1280GetRangingResult()</a>, and <a class="el" href="sx1280__task_8c_source.html#l00149">verify_freq()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00084">clear_irqs_and_standby()</a>, <a class="el" href="sx1280__task_8c_source.html#l00113">send_window()</a>, <a class="el" href="sx1280__task_8c_source.html#l00069">stop_radio_standby()</a>, <a class="el" href="sx1280_8c_source.html#l00890">SX1280GetRangingPowerDeltaThresholdIndicator()</a>, <a class="el" href="sx1280_8c_source.html#l00851">SX1280GetRangingResult()</a>, and <a class="el" href="sx1280__task_8c_source.html#l00145">verify_freq()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5707,9 +5708,9 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00583">583</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00629">629</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00345">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00344">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00217">REG_LR_SYNCWORDBASEADDRESS1</a>, <a class="el" href="sx1280_8h_source.html#l00218">REG_LR_SYNCWORDBASEADDRESS2</a>, <a class="el" href="sx1280_8h_source.html#l00219">REG_LR_SYNCWORDBASEADDRESS3</a>, <a class="el" href="sx1280_8c_source.html#l00219">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00139">SX1280HalWriteRegisters()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00340">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00337">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00207">REG_LR_SYNCWORDBASEADDRESS1</a>, <a class="el" href="sx1280_8h_source.html#l00208">REG_LR_SYNCWORDBASEADDRESS2</a>, <a class="el" href="sx1280_8h_source.html#l00209">REG_LR_SYNCWORDBASEADDRESS3</a>, <a class="el" href="sx1280_8c_source.html#l00239">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00146">SX1280HalWriteRegisters()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5752,9 +5753,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00652">652</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00702">702</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00231">REG_LR_SYNCWORDTOLERANCE</a>, <a class="el" href="sx1280-hal_8c_source.html#l00174">SX1280HalReadRegister()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00153">SX1280HalWriteRegister()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00221">REG_LR_SYNCWORDTOLERANCE</a>, <a class="el" href="sx1280-hal_8c_source.html#l00182">SX1280HalReadRegister()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00160">SX1280HalWriteRegister()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5797,11 +5798,11 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00151">151</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00164">164</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00682">IRQ_RADIO_ALL</a>, <a class="el" href="sx1280_8h_source.html#l00773">TickTime_t::NbSteps</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00343">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00709">RADIO_RANGING_ROLE_MASTER</a>, <a class="el" href="sx1280_8h_source.html#l00724">RADIO_SET_TX</a>, <a class="el" href="sx1280_8h_source.html#l00766">TickTime_t::Step</a>, <a class="el" href="sx1280_8h_source.html#l00310">SX1280_MODE_TX</a>, <a class="el" href="sx1280_8c_source.html#l00514">SX1280ClearIrqStatus()</a>, <a class="el" href="sx1280_8c_source.html#l00219">SX1280GetPacketType()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>, and <a class="el" href="sx1280_8c_source.html#l00922">SX1280SetRangingRole()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00695">IRQ_RADIO_ALL</a>, <a class="el" href="sx1280_8h_source.html#l00791">TickTime_t::NbSteps</a>, <a class="el" href="sx1280_8c_source.html#l00053">OperatingMode</a>, <a class="el" href="sx1280_8h_source.html#l00339">PACKET_TYPE_RANGING</a>, <a class="el" href="sx1280_8h_source.html#l00725">RADIO_RANGING_ROLE_MASTER</a>, <a class="el" href="sx1280_8h_source.html#l00741">RADIO_SET_TX</a>, <a class="el" href="sx1280_8h_source.html#l00784">TickTime_t::Step</a>, <a class="el" href="sx1280_8h_source.html#l00303">SX1280_MODE_TX</a>, <a class="el" href="sx1280_8c_source.html#l00548">SX1280ClearIrqStatus()</a>, <a class="el" href="sx1280_8c_source.html#l00239">SX1280GetPacketType()</a>, <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>, and <a class="el" href="sx1280_8c_source.html#l00956">SX1280SetRangingRole()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00577">SX1280SendPayload()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00623">SX1280SendPayload()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5833,9 +5834,9 @@ Here is the caller graph for this function:</div>
 
 <p>Sets the radio in continuous preamble transmission mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00207">207</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00226">226</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00729">RADIO_SET_TXCONTINUOUSPREAMBLE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00746">RADIO_SET_TXCONTINUOUSPREAMBLE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5862,9 +5863,9 @@ Here is the call graph for this function:</div>
 
 <p>Sets the radio in continuous wave transmission mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00203">203</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00221">221</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00728">RADIO_SET_TXCONTINUOUSWAVE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00745">RADIO_SET_TXCONTINUOUSWAVE</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5914,11 +5915,11 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00232">232</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00256">256</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00733">RADIO_SET_TXPARAMS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00750">RADIO_SET_TXPARAMS</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lora__config_8c_source.html#l00069">sx1280_config_init()</a>, and <a class="el" href="sx1280__task_8c_source.html#l00149">verify_freq()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lora__config_8c_source.html#l00069">sx1280_config_init()</a>, and <a class="el" href="sx1280__task_8c_source.html#l00145">verify_freq()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5966,9 +5967,9 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00707">707</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00759">759</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00345">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00344">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00119">REG_LR_WHITSEEDBASEADDR</a>, <a class="el" href="sx1280_8c_source.html#l00219">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00153">SX1280HalWriteRegister()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00341">PACKET_TYPE_BLE</a>, <a class="el" href="sx1280_8h_source.html#l00340">PACKET_TYPE_FLRC</a>, <a class="el" href="sx1280_8h_source.html#l00337">PACKET_TYPE_GFSK</a>, <a class="el" href="sx1280_8h_source.html#l00110">REG_LR_WHITSEEDBASEADDR</a>, <a class="el" href="sx1280_8c_source.html#l00239">SX1280GetPacketType()</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00160">SX1280HalWriteRegister()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -5996,9 +5997,9 @@ Here is the call graph for this function:</div>
 <p>Stop the chip from automatically sending a packet after the end of a packet reception if previously activated with SX1280SetAutoTx command. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="sx1280_8h.html#a39154ef7030881fbd90303027611b427" title="Sets the chip to automatically send a packet after the end of a packet reception.">SX1280SetAutoTx</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00548">548</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sx1280_8c_source.html#l00589">589</a> of file <a class="el" href="sx1280_8c_source.html">sx1280.c</a>.</p>
 
-<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00747">RADIO_SET_AUTOTX</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00112">SX1280HalWriteCommand()</a>.</p>
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00764">RADIO_SET_AUTOTX</a>, and <a class="el" href="sx1280-hal_8c_source.html#l00118">SX1280HalWriteCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

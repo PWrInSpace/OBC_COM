@@ -99,30 +99,30 @@ $(document).ready(function(){initNavTree('app__freertos_8c.html',''); initResiza
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="app__freertos_8h_source.html">app_freertos.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="board__data_8h_source.html">board_data.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="cmd__task_8h_source.html">cmd_task.h</a>&quot;</code><br />
 <code>#include &quot;cmsis_os2.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="eeprom__emul_8h_source.html">eeprom_emul.h</a>&quot;</code><br />
 <code>#include &quot;ff.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="gps__task_8h_source.html">gps_task.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="led_8h_source.html">led.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="logger__macros_8h_source.html">logger_macros.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="nvs__config_8h_source.html">nvs_config.h</a>&quot;</code><br />
 <code>#include &quot;projdefs.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="rfm95w__task_8h_source.html">rfm95w_task.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="sd__task_8h_source.html">sd_task.h</a>&quot;</code><br />
-<code>#include &quot;semphr.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="sky66114_8h_source.html">sky66114.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="sound_8h_source.html">sound.h</a>&quot;</code><br />
 <code>#include &quot;stm32h5xx_hal.h&quot;</code><br />
 <code>#include &quot;stm32h5xx_hal_gpio.h&quot;</code><br />
 <code>#include &quot;stm32h5xx_hal_sd.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="usb__config_8h_source.html">usb_config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="stm32h5xx__it_8h_source.html">stm32h5xx_it.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sx1280__task_8h_source.html">sx1280_task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rfm95w__task_8h_source.html">rfm95w_task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sd__task_8h_source.html">sd_task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cmd__task_8h_source.html">cmd_task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sound_8h_source.html">sound.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="led_8h_source.html">led.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="eeprom__emul_8h_source.html">eeprom_emul.h</a>&quot;</code><br />
+<code>#include &quot;semphr.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="nvs__config_8h_source.html">nvs_config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gps__task_8h_source.html">gps_task.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="telemetry__task_8h_source.html">telemetry_task.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="usart_8h_source.html">usart.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="usb__config_8h_source.html">usb_config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sky66114_8h_source.html">sky66114.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for app_freertos.c:</div>
 <div class="dyncontent">
@@ -159,7 +159,7 @@ Variables</h2></td></tr>
 <tr class="separator:a25fbb54afdba71c24ba51ed50166ac8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeeffe51e8035a8320a7efb67d3ca9212" id="r_aeeffe51e8035a8320a7efb67d3ca9212"><td class="memItemLeft" align="right" valign="top">osMutexId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__freertos_8c.html#aeeffe51e8035a8320a7efb67d3ca9212">usbMutexHandle</a></td></tr>
 <tr class="separator:aeeffe51e8035a8320a7efb67d3ca9212"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a4d1f6f82eb40b26e4395449c58d585" id="r_a2a4d1f6f82eb40b26e4395449c58d585"><td class="memItemLeft" align="right" valign="top">const osMutexAttr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__freertos_8c.html#a2a4d1f6f82eb40b26e4395449c58d585">usbMutex_attributes</a> = {.name = &quot;usbMutex&quot;}</td></tr>
+<tr class="memitem:a2a4d1f6f82eb40b26e4395449c58d585" id="r_a2a4d1f6f82eb40b26e4395449c58d585"><td class="memItemLeft" align="right" valign="top">const osMutexAttr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__freertos_8c.html#a2a4d1f6f82eb40b26e4395449c58d585">usbMutex_attributes</a></td></tr>
 <tr class="separator:a2a4d1f6f82eb40b26e4395449c58d585"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a162d9236e5b55a60bc0e35d7cbf98c34" id="r_a162d9236e5b55a60bc0e35d7cbf98c34"><td class="memItemLeft" align="right" valign="top">osThreadId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__freertos_8c.html#a162d9236e5b55a60bc0e35d7cbf98c34">rfm95wTaskHandle</a></td></tr>
 <tr class="separator:a162d9236e5b55a60bc0e35d7cbf98c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -186,7 +186,7 @@ Variables</h2></td></tr>
 <p>Copyright (c) 2026 STMicroelectronics. All rights reserved.</p>
 <p>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS. </p>
 
-<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00053">53</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00054">54</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
 
 </div>
 </div>
@@ -221,11 +221,11 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00097">97</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00100">100</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
 
-<p class="reference">References <a class="el" href="board__data_8c_source.html#l00013">board_data_init()</a>, <a class="el" href="cmd__task_8c_source.html#l00020">CMD_Task_Init()</a>, <a class="el" href="app__freertos_8c_source.html#l00076">defaultTask_attributes</a>, <a class="el" href="app__freertos_8c_source.html#l00073">defaultTaskHandle</a>, <a class="el" href="led_8h_source.html#l00012">LED_COLOR_OFF</a>, <a class="el" href="led_8h_source.html#l00027">LED_EFFECT_RAINBOW</a>, <a class="el" href="led_8c_source.html#l00119">led_init()</a>, <a class="el" href="led_8c_source.html#l00141">led_set_all()</a>, <a class="el" href="logger_8c_source.html#l00124">logger_init()</a>, <a class="el" href="nvs__config_8c_source.html#l00012">NVS_Init()</a>, <a class="el" href="rfm95w__task_8c_source.html#l00160">RFM95W_task_init()</a>, <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>, <a class="el" href="sky66114_8c_source.html#l00020">sky66114_init_all()</a>, <a class="el" href="sound_8c_source.html#l00086">sound_init()</a>, <a class="el" href="sound_8c_source.html#l00099">sound_play()</a>, <a class="el" href="sound_8h_source.html#l00010">SOUND_STARTUP</a>, <a class="el" href="gps__task_8c_source.html#l00034">start_gps_task()</a>, <a class="el" href="telemetry__task_8c_source.html#l00020">start_telemetry_task()</a>, <a class="el" href="app__freertos_8c_source.html#l00162">StartDefaultTask()</a>, <a class="el" href="main_8h_source.html#l00169">STATUS_LED1_GPIO_Port</a>, <a class="el" href="main_8h_source.html#l00168">STATUS_LED1_Pin</a>, <a class="el" href="app__freertos_8c_source.html#l00086">usbMutex_attributes</a>, and <a class="el" href="app__freertos_8c_source.html#l00085">usbMutexHandle</a>.</p>
+<p class="reference">References <a class="el" href="board__data_8c_source.html#l00013">board_data_init()</a>, <a class="el" href="cmd__task_8c_source.html#l00020">CMD_Task_Init()</a>, <a class="el" href="app__freertos_8c_source.html#l00077">defaultTask_attributes</a>, <a class="el" href="app__freertos_8c_source.html#l00074">defaultTaskHandle</a>, <a class="el" href="led_8h_source.html#l00012">LED_COLOR_OFF</a>, <a class="el" href="led_8h_source.html#l00027">LED_EFFECT_RAINBOW</a>, <a class="el" href="led_8c_source.html#l00126">led_init()</a>, <a class="el" href="led_8c_source.html#l00148">led_set_all()</a>, <a class="el" href="logger_8c_source.html#l00127">logger_init()</a>, <a class="el" href="nvs__config_8c_source.html#l00012">NVS_Init()</a>, <a class="el" href="rfm95w__task_8c_source.html#l00159">RFM95W_task_init()</a>, <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>, <a class="el" href="sky66114_8c_source.html#l00020">sky66114_init_all()</a>, <a class="el" href="sound_8c_source.html#l00088">sound_init()</a>, <a class="el" href="sound_8c_source.html#l00101">sound_play()</a>, <a class="el" href="sound_8h_source.html#l00010">SOUND_STARTUP</a>, <a class="el" href="gps__task_8c_source.html#l00034">start_gps_task()</a>, <a class="el" href="telemetry__task_8c_source.html#l00020">start_telemetry_task()</a>, <a class="el" href="app__freertos_8c_source.html#l00163">StartDefaultTask()</a>, <a class="el" href="main_8h_source.html#l00169">STATUS_LED1_GPIO_Port</a>, <a class="el" href="main_8h_source.html#l00168">STATUS_LED1_Pin</a>, <a class="el" href="app__freertos_8c_source.html#l00087">usbMutex_attributes</a>, and <a class="el" href="app__freertos_8c_source.html#l00086">usbMutexHandle</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00228">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00230">main()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -269,11 +269,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00162">162</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00163">163</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
 
 <p class="reference">References <a class="el" href="usb__config_8c_source.html#l00021">USB_CDC_Config()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="app__freertos_8c_source.html#l00097">MX_FREERTOS_Init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="app__freertos_8c_source.html#l00100">MX_FREERTOS_Init()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -300,19 +300,19 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    .name = <span class="stringliteral">&quot;defaultTask&quot;</span>,</div>
-<div class="line">    .stack_mem = &amp;<a class="code hl_variable" href="app__freertos_8c.html#aa41cc8960671dc9b6f846aa02c86a228">MyBufferTask00</a>[0],</div>
-<div class="line">    .stack_size = <span class="keyword">sizeof</span>(<a class="code hl_variable" href="app__freertos_8c.html#aa41cc8960671dc9b6f846aa02c86a228">MyBufferTask00</a>),</div>
-<div class="line">    .cb_mem = &amp;<a class="code hl_variable" href="app__freertos_8c.html#aa3bee020b7eae24b2e1ee4f4ce2bf13a">MycontrolBlocTask00</a>,</div>
-<div class="line">    .cb_size = <span class="keyword">sizeof</span>(<a class="code hl_variable" href="app__freertos_8c.html#aa3bee020b7eae24b2e1ee4f4ce2bf13a">MycontrolBlocTask00</a>),</div>
-<div class="line">    .priority = (osPriority_t)osPriorityNormal,</div>
+<div class="line">  .name = <span class="stringliteral">&quot;defaultTask&quot;</span>,</div>
+<div class="line">  .stack_mem = &amp;<a class="code hl_variable" href="app__freertos_8c.html#aa41cc8960671dc9b6f846aa02c86a228">MyBufferTask00</a>[0],</div>
+<div class="line">  .stack_size = <span class="keyword">sizeof</span>(<a class="code hl_variable" href="app__freertos_8c.html#aa41cc8960671dc9b6f846aa02c86a228">MyBufferTask00</a>),</div>
+<div class="line">  .cb_mem = &amp;<a class="code hl_variable" href="app__freertos_8c.html#aa3bee020b7eae24b2e1ee4f4ce2bf13a">MycontrolBlocTask00</a>,</div>
+<div class="line">  .cb_size = <span class="keyword">sizeof</span>(<a class="code hl_variable" href="app__freertos_8c.html#aa3bee020b7eae24b2e1ee4f4ce2bf13a">MycontrolBlocTask00</a>),</div>
+<div class="line">  .priority = (osPriority_t) osPriorityNormal,</div>
 <div class="line">}</div>
-<div class="ttc" id="aapp__freertos_8c_html_aa3bee020b7eae24b2e1ee4f4ce2bf13a"><div class="ttname"><a href="app__freertos_8c.html#aa3bee020b7eae24b2e1ee4f4ce2bf13a">MycontrolBlocTask00</a></div><div class="ttdeci">osStaticThreadDef_t MycontrolBlocTask00</div><div class="ttdef"><b>Definition</b> <a href="app__freertos_8c_source.html#l00075">app_freertos.c:75</a></div></div>
-<div class="ttc" id="aapp__freertos_8c_html_aa41cc8960671dc9b6f846aa02c86a228"><div class="ttname"><a href="app__freertos_8c.html#aa41cc8960671dc9b6f846aa02c86a228">MyBufferTask00</a></div><div class="ttdeci">uint32_t MyBufferTask00[128]</div><div class="ttdef"><b>Definition</b> <a href="app__freertos_8c_source.html#l00074">app_freertos.c:74</a></div></div>
+<div class="ttc" id="aapp__freertos_8c_html_aa3bee020b7eae24b2e1ee4f4ce2bf13a"><div class="ttname"><a href="app__freertos_8c.html#aa3bee020b7eae24b2e1ee4f4ce2bf13a">MycontrolBlocTask00</a></div><div class="ttdeci">osStaticThreadDef_t MycontrolBlocTask00</div><div class="ttdef"><b>Definition</b> <a href="app__freertos_8c_source.html#l00076">app_freertos.c:76</a></div></div>
+<div class="ttc" id="aapp__freertos_8c_html_aa41cc8960671dc9b6f846aa02c86a228"><div class="ttname"><a href="app__freertos_8c.html#aa41cc8960671dc9b6f846aa02c86a228">MyBufferTask00</a></div><div class="ttdeci">uint32_t MyBufferTask00[128]</div><div class="ttdef"><b>Definition</b> <a href="app__freertos_8c_source.html#l00075">app_freertos.c:75</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00076">76</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00077">77</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="app__freertos_8c_source.html#l00097">MX_FREERTOS_Init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="app__freertos_8c_source.html#l00100">MX_FREERTOS_Init()</a>.</p>
 
 </div>
 </div>
@@ -333,9 +333,9 @@ Here is the caller graph for this function:</div>
 <p>Copyright (c) 2026 STMicroelectronics. All rights reserved.</p>
 <p>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS. </p>
 
-<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00073">73</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00074">74</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="app__freertos_8c_source.html#l00097">MX_FREERTOS_Init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="app__freertos_8c_source.html#l00100">MX_FREERTOS_Init()</a>.</p>
 
 </div>
 </div>
@@ -399,7 +399,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00074">74</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00075">75</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
 
 </div>
 </div>
@@ -415,7 +415,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00075">75</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00076">76</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
 
 </div>
 </div>
@@ -450,14 +450,17 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const osMutexAttr_t usbMutex_attributes = {.name = &quot;usbMutex&quot;}</td>
+          <td class="memname">const osMutexAttr_t usbMutex_attributes</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  .name = <span class="stringliteral">&quot;usbMutex&quot;</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00087">87</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00086">86</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="app__freertos_8c_source.html#l00097">MX_FREERTOS_Init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="app__freertos_8c_source.html#l00100">MX_FREERTOS_Init()</a>.</p>
 
 </div>
 </div>
@@ -473,9 +476,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00085">85</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="app__freertos_8c_source.html#l00086">86</a> of file <a class="el" href="app__freertos_8c_source.html">app_freertos.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="app__freertos_8c_source.html#l00097">MX_FREERTOS_Init()</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="app__freertos_8c_source.html#l00100">MX_FREERTOS_Init()</a>, and <a class="el" href="usb__config_8c_source.html#l00036">USB_Transmit()</a>.</p>
 
 </div>
 </div>

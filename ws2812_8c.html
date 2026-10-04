@@ -118,7 +118,7 @@ Macros</h2></td></tr>
 <tr class="separator:aef75db61a89fe6f174865cc214cce372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff889ea6debeeac01adc4ab2ad925f2c" id="r_aff889ea6debeeac01adc4ab2ad925f2c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ws2812_8c.html#aff889ea6debeeac01adc4ab2ad925f2c">WS2812_RESET_SLOTS</a>&#160;&#160;&#160;48u</td></tr>
 <tr class="separator:aff889ea6debeeac01adc4ab2ad925f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5ec9453c40f135b727a9469964ecb15" id="r_af5ec9453c40f135b727a9469964ecb15"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ws2812_8c.html#af5ec9453c40f135b727a9469964ecb15">WS2812_BUF_LEN</a>&#160;&#160;&#160;  (<a class="el" href="ws2812_8h.html#ab11b12e6edebea09d32a37a8277d1413">WS2812_MAX_LEDS</a> * <a class="el" href="ws2812_8c.html#a5b0497367a16f3ccc082f116a639f629">WS2812_BITS_PER_LED</a> + <a class="el" href="ws2812_8c.html#aff889ea6debeeac01adc4ab2ad925f2c">WS2812_RESET_SLOTS</a>)</td></tr>
+<tr class="memitem:af5ec9453c40f135b727a9469964ecb15" id="r_af5ec9453c40f135b727a9469964ecb15"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ws2812_8c.html#af5ec9453c40f135b727a9469964ecb15">WS2812_BUF_LEN</a>&#160;&#160;&#160;    (<a class="el" href="ws2812_8h.html#ab11b12e6edebea09d32a37a8277d1413">WS2812_MAX_LEDS</a> * <a class="el" href="ws2812_8c.html#a5b0497367a16f3ccc082f116a639f629">WS2812_BITS_PER_LED</a> + <a class="el" href="ws2812_8c.html#aff889ea6debeeac01adc4ab2ad925f2c">WS2812_RESET_SLOTS</a>)</td></tr>
 <tr class="separator:af5ec9453c40f135b727a9469964ecb15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -182,7 +182,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define WS2812_BUF_LEN&#160;&#160;&#160;  (<a class="el" href="ws2812_8h.html#ab11b12e6edebea09d32a37a8277d1413">WS2812_MAX_LEDS</a> * <a class="el" href="ws2812_8c.html#a5b0497367a16f3ccc082f116a639f629">WS2812_BITS_PER_LED</a> + <a class="el" href="ws2812_8c.html#aff889ea6debeeac01adc4ab2ad925f2c">WS2812_RESET_SLOTS</a>)</td>
+          <td class="memname">#define WS2812_BUF_LEN&#160;&#160;&#160;    (<a class="el" href="ws2812_8h.html#ab11b12e6edebea09d32a37a8277d1413">WS2812_MAX_LEDS</a> * <a class="el" href="ws2812_8c.html#a5b0497367a16f3ccc082f116a639f629">WS2812_BITS_PER_LED</a> + <a class="el" href="ws2812_8c.html#aff889ea6debeeac01adc4ab2ad925f2c">WS2812_RESET_SLOTS</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -256,7 +256,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ws2812_8c_source.html#l00149">149</a> of file <a class="el" href="ws2812_8c_source.html">ws2812.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ws2812_8c_source.html#l00151">151</a> of file <a class="el" href="ws2812_8c_source.html">ws2812.c</a>.</p>
 
 <p class="reference">References <a class="el" href="ws2812_8h_source.html#l00022">ws2812_t::channel</a>, <a class="el" href="ws2812_8h_source.html#l00021">ws2812_t::htim</a>, <a class="el" href="ws2812_8c_source.html#l00023">s_active</a>, and <a class="el" href="ws2812_8c_source.html#l00022">s_busy</a>.</p>
 
@@ -312,7 +312,7 @@ Variables</h2></td></tr>
 
 <p class="reference">References <a class="el" href="ws2812_8h_source.html#l00023">ws2812_t::num_leds</a>, <a class="el" href="ws2812_8c_source.html#l00021">s_dma</a>, <a class="el" href="ws2812_8c_source.html#l00020">s_grb</a>, <a class="el" href="ws2812_8c_source.html#l00013">WS2812_DUTY_HI</a>, <a class="el" href="ws2812_8c_source.html#l00012">WS2812_DUTY_LO</a>, and <a class="el" href="ws2812_8c_source.html#l00015">WS2812_RESET_SLOTS</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ws2812_8c_source.html#l00076">ws2812_show()</a>, and <a class="el" href="ws2812_8c_source.html#l00111">ws2812_show_blocking()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ws2812_8c_source.html#l00076">ws2812_show()</a>, and <a class="el" href="ws2812_8c_source.html#l00113">ws2812_show_blocking()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -345,11 +345,11 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ws2812_8c_source.html#l00098">98</a> of file <a class="el" href="ws2812_8c_source.html">ws2812.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ws2812_8c_source.html#l00100">100</a> of file <a class="el" href="ws2812_8c_source.html">ws2812.c</a>.</p>
 
 <p class="reference">References <a class="el" href="ws2812_8h_source.html#l00022">ws2812_t::channel</a>, and <a class="el" href="ws2812_8h_source.html#l00021">ws2812_t::htim</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ws2812_8c_source.html#l00111">ws2812_show_blocking()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ws2812_8c_source.html#l00113">ws2812_show_blocking()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -388,7 +388,7 @@ Here is the caller graph for this function:</div>
 
 <p class="reference">References <a class="el" href="ws2812_8h_source.html#l00021">ws2812_t::htim</a>, <a class="el" href="ws2812_8h_source.html#l00023">ws2812_t::num_leds</a>, <a class="el" href="ws2812_8c_source.html#l00021">s_dma</a>, <a class="el" href="ws2812_8c_source.html#l00020">s_grb</a>, <a class="el" href="ws2812_8h_source.html#l00016">WS2812_ERROR</a>, <a class="el" href="ws2812_8h_source.html#l00012">WS2812_MAX_LEDS</a>, and <a class="el" href="ws2812_8h_source.html#l00015">WS2812_OK</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="led_8c_source.html#l00119">led_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="led_8c_source.html#l00126">led_init()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -461,7 +461,7 @@ Here is the caller graph for this function:</div>
 
 <p class="reference">References <a class="el" href="ws2812_8h_source.html#l00023">ws2812_t::num_leds</a>, and <a class="el" href="ws2812_8c_source.html#l00037">ws2812_set_pixel()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ws2812_8c_source.html#l00141">ws2812_set_color_blocking()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ws2812_8c_source.html#l00143">ws2812_set_color_blocking()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -513,11 +513,11 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ws2812_8c_source.html#l00141">141</a> of file <a class="el" href="ws2812_8c_source.html">ws2812.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ws2812_8c_source.html#l00143">143</a> of file <a class="el" href="ws2812_8c_source.html">ws2812.c</a>.</p>
 
-<p class="reference">References <a class="el" href="ws2812_8h_source.html#l00016">WS2812_ERROR</a>, <a class="el" href="ws2812_8c_source.html#l00046">ws2812_set_all()</a>, and <a class="el" href="ws2812_8c_source.html#l00111">ws2812_show_blocking()</a>.</p>
+<p class="reference">References <a class="el" href="ws2812_8h_source.html#l00016">WS2812_ERROR</a>, <a class="el" href="ws2812_8c_source.html#l00046">ws2812_set_all()</a>, and <a class="el" href="ws2812_8c_source.html#l00113">ws2812_show_blocking()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="led_8c_source.html#l00144">led_fault_color()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="led_8c_source.html#l00155">led_fault_color()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -579,7 +579,7 @@ Here is the caller graph for this function:</div>
 
 <p class="reference">References <a class="el" href="ws2812_8h_source.html#l00023">ws2812_t::num_leds</a>, and <a class="el" href="ws2812_8c_source.html#l00020">s_grb</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="led_8c_source.html#l00107">led_cb()</a>, <a class="el" href="led_8c_source.html#l00150">led_fault_pixel()</a>, and <a class="el" href="ws2812_8c_source.html#l00046">ws2812_set_all()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="led_8c_source.html#l00114">led_cb()</a>, <a class="el" href="led_8c_source.html#l00161">led_fault_pixel()</a>, and <a class="el" href="ws2812_8c_source.html#l00046">ws2812_set_all()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -611,7 +611,7 @@ Here is the caller graph for this function:</div>
 
 <p class="reference">References <a class="el" href="ws2812_8h_source.html#l00022">ws2812_t::channel</a>, <a class="el" href="ws2812_8h_source.html#l00021">ws2812_t::htim</a>, <a class="el" href="ws2812_8c_source.html#l00023">s_active</a>, <a class="el" href="ws2812_8c_source.html#l00022">s_busy</a>, <a class="el" href="ws2812_8c_source.html#l00021">s_dma</a>, <a class="el" href="ws2812_8h_source.html#l00017">WS2812_BUSY</a>, <a class="el" href="ws2812_8c_source.html#l00061">ws2812_encode()</a>, <a class="el" href="ws2812_8h_source.html#l00016">WS2812_ERROR</a>, and <a class="el" href="ws2812_8h_source.html#l00015">WS2812_OK</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="led_8c_source.html#l00107">led_cb()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="led_8c_source.html#l00114">led_cb()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -641,11 +641,11 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ws2812_8c_source.html#l00111">111</a> of file <a class="el" href="ws2812_8c_source.html">ws2812.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ws2812_8c_source.html#l00113">113</a> of file <a class="el" href="ws2812_8c_source.html">ws2812.c</a>.</p>
 
-<p class="reference">References <a class="el" href="ws2812_8h_source.html#l00022">ws2812_t::channel</a>, <a class="el" href="ws2812_8h_source.html#l00021">ws2812_t::htim</a>, <a class="el" href="ws2812_8c_source.html#l00023">s_active</a>, <a class="el" href="ws2812_8c_source.html#l00022">s_busy</a>, <a class="el" href="ws2812_8c_source.html#l00021">s_dma</a>, <a class="el" href="ws2812_8c_source.html#l00061">ws2812_encode()</a>, <a class="el" href="ws2812_8h_source.html#l00016">WS2812_ERROR</a>, <a class="el" href="ws2812_8c_source.html#l00098">ws2812_hdma()</a>, and <a class="el" href="ws2812_8h_source.html#l00015">WS2812_OK</a>.</p>
+<p class="reference">References <a class="el" href="ws2812_8h_source.html#l00022">ws2812_t::channel</a>, <a class="el" href="ws2812_8h_source.html#l00021">ws2812_t::htim</a>, <a class="el" href="ws2812_8c_source.html#l00023">s_active</a>, <a class="el" href="ws2812_8c_source.html#l00022">s_busy</a>, <a class="el" href="ws2812_8c_source.html#l00021">s_dma</a>, <a class="el" href="ws2812_8c_source.html#l00061">ws2812_encode()</a>, <a class="el" href="ws2812_8h_source.html#l00016">WS2812_ERROR</a>, <a class="el" href="ws2812_8c_source.html#l00100">ws2812_hdma()</a>, and <a class="el" href="ws2812_8h_source.html#l00015">WS2812_OK</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="led_8c_source.html#l00156">led_fault_show()</a>, and <a class="el" href="ws2812_8c_source.html#l00141">ws2812_set_color_blocking()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="led_8c_source.html#l00167">led_fault_show()</a>, and <a class="el" href="ws2812_8c_source.html#l00143">ws2812_set_color_blocking()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -682,7 +682,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="ws2812_8c_source.html#l00023">23</a> of file <a class="el" href="ws2812_8c_source.html">ws2812.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ws2812_8c_source.html#l00149">HAL_TIM_PWM_PulseFinishedCallback()</a>, <a class="el" href="ws2812_8c_source.html#l00076">ws2812_show()</a>, and <a class="el" href="ws2812_8c_source.html#l00111">ws2812_show_blocking()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ws2812_8c_source.html#l00151">HAL_TIM_PWM_PulseFinishedCallback()</a>, <a class="el" href="ws2812_8c_source.html#l00076">ws2812_show()</a>, and <a class="el" href="ws2812_8c_source.html#l00113">ws2812_show_blocking()</a>.</p>
 
 </div>
 </div>
@@ -708,7 +708,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="ws2812_8c_source.html#l00022">22</a> of file <a class="el" href="ws2812_8c_source.html">ws2812.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ws2812_8c_source.html#l00149">HAL_TIM_PWM_PulseFinishedCallback()</a>, <a class="el" href="ws2812_8c_source.html#l00095">ws2812_is_busy()</a>, <a class="el" href="ws2812_8c_source.html#l00076">ws2812_show()</a>, and <a class="el" href="ws2812_8c_source.html#l00111">ws2812_show_blocking()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ws2812_8c_source.html#l00151">HAL_TIM_PWM_PulseFinishedCallback()</a>, <a class="el" href="ws2812_8c_source.html#l00095">ws2812_is_busy()</a>, <a class="el" href="ws2812_8c_source.html#l00076">ws2812_show()</a>, and <a class="el" href="ws2812_8c_source.html#l00113">ws2812_show_blocking()</a>.</p>
 
 </div>
 </div>
@@ -734,7 +734,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="ws2812_8c_source.html#l00021">21</a> of file <a class="el" href="ws2812_8c_source.html">ws2812.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ws2812_8c_source.html#l00061">ws2812_encode()</a>, <a class="el" href="ws2812_8c_source.html#l00025">ws2812_init()</a>, <a class="el" href="ws2812_8c_source.html#l00076">ws2812_show()</a>, and <a class="el" href="ws2812_8c_source.html#l00111">ws2812_show_blocking()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ws2812_8c_source.html#l00061">ws2812_encode()</a>, <a class="el" href="ws2812_8c_source.html#l00025">ws2812_init()</a>, <a class="el" href="ws2812_8c_source.html#l00076">ws2812_show()</a>, and <a class="el" href="ws2812_8c_source.html#l00113">ws2812_show_blocking()</a>.</p>
 
 </div>
 </div>

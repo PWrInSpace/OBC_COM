@@ -16,7 +16,7 @@ var searchData=
   ['cmdstatus_13',['CmdStatus',['../unionRadioStatus__t.html#af7f1a77fc58a179289235c43f97ca7f4',1,'RadioStatus_t']]],
   ['cmdtaskhandle_14',['cmdtaskhandle',['../cmd__task_8h.html#a95b8122e61f25793932a9c2a9726525d',1,'cmdTaskHandle:&#160;cmd_task.c'],['../group__USBD__CDC__Private__FunctionPrototypes.html#ga95b8122e61f25793932a9c2a9726525d',1,'cmdTaskHandle:&#160;cmd_task.c'],['../group__USBD__CDC__Private__FunctionPrototypes.html#ga95b8122e61f25793932a9c2a9726525d',1,'cmdTaskHandle:&#160;cmd_task.c']]],
   ['codingrate_15',['codingrate',['../structModulationParams__t.html#a840e886c63e2d6f5be04c5e928e7112b',1,'ModulationParams_t::CodingRate'],['../structModulationParams__t.html#a894a2123013e4adba7fb26280df6f0b0',1,'ModulationParams_t::CodingRate']]],
-  ['command_16',['command',['../structobc__app__frame__t.html#ab0ee65643d546b184e150a77ecf3b20d',1,'obc_app_frame_t']]],
+  ['command_16',['command',['../structobc__app__frame__t.html#a3df45782a26f34559b9c96551a8f890e',1,'obc_app_frame_t']]],
   ['connectionstate_17',['ConnectionState',['../structPacketParams__t.html#a0d4b3ed762930eb83cafdc503e351f8b',1,'PacketParams_t']]],
   ['cps_5fpin_18',['cps_pin',['../structsky66114__t.html#a8dddffa459215b6155bf0cedec75f954',1,'sky66114_t']]],
   ['cps_5fport_19',['cps_port',['../structsky66114__t.html#ae9372646f5de83a642575b7a16f2c480',1,'sky66114_t']]],

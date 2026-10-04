@@ -112,15 +112,15 @@ $(document).ready(function(){initNavTree('main_8h_source.html',''); initResizabl
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/* Includes ------------------------------------------------------------------*/</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &quot;stm32h5xx_hal.h&quot;</span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;stm32h5xx_ll_bus.h&quot;</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;stm32h5xx_ll_cortex.h&quot;</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;stm32h5xx_ll_crc.h&quot;</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;stm32h5xx_ll_dma.h&quot;</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;stm32h5xx_ll_gpio.h&quot;</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;stm32h5xx_ll_pwr.h&quot;</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;stm32h5xx_ll_rcc.h&quot;</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;stm32h5xx_ll_system.h&quot;</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;stm32h5xx_ll_utils.h&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;stm32h5xx_ll_crc.h&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;stm32h5xx_ll_bus.h&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;stm32h5xx_ll_cortex.h&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;stm32h5xx_ll_rcc.h&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;stm32h5xx_ll_system.h&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;stm32h5xx_ll_utils.h&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;stm32h5xx_ll_pwr.h&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;stm32h5xx_ll_gpio.h&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;stm32h5xx_ll_dma.h&quot;</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &quot;stm32h5xx_ll_exti.h&quot;</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
@@ -144,16 +144,16 @@ $(document).ready(function(){initNavTree('main_8h_source.html',''); initResizabl
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="main_8h.html#aa2ac54564b3514084afd2c5dafe9d232">   61</a></span><span class="preprocessor">#define POOL_SIZE 8</span></div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="main_8h.html#a6b20d41d6252e9871430c242cb1a56e7">   62</a></span><span class="preprocessor">#define BUFFER_SIZE 512</span></div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="main_8h.html#a0faca5fd33e0f8bb20eb73cebb4a9005">   64</a></span><span class="preprocessor">#define USB_EVENT_BIT (1 &lt;&lt; 2)</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="main_8h.html#a46bf56a22aa28010d1823652b85f8ad6">   65</a></span><span class="preprocessor">#define USART_LORA_EVENT_BIT (1 &lt;&lt; 3)</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#define USART_LORA_EVENT_BIT (1 &lt;&lt; 3)</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="main_8h.html#a7b60b900af3dfd199bd747e1a1a4aba5">   67</a></span><span class="preprocessor">#define LORA_TX_EVENT_BIT (1 &lt;&lt; 4)</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="main_8h.html#a1b0cbc8dd94e5aee69ae2ff4d034a1ff">   68</a></span><span class="preprocessor">#define SETTINGS_CHANGE_EVENT_BIT (1 &lt;&lt; 5)</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="main_8h.html#a0faca5fd33e0f8bb20eb73cebb4a9005">   64</a></span><span class="preprocessor">#define USB_EVENT_BIT                 ( 1 &lt;&lt; 2 )</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="main_8h.html#a46bf56a22aa28010d1823652b85f8ad6">   65</a></span><span class="preprocessor">#define USART_LORA_EVENT_BIT          ( 1 &lt;&lt; 3 )</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#define USART_LORA_EVENT_BIT          ( 1 &lt;&lt; 3 )</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="main_8h.html#a7b60b900af3dfd199bd747e1a1a4aba5">   67</a></span><span class="preprocessor">#define LORA_TX_EVENT_BIT             ( 1 &lt;&lt; 4 )</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="main_8h.html#a1b0cbc8dd94e5aee69ae2ff4d034a1ff">   68</a></span><span class="preprocessor">#define SETTINGS_CHANGE_EVENT_BIT     ( 1 &lt;&lt; 5 )</span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
 <div class="foldopen" id="foldopen00070" data-start="{" data-end="};">
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structCMD__Buffer__t.html">   70</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structCMD__Buffer__t.html#ac779acfc944e0bf11dd6950aabaf1bb4">   71</a></span>  uint8_t data[<a class="code hl_define" href="main_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>];</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structCMD__Buffer__t.html#af852b38e759b7d68409d7a85c584e059">   72</a></span>  uint16_t <a class="code hl_variable" href="structCMD__Buffer__t.html#af852b38e759b7d68409d7a85c584e059">len</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structCMD__Buffer__t.html#ac779acfc944e0bf11dd6950aabaf1bb4">   71</a></span>    uint8_t data[<a class="code hl_define" href="main_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>];</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structCMD__Buffer__t.html#af852b38e759b7d68409d7a85c584e059">   72</a></span>    uint16_t <a class="code hl_variable" href="structCMD__Buffer__t.html#af852b38e759b7d68409d7a85c584e059">len</a>;</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>} <a class="code hl_struct" href="structCMD__Buffer__t.html">CMD_Buffer_t</a>;</div>
 </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">extern</span> QueueHandle_t <a class="code hl_variable" href="main_8h.html#a157a314b76354184f393f9c537ca6190">free_pool_queue</a>;</div>
@@ -288,8 +288,8 @@ $(document).ready(function(){initNavTree('main_8h_source.html',''); initResizabl
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="preprocessor">#endif </span><span class="comment">/* __MAIN_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="agroup__EEPROM__Emulation_html_gad4e07955fadfeb416e9620ddb42f8fe9"><div class="ttname"><a href="group__EEPROM__Emulation.html#gad4e07955fadfeb416e9620ddb42f8fe9">Error_Handler</a></div><div class="ttdeci">void Error_Handler(void)</div><div class="ttdoc">This function is executed in case of error occurrence.</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00397">main.c:397</a></div></div>
-<div class="ttc" id="amain_8h_html_a157a314b76354184f393f9c537ca6190"><div class="ttname"><a href="main_8h.html#a157a314b76354184f393f9c537ca6190">free_pool_queue</a></div><div class="ttdeci">QueueHandle_t free_pool_queue</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00080">main.c:80</a></div></div>
+<div class="ttc" id="agroup__EEPROM__Emulation_html_gad4e07955fadfeb416e9620ddb42f8fe9"><div class="ttname"><a href="group__EEPROM__Emulation.html#gad4e07955fadfeb416e9620ddb42f8fe9">Error_Handler</a></div><div class="ttdeci">void Error_Handler(void)</div><div class="ttdoc">This function is executed in case of error occurrence.</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00402">main.c:402</a></div></div>
+<div class="ttc" id="amain_8h_html_a157a314b76354184f393f9c537ca6190"><div class="ttname"><a href="main_8h.html#a157a314b76354184f393f9c537ca6190">free_pool_queue</a></div><div class="ttdeci">QueueHandle_t free_pool_queue</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00081">main.c:81</a></div></div>
 <div class="ttc" id="amain_8h_html_a514200cb33ad3cc3d365ea5802820606"><div class="ttname"><a href="main_8h.html#a514200cb33ad3cc3d365ea5802820606">xUsbStreamBuffer</a></div><div class="ttdeci">StreamBufferHandle_t xUsbStreamBuffer</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00063">main.c:63</a></div></div>
 <div class="ttc" id="amain_8h_html_a690f985c933da2ce6fe62b6c61dfa662"><div class="ttname"><a href="main_8h.html#a690f985c933da2ce6fe62b6c61dfa662">RX_BUF_SIZE</a></div><div class="ttdeci">#define RX_BUF_SIZE</div><div class="ttdef"><b>Definition</b> <a href="main_8h_source.html#l00058">main.h:58</a></div></div>
 <div class="ttc" id="amain_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="main_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="main_8h_source.html#l00062">main.h:62</a></div></div>

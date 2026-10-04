@@ -115,19 +115,19 @@ $(document).ready(function(){initNavTree('telemetry__task_8c_source.html',''); i
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="telemetry__task_8c.html#aae9f6c6dc147401a834fb1901dd049bb">   14</a></span><span class="keyword">const</span> osThreadAttr_t <a class="code hl_variable" href="telemetry__task_8c.html#aae9f6c6dc147401a834fb1901dd049bb">telemetryTask_attributes</a> = {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    .name = <span class="stringliteral">&quot;telemetryTask&quot;</span>,</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    .stack_size = 1024,</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    .priority = (osPriority_t) osPriorityAboveNormal,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    .priority = (osPriority_t)osPriorityAboveNormal,</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>};</div>
 </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="telemetry__task_8h.html#afcd60b31f762920f35539834b72abfce">   20</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="telemetry__task_8c.html#afcd60b31f762920f35539834b72abfce">start_telemetry_task</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>     uint8_t msg2[] = <span class="stringliteral">&quot;ZA MAŁO PAMIECI!\r\n&quot;</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    uint8_t msg2[] = <span class="stringliteral">&quot;ZA MAŁO PAMIECI!\r\n&quot;</span>;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">//HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_4);</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_variable" href="telemetry__task_8c.html#af308a24db4546ecee674fd0c87faca03">telemetryTaskHandle</a> = osThreadNew(<a class="code hl_function" href="telemetry__task_8c.html#adf01cf2576afc3ce53d9f36372a5748e">telemetry_task_thread</a>, NULL, &amp;<a class="code hl_variable" href="telemetry__task_8c.html#aae9f6c6dc147401a834fb1901dd049bb">telemetryTask_attributes</a>);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="telemetry__task_8c.html#af308a24db4546ecee674fd0c87faca03">telemetryTaskHandle</a> == NULL) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>     <span class="comment">// HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      <span class="comment">//LOG_ERROR(&quot;RFM95W TASK ERROR!!&quot;);</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="comment">// HAL_GPIO_TogglePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin);</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="comment">//LOG_ERROR(&quot;RFM95W TASK ERROR!!&quot;);</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
 </div>
@@ -135,22 +135,21 @@ $(document).ready(function(){initNavTree('telemetry__task_8c_source.html',''); i
 <div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="telemetry__task_8h.html#adf01cf2576afc3ce53d9f36372a5748e">   31</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="telemetry__task_8c.html#adf01cf2576afc3ce53d9f36372a5748e">telemetry_task_thread</a>(<span class="keywordtype">void</span> *arg) {</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    (void)arg;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_struct" href="structBoardData__t.html">BoardData_t</a> snapshot = { 0 };</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_struct" href="structBoardData__t.html">BoardData_t</a> snapshot = {0};</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    osDelay(100);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">for</span> (;;) {</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="board__data_8h.html#a5462b542db6c8df52c00b85867662257">g_state_mutex</a> != NULL &amp;&amp; xSemaphoreTake(<a class="code hl_variable" href="board__data_8h.html#a5462b542db6c8df52c00b85867662257">g_state_mutex</a>, pdMS_TO_TICKS(100)) == pdTRUE) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>           </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            memcpy(&amp;snapshot, &amp;<a class="code hl_variable" href="board__data_8h.html#a90e747e77a671a8da706f305c3a647c1">g_system_state</a>, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structBoardData__t.html">BoardData_t</a>));</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            xSemaphoreGive(<a class="code hl_variable" href="board__data_8h.html#a5462b542db6c8df52c00b85867662257">g_state_mutex</a>);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            snapshot.<a class="code hl_variable" href="structBoardData__t.html#a3087fde7191fa4c77c89eee251ab4ca7">timestamp_ms</a> = osKernelGetTickCount();</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="sd__task_8h.html#ac3aaa7f82771654888e7e93faf56d68c">sd_logger_log_data</a>(&amp;snapshot) != HAL_OK) {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>       <span class="comment">//  HAL_GPIO_TogglePin(STATUS_LED2_GPIO_Port, STATUS_LED2_Pin);</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        osDelay(1000);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            memcpy(&amp;snapshot, &amp;<a class="code hl_variable" href="board__data_8h.html#a90e747e77a671a8da706f305c3a647c1">g_system_state</a>, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structBoardData__t.html">BoardData_t</a>));</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            xSemaphoreGive(<a class="code hl_variable" href="board__data_8h.html#a5462b542db6c8df52c00b85867662257">g_state_mutex</a>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            snapshot.<a class="code hl_variable" href="structBoardData__t.html#a3087fde7191fa4c77c89eee251ab4ca7">timestamp_ms</a> = osKernelGetTickCount();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="sd__task_8h.html#ac3aaa7f82771654888e7e93faf56d68c">sd_logger_log_data</a>(&amp;snapshot) != HAL_OK) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="comment">//  HAL_GPIO_TogglePin(STATUS_LED2_GPIO_Port, STATUS_LED2_Pin);</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        osDelay(1000);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
 </div>
 <div class="ttc" id="aboard__data_8h_html"><div class="ttname"><a href="board__data_8h.html">board_data.h</a></div></div>
 <div class="ttc" id="aboard__data_8h_html_a5462b542db6c8df52c00b85867662257"><div class="ttname"><a href="board__data_8h.html#a5462b542db6c8df52c00b85867662257">g_state_mutex</a></div><div class="ttdeci">SemaphoreHandle_t g_state_mutex</div><div class="ttdef"><b>Definition</b> <a href="board__data_8c_source.html#l00011">board_data.c:11</a></div></div>
