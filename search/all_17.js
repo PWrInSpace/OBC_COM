@@ -5,12 +5,12 @@ var searchData=
   ['variables_2',['EEPROM Private Variables',['../group__EEPROM__Private__Variables.html',1,'']]],
   ['vbat_5fsense_5fgpio_5fport_3',['VBAT_SENSE_GPIO_Port',['../main_8h.html#a60f3e59f21350e24450e76c522f54288',1,'main.h']]],
   ['vbat_5fsense_5fpin_4',['VBAT_SENSE_Pin',['../main_8h.html#a44b8b891648015d5eeeac90778461efb',1,'main.h']]],
-  ['velocity_5fm_5fs_5',['velocity_m_s',['../structobc__mcb__frame__t.html#a32f97e29d1c96161b91c750627ac8796',1,'obc_mcb_frame_t']]],
+  ['velocity_5fm_5fs_5',['velocity_m_s',['../structobc__mcb__frame__t.html#a5b92dc64bd28e38d2fcf12056b8cb624',1,'obc_mcb_frame_t']]],
   ['verify_5ffreq_6',['verify_freq',['../sx1280__task_8c.html#a08a0d39a0c2e7c960630f1125434da42',1,'sx1280_task.c']]],
   ['verifypagefullyerased_7',['VerifyPageFullyErased',['../group__EEPROM__Private__Functions.html#gacb9d63489e090b5adc55b3c4e587e083',1,'eeprom_emul.c']]],
   ['verifypagesfullwritevariable_8',['VerifyPagesFullWriteVariable',['../group__EEPROM__Private__Functions.html#gaf47e9f09b5a17c1e9fafbd1ca8e967cc',1,'eeprom_emul.c']]],
   ['virt_5fbase_5frfm95w_9',['VIRT_BASE_RFM95W',['../nvs__config_8h.html#ac2bb99458a84a3ed419265bdcf8c6b7c',1,'nvs_config.h']]],
   ['virt_5fbase_5fsx1280_10',['VIRT_BASE_SX1280',['../nvs__config_8h.html#a12beb00ad8ca144e3dc0e8a371c4aabf',1,'nvs_config.h']]],
-  ['vs_20code_20automation_20build_20process_11',['🛠 VS Code Automation &amp; Build Process',['../index.html#autotoc_md9',1,'']]],
+  ['vs_20code_20automation_20build_20process_11',['🛠 VS Code Automation &amp; Build Process',['../index.html#autotoc_md12',1,'']]],
   ['vtelemetrytimercallback_12',['vTelemetryTimerCallback',['../sx1280__task_8c.html#a359f79d78599c3e6c95df28ac3f4b7fe',1,'sx1280_task.c']]]
 ];
