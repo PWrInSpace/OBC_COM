@@ -1,4 +1,4 @@
-# OBC_COM
+# OBC_COM {#mainpage}
 
 ![MCU](https://img.shields.io/badge/MCU-STM32H563-blue.svg)
 ![RTOS](https://img.shields.io/badge/RTOS-FreeRTOS%20CMSIS--V2-green.svg)
