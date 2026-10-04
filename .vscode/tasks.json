@@ -6,7 +6,7 @@
             "type": "shell",
             "command": "cmake",
             "args": [
-                "--build", "build", "--target", "format"
+                "--build", "build/Debug", "--target", "format"
             ],
             "problemMatcher": []
         },
@@ -15,7 +15,7 @@
             "type": "shell",
             "command": "cmake",
             "args": [
-                "--build", "build"
+                "--build", "build/Debug"
             ],
             "group": {
                 "kind": "build",
