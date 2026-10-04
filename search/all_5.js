@@ -6,7 +6,7 @@ var searchData=
   ['bike_3',['Bike',['../GNSS_8h.html#a0e90ac1141399e8e79d865d54f275537ae788cb0b3f95160c651fab4abe4b47c9',1,'GNSS.h']]],
   ['binary_20protocol_4',['2. Binary Protocol',['../cmd_module.html#autotoc_md5',1,'']]],
   ['bitratebandwidth_5',['bitratebandwidth',['../structModulationParams__t.html#aa78dcc891617b5fbb2843f2e357bddf1',1,'ModulationParams_t::BitrateBandwidth'],['../structModulationParams__t.html#a66fd25a8f813d7b2c130d6c5498a8e5c',1,'ModulationParams_t::BitrateBandwidth']]],
-  ['ble_6',['ble',['../structModulationParams__t.html#ac7b8f967c9a2d19f510577126ef92cb2',1,'ModulationParams_t::Ble'],['../structPacketParams__t.html#a1322a6f300d26b23ea640b9fabe246cf',1,'PacketParams_t::Ble'],['../structPacketStatus__t.html#a53f05f65c4a661b7239953bc47689f4c',1,'PacketStatus_t::Ble']]],
+  ['ble_6',['ble',['../structModulationParams__t.html#a98dcde062fc62bc5da41e57724939741',1,'ModulationParams_t::Ble'],['../structPacketParams__t.html#af344c4ab72d14084ca907ee9a8fa3414',1,'PacketParams_t::Ble'],['../structPacketStatus__t.html#a08edc6171c698fbef9ec5c9297debbc0',1,'PacketStatus_t::Ble']]],
   ['ble_5fadvertizer_5faccess_5faddress_7',['BLE_ADVERTIZER_ACCESS_ADDRESS',['../sx1280_8h.html#a4e52f1a86d0044cc3d33336ab96d3f6b',1,'sx1280.h']]],
   ['ble_5fall_5f0_8',['BLE_ALL_0',['../sx1280_8h.html#afce664bcc1f0b8e5d7d9db9656398b44a0e396a3bba0202356fc2665b09ea8a7e',1,'sx1280.h']]],
   ['ble_5fall_5f1_9',['BLE_ALL_1',['../sx1280_8h.html#afce664bcc1f0b8e5d7d9db9656398b44aec9062b4f4a1bf5e3ca9c0e0fb17f060',1,'sx1280.h']]],

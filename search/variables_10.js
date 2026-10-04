@@ -6,7 +6,7 @@ var searchData=
   ['rc13menable_3',['RC13MEnable',['../structCalibrationParams__t.html#a6c7cd41d785e265c8eca71d1e3b876cf',1,'CalibrationParams_t']]],
   ['rc64kenable_4',['RC64KEnable',['../structCalibrationParams__t.html#ac015ec44e161efe10d65c52dbd59cdee',1,'CalibrationParams_t']]],
   ['readbytes_5',['readBytes',['../structRFM95__param__t.html#a6902715a6d2af38e38400cceed333086',1,'RFM95_param_t']]],
-  ['recovery_5fflags_6',['recovery_flags',['../structobc__mcb__frame__t.html#a6e3666dc7e05f8066169368946647ebc',1,'obc_mcb_frame_t']]],
+  ['recovery_5fflags_6',['recovery_flags',['../structobc__mcb__frame__t.html#a9359df59a92d7b8e219ba376390e053c',1,'obc_mcb_frame_t']]],
   ['rfm95w_7',['rfm95w',['../structLoRaDevs__t.html#a5456296dd0a9a71e9c3a3aa3cf54926c',1,'LoRaDevs_t']]],
   ['rfm95w_5fparam_8',['rfm95w_param',['../lora__config_8c.html#a6f556b97e2725d669af9ba6b86ae58c4',1,'lora_config.c']]],
   ['rfm95w_5fradio_9',['rfm95w_radio',['../lora__config_8c.html#a990d63afa2bb9db67d4596753e112e38',1,'lora_config.c']]],

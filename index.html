@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="textblock"><p><a class="anchor" id="mainpage"></a> <img src="https://img.shields.io/badge/MCU-STM32H563-blue.svg" alt="MCU" style="pointer-events: none;" class="inline"/> <img src="https://img.shields.io/badge/RTOS-FreeRTOS%20CMSIS--V2-green.svg" alt="RTOS" style="pointer-events: none;" class="inline"/> <img src="https://img.shields.io/badge/Build-CMake-orange.svg" alt="Build" style="pointer-events: none;" class="inline"/> <img src="https://img.shields.io/badge/Code_Style-Clang--Format-blueviolet.svg" alt="Code Style" style="pointer-events: none;" class="inline"/></p>
 <p>Firmware for the On-Board Computer (OBC) communication subsystem. This project is based on the <b>STM32H563</b> processor, chosen for its high reliability and integrated security features—essential requirements for robust communication systems in aerospace.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md1"></a>
+<h1><a class="anchor" id="autotoc_md3"></a>
 📂 Project Structure</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -151,13 +151,7 @@ Step 2: Execution Mode (Run)</h2>
 <h1><a class="anchor" id="autotoc_md16"></a>
 🛠 STM32CubeMX Notes</h1>
 <ol type="1">
-<li>After STM32CubeMX code generation, change the <code>cmake/stm32cubemx/CMakeLists.txt</code> file as follows: <div class="fragment"><div class="line">set(MX_LINK_LIBS </div>
-<div class="line">    STM32_Drivers</div>
-<div class="line">    ${TOOLCHAIN_LINK_LIBRARIES}</div>
-<div class="line">    RTOS2</div>
-<div class="line">    &quot;-u _printf_float&quot;</div>
-<div class="line">)</div>
-</div><!-- fragment --> </li>
+<li>After STM32CubeMX code generation, change the <code>cmake/stm32cubemx/CMakeLists.txt</code> file as follows: ```cmake set(MX_LINK_LIBS STM32_Drivers ${TOOLCHAIN_LINK_LIBRARIES} RTOS2 "-u _printf_float" ) </li>
 </ol>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

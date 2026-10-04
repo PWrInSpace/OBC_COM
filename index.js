@@ -1,6 +1,6 @@
 var index =
 [
-    [ "📂 Project Structure", "index.html#autotoc_md1", null ],
+    [ "📂 Project Structure", "index.html#autotoc_md3", null ],
     [ "🛠 VS Code Automation & Build Process", "index.html#autotoc_md9", [
       [ "Required Configuration for Flashing:", "index.html#autotoc_md10", null ]
     ] ],

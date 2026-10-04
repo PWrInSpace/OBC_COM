@@ -185,7 +185,7 @@ var searchData=
   ['stm32h5xx_5fit_2eh_182',['stm32h5xx_it.h',['../stm32h5xx__it_8h.html',1,'']]],
   ['stop_5fradio_5fstandby_183',['stop_radio_standby',['../sx1280__task_8c.html#af9b8000bc81e28fbd95180c677bf58c4',1,'sx1280_task.c']]],
   ['struct_184',['Step 2: Define Command Struct',['../cmd_module.html#autotoc_md20',1,'']]],
-  ['structure_185',['📂 Project Structure',['../index.html#autotoc_md1',1,'']]],
+  ['structure_185',['📂 Project Structure',['../index.html#autotoc_md3',1,'']]],
   ['structures_186',['EEPROM Private Structures',['../group__EEPROM__Private__Structures.html',1,'']]],
   ['supported_20commands_187',['📜 Supported Commands',['../cmd_module.html#autotoc_md7',1,'']]],
   ['sx1280_188',['sx1280',['../structLoRaDevs__t.html#aff80da93ff078342981adfdcbe557800',1,'LoRaDevs_t']]],
@@ -330,6 +330,6 @@ var searchData=
   ['syncworderror_327',['SyncwordError',['../structRxCounter__t.html#a3551467eda0237060f654c87840c003c',1,'RxCounter_t']]],
   ['syncwordlength_328',['syncwordlength',['../structPacketParams__t.html#a550aad01cede1d10646e2fa812643c67',1,'PacketParams_t::SyncWordLength'],['../structPacketParams__t.html#a246dcbb0819fd0e8e8bd1b98965af24b',1,'PacketParams_t::SyncWordLength']]],
   ['syncwordmatch_329',['SyncWordMatch',['../structPacketParams__t.html#a1c1211522ced8cf15146d9b5c7a6d42f',1,'PacketParams_t']]],
-  ['sys_5fdev_5fid_330',['sys_dev_id',['../structobc__app__frame__t.html#a79711bbf18db2a26ba6af1b3b809a6e8',1,'obc_app_frame_t']]],
+  ['sys_5fdev_5fid_330',['sys_dev_id',['../structobc__app__frame__t.html#aa4a93058031a11ebf41570c7aa1dfea9',1,'obc_app_frame_t']]],
   ['systemclock_5fconfig_331',['SystemClock_Config',['../main_8c.html#a70af21c671abfcc773614a9a4f63d920',1,'main.c']]]
 ];

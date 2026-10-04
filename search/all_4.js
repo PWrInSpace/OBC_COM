@@ -14,7 +14,7 @@ var searchData=
   ['airbone1g_11',['Airbone1G',['../GNSS_8h.html#a0e90ac1141399e8e79d865d54f275537af914b8037766ed7203de3adb8e1497d0',1,'GNSS.h']]],
   ['airbone2g_12',['Airbone2G',['../GNSS_8h.html#a0e90ac1141399e8e79d865d54f275537ad367ea3878a6874be7495225aca9e79b',1,'GNSS.h']]],
   ['airbone4g_13',['Airbone4G',['../GNSS_8h.html#a0e90ac1141399e8e79d865d54f275537aeed9572e489b6f6c55afc3e44c72f226',1,'GNSS.h']]],
-  ['altitude_5fm_14',['altitude_m',['../structobc__mcb__frame__t.html#ad259aeeace67121d8c6848f2b3c15559',1,'obc_mcb_frame_t']]],
+  ['altitude_5fm_14',['altitude_m',['../structobc__mcb__frame__t.html#a37b44ad94d195535ca70e0dc9b765500',1,'obc_mcb_frame_t']]],
   ['ant1_5fen_5fgpio_5fport_15',['ANT1_EN_GPIO_Port',['../sky66114_8h.html#a697834432fe4e36fbc99c6685a10997b',1,'sky66114.h']]],
   ['ant1_5fen_5fpin_16',['ANT1_EN_Pin',['../sky66114_8h.html#a49d5f335289f1e06290191c3b263bc53',1,'sky66114.h']]],
   ['ant2_5fen_5fgpio_5fport_17',['ANT2_EN_GPIO_Port',['../sky66114_8h.html#af3bcc265a797af3caa7c139a27fe42c9',1,'sky66114.h']]],
@@ -29,11 +29,11 @@ var searchData=
   ['app_5frx_5fdata_5fsize_26',['APP_RX_DATA_SIZE',['../usbd__cdc__if_8h.html#af3db03a3d03a80e1ec7a0a9c470d9692',1,'usbd_cdc_if.h']]],
   ['app_5ftx_5fdata_5fsize_27',['APP_TX_DATA_SIZE',['../usbd__cdc__if_8h.html#aff35924b436331d533599db9489c79ee',1,'usbd_cdc_if.h']]],
   ['apply_5fnvs_5fsettings_28',['apply_nvs_settings',['../rfm95w__task_8c.html#aec3803cc26789b3cbf72bb31223778d2',1,'rfm95w_task.c']]],
-  ['architecture_29',['⚙️ Protocol Architecture',['../cmd_module.html#autotoc_md3',1,'']]],
+  ['architecture_29',['⚙️ Protocol Architecture',['../cmd_module.html#autotoc_md1',1,'']]],
   ['ascii_30',['1. Text Protocol (ASCII)',['../cmd_module.html#autotoc_md4',1,'']]],
   ['assert_5fparam_31',['assert_param',['../stm32__assert_8h.html#a631dea7b230e600555f979c62af1de21',1,'stm32_assert.h']]],
   ['auto_5frx_5ftx_5foffset_32',['AUTO_RX_TX_OFFSET',['../sx1280_8h.html#ab43b6e1bb3aa8f22f649ae8ec82da53c',1,'sx1280.h']]],
-  ['auto_5fvent_5fsetting_33',['auto_vent_setting',['../structobc__mcb__frame__t.html#ab1328a32a31db87de84e67f6478f58a9',1,'obc_mcb_frame_t']]],
+  ['auto_5fvent_5fsetting_33',['auto_vent_setting',['../structobc__mcb__frame__t.html#abc843fdb564fc82210c87834cd44588e',1,'obc_mcb_frame_t']]],
   ['automation_20build_20process_34',['🛠 VS Code Automation &amp; Build Process',['../index.html#autotoc_md9',1,'']]],
   ['automotiv_35',['Automotiv',['../GNSS_8h.html#a0e90ac1141399e8e79d865d54f275537a9f79124650803ce698c627434f9c199c',1,'GNSS.h']]]
 ];

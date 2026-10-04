@@ -99,7 +99,7 @@ var searchData=
   ['cmdtaskhandle_96',['cmdtaskhandle',['../cmd__task_8h.html#a95b8122e61f25793932a9c2a9726525d',1,'cmdTaskHandle:&#160;cmd_task.c'],['../group__USBD__CDC__Private__FunctionPrototypes.html#ga95b8122e61f25793932a9c2a9726525d',1,'cmdTaskHandle:&#160;cmd_task.c'],['../group__USBD__CDC__Private__FunctionPrototypes.html#ga95b8122e61f25793932a9c2a9726525d',1,'cmdTaskHandle:&#160;cmd_task.c']]],
   ['code_20automation_20build_20process_97',['🛠 VS Code Automation &amp; Build Process',['../index.html#autotoc_md9',1,'']]],
   ['codingrate_98',['codingrate',['../structModulationParams__t.html#a840e886c63e2d6f5be04c5e928e7112b',1,'ModulationParams_t::CodingRate'],['../structModulationParams__t.html#a894a2123013e4adba7fb26280df6f0b0',1,'ModulationParams_t::CodingRate']]],
-  ['command_99',['command',['../structobc__app__frame__t.html#a71b2aea31618d84c8da0aeb1853fab7b',1,'obc_app_frame_t']]],
+  ['command_99',['command',['../structobc__app__frame__t.html#abef94ef0eb2c48cd8ef0802bff4c87e7',1,'obc_app_frame_t']]],
   ['command_20handler_100',['Step 3: Define Command Handler',['../cmd_module.html#autotoc_md21',1,'']]],
   ['command_20id_101',['Step 1: Define Command ID',['../cmd_module.html#autotoc_md19',1,'']]],
   ['command_20line_20interface_102',['CMD Module (Command Line Interface)',['../cmd_module.html',1,'']]],

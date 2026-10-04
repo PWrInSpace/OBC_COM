@@ -27,7 +27,7 @@ var NAVTREE =
   [ "OBC-COM", "index.html", [
     [ "OBC_COM", "index.html", "index" ],
     [ "CMD Module (Command Line Interface)", "cmd_module.html", [
-      [ "⚙️ Protocol Architecture", "cmd_module.html#autotoc_md3", [
+      [ "⚙️ Protocol Architecture", "cmd_module.html#autotoc_md1", [
         [ "1. Text Protocol (ASCII)", "cmd_module.html#autotoc_md4", null ],
         [ "2. Binary Protocol", "cmd_module.html#autotoc_md5", null ]
       ] ],
@@ -71,7 +71,7 @@ var NAVTREEINDEX =
 "main_8h.html#a12c42ba76b3b14ea44c7ebc33c8103e6",
 "rfm95w_8h.html#a70616dfa9fac771817ed31fbcae5d2ae",
 "sound_8c.html#a441475178599565b3dd4572cebbdf28c",
-"structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab",
+"structPacketStatus__t.html#a8a27bde9e410bdf0de3557f3010e0e82",
 "sx1280-hal_8h_source.html",
 "sx1280_8h.html#a7f2a1138e63d652499230db510694503",
 "sx1280__task_8c.html"
