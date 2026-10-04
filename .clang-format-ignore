@@ -1,0 +1,12 @@
+# Ignoruj pliki systemowe i konfiguracyjne rdzenia STM32
+Core/Src/system_stm32*.c
+Core/Inc/system_stm32*.h
+
+# Ignoruj pliki przerwań i inicjalizacji sprzętu generowane przez CubeMX
+Core/Src/stm32*_it.c
+Core/Inc/stm32*_it.h
+Core/Src/stm32*_hal_msp.c
+Core/Inc/stm32*_hal_conf.h   <-- DODAJ TO TUTAJ
+
+# Ignoruj cały folder Drivers (HAL / CMSIS), gdyby narzędzie tam zajrzało
+Drivers/**

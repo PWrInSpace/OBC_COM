@@ -16,11 +16,12 @@ rfm95_err_t rfm95_init(rfm95_t *rfm95) {
   uint8_t i = 0;
   while (i++ < TIMEOUT_RESET) {
     version = rfm95_read_reg(rfm95, REG_VERSION);
-    if (version == 0x12) break;
+    if (version == 0x12)
+      break;
     rfm95->_delay(2);
   }
-  assert(i <= TIMEOUT_RESET + 1);  // at the end of the loop above, the max
-                                   // value i can reach is TIMEOUT_RESET + 1
+  assert(i <= TIMEOUT_RESET + 1); // at the end of the loop above, the max
+                                  // value i can reach is TIMEOUT_RESET + 1
 
   ret |= rfm95_default_config(rfm95);
 
@@ -33,11 +34,11 @@ rfm95_err_t rfm95_init(rfm95_t *rfm95) {
 rfm95_err_t rfm95_default_config(rfm95_t *rfm95) {
   rfm95_err_t ret = RFM95_OK;
   rfm95_sleep(rfm95);
-  
+
   // 1. Adresy bazowe FIFO
   ret |= rfm95_write_reg(rfm95, REG_FIFO_RX_BASE_ADDR, 0);
   ret |= rfm95_write_reg(rfm95, REG_FIFO_TX_BASE_ADDR, 0);
-  
+
   // 2. LNA i Modem Config
   ret |= rfm95_write_reg(rfm95, REG_LNA, rfm95_read_reg(rfm95, REG_LNA) | 0x03);
   ret |= rfm95_write_reg(rfm95, REG_MODEM_CONFIG_3, 0x04);
@@ -53,7 +54,7 @@ rfm95_err_t rfm95_default_config(rfm95_t *rfm95) {
   // W REG_IRQ_FLAGS_MASK bit ustawiony na 0 oznacza WŁĄCZONE przerwanie.
   // Chcemy RX_DONE (bit 6) i RX_TIMEOUT (bit 7) oraz CRC_ERR (bit 5).
   // Zapisujemy 0x00, aby odblokować WSZYSTKIE przerwania LoRa.
-  ret |= rfm95_write_reg(rfm95, REG_IRQ_FLAGS_MASK, 0x00); 
+  ret |= rfm95_write_reg(rfm95, REG_IRQ_FLAGS_MASK, 0x00);
 
   rfm95_set_tx_power(rfm95, RFM95_TX_POWER_17_dBm);
 
@@ -61,77 +62,72 @@ rfm95_err_t rfm95_default_config(rfm95_t *rfm95) {
   return ret;
 }
 
-
 rfm95_err_t rfm95_default_config_param(rfm95_t *rfm) {
-    rfm95_err_t ret = RFM95_OK;
+  rfm95_err_t ret = RFM95_OK;
 
-    // A. Musimy być w trybie Sleep, aby przełączyć się na LoRa
-    rfm95_sleep(rfm);
-    
-    // B. Włączenie trybu LoRa (Bit 7 w REG_OP_MODE)
-    // Bez tego rejestry modemu nie będą dostępne
-    uint8_t opMode = rfm95_read_reg(rfm, 0x01);
-    ret |= rfm95_write_reg(rfm, 0x01, opMode | 0x80); 
+  // A. Musimy być w trybie Sleep, aby przełączyć się na LoRa
+  rfm95_sleep(rfm);
 
-    // C. Ustawienie częstotliwości (korzysta z rfm->param->frequency)
-    // Wymaga funkcji przeliczającej Hz na rejestry FrfMsb/Mid/Lsb
-    rfm95_set_frequency(rfm, rfm->param->frequency);
-    char buf[128] = {0};
-    sprintf(buf, "| Frequency | %-18lu Hz |\r\n", (unsigned long)rfm->param->frequency);
-    USB_Transmit((uint8_t*)buf, strlen(buf));
+  // B. Włączenie trybu LoRa (Bit 7 w REG_OP_MODE)
+  // Bez tego rejestry modemu nie będą dostępne
+  uint8_t opMode = rfm95_read_reg(rfm, 0x01);
+  ret |= rfm95_write_reg(rfm, 0x01, opMode | 0x80);
 
-    // D. Konfiguracja FIFO
-    ret |= rfm95_write_reg(rfm, 0x0E, 0); // FIFO RX Base Addr
-    ret |= rfm95_write_reg(rfm, 0x0F, 0); // FIFO TX Base Addr
+  // C. Ustawienie częstotliwości (korzysta z rfm->param->frequency)
+  // Wymaga funkcji przeliczającej Hz na rejestry FrfMsb/Mid/Lsb
+  rfm95_set_frequency(rfm, rfm->param->frequency);
+  char buf[128] = {0};
+  sprintf(buf, "| Frequency | %-18lu Hz |\r\n",
+          (unsigned long)rfm->param->frequency);
+  USB_Transmit((uint8_t *)buf, strlen(buf));
 
-    // E. Konfiguracja parametrów LoRa (BW i SF)
-    // REG_MODEM_CONFIG_1 (0x1D) -> Bandwidth
-    uint8_t bw_config = (rfm->param->LoRa_BW << 4) | 0x02; // + CR 4/5
-    ret |= rfm95_write_reg(rfm, 0x1D, bw_config);
+  // D. Konfiguracja FIFO
+  ret |= rfm95_write_reg(rfm, 0x0E, 0); // FIFO RX Base Addr
+  ret |= rfm95_write_reg(rfm, 0x0F, 0); // FIFO TX Base Addr
 
-    // REG_MODEM_CONFIG_2 (0x1E) -> Spreading Factor (Rate)
-    uint8_t sf_config = (rfm->param->LoRa_Rate << 4);
-    ret |= rfm95_write_reg(rfm, 0x1E, sf_config);
+  // E. Konfiguracja parametrów LoRa (BW i SF)
+  // REG_MODEM_CONFIG_1 (0x1D) -> Bandwidth
+  uint8_t bw_config = (rfm->param->LoRa_BW << 4) | 0x02; // + CR 4/5
+  ret |= rfm95_write_reg(rfm, 0x1D, bw_config);
 
-    // F. Ustawienie mocy nadawania
-    rfm95_set_tx_power(rfm, rfm->param->power);
+  // REG_MODEM_CONFIG_2 (0x1E) -> Spreading Factor (Rate)
+  uint8_t sf_config = (rfm->param->LoRa_Rate << 4);
+  ret |= rfm95_write_reg(rfm, 0x1E, sf_config);
 
-    if(rfm->param->crc)
-    {
+  // F. Ustawienie mocy nadawania
+  rfm95_set_tx_power(rfm, rfm->param->power);
+
+  if (rfm->param->crc) {
     rfm95_enable_crc(rfm);
-    }
-    else
-    {
+  } else {
     rfm95_disable_crc(rfm);
-     }
+  }
 
-    rfm95_err_t err = RFM95_OK;
-    err |= rfm95_set_coding_rate(rfm, rfm->param->CR);
-    err |= rfm95_set_sync_word(rfm, rfm->param->sync);
-    if (err != RFM95_OK)
-    {
-      LOG_ERROR("Error setting CR or sync word in rfm95_default_config_param");
-    }
+  rfm95_err_t err = RFM95_OK;
+  err |= rfm95_set_coding_rate(rfm, rfm->param->CR);
+  err |= rfm95_set_sync_word(rfm, rfm->param->sync);
+  if (err != RFM95_OK) {
+    LOG_ERROR("Error setting CR or sync word in rfm95_default_config_param");
+  }
 
+  // G. Aktywacja automatycznego wzmocnienia (AGC)
+  ret |= rfm95_write_reg(rfm, 0x26, 0x04);
 
-    // G. Aktywacja automatycznego wzmocnienia (AGC)
-    ret |= rfm95_write_reg(rfm, 0x26, 0x04);
+  // H. Powrót do trybu Standby (aktywacja oscylatora kwarcowego)
+  rfm95_idle(rfm);
 
-    // H. Powrót do trybu Standby (aktywacja oscylatora kwarcowego)
-    rfm95_idle(rfm);
-    
-    return ret;
+  return ret;
 }
 
 rfm95_err_t rfm95_write_reg(rfm95_t *rfm95, int16_t reg, int16_t val) {
   uint8_t out[2] = {0x80 | reg, val};
   uint8_t in[2];
 
-    if (rfm95 == NULL) {
-      return RFM95_WRITE_ERR;
-    }
+  if (rfm95 == NULL) {
+    return RFM95_WRITE_ERR;
+  }
 
-    return rfm95->_spi_transmit(in, out) == 1 ? RFM95_OK : RFM95_WRITE_ERR;
+  return rfm95->_spi_transmit(in, out) == 1 ? RFM95_OK : RFM95_WRITE_ERR;
 }
 
 uint8_t rfm95_read_reg(rfm95_t *rfm95, int16_t reg) {
@@ -161,7 +157,7 @@ rfm95_err_t rfm95_explicit_header_mode(rfm95_t *rfm95) {
   rfm95_err_t ret = RFM95_OK;
   rfm95->implicit_header = 0;
   ret |= rfm95_write_reg(rfm95, REG_MODEM_CONFIG_1,
-                        rfm95_read_reg(rfm95, REG_MODEM_CONFIG_1) & 0xfe);
+                         rfm95_read_reg(rfm95, REG_MODEM_CONFIG_1) & 0xfe);
   return ret;
 }
 
@@ -169,7 +165,7 @@ rfm95_err_t rfm95_implicit_header_mode(rfm95_t *rfm95, int16_t size) {
   rfm95_err_t ret = RFM95_OK;
   rfm95->implicit_header = 1;
   ret |= rfm95_write_reg(rfm95, REG_MODEM_CONFIG_1,
-                        rfm95_read_reg(rfm95, REG_MODEM_CONFIG_1) | 0x01);
+                         rfm95_read_reg(rfm95, REG_MODEM_CONFIG_1) | 0x01);
   ret |= rfm95_write_reg(rfm95, REG_PAYLOAD_LENGTH, size);
   return ret;
 }
@@ -187,11 +183,11 @@ rfm95_err_t rfm95_sleep(rfm95_t *rfm95) {
 }
 
 rfm95_err_t rfm95_set_receive_mode(rfm95_t *rfm95) {
-  
-    rfm95_write_reg(rfm95, REG_DIO_MAPPING_1, 0x00); 
+
+  rfm95_write_reg(rfm95, REG_DIO_MAPPING_1, 0x00);
   rfm95_err_t ret = RFM95_OK;
   ret |= rfm95_write_reg(rfm95, REG_OP_MODE,
-                        MODE_LONG_RANGE_MODE | MODE_RX_CONTINUOUS);
+                         MODE_LONG_RANGE_MODE | MODE_RX_CONTINUOUS);
   return ret;
 }
 
@@ -224,7 +220,7 @@ rfm95_err_t rfm95_set_frequency(rfm95_t *rfm95, int32_t frequency) {
 int32_t rfm95_get_frequency(rfm95_t *rfm95) { return rfm95->frequency; }
 
 rfm95_err_t rfm95_set_spreading_factor(rfm95_t *rfm95,
-                                     rfm95_spreading_factor_t sf) {
+                                       rfm95_spreading_factor_t sf) {
   rfm95_err_t ret = RFM95_OK;
   if (sf == RFM95_SF_64_CoS) {
     ret |= rfm95_write_reg(rfm95, REG_DETECTION_THRESHOLD, 0x0c);
@@ -234,9 +230,9 @@ rfm95_err_t rfm95_set_spreading_factor(rfm95_t *rfm95,
     ret |= rfm95_write_reg(rfm95, REG_DETECTION_THRESHOLD, 0x0a);
   }
 
-  ret |= rfm95_write_reg(
-      rfm95, REG_MODEM_CONFIG_2,
-      (rfm95_read_reg(rfm95, REG_MODEM_CONFIG_2) & 0x0f) | ((sf << 4) & 0xf0));
+  ret |= rfm95_write_reg(rfm95, REG_MODEM_CONFIG_2,
+                         (rfm95_read_reg(rfm95, REG_MODEM_CONFIG_2) & 0x0f) |
+                             ((sf << 4) & 0xf0));
   return ret;
 }
 
@@ -258,9 +254,9 @@ rfm95_err_t rfm95_set_bandwidth(rfm95_t *rfm95, rfm95_bandwith_t sbw) {
   rfm95_err_t ret = RFM95_OK;
   bw = (int16_t)sbw;
 
-  ret |= rfm95_write_reg(
-      rfm95, REG_MODEM_CONFIG_1,
-      (rfm95_read_reg(rfm95, REG_MODEM_CONFIG_1) & 0x0f) | (bw << 4));
+  ret |= rfm95_write_reg(rfm95, REG_MODEM_CONFIG_1,
+                         (rfm95_read_reg(rfm95, REG_MODEM_CONFIG_1) & 0x0f) |
+                             (bw << 4));
   return ret;
 }
 
@@ -272,9 +268,9 @@ rfm95_err_t rfm95_set_coding_rate(rfm95_t *rfm95, int16_t denominator) {
     denominator = 8;
 
   int16_t cr = denominator - 4;
-  ret |= rfm95_write_reg(
-      rfm95, REG_MODEM_CONFIG_1,
-      (rfm95_read_reg(rfm95, REG_MODEM_CONFIG_1) & 0xf1) | (cr << 1));
+  ret |= rfm95_write_reg(rfm95, REG_MODEM_CONFIG_1,
+                         (rfm95_read_reg(rfm95, REG_MODEM_CONFIG_1) & 0xf1) |
+                             (cr << 1));
   return ret;
 }
 
@@ -298,23 +294,22 @@ rfm95_err_t rfm95_set_preamble_length(rfm95_t *rfm95, int32_t length) {
 // 	SX1278_defaultConfig(module);
 // }
 
-
 rfm95_err_t rfm95_set_sync_word(rfm95_t *rfm95, int16_t sw) {
   return rfm95_write_reg(rfm95, REG_SYNC_WORD, sw);
 }
 
 rfm95_err_t rfm95_enable_crc(rfm95_t *rfm95) {
   return rfm95_write_reg(rfm95, REG_MODEM_CONFIG_2,
-                        rfm95_read_reg(rfm95, REG_MODEM_CONFIG_2) | 0x04);
+                         rfm95_read_reg(rfm95, REG_MODEM_CONFIG_2) | 0x04);
 }
 
 rfm95_err_t rfm95_disable_crc(rfm95_t *rfm95) {
   return rfm95_write_reg(rfm95, REG_MODEM_CONFIG_2,
-                        rfm95_read_reg(rfm95, REG_MODEM_CONFIG_2) & 0xfb);
+                         rfm95_read_reg(rfm95, REG_MODEM_CONFIG_2) & 0xfb);
 }
 
 rfm95_err_t rfm95_fill_fifo_buf_to_send(rfm95_t *rfm95, uint8_t *buf,
-                                      int16_t size) {
+                                        int16_t size) {
   rfm95_err_t ret = RFM95_OK;
   /*
    * Transfer data to radio.
@@ -351,7 +346,7 @@ rfm95_err_t rfm95_send_packet(rfm95_t *rfm95, uint8_t *buf, int16_t size) {
   ret |= rfm95_start_transmission(rfm95);
 
   while (!rfm95_check_tx_done(rfm95)) {
-    int8_t read_reg = rfm95_read_reg(rfm95,REG_IRQ_FLAGS);
+    int8_t read_reg = rfm95_read_reg(rfm95, REG_IRQ_FLAGS);
     rfm95->_delay(2);
   }
 
@@ -367,8 +362,10 @@ int16_t rfm95_receive_packet(rfm95_t *rfm95, uint8_t *buf, int16_t size) {
    */
   int16_t irq = rfm95_read_reg(rfm95, REG_IRQ_FLAGS);
   rfm95_write_reg(rfm95, REG_IRQ_FLAGS, irq);
-  if ((irq & IRQ_RX_DONE_MASK) == 0) return 0;
-  if (irq & IRQ_PAYLOAD_CRC_ERROR_MASK) return 0;
+  if ((irq & IRQ_RX_DONE_MASK) == 0)
+    return 0;
+  if (irq & IRQ_PAYLOAD_CRC_ERROR_MASK)
+    return 0;
 
   /*
    * Find packet size.
@@ -384,7 +381,7 @@ int16_t rfm95_receive_packet(rfm95_t *rfm95, uint8_t *buf, int16_t size) {
    */
   rfm95_idle(rfm95);
   rfm95_write_reg(rfm95, REG_FIFO_ADDR_PTR,
-                 rfm95_read_reg(rfm95, REG_FIFO_RX_CURRENT_ADDR));
+                  rfm95_read_reg(rfm95, REG_FIFO_RX_CURRENT_ADDR));
   if (len > size) {
     len = size;
   }
@@ -404,7 +401,8 @@ rfm95_err_t rfm95_received(rfm95_t *rfm95) {
     return RFM95_OK;
   }
 
-  if (rfm95->log) rfm95->log("ERROR: No packet received");
+  if (rfm95->log)
+    rfm95->log("ERROR: No packet received");
   return RFM95_OK;
 }
 
@@ -418,12 +416,12 @@ float rfm95_packet_snr(rfm95_t *rfm95) {
 }
 
 rfm95_err_t rfm95_map_d0_interrupt(rfm95_t *rfm95, rfm95_dio0_mapping_t mode) {
-  rfm95_err_t ret = rfm95_write_reg(rfm95, REG_DIO_MAPPING_1,(mode << 6));
-  if(ret != RFM95_OK) {
+  rfm95_err_t ret = rfm95_write_reg(rfm95, REG_DIO_MAPPING_1, (mode << 6));
+  if (ret != RFM95_OK) {
     rfm95->log("ERROR: Failed to map DIO0 interrupt");
     return ret;
   }
-  rfm95->_delay(2);  // wait for the register to be updated
+  rfm95->_delay(2); // wait for the register to be updated
   return RFM95_OK;
 }
 
