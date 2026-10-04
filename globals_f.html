@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('globals_f.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,52 +93,24 @@ $(function() {
 <div class="textblock">Here is a list of all functions, variables, defines, enums, and typedefs with links to the files they belong to:</div>
 
 <h3><a id="index_f" name="index_f"></a>- f -</h3><ul>
-<li>FF_CODE_PAGE&#160;:&#160;<a class="el" href="ffconf_8h.html#a56bf522419025961acdfaf6388f40402">ffconf.h</a></li>
-<li>FF_FS_EXFAT&#160;:&#160;<a class="el" href="ffconf_8h.html#a4374b721b8019acc9761fdd8b829ccd0">ffconf.h</a></li>
-<li>FF_FS_LOCK&#160;:&#160;<a class="el" href="ffconf_8h.html#ab76cc3251ebd18a5c33f9f18656317f3">ffconf.h</a></li>
-<li>FF_FS_MINIMIZE&#160;:&#160;<a class="el" href="ffconf_8h.html#a33ce7fb406e1c861aa717fc8f4864e58">ffconf.h</a></li>
-<li>FF_FS_NOFSINFO&#160;:&#160;<a class="el" href="ffconf_8h.html#a660f7a4d681d9006004a8178f29f3c00">ffconf.h</a></li>
-<li>FF_FS_NORTC&#160;:&#160;<a class="el" href="ffconf_8h.html#ad9c1285af8f3963c253b0351558ad40d">ffconf.h</a></li>
-<li>FF_FS_READONLY&#160;:&#160;<a class="el" href="ffconf_8h.html#ac932d228331b07248a3faa6f5904a49d">ffconf.h</a></li>
-<li>FF_FS_REENTRANT&#160;:&#160;<a class="el" href="ffconf_8h.html#a42c81182eb3a8e31a4129f711ee44666">ffconf.h</a></li>
-<li>FF_FS_RPATH&#160;:&#160;<a class="el" href="ffconf_8h.html#af0d4b41a010f1a611bc6fb9e42357350">ffconf.h</a></li>
-<li>FF_FS_TIMEOUT&#160;:&#160;<a class="el" href="ffconf_8h.html#a0f4ab16049c9d59da5ee3f503c425b71">ffconf.h</a></li>
-<li>FF_FS_TINY&#160;:&#160;<a class="el" href="ffconf_8h.html#a618a0c0a1db7d420dee23ee81379c387">ffconf.h</a></li>
-<li>FF_LBA64&#160;:&#160;<a class="el" href="ffconf_8h.html#ab92e95c077afccc4d6f847cbf766e1cd">ffconf.h</a></li>
-<li>FF_LFN_BUF&#160;:&#160;<a class="el" href="ffconf_8h.html#a7d29ac29d2d2db71cc7d045ea38fa927">ffconf.h</a></li>
-<li>FF_LFN_UNICODE&#160;:&#160;<a class="el" href="ffconf_8h.html#a95aeacb103bd1c4e03b3e154e450c534">ffconf.h</a></li>
-<li>ff_lock&#160;:&#160;<a class="el" href="tusb__fifo_8c.html#aea04865fd2c1e677f628226adf669d76">tusb_fifo.c</a></li>
-<li>FF_MAX_LFN&#160;:&#160;<a class="el" href="ffconf_8h.html#adf88cd7c56034e4b94a6f2b3b83f95bf">ffconf.h</a></li>
-<li>FF_MAX_SS&#160;:&#160;<a class="el" href="ffconf_8h.html#a104c36ee46f9d6e76dadf37f3d9696cc">ffconf.h</a></li>
-<li>FF_MIN_GPT&#160;:&#160;<a class="el" href="ffconf_8h.html#a1f3a98483912d219d3688edfa5717949">ffconf.h</a></li>
-<li>FF_MIN_SS&#160;:&#160;<a class="el" href="ffconf_8h.html#a5c25535bf118c111157fe72fff3cbea5">ffconf.h</a></li>
-<li>FF_MULTI_PARTITION&#160;:&#160;<a class="el" href="ffconf_8h.html#a6f07d18b72c37af9fb5deda0e8a13131">ffconf.h</a></li>
-<li>FF_NORTC_MDAY&#160;:&#160;<a class="el" href="ffconf_8h.html#a1726418a7d765c3ae4da9c43d2349151">ffconf.h</a></li>
-<li>FF_NORTC_MON&#160;:&#160;<a class="el" href="ffconf_8h.html#acc2167f3af4dd4f6ec84a57a82f923dd">ffconf.h</a></li>
-<li>FF_NORTC_YEAR&#160;:&#160;<a class="el" href="ffconf_8h.html#aa23a9857382e458421fb87ef11ff9c63">ffconf.h</a></li>
-<li>FF_PRINT_FLOAT&#160;:&#160;<a class="el" href="ffconf_8h.html#a81c59406fe9df657bfb6d75e409da207">ffconf.h</a></li>
-<li>FF_PRINT_LLI&#160;:&#160;<a class="el" href="ffconf_8h.html#a7d8e68a5699cf1ceb7ed4fdfba8e2ca0">ffconf.h</a></li>
-<li>FF_SFN_BUF&#160;:&#160;<a class="el" href="ffconf_8h.html#ac19c6abcf1fc6e2bbf204003462cfedb">ffconf.h</a></li>
-<li>FF_STR_VOLUME_ID&#160;:&#160;<a class="el" href="ffconf_8h.html#a056575130662da5bc7ac26a5b1d25838">ffconf.h</a></li>
-<li>FF_STRF_ENCODE&#160;:&#160;<a class="el" href="ffconf_8h.html#a6ecc215308b4ead043b2e4e513ea203e">ffconf.h</a></li>
-<li>ff_unlock&#160;:&#160;<a class="el" href="tusb__fifo_8c.html#a015c3fd0233d57cbc8a26dc61c30e536">tusb_fifo.c</a></li>
-<li>FF_USE_CHMOD&#160;:&#160;<a class="el" href="ffconf_8h.html#af22e3a349a7d2c4618fe89a8311ca8d6">ffconf.h</a></li>
-<li>FF_USE_EXPAND&#160;:&#160;<a class="el" href="ffconf_8h.html#a9629a453509390e34097b3268dcaac19">ffconf.h</a></li>
-<li>FF_USE_FASTSEEK&#160;:&#160;<a class="el" href="ffconf_8h.html#ac34dea7a30cf68a1f171af88fa37518a">ffconf.h</a></li>
-<li>FF_USE_FIND&#160;:&#160;<a class="el" href="ffconf_8h.html#aa52eeffe3cb0583877e219481dd8dbdc">ffconf.h</a></li>
-<li>FF_USE_FORWARD&#160;:&#160;<a class="el" href="ffconf_8h.html#abb96514dcc1016a49be66162e596a9d0">ffconf.h</a></li>
-<li>FF_USE_LABEL&#160;:&#160;<a class="el" href="ffconf_8h.html#a46c839d4e87f5873f44166c7b5bf7592">ffconf.h</a></li>
-<li>FF_USE_LFN&#160;:&#160;<a class="el" href="ffconf_8h.html#ab7f7a23eae4a1de30c8198ed980f9784">ffconf.h</a></li>
-<li>FF_USE_MKFS&#160;:&#160;<a class="el" href="ffconf_8h.html#ad700e28d02d7da4b5f1b9c049b117429">ffconf.h</a></li>
-<li>FF_USE_STRFUNC&#160;:&#160;<a class="el" href="ffconf_8h.html#a9870e2a5b84ce00fc47e0fd89b337495">ffconf.h</a></li>
-<li>FF_USE_TRIM&#160;:&#160;<a class="el" href="ffconf_8h.html#a263c9f484beef1e88f2de0a96d8dad9b">ffconf.h</a></li>
-<li>FF_VOLUME_STRS&#160;:&#160;<a class="el" href="ffconf_8h.html#adf45484c0fd7a2ffe8b56f83019317d0">ffconf.h</a></li>
-<li>FF_VOLUMES&#160;:&#160;<a class="el" href="ffconf_8h.html#a2343dca8b59f249f6a88574fda8ac31c">ffconf.h</a></li>
-<li>FFCONF_DEF&#160;:&#160;<a class="el" href="ffconf_8h.html#a275a34cd0d8f3b9b04ee91df269136e3">ffconf.h</a></li>
-<li>FIFO0_WORD&#160;:&#160;<a class="el" href="musb__ti_8h.html#ad7602b664a01e5c92ca6d02018e08dcd">musb_ti.h</a></li>
-<li>FIFO1_WORD&#160;:&#160;<a class="el" href="musb__ti_8h.html#a4e86451cf9efedf086db5d2cd827832a">musb_ti.h</a></li>
-<li>FIFO_RAM_ADDR&#160;:&#160;<a class="el" href="samx7x__common_8h.html#a4d6445052b1fd01b1d0136adde711ce3">samx7x_common.h</a></li>
-<li>FIFOSEL_BIGEND&#160;:&#160;<a class="el" href="rusb2__common_8h.html#a905301dc85f7361d62f56f9dea55cf2caa8333eabfe04d4e2f59804b773c8b9b7">rusb2_common.h</a></li>
+<li>FI_CacheFlush()&#160;:&#160;<a class="el" href="group__EEPROM__Private__Functions.html#ga4375dd5bf83e259a3481a83b5993a1a3">flash_interface.h</a></li>
+<li>FI_CheckBankConfig()&#160;:&#160;<a class="el" href="group__EEPROM__Private__Functions.html#ga9d827241e39d1cfc7a06a70a25cd8eaa">flash_interface.h</a></li>
+<li>FI_DeleteCorruptedFlashAddress()&#160;:&#160;<a class="el" href="group__EEPROM__Private__Functions.html#ga75609bda4bd6ce9d7e7919116d22a7ee">flash_interface.h</a></li>
+<li>FI_PageErase()&#160;:&#160;<a class="el" href="group__EEPROM__Private__Functions.html#gaf950461e14bae3fd51f89e9dd59db26b">flash_interface.h</a></li>
+<li>FI_PageErase_IT()&#160;:&#160;<a class="el" href="group__EEPROM__Private__Functions.html#ga16908087af539df9c261122555bf0383">flash_interface.h</a></li>
+<li>FI_WriteDoubleWord()&#160;:&#160;<a class="el" href="group__EEPROM__Private__Functions.html#gaaf190b387699ec8d894cfe8449522084">flash_interface.h</a></li>
+<li>filename&#160;:&#160;<a class="el" href="sd__task_8c.html#a754972d9204225aafa1e58a004c40ba4">sd_task.c</a></li>
+<li>filtered_tags&#160;:&#160;<a class="el" href="logger_8c.html#a88aa0902d2d4139dcae436f8dc713f68">logger.c</a></li>
+<li>filtered_tags_count&#160;:&#160;<a class="el" href="logger_8c.html#ac2fd0fa463e3e9a48be43e8f1736579d">logger.c</a></li>
+<li>FIND_ERASE_PAGE&#160;:&#160;<a class="el" href="group__EEPROM__Private__Structures.html#gga47b32c9c140680f7ea9fa56b16352348a5902f92e071cd42f6c6e107623090d82">eeprom_emul.c</a></li>
+<li>find_next_filename()&#160;:&#160;<a class="el" href="sd__task_8c.html#a9bed749d1a272c2837109ba43a85984a">sd_task.c</a></li>
+<li>FIND_READ_PAGE&#160;:&#160;<a class="el" href="group__EEPROM__Private__Structures.html#gga47b32c9c140680f7ea9fa56b16352348a74d8fda345787aa7b6471acccd27ab9e">eeprom_emul.c</a></li>
+<li>FIND_WRITE_PAGE&#160;:&#160;<a class="el" href="group__EEPROM__Private__Structures.html#gga47b32c9c140680f7ea9fa56b16352348a8796a61289b106b7f308f34d0bd5c40a">eeprom_emul.c</a></li>
+<li>FindPage()&#160;:&#160;<a class="el" href="group__EEPROM__Private__Functions.html#ga155bacb56c1c6ea24464cdd408fc8ebb">eeprom_emul.c</a></li>
+<li>FLASH_LINES_128B&#160;:&#160;<a class="el" href="group__Private__Configuration__Constants.html#gad801f926cfbf0a4aa394edf1c62a9558">eeprom_emul_conf.h</a></li>
+<li>FLASH_PAGE_SIZE&#160;:&#160;<a class="el" href="group__Private__Other__Constants.html#ga4cc14e2c99ae7f8e5a8e371d03c8532c">flash_interface.h</a></li>
+<li>FlashWord&#160;:&#160;<a class="el" href="group__EEPROM__Emulation.html#ga2b25bef8c3f5e1bd147e54a633b88fa6">flash_interface.c</a></li>
+<li>FlashWord_status&#160;:&#160;<a class="el" href="group__EEPROM__Emulation.html#gaf6b5eeaf7a40e2b7e71441fb539479f5">flash_interface.c</a></li>
 <li>FLRC_BR_0_260_BW_0_3&#160;:&#160;<a class="el" href="sx1280_8h.html#a0eec6eb76c5b1580e3607ba44396fa1dab398794b8acd451b73c100340f810df2">sx1280.h</a></li>
 <li>FLRC_BR_0_325_BW_0_3&#160;:&#160;<a class="el" href="sx1280_8h.html#a0eec6eb76c5b1580e3607ba44396fa1da5dea0026707cbb7652f2532f6cf27d7a">sx1280.h</a></li>
 <li>FLRC_BR_0_520_BW_0_6&#160;:&#160;<a class="el" href="sx1280_8h.html#a0eec6eb76c5b1580e3607ba44396fa1dae4c5a0b325d2a448437f9da368e88798">sx1280.h</a></li>
@@ -132,143 +124,23 @@ $(function() {
 <li>FLRC_CR_3_4&#160;:&#160;<a class="el" href="sx1280_8h.html#adae75ed92423603c4430f2b16d4f1844a77ee167ac59ce0563c78f098bdc269b1">sx1280.h</a></li>
 <li>FLRC_NO_SYNCWORD&#160;:&#160;<a class="el" href="sx1280_8h.html#a89bc43fbfde7dcfd4eb69b6558d195a2aa73a12795ac02f727a68fc808a7ce56f">sx1280.h</a></li>
 <li>FLRC_SYNCWORD_LENGTH_4_BYTE&#160;:&#160;<a class="el" href="sx1280_8h.html#a89bc43fbfde7dcfd4eb69b6558d195a2a1c0cd6e9636fca81eef972c10e3909db">sx1280.h</a></li>
+<li>flush_active_buffer()&#160;:&#160;<a class="el" href="sd__task_8c.html#ae89045edea742bdd7453c51f2ed80c21">sd_task.c</a></li>
+<li>FOLLOWING_PAGE&#160;:&#160;<a class="el" href="group__Macros__Pages.html#gaaaf88de3073310ab0798abebc656a4f0">eeprom_emul.h</a></li>
+<li>forward_window()&#160;:&#160;<a class="el" href="gs__scheduler_8c.html#a0a017ffd3501437cd3bf31ce015e4f8f">gs_scheduler.c</a></li>
 <li>free_pool_queue&#160;:&#160;<a class="el" href="main_8h.html#a157a314b76354184f393f9c537ca6190">main.h</a>, <a class="el" href="main_8c.html#a157a314b76354184f393f9c537ca6190">main.c</a></li>
 <li>FREQ_STEP&#160;:&#160;<a class="el" href="sx1280_8h.html#ad7977f4d7c0acbc564d01fb225f94630">sx1280.h</a></li>
-<li>FS_Desc&#160;:&#160;<a class="el" href="group__USBD__DESC__Private__Variables.html#gae36d67393118d9d8531a8d633e23a797">usb_config.c</a>, <a class="el" href="group__USBD__DESC__Exported__Variables.html#gae36d67393118d9d8531a8d633e23a797">usbd_desc.h</a>, <a class="el" href="group__USBD__DESC__Private__Variables.html#gae36d67393118d9d8531a8d633e23a797">usbd_desc.c</a></li>
-<li>FSDEV_BTABLE&#160;:&#160;<a class="el" href="fsdev__common_8h.html#ad8e631154eb688eb2a884c2c623be737">fsdev_common.h</a></li>
-<li>FSDEV_BTABLE_BASE&#160;:&#160;<a class="el" href="fsdev__common_8h.html#a4b185294895e6677865da6e924c42dc9">fsdev_common.h</a></li>
-<li>FSDEV_BUS_SIZE&#160;:&#160;<a class="el" href="fsdev__common_8h.html#a8f6c5bb267ee83772dec29af92dad89aa57d51e52ac1eaeee2ce7c3a7e6250608">fsdev_common.h</a></li>
-<li>fsdev_bus_t&#160;:&#160;<a class="el" href="fsdev__common_8h.html#a281322ada74982a12b0e992371f4ee31">fsdev_common.h</a></li>
-<li>fsdev_core_reset()&#160;:&#160;<a class="el" href="fsdev__common_8h.html#aa0ca0e8ace7c550586750e444c02b91d">fsdev_common.h</a></li>
-<li>fsdev_deinit()&#160;:&#160;<a class="el" href="fsdev__common_8h.html#a68d40c3336d9586396d1a4db8d7b3c34">fsdev_common.h</a></li>
-<li>FSDEV_EP_COUNT&#160;:&#160;<a class="el" href="fsdev__common_8h.html#aaaf5083cd8496a224db5a5df721227db">fsdev_common.h</a></li>
-<li>FSDEV_HAS_SBUF_ISO&#160;:&#160;<a class="el" href="fsdev__stm32_8h.html#a5c47bad51daeef335a62bb9072822073">fsdev_stm32.h</a></li>
-<li>FSDEV_IRQ_NUM&#160;:&#160;<a class="el" href="fsdev__at32_8h.html#a8c1063728a4b798877c3f6b1da94e37ead2051efcf1c698fb5502e6eed7342801">fsdev_at32.h</a>, <a class="el" href="fsdev__ch32_8h.html#aa6ac79347e19dd4dc3d10cf32b35f912ad2051efcf1c698fb5502e6eed7342801">fsdev_ch32.h</a>, <a class="el" href="fsdev__stm32_8h.html#a8b7655aaaf5998fab474a94c6d75de69ad2051efcf1c698fb5502e6eed7342801">fsdev_stm32.h</a></li>
-<li>FSDEV_PMA_BASE&#160;:&#160;<a class="el" href="fsdev__at32_8h.html#abb43e4a3d42d75b7fc7c15b0deb37b17">fsdev_at32.h</a>, <a class="el" href="fsdev__ch32_8h.html#abb43e4a3d42d75b7fc7c15b0deb37b17">fsdev_ch32.h</a></li>
-<li>FSDEV_REG&#160;:&#160;<a class="el" href="fsdev__common_8h.html#a2ab31ce252faf768f244dc1650ec9428">fsdev_common.h</a></li>
-<li>FSDEV_REG_BASE&#160;:&#160;<a class="el" href="fsdev__at32_8h.html#a3291f38f9fab8d3afe0b3448ca1c53d7">fsdev_at32.h</a>, <a class="el" href="fsdev__ch32_8h.html#a3291f38f9fab8d3afe0b3448ca1c53d7">fsdev_ch32.h</a></li>
-<li>FSDEV_USE_SBUF_ISO&#160;:&#160;<a class="el" href="fsdev__at32_8h.html#a5c5a29d19efe6cdca56b8995fc2bf523">fsdev_at32.h</a>, <a class="el" href="fsdev__ch32_8h.html#a5c5a29d19efe6cdca56b8995fc2bf523">fsdev_ch32.h</a>, <a class="el" href="fsdev__stm32_8h.html#a5c5a29d19efe6cdca56b8995fc2bf523">fsdev_stm32.h</a></li>
+<li>fs&#160;:&#160;<a class="el" href="sd__task_8c.html#ae5bcde72e0e0b29ec86d00ba3e5cd51f">sd_task.c</a></li>
+<li>FS_Desc&#160;:&#160;<a class="el" href="usb__config_8c.html#ae36d67393118d9d8531a8d633e23a797">usb_config.c</a></li>
 <li>FSRx_MODE&#160;:&#160;<a class="el" href="rfm95w_8h.html#aac4bdd3fb58857e18d9c8b29cc3ed2f4aa6b9a23309f97da7d31243b7582b2846">rfm95w.h</a></li>
 <li>FSTx_MODE&#160;:&#160;<a class="el" href="rfm95w_8h.html#aac4bdd3fb58857e18d9c8b29cc3ed2f4a7e92d87a6338d3af8f61c52c34d79399">rfm95w.h</a></li>
-<li>FTDI_CHIP_NAMES&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#aac35855924ad0dac4e3e42b409c319b0">ftdi_sio.h</a></li>
-<li>ftdi_chip_type&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385ce">ftdi_sio.h</a></li>
-<li>ftdi_chip_type_t&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a66c6791529d37cfffd43057a104d2868">ftdi_sio.h</a></li>
-<li>FTDI_FAIL&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a2d3f0209d5321eb83f574e7ad551e9c8">ftdi_sio.h</a></li>
-<li>FTDI_FT2232C&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385cea58c73a6f54ddbb662d7a8b3615facf43">ftdi_sio.h</a></li>
-<li>FTDI_FT2232H&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385cead14dc2362b047dc7ef74db442b1a1d63">ftdi_sio.h</a></li>
-<li>FTDI_FT2232HP&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385cea01c216324040ad32ea818c286c76ac55">ftdi_sio.h</a></li>
-<li>FTDI_FT2233HP&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385cea6f3f741d87eab7d6c3d74948d964ef64">ftdi_sio.h</a></li>
-<li>FTDI_FT232B&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385cea28eca84aa2c78e8e3ede2bc9c542418e">ftdi_sio.h</a></li>
-<li>FTDI_FT232H&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385cea11647453c66cf9eac496e315e51e5890">ftdi_sio.h</a></li>
-<li>FTDI_FT232HP&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385cea507d46d37fef202a9cf74497a3af8336">ftdi_sio.h</a></li>
-<li>FTDI_FT232R&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385cea954a985e02844f7cbce548c834cbd0ef">ftdi_sio.h</a></li>
-<li>FTDI_FT232R_CBUS_MUX_GPIO&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#adb234851f7876aa9657ab58701f5e0c6">ftdi_sio.h</a></li>
-<li>FTDI_FT233HP&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385ceaf0e692c5e4fe6b5de85f34fe9eaa64b7">ftdi_sio.h</a></li>
-<li>FTDI_FT4232H&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385cea8250f2231d60826d883d307c1b3c0b89">ftdi_sio.h</a></li>
-<li>FTDI_FT4232HA&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385cea565e1cbc128a6868d18792e84c2e657a">ftdi_sio.h</a></li>
-<li>FTDI_FT4232HP&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385ceaa25ed03bd4091002c85d10ab3dca66f3">ftdi_sio.h</a></li>
-<li>FTDI_FT4233HP&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385ceacd5b331cb471b0d27734165a170e8f41">ftdi_sio.h</a></li>
-<li>FTDI_FTX&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385ceadd29e7dcddfaba04e6906c5a7d285201">ftdi_sio.h</a></li>
-<li>FTDI_FTX_CBUS_MUX_GPIO&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#aedbb01336857251ad0a1577daaa7e2c6">ftdi_sio.h</a></li>
-<li>FTDI_NOT_POSSIBLE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#ae24f445600b52ae9482daa4a36d92a03">ftdi_sio.h</a></li>
-<li>FTDI_OK&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#ab48db29e72936c91b1d6c7b3d737bc1b">ftdi_sio.h</a></li>
-<li>ftdi_private_t&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a71afdbcf98d9dbf3c79bb1ebef496996">ftdi_sio.h</a></li>
-<li>FTDI_REQUESTED&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#af6cb5439aa06bdd10c8509d61a76c638">ftdi_sio.h</a></li>
-<li>FTDI_RS0_CTS&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a5da67abb71d1723315e2190e08173239">ftdi_sio.h</a></li>
-<li>FTDI_RS0_DSR&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a4988f0b0e1e1396b45e2ae5fcc8d0bbc">ftdi_sio.h</a></li>
-<li>FTDI_RS0_RI&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a0d16159ecb59576ec4096e3f3e98764e">ftdi_sio.h</a></li>
-<li>FTDI_RS0_RLSD&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#aa462613a6fb7880362836703e44b4f38">ftdi_sio.h</a></li>
-<li>FTDI_RS_BI&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a059c7c54b992a5adeead7bc4a9de7730">ftdi_sio.h</a></li>
-<li>FTDI_RS_DR&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#aaa5e583607727ed84187f82d7e9a116a">ftdi_sio.h</a></li>
-<li>FTDI_RS_FE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a8b79ec5ed7d5cb8ed0b1a2270552495f">ftdi_sio.h</a></li>
-<li>FTDI_RS_FIFO&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#af2dafb81f2b5ab4867bd6cad4df182ee">ftdi_sio.h</a></li>
-<li>FTDI_RS_OE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a6ea424ef3878d0ff622d22d25cdcd2a0">ftdi_sio.h</a></li>
-<li>FTDI_RS_PE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a3ddd5faf5d064dbb3e4af6ced36d6ffe">ftdi_sio.h</a></li>
-<li>FTDI_RS_TEMT&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a71cd9544e8fdc7d8d846a25c5d607df6">ftdi_sio.h</a></li>
-<li>FTDI_RS_THRE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a6b32f7a9b3119bac366ef537fc24a2a2">ftdi_sio.h</a></li>
-<li>FTDI_SIO&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385cea01d4ae10ad7d61d880b66a7b821d9017">ftdi_sio.h</a></li>
-<li>ftdi_sio_b115200&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a8d6f0ba5489d49476af2fedd44b7d500a8c1c575e656e7b67dfc3528fcde8b3e7">ftdi_sio.h</a></li>
-<li>ftdi_sio_b1200&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a8d6f0ba5489d49476af2fedd44b7d500aec176f19735cd200b6627453355dcee6">ftdi_sio.h</a></li>
-<li>ftdi_sio_b19200&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a8d6f0ba5489d49476af2fedd44b7d500a78b5655d3939c7c78c2028f863969efc">ftdi_sio.h</a></li>
-<li>ftdi_sio_b2400&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a8d6f0ba5489d49476af2fedd44b7d500a13d3394221151909217cd1cd71788cab">ftdi_sio.h</a></li>
-<li>ftdi_sio_b300&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a8d6f0ba5489d49476af2fedd44b7d500a318879659cb14c7d23f4b87237491426">ftdi_sio.h</a></li>
-<li>ftdi_sio_b38400&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a8d6f0ba5489d49476af2fedd44b7d500a8a9ac07ba9e6688d81f4aa39818a7e0f">ftdi_sio.h</a></li>
-<li>ftdi_sio_b4800&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a8d6f0ba5489d49476af2fedd44b7d500ac9e7b8b2905d229485d27715949cf353">ftdi_sio.h</a></li>
-<li>ftdi_sio_b57600&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a8d6f0ba5489d49476af2fedd44b7d500af205c266cb56aea98972808864723b51">ftdi_sio.h</a></li>
-<li>ftdi_sio_b600&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a8d6f0ba5489d49476af2fedd44b7d500a6c8d4cab54ab6aafad84f146bafd620e">ftdi_sio.h</a></li>
-<li>ftdi_sio_b9600&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a8d6f0ba5489d49476af2fedd44b7d500a72ce540340a4f24abf0286a248264bc1">ftdi_sio.h</a></li>
-<li>ftdi_sio_baudrate&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a8d6f0ba5489d49476af2fedd44b7d500">ftdi_sio.h</a></li>
-<li>FTDI_SIO_BITMODE_CBUS&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a792efb82bbf2c443d51b7279946fff13">ftdi_sio.h</a></li>
-<li>FTDI_SIO_BITMODE_RESET&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a0d70b0630234fbb1119f628312958c21">ftdi_sio.h</a></li>
-<li>FTDI_SIO_CTS_MASK&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a91bed54fb7aa0e99449effed2e330822">ftdi_sio.h</a></li>
-<li>FTDI_SIO_DISABLE_FLOW_CTRL&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a7d0d35ef22b504afd608531c8e5275a0">ftdi_sio.h</a></li>
-<li>FTDI_SIO_DSR_MASK&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a3c495d7b1e010aa66a68066307c636dd">ftdi_sio.h</a></li>
-<li>FTDI_SIO_DTR_DSR_HS&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a6e9fa56460716bc7bd0beea4d7a3fe19">ftdi_sio.h</a></li>
-<li>FTDI_SIO_GET_LATENCY_TIMER&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a284a53c8144ef5700b4817429d22ce4f">ftdi_sio.h</a></li>
-<li>FTDI_SIO_GET_LATENCY_TIMER_REQUEST&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a8022ba1022b5b61d437eef172c6d211b">ftdi_sio.h</a></li>
-<li>FTDI_SIO_GET_LATENCY_TIMER_REQUEST_TYPE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a2f06e31af1498fd439b30bb97ffa136c">ftdi_sio.h</a></li>
-<li>FTDI_SIO_GET_MODEM_STATUS&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a9fb2b825dd0fd02df1df0d4667758f11">ftdi_sio.h</a></li>
-<li>FTDI_SIO_GET_MODEM_STATUS_REQUEST&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#ae6fa982cc685ed33435939b0a88d6bf2">ftdi_sio.h</a></li>
-<li>FTDI_SIO_GET_MODEM_STATUS_REQUEST_TYPE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a73dca094df012dc72cb3cfa5a41aae03">ftdi_sio.h</a></li>
-<li>FTDI_SIO_MODEM_CTRL&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a0a5515eba4af8c37b71db51de289b3b4">ftdi_sio.h</a></li>
-<li>FTDI_SIO_READ_EEPROM&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a0b8f8919f64cbbf825487d678d2b6d86">ftdi_sio.h</a></li>
-<li>FTDI_SIO_READ_EEPROM_REQUEST&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a01940388e14e9a734986861b9cb58f77">ftdi_sio.h</a></li>
-<li>FTDI_SIO_READ_EEPROM_REQUEST_TYPE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a8842522ad40ce7325928867b690e0d9d">ftdi_sio.h</a></li>
-<li>FTDI_SIO_READ_PINS&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#aac870306d371f5b0d84e7c279ecb84d0">ftdi_sio.h</a></li>
-<li>FTDI_SIO_READ_PINS_REQUEST&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a242f887041c6acee9eae5a41843448b8">ftdi_sio.h</a></li>
-<li>FTDI_SIO_READ_PINS_REQUEST_TYPE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a98292c6e17dafbf1bb0f41ae6fec5aec">ftdi_sio.h</a></li>
-<li>FTDI_SIO_RESET&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a0c4ac1b95162aa3c959931bc46aa762c">ftdi_sio.h</a></li>
-<li>FTDI_SIO_RESET_PURGE_RX&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a89e71c8a21d2a6fdddcec8c3447b8cb0">ftdi_sio.h</a></li>
-<li>FTDI_SIO_RESET_PURGE_TX&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#aef90c1417ef6f4d59753c876a0057545">ftdi_sio.h</a></li>
-<li>FTDI_SIO_RESET_REQUEST&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#ab6df6e805b373ab62cf6ddb659a7ce83">ftdi_sio.h</a></li>
-<li>FTDI_SIO_RESET_REQUEST_TYPE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#aa282f06a33acbafd33d2639c2ae17e3e">ftdi_sio.h</a></li>
-<li>FTDI_SIO_RESET_SIO&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a184292199f79a3982b4a563504afe7c4">ftdi_sio.h</a></li>
-<li>FTDI_SIO_RI_MASK&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#ad817d85eb0f62257585caf7bb556aafb">ftdi_sio.h</a></li>
-<li>FTDI_SIO_RLSD_MASK&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#aeb09e7783acb50bd02981ce387ef8e7e">ftdi_sio.h</a></li>
-<li>FTDI_SIO_RTS_CTS_HS&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#af5cdb59ccbb8eba190eca16cb74bddcb">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_BAUD_RATE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#aeb562ba85606fa0e08fc188705098f0d">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_BAUDRATE_REQUEST&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#ab4313040784c069bbe7589c9409af53c">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_BAUDRATE_REQUEST_TYPE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a38b1294c1d3d0c162ca3b306b590c562">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_BITMODE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a9c75935cec435127eb07a629e1ecbdd0">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_BITMODE_REQUEST&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a58d9931bf5216829c8b28ec40530eb79">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_BITMODE_REQUEST_TYPE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a4b8f126ea66f1d2b6494159991925cce">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_BREAK&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a05cebcdf1d7563fe77df8f1a0280086d">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_DATA&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#ac7603bf715c4b1281f8e5907d0a61e0f">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_DATA_PARITY_EVEN&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#ac38ca9725e25bbe4d6234438bedd8275">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_DATA_PARITY_MARK&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a37489061b7bfcd57321325d5ad44bc4e">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_DATA_PARITY_NONE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a1d3b7a2a5e8a5cb449ced0025c5304e3">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_DATA_PARITY_ODD&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a3b8f65480530dc9a12240655a77a23e6">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_DATA_PARITY_SPACE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#ab0c4afbaade6efa1f36ada212e4e5fc7">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_DATA_REQUEST&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a4cacda89749d30bd8783773655619b97">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_DATA_REQUEST_TYPE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a6dd1d049c8bd548b4a14bf4dabbdd7d2">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_DATA_STOP_BITS_1&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#ae4c01efa00c78a56989fe8bc9ba5eac6">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_DATA_STOP_BITS_15&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a3a9592e16482faa197623337739cc1df">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_DATA_STOP_BITS_2&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#acd6333c509f4f1fa3d44d3077ae9c7df">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_DTR_HIGH&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a6f781cb804f9754fe91ca90b78821482">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_DTR_LOW&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#ab6ff468afcf80b382582d04633767f11">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_DTR_MASK&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#adf02c870aee2747263e4bad434f3ee92">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_ERROR_CHAR&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#adf6c6c6c120d42411c243936e177f3f7">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_EVENT_CHAR&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#af9f8c0df356ae4c9cf44656ea7c9ed5d">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_EVENT_CHAR_REQUEST&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a86e586cee5b45ae024e908c4d4bd43d2">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_EVENT_CHAR_REQUEST_TYPE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a85b0c0dbd739ec381b183489b1bfeeb7">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_FLOW_CTRL&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#abdb21a829e0aca82178834602e34be7f">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_FLOW_CTRL_REQUEST&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a5dcb1e6d2d083b1f483d1707e3365381">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_FLOW_CTRL_REQUEST_TYPE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#aadd581955300371e370d83c171e64451">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_LATENCY_TIMER&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#ac711db47fe0421069b7dffcc35e1f799">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_LATENCY_TIMER_REQUEST&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a630e86163f050697e5bf0e4c46004bab">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_LATENCY_TIMER_REQUEST_TYPE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a63b27bb37af7d5a3f21702596bf70392">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_MODEM_CTRL_REQUEST&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#acc547cb25a33ab012ffa0428689eec79">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_MODEM_CTRL_REQUEST_TYPE&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a50f2afac9b1c4444e0ce384dde247f27">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_RTS_HIGH&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a5b6822103572e1d583c7587103406eec">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_RTS_LOW&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a4990d64ac8d725be89527a6dc21bd6c5">ftdi_sio.h</a></li>
-<li>FTDI_SIO_SET_RTS_MASK&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#affb7aa2801805beaa49dbc5ca8793fd8">ftdi_sio.h</a></li>
-<li>FTDI_SIO_XON_XOFF_HS&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a082065ffd54c708f8c632d3454045809">ftdi_sio.h</a></li>
-<li>FTDI_UNKNOWN&#160;:&#160;<a class="el" href="ftdi__sio_8h.html#a026dc3f26fbc7f5ef67c75f0739385ceae89166b4741e768379044a1381e2ebf0">ftdi_sio.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

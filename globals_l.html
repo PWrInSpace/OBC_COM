@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('globals_l.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,6 +101,7 @@ $(function() {
 <li>LED_BLINK_ON_FRAMES&#160;:&#160;<a class="el" href="led_8c.html#a2781dd5d8cb3c36bcc12a3f4748cb6ba">led.c</a></li>
 <li>LED_BLINK_ON_MS&#160;:&#160;<a class="el" href="led_8c.html#af1720c37500a9b2c860f0e16a67fa366">led.c</a></li>
 <li>LED_BRIGHTNESS_PERCENT&#160;:&#160;<a class="el" href="led_8c.html#ab1a4370bce8dd1ca5357fb7a89dffddc">led.c</a></li>
+<li>led_cb()&#160;:&#160;<a class="el" href="led_8c.html#a70d133c4354945f0beab946c4ddce781">led.c</a></li>
 <li>LED_COLOR_BLUE&#160;:&#160;<a class="el" href="led_8h.html#a653c9a28baf93cfe8106400a53ecea2ea457a1e8f0680efd8cf6d76d1a6465b2b">led.h</a></li>
 <li>LED_COLOR_CYAN&#160;:&#160;<a class="el" href="led_8h.html#a653c9a28baf93cfe8106400a53ecea2ea20221062a48820a1e6caabc3fe8c0723">led.h</a></li>
 <li>LED_COLOR_GREEN&#160;:&#160;<a class="el" href="led_8h.html#a653c9a28baf93cfe8106400a53ecea2ea64cda76c497793915fcf24c216d0f37c">led.h</a></li>
@@ -98,29 +119,31 @@ $(function() {
 <li>LED_EFFECT_RAINBOW&#160;:&#160;<a class="el" href="led_8h.html#ac684ee5e2b2771f0c91c435173b35bb4a8f4618601128b2d10ae4d2b32646bfdb">led.h</a></li>
 <li>LED_EFFECT_SOLID&#160;:&#160;<a class="el" href="led_8h.html#ac684ee5e2b2771f0c91c435173b35bb4acf9a0fc967847bacc5a212d1a4304ff4">led.h</a></li>
 <li>led_effect_t&#160;:&#160;<a class="el" href="led_8h.html#ac684ee5e2b2771f0c91c435173b35bb4">led.h</a></li>
-<li>led_fault_color()&#160;:&#160;<a class="el" href="led_8h.html#a0a16f10b59c73161b57d844082fa1dca">led.h</a>, <a class="el" href="led_8c.html#a0a16f10b59c73161b57d844082fa1dca">led.c</a></li>
+<li>led_fault_color()&#160;:&#160;<a class="el" href="led_8c.html#a0a16f10b59c73161b57d844082fa1dca">led.c</a>, <a class="el" href="led_8h.html#a0a16f10b59c73161b57d844082fa1dca">led.h</a></li>
 <li>led_fault_pixel()&#160;:&#160;<a class="el" href="led_8h.html#a0a3753a69cb54836360e8ea9395cd4fc">led.h</a>, <a class="el" href="led_8c.html#a0a3753a69cb54836360e8ea9395cd4fc">led.c</a></li>
 <li>led_fault_show()&#160;:&#160;<a class="el" href="led_8h.html#a574d5b595aad34aba3753bed55f2d73f">led.h</a>, <a class="el" href="led_8c.html#a574d5b595aad34aba3753bed55f2d73f">led.c</a></li>
 <li>LED_FRAME_MS&#160;:&#160;<a class="el" href="led_8c.html#a995c9099d47293ee7e2489fb26386bcf">led.c</a></li>
 <li>led_init()&#160;:&#160;<a class="el" href="led_8h.html#a7eb4d382bdd4b42c57dbb7154d03ac66">led.h</a>, <a class="el" href="led_8c.html#a7eb4d382bdd4b42c57dbb7154d03ac66">led.c</a></li>
 <li>LED_REFRESH_RATE_HZ&#160;:&#160;<a class="el" href="led_8c.html#a7aba44ed50f5edea55ded22574e10664">led.c</a></li>
+<li>led_render_pixel()&#160;:&#160;<a class="el" href="led_8c.html#a9fd23871e64ce76441d76650cd8e9c34">led.c</a></li>
 <li>led_set()&#160;:&#160;<a class="el" href="led_8c.html#a7b41155cb8af3488e0cb31618d0d85b2">led.c</a>, <a class="el" href="led_8h.html#a7b41155cb8af3488e0cb31618d0d85b2">led.h</a></li>
 <li>led_set_all()&#160;:&#160;<a class="el" href="led_8h.html#a92042acbd604a83ddb34a02cd1fc057b">led.h</a>, <a class="el" href="led_8c.html#a92042acbd604a83ddb34a02cd1fc057b">led.c</a></li>
 <li>led_stop()&#160;:&#160;<a class="el" href="led_8h.html#a6c31782f208fdf14577a947a83dcfa8a">led.h</a>, <a class="el" href="led_8c.html#a6c31782f208fdf14577a947a83dcfa8a">led.c</a></li>
+<li>linecoding&#160;:&#160;<a class="el" href="group__USBD__CDC__Private__FunctionPrototypes.html#ga61c2fc0195ebdbb76376e9f437f05b61">usbd_cdc_if.c</a></li>
 <li>List_GPDMA1_Channel6&#160;:&#160;<a class="el" href="stm32h5xx__it_8c.html#a1f21b38f4615f67d600c5a06e22f17b3">stm32h5xx_it.c</a>, <a class="el" href="usart_8c.html#a1f21b38f4615f67d600c5a06e22f17b3">usart.c</a></li>
 <li>LNA_HIGH_SENSITIVITY_MODE&#160;:&#160;<a class="el" href="sx1280_8h.html#ada235ea8065bfbf0643dc2ef7c65a6dea0ee0975ae7f97f8be85a1b5b586b4c44">sx1280.h</a></li>
 <li>LNA_LOW_POWER_MODE&#160;:&#160;<a class="el" href="sx1280_8h.html#ada235ea8065bfbf0643dc2ef7c65a6dea4a983254feaf2d558b7ec7ee3190ded8">sx1280.h</a></li>
-<li>LOBYTE&#160;:&#160;<a class="el" href="group__USBD__DEF__Exported__Macros.html#ga373c90214222e94d07424e7a8d41b92b">usbd_def.h</a></li>
-<li>log_debug()&#160;:&#160;<a class="el" href="logger_8h.html#acd8d67d4016cde8855da412ed022b4c8">logger.h</a></li>
 <li>LOG_DEBUG&#160;:&#160;<a class="el" href="logger_8h.html#ac06cfc686322558f590c50eab8622ebd">logger.h</a></li>
-<li>log_debug()&#160;:&#160;<a class="el" href="logger_8c.html#acd8d67d4016cde8855da412ed022b4c8">logger.c</a></li>
+<li>log_debug()&#160;:&#160;<a class="el" href="logger_8c.html#acd8d67d4016cde8855da412ed022b4c8">logger.c</a>, <a class="el" href="logger_8h.html#acd8d67d4016cde8855da412ed022b4c8">logger.h</a></li>
 <li>LOG_DIR&#160;:&#160;<a class="el" href="sd__task_8h.html#acd4d3023d24d5314b895981b17825666">sd_task.h</a></li>
-<li>log_error()&#160;:&#160;<a class="el" href="logger_8h.html#adce29990727d7ac272748c939a614f8e">logger.h</a>, <a class="el" href="logger_8c.html#adce29990727d7ac272748c939a614f8e">logger.c</a></li>
+<li>log_error()&#160;:&#160;<a class="el" href="logger_8c.html#adce29990727d7ac272748c939a614f8e">logger.c</a></li>
 <li>LOG_ERROR&#160;:&#160;<a class="el" href="logger_8h.html#ae6fc70e87e424e7083c63696b8fb9e78">logger.h</a></li>
+<li>log_error()&#160;:&#160;<a class="el" href="logger_8h.html#adce29990727d7ac272748c939a614f8e">logger.h</a></li>
+<li>log_file&#160;:&#160;<a class="el" href="sd__task_8c.html#abb7cc8752fe7d7ceed1f46b13346c285">sd_task.c</a></li>
 <li>LOG_FILENAME_EXT&#160;:&#160;<a class="el" href="sd__task_8h.html#aaf9654c052c0117bb32c9c5f2d0f5050">sd_task.h</a></li>
 <li>LOG_FILENAME_PREFIX&#160;:&#160;<a class="el" href="sd__task_8h.html#aaec889c61e5243ce3aabeddca4d10195">sd_task.h</a></li>
 <li>LOG_INFO&#160;:&#160;<a class="el" href="logger_8h.html#ae69d735f8291bd2aff230fe6ffb4d4b3">logger.h</a></li>
-<li>log_info()&#160;:&#160;<a class="el" href="logger_8c.html#a9bd31d71edf553f4e86c4f866ec33e99">logger.c</a>, <a class="el" href="logger_8h.html#a9bd31d71edf553f4e86c4f866ec33e99">logger.h</a></li>
+<li>log_info()&#160;:&#160;<a class="el" href="logger_8h.html#a9bd31d71edf553f4e86c4f866ec33e99">logger.h</a>, <a class="el" href="logger_8c.html#a9bd31d71edf553f4e86c4f866ec33e99">logger.c</a></li>
 <li>LOG_LEVEL_DEBUG&#160;:&#160;<a class="el" href="logger_8h.html#a98121d38a8cf3daf5246a349f912ca1da538b2b6e011479d408ecd2be0f6d6177">logger.h</a></li>
 <li>LOG_LEVEL_ERROR&#160;:&#160;<a class="el" href="logger_8h.html#a98121d38a8cf3daf5246a349f912ca1da5b40f003febbc3b535649d63f4b8a44f">logger.h</a></li>
 <li>LOG_LEVEL_INFO&#160;:&#160;<a class="el" href="logger_8h.html#a98121d38a8cf3daf5246a349f912ca1daedee1e3159bfe7d918b6e29873c5aee4">logger.h</a></li>
@@ -128,22 +151,37 @@ $(function() {
 <li>LOG_LEVEL_NONE&#160;:&#160;<a class="el" href="logger_8h.html#a98121d38a8cf3daf5246a349f912ca1da69dacb1837e1e37c6ed34cc2ee1d8848">logger.h</a></li>
 <li>log_level_t&#160;:&#160;<a class="el" href="logger_8h.html#a98121d38a8cf3daf5246a349f912ca1d">logger.h</a></li>
 <li>LOG_MAX_FILES&#160;:&#160;<a class="el" href="sd__task_8h.html#a0358100d0dc7cfc3d21f03ab9e41c0a0">sd_task.h</a></li>
+<li>log_pool_id&#160;:&#160;<a class="el" href="sd__task_8c.html#afd0aa9c6a7dabd980e43e05feb52c9b3">sd_task.c</a></li>
+<li>log_pool_mem&#160;:&#160;<a class="el" href="sd__task_8c.html#ad39a34c32efe992a2ccea2aa7b8f9e1b">sd_task.c</a></li>
+<li>log_queue_id&#160;:&#160;<a class="el" href="sd__task_8c.html#a8377a57dc1f19033350511126a081176">sd_task.c</a></li>
+<li>log_ring_buffer&#160;:&#160;<a class="el" href="logger_8c.html#ad38f2e07da165b65af46dd5ca30089ef">logger.c</a></li>
+<li>LOG_TAG_ALL&#160;:&#160;<a class="el" href="nvs__config_8h.html#a28591500c27c21d9c087572d76850593ab7895ef48847c94c10dcbb1e589dcd94">nvs_config.h</a></li>
+<li>LOG_TAG_GPS&#160;:&#160;<a class="el" href="nvs__config_8h.html#a28591500c27c21d9c087572d76850593a412a792b532e5640f2bdee07c6338fd8">nvs_config.h</a></li>
+<li>LOG_TAG_PWR&#160;:&#160;<a class="el" href="nvs__config_8h.html#a28591500c27c21d9c087572d76850593a7c83f5f1747f5ea73bb07c378bfa60e5">nvs_config.h</a></li>
+<li>LOG_TAG_RFM95&#160;:&#160;<a class="el" href="nvs__config_8h.html#a28591500c27c21d9c087572d76850593a89d703bf62130b9ec3b01e9d9424ec82">nvs_config.h</a></li>
+<li>LOG_TAG_SYSTEM&#160;:&#160;<a class="el" href="nvs__config_8h.html#a28591500c27c21d9c087572d76850593a3610a0fbbe944a1ffdaed6b6fb6b15a3">nvs_config.h</a></li>
+<li>LOG_TAG_USB&#160;:&#160;<a class="el" href="nvs__config_8h.html#a28591500c27c21d9c087572d76850593a29f45676b6572b4b3d41c1fbc8c981b8">nvs_config.h</a></li>
+<li>logger_buffer&#160;:&#160;<a class="el" href="logger_8c.html#adaad09822c809e353d5b9ff32c7fda06">logger.c</a></li>
 <li>LOGGER_BUFFER_SIZE&#160;:&#160;<a class="el" href="logger_8c.html#aecd0d608aebf8550bd8d384d3ad589d2">logger.c</a></li>
-<li>logger_clear()&#160;:&#160;<a class="el" href="logger_8c.html#a7894a31ff95a695775944d604f1c8f70">logger.c</a>, <a class="el" href="logger_8h.html#a7894a31ff95a695775944d604f1c8f70">logger.h</a></li>
+<li>logger_clear()&#160;:&#160;<a class="el" href="logger_8h.html#a7894a31ff95a695775944d604f1c8f70">logger.h</a>, <a class="el" href="logger_8c.html#a7894a31ff95a695775944d604f1c8f70">logger.c</a></li>
 <li>logger_enable()&#160;:&#160;<a class="el" href="logger_8h.html#ab1eafd2e38765970fdc41900a394c8d2">logger.h</a>, <a class="el" href="logger_8c.html#ab1eafd2e38765970fdc41900a394c8d2">logger.c</a></li>
-<li>logger_filter_add()&#160;:&#160;<a class="el" href="logger_8h.html#adf03f2aefe90b007ca045f463c64ffc0">logger.h</a>, <a class="el" href="logger_8c.html#adf03f2aefe90b007ca045f463c64ffc0">logger.c</a></li>
+<li>logger_filter_add()&#160;:&#160;<a class="el" href="logger_8c.html#adf03f2aefe90b007ca045f463c64ffc0">logger.c</a>, <a class="el" href="logger_8h.html#adf03f2aefe90b007ca045f463c64ffc0">logger.h</a></li>
 <li>logger_filter_clear()&#160;:&#160;<a class="el" href="logger_8h.html#a0ef3aabcb8c9cebee5a0678493c9f59a">logger.h</a>, <a class="el" href="logger_8c.html#a0ef3aabcb8c9cebee5a0678493c9f59a">logger.c</a></li>
+<li>logger_format_and_write()&#160;:&#160;<a class="el" href="logger_8c.html#aa9fd7f0e91b44a3585b9d41cc7f4785c">logger.c</a></li>
 <li>logger_get_bit_from_tag()&#160;:&#160;<a class="el" href="logger_8h.html#a104095aeba3dd479c48e63e4e67eefca">logger.h</a>, <a class="el" href="logger_8c.html#a104095aeba3dd479c48e63e4e67eefca">logger.c</a></li>
 <li>logger_get_buffer()&#160;:&#160;<a class="el" href="logger_8h.html#abc724bb673c085cbae828dbc831e5eca">logger.h</a>, <a class="el" href="logger_8c.html#abc724bb673c085cbae828dbc831e5eca">logger.c</a></li>
 <li>logger_get_write_position()&#160;:&#160;<a class="el" href="logger_8h.html#acee42bea66e44a4f66556c9f3c6317f3">logger.h</a>, <a class="el" href="logger_8c.html#acee42bea66e44a4f66556c9f3c6317f3">logger.c</a></li>
-<li>logger_init()&#160;:&#160;<a class="el" href="logger_8h.html#a7f0a1ef369c8017a21abc0f68371b64e">logger.h</a>, <a class="el" href="logger_8c.html#a7f0a1ef369c8017a21abc0f68371b64e">logger.c</a></li>
+<li>logger_init()&#160;:&#160;<a class="el" href="logger_8c.html#a7f0a1ef369c8017a21abc0f68371b64e">logger.c</a>, <a class="el" href="logger_8h.html#a7f0a1ef369c8017a21abc0f68371b64e">logger.h</a></li>
 <li>logger_output_callback_t&#160;:&#160;<a class="el" href="logger_8h.html#a4ed463eb643d27a37e46005c332f5947">logger.h</a></li>
+<li>logger_send_via_callback()&#160;:&#160;<a class="el" href="logger_8c.html#a2ab2980703006ec95542d4d5dabc9c89">logger.c</a></li>
 <li>logger_serial_init()&#160;:&#160;<a class="el" href="logger__serial__output_8h.html#a3b93076489a69114e1850df1583c6699">logger_serial_output.h</a></li>
-<li>logger_serial_output_callback()&#160;:&#160;<a class="el" href="logger__serial__output_8h.html#a11f34d592d82012d43be17a610e10766">logger_serial_output.h</a>, <a class="el" href="logger__serial__output_8c.html#a11f34d592d82012d43be17a610e10766">logger_serial_output.c</a></li>
+<li>logger_serial_output_callback()&#160;:&#160;<a class="el" href="logger__serial__output_8c.html#a11f34d592d82012d43be17a610e10766">logger_serial_output.c</a>, <a class="el" href="logger__serial__output_8h.html#a11f34d592d82012d43be17a610e10766">logger_serial_output.h</a></li>
 <li>logger_set_level()&#160;:&#160;<a class="el" href="logger_8h.html#a954f4d99db6d9cafb8ff295102c1f015">logger.h</a>, <a class="el" href="logger_8c.html#a954f4d99db6d9cafb8ff295102c1f015">logger.c</a></li>
 <li>logger_set_output_callback()&#160;:&#160;<a class="el" href="logger_8h.html#aab0bbbc6ab7c7de493ad1ea8700880f0">logger.h</a>, <a class="el" href="logger_8c.html#aab0bbbc6ab7c7de493ad1ea8700880f0">logger.c</a></li>
 <li>logger_sync_mask_from_nvs()&#160;:&#160;<a class="el" href="logger_8c.html#aaf6d07588cfc5fb4f43a946b1c0f9de6">logger.c</a></li>
 <li>LOGGER_USE_MACROS&#160;:&#160;<a class="el" href="logger__macros_8h.html#a7b8a06165226ebdfaa65189685694dcd">logger_macros.h</a></li>
+<li>logger_write_to_ring()&#160;:&#160;<a class="el" href="logger_8c.html#a002c8213d7f7b4c21f85c7d07e45435d">logger.c</a></li>
+<li>LogTag_t&#160;:&#160;<a class="el" href="nvs__config_8h.html#a28591500c27c21d9c087572d76850593">nvs_config.h</a></li>
 <li>LORA_BUFF_SIZE&#160;:&#160;<a class="el" href="cmd__interface_8h.html#ad84e1ffad2df702c52648d40d975a34a">cmd_interface.h</a></li>
 <li>LORA_BW_0200&#160;:&#160;<a class="el" href="sx1280_8h.html#a27de5d6cb21c6986e6f609bd97caa5baaf4161f2f722ba76261387cdedc136aa6">sx1280.h</a></li>
 <li>LORA_BW_0400&#160;:&#160;<a class="el" href="sx1280_8h.html#a27de5d6cb21c6986e6f609bd97caa5baa036ddf53e8d984652f94eb6452b4b102">sx1280.h</a></li>
@@ -170,16 +208,17 @@ $(function() {
 <li>LORA_DEV_ID_ALL_SUDO&#160;:&#160;<a class="el" href="lora__commands_8h.html#a9fd98febc4031d503ac2139d698a9c49">lora_commands.h</a></li>
 <li>LORA_DEV_ID_TANWA&#160;:&#160;<a class="el" href="lora__commands_8h.html#a93afb24054c8fdcaa2ec3f0edc30cd12">lora_commands.h</a></li>
 <li>LORA_DEV_ID_TANWA_SUDO&#160;:&#160;<a class="el" href="lora__commands_8h.html#ac6a1249cb92e06f5537ec3a411b4cc35">lora_commands.h</a></li>
+<li>lora_devs_instance&#160;:&#160;<a class="el" href="lora__config_8c.html#ac75426a3ad95904e990c3d7154d2792f">lora_config.c</a></li>
 <li>LORA_DRAIN_QUEUE_MS&#160;:&#160;<a class="el" href="gs__scheduler_8h.html#a8fc469c17ebecc2ec7039edfe2b9f84c">gs_scheduler.h</a></li>
 <li>LORA_FORWARD_MS_1&#160;:&#160;<a class="el" href="gs__scheduler_8h.html#abadcacef4cf52c10c1525de70e9854d6">gs_scheduler.h</a></li>
 <li>LORA_FORWARD_MS_2&#160;:&#160;<a class="el" href="gs__scheduler_8h.html#a681fff5688854e35f76a6f76bc19050b">gs_scheduler.h</a></li>
-<li>lora_frame_build_sync()&#160;:&#160;<a class="el" href="lora__frame_8h.html#a9a22325897386515e6fac7e43893a859">lora_frame.h</a>, <a class="el" href="lora__frame_8c.html#a9a22325897386515e6fac7e43893a859">lora_frame.c</a></li>
+<li>lora_frame_build_sync()&#160;:&#160;<a class="el" href="lora__frame_8c.html#a9a22325897386515e6fac7e43893a859">lora_frame.c</a>, <a class="el" href="lora__frame_8h.html#a9a22325897386515e6fac7e43893a859">lora_frame.h</a></li>
 <li>lora_frame_checksum()&#160;:&#160;<a class="el" href="lora__frame_8h.html#aeed92c1e040123a94781bba03eb08384">lora_frame.h</a>, <a class="el" href="lora__frame_8c.html#aeed92c1e040123a94781bba03eb08384">lora_frame.c</a></li>
 <li>lora_frame_encode_appcmd()&#160;:&#160;<a class="el" href="lora__frame_8h.html#a17239a709e6511cce2fa83ceaf2ab240">lora_frame.h</a>, <a class="el" href="lora__frame_8c.html#a17239a709e6511cce2fa83ceaf2ab240">lora_frame.c</a></li>
 <li>LORA_FRAME_MAX&#160;:&#160;<a class="el" href="lora__frame_8h.html#a977961674ea91675808e689235bc3a92">lora_frame.h</a></li>
 <li>lora_frame_validate()&#160;:&#160;<a class="el" href="lora__frame_8h.html#adf422bf5e817873ebf1df1443c915de6">lora_frame.h</a>, <a class="el" href="lora__frame_8c.html#adf422bf5e817873ebf1df1443c915de6">lora_frame.c</a></li>
-<li>lora_gs_mark_settings_dirty()&#160;:&#160;<a class="el" href="rfm95w__task_8h.html#ab703cdbff7041f98030e2b45663ffcfa">rfm95w_task.h</a>, <a class="el" href="cmd__interface_8c.html#ab703cdbff7041f98030e2b45663ffcfa">cmd_interface.c</a>, <a class="el" href="rfm95w__task_8c.html#ab703cdbff7041f98030e2b45663ffcfa">rfm95w_task.c</a></li>
-<li>lora_gs_tx_enqueue()&#160;:&#160;<a class="el" href="rfm95w__task_8h.html#aa4d6b5c21ad55e5a3fa935e378767e09">rfm95w_task.h</a>, <a class="el" href="cmd__interface_8c.html#aa4d6b5c21ad55e5a3fa935e378767e09">cmd_interface.c</a>, <a class="el" href="rfm95w__task_8c.html#aa4d6b5c21ad55e5a3fa935e378767e09">rfm95w_task.c</a></li>
+<li>lora_gs_mark_settings_dirty()&#160;:&#160;<a class="el" href="rfm95w__task_8h.html#ab703cdbff7041f98030e2b45663ffcfa">rfm95w_task.h</a>, <a class="el" href="rfm95w__task_8c.html#ab703cdbff7041f98030e2b45663ffcfa">rfm95w_task.c</a>, <a class="el" href="cmd__interface_8c.html#ab703cdbff7041f98030e2b45663ffcfa">cmd_interface.c</a></li>
+<li>lora_gs_tx_enqueue()&#160;:&#160;<a class="el" href="cmd__interface_8c.html#aa4d6b5c21ad55e5a3fa935e378767e09">cmd_interface.c</a>, <a class="el" href="rfm95w__task_8c.html#aa4d6b5c21ad55e5a3fa935e378767e09">rfm95w_task.c</a>, <a class="el" href="rfm95w__task_8h.html#aa4d6b5c21ad55e5a3fa935e378767e09">rfm95w_task.h</a></li>
 <li>LORA_IQ_INVERTED&#160;:&#160;<a class="el" href="sx1280_8h.html#a6a276b14912d46ab79330d9572503162a273f00ac155214f0be6de3f015078311">sx1280.h</a></li>
 <li>LORA_IQ_NORMAL&#160;:&#160;<a class="el" href="sx1280_8h.html#a6a276b14912d46ab79330d9572503162a6b5adfb3c66ba8a3c8f9bc9d5c8bce1f">sx1280.h</a></li>
 <li>LORA_PACKET_EXPLICIT&#160;:&#160;<a class="el" href="sx1280_8h.html#a3f09d0d8dc9e0e113a1d864f1c67707eae68661df52892ea0708a648914a135ca">sx1280.h</a></li>
@@ -206,17 +245,16 @@ $(function() {
 <li>lora_txq_is_empty()&#160;:&#160;<a class="el" href="lora__tx__queue_8h.html#a1bfd79bbaf6ef96ac6721196b15282d4">lora_tx_queue.h</a>, <a class="el" href="lora__tx__queue_8c.html#a1bfd79bbaf6ef96ac6721196b15282d4">lora_tx_queue.c</a></li>
 <li>lora_txq_pop()&#160;:&#160;<a class="el" href="lora__tx__queue_8h.html#a4cfb0d8bafd0ab749a0c7b2a2fb5af83">lora_tx_queue.h</a>, <a class="el" href="lora__tx__queue_8c.html#a4cfb0d8bafd0ab749a0c7b2a2fb5af83">lora_tx_queue.c</a></li>
 <li>lora_txq_push()&#160;:&#160;<a class="el" href="lora__tx__queue_8h.html#a89ed5c1059722f03064494917238a7bf">lora_tx_queue.h</a>, <a class="el" href="lora__tx__queue_8c.html#a89ed5c1059722f03064494917238a7bf">lora_tx_queue.c</a></li>
-<li>LoRaDevs_t&#160;:&#160;<a class="el" href="lora__config_8h.html#a57110290c0f8c19e4a2cf16dd393e55b">lora_config.h</a></li>
-<li>LoraRxBuffer&#160;:&#160;<a class="el" href="app__freertos_8c.html#a8dd199400661eb7de9a345139c4b77d2">app_freertos.c</a>, <a class="el" href="cmd__interface_8h.html#a64c2ee184a0482e1a1ea63793dc0e948">cmd_interface.h</a>, <a class="el" href="cmd__interface_8c.html#a64c2ee184a0482e1a1ea63793dc0e948">cmd_interface.c</a></li>
-<li>LSE_STARTUP_TIMEOUT&#160;:&#160;<a class="el" href="stm32h5xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462">stm32h5xx_hal_conf.h</a></li>
-<li>LSE_VALUE&#160;:&#160;<a class="el" href="stm32h5xx__hal__conf_8h.html#a7bbb9d19e5189a6ccd0fb6fa6177d20d">stm32h5xx_hal_conf.h</a></li>
-<li>LSI_STARTUP_TIME&#160;:&#160;<a class="el" href="stm32h5xx__hal__conf_8h.html#ab9ea77371b070034ca2a56381a7e9de7">stm32h5xx_hal_conf.h</a></li>
-<li>LSI_VALUE&#160;:&#160;<a class="el" href="stm32h5xx__hal__conf_8h.html#a4872023e65449c0506aac3ea6bec99e9">stm32h5xx_hal_conf.h</a></li>
+<li>LoRaBandwidth&#160;:&#160;<a class="el" href="sx1280_8c.html#a4b5533c4db152f8a04a996868af27850">sx1280.c</a></li>
+<li>LoraRxBuffer&#160;:&#160;<a class="el" href="cmd__interface_8h.html#a64c2ee184a0482e1a1ea63793dc0e948">cmd_interface.h</a>, <a class="el" href="cmd__interface_8c.html#a64c2ee184a0482e1a1ea63793dc0e948">cmd_interface.c</a>, <a class="el" href="app__freertos_8c.html#a8dd199400661eb7de9a345139c4b77d2">app_freertos.c</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

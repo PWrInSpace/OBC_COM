@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('lora__tx__queue_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,11 +89,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="dir_a8f641299cfea9f7461c2df1141b7786.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -84,19 +100,16 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for lora_tx_queue.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="lora__tx__queue_8c__incl.png" border="0" usemap="#aapp_2src_2lora__tx__queue_8c" alt=""/></div>
-<map name="aapp_2src_2lora__tx__queue_8c" id="aapp_2src_2lora__tx__queue_8c">
-<area shape="rect" title=" " alt="" coords="111,5,287,31"/>
-<area shape="rect" href="lora__tx__queue_8h.html" title=" " alt="" coords="75,79,201,104"/>
-<area shape="rect" title=" " alt="" coords="225,79,296,104"/>
-<area shape="rect" title=" " alt="" coords="5,152,76,177"/>
-<area shape="rect" title=" " alt="" coords="101,152,175,177"/>
-<area shape="rect" title=" " alt="" coords="199,152,282,177"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="lora__tx__queue_8c__incl.svg" width="302" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
-</div><table class="memberdecls">
+</div>
+</div>
+<p><a href="lora__tx__queue_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a94059b396c7488833c7050b56acfc2dc"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lora__tx__queue_8c.html#a94059b396c7488833c7050b56acfc2dc">next_index</a> (uint8_t i)</td></tr>
+<tr class="separator:a94059b396c7488833c7050b56acfc2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79cfbedffc39de6ac50666d4d7f26a48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lora__tx__queue_8c.html#a79cfbedffc39de6ac50666d4d7f26a48">lora_txq_init</a> (<a class="el" href="structlora__tx__queue__t.html">lora_tx_queue_t</a> *q)</td></tr>
 <tr class="separator:a79cfbedffc39de6ac50666d4d7f26a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89ed5c1059722f03064494917238a7bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lora__tx__queue_8c.html#a89ed5c1059722f03064494917238a7bf">lora_txq_push</a> (<a class="el" href="structlora__tx__queue__t.html">lora_tx_queue_t</a> *q, const uint8_t *data, uint16_t len)</td></tr>
@@ -123,6 +136,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lora__tx__queue_8c_source.html#l00013">13</a> of file <a class="el" href="lora__tx__queue_8c_source.html">lora_tx_queue.c</a>.</p>
+
+<p class="reference">References <a class="el" href="lora__tx__queue_8h_source.html#l00023">lora_tx_queue_t::head</a>, and <a class="el" href="lora__tx__queue_8h_source.html#l00024">lora_tx_queue_t::tail</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00125">rfm95wTaskEntry()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="lora__tx__queue_8c_a79cfbedffc39de6ac50666d4d7f26a48_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a1bfd79bbaf6ef96ac6721196b15282d4" name="a1bfd79bbaf6ef96ac6721196b15282d4"></a>
@@ -140,6 +165,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lora__tx__queue_8c_source.html#l00045">45</a> of file <a class="el" href="lora__tx__queue_8c_source.html">lora_tx_queue.c</a>.</p>
+
+<p class="reference">References <a class="el" href="lora__tx__queue_8h_source.html#l00023">lora_tx_queue_t::head</a>, and <a class="el" href="lora__tx__queue_8h_source.html#l00024">lora_tx_queue_t::tail</a>.</p>
 
 </div>
 </div>
@@ -175,6 +204,24 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lora__tx__queue_8c_source.html#l00033">33</a> of file <a class="el" href="lora__tx__queue_8c_source.html">lora_tx_queue.c</a>.</p>
+
+<p class="reference">References <a class="el" href="lora__tx__queue_8h_source.html#l00018">lora_tx_item_t::data</a>, <a class="el" href="lora__tx__queue_8h_source.html#l00023">lora_tx_queue_t::head</a>, <a class="el" href="lora__tx__queue_8h_source.html#l00022">lora_tx_queue_t::items</a>, <a class="el" href="lora__tx__queue_8h_source.html#l00017">lora_tx_item_t::len</a>, <a class="el" href="lora__tx__queue_8c_source.html#l00009">next_index()</a>, and <a class="el" href="lora__tx__queue_8h_source.html#l00024">lora_tx_queue_t::tail</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="gs__scheduler_8c_source.html#l00052">drain_queue()</a>, and <a class="el" href="gs__scheduler_8c_source.html#l00027">send_one_from_queue()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="lora__tx__queue_8c_a4cfb0d8bafd0ab749a0c7b2a2fb5af83_cgraph.svg" width="260" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="lora__tx__queue_8c_a4cfb0d8bafd0ab749a0c7b2a2fb5af83_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a89ed5c1059722f03064494917238a7bf" name="a89ed5c1059722f03064494917238a7bf"></a>
@@ -209,12 +256,72 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lora__tx__queue_8c_source.html#l00020">20</a> of file <a class="el" href="lora__tx__queue_8c_source.html">lora_tx_queue.c</a>.</p>
+
+<p class="reference">References <a class="el" href="lora__tx__queue_8h_source.html#l00018">lora_tx_item_t::data</a>, <a class="el" href="lora__tx__queue_8h_source.html#l00023">lora_tx_queue_t::head</a>, <a class="el" href="lora__tx__queue_8h_source.html#l00022">lora_tx_queue_t::items</a>, <a class="el" href="lora__tx__queue_8h_source.html#l00017">lora_tx_item_t::len</a>, <a class="el" href="lora__tx__queue_8h_source.html#l00014">LORA_TX_PACKET_MAX</a>, <a class="el" href="lora__tx__queue_8c_source.html#l00009">next_index()</a>, and <a class="el" href="lora__tx__queue_8h_source.html#l00024">lora_tx_queue_t::tail</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00043">lora_gs_tx_enqueue()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="lora__tx__queue_8c_a89ed5c1059722f03064494917238a7bf_cgraph.svg" width="267" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="lora__tx__queue_8c_a89ed5c1059722f03064494917238a7bf_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a94059b396c7488833c7050b56acfc2dc" name="a94059b396c7488833c7050b56acfc2dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94059b396c7488833c7050b56acfc2dc">&#9670;&#160;</a></span>next_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t next_index </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lora__tx__queue_8c_source.html#l00009">9</a> of file <a class="el" href="lora__tx__queue_8c_source.html">lora_tx_queue.c</a>.</p>
+
+<p class="reference">References <a class="el" href="lora__tx__queue_8h_source.html#l00013">LORA_TX_QUEUE_DEPTH</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="lora__tx__queue_8c_source.html#l00033">lora_txq_pop()</a>, and <a class="el" href="lora__tx__queue_8c_source.html#l00020">lora_txq_push()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="lora__tx__queue_8c_a94059b396c7488833c7050b56acfc2dc_icgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="dir_a8f641299cfea9f7461c2df1141b7786.html">src</a></li><li class="navelem"><a class="el" href="lora__tx__queue_8c.html">lora_tx_queue.c</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

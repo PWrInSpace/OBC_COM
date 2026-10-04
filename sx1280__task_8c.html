@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('sx1280__task_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,11 +89,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="dir_a8f641299cfea9f7461c2df1141b7786.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
@@ -91,7 +107,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="usb__config_8h_source.html">usb_config.h</a>&quot;</code><br />
-<code>#include &quot;usbd_cdc_if.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="usbd__cdc__if_8h_source.html">usbd_cdc_if.h</a>&quot;</code><br />
 <code>#include &quot;usbd_cdc.h&quot;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &quot;timers.h&quot;</code><br />
@@ -101,61 +117,18 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for sx1280_task.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="sx1280__task_8c__incl.png" border="0" usemap="#aapp_2src_2sx1280__task_8c" alt=""/></div>
-<map name="aapp_2src_2sx1280__task_8c" id="aapp_2src_2sx1280__task_8c">
-<area shape="rect" title=" " alt="" coords="2821,5,2987,31"/>
-<area shape="rect" title=" " alt="" coords="5,299,101,324"/>
-<area shape="rect" title=" " alt="" coords="3053,79,3155,104"/>
-<area shape="rect" title=" " alt="" coords="3179,79,3266,104"/>
-<area shape="rect" title=" " alt="" coords="3212,592,3319,617"/>
-<area shape="rect" title=" " alt="" coords="3290,79,3459,104"/>
-<area shape="rect" title=" " alt="" coords="3483,79,3546,104"/>
-<area shape="rect" href="sx1280_8h.html" title=" " alt="" coords="2201,152,2282,177"/>
-<area shape="rect" title=" " alt="" coords="2447,299,2529,324"/>
-<area shape="rect" href="main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="1225,225,1292,251"/>
-<area shape="rect" href="logger_8h.html" title=" " alt="" coords="2387,225,2461,251"/>
-<area shape="rect" href="usb__config_8h.html" title=" " alt="" coords="2853,225,2955,251"/>
-<area shape="rect" title=" " alt="" coords="2706,592,2777,617"/>
-<area shape="rect" title=" " alt="" coords="2779,299,2874,324"/>
-<area shape="rect" title=" " alt="" coords="3091,299,3200,324"/>
-<area shape="rect" title=" " alt="" coords="3570,79,3646,104"/>
-<area shape="rect" href="sx1280__task_8h.html" title=" " alt="" coords="3670,79,3786,104"/>
-<area shape="rect" href="lora__config_8h.html" title=" " alt="" coords="2338,79,2443,104"/>
-<area shape="rect" title=" " alt="" coords="2038,225,2106,251"/>
-<area shape="rect" title=" " alt="" coords="2351,299,2422,324"/>
-<area shape="rect" href="sx1280-hal_8h.html" title=" " alt="" coords="2131,225,2237,251"/>
-<area shape="rect" title=" " alt="" coords="1107,299,1242,324"/>
-<area shape="rect" title=" " alt="" coords="1267,299,1419,324"/>
-<area shape="rect" title=" " alt="" coords="1443,299,1613,324"/>
-<area shape="rect" title=" " alt="" coords="1638,299,1786,324"/>
-<area shape="rect" title=" " alt="" coords="1810,299,1969,324"/>
-<area shape="rect" title=" " alt="" coords="1993,299,2151,324"/>
-<area shape="rect" title=" " alt="" coords="2175,299,2327,324"/>
-<area shape="rect" title=" " alt="" coords="126,299,274,324"/>
-<area shape="rect" title=" " alt="" coords="298,299,475,324"/>
-<area shape="rect" title=" " alt="" coords="500,299,657,324"/>
-<area shape="rect" title=" " alt="" coords="681,299,836,324"/>
-<area shape="rect" title=" " alt="" coords="860,299,935,324"/>
-<area shape="rect" title=" " alt="" coords="959,299,1083,324"/>
-<area shape="rect" href="usbd__core_8h.html" title="Header file for usbd_core.c file." alt="" coords="2966,299,3066,324"/>
-<area shape="rect" href="usbd__desc_8h.html" title=" " alt="" coords="2779,372,2882,397"/>
-<area shape="rect" href="usbd__conf_8h.html" title=" " alt="" coords="3083,519,3181,544"/>
-<area shape="rect" href="usbd__ctlreq_8h.html" title=" " alt="" coords="2907,372,3016,397"/>
-<area shape="rect" href="usbd__def_8h.html" title="General defines for the usb device library." alt="" coords="3047,445,3139,471"/>
-<area shape="rect" href="usbd__ioreq_8h.html" title="Header file for the usbd_ioreq.c file." alt="" coords="3041,372,3146,397"/>
-<area shape="rect" title=" " alt="" coords="3015,592,3081,617"/>
-<area shape="rect" title=" " alt="" coords="3106,592,3177,617"/>
-<area shape="rect" href="rfm95w_8h.html" title=" " alt="" coords="2527,152,2609,177"/>
-<area shape="rect" href="spi_8h.html" title="This file contains all the function prototypes for the spi.c file." alt="" coords="1932,152,1985,177"/>
-<area shape="rect" title=" " alt="" coords="2485,225,2560,251"/>
-</map>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-</div><table class="memberdecls">
+</div>
+</div>
+<p><a href="sx1280__task_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a4b8241e7ad41bfecdd2fa1b6fa6c7879"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#a4b8241e7ad41bfecdd2fa1b6fa6c7879">TX_DONE_TIMEOUT_MS_DEFAULT</a>&#160;&#160;&#160;20</td></tr>
 <tr class="separator:a4b8241e7ad41bfecdd2fa1b6fa6c7879"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29c6db18191cbc68567383f9f930a5c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#a29c6db18191cbc68567383f9f930a5c5">GroundStationFlag</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a29c6db18191cbc68567383f9f930a5c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ground Station Setup // uncomment to use module as ground station.  <br /></td></tr>
 <tr class="separator:a29c6db18191cbc68567383f9f930a5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd9793f5783a9828eb1b674899faed89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#abd9793f5783a9828eb1b674899faed89">TIMER_EVENT_BIT</a>&#160;&#160;&#160;( 1 &lt;&lt; 1 )</td></tr>
 <tr class="separator:abd9793f5783a9828eb1b674899faed89"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,7 +141,25 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a359f79d78599c3e6c95df28ac3f4b7fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#a359f79d78599c3e6c95df28ac3f4b7fe">vTelemetryTimerCallback</a> (TimerHandle_t xTimer)</td></tr>
 <tr class="separator:a359f79d78599c3e6c95df28ac3f4b7fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08a0d39a0c2e7c960630f1125434da42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#a08a0d39a0c2e7c960630f1125434da42">verify_freq</a> (<a class="el" href="sx1280-hal_8h.html#a381736bc3ecf4f7e1002939ac89e7eb7">SX1280_t</a> *<a class="el" href="lora__config_8c.html#a693e989331bca4c4aabdd8502dbf61ef">sx1280_radio</a>)</td></tr>
+<tr class="memitem:a5134bcbd44708ebfa4df0985244f095c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#a5134bcbd44708ebfa4df0985244f095c">parse_frame</a> (uint8_t *buf, uint8_t size)</td></tr>
+<tr class="separator:a5134bcbd44708ebfa4df0985244f095c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2b4adc4b092efe2c6680ed44a07fe72"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#ab2b4adc4b092efe2c6680ed44a07fe72">wait_for_tx_done</a> (SX1280_t *radio, uint32_t timeout_ms)</td></tr>
+<tr class="separator:ab2b4adc4b092efe2c6680ed44a07fe72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb43006f8eb6d0162d00590ffe9017f9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#aeb43006f8eb6d0162d00590ffe9017f9">start_rx</a> (SX1280_t *radio, uint32_t ceiling_ms)</td></tr>
+<tr class="separator:aeb43006f8eb6d0162d00590ffe9017f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9b8000bc81e28fbd95180c677bf58c4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#af9b8000bc81e28fbd95180c677bf58c4">stop_radio_standby</a> (SX1280_t *radio)</td></tr>
+<tr class="separator:af9b8000bc81e28fbd95180c677bf58c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2558054bd23939c02ad7d8e95cd5a501"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#a2558054bd23939c02ad7d8e95cd5a501">handle_rx_done_and_get_payload</a> (SX1280_t *radio, uint8_t *out_buf, uint8_t *out_size)</td></tr>
+<tr class="separator:a2558054bd23939c02ad7d8e95cd5a501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a811104046034a4384c8ceb110e8b50d2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#a811104046034a4384c8ceb110e8b50d2">clear_irqs_and_standby</a> (SX1280_t *radio)</td></tr>
+<tr class="separator:a811104046034a4384c8ceb110e8b50d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad29d477ada983b118b9139bafba10196"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#ad29d477ada983b118b9139bafba10196">rx_wait_for_event</a> (SX1280_t *radio, uint32_t ceiling_ms, uint8_t *out_buf, uint8_t *out_size)</td></tr>
+<tr class="separator:ad29d477ada983b118b9139bafba10196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3e5f314d579c8192dcfb785648bca96"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#aa3e5f314d579c8192dcfb785648bca96">send_window</a> (SX1280_t *radio, const uint8_t *payload, uint8_t payload_len, uint32_t window_ms)</td></tr>
+<tr class="separator:aa3e5f314d579c8192dcfb785648bca96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d59cf5aadb1e137b4584044591c4dd0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0">sx1280_recv_once_ceiling</a> (SX1280_t *radio, uint32_t ceiling_ms)</td></tr>
+<tr class="separator:a5d59cf5aadb1e137b4584044591c4dd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08a0d39a0c2e7c960630f1125434da42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#a08a0d39a0c2e7c960630f1125434da42">verify_freq</a> (SX1280_t *<a class="el" href="lora__config_8c.html#a693e989331bca4c4aabdd8502dbf61ef">sx1280_radio</a>)</td></tr>
 <tr class="separator:a08a0d39a0c2e7c960630f1125434da42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf2d304e2214ba2dc986b387877b666a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a">sx1280TaskEntry</a> (void *argument)</td></tr>
 <tr class="separator:aaf2d304e2214ba2dc986b387877b666a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,14 +168,16 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a7f8aed578ce8fba128a4997f893772a6"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#a7f8aed578ce8fba128a4997f893772a6">USB_Rx_Data_Len</a></td></tr>
-<tr class="separator:a7f8aed578ce8fba128a4997f893772a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e37e6616e6affe5acf9c0befd063f6a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#a1e37e6616e6affe5acf9c0befd063f6a">UserRxBufferFS</a> [APP_RX_DATA_SIZE]</td></tr>
-<tr class="separator:a1e37e6616e6affe5acf9c0befd063f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f8aed578ce8fba128a4997f893772a6"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__USBD__CDC__Private__Defines.html#ga7f8aed578ce8fba128a4997f893772a6">USB_Rx_Data_Len</a></td></tr>
+<tr class="separator:ga7f8aed578ce8fba128a4997f893772a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e37e6616e6affe5acf9c0befd063f6a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__USBD__CDC__Private__Defines.html#ga1e37e6616e6affe5acf9c0befd063f6a">UserRxBufferFS</a> [<a class="el" href="usbd__cdc__if_8h.html#af3db03a3d03a80e1ec7a0a9c470d9692">APP_RX_DATA_SIZE</a>]</td></tr>
+<tr class="memdesc:ga1e37e6616e6affe5acf9c0befd063f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Received data over USB are stored in this buffer <br  />
+  <br /></td></tr>
+<tr class="separator:ga1e37e6616e6affe5acf9c0befd063f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24994bf733960fa1776ba99cb0195b89"><td class="memItemLeft" align="right" valign="top">TimerHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#a24994bf733960fa1776ba99cb0195b89">xTelemetryTimer</a></td></tr>
 <tr class="memdesc:a24994bf733960fa1776ba99cb0195b89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Later on add runtime variables to modify the state or setup.  <br /></td></tr>
 <tr class="separator:a24994bf733960fa1776ba99cb0195b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab33cfe8c5a9c45d62d03b92960485731"><td class="memItemLeft" align="right" valign="top">osThreadId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#ab33cfe8c5a9c45d62d03b92960485731">sx1280TaskHandle</a> = <a class="el" href="group__USB__DEF__Exported__Defines.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memitem:ab33cfe8c5a9c45d62d03b92960485731"><td class="memItemLeft" align="right" valign="top">osThreadId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#ab33cfe8c5a9c45d62d03b92960485731">sx1280TaskHandle</a> = NULL</td></tr>
 <tr class="separator:ab33cfe8c5a9c45d62d03b92960485731"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c70fe694ea625ecba63e2626d8c963c"><td class="memItemLeft" align="right" valign="top">const osThreadAttr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sx1280__task_8c.html#a5c70fe694ea625ecba63e2626d8c963c">sx1280Task_attributes</a></td></tr>
 <tr class="separator:a5c70fe694ea625ecba63e2626d8c963c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,7 +194,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Ground Station Setup // uncomment to use module as ground station </p>
+
+<p>Ground Station Setup // uncomment to use module as ground station. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00032">32</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
 
 </div>
 </div>
@@ -217,6 +213,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00036">36</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
 </div>
 </div>
 <a id="abd9793f5783a9828eb1b674899faed89" name="abd9793f5783a9828eb1b674899faed89"></a>
@@ -230,6 +228,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00035">35</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
 
 </div>
 </div>
@@ -245,6 +245,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00026">26</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
 </div>
 </div>
 <a id="a0faca5fd33e0f8bb20eb73cebb4a9005" name="a0faca5fd33e0f8bb20eb73cebb4a9005"></a>
@@ -259,9 +261,429 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00037">37</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a811104046034a4384c8ceb110e8b50d2" name="a811104046034a4384c8ceb110e8b50d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a811104046034a4384c8ceb110e8b50d2">&#9670;&#160;</a></span>clear_irqs_and_standby()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void clear_irqs_and_standby </td>
+          <td>(</td>
+          <td class="paramtype">SX1280_t *&#160;</td>
+          <td class="paramname"><em>radio</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00087">87</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00682">IRQ_RADIO_ALL</a>, <a class="el" href="sx1280_8h_source.html#l00322">STDBY_RC</a>, <a class="el" href="sx1280_8c_source.html#l00514">SX1280ClearIrqStatus()</a>, and <a class="el" href="sx1280_8c_source.html#l00136">SX1280SetStandby()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00092">rx_wait_for_event()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_a811104046034a4384c8ceb110e8b50d2_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_a811104046034a4384c8ceb110e8b50d2_icgraph.svg" width="612" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a2558054bd23939c02ad7d8e95cd5a501" name="a2558054bd23939c02ad7d8e95cd5a501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2558054bd23939c02ad7d8e95cd5a501">&#9670;&#160;</a></span>handle_rx_done_and_get_payload()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool handle_rx_done_and_get_payload </td>
+          <td>(</td>
+          <td class="paramtype">SX1280_t *&#160;</td>
+          <td class="paramname"><em>radio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>out_buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>out_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00077">77</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00682">IRQ_RADIO_ALL</a>, <a class="el" href="sx1280_8c_source.html#l00514">SX1280ClearIrqStatus()</a>, and <a class="el" href="sx1280_8c_source.html#l00565">SX1280GetPayload()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00092">rx_wait_for_event()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_a2558054bd23939c02ad7d8e95cd5a501_cgraph.svg" width="100%" height="445"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_a2558054bd23939c02ad7d8e95cd5a501_icgraph.svg" width="594" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5134bcbd44708ebfa4df0985244f095c" name="a5134bcbd44708ebfa4df0985244f095c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5134bcbd44708ebfa4df0985244f095c">&#9670;&#160;</a></span>parse_frame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void parse_frame </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00051">51</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00130">sx1280_recv_once_ceiling()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_a5134bcbd44708ebfa4df0985244f095c_icgraph.svg" width="355" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad29d477ada983b118b9139bafba10196" name="ad29d477ada983b118b9139bafba10196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad29d477ada983b118b9139bafba10196">&#9670;&#160;</a></span>rx_wait_for_event()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool rx_wait_for_event </td>
+          <td>(</td>
+          <td class="paramtype">SX1280_t *&#160;</td>
+          <td class="paramname"><em>radio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ceiling_ms</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>out_buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>out_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00092">92</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sx1280__task_8c_source.html#l00087">clear_irqs_and_standby()</a>, <a class="el" href="sx1280__task_8c_source.html#l00077">handle_rx_done_and_get_payload()</a>, <a class="el" href="sx1280_8h_source.html#l00667">IRQ_RX_DONE</a>, <a class="el" href="sx1280_8h_source.html#l00680">IRQ_RX_TX_TIMEOUT</a>, and <a class="el" href="sx1280_8c_source.html#l00506">SX1280GetIrqStatus()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00130">sx1280_recv_once_ceiling()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_ad29d477ada983b118b9139bafba10196_cgraph.svg" width="100%" height="471"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_ad29d477ada983b118b9139bafba10196_icgraph.svg" width="390" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aa3e5f314d579c8192dcfb785648bca96" name="aa3e5f314d579c8192dcfb785648bca96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3e5f314d579c8192dcfb785648bca96">&#9670;&#160;</a></span>send_window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void send_window </td>
+          <td>(</td>
+          <td class="paramtype">SX1280_t *&#160;</td>
+          <td class="paramname"><em>radio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>payload</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>payload_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>window_ms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00117">117</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00682">IRQ_RADIO_ALL</a>, <a class="el" href="sx1280_8h_source.html#l00786">RX_TX_SINGLE</a>, <a class="el" href="sx1280_8h_source.html#l00322">STDBY_RC</a>, <a class="el" href="sx1280_8c_source.html#l00514">SX1280ClearIrqStatus()</a>, <a class="el" href="sx1280_8c_source.html#l00577">SX1280SendPayload()</a>, <a class="el" href="sx1280_8c_source.html#l00136">SX1280SetStandby()</a>, <a class="el" href="sx1280__task_8c_source.html#l00026">TX_DONE_TIMEOUT_MS_DEFAULT</a>, and <a class="el" href="sx1280__task_8c_source.html#l00057">wait_for_tx_done()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_aa3e5f314d579c8192dcfb785648bca96_cgraph.svg" width="100%" height="524"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aeb43006f8eb6d0162d00590ffe9017f9" name="aeb43006f8eb6d0162d00590ffe9017f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb43006f8eb6d0162d00590ffe9017f9">&#9670;&#160;</a></span>start_rx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void start_rx </td>
+          <td>(</td>
+          <td class="paramtype">SX1280_t *&#160;</td>
+          <td class="paramname"><em>radio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ceiling_ms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00066">66</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00682">IRQ_RADIO_ALL</a>, <a class="el" href="sx1280_8h_source.html#l00700">RADIO_TICK_SIZE_1000_US</a>, <a class="el" href="sx1280_8c_source.html#l00514">SX1280ClearIrqStatus()</a>, and <a class="el" href="sx1280_8c_source.html#l00168">SX1280SetRx()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00130">sx1280_recv_once_ceiling()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_aeb43006f8eb6d0162d00590ffe9017f9_cgraph.svg" width="100%" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_aeb43006f8eb6d0162d00590ffe9017f9_icgraph.svg" width="323" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af9b8000bc81e28fbd95180c677bf58c4" name="af9b8000bc81e28fbd95180c677bf58c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9b8000bc81e28fbd95180c677bf58c4">&#9670;&#160;</a></span>stop_radio_standby()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void stop_radio_standby </td>
+          <td>(</td>
+          <td class="paramtype">SX1280_t *&#160;</td>
+          <td class="paramname"><em>radio</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00072">72</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00682">IRQ_RADIO_ALL</a>, <a class="el" href="sx1280_8h_source.html#l00322">STDBY_RC</a>, <a class="el" href="sx1280_8c_source.html#l00514">SX1280ClearIrqStatus()</a>, and <a class="el" href="sx1280_8c_source.html#l00136">SX1280SetStandby()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00130">sx1280_recv_once_ceiling()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_af9b8000bc81e28fbd95180c677bf58c4_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_af9b8000bc81e28fbd95180c677bf58c4_icgraph.svg" width="400" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5d59cf5aadb1e137b4584044591c4dd0" name="a5d59cf5aadb1e137b4584044591c4dd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d59cf5aadb1e137b4584044591c4dd0">&#9670;&#160;</a></span>sx1280_recv_once_ceiling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void sx1280_recv_once_ceiling </td>
+          <td>(</td>
+          <td class="paramtype">SX1280_t *&#160;</td>
+          <td class="paramname"><em>radio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ceiling_ms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00130">130</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sx1280__task_8c_source.html#l00051">parse_frame()</a>, <a class="el" href="sx1280__task_8c_source.html#l00092">rx_wait_for_event()</a>, <a class="el" href="sx1280__task_8c_source.html#l00066">start_rx()</a>, and <a class="el" href="sx1280__task_8c_source.html#l00072">stop_radio_standby()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_a5d59cf5aadb1e137b4584044591c4dd0_cgraph.svg" width="100%" height="541"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
 <a id="ae81733e32db03c2f8c8859b7fa9cb942" name="ae81733e32db03c2f8c8859b7fa9cb942"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae81733e32db03c2f8c8859b7fa9cb942">&#9670;&#160;</a></span>SX1280_task_init()</h2>
 
@@ -277,6 +699,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00235">235</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="main_8h_source.html#l00167">STATUS_LED2_GPIO_Port</a>, <a class="el" href="main_8h_source.html#l00166">STATUS_LED2_Pin</a>, <a class="el" href="sx1280__task_8c_source.html#l00041">sx1280Task_attributes</a>, <a class="el" href="sx1280__task_8c_source.html#l00162">sx1280TaskEntry()</a>, <a class="el" href="sx1280__task_8c_source.html#l00040">sx1280TaskHandle</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_ae81733e32db03c2f8c8859b7fa9cb942_cgraph.svg" width="100%" height="549"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
 
 </div>
 </div>
@@ -296,6 +728,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00162">162</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="lora__config_8c_source.html#l00129">get_lora_devs_instance()</a>, <a class="el" href="lora__config_8h_source.html#l00021">LoRaDevs_t::sx1280</a>, <a class="el" href="lora__config_8c_source.html#l00019">sx1280_radio</a>, <a class="el" href="sx1280_8c_source.html#l00108">SX1280GetFirmwareVersion()</a>, <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>, and <a class="el" href="sx1280__task_8c_source.html#l00149">verify_freq()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00235">SX1280_task_init()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_aaf2d304e2214ba2dc986b387877b666a_cgraph.svg" width="100%" height="586"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_aaf2d304e2214ba2dc986b387877b666a_icgraph.svg" width="326" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a08a0d39a0c2e7c960630f1125434da42" name="a08a0d39a0c2e7c960630f1125434da42"></a>
@@ -307,12 +757,30 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void verify_freq </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="sx1280-hal_8h.html#a381736bc3ecf4f7e1002939ac89e7eb7">SX1280_t</a> *&#160;</td>
+          <td class="paramtype">SX1280_t *&#160;</td>
           <td class="paramname"><em>sx1280_radio</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00149">149</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00342">PACKET_TYPE_LORA</a>, <a class="el" href="sx1280_8h_source.html#l00360">RADIO_RAMP_20_US</a>, <a class="el" href="sx1280_8h_source.html#l00322">STDBY_RC</a>, <a class="el" href="lora__config_8c_source.html#l00019">sx1280_radio</a>, <a class="el" href="sx1280_8c_source.html#l00098">SX1280Reset()</a>, <a class="el" href="sx1280_8c_source.html#l00211">SX1280SetPacketType()</a>, <a class="el" href="sx1280_8c_source.html#l00221">SX1280SetRfFrequency()</a>, <a class="el" href="sx1280_8c_source.html#l00136">SX1280SetStandby()</a>, and <a class="el" href="sx1280_8c_source.html#l00232">SX1280SetTxParams()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00162">sx1280TaskEntry()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_a08a0d39a0c2e7c960630f1125434da42_cgraph.svg" width="100%" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_a08a0d39a0c2e7c960630f1125434da42_icgraph.svg" width="466" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -331,6 +799,64 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00047">47</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sx1280__task_8c_source.html#l00040">sx1280TaskHandle</a>, and <a class="el" href="sx1280__task_8c_source.html#l00035">TIMER_EVENT_BIT</a>.</p>
+
+</div>
+</div>
+<a id="ab2b4adc4b092efe2c6680ed44a07fe72" name="ab2b4adc4b092efe2c6680ed44a07fe72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2b4adc4b092efe2c6680ed44a07fe72">&#9670;&#160;</a></span>wait_for_tx_done()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool wait_for_tx_done </td>
+          <td>(</td>
+          <td class="paramtype">SX1280_t *&#160;</td>
+          <td class="paramname"><em>radio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>timeout_ms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00057">57</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sx1280_8h_source.html#l00666">IRQ_TX_DONE</a>, and <a class="el" href="sx1280_8c_source.html#l00506">SX1280GetIrqStatus()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00117">send_window()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_ab2b4adc4b092efe2c6680ed44a07fe72_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sx1280__task_8c_ab2b4adc4b092efe2c6680ed44a07fe72_icgraph.svg" width="304" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -352,6 +878,10 @@ Variables</h2></td></tr>
 <div class="line">  .stack_size = 1024</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00041">41</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00235">SX1280_task_init()</a>.</p>
+
 </div>
 </div>
 <a id="ab33cfe8c5a9c45d62d03b92960485731" name="ab33cfe8c5a9c45d62d03b92960485731"></a>
@@ -361,54 +891,14 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">osThreadId_t sx1280TaskHandle = <a class="el" href="group__USB__DEF__Exported__Defines.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+          <td class="memname">osThreadId_t sx1280TaskHandle = NULL</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a7f8aed578ce8fba128a4997f893772a6" name="a7f8aed578ce8fba128a4997f893772a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f8aed578ce8fba128a4997f893772a6">&#9670;&#160;</a></span>USB_Rx_Data_Len</h2>
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00040">40</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t USB_Rx_Data_Len</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1e37e6616e6affe5acf9c0befd063f6a" name="a1e37e6616e6affe5acf9c0befd063f6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e37e6616e6affe5acf9c0befd063f6a">&#9670;&#160;</a></span>UserRxBufferFS</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t UserRxBufferFS[APP_RX_DATA_SIZE]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p class="reference">Referenced by <a class="el" href="sx1280__task_8c_source.html#l00235">SX1280_task_init()</a>, and <a class="el" href="sx1280__task_8c_source.html#l00047">vTelemetryTimerCallback()</a>.</p>
 
 </div>
 </div>
@@ -426,12 +916,18 @@ Variables</h2></td></tr>
 
 <p>Later on add runtime variables to modify the state or setup. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280__task_8c_source.html#l00034">34</a> of file <a class="el" href="sx1280__task_8c_source.html">sx1280_task.c</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="dir_a8f641299cfea9f7461c2df1141b7786.html">src</a></li><li class="navelem"><a class="el" href="sx1280__task_8c.html">sx1280_task.c</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

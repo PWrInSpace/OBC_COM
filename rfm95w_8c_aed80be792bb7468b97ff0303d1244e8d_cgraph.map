@@ -1,0 +1,5 @@
+<map id="rfm95_close" name="rfm95_close">
+<area shape="rect" id="node1" title="Shutdown hardware." alt="" coords="5,5,108,31"/>
+<area shape="rect" id="node2" href="$rfm95w_8c.html#a33c72632717848203646e7d95c033057" title="Sets the radio transceiver in sleep mode." alt="" coords="156,5,259,31"/>
+<area shape="rect" id="node3" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="307,5,436,31"/>
+</map>

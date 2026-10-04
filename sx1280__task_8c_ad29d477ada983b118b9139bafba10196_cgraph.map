@@ -1,0 +1,17 @@
+<map id="rx_wait_for_event" name="rx_wait_for_event">
+<area shape="rect" id="node1" title=" " alt="" coords="5,108,144,133"/>
+<area shape="rect" id="node2" href="$sx1280__task_8c.html#a811104046034a4384c8ceb110e8b50d2" title=" " alt="" coords="192,51,367,76"/>
+<area shape="rect" id="node7" href="$sx1280__task_8c.html#a2558054bd23939c02ad7d8e95cd5a501" title=" " alt="" coords="201,101,357,141"/>
+<area shape="rect" id="node15" href="$sx1280_8c.html#a31c7f2ce5f6193072f71565fa1b1b1fc" title="Returns the current IRQ status." alt="" coords="203,176,355,201"/>
+<area shape="rect" id="node3" href="$sx1280_8c.html#a24c5e4e70bd2db5b0513a3610b43043f" title="Clears the IRQs." alt="" coords="415,55,577,80"/>
+<area shape="rect" id="node6" href="$sx1280_8c.html#a074d83ce6ba238f9af19b8bdbff61360" title="Sets the radio in configuration mode." alt="" coords="423,5,569,31"/>
+<area shape="rect" id="node4" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="625,5,820,31"/>
+<area shape="rect" id="node5" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="1344,121,1516,147"/>
+<area shape="rect" id="node8" href="$sx1280_8c.html#a88aa3739b37c983bbea244aa58fd4a6a" title="Reads the payload received." alt="" coords="423,108,569,133"/>
+<area shape="rect" id="node9" href="$sx1280_8c.html#a01fc4b6e3bc159a906108e26d08fdc4a" title="Gets the last received packet buffer status." alt="" coords="627,96,818,121"/>
+<area shape="rect" id="node14" href="$sx1280-hal_8c.html#a92ac9625cd9b4efdb6facffe6fdaaa4b" title="Read data from the buffer holding the payload in the radio." alt="" coords="1120,145,1285,171"/>
+<area shape="rect" id="node10" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="881,47,1048,72"/>
+<area shape="rect" id="node11" href="$sx1280-hal_8c.html#abc1ed10f83057922610c0ef2b3893733" title="Send a command that read data from the radio." alt="" coords="868,197,1061,223"/>
+<area shape="rect" id="node12" href="$sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea" title="Read a single byte of data from the radio memory." alt="" coords="875,96,1055,121"/>
+<area shape="rect" id="node13" href="$sx1280-hal_8c.html#a6a9c356cd998a6f2dad05049941b5939" title="Read data from the radio memory." alt="" coords="1109,96,1296,121"/>
+</map>

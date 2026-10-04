@@ -1,0 +1,4 @@
+<map id="rfm95_set_frequency" name="rfm95_set_frequency">
+<area shape="rect" id="node1" title="Set carrier frequency." alt="" coords="5,5,165,31"/>
+<area shape="rect" id="node2" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="213,5,343,31"/>
+</map>

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('lora__frame_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,11 +89,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="dir_a8f641299cfea9f7461c2df1141b7786.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -80,24 +96,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="lora__frame_8h_source.html">lora_frame.h</a>&quot;</code><br />
-<code>#include &quot;lora.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="lora_8h_source.html">lora.h</a>&quot;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for lora_frame.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="lora__frame_8c__incl.png" border="0" usemap="#aapp_2src_2lora__frame_8c" alt=""/></div>
-<map name="aapp_2src_2lora__frame_8c" id="aapp_2src_2lora__frame_8c">
-<area shape="rect" title=" " alt="" coords="217,5,371,31"/>
-<area shape="rect" href="lora__frame_8h.html" title=" " alt="" coords="136,79,241,104"/>
-<area shape="rect" title=" " alt="" coords="265,79,323,104"/>
-<area shape="rect" title=" " alt="" coords="348,79,419,104"/>
-<area shape="rect" title=" " alt="" coords="5,152,76,177"/>
-<area shape="rect" title=" " alt="" coords="101,152,175,177"/>
-<area shape="rect" title=" " alt="" coords="199,152,282,177"/>
-<area shape="rect" href="lora__commands_8h.html" title=" " alt="" coords="306,152,445,177"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="lora__frame_8c__incl.svg" width="558" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
-</div><table class="memberdecls">
+</div>
+</div>
+<p><a href="lora__frame_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aeed92c1e040123a94781bba03eb08384"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lora__frame_8c.html#aeed92c1e040123a94781bba03eb08384">lora_frame_checksum</a> (const uint8_t *data, size_t len)</td></tr>
@@ -136,6 +145,24 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lora__frame_8c_source.html#l00049">49</a> of file <a class="el" href="lora__frame_8c_source.html">lora_frame.c</a>.</p>
+
+<p class="reference">References <a class="el" href="lora__commands_8h_source.html#l00053">CMD_LORA_SYNC</a>, <a class="el" href="lora__commands_8h_source.html#l00007">LORA_DEV_ID_ALL</a>, <a class="el" href="lora__frame_8c_source.html#l00018">lora_frame_encode_appcmd()</a>, and <a class="el" href="lora__frame_8h_source.html#l00018">LORA_SYS_ID_MCB</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="gs__scheduler_8c_source.html#l00079">gs_run_cycle()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="lora__frame_8c_a9a22325897386515e6fac7e43893a859_cgraph.svg" width="100%" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="lora__frame_8c_a9a22325897386515e6fac7e43893a859_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="aeed92c1e040123a94781bba03eb08384" name="aeed92c1e040123a94781bba03eb08384"></a>
@@ -163,6 +190,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lora__frame_8c_source.html#l00010">10</a> of file <a class="el" href="lora__frame_8c_source.html">lora_frame.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="lora__frame_8c_source.html#l00018">lora_frame_encode_appcmd()</a>, and <a class="el" href="lora__frame_8c_source.html#l00055">lora_frame_validate()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="lora__frame_8c_aeed92c1e040123a94781bba03eb08384_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
 
 </div>
 </div>
@@ -223,6 +260,24 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Total frame length (prefix + protobuf + checksum), or 0 on error/overflow. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="lora__frame_8c_source.html#l00018">18</a> of file <a class="el" href="lora__frame_8c_source.html">lora_frame.c</a>.</p>
+
+<p class="reference">References <a class="el" href="lora_8h_source.html#l00304">obc_lo_ra_frame_t::app_frame_p</a>, <a class="el" href="structobc__app__frame__t.html#a0cca149b9ccf005b8353605c2e226f11">obc_app_frame_t::command</a>, <a class="el" href="lora_8h_source.html#l00300">obc_lo_ra_frame_t::frame</a>, <a class="el" href="lora_8h_source.html#l00263">obc_app_frame_t::is_present</a>, <a class="el" href="structobc__app__frame__t.html#a5dbdc346c0a68e9aa8eb437eb623a9b1">obc_app_frame_t::lora_dev_id</a>, <a class="el" href="lora__frame_8c_source.html#l00010">lora_frame_checksum()</a>, <a class="el" href="lora__frame_8h_source.html#l00014">LORA_PACKET_PREFIX</a>, <a class="el" href="lora__frame_8h_source.html#l00015">LORA_PACKET_PREFIX_LEN</a>, <a class="el" href="lora_8c_source.html#l00973">obc_lo_ra_frame_encode()</a>, <a class="el" href="lora_8h_source.html#l00287">obc_lo_ra_frame_frame_app_frame_e</a>, <a class="el" href="lora_8c_source.html#l00962">obc_lo_ra_frame_new()</a>, <a class="el" href="structobc__app__frame__t.html#acb13aa5faa0c4654fd85246a5e3c2703">obc_app_frame_t::payload</a>, <a class="el" href="structobc__app__frame__t.html#a6ea75ecbb8a81c94f0acd6f716450e81">obc_app_frame_t::sys_dev_id</a>, and <a class="el" href="lora_8h_source.html#l00264">obc_app_frame_t::value</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="lora__frame_8c_source.html#l00049">lora_frame_build_sync()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="lora__frame_8c_a17239a709e6511cce2fa83ceaf2ab240_cgraph.svg" width="100%" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="lora__frame_8c_a17239a709e6511cce2fa83ceaf2ab240_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="adf422bf5e817873ebf1df1443c915de6" name="adf422bf5e817873ebf1df1443c915de6"></a>
@@ -270,12 +325,26 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="lora__frame_8c_source.html#l00055">55</a> of file <a class="el" href="lora__frame_8c_source.html">lora_frame.c</a>.</p>
+
+<p class="reference">References <a class="el" href="lora__frame_8c_source.html#l00010">lora_frame_checksum()</a>, <a class="el" href="lora__frame_8h_source.html#l00014">LORA_PACKET_PREFIX</a>, and <a class="el" href="lora__frame_8h_source.html#l00015">LORA_PACKET_PREFIX_LEN</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="lora__frame_8c_adf422bf5e817873ebf1df1443c915de6_cgraph.svg" width="379" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="dir_a8f641299cfea9f7461c2df1141b7786.html">src</a></li><li class="navelem"><a class="el" href="lora__frame_8c.html">lora_frame.c</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

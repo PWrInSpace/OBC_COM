@@ -1,0 +1,12 @@
+<map id="nvs/Inc/eeprom_emul_types.h" name="nvs/Inc/eeprom_emul_types.h">
+<area shape="rect" id="node1" title=" " alt="" coords="400,5,563,45"/>
+<area shape="rect" id="node2" href="$eeprom__emul_8h.html" title=" " alt="" coords="394,93,569,119"/>
+<area shape="rect" id="node3" href="$app__freertos_8c.html" title=" " alt="" coords="5,247,179,273"/>
+<area shape="rect" id="node4" href="$nvs__config_8h.html" title=" " alt="" coords="311,167,465,192"/>
+<area shape="rect" id="node9" href="$eeprom__emul_8c.html" title=" " alt="" coords="489,167,663,192"/>
+<area shape="rect" id="node10" href="$flash__interface_8c.html" title=" " alt="" coords="687,167,865,192"/>
+<area shape="rect" id="node5" href="$rfm95w__task_8c.html" title=" " alt="" coords="203,247,373,273"/>
+<area shape="rect" id="node6" href="$cmd__interface_8c.html" title=" " alt="" coords="397,247,579,273"/>
+<area shape="rect" id="node7" href="$logger_8c.html" title=" " alt="" coords="604,240,751,280"/>
+<area shape="rect" id="node8" href="$nvs__config_8c.html" title=" " alt="" coords="775,247,927,273"/>
+</map>

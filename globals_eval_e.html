@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('globals_eval_e.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,54 +93,38 @@ $(function() {
 &#160;
 
 <h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
-<li>EHCI_INT_MASK_ALL&#160;:&#160;<a class="el" href="ehci_8h.html#a9a3be2d66956bd67c0b66c32d8b30f17a4f1695aaf9be800d8085f9763ace4c32">ehci.h</a></li>
-<li>EHCI_INT_MASK_ASYNC_ADVANCE&#160;:&#160;<a class="el" href="ehci_8h.html#a9a3be2d66956bd67c0b66c32d8b30f17afa24cee9c4843dc0bdf62328d2c0fbdb">ehci.h</a></li>
-<li>EHCI_INT_MASK_ASYNC_SCHED_STATUS&#160;:&#160;<a class="el" href="ehci_8h.html#a9a3be2d66956bd67c0b66c32d8b30f17a74f27fa2e2358728c4e517b7da6b36cb">ehci.h</a></li>
-<li>EHCI_INT_MASK_ERROR&#160;:&#160;<a class="el" href="ehci_8h.html#a9a3be2d66956bd67c0b66c32d8b30f17aef33bb21a50b212f6d0a7d98f9f12931">ehci.h</a></li>
-<li>EHCI_INT_MASK_FRAMELIST_ROLLOVER&#160;:&#160;<a class="el" href="ehci_8h.html#a9a3be2d66956bd67c0b66c32d8b30f17a900b3dcafc7eee7c755dc30496265a47">ehci.h</a></li>
-<li>EHCI_INT_MASK_HC_HALTED&#160;:&#160;<a class="el" href="ehci_8h.html#a9a3be2d66956bd67c0b66c32d8b30f17ab67d8ce91e31c51e97e2a0475f06e3ec">ehci.h</a></li>
-<li>EHCI_INT_MASK_NXP_SOF&#160;:&#160;<a class="el" href="ehci_8h.html#a9a3be2d66956bd67c0b66c32d8b30f17a55d85dd3e9a5c3b9270c287caaa6df6c">ehci.h</a></li>
-<li>EHCI_INT_MASK_PCI_HOST_SYSTEM_ERROR&#160;:&#160;<a class="el" href="ehci_8h.html#a9a3be2d66956bd67c0b66c32d8b30f17a0667ca4a266621bd5d4c926dc84530a5">ehci.h</a></li>
-<li>EHCI_INT_MASK_PERIODIC_SCHED_STATUS&#160;:&#160;<a class="el" href="ehci_8h.html#a9a3be2d66956bd67c0b66c32d8b30f17ac9fd33fba6c8a09bcfb01d88070dab01">ehci.h</a></li>
-<li>EHCI_INT_MASK_PORT_CHANGE&#160;:&#160;<a class="el" href="ehci_8h.html#a9a3be2d66956bd67c0b66c32d8b30f17aef7ed1fce59d78003e0f456b6b7c85cd">ehci.h</a></li>
-<li>EHCI_INT_MASK_RECLAIMATION&#160;:&#160;<a class="el" href="ehci_8h.html#a9a3be2d66956bd67c0b66c32d8b30f17a971d09d1ddf802c997c4eecf77f43640">ehci.h</a></li>
-<li>EHCI_INT_MASK_USB&#160;:&#160;<a class="el" href="ehci_8h.html#a9a3be2d66956bd67c0b66c32d8b30f17a6f704647358260a2bc5ed9d4b97fc018">ehci.h</a></li>
-<li>EHCI_MAX_ITD&#160;:&#160;<a class="el" href="ehci_8h.html#a4f126a0a9b1d8c6a8f46a051ef8830bba771c7d447e0c859566d9121f02cd7acf">ehci.h</a></li>
-<li>EHCI_MAX_SITD&#160;:&#160;<a class="el" href="ehci_8h.html#a4f126a0a9b1d8c6a8f46a051ef8830bbac3813bef27f1a48747ab309697df4a4c">ehci.h</a></li>
-<li>EHCI_PID_IN&#160;:&#160;<a class="el" href="ehci_8h.html#a7495a48740c9d555f7fbcb48246dbd93a03de182233226ceae3e48ab24770ad8f">ehci.h</a></li>
-<li>EHCI_PID_OUT&#160;:&#160;<a class="el" href="ehci_8h.html#a7495a48740c9d555f7fbcb48246dbd93a1e84b3eca4585e318e48db0be6726d19">ehci.h</a></li>
-<li>EHCI_PID_SETUP&#160;:&#160;<a class="el" href="ehci_8h.html#a7495a48740c9d555f7fbcb48246dbd93ae11512091e357743db9249b7a17b018a">ehci.h</a></li>
-<li>EHCI_PORTSC_MASK_CONNECT_STATUS_CHANGE&#160;:&#160;<a class="el" href="ehci_8h.html#a0b887f38fa71033f0904f8e2330b6815ab535c944be789a1ca60d97dd8544e29f">ehci.h</a></li>
-<li>EHCI_PORTSC_MASK_CURRENT_CONNECT_STATUS&#160;:&#160;<a class="el" href="ehci_8h.html#a0b887f38fa71033f0904f8e2330b6815a229d66da59fe2acd501336f9697a2da3">ehci.h</a></li>
-<li>EHCI_PORTSC_MASK_FORCE_RESUME&#160;:&#160;<a class="el" href="ehci_8h.html#a0b887f38fa71033f0904f8e2330b6815a6f23b75338c6b6e72130864bebdecdcc">ehci.h</a></li>
-<li>EHCI_PORTSC_MASK_OVER_CURRENT_CHANGE&#160;:&#160;<a class="el" href="ehci_8h.html#a0b887f38fa71033f0904f8e2330b6815abc62cd5e74f509859fce1a10eef4140b">ehci.h</a></li>
-<li>EHCI_PORTSC_MASK_PORT_EANBLED&#160;:&#160;<a class="el" href="ehci_8h.html#a0b887f38fa71033f0904f8e2330b6815a92257251781349dc387ca9722ff16d79">ehci.h</a></li>
-<li>EHCI_PORTSC_MASK_PORT_ENABLE_CHANGE&#160;:&#160;<a class="el" href="ehci_8h.html#a0b887f38fa71033f0904f8e2330b6815a7f0f9ec9007e161ac00b136e4fa1639d">ehci.h</a></li>
-<li>EHCI_PORTSC_MASK_PORT_POWER&#160;:&#160;<a class="el" href="ehci_8h.html#a0b887f38fa71033f0904f8e2330b6815a479d2b1e5f0fa24f5022dae6e0f2938e">ehci.h</a></li>
-<li>EHCI_PORTSC_MASK_PORT_RESET&#160;:&#160;<a class="el" href="ehci_8h.html#a0b887f38fa71033f0904f8e2330b6815affbabb0b7cabe334f126a05da18866a0">ehci.h</a></li>
-<li>EHCI_PORTSC_MASK_PORT_SUSPEND&#160;:&#160;<a class="el" href="ehci_8h.html#a0b887f38fa71033f0904f8e2330b6815a6479fc3a0ee15708ca95a725fe09c049">ehci.h</a></li>
-<li>EHCI_PORTSC_MASK_W1C&#160;:&#160;<a class="el" href="ehci_8h.html#a0b887f38fa71033f0904f8e2330b6815ab7d10fb032e2ae308583103de19c2b66">ehci.h</a></li>
-<li>EHCI_QTYPE_FSTN&#160;:&#160;<a class="el" href="ehci_8h.html#adbaf9202177df73e6880eab6e6aab329a083fe89ec46f8ac849cbc67ed2dfe306">ehci.h</a></li>
-<li>EHCI_QTYPE_ITD&#160;:&#160;<a class="el" href="ehci_8h.html#adbaf9202177df73e6880eab6e6aab329ab01a2641a861223d807ea9248367dda1">ehci.h</a></li>
-<li>EHCI_QTYPE_QHD&#160;:&#160;<a class="el" href="ehci_8h.html#adbaf9202177df73e6880eab6e6aab329a9a12557e4bbd0885160dbd7c518d1462">ehci.h</a></li>
-<li>EHCI_QTYPE_SITD&#160;:&#160;<a class="el" href="ehci_8h.html#adbaf9202177df73e6880eab6e6aab329a7c8d5d2378c8069fac121bc74b8f725d">ehci.h</a></li>
-<li>EHCI_USBCMD_ASYNC_SCHEDULE_ENABLE&#160;:&#160;<a class="el" href="ehci_8h.html#aea33efd5e2c69d615faad5c5965510aaa03601edbcab03ac3d5cd5b62ea426759">ehci.h</a></li>
-<li>EHCI_USBCMD_CHIPIDEA_FRAMELIST_SIZE_MSB_SHIFT&#160;:&#160;<a class="el" href="ehci_8h.html#a2dbb833ef0dcc466dd02ee76badaf709aa08e50b7ba460ee9f19d9b63fe37fe9e">ehci.h</a></li>
-<li>EHCI_USBCMD_FRAMELIST_SIZE_SHIFT&#160;:&#160;<a class="el" href="ehci_8h.html#a2dbb833ef0dcc466dd02ee76badaf709a9dc1aa3c8afd498f86bbbf6a447c0234">ehci.h</a></li>
-<li>EHCI_USBCMD_HCRESET&#160;:&#160;<a class="el" href="ehci_8h.html#aea33efd5e2c69d615faad5c5965510aaa98c0924bc4fca8b0cdd19ba9d66e0490">ehci.h</a></li>
-<li>EHCI_USBCMD_INTERRUPT_THRESHOLD_SHIFT&#160;:&#160;<a class="el" href="ehci_8h.html#a2dbb833ef0dcc466dd02ee76badaf709a532de39f568a93db64db05e0bb3f9a27">ehci.h</a></li>
-<li>EHCI_USBCMD_INTR_ON_ASYNC_ADVANCE_DOORBELL&#160;:&#160;<a class="el" href="ehci_8h.html#aea33efd5e2c69d615faad5c5965510aaa9cd11ecaf0632c2b2aeeff0206f23bb0">ehci.h</a></li>
-<li>EHCI_USBCMD_PERIOD_SCHEDULE_ENABLE&#160;:&#160;<a class="el" href="ehci_8h.html#aea33efd5e2c69d615faad5c5965510aaab87c9280e1f0ccf0c8b3fcbe907db8de">ehci.h</a></li>
-<li>EHCI_USBCMD_RUN_STOP&#160;:&#160;<a class="el" href="ehci_8h.html#aea33efd5e2c69d615faad5c5965510aaa118f29c04b781906fbfb304602e613bf">ehci.h</a></li>
-<li>EP_STAT_DISABLED&#160;:&#160;<a class="el" href="fsdev__common_8h.html#a19f7351e863618564466e95f18474be3ae02e6583264d65a8fba5f7c7434f1454">fsdev_common.h</a></li>
-<li>EP_STAT_NAK&#160;:&#160;<a class="el" href="fsdev__common_8h.html#a19f7351e863618564466e95f18474be3af56e67966ecb1bbe75768faaf10c502a">fsdev_common.h</a></li>
-<li>EP_STAT_STALL&#160;:&#160;<a class="el" href="fsdev__common_8h.html#a19f7351e863618564466e95f18474be3a36901a0135bcd11cea47e89d500b4067">fsdev_common.h</a></li>
-<li>EP_STAT_VALID&#160;:&#160;<a class="el" href="fsdev__common_8h.html#a19f7351e863618564466e95f18474be3a57ad87fc58937d541a2dc1c29126bcc1">fsdev_common.h</a></li>
+<li>EE_CLEANUP_REQUIRED&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a232e8ce3655b94afae23b2d9af1eaf11">eeprom_emul_types.h</a></li>
+<li>EE_CONDITIONAL_ERASE&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga3eac8a7bef8cbb29b5cd22e6762de112a9b939d96b522ea39403ce144327e992d">eeprom_emul_types.h</a></li>
+<li>EE_DELETE_ERROR&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a4052096d63eb055b0b0178c7a5a43c12">eeprom_emul_types.h</a></li>
+<li>EE_ERASE_ERROR&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a76031fc600f95892f38d2df82f41450b">eeprom_emul_types.h</a></li>
+<li>EE_ERROR_NOACTIVE_NORECEIVE_NOVALID_PAGE&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a046c0eb889a9c277e78984e3eb8a7eea">eeprom_emul_types.h</a></li>
+<li>EE_ERROR_NOACTIVE_PAGE&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a1a9f189399ad85caaf80a80b14657d16">eeprom_emul_types.h</a></li>
+<li>EE_ERROR_NOERASE_PAGE&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a7407bc084bfb0c061b1a9a3eb83778e4">eeprom_emul_types.h</a></li>
+<li>EE_ERROR_NOERASING_PAGE&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a62eb29486f8443bf7ab4946da581dc42">eeprom_emul_types.h</a></li>
+<li>EE_FORCED_ERASE&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga3eac8a7bef8cbb29b5cd22e6762de112a0e5f378859450dea051f93b139fbff45">eeprom_emul_types.h</a></li>
+<li>EE_INVALID_BANK_CFG&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a0656a1f7d8703b968ef913c89e47b852">eeprom_emul_types.h</a></li>
+<li>EE_INVALID_ELEMENT&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a4702c8952f5d31e9cfbea890fe5d4654">eeprom_emul_types.h</a></li>
+<li>EE_INVALID_PAGE&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a40a5ce290d5b5518e7a06978d138262f">eeprom_emul_types.h</a></li>
+<li>EE_INVALID_PAGE_SEQUENCE&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81ae7b0442ad9d2b89e332a2590f175f7dd">eeprom_emul_types.h</a></li>
+<li>EE_INVALID_VIRTUALADDRESS&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a7dc15320265940213b06d3ecf2507bc3">eeprom_emul_types.h</a></li>
+<li>EE_NO_DATA&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a92c8203155632d92d7487870d022d382">eeprom_emul_types.h</a></li>
+<li>EE_NO_PAGE_FOUND&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a228e72e8f51dccdf0aee6333465202ea">eeprom_emul_types.h</a></li>
+<li>EE_OK&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a950dd5af648ddef4fd586c0db2a1dad6">eeprom_emul_types.h</a></li>
+<li>EE_PAGE_ERASED&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a25bd11ca21c8a1e44a02367f533baa7d">eeprom_emul_types.h</a></li>
+<li>EE_PAGE_FULL&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a8a0675d6488fdecc61fe3ba19c4052a0">eeprom_emul_types.h</a></li>
+<li>EE_PAGE_NOTERASED&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a24504a4958ed10cc544fc278fbbd5b8b">eeprom_emul_types.h</a></li>
+<li>EE_TRANSFER_ERROR&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81a664df064cea14c091ab966ae85bb7ac3">eeprom_emul_types.h</a></li>
+<li>EE_TRANSFER_NORMAL&#160;:&#160;<a class="el" href="group__EEPROM__Private__Structures.html#gga38d1fdf4dadae7a67fb8f886c933d949abb39de9f4c985edea26d88817ad8fca9">eeprom_emul.c</a></li>
+<li>EE_TRANSFER_RECOVER&#160;:&#160;<a class="el" href="group__EEPROM__Private__Structures.html#gga38d1fdf4dadae7a67fb8f886c933d949af8457299865359b271c0ad0fcde142f8">eeprom_emul.c</a></li>
+<li>EE_WRITE_ERROR&#160;:&#160;<a class="el" href="group__Exported__Other__Constants.html#gga1543b06d1d71ef172a7fb8c2e0e68d81ad6cd443dd3e062116a17a4750fe649e4">eeprom_emul_types.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

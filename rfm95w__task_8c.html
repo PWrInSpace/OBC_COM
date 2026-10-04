@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rfm95w__task_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,11 +89,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="dir_a8f641299cfea9f7461c2df1141b7786.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
@@ -94,7 +110,7 @@ $(function() {
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="lora__config_8h_source.html">lora_config.h</a>&quot;</code><br />
-<code>#include &quot;nvs_config.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="nvs__config_8h_source.html">nvs_config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="board__data_8h_source.html">board_data.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="rfm95w__task_8h_source.html">rfm95w_task.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="gs__scheduler_8h_source.html">gs_scheduler.h</a>&quot;</code><br />
@@ -103,61 +119,12 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for rfm95w_task.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="rfm95w__task_8c__incl.png" border="0" usemap="#aapp_2src_2rfm95w__task_8c" alt=""/></div>
-<map name="aapp_2src_2rfm95w__task_8c" id="aapp_2src_2rfm95w__task_8c">
-<area shape="rect" title=" " alt="" coords="2041,5,2211,31"/>
-<area shape="rect" title=" " alt="" coords="2779,372,2875,397"/>
-<area shape="rect" title=" " alt="" coords="237,79,340,104"/>
-<area shape="rect" title=" " alt="" coords="364,79,427,104"/>
-<area shape="rect" title=" " alt="" coords="553,372,688,397"/>
-<area shape="rect" title=" " alt="" coords="503,79,672,104"/>
-<area shape="rect" href="rfm95w_8h.html" title=" " alt="" coords="1902,225,1985,251"/>
-<area shape="rect" href="usb__config_8h.html" title=" " alt="" coords="200,299,303,324"/>
-<area shape="rect" title=" " alt="" coords="429,665,500,691"/>
-<area shape="rect" title=" " alt="" coords="2899,372,2982,397"/>
-<area shape="rect" title=" " alt="" coords="3007,372,3077,397"/>
-<area shape="rect" href="main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="1774,299,1841,324"/>
-<area shape="rect" href="logger_8h.html" title=" " alt="" coords="2715,299,2790,324"/>
-<area shape="rect" href="lora__config_8h.html" title=" " alt="" coords="1983,152,2088,177"/>
-<area shape="rect" title=" " alt="" coords="2737,79,2840,104"/>
-<area shape="rect" href="board__data_8h.html" title=" " alt="" coords="3249,299,3355,324"/>
-<area shape="rect" href="rfm95w__task_8h.html" title=" " alt="" coords="2315,79,2433,104"/>
-<area shape="rect" href="gs__scheduler_8h.html" title=" " alt="" coords="3003,225,3121,251"/>
-<area shape="rect" href="lora__tx__queue_8h.html" title=" " alt="" coords="2916,299,3043,324"/>
-<area shape="rect" href="lora__frame_8h.html" title=" " alt="" coords="3119,299,3224,324"/>
-<area shape="rect" title=" " alt="" coords="1906,299,1981,324"/>
-<area shape="rect" href="usbd__core_8h.html" title="Header file for usbd_core.c file." alt="" coords="5,372,105,397"/>
-<area shape="rect" title=" " alt="" coords="129,372,224,397"/>
-<area shape="rect" title=" " alt="" coords="249,372,358,397"/>
-<area shape="rect" href="usbd__desc_8h.html" title=" " alt="" coords="324,445,427,471"/>
-<area shape="rect" href="usbd__conf_8h.html" title=" " alt="" coords="130,592,229,617"/>
-<area shape="rect" href="usbd__ctlreq_8h.html" title=" " alt="" coords="190,445,299,471"/>
-<area shape="rect" href="usbd__def_8h.html" title="General defines for the usb device library." alt="" coords="133,519,225,544"/>
-<area shape="rect" href="usbd__ioreq_8h.html" title="Header file for the usbd_ioreq.c file." alt="" coords="60,445,165,471"/>
-<area shape="rect" title=" " alt="" coords="71,665,178,691"/>
-<area shape="rect" title=" " alt="" coords="202,665,269,691"/>
-<area shape="rect" title=" " alt="" coords="961,372,1113,397"/>
-<area shape="rect" title=" " alt="" coords="1137,372,1307,397"/>
-<area shape="rect" title=" " alt="" coords="1332,372,1480,397"/>
-<area shape="rect" title=" " alt="" coords="1504,372,1663,397"/>
-<area shape="rect" title=" " alt="" coords="1687,372,1845,397"/>
-<area shape="rect" title=" " alt="" coords="1869,372,2021,397"/>
-<area shape="rect" title=" " alt="" coords="2045,372,2193,397"/>
-<area shape="rect" title=" " alt="" coords="2217,372,2395,397"/>
-<area shape="rect" title=" " alt="" coords="2419,372,2577,397"/>
-<area shape="rect" title=" " alt="" coords="2601,372,2755,397"/>
-<area shape="rect" title=" " alt="" coords="713,372,787,397"/>
-<area shape="rect" title=" " alt="" coords="812,372,936,397"/>
-<area shape="rect" href="sx1280_8h.html" title=" " alt="" coords="2303,225,2384,251"/>
-<area shape="rect" href="spi_8h.html" title="This file contains all the function prototypes for the spi.c file." alt="" coords="2009,225,2062,251"/>
-<area shape="rect" title=" " alt="" coords="2316,299,2384,324"/>
-<area shape="rect" href="sx1280-hal_8h.html" title=" " alt="" coords="2510,299,2617,324"/>
-<area shape="rect" title=" " alt="" coords="3265,372,3339,397"/>
-<area shape="rect" title=" " alt="" coords="3363,372,3446,397"/>
-<area shape="rect" href="lora__commands_8h.html" title=" " alt="" coords="3102,372,3241,397"/>
-</map>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-</div><table class="memberdecls">
+</div>
+</div>
+<p><a href="rfm95w__task_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:afc3d101f633a076cc1ca84b85b6224b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8c.html#afc3d101f633a076cc1ca84b85b6224b2">TAG</a>&#160;&#160;&#160;&quot;RFM95&quot;</td></tr>
@@ -172,6 +139,18 @@ Functions</h2></td></tr>
 <tr class="separator:ab703cdbff7041f98030e2b45663ffcfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c30eab59ae461a939754514c289fb43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8c.html#a8c30eab59ae461a939754514c289fb43">rfm95_send_window</a> (<a class="el" href="structrfm95__t.html">rfm95_t</a> *radio, const uint8_t *payload, uint8_t payload_len, uint32_t window_ms)</td></tr>
 <tr class="separator:a8c30eab59ae461a939754514c289fb43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99167165b4cfbfc7129d98dd170893fd"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8c.html#a99167165b4cfbfc7129d98dd170893fd">gs_now_ms</a> (void *ctx)</td></tr>
+<tr class="separator:a99167165b4cfbfc7129d98dd170893fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d5edaf75b38f61868f1c2416cd0ae9e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8c.html#a3d5edaf75b38f61868f1c2416cd0ae9e">gs_enter_rx</a> (void *ctx)</td></tr>
+<tr class="separator:a3d5edaf75b38f61868f1c2416cd0ae9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7d1019d680c0f36e69f6ed82a3f2fd1"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8c.html#ad7d1019d680c0f36e69f6ed82a3f2fd1">gs_poll_rx</a> (void *ctx, uint8_t *buf, size_t cap)</td></tr>
+<tr class="separator:ad7d1019d680c0f36e69f6ed82a3f2fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad09b3088ae86c18f441bef09676c7933"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8c.html#ad09b3088ae86c18f441bef09676c7933">gs_send</a> (void *ctx, const uint8_t *buf, size_t len)</td></tr>
+<tr class="separator:ad09b3088ae86c18f441bef09676c7933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc9e5aad71050eafeeaed4d72e1af8fc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8c.html#afc9e5aad71050eafeeaed4d72e1af8fc">gs_forward</a> (void *ctx, const uint8_t *buf, size_t len)</td></tr>
+<tr class="separator:afc9e5aad71050eafeeaed4d72e1af8fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec3803cc26789b3cbf72bb31223778d2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8c.html#aec3803cc26789b3cbf72bb31223778d2">apply_nvs_settings</a> (<a class="el" href="structrfm95__t.html">rfm95_t</a> *radio)</td></tr>
+<tr class="separator:aec3803cc26789b3cbf72bb31223778d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8b08547037ee5614a6b8e7f8bc00b23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8c.html#af8b08547037ee5614a6b8e7f8bc00b23">rfm95wTaskEntry</a> (void *argument)</td></tr>
 <tr class="separator:af8b08547037ee5614a6b8e7f8bc00b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5766e691677be755740c5d264c637139"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8c.html#a5766e691677be755740c5d264c637139">RFM95W_task_init</a> (void)</td></tr>
@@ -179,10 +158,14 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a162d9236e5b55a60bc0e35d7cbf98c34"><td class="memItemLeft" align="right" valign="top">osThreadId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8c.html#a162d9236e5b55a60bc0e35d7cbf98c34">rfm95wTaskHandle</a> = <a class="el" href="group__USB__DEF__Exported__Defines.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memitem:a162d9236e5b55a60bc0e35d7cbf98c34"><td class="memItemLeft" align="right" valign="top">osThreadId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8c.html#a162d9236e5b55a60bc0e35d7cbf98c34">rfm95wTaskHandle</a> = NULL</td></tr>
 <tr class="separator:a162d9236e5b55a60bc0e35d7cbf98c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0ebde24d459418760872d3e56fba67f"><td class="memItemLeft" align="right" valign="top">const osThreadAttr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8c.html#ac0ebde24d459418760872d3e56fba67f">rfm95wTask_attributes</a></td></tr>
 <tr class="separator:ac0ebde24d459418760872d3e56fba67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a183620c3aa3a03546754d474ae03650e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structlora__tx__queue__t.html">lora_tx_queue_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8c.html#a183620c3aa3a03546754d474ae03650e">s_txq</a></td></tr>
+<tr class="separator:a183620c3aa3a03546754d474ae03650e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab65ff6085a93ddc889e8d0021556ef86"><td class="memItemLeft" align="right" valign="top">static volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8c.html#ab65ff6085a93ddc889e8d0021556ef86">s_settings_dirty</a> = false</td></tr>
+<tr class="separator:ab65ff6085a93ddc889e8d0021556ef86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="afc3d101f633a076cc1ca84b85b6224b2" name="afc3d101f633a076cc1ca84b85b6224b2"></a>
@@ -197,9 +180,315 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00031">31</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aec3803cc26789b3cbf72bb31223778d2" name="aec3803cc26789b3cbf72bb31223778d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec3803cc26789b3cbf72bb31223778d2">&#9670;&#160;</a></span>apply_nvs_settings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void apply_nvs_settings </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structrfm95__t.html">rfm95_t</a> *&#160;</td>
+          <td class="paramname"><em>radio</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00118">118</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="nvs__config_8c_source.html#l00061">nvs_get_rfm95_settings()</a>, <a class="el" href="rfm95w_8c_source.html#l00179">rfm95_sleep()</a>, and <a class="el" href="lora__config_8c_source.html#l00121">rfm95w_config_init_param()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00125">rfm95wTaskEntry()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_aec3803cc26789b3cbf72bb31223778d2_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_aec3803cc26789b3cbf72bb31223778d2_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a3d5edaf75b38f61868f1c2416cd0ae9e" name="a3d5edaf75b38f61868f1c2416cd0ae9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d5edaf75b38f61868f1c2416cd0ae9e">&#9670;&#160;</a></span>gs_enter_rx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void gs_enter_rx </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ctx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00074">74</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="rfm95w_8h_source.html#l00017">IRQ_ALL</a>, <a class="el" href="rfm95w_8h_source.html#l00038">REG_IRQ_FLAGS</a>, <a class="el" href="rfm95w_8c_source.html#l00185">rfm95_set_receive_mode()</a>, and <a class="el" href="rfm95w_8c_source.html#l00122">rfm95_write_reg()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00125">rfm95wTaskEntry()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_a3d5edaf75b38f61868f1c2416cd0ae9e_cgraph.svg" width="522" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_a3d5edaf75b38f61868f1c2416cd0ae9e_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="afc9e5aad71050eafeeaed4d72e1af8fc" name="afc9e5aad71050eafeeaed4d72e1af8fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc9e5aad71050eafeeaed4d72e1af8fc">&#9670;&#160;</a></span>gs_forward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void gs_forward </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00113">113</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00125">rfm95wTaskEntry()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_afc9e5aad71050eafeeaed4d72e1af8fc_cgraph.svg" width="448" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_afc9e5aad71050eafeeaed4d72e1af8fc_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a99167165b4cfbfc7129d98dd170893fd" name="a99167165b4cfbfc7129d98dd170893fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99167165b4cfbfc7129d98dd170893fd">&#9670;&#160;</a></span>gs_now_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t gs_now_ms </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ctx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00069">69</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00125">rfm95wTaskEntry()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_a99167165b4cfbfc7129d98dd170893fd_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad7d1019d680c0f36e69f6ed82a3f2fd1" name="ad7d1019d680c0f36e69f6ed82a3f2fd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7d1019d680c0f36e69f6ed82a3f2fd1">&#9670;&#160;</a></span>gs_poll_rx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t gs_poll_rx </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>cap</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00080">80</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="board__data_8c_source.html#l00011">g_state_mutex</a>, <a class="el" href="board__data_8c_source.html#l00010">g_system_state</a>, <a class="el" href="rfm95w_8h_source.html#l00017">IRQ_ALL</a>, <a class="el" href="rfm95w_8h_source.html#l00015">IRQ_RX_DONE_MASK</a>, <a class="el" href="logger_8h_source.html#l00042">LOG_INFO</a>, <a class="el" href="rfm95w_8h_source.html#l00038">REG_IRQ_FLAGS</a>, <a class="el" href="rfm95w_8c_source.html#l00409">rfm95_packet_rssi()</a>, <a class="el" href="rfm95w_8c_source.html#l00133">rfm95_read_reg()</a>, <a class="el" href="rfm95w_8c_source.html#l00357">rfm95_receive_packet()</a>, <a class="el" href="rfm95w_8c_source.html#l00122">rfm95_write_reg()</a>, <a class="el" href="board__data_8h_source.html#l00018">BoardData_t::RSSI</a>, <a class="el" href="main_8h_source.html#l00123">RX_RFM_GPIO_Port</a>, and <a class="el" href="main_8h_source.html#l00122">RX_RFM_Pin</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00125">rfm95wTaskEntry()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_ad7d1019d680c0f36e69f6ed82a3f2fd1_cgraph.svg" width="664" height="172"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_ad7d1019d680c0f36e69f6ed82a3f2fd1_icgraph.svg" width="666" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad09b3088ae86c18f441bef09676c7933" name="ad09b3088ae86c18f441bef09676c7933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad09b3088ae86c18f441bef09676c7933">&#9670;&#160;</a></span>gs_send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void gs_send </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00107">107</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="logger_8h_source.html#l00042">LOG_INFO</a>, <a class="el" href="rfm95w__task_8c_source.html#l00051">rfm95_send_window()</a>, <a class="el" href="main_8h_source.html#l00121">TX_RFM_GPIO_Port</a>, and <a class="el" href="main_8h_source.html#l00120">TX_RFM_Pin</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00125">rfm95wTaskEntry()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_ad09b3088ae86c18f441bef09676c7933_cgraph.svg" width="100%" height="582"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_ad09b3088ae86c18f441bef09676c7933_icgraph.svg" width="652" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="ab703cdbff7041f98030e2b45663ffcfa" name="ab703cdbff7041f98030e2b45663ffcfa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab703cdbff7041f98030e2b45663ffcfa">&#9670;&#160;</a></span>lora_gs_mark_settings_dirty()</h2>
 
@@ -215,6 +504,18 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00047">47</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="rfm95w__task_8c_source.html#l00041">s_settings_dirty</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="cmd__interface_8c_source.html#l00235">handle_bw()</a>, <a class="el" href="cmd__interface_8c_source.html#l00249">handle_cr()</a>, <a class="el" href="cmd__interface_8c_source.html#l00263">handle_crc()</a>, <a class="el" href="cmd__interface_8c_source.html#l00192">handle_freq()</a>, <a class="el" href="cmd__interface_8c_source.html#l00049">handle_lora_mode()</a>, <a class="el" href="cmd__interface_8c_source.html#l00207">handle_power()</a>, <a class="el" href="cmd__interface_8c_source.html#l00221">handle_sf()</a>, and <a class="el" href="cmd__interface_8c_source.html#l00277">handle_sync()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_ab703cdbff7041f98030e2b45663ffcfa_icgraph.svg" width="371" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -246,6 +547,24 @@ Variables</h2></td></tr>
 
 <p>Queue a fully-formed frame for the GS to transmit in its next slot. </p>
 <dl class="section return"><dt>Returns</dt><dd>false if the queue is full. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00043">43</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="lora__tx__queue_8c_source.html#l00020">lora_txq_push()</a>, and <a class="el" href="rfm95w__task_8c_source.html#l00040">s_txq</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="cmd__task_8c_source.html#l00036">cmd_task()</a>, and <a class="el" href="cmd__interface_8c_source.html#l00062">handle_lora_tx()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_aa4d6b5c21ad55e5a3fa935e378767e09_cgraph.svg" width="467" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_aa4d6b5c21ad55e5a3fa935e378767e09_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
 
 </div>
 </div>
@@ -287,6 +606,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00051">51</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="rfm95w_8h_source.html#l00017">IRQ_ALL</a>, <a class="el" href="rfm95w_8h_source.html#l00038">REG_IRQ_FLAGS</a>, <a class="el" href="rfm95w_8c_source.html#l00334">rfm95_check_tx_done()</a>, <a class="el" href="rfm95w_8c_source.html#l00173">rfm95_idle()</a>, <a class="el" href="rfm95w_8c_source.html#l00342">rfm95_send_packet()</a>, <a class="el" href="rfm95w_8c_source.html#l00194">rfm95_set_transmit_mode()</a>, and <a class="el" href="rfm95w_8c_source.html#l00122">rfm95_write_reg()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00107">gs_send()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_a8c30eab59ae461a939754514c289fb43_cgraph.svg" width="100%" height="582"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_a8c30eab59ae461a939754514c289fb43_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a5766e691677be755740c5d264c637139" name="a5766e691677be755740c5d264c637139"></a>
@@ -305,6 +642,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00160">160</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="logger_8h_source.html#l00044">LOG_ERROR</a>, <a class="el" href="rfm95w__task_8c_source.html#l00034">rfm95wTask_attributes</a>, <a class="el" href="rfm95w__task_8c_source.html#l00125">rfm95wTaskEntry()</a>, <a class="el" href="rfm95w__task_8c_source.html#l00033">rfm95wTaskHandle</a>, and <a class="el" href="rfm95w__task_8c_source.html#l00031">TAG</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__freertos_8c_source.html#l00097">MX_FREERTOS_Init()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_a5766e691677be755740c5d264c637139_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_a5766e691677be755740c5d264c637139_icgraph.svg" width="347" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <a id="af8b08547037ee5614a6b8e7f8bc00b23" name="af8b08547037ee5614a6b8e7f8bc00b23"></a>
@@ -322,6 +677,24 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00125">125</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="rfm95w__task_8c_source.html#l00118">apply_nvs_settings()</a>, <a class="el" href="lora__config_8c_source.html#l00129">get_lora_devs_instance()</a>, <a class="el" href="rfm95w__task_8c_source.html#l00074">gs_enter_rx()</a>, <a class="el" href="rfm95w__task_8c_source.html#l00113">gs_forward()</a>, <a class="el" href="rfm95w__task_8c_source.html#l00069">gs_now_ms()</a>, <a class="el" href="rfm95w__task_8c_source.html#l00080">gs_poll_rx()</a>, <a class="el" href="gs__scheduler_8c_source.html#l00079">gs_run_cycle()</a>, <a class="el" href="rfm95w__task_8c_source.html#l00107">gs_send()</a>, <a class="el" href="logger_8h_source.html#l00042">LOG_INFO</a>, <a class="el" href="lora__tx__queue_8c_source.html#l00013">lora_txq_init()</a>, <a class="el" href="gs__scheduler_8h_source.html#l00020">gs_radio_iface_t::now_ms</a>, <a class="el" href="nvs__config_8c_source.html#l00061">nvs_get_rfm95_settings()</a>, <a class="el" href="lora__config_8h_source.html#l00022">LoRaDevs_t::rfm95w</a>, <a class="el" href="lora__config_8c_source.html#l00133">rfm95w_config_init()</a>, <a class="el" href="lora__config_8c_source.html#l00121">rfm95w_config_init_param()</a>, <a class="el" href="rfm95w__task_8c_source.html#l00041">s_settings_dirty</a>, and <a class="el" href="rfm95w__task_8c_source.html#l00040">s_txq</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00160">RFM95W_task_init()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_af8b08547037ee5614a6b8e7f8bc00b23_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8c_af8b08547037ee5614a6b8e7f8bc00b23_icgraph.svg" width="530" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -343,6 +716,10 @@ Variables</h2></td></tr>
 <div class="line">  .stack_size = 4096</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00034">34</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00160">RFM95W_task_init()</a>.</p>
+
 </div>
 </div>
 <a id="a162d9236e5b55a60bc0e35d7cbf98c34" name="a162d9236e5b55a60bc0e35d7cbf98c34"></a>
@@ -352,17 +729,77 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">osThreadId_t rfm95wTaskHandle = <a class="el" href="group__USB__DEF__Exported__Defines.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+          <td class="memname">osThreadId_t rfm95wTaskHandle = NULL</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00033">33</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00160">RFM95W_task_init()</a>.</p>
+
+</div>
+</div>
+<a id="ab65ff6085a93ddc889e8d0021556ef86" name="ab65ff6085a93ddc889e8d0021556ef86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab65ff6085a93ddc889e8d0021556ef86">&#9670;&#160;</a></span>s_settings_dirty</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool s_settings_dirty = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00041">41</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00047">lora_gs_mark_settings_dirty()</a>, and <a class="el" href="rfm95w__task_8c_source.html#l00125">rfm95wTaskEntry()</a>.</p>
+
+</div>
+</div>
+<a id="a183620c3aa3a03546754d474ae03650e" name="a183620c3aa3a03546754d474ae03650e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a183620c3aa3a03546754d474ae03650e">&#9670;&#160;</a></span>s_txq</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlora__tx__queue__t.html">lora_tx_queue_t</a> s_txq</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00040">40</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00043">lora_gs_tx_enqueue()</a>, and <a class="el" href="rfm95w__task_8c_source.html#l00125">rfm95wTaskEntry()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="dir_a8f641299cfea9f7461c2df1141b7786.html">src</a></li><li class="navelem"><a class="el" href="rfm95w__task_8c.html">rfm95w_task.c</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

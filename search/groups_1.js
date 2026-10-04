@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['cmsis_0',['CMSIS',['../group__CMSIS.html',1,'']]],
-  ['common_20definitions_1',['Common Definitions',['../group__CDC__RNDIS__Common.html',1,'(Global Namespace)'],['../group__ClassDriver__CDC__Common.html',1,'(Global Namespace)'],['../group__ClassDriver__HID__Common.html',1,'(Global Namespace)']]],
-  ['communication_20device_20class_20_28cdc_29_2',['Communication Device Class (CDC)',['../group__ClassDriver__CDC.html',1,'']]]
+  ['macros_20to_20manipulate_20elements_0',['Macros to manipulate elements',['../group__Macros__Elements.html',1,'']]],
+  ['macros_20to_20manipulate_20pages_1',['Macros to manipulate pages',['../group__Macros__Pages.html',1,'']]]
 ];

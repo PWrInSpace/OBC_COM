@@ -1,0 +1,5 @@
+<map id="rfm95_set_coding_rate" name="rfm95_set_coding_rate">
+<area shape="rect" id="node1" title="Set coding rate." alt="" coords="5,31,176,56"/>
+<area shape="rect" id="node2" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="226,5,351,31"/>
+<area shape="rect" id="node3" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="224,55,353,80"/>
+</map>

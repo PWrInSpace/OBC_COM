@@ -1,7 +1,7 @@
 <map id="app/src/sd_task.c" name="app/src/sd_task.c">
 <area shape="rect" id="node1" title=" " alt="" coords="2871,5,3005,31"/>
 <area shape="rect" id="node2" href="$sd__task_8h.html" title=" " alt="" coords="2353,79,2437,104"/>
-<area shape="rect" id="node3" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="1386,152,1453,177"/>
+<area shape="rect" id="node3" href="$main_8h.html" title=": Header for main.c file." alt="" coords="1386,152,1453,177"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,225,140,251"/>
 <area shape="rect" id="node18" title=" " alt="" coords="2556,225,2627,251"/>
 <area shape="rect" id="node20" href="$board__data_8h.html" title=" " alt="" coords="2271,152,2378,177"/>
@@ -18,7 +18,7 @@
 <area shape="rect" id="node32" title=" " alt="" coords="3495,79,3562,104"/>
 <area shape="rect" id="node33" title=" " alt="" coords="3587,79,3657,104"/>
 <area shape="rect" id="node34" title=" " alt="" coords="3681,79,3784,104"/>
-<area shape="rect" id="node35" href="$FreeRTOSConfig_8h.html" title=" " alt="" coords="3808,79,3945,104"/>
+<area shape="rect" id="node35" title=" " alt="" coords="3808,79,3945,104"/>
 <area shape="rect" id="node36" title=" " alt="" coords="3969,79,4131,104"/>
 <area shape="rect" id="node15" title=" " alt="" coords="2230,225,2326,251"/>
 <area shape="rect" id="node16" title=" " alt="" coords="2131,225,2206,251"/>

@@ -1,0 +1,8 @@
+<map id="rfm95_default_config" name="rfm95_default_config">
+<area shape="rect" id="node1" title="Create default config and set parameters." alt="" coords="5,107,165,132"/>
+<area shape="rect" id="node2" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="245,5,337,31"/>
+<area shape="rect" id="node3" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="416,107,545,132"/>
+<area shape="rect" id="node4" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="228,107,353,132"/>
+<area shape="rect" id="node5" href="$rfm95w_8c.html#a084b810c8724c14b77c5f09bd602988f" title="Configure power level for transmission." alt="" coords="213,156,368,181"/>
+<area shape="rect" id="node6" href="$rfm95w_8c.html#a33c72632717848203646e7d95c033057" title="Sets the radio transceiver in sleep mode." alt="" coords="239,205,342,231"/>
+</map>

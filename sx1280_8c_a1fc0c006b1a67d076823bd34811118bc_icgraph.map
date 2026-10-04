@@ -1,0 +1,5 @@
+<map id="SX1280GetOpMode" name="SX1280GetOpMode">
+<area shape="rect" id="node1" title="Gets the current Operation Mode of the Radio." alt="" coords="375,5,523,31"/>
+<area shape="rect" id="node2" href="$sx1280_8c.html#af08aac82fe5e983a4671967275b5dab8" title="Process the analysis of radio IRQs and calls callback functions depending on radio state." alt="" coords="181,5,327,31"/>
+<area shape="rect" id="node3" href="$sx1280_8c.html#a4b390ccc0f9d28283afff36f11a94263" title="DIOs interrupt callback." alt="" coords="5,5,133,31"/>
+</map>

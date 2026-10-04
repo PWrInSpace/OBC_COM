@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('cmd__interface_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,11 +89,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_50a28221d0f5027093306cfc52a57d36.html">cmd</a></li><li class="navelem"><a class="el" href="dir_be3c63096793d9acb1f71020b1e7a371.html">Inc</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
@@ -91,24 +107,14 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for cmd_interface.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="cmd__interface_8h__incl.png" border="0" usemap="#acmd_2Inc_2cmd__interface_8h" alt=""/></div>
-<map name="acmd_2Inc_2cmd__interface_8h" id="acmd_2Inc_2cmd__interface_8h">
-<area shape="rect" title=" " alt="" coords="112,5,295,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,76,104"/>
-<area shape="rect" title=" " alt="" coords="101,79,197,104"/>
-<area shape="rect" title=" " alt="" coords="221,79,295,104"/>
-<area shape="rect" title=" " alt="" coords="319,79,402,104"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h__incl.svg" width="408" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="cmd__interface_8h__dep__incl.png" border="0" usemap="#acmd_2Inc_2cmd__interface_8hdep" alt=""/></div>
-<map name="acmd_2Inc_2cmd__interface_8hdep" id="acmd_2Inc_2cmd__interface_8hdep">
-<area shape="rect" title=" " alt="" coords="82,5,265,31"/>
-<area shape="rect" href="cmd__task_8c.html" title=" " alt="" coords="5,79,152,104"/>
-<area shape="rect" href="cmd__interface_8c.html" title=" " alt="" coords="177,79,359,104"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h__dep__incl.svg" width="366" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="cmd__interface_8h_source.html">Go to the source code of this file.</a></p>
@@ -224,6 +230,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8h_source.html#l00071">71</a> of file <a class="el" href="cmd__interface_8h_source.html">cmd_interface.h</a>.</p>
+
 </div>
 </div>
 <a id="a1eb73c104b484cf18752169509cebfe2" name="a1eb73c104b484cf18752169509cebfe2"></a>
@@ -237,6 +245,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8h_source.html#l00010">10</a> of file <a class="el" href="cmd__interface_8h_source.html">cmd_interface.h</a>.</p>
 
 </div>
 </div>
@@ -252,6 +262,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8h_source.html#l00041">41</a> of file <a class="el" href="cmd__interface_8h_source.html">cmd_interface.h</a>.</p>
 
 </div>
 </div>
@@ -290,6 +302,8 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="afe8d33d42ee3ed4867090180ef38afbda35b507fe8adab9ba46257d13ba0b6d1d" name="afe8d33d42ee3ed4867090180ef38afbda35b507fe8adab9ba46257d13ba0b6d1d"></a>CMD_COUNT&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8h_source.html#l00012">12</a> of file <a class="el" href="cmd__interface_8h_source.html">cmd_interface.h</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
@@ -309,6 +323,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00235">235</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="cmd__interface_8h_source.html#l00036">cmd_params_t::data</a>, <a class="el" href="cmd__interface_8h_source.html#l00038">cmd_params_t::is_binary</a>, <a class="el" href="cmd__interface_8h_source.html#l00037">cmd_params_t::len</a>, <a class="el" href="rfm95w__task_8c_source.html#l00047">lora_gs_mark_settings_dirty()</a>, <a class="el" href="nvs__config_8c_source.html#l00034">NVS_Write()</a>, <a class="el" href="nvs__config_8h_source.html#l00016">RFM95W_PARAM_BW</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_a8d62ddad816faebffd6b3ce1eb69ee23_cgraph.svg" width="100%" height="540"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a0829a343683a10c8b46e3e555d960141" name="a0829a343683a10c8b46e3e555d960141"></a>
@@ -326,6 +350,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00249">249</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="cmd__interface_8h_source.html#l00036">cmd_params_t::data</a>, <a class="el" href="cmd__interface_8h_source.html#l00038">cmd_params_t::is_binary</a>, <a class="el" href="cmd__interface_8h_source.html#l00037">cmd_params_t::len</a>, <a class="el" href="rfm95w__task_8c_source.html#l00047">lora_gs_mark_settings_dirty()</a>, <a class="el" href="nvs__config_8c_source.html#l00034">NVS_Write()</a>, <a class="el" href="nvs__config_8h_source.html#l00018">RFM95W_PARAM_CR</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_a0829a343683a10c8b46e3e555d960141_cgraph.svg" width="100%" height="540"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
 
 </div>
 </div>
@@ -345,6 +379,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00263">263</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="cmd__interface_8h_source.html#l00036">cmd_params_t::data</a>, <a class="el" href="cmd__interface_8h_source.html#l00038">cmd_params_t::is_binary</a>, <a class="el" href="cmd__interface_8h_source.html#l00037">cmd_params_t::len</a>, <a class="el" href="rfm95w__task_8c_source.html#l00047">lora_gs_mark_settings_dirty()</a>, <a class="el" href="nvs__config_8c_source.html#l00034">NVS_Write()</a>, <a class="el" href="nvs__config_8h_source.html#l00021">RFM95W_PARAM_CRC</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_ab9b1f85f73eb8f0cf090404b16aab535_cgraph.svg" width="100%" height="540"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a96f1f5d0f266c2a2d29be6917c7e77f3" name="a96f1f5d0f266c2a2d29be6917c7e77f3"></a>
@@ -362,6 +406,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00192">192</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="cmd__interface_8h_source.html#l00036">cmd_params_t::data</a>, <a class="el" href="cmd__interface_8h_source.html#l00038">cmd_params_t::is_binary</a>, <a class="el" href="cmd__interface_8h_source.html#l00037">cmd_params_t::len</a>, <a class="el" href="rfm95w__task_8c_source.html#l00047">lora_gs_mark_settings_dirty()</a>, <a class="el" href="nvs__config_8c_source.html#l00034">NVS_Write()</a>, <a class="el" href="nvs__config_8h_source.html#l00015">RFM95W_PARAM_FREQ</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_a96f1f5d0f266c2a2d29be6917c7e77f3_cgraph.svg" width="100%" height="540"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
 
 </div>
 </div>
@@ -381,6 +435,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00177">177</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="cmd__interface_8c_source.html#l00025">cmd_map</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_a5bab88ce9cf8842134a6c4c1f1ee1c63_cgraph.svg" width="455" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a750cb44a19509201ebaa3de659b434d0" name="a750cb44a19509201ebaa3de659b434d0"></a>
@@ -398,6 +462,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00345">345</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="logger_8c_source.html#l00024">current_log_mute_mask</a>, <a class="el" href="cmd__interface_8h_source.html#l00036">cmd_params_t::data</a>, <a class="el" href="logger_8c_source.html#l00034">logger_get_bit_from_tag()</a>, <a class="el" href="nvs__config_8c_source.html#l00034">NVS_Write()</a>, <a class="el" href="nvs__config_8h_source.html#l00024">PARAM_LOG_TAG_MUTE</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_a750cb44a19509201ebaa3de659b434d0_cgraph.svg" width="100%" height="540"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
 
 </div>
 </div>
@@ -417,6 +491,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00329">329</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="logger_8h_source.html#l00020">LOG_LEVEL_NONE</a>, <a class="el" href="logger_8c_source.html#l00053">logger_enable()</a>, <a class="el" href="logger_8c_source.html#l00138">logger_set_level()</a>, <a class="el" href="nvs__config_8c_source.html#l00133">nvs_set_log_muted()</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_aebe7b81b6c8e63dca0a157d58ce11af5_cgraph.svg" width="100%" height="553"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a17b431758d6294661d9adb69c55ba0dd" name="a17b431758d6294661d9adb69c55ba0dd"></a>
@@ -434,6 +518,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00315">315</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="logger_8h_source.html#l00018">LOG_LEVEL_INFO</a>, <a class="el" href="logger_8c_source.html#l00053">logger_enable()</a>, <a class="el" href="logger_8c_source.html#l00138">logger_set_level()</a>, <a class="el" href="nvs__config_8c_source.html#l00133">nvs_set_log_muted()</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_a17b431758d6294661d9adb69c55ba0dd_cgraph.svg" width="100%" height="553"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
 
 </div>
 </div>
@@ -453,6 +547,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00362">362</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="logger_8c_source.html#l00024">current_log_mute_mask</a>, <a class="el" href="logger_8c_source.html#l00075">logger_filter_clear()</a>, <a class="el" href="nvs__config_8c_source.html#l00034">NVS_Write()</a>, <a class="el" href="nvs__config_8h_source.html#l00024">PARAM_LOG_TAG_MUTE</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_a73611767caa272c8166e62aaa8279d7f_cgraph.svg" width="100%" height="540"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="af8b24d2f89b1fc5e2ee9157347d10c68" name="af8b24d2f89b1fc5e2ee9157347d10c68"></a>
@@ -470,6 +574,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00161">161</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="logger_8c_source.html#l00178">logger_get_buffer()</a>, <a class="el" href="logger_8c_source.html#l00180">logger_get_write_position()</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_af8b24d2f89b1fc5e2ee9157347d10c68_cgraph.svg" width="563" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -489,6 +603,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00049">49</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="cmd__interface_8h_source.html#l00036">cmd_params_t::data</a>, <a class="el" href="cmd__interface_8h_source.html#l00038">cmd_params_t::is_binary</a>, <a class="el" href="cmd__interface_8h_source.html#l00037">cmd_params_t::len</a>, <a class="el" href="rfm95w__task_8c_source.html#l00047">lora_gs_mark_settings_dirty()</a>, <a class="el" href="nvs__config_8c_source.html#l00034">NVS_Write()</a>, <a class="el" href="nvs__config_8h_source.html#l00022">RFM95W_PARAM_STATE</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_a849218a785209e69259ac0b9bd9bbd23_cgraph.svg" width="100%" height="540"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="ae35b685f4185444b0179416b6efb0f1a" name="ae35b685f4185444b0179416b6efb0f1a"></a>
@@ -506,6 +630,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00062">62</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="cmd__interface_8h_source.html#l00036">cmd_params_t::data</a>, <a class="el" href="cmd__interface_8h_source.html#l00038">cmd_params_t::is_binary</a>, <a class="el" href="cmd__interface_8h_source.html#l00037">cmd_params_t::len</a>, <a class="el" href="rfm95w__task_8c_source.html#l00043">lora_gs_tx_enqueue()</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_ae35b685f4185444b0179416b6efb0f1a_cgraph.svg" width="512" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -525,6 +659,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00207">207</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="cmd__interface_8h_source.html#l00036">cmd_params_t::data</a>, <a class="el" href="cmd__interface_8h_source.html#l00038">cmd_params_t::is_binary</a>, <a class="el" href="cmd__interface_8h_source.html#l00037">cmd_params_t::len</a>, <a class="el" href="rfm95w__task_8c_source.html#l00047">lora_gs_mark_settings_dirty()</a>, <a class="el" href="nvs__config_8c_source.html#l00034">NVS_Write()</a>, <a class="el" href="nvs__config_8h_source.html#l00019">RFM95W_PARAM_PWR</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_af99f2c7576338e31f5b707a6272c9b9c_cgraph.svg" width="100%" height="540"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="abf1c276fd35dc8b17422223c66e186ae" name="abf1c276fd35dc8b17422223c66e186ae"></a>
@@ -542,6 +686,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00291">291</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_abf1c276fd35dc8b17422223c66e186ae_cgraph.svg" width="460" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -561,6 +715,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00221">221</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="cmd__interface_8h_source.html#l00036">cmd_params_t::data</a>, <a class="el" href="cmd__interface_8h_source.html#l00038">cmd_params_t::is_binary</a>, <a class="el" href="cmd__interface_8h_source.html#l00037">cmd_params_t::len</a>, <a class="el" href="rfm95w__task_8c_source.html#l00047">lora_gs_mark_settings_dirty()</a>, <a class="el" href="nvs__config_8c_source.html#l00034">NVS_Write()</a>, <a class="el" href="nvs__config_8h_source.html#l00017">RFM95W_PARAM_SF</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_a947223adc947591791664b600f889d7e_cgraph.svg" width="100%" height="540"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a39d4f6fbec98e7000356317a9e262fc2" name="a39d4f6fbec98e7000356317a9e262fc2"></a>
@@ -578,6 +742,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00298">298</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="cmd__interface_8h_source.html#l00018">CMD_STATUS</a>, <a class="el" href="cmd__interface_8h_source.html#l00038">cmd_params_t::is_binary</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_a39d4f6fbec98e7000356317a9e262fc2_cgraph.svg" width="467" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -597,6 +771,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00308">308</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="cmd__interface_8h_source.html#l00038">cmd_params_t::is_binary</a>, <a class="el" href="cmd__interface_8h_source.html#l00037">cmd_params_t::len</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_a5660ff9aca212a755b81d302711c7fbf_cgraph.svg" width="494" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a0a2c132a3978fb3605049cd69d855e69" name="a0a2c132a3978fb3605049cd69d855e69"></a>
@@ -614,6 +798,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00277">277</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="cmd__interface_8h_source.html#l00036">cmd_params_t::data</a>, <a class="el" href="cmd__interface_8h_source.html#l00038">cmd_params_t::is_binary</a>, <a class="el" href="cmd__interface_8h_source.html#l00037">cmd_params_t::len</a>, <a class="el" href="rfm95w__task_8c_source.html#l00047">lora_gs_mark_settings_dirty()</a>, <a class="el" href="nvs__config_8c_source.html#l00034">NVS_Write()</a>, <a class="el" href="nvs__config_8h_source.html#l00020">RFM95W_PARAM_SYNC</a>, and <a class="el" href="usb__config_8c_source.html#l00037">USB_Transmit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_a0a2c132a3978fb3605049cd69d855e69_cgraph.svg" width="100%" height="540"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
 
 </div>
 </div>
@@ -643,6 +837,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00147">147</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
+<p class="reference">References <a class="el" href="cmd__interface_8h_source.html#l00010">MAX_CMD_LEN</a>, <a class="el" href="cmd__interface_8c_source.html#l00128">process_binary_packet()</a>, and <a class="el" href="cmd__interface_8c_source.html#l00108">process_text_packet()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="cmd__task_8c_source.html#l00036">cmd_task()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_a9fbe128e63157dbdbd120e0a1f114c8e_cgraph.svg" width="374" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cmd__interface_8h_a9fbe128e63157dbdbd120e0a1f114c8e_icgraph.svg" width="647" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -666,6 +878,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00022">22</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
 </div>
 </div>
 <a id="a64c2ee184a0482e1a1ea63793dc0e948" name="a64c2ee184a0482e1a1ea63793dc0e948"></a>
@@ -688,12 +902,18 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="cmd__interface_8c_source.html#l00021">21</a> of file <a class="el" href="cmd__interface_8c_source.html">cmd_interface.c</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_50a28221d0f5027093306cfc52a57d36.html">cmd</a></li><li class="navelem"><a class="el" href="dir_be3c63096793d9acb1f71020b1e7a371.html">Inc</a></li><li class="navelem"><a class="el" href="cmd__interface_8h.html">cmd_interface.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

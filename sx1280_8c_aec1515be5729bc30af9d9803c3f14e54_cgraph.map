@@ -1,0 +1,8 @@
+<map id="SX1280SetTx" name="SX1280SetTx">
+<area shape="rect" id="node1" title="Sets the radio in transmission mode." alt="" coords="5,81,113,107"/>
+<area shape="rect" id="node2" href="$sx1280_8c.html#a24c5e4e70bd2db5b0513a3610b43043f" title="Clears the IRQs." alt="" coords="167,5,330,31"/>
+<area shape="rect" id="node3" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="384,56,579,81"/>
+<area shape="rect" id="node5" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="165,107,332,132"/>
+<area shape="rect" id="node6" href="$sx1280_8c.html#a054708c6562732737571056e239285ac" title="Set the role of the radio during ranging operations." alt="" coords="161,156,336,181"/>
+<area shape="rect" id="node4" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="627,56,799,81"/>
+</map>

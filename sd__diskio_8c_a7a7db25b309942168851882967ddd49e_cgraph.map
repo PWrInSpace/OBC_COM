@@ -1,0 +1,4 @@
+<map id="SD_initialize" name="SD_initialize">
+<area shape="rect" id="node1" title="Initialize the SD Diskio lowlevel driver." alt="" coords="5,5,108,31"/>
+<area shape="rect" id="node2" href="$sd__diskio_8c.html#a5b1864961d459705bbef77e08b75b701" title="Check the status of the sd card." alt="" coords="156,5,288,31"/>
+</map>

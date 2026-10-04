@@ -1,0 +1,22 @@
+<map id="SX1280HalReadRegisters" name="SX1280HalReadRegisters">
+<area shape="rect" id="node1" title="Read data from the radio memory." alt="" coords="1355,293,1541,319"/>
+<area shape="rect" id="node2" href="$sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea" title="Read a single byte of data from the radio memory." alt="" coords="1127,293,1307,319"/>
+<area shape="rect" id="node3" href="$sx1280_8c.html#ab20bd70738864a9b138c4011737564f6" title="Disable the manual gain control and enable AGC." alt="" coords="855,5,1053,31"/>
+<area shape="rect" id="node4" href="$sx1280_8c.html#a5750a2fb3ceb08f2452659d3d0f27bec" title="Enable manual gain and disable AGC." alt="" coords="857,55,1051,80"/>
+<area shape="rect" id="node5" href="$sx1280_8c.html#a5be9d8aa815c8b46abde691b3f4070ca" title="Returns the current device firmware version." alt="" coords="853,104,1055,129"/>
+<area shape="rect" id="node8" href="$sx1280_8c.html#a83a3b438ff77c40e11276d8aa92ca48c" title="Return the Estimated Frequency Error in LORA and RANGING operations." alt="" coords="858,153,1050,179"/>
+<area shape="rect" id="node9" href="$sx1280_8c.html#af6fffb5681b52a42682edeb7159a23c6" title="Return the last ranging result power indicator." alt="" coords="843,203,1065,243"/>
+<area shape="rect" id="node10" href="$sx1280_8c.html#a17d5de63553dd70d443bc4ec852a0344" title="Return the ranging result value." alt="" coords="860,268,1048,293"/>
+<area shape="rect" id="node11" href="$sx1280_8c.html#a01fc4b6e3bc159a906108e26d08fdc4a" title="Gets the last received packet buffer status." alt="" coords="859,317,1049,343"/>
+<area shape="rect" id="node16" href="$sx1280_8c.html#a96e7651f094c68cc7a01b423ba1ecaff" title="Clears the ranging filter." alt="" coords="859,367,1049,407"/>
+<area shape="rect" id="node17" href="$sx1280_8c.html#ad347825b06ac5a8528c2cd8230640be5" title="Configure the LNA regime of operation." alt="" coords="857,432,1051,457"/>
+<area shape="rect" id="node18" href="$sx1280_8c.html#ab37a43d55219dcc4967108b13c1c6f87" title="Set the gain for LNA." alt="" coords="851,481,1057,507"/>
+<area shape="rect" id="node19" href="$sx1280_8c.html#a6ec0596e20db056316d667e6fc48eee8" title="Sets the number of bits used to check that ranging request match ranging ID." alt="" coords="853,531,1055,556"/>
+<area shape="rect" id="node20" href="$sx1280_8c.html#a3d6b0585417c6ecb78be4ed9275e586c" title="Defines how many error bits are tolerated in sync word detection." alt="" coords="829,580,1079,605"/>
+<area shape="rect" id="node6" href="$sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a" title=" " alt="" coords="643,104,775,129"/>
+<area shape="rect" id="node7" href="$sx1280__task_8c.html#ae81733e32db03c2f8c8859b7fa9cb942" title=" " alt="" coords="443,104,577,129"/>
+<area shape="rect" id="node12" href="$sx1280_8c.html#a88aa3739b37c983bbea244aa58fd4a6a" title="Reads the payload received." alt="" coords="636,317,781,343"/>
+<area shape="rect" id="node13" href="$sx1280__task_8c.html#a2558054bd23939c02ad7d8e95cd5a501" title=" " alt="" coords="432,310,588,350"/>
+<area shape="rect" id="node14" href="$sx1280__task_8c.html#ad29d477ada983b118b9139bafba10196" title=" " alt="" coords="245,317,384,343"/>
+<area shape="rect" id="node15" href="$sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0" title=" " alt="" coords="5,317,197,343"/>
+</map>

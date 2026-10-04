@@ -1,0 +1,10 @@
+<map id="SX1280GetPayload" name="SX1280GetPayload">
+<area shape="rect" id="node1" title="Reads the payload received." alt="" coords="5,132,151,157"/>
+<area shape="rect" id="node2" href="$sx1280_8c.html#a01fc4b6e3bc159a906108e26d08fdc4a" title="Gets the last received packet buffer status." alt="" coords="199,81,389,107"/>
+<area shape="rect" id="node8" href="$sx1280-hal_8c.html#a92ac9625cd9b4efdb6facffe6fdaaa4b" title="Read data from the buffer holding the payload in the radio." alt="" coords="679,156,845,181"/>
+<area shape="rect" id="node3" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="444,5,611,31"/>
+<area shape="rect" id="node4" href="$sx1280-hal_8c.html#abc1ed10f83057922610c0ef2b3893733" title="Send a command that read data from the radio." alt="" coords="665,57,859,83"/>
+<area shape="rect" id="node6" href="$sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea" title="Read a single byte of data from the radio memory." alt="" coords="437,107,617,132"/>
+<area shape="rect" id="node5" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="907,107,1079,132"/>
+<area shape="rect" id="node7" href="$sx1280-hal_8c.html#a6a9c356cd998a6f2dad05049941b5939" title="Read data from the radio memory." alt="" coords="669,107,855,132"/>
+</map>

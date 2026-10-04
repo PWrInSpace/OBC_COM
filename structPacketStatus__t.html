@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structPacketStatus__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,7 +89,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
@@ -79,207 +99,212 @@ $(function() {
 <p>Represents the packet status for every packet type.  
  <a href="structPacketStatus__t.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="sx1280_8h_source.html">sx1280.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="sx1280_8h_source.html">/home/runner/work/OBC_COM/OBC_COM/modules/sx1280/include/sx1280.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a3ef54bfe6c9061cf1b47d4ec98543164"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sx1280_8h.html#aa28671d92415a1b4b16724c72128cdc1">RadioPacketTypes_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPacketStatus__t.html#a3ef54bfe6c9061cf1b47d4ec98543164">packetType</a></td></tr>
 <tr class="memdesc:a3ef54bfe6c9061cf1b47d4ec98543164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet to which the packet status are referring to.  <br /></td></tr>
 <tr class="separator:a3ef54bfe6c9061cf1b47d4ec98543164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcda3c1239cf0412c182e021120674f4"><td class="memItemLeft" >union {</td></tr>
-<tr class="memitem:af8966612bb096e37fb24bd719ebf84af"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:a23d8b55360421ce049787c9df685419f"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a8a27bde9e410bdf0de3557f3010e0e82">RssiAvg</a></td></tr>
-<tr class="memdesc:a23d8b55360421ce049787c9df685419f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The averaged RSSI.  <a href="structPacketStatus__t.html#a8a27bde9e410bdf0de3557f3010e0e82">More...</a><br /></td></tr>
-<tr class="separator:a23d8b55360421ce049787c9df685419f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17f3b57de2115d547cc6144a83b0781f"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#af1d9c35a9f9c7fac52acb9dae48c0206">RssiSync</a></td></tr>
-<tr class="memdesc:a17f3b57de2115d547cc6144a83b0781f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RSSI measured on last packet.  <a href="structPacketStatus__t.html#af1d9c35a9f9c7fac52acb9dae48c0206">More...</a><br /></td></tr>
-<tr class="separator:a17f3b57de2115d547cc6144a83b0781f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9274f76d10bd65764442ff2d0f83eeee"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:af69bfe0d5ecfcbccd7f8b3bae29a4454"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">SyncError</a>: 1</td></tr>
-<tr class="memdesc:af69bfe0d5ecfcbccd7f8b3bae29a4454"><td class="mdescLeft">&#160;</td><td class="mdescRight">SyncWord error on last packet.  <a href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">More...</a><br /></td></tr>
-<tr class="separator:af69bfe0d5ecfcbccd7f8b3bae29a4454"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa15edd0908276a9e0a1aa46e1a88ba5e"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">LengthError</a>: 1</td></tr>
-<tr class="memdesc:aa15edd0908276a9e0a1aa46e1a88ba5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length error on last packet.  <a href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">More...</a><br /></td></tr>
-<tr class="separator:aa15edd0908276a9e0a1aa46e1a88ba5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af553dee454dfb6582d17a30d541a90ca"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">CrcError</a>: 1</td></tr>
-<tr class="memdesc:af553dee454dfb6582d17a30d541a90ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC error on last packet.  <a href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">More...</a><br /></td></tr>
-<tr class="separator:af553dee454dfb6582d17a30d541a90ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3192545cd522054fe614d0f2295329b"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">AbortError</a>: 1</td></tr>
-<tr class="memdesc:aa3192545cd522054fe614d0f2295329b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort error on last packet.  <a href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">More...</a><br /></td></tr>
-<tr class="separator:aa3192545cd522054fe614d0f2295329b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7a16eac6d086f006a995da2d97cc0c5"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">HeaderReceived</a>: 1</td></tr>
-<tr class="memdesc:ae7a16eac6d086f006a995da2d97cc0c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header received on last packet.  <a href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">More...</a><br /></td></tr>
-<tr class="separator:ae7a16eac6d086f006a995da2d97cc0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab79954ea3d0f6f72e4a7b4f7a59355a2"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">PacketReceived</a>: 1</td></tr>
-<tr class="memdesc:ab79954ea3d0f6f72e4a7b4f7a59355a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet received.  <a href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">More...</a><br /></td></tr>
-<tr class="separator:ab79954ea3d0f6f72e4a7b4f7a59355a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adce78c3612b108f12c87b7c994b4a6e8"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">PacketControlerBusy</a>: 1</td></tr>
-<tr class="memdesc:adce78c3612b108f12c87b7c994b4a6e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet controller busy.  <a href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">More...</a><br /></td></tr>
-<tr class="separator:adce78c3612b108f12c87b7c994b4a6e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9274f76d10bd65764442ff2d0f83eeee"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a2ad363662633bb80472c866fc4bcbc04">ErrorStatus</a></td></tr>
-<tr class="memdesc:a9274f76d10bd65764442ff2d0f83eeee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error status Byte.  <a href="structPacketStatus__t.html#a2ad363662633bb80472c866fc4bcbc04">More...</a><br /></td></tr>
-<tr class="separator:a9274f76d10bd65764442ff2d0f83eeee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f9d4bc37e95e0e18d8f9014609537eb"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:ab8b2d82f61263afa4f6666f24a58df36"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a2568ee53ac5aa9d6fb4f165a49bec4a9">RxNoAck</a>: 1</td></tr>
-<tr class="separator:ab8b2d82f61263afa4f6666f24a58df36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6519acda8cf3ba3c928d56b4b7b93e6b"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">PacketSent</a>: 1</td></tr>
-<tr class="memdesc:a6519acda8cf3ba3c928d56b4b7b93e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet sent, only relevant in Tx mode.  <a href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">More...</a><br /></td></tr>
-<tr class="separator:a6519acda8cf3ba3c928d56b4b7b93e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f9d4bc37e95e0e18d8f9014609537eb"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a691ba8dfb1c85a8d4eecfa52fa46a354">TxRxStatus</a></td></tr>
-<tr class="memdesc:a0f9d4bc37e95e0e18d8f9014609537eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Tx/Rx status Byte.  <a href="structPacketStatus__t.html#a691ba8dfb1c85a8d4eecfa52fa46a354">More...</a><br /></td></tr>
-<tr class="separator:a0f9d4bc37e95e0e18d8f9014609537eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99d2b6edba589631b335a767888c0b41"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">SyncAddrStatus</a>: 3</td></tr>
-<tr class="memdesc:a99d2b6edba589631b335a767888c0b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">The id of the correlator who found the packet.  <a href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">More...</a><br /></td></tr>
-<tr class="separator:a99d2b6edba589631b335a767888c0b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8966612bb096e37fb24bd719ebf84af"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a43aac2b503284473353e1ee77f4752f4">Gfsk</a></td></tr>
-<tr class="separator:af8966612bb096e37fb24bd719ebf84af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6be24c13091ede72fb669c44999a4a14"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:a911361153d90de336d791c60db36db82"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a2c67217bdeb4494d6cfee21a765f6dd4">RssiPkt</a></td></tr>
-<tr class="memdesc:a911361153d90de336d791c60db36db82"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RSSI of the last packet.  <a href="structPacketStatus__t.html#a2c67217bdeb4494d6cfee21a765f6dd4">More...</a><br /></td></tr>
-<tr class="separator:a911361153d90de336d791c60db36db82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69d3aa69d4d89b8178f26d60e3aef0ca"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a7562e60e21e95924c782fe31c989c223">SnrPkt</a></td></tr>
-<tr class="memdesc:a69d3aa69d4d89b8178f26d60e3aef0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SNR of the last packet.  <a href="structPacketStatus__t.html#a7562e60e21e95924c782fe31c989c223">More...</a><br /></td></tr>
-<tr class="separator:a69d3aa69d4d89b8178f26d60e3aef0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afab574879b31fac4a78b33634113e0e9"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:a8b2a54c4270a72c845c0c49459250747"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">SyncError</a>: 1</td></tr>
-<tr class="memdesc:a8b2a54c4270a72c845c0c49459250747"><td class="mdescLeft">&#160;</td><td class="mdescRight">SyncWord error on last packet.  <a href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">More...</a><br /></td></tr>
-<tr class="separator:a8b2a54c4270a72c845c0c49459250747"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bf00a7338d960b02e3934637c2f7ced"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">LengthError</a>: 1</td></tr>
-<tr class="memdesc:a6bf00a7338d960b02e3934637c2f7ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length error on last packet.  <a href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">More...</a><br /></td></tr>
-<tr class="separator:a6bf00a7338d960b02e3934637c2f7ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a984c97fea8f002ca589ee9d3461b2f75"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">CrcError</a>: 1</td></tr>
-<tr class="memdesc:a984c97fea8f002ca589ee9d3461b2f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC error on last packet.  <a href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">More...</a><br /></td></tr>
-<tr class="separator:a984c97fea8f002ca589ee9d3461b2f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0df38e91d7cfafdccff541f0aa6f3b95"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">AbortError</a>: 1</td></tr>
-<tr class="memdesc:a0df38e91d7cfafdccff541f0aa6f3b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort error on last packet.  <a href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">More...</a><br /></td></tr>
-<tr class="separator:a0df38e91d7cfafdccff541f0aa6f3b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ba86c8137959f0ab3946723e7599645"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">HeaderReceived</a>: 1</td></tr>
-<tr class="memdesc:a3ba86c8137959f0ab3946723e7599645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header received on last packet.  <a href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">More...</a><br /></td></tr>
-<tr class="separator:a3ba86c8137959f0ab3946723e7599645"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0843878f5f275979a5924e148e25650"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">PacketReceived</a>: 1</td></tr>
-<tr class="memdesc:ab0843878f5f275979a5924e148e25650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet received.  <a href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">More...</a><br /></td></tr>
-<tr class="separator:ab0843878f5f275979a5924e148e25650"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17caaf9982a3fc09d8de87ecbcea0bd2"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">PacketControlerBusy</a>: 1</td></tr>
-<tr class="memdesc:a17caaf9982a3fc09d8de87ecbcea0bd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet controller busy.  <a href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">More...</a><br /></td></tr>
-<tr class="separator:a17caaf9982a3fc09d8de87ecbcea0bd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afab574879b31fac4a78b33634113e0e9"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#afcd639885a0116baeada6c5af3c98237">ErrorStatus</a></td></tr>
-<tr class="memdesc:afab574879b31fac4a78b33634113e0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error status Byte.  <a href="structPacketStatus__t.html#afcd639885a0116baeada6c5af3c98237">More...</a><br /></td></tr>
-<tr class="separator:afab574879b31fac4a78b33634113e0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18974d5f639eb1320fea0145f16ddf82"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:a0a3cccb1fb6c3a74c8d1d4944ebe81e4"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a2568ee53ac5aa9d6fb4f165a49bec4a9">RxNoAck</a>: 1</td></tr>
-<tr class="separator:a0a3cccb1fb6c3a74c8d1d4944ebe81e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf7537f8072dc55e6abd6e134e089467"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">PacketSent</a>: 1</td></tr>
-<tr class="memdesc:adf7537f8072dc55e6abd6e134e089467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet sent, only relevant in Tx mode.  <a href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">More...</a><br /></td></tr>
-<tr class="separator:adf7537f8072dc55e6abd6e134e089467"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18974d5f639eb1320fea0145f16ddf82"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#adc497b646643e759926f57dd9511c677">TxRxStatus</a></td></tr>
-<tr class="memdesc:a18974d5f639eb1320fea0145f16ddf82"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Tx/Rx status Byte.  <a href="structPacketStatus__t.html#adc497b646643e759926f57dd9511c677">More...</a><br /></td></tr>
-<tr class="separator:a18974d5f639eb1320fea0145f16ddf82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28936dbfe1aed6aef622208e87bf19f2"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">SyncAddrStatus</a>: 3</td></tr>
-<tr class="memdesc:a28936dbfe1aed6aef622208e87bf19f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The id of the correlator who found the packet.  <a href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">More...</a><br /></td></tr>
-<tr class="separator:a28936dbfe1aed6aef622208e87bf19f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6be24c13091ede72fb669c44999a4a14"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a50fa3ee43763e967ba6f3d1646a494e4">LoRa</a></td></tr>
-<tr class="separator:a6be24c13091ede72fb669c44999a4a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3c82bec7dc57f7b43758fa6fbdc4fd7"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:adf60afaf5431630be1ab324829c30811"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a8a27bde9e410bdf0de3557f3010e0e82">RssiAvg</a></td></tr>
-<tr class="memdesc:adf60afaf5431630be1ab324829c30811"><td class="mdescLeft">&#160;</td><td class="mdescRight">The averaged RSSI.  <a href="structPacketStatus__t.html#a8a27bde9e410bdf0de3557f3010e0e82">More...</a><br /></td></tr>
-<tr class="separator:adf60afaf5431630be1ab324829c30811"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0885db771aaa1225667229839d110d6d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#af1d9c35a9f9c7fac52acb9dae48c0206">RssiSync</a></td></tr>
-<tr class="memdesc:a0885db771aaa1225667229839d110d6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RSSI of the last packet.  <a href="structPacketStatus__t.html#af1d9c35a9f9c7fac52acb9dae48c0206">More...</a><br /></td></tr>
-<tr class="separator:a0885db771aaa1225667229839d110d6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d15cfc185c5f27455571cb36d285a25"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:aca93b7a8aacb8d54dc80489c45d38fd2"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">SyncError</a>: 1</td></tr>
-<tr class="memdesc:aca93b7a8aacb8d54dc80489c45d38fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">SyncWord error on last packet.  <a href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">More...</a><br /></td></tr>
-<tr class="separator:aca93b7a8aacb8d54dc80489c45d38fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab33f903bb7690ea1fdd255dbe25389d9"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">LengthError</a>: 1</td></tr>
-<tr class="memdesc:ab33f903bb7690ea1fdd255dbe25389d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length error on last packet.  <a href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">More...</a><br /></td></tr>
-<tr class="separator:ab33f903bb7690ea1fdd255dbe25389d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a776a4f9408dab98cc834200743a04ca6"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">CrcError</a>: 1</td></tr>
-<tr class="memdesc:a776a4f9408dab98cc834200743a04ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC error on last packet.  <a href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">More...</a><br /></td></tr>
-<tr class="separator:a776a4f9408dab98cc834200743a04ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5ae542476494d325fe2f2962f1ca253"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">AbortError</a>: 1</td></tr>
-<tr class="memdesc:af5ae542476494d325fe2f2962f1ca253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort error on last packet.  <a href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">More...</a><br /></td></tr>
-<tr class="separator:af5ae542476494d325fe2f2962f1ca253"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae612316febdf787c0e8762177c8f7d2d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">HeaderReceived</a>: 1</td></tr>
-<tr class="memdesc:ae612316febdf787c0e8762177c8f7d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header received on last packet.  <a href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">More...</a><br /></td></tr>
-<tr class="separator:ae612316febdf787c0e8762177c8f7d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1baf0acf0da8be062a181f2b5c397785"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">PacketReceived</a>: 1</td></tr>
-<tr class="memdesc:a1baf0acf0da8be062a181f2b5c397785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet received.  <a href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">More...</a><br /></td></tr>
-<tr class="separator:a1baf0acf0da8be062a181f2b5c397785"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16da4c15b94b2ceb95178e3cb52f10f2"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">PacketControlerBusy</a>: 1</td></tr>
-<tr class="memdesc:a16da4c15b94b2ceb95178e3cb52f10f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet controller busy.  <a href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">More...</a><br /></td></tr>
-<tr class="separator:a16da4c15b94b2ceb95178e3cb52f10f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d15cfc185c5f27455571cb36d285a25"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#aafc619b4e2801650c14a619cd48b8a01">ErrorStatus</a></td></tr>
-<tr class="memdesc:a0d15cfc185c5f27455571cb36d285a25"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error status Byte.  <a href="structPacketStatus__t.html#aafc619b4e2801650c14a619cd48b8a01">More...</a><br /></td></tr>
-<tr class="separator:a0d15cfc185c5f27455571cb36d285a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4ae77de8f16333e6a1e84549be88146"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:add83d471ffecc3bcc5a72c1d1870aaa8"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#ac2905b6009d64807feb5f28bb4b714ca">RxPid</a>: 2</td></tr>
-<tr class="memdesc:add83d471ffecc3bcc5a72c1d1870aaa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">PID of the Rx.  <a href="structPacketStatus__t.html#ac2905b6009d64807feb5f28bb4b714ca">More...</a><br /></td></tr>
-<tr class="separator:add83d471ffecc3bcc5a72c1d1870aaa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23a2f4ad952d7b2b2870912a46c2b8f0"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a2568ee53ac5aa9d6fb4f165a49bec4a9">RxNoAck</a>: 1</td></tr>
-<tr class="separator:a23a2f4ad952d7b2b2870912a46c2b8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1403332a2764ac5d11b1f4524c835e33"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#aa116645436c5a7dd0e6263751c3cf358">RxPidErr</a>: 1</td></tr>
-<tr class="memdesc:a1403332a2764ac5d11b1f4524c835e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Received PID error.  <a href="structPacketStatus__t.html#aa116645436c5a7dd0e6263751c3cf358">More...</a><br /></td></tr>
-<tr class="separator:a1403332a2764ac5d11b1f4524c835e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3954fd9a57c7488216289eaa1de2ebe"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">PacketSent</a>: 1</td></tr>
-<tr class="memdesc:ab3954fd9a57c7488216289eaa1de2ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet sent, only relevant in Tx mode.  <a href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">More...</a><br /></td></tr>
-<tr class="separator:ab3954fd9a57c7488216289eaa1de2ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4ae77de8f16333e6a1e84549be88146"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#afcc02ddd5545eb66b5940050853d1793">TxRxStatus</a></td></tr>
-<tr class="memdesc:af4ae77de8f16333e6a1e84549be88146"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Tx/Rx status Byte.  <a href="structPacketStatus__t.html#afcc02ddd5545eb66b5940050853d1793">More...</a><br /></td></tr>
-<tr class="separator:af4ae77de8f16333e6a1e84549be88146"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac311707a386e079f08285f7a2036a997"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">SyncAddrStatus</a>: 3</td></tr>
-<tr class="memdesc:ac311707a386e079f08285f7a2036a997"><td class="mdescLeft">&#160;</td><td class="mdescRight">The id of the correlator who found the packet.  <a href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">More...</a><br /></td></tr>
-<tr class="separator:ac311707a386e079f08285f7a2036a997"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3c82bec7dc57f7b43758fa6fbdc4fd7"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a8348b349d7f7c5f9459658af0a35d02c">Flrc</a></td></tr>
-<tr class="separator:ac3c82bec7dc57f7b43758fa6fbdc4fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad71b453026fcb171d7fd603cf21cec8"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:af51018970a8fd208134dc8f3041292b1"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a8a27bde9e410bdf0de3557f3010e0e82">RssiAvg</a></td></tr>
-<tr class="memdesc:af51018970a8fd208134dc8f3041292b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The averaged RSSI.  <a href="structPacketStatus__t.html#a8a27bde9e410bdf0de3557f3010e0e82">More...</a><br /></td></tr>
-<tr class="separator:af51018970a8fd208134dc8f3041292b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e7805684ce1eaabfa9adaa7f4de13af"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#af1d9c35a9f9c7fac52acb9dae48c0206">RssiSync</a></td></tr>
-<tr class="memdesc:a6e7805684ce1eaabfa9adaa7f4de13af"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RSSI of the last packet.  <a href="structPacketStatus__t.html#af1d9c35a9f9c7fac52acb9dae48c0206">More...</a><br /></td></tr>
-<tr class="separator:a6e7805684ce1eaabfa9adaa7f4de13af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a988088ee91afd074f2fbdab638798b98"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:a37192a3b6fdfa76db2921d84a4b603ca"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">SyncError</a>: 1</td></tr>
-<tr class="memdesc:a37192a3b6fdfa76db2921d84a4b603ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">SyncWord error on last packet.  <a href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">More...</a><br /></td></tr>
-<tr class="separator:a37192a3b6fdfa76db2921d84a4b603ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a771036663b12a2826857d9d0e1eb76c9"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">LengthError</a>: 1</td></tr>
-<tr class="memdesc:a771036663b12a2826857d9d0e1eb76c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length error on last packet.  <a href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">More...</a><br /></td></tr>
-<tr class="separator:a771036663b12a2826857d9d0e1eb76c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae932a5b3c6434942d53cf4fdbedcd119"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">CrcError</a>: 1</td></tr>
-<tr class="memdesc:ae932a5b3c6434942d53cf4fdbedcd119"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC error on last packet.  <a href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">More...</a><br /></td></tr>
-<tr class="separator:ae932a5b3c6434942d53cf4fdbedcd119"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dfc67772db2ce93753b5aed0d0ad740"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">AbortError</a>: 1</td></tr>
-<tr class="memdesc:a5dfc67772db2ce93753b5aed0d0ad740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort error on last packet.  <a href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">More...</a><br /></td></tr>
-<tr class="separator:a5dfc67772db2ce93753b5aed0d0ad740"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae83e0620064a0c6a5a218c3ec24ec270"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">HeaderReceived</a>: 1</td></tr>
-<tr class="memdesc:ae83e0620064a0c6a5a218c3ec24ec270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header received on last packet.  <a href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">More...</a><br /></td></tr>
-<tr class="separator:ae83e0620064a0c6a5a218c3ec24ec270"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdbcc337f040aff1ffbe9692f336d882"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">PacketReceived</a>: 1</td></tr>
-<tr class="memdesc:acdbcc337f040aff1ffbe9692f336d882"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet received.  <a href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">More...</a><br /></td></tr>
-<tr class="separator:acdbcc337f040aff1ffbe9692f336d882"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77a0213313555993752f428240dc98af"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">PacketControlerBusy</a>: 1</td></tr>
-<tr class="memdesc:a77a0213313555993752f428240dc98af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet controller busy.  <a href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">More...</a><br /></td></tr>
-<tr class="separator:a77a0213313555993752f428240dc98af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a988088ee91afd074f2fbdab638798b98"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#ac2f0c9b01aa12a1eb3ea4a597fe9328f">ErrorStatus</a></td></tr>
-<tr class="memdesc:a988088ee91afd074f2fbdab638798b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error status Byte.  <a href="structPacketStatus__t.html#ac2f0c9b01aa12a1eb3ea4a597fe9328f">More...</a><br /></td></tr>
-<tr class="separator:a988088ee91afd074f2fbdab638798b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a2ec528f952e1bd8c18b1dc9370ad8b"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:a04d7342b2025fa7b1a4553cbc0e241a1"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">PacketSent</a>: 1</td></tr>
-<tr class="memdesc:a04d7342b2025fa7b1a4553cbc0e241a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet sent, only relevant in Tx mode.  <a href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">More...</a><br /></td></tr>
-<tr class="separator:a04d7342b2025fa7b1a4553cbc0e241a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a2ec528f952e1bd8c18b1dc9370ad8b"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#afbbd8a6fff541c41688ccfae6728f60c">TxRxStatus</a></td></tr>
-<tr class="memdesc:a8a2ec528f952e1bd8c18b1dc9370ad8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Tx/Rx status Byte.  <a href="structPacketStatus__t.html#afbbd8a6fff541c41688ccfae6728f60c">More...</a><br /></td></tr>
-<tr class="separator:a8a2ec528f952e1bd8c18b1dc9370ad8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a094f532ec3f607f3456160143ab7b6cc"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">SyncAddrStatus</a>: 3</td></tr>
-<tr class="memdesc:a094f532ec3f607f3456160143ab7b6cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The id of the correlator who found the packet.  <a href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">More...</a><br /></td></tr>
-<tr class="separator:a094f532ec3f607f3456160143ab7b6cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad71b453026fcb171d7fd603cf21cec8"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4aa4a39c0fddf3c4606146232b2d38ef">Ble</a></td></tr>
-<tr class="separator:aad71b453026fcb171d7fd603cf21cec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcda3c1239cf0412c182e021120674f4"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPacketStatus__t.html#adcda3c1239cf0412c182e021120674f4">Params</a></td></tr>
-<tr class="separator:adcda3c1239cf0412c182e021120674f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba616f9d2f3582f87fb6d8f1b444338e"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:aa70084b34b4bde8c8e27d970da86d485"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a2be6cbadee5f27f53eb345b1ad44ef4e"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a8a27bde9e410bdf0de3557f3010e0e82">RssiAvg</a></td></tr>
+<tr class="memdesc:a2be6cbadee5f27f53eb345b1ad44ef4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The averaged RSSI.  <a href="structPacketStatus__t.html#a8a27bde9e410bdf0de3557f3010e0e82">More...</a><br /></td></tr>
+<tr class="separator:a2be6cbadee5f27f53eb345b1ad44ef4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b2fb9b6f124f9f00123769701577c8f"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#af1d9c35a9f9c7fac52acb9dae48c0206">RssiSync</a></td></tr>
+<tr class="memdesc:a3b2fb9b6f124f9f00123769701577c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RSSI measured on last packet.  <a href="structPacketStatus__t.html#af1d9c35a9f9c7fac52acb9dae48c0206">More...</a><br /></td></tr>
+<tr class="separator:a3b2fb9b6f124f9f00123769701577c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7850831931252ff057ca6b43250af84d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a063b8e04cd7ead59782c1ec5b8e048f5"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">SyncError</a>: 1</td></tr>
+<tr class="memdesc:a063b8e04cd7ead59782c1ec5b8e048f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">SyncWord error on last packet.  <a href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">More...</a><br /></td></tr>
+<tr class="separator:a063b8e04cd7ead59782c1ec5b8e048f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad015b105e558f2dc206cbe94b01fe0ee"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">LengthError</a>: 1</td></tr>
+<tr class="memdesc:ad015b105e558f2dc206cbe94b01fe0ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length error on last packet.  <a href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">More...</a><br /></td></tr>
+<tr class="separator:ad015b105e558f2dc206cbe94b01fe0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e048fe4c29edf49966397f443f07398"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">CrcError</a>: 1</td></tr>
+<tr class="memdesc:a0e048fe4c29edf49966397f443f07398"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC error on last packet.  <a href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">More...</a><br /></td></tr>
+<tr class="separator:a0e048fe4c29edf49966397f443f07398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f44ba703d364608d86f5d95462a3b93"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">AbortError</a>: 1</td></tr>
+<tr class="memdesc:a6f44ba703d364608d86f5d95462a3b93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort error on last packet.  <a href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">More...</a><br /></td></tr>
+<tr class="separator:a6f44ba703d364608d86f5d95462a3b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b60d80991db3af8bed941fa9847844b"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">HeaderReceived</a>: 1</td></tr>
+<tr class="memdesc:a4b60d80991db3af8bed941fa9847844b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header received on last packet.  <a href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">More...</a><br /></td></tr>
+<tr class="separator:a4b60d80991db3af8bed941fa9847844b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f8a56e4795536441197b9d833618e1c"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">PacketReceived</a>: 1</td></tr>
+<tr class="memdesc:a7f8a56e4795536441197b9d833618e1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet received.  <a href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">More...</a><br /></td></tr>
+<tr class="separator:a7f8a56e4795536441197b9d833618e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb083f1456a02a7d1a6440ef66eef36e"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">PacketControlerBusy</a>: 1</td></tr>
+<tr class="memdesc:afb083f1456a02a7d1a6440ef66eef36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet controller busy.  <a href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">More...</a><br /></td></tr>
+<tr class="separator:afb083f1456a02a7d1a6440ef66eef36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7850831931252ff057ca6b43250af84d"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#aef089e8ce2c5f60f2dc7f0167ec7ea81">ErrorStatus</a></td></tr>
+<tr class="memdesc:a7850831931252ff057ca6b43250af84d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error status Byte.  <a href="structPacketStatus__t.html#aef089e8ce2c5f60f2dc7f0167ec7ea81">More...</a><br /></td></tr>
+<tr class="separator:a7850831931252ff057ca6b43250af84d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8844f54c93f15c664684941bacc12ca"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a248b9e97bde0a1d451bd91599f0ee986"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a2568ee53ac5aa9d6fb4f165a49bec4a9">RxNoAck</a>: 1</td></tr>
+<tr class="memdesc:a248b9e97bde0a1d451bd91599f0ee986"><td class="mdescLeft">&#160;</td><td class="mdescRight">No acknowledgment received for Rx with variable length packets.  <a href="structPacketStatus__t.html#a2568ee53ac5aa9d6fb4f165a49bec4a9">More...</a><br /></td></tr>
+<tr class="separator:a248b9e97bde0a1d451bd91599f0ee986"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63707c2d06cf16b927d883656b0abfa3"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">PacketSent</a>: 1</td></tr>
+<tr class="memdesc:a63707c2d06cf16b927d883656b0abfa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet sent, only relevant in Tx mode.  <a href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">More...</a><br /></td></tr>
+<tr class="separator:a63707c2d06cf16b927d883656b0abfa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8844f54c93f15c664684941bacc12ca"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a031d939178b4f0daad346a0a0e213f58">TxRxStatus</a></td></tr>
+<tr class="memdesc:ae8844f54c93f15c664684941bacc12ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Tx/Rx status Byte.  <a href="structPacketStatus__t.html#a031d939178b4f0daad346a0a0e213f58">More...</a><br /></td></tr>
+<tr class="separator:ae8844f54c93f15c664684941bacc12ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afed8167425627221695aeaa38b1d7654"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">SyncAddrStatus</a>: 3</td></tr>
+<tr class="memdesc:afed8167425627221695aeaa38b1d7654"><td class="mdescLeft">&#160;</td><td class="mdescRight">The id of the correlator who found the packet.  <a href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">More...</a><br /></td></tr>
+<tr class="separator:afed8167425627221695aeaa38b1d7654"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa70084b34b4bde8c8e27d970da86d485"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#aa8fea1cefb4d766bc86d260f7b1f424f">Gfsk</a></td></tr>
+<tr class="separator:aa70084b34b4bde8c8e27d970da86d485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f5db4b320d635c3423c3538973966e8"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a0658b8556d1c84a7bcffdd7a0c1ed35c"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a2c67217bdeb4494d6cfee21a765f6dd4">RssiPkt</a></td></tr>
+<tr class="memdesc:a0658b8556d1c84a7bcffdd7a0c1ed35c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RSSI of the last packet.  <a href="structPacketStatus__t.html#a2c67217bdeb4494d6cfee21a765f6dd4">More...</a><br /></td></tr>
+<tr class="separator:a0658b8556d1c84a7bcffdd7a0c1ed35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ffa88008be80b79ab9d8729aa49a6e0"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a7562e60e21e95924c782fe31c989c223">SnrPkt</a></td></tr>
+<tr class="memdesc:a4ffa88008be80b79ab9d8729aa49a6e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SNR of the last packet.  <a href="structPacketStatus__t.html#a7562e60e21e95924c782fe31c989c223">More...</a><br /></td></tr>
+<tr class="separator:a4ffa88008be80b79ab9d8729aa49a6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e1b1019dd95f59cee0829e0a7271812"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a5f95796db845d9c751fbffffd7ea9e6a"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">SyncError</a>: 1</td></tr>
+<tr class="memdesc:a5f95796db845d9c751fbffffd7ea9e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">SyncWord error on last packet.  <a href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">More...</a><br /></td></tr>
+<tr class="separator:a5f95796db845d9c751fbffffd7ea9e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fbac54ff328c56dc97a0ff028d097cb"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">LengthError</a>: 1</td></tr>
+<tr class="memdesc:a7fbac54ff328c56dc97a0ff028d097cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length error on last packet.  <a href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">More...</a><br /></td></tr>
+<tr class="separator:a7fbac54ff328c56dc97a0ff028d097cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f97fabe00ece8aa19c90aa11bc2f730"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">CrcError</a>: 1</td></tr>
+<tr class="memdesc:a9f97fabe00ece8aa19c90aa11bc2f730"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC error on last packet.  <a href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">More...</a><br /></td></tr>
+<tr class="separator:a9f97fabe00ece8aa19c90aa11bc2f730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61cacafe7908c40b84c81fd376221e38"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">AbortError</a>: 1</td></tr>
+<tr class="memdesc:a61cacafe7908c40b84c81fd376221e38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort error on last packet.  <a href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">More...</a><br /></td></tr>
+<tr class="separator:a61cacafe7908c40b84c81fd376221e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac58957e7d3a6c5f8c45736b264fc479d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">HeaderReceived</a>: 1</td></tr>
+<tr class="memdesc:ac58957e7d3a6c5f8c45736b264fc479d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header received on last packet.  <a href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">More...</a><br /></td></tr>
+<tr class="separator:ac58957e7d3a6c5f8c45736b264fc479d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f1b0ed2e3a215f7dffd400b4aca93e"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">PacketReceived</a>: 1</td></tr>
+<tr class="memdesc:a15f1b0ed2e3a215f7dffd400b4aca93e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet received.  <a href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">More...</a><br /></td></tr>
+<tr class="separator:a15f1b0ed2e3a215f7dffd400b4aca93e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a590b366927800600c59b1e44b64e235e"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">PacketControlerBusy</a>: 1</td></tr>
+<tr class="memdesc:a590b366927800600c59b1e44b64e235e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet controller busy.  <a href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">More...</a><br /></td></tr>
+<tr class="separator:a590b366927800600c59b1e44b64e235e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e1b1019dd95f59cee0829e0a7271812"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a2af10b8fc21c683043ada02e04fdb8e0">ErrorStatus</a></td></tr>
+<tr class="memdesc:a5e1b1019dd95f59cee0829e0a7271812"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error status Byte.  <a href="structPacketStatus__t.html#a2af10b8fc21c683043ada02e04fdb8e0">More...</a><br /></td></tr>
+<tr class="separator:a5e1b1019dd95f59cee0829e0a7271812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38eed6851f3ff95fb21aeb3719198f61"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:aa06e49861a8f34711ab82146242b4fc0"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a2568ee53ac5aa9d6fb4f165a49bec4a9">RxNoAck</a>: 1</td></tr>
+<tr class="memdesc:aa06e49861a8f34711ab82146242b4fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">No acknowledgment received for Rx with variable length packets.  <a href="structPacketStatus__t.html#a2568ee53ac5aa9d6fb4f165a49bec4a9">More...</a><br /></td></tr>
+<tr class="separator:aa06e49861a8f34711ab82146242b4fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c49874cf4a5255bff799c7de23ed79b"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">PacketSent</a>: 1</td></tr>
+<tr class="memdesc:a0c49874cf4a5255bff799c7de23ed79b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet sent, only relevant in Tx mode.  <a href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">More...</a><br /></td></tr>
+<tr class="separator:a0c49874cf4a5255bff799c7de23ed79b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38eed6851f3ff95fb21aeb3719198f61"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a210be99038e20e8a9c351162e4e0afd3">TxRxStatus</a></td></tr>
+<tr class="memdesc:a38eed6851f3ff95fb21aeb3719198f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Tx/Rx status Byte.  <a href="structPacketStatus__t.html#a210be99038e20e8a9c351162e4e0afd3">More...</a><br /></td></tr>
+<tr class="separator:a38eed6851f3ff95fb21aeb3719198f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23dada830afb8e19666ef0209320c126"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">SyncAddrStatus</a>: 3</td></tr>
+<tr class="memdesc:a23dada830afb8e19666ef0209320c126"><td class="mdescLeft">&#160;</td><td class="mdescRight">The id of the correlator who found the packet.  <a href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">More...</a><br /></td></tr>
+<tr class="separator:a23dada830afb8e19666ef0209320c126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f5db4b320d635c3423c3538973966e8"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#ad9c113eb99d8442a47defcc31d3d65dd">LoRa</a></td></tr>
+<tr class="separator:a7f5db4b320d635c3423c3538973966e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a2ec8959ea968fe932ea5227cebd034"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:aa1e4bba7f9cce8feed1508fd180c0395"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a8a27bde9e410bdf0de3557f3010e0e82">RssiAvg</a></td></tr>
+<tr class="memdesc:aa1e4bba7f9cce8feed1508fd180c0395"><td class="mdescLeft">&#160;</td><td class="mdescRight">The averaged RSSI.  <a href="structPacketStatus__t.html#a8a27bde9e410bdf0de3557f3010e0e82">More...</a><br /></td></tr>
+<tr class="separator:aa1e4bba7f9cce8feed1508fd180c0395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00084855d831baa4fce9fc73d0ec4c1f"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#af1d9c35a9f9c7fac52acb9dae48c0206">RssiSync</a></td></tr>
+<tr class="memdesc:a00084855d831baa4fce9fc73d0ec4c1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RSSI of the last packet.  <a href="structPacketStatus__t.html#af1d9c35a9f9c7fac52acb9dae48c0206">More...</a><br /></td></tr>
+<tr class="separator:a00084855d831baa4fce9fc73d0ec4c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea7b8cca351545a434ce91e672344e79"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a34f28c04aac5e959c11a2a63b96b1715"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">SyncError</a>: 1</td></tr>
+<tr class="memdesc:a34f28c04aac5e959c11a2a63b96b1715"><td class="mdescLeft">&#160;</td><td class="mdescRight">SyncWord error on last packet.  <a href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">More...</a><br /></td></tr>
+<tr class="separator:a34f28c04aac5e959c11a2a63b96b1715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e56df3baa8fb16133171f3e3d738439"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">LengthError</a>: 1</td></tr>
+<tr class="memdesc:a8e56df3baa8fb16133171f3e3d738439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length error on last packet.  <a href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">More...</a><br /></td></tr>
+<tr class="separator:a8e56df3baa8fb16133171f3e3d738439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0788fd8a4c427e417050bf3bb2219d35"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">CrcError</a>: 1</td></tr>
+<tr class="memdesc:a0788fd8a4c427e417050bf3bb2219d35"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC error on last packet.  <a href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">More...</a><br /></td></tr>
+<tr class="separator:a0788fd8a4c427e417050bf3bb2219d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55069a9947dc7677e5588f8603ce1afd"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">AbortError</a>: 1</td></tr>
+<tr class="memdesc:a55069a9947dc7677e5588f8603ce1afd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort error on last packet.  <a href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">More...</a><br /></td></tr>
+<tr class="separator:a55069a9947dc7677e5588f8603ce1afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31468e2a5f32e72ab3b50457a77e6ab7"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">HeaderReceived</a>: 1</td></tr>
+<tr class="memdesc:a31468e2a5f32e72ab3b50457a77e6ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header received on last packet.  <a href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">More...</a><br /></td></tr>
+<tr class="separator:a31468e2a5f32e72ab3b50457a77e6ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af335d6ed91d7b4f999f053e4ecb58d5d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">PacketReceived</a>: 1</td></tr>
+<tr class="memdesc:af335d6ed91d7b4f999f053e4ecb58d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet received.  <a href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">More...</a><br /></td></tr>
+<tr class="separator:af335d6ed91d7b4f999f053e4ecb58d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca6890992fa3f0c3cc940ce664ebdd90"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">PacketControlerBusy</a>: 1</td></tr>
+<tr class="memdesc:aca6890992fa3f0c3cc940ce664ebdd90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet controller busy.  <a href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">More...</a><br /></td></tr>
+<tr class="separator:aca6890992fa3f0c3cc940ce664ebdd90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea7b8cca351545a434ce91e672344e79"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a45523ac1abcdf0ecc6ad6d5acdc40ac6">ErrorStatus</a></td></tr>
+<tr class="memdesc:aea7b8cca351545a434ce91e672344e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error status Byte.  <a href="structPacketStatus__t.html#a45523ac1abcdf0ecc6ad6d5acdc40ac6">More...</a><br /></td></tr>
+<tr class="separator:aea7b8cca351545a434ce91e672344e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab396dd84d8725a5a8d7298005ebcfe53"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a96335c1a3e18857b33cfb1e141d3873a"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#ac2905b6009d64807feb5f28bb4b714ca">RxPid</a>: 2</td></tr>
+<tr class="memdesc:a96335c1a3e18857b33cfb1e141d3873a"><td class="mdescLeft">&#160;</td><td class="mdescRight">PID of the Rx.  <a href="structPacketStatus__t.html#ac2905b6009d64807feb5f28bb4b714ca">More...</a><br /></td></tr>
+<tr class="separator:a96335c1a3e18857b33cfb1e141d3873a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af377fc1d352ee0cab5f868f473be4da8"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a2568ee53ac5aa9d6fb4f165a49bec4a9">RxNoAck</a>: 1</td></tr>
+<tr class="memdesc:af377fc1d352ee0cab5f868f473be4da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">No acknowledgment received for Rx with variable length packets.  <a href="structPacketStatus__t.html#a2568ee53ac5aa9d6fb4f165a49bec4a9">More...</a><br /></td></tr>
+<tr class="separator:af377fc1d352ee0cab5f868f473be4da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cde0d7243c72796eea1d8dc6df94ea0"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#aa116645436c5a7dd0e6263751c3cf358">RxPidErr</a>: 1</td></tr>
+<tr class="memdesc:a6cde0d7243c72796eea1d8dc6df94ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Received PID error.  <a href="structPacketStatus__t.html#aa116645436c5a7dd0e6263751c3cf358">More...</a><br /></td></tr>
+<tr class="separator:a6cde0d7243c72796eea1d8dc6df94ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39a32105285ec7b61b982f54e2b83f40"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">PacketSent</a>: 1</td></tr>
+<tr class="memdesc:a39a32105285ec7b61b982f54e2b83f40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet sent, only relevant in Tx mode.  <a href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">More...</a><br /></td></tr>
+<tr class="separator:a39a32105285ec7b61b982f54e2b83f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab396dd84d8725a5a8d7298005ebcfe53"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a2cf594516f2f2863ff9b3376cb0a22b7">TxRxStatus</a></td></tr>
+<tr class="memdesc:ab396dd84d8725a5a8d7298005ebcfe53"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Tx/Rx status Byte.  <a href="structPacketStatus__t.html#a2cf594516f2f2863ff9b3376cb0a22b7">More...</a><br /></td></tr>
+<tr class="separator:ab396dd84d8725a5a8d7298005ebcfe53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a302ecf045bf7d1a7a8a8d0a194f247e6"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">SyncAddrStatus</a>: 3</td></tr>
+<tr class="memdesc:a302ecf045bf7d1a7a8a8d0a194f247e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The id of the correlator who found the packet.  <a href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">More...</a><br /></td></tr>
+<tr class="separator:a302ecf045bf7d1a7a8a8d0a194f247e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a2ec8959ea968fe932ea5227cebd034"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1b58742caa1fa51599c05929fdd73b1b">Flrc</a></td></tr>
+<tr class="separator:a3a2ec8959ea968fe932ea5227cebd034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ed09b8f0429f7dfc8611738706b2566"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:abd3c84abbfdcef0bf96736313acd3bb2"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a8a27bde9e410bdf0de3557f3010e0e82">RssiAvg</a></td></tr>
+<tr class="memdesc:abd3c84abbfdcef0bf96736313acd3bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The averaged RSSI.  <a href="structPacketStatus__t.html#a8a27bde9e410bdf0de3557f3010e0e82">More...</a><br /></td></tr>
+<tr class="separator:abd3c84abbfdcef0bf96736313acd3bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a01be7a5a23dbf494cee02cbbd9cea6"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;int8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#af1d9c35a9f9c7fac52acb9dae48c0206">RssiSync</a></td></tr>
+<tr class="memdesc:a0a01be7a5a23dbf494cee02cbbd9cea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RSSI of the last packet.  <a href="structPacketStatus__t.html#af1d9c35a9f9c7fac52acb9dae48c0206">More...</a><br /></td></tr>
+<tr class="separator:a0a01be7a5a23dbf494cee02cbbd9cea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5ab515ab9907ca6b0fcae634b2272d4"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:aab72cc196a1bc34f53a0b56041c65348"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">SyncError</a>: 1</td></tr>
+<tr class="memdesc:aab72cc196a1bc34f53a0b56041c65348"><td class="mdescLeft">&#160;</td><td class="mdescRight">SyncWord error on last packet.  <a href="structPacketStatus__t.html#a1f6eef58e8bfe71f107332e491b67de9">More...</a><br /></td></tr>
+<tr class="separator:aab72cc196a1bc34f53a0b56041c65348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7a07881754dc571c813640635a517e3"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">LengthError</a>: 1</td></tr>
+<tr class="memdesc:ac7a07881754dc571c813640635a517e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length error on last packet.  <a href="structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab">More...</a><br /></td></tr>
+<tr class="separator:ac7a07881754dc571c813640635a517e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd4bc83275cd3fa479b0ff01d010ee8"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">CrcError</a>: 1</td></tr>
+<tr class="memdesc:abcd4bc83275cd3fa479b0ff01d010ee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC error on last packet.  <a href="structPacketStatus__t.html#a4a9efea2253b123d3e336471ec6ad978">More...</a><br /></td></tr>
+<tr class="separator:abcd4bc83275cd3fa479b0ff01d010ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1abdf4d3e43f3fa0065a6d120a00eb7"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">AbortError</a>: 1</td></tr>
+<tr class="memdesc:ad1abdf4d3e43f3fa0065a6d120a00eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort error on last packet.  <a href="structPacketStatus__t.html#a4f3ecdda1fdb163c2bb5889a5e7186d1">More...</a><br /></td></tr>
+<tr class="separator:ad1abdf4d3e43f3fa0065a6d120a00eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fb8c83f8cff292ba059b8728c17602b"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">HeaderReceived</a>: 1</td></tr>
+<tr class="memdesc:a3fb8c83f8cff292ba059b8728c17602b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header received on last packet.  <a href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">More...</a><br /></td></tr>
+<tr class="separator:a3fb8c83f8cff292ba059b8728c17602b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0355909e83aee731a2761848f961cce4"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">PacketReceived</a>: 1</td></tr>
+<tr class="memdesc:a0355909e83aee731a2761848f961cce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet received.  <a href="structPacketStatus__t.html#aa29cf0aceff236e0eef82e0170bc87f9">More...</a><br /></td></tr>
+<tr class="separator:a0355909e83aee731a2761848f961cce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5db39d579da879d2672c4cfd90b6639e"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">PacketControlerBusy</a>: 1</td></tr>
+<tr class="memdesc:a5db39d579da879d2672c4cfd90b6639e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet controller busy.  <a href="structPacketStatus__t.html#a414d711ba17a83fb7a456be215a6c32f">More...</a><br /></td></tr>
+<tr class="separator:a5db39d579da879d2672c4cfd90b6639e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5ab515ab9907ca6b0fcae634b2272d4"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a01dcfeddfce6bba7719d18d7140c40c2">ErrorStatus</a></td></tr>
+<tr class="memdesc:ae5ab515ab9907ca6b0fcae634b2272d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error status Byte.  <a href="structPacketStatus__t.html#a01dcfeddfce6bba7719d18d7140c40c2">More...</a><br /></td></tr>
+<tr class="separator:ae5ab515ab9907ca6b0fcae634b2272d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93b53f791461e890a6694076d80ad2b1"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:ad4837cd7ec01308975d1c59ef9fc3a58"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">PacketSent</a>: 1</td></tr>
+<tr class="memdesc:ad4837cd7ec01308975d1c59ef9fc3a58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet sent, only relevant in Tx mode.  <a href="structPacketStatus__t.html#a747f25d9c4662fadf62b217c758cd60a">More...</a><br /></td></tr>
+<tr class="separator:ad4837cd7ec01308975d1c59ef9fc3a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93b53f791461e890a6694076d80ad2b1"><td class="memItemLeft" valign="top">&#160;&#160;&#160;&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a295fc280da76e7c3824886ae2b51bbc8">TxRxStatus</a></td></tr>
+<tr class="memdesc:a93b53f791461e890a6694076d80ad2b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Tx/Rx status Byte.  <a href="structPacketStatus__t.html#a295fc280da76e7c3824886ae2b51bbc8">More...</a><br /></td></tr>
+<tr class="separator:a93b53f791461e890a6694076d80ad2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad85206e5dee3c52145815454674d73de"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">SyncAddrStatus</a>: 3</td></tr>
+<tr class="memdesc:ad85206e5dee3c52145815454674d73de"><td class="mdescLeft">&#160;</td><td class="mdescRight">The id of the correlator who found the packet.  <a href="structPacketStatus__t.html#a1f773456c16a6b853b3747d0e6327ecd">More...</a><br /></td></tr>
+<tr class="separator:ad85206e5dee3c52145815454674d73de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ed09b8f0429f7dfc8611738706b2566"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketStatus__t.html#a53f05f65c4a661b7239953bc47689f4c">Ble</a></td></tr>
+<tr class="separator:a8ed09b8f0429f7dfc8611738706b2566"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba616f9d2f3582f87fb6d8f1b444338e"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPacketStatus__t.html#aba616f9d2f3582f87fb6d8f1b444338e">Params</a></td></tr>
+<tr class="separator:aba616f9d2f3582f87fb6d8f1b444338e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents the packet status for every packet type. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00989">989</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a4f3ecdda1fdb163c2bb5889a5e7186d1" name="a4f3ecdda1fdb163c2bb5889a5e7186d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f3ecdda1fdb163c2bb5889a5e7186d1">&#9670;&#160;</a></span>AbortError</h2>
@@ -295,10 +320,14 @@ Data Fields</h2></td></tr>
 
 <p>Abort error on last packet. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l01000">1000</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
+
 </div>
 </div>
-<a id="a4aa4a39c0fddf3c4606146232b2d38ef" name="a4aa4a39c0fddf3c4606146232b2d38ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4aa4a39c0fddf3c4606146232b2d38ef">&#9670;&#160;</a></span></h2>
+<a id="a53f05f65c4a661b7239953bc47689f4c" name="a53f05f65c4a661b7239953bc47689f4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53f05f65c4a661b7239953bc47689f4c">&#9670;&#160;</a></span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -308,6 +337,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
 
 </div>
 </div>
@@ -325,10 +356,32 @@ Data Fields</h2></td></tr>
 
 <p>CRC error on last packet. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00999">999</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
+
 </div>
 </div>
-<a id="a2ad363662633bb80472c866fc4bcbc04" name="a2ad363662633bb80472c866fc4bcbc04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ad363662633bb80472c866fc4bcbc04">&#9670;&#160;</a></span> <span class="overload">[1/4]</span></h2>
+<a id="aef089e8ce2c5f60f2dc7f0167ec7ea81" name="aef089e8ce2c5f60f2dc7f0167ec7ea81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef089e8ce2c5f60f2dc7f0167ec7ea81">&#9670;&#160;</a></span> <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct  { ... }  PacketStatus_t::ErrorStatus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The error status Byte. </p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
+
+</div>
+</div>
+<a id="a2af10b8fc21c683043ada02e04fdb8e0" name="a2af10b8fc21c683043ada02e04fdb8e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2af10b8fc21c683043ada02e04fdb8e0">&#9670;&#160;</a></span> <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -343,8 +396,8 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="afcd639885a0116baeada6c5af3c98237" name="afcd639885a0116baeada6c5af3c98237"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afcd639885a0116baeada6c5af3c98237">&#9670;&#160;</a></span> <span class="overload">[2/4]</span></h2>
+<a id="a45523ac1abcdf0ecc6ad6d5acdc40ac6" name="a45523ac1abcdf0ecc6ad6d5acdc40ac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45523ac1abcdf0ecc6ad6d5acdc40ac6">&#9670;&#160;</a></span> <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -359,8 +412,8 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="aafc619b4e2801650c14a619cd48b8a01" name="aafc619b4e2801650c14a619cd48b8a01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafc619b4e2801650c14a619cd48b8a01">&#9670;&#160;</a></span> <span class="overload">[3/4]</span></h2>
+<a id="a01dcfeddfce6bba7719d18d7140c40c2" name="a01dcfeddfce6bba7719d18d7140c40c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01dcfeddfce6bba7719d18d7140c40c2">&#9670;&#160;</a></span> <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -375,24 +428,8 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="ac2f0c9b01aa12a1eb3ea4a597fe9328f" name="ac2f0c9b01aa12a1eb3ea4a597fe9328f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2f0c9b01aa12a1eb3ea4a597fe9328f">&#9670;&#160;</a></span> <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct  { ... }  PacketStatus_t::ErrorStatus</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The error status Byte. </p>
-
-</div>
-</div>
-<a id="a8348b349d7f7c5f9459658af0a35d02c" name="a8348b349d7f7c5f9459658af0a35d02c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8348b349d7f7c5f9459658af0a35d02c">&#9670;&#160;</a></span></h2>
+<a id="a1b58742caa1fa51599c05929fdd73b1b" name="a1b58742caa1fa51599c05929fdd73b1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b58742caa1fa51599c05929fdd73b1b">&#9670;&#160;</a></span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -403,10 +440,12 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
+
 </div>
 </div>
-<a id="a43aac2b503284473353e1ee77f4752f4" name="a43aac2b503284473353e1ee77f4752f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43aac2b503284473353e1ee77f4752f4">&#9670;&#160;</a></span></h2>
+<a id="aa8fea1cefb4d766bc86d260f7b1f424f" name="aa8fea1cefb4d766bc86d260f7b1f424f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8fea1cefb4d766bc86d260f7b1f424f">&#9670;&#160;</a></span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -416,6 +455,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
 
 </div>
 </div>
@@ -433,6 +474,10 @@ Data Fields</h2></td></tr>
 
 <p>Header received on last packet. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l01001">1001</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
+
 </div>
 </div>
 <a id="a553ab2c03146758690ab0437171895ab" name="a553ab2c03146758690ab0437171895ab"></a>
@@ -449,10 +494,14 @@ Data Fields</h2></td></tr>
 
 <p>Length error on last packet. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00998">998</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
+
 </div>
 </div>
-<a id="a50fa3ee43763e967ba6f3d1646a494e4" name="a50fa3ee43763e967ba6f3d1646a494e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50fa3ee43763e967ba6f3d1646a494e4">&#9670;&#160;</a></span></h2>
+<a id="ad9c113eb99d8442a47defcc31d3d65dd" name="ad9c113eb99d8442a47defcc31d3d65dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9c113eb99d8442a47defcc31d3d65dd">&#9670;&#160;</a></span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -462,6 +511,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
 
 </div>
 </div>
@@ -479,6 +530,10 @@ Data Fields</h2></td></tr>
 
 <p>Packet controller busy. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l01003">1003</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
+
 </div>
 </div>
 <a id="aa29cf0aceff236e0eef82e0170bc87f9" name="aa29cf0aceff236e0eef82e0170bc87f9"></a>
@@ -494,6 +549,10 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Packet received. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l01002">1002</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
 
 </div>
 </div>
@@ -511,6 +570,10 @@ Data Fields</h2></td></tr>
 
 <p>Packet sent, only relevant in Tx mode. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l01008">1008</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
+
 </div>
 </div>
 <a id="a3ef54bfe6c9061cf1b47d4ec98543164" name="a3ef54bfe6c9061cf1b47d4ec98543164"></a>
@@ -527,10 +590,14 @@ Data Fields</h2></td></tr>
 
 <p>Packet to which the packet status are referring to. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00991">991</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
+
 </div>
 </div>
-<a id="adcda3c1239cf0412c182e021120674f4" name="adcda3c1239cf0412c182e021120674f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcda3c1239cf0412c182e021120674f4">&#9670;&#160;</a></span></h2>
+<a id="aba616f9d2f3582f87fb6d8f1b444338e" name="aba616f9d2f3582f87fb6d8f1b444338e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba616f9d2f3582f87fb6d8f1b444338e">&#9670;&#160;</a></span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -540,6 +607,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
 
 </div>
 </div>
@@ -557,6 +626,10 @@ Data Fields</h2></td></tr>
 
 <p>The averaged RSSI. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00994">994</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
+
 </div>
 </div>
 <a id="a2c67217bdeb4494d6cfee21a765f6dd4" name="a2c67217bdeb4494d6cfee21a765f6dd4"></a>
@@ -572,6 +645,10 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The RSSI of the last packet. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l01014">1014</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
 
 </div>
 </div>
@@ -590,6 +667,10 @@ Data Fields</h2></td></tr>
 <p>The RSSI measured on last packet. </p>
 <p>The RSSI of the last packet. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00995">995</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
+
 </div>
 </div>
 <a id="a2568ee53ac5aa9d6fb4f165a49bec4a9" name="a2568ee53ac5aa9d6fb4f165a49bec4a9"></a>
@@ -603,7 +684,12 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>No acknowledgment received for Rx with variable length packets </p>
+
+<p>No acknowledgment received for Rx with variable length packets. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l01006">1006</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
 
 </div>
 </div>
@@ -621,6 +707,10 @@ Data Fields</h2></td></tr>
 
 <p>PID of the Rx. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l01046">1046</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
+
 </div>
 </div>
 <a id="aa116645436c5a7dd0e6263751c3cf358" name="aa116645436c5a7dd0e6263751c3cf358"></a>
@@ -636,6 +726,10 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Received PID error. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l01049">1049</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
 
 </div>
 </div>
@@ -653,6 +747,10 @@ Data Fields</h2></td></tr>
 
 <p>The SNR of the last packet. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l01015">1015</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
+
 </div>
 </div>
 <a id="a1f773456c16a6b853b3747d0e6327ecd" name="a1f773456c16a6b853b3747d0e6327ecd"></a>
@@ -668,6 +766,10 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The id of the correlator who found the packet. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l01011">1011</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
 
 </div>
 </div>
@@ -685,10 +787,32 @@ Data Fields</h2></td></tr>
 
 <p>SyncWord error on last packet. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00997">997</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
+
 </div>
 </div>
-<a id="a691ba8dfb1c85a8d4eecfa52fa46a354" name="a691ba8dfb1c85a8d4eecfa52fa46a354"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a691ba8dfb1c85a8d4eecfa52fa46a354">&#9670;&#160;</a></span> <span class="overload">[1/4]</span></h2>
+<a id="a031d939178b4f0daad346a0a0e213f58" name="a031d939178b4f0daad346a0a0e213f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a031d939178b4f0daad346a0a0e213f58">&#9670;&#160;</a></span> <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct  { ... }  PacketStatus_t::TxRxStatus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The Tx/Rx status Byte. </p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00390">SX1280GetPacketStatus()</a>.</p>
+
+</div>
+</div>
+<a id="a210be99038e20e8a9c351162e4e0afd3" name="a210be99038e20e8a9c351162e4e0afd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a210be99038e20e8a9c351162e4e0afd3">&#9670;&#160;</a></span> <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -703,8 +827,8 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="adc497b646643e759926f57dd9511c677" name="adc497b646643e759926f57dd9511c677"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc497b646643e759926f57dd9511c677">&#9670;&#160;</a></span> <span class="overload">[2/4]</span></h2>
+<a id="a2cf594516f2f2863ff9b3376cb0a22b7" name="a2cf594516f2f2863ff9b3376cb0a22b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cf594516f2f2863ff9b3376cb0a22b7">&#9670;&#160;</a></span> <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -719,24 +843,8 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="afcc02ddd5545eb66b5940050853d1793" name="afcc02ddd5545eb66b5940050853d1793"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afcc02ddd5545eb66b5940050853d1793">&#9670;&#160;</a></span> <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct  { ... }  PacketStatus_t::TxRxStatus</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The Tx/Rx status Byte. </p>
-
-</div>
-</div>
-<a id="afbbd8a6fff541c41688ccfae6728f60c" name="afbbd8a6fff541c41688ccfae6728f60c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afbbd8a6fff541c41688ccfae6728f60c">&#9670;&#160;</a></span> <span class="overload">[4/4]</span></h2>
+<a id="a295fc280da76e7c3824886ae2b51bbc8" name="a295fc280da76e7c3824886ae2b51bbc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a295fc280da76e7c3824886ae2b51bbc8">&#9670;&#160;</a></span> <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -755,9 +863,13 @@ Data Fields</h2></td></tr>
 <li>modules/sx1280/include/<a class="el" href="sx1280_8h_source.html">sx1280.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structPacketStatus__t.html">PacketStatus_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

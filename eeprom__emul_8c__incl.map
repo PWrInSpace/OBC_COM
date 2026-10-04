@@ -1,0 +1,10 @@
+<map id="nvs/src/eeprom_emul.c" name="nvs/src/eeprom_emul.c">
+<area shape="rect" id="node1" title=" " alt="" coords="185,5,358,31"/>
+<area shape="rect" id="node2" href="$eeprom__emul_8h.html" title=" " alt="" coords="209,79,333,104"/>
+<area shape="rect" id="node3" href="$eeprom__emul__conf_8h.html" title="EEPROM emulation configuration file. This file should be copied to the application folder and renamed..." alt="" coords="5,152,164,177"/>
+<area shape="rect" id="node4" href="$eeprom__emul__types_8h.html" title=" " alt="" coords="188,152,355,177"/>
+<area shape="rect" id="node5" href="$flash__interface_8h.html" title=" " alt="" coords="379,152,510,177"/>
+<area shape="rect" id="node6" title=" " alt="" coords="212,225,347,251"/>
+<area shape="rect" id="node7" title=" " alt="" coords="371,225,519,251"/>
+<area shape="rect" id="node8" title=" " alt="" coords="543,225,695,251"/>
+</map>

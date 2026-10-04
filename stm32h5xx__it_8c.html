@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('stm32h5xx__it_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,11 +89,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a> &#124;
@@ -95,46 +111,12 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for stm32h5xx_it.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="stm32h5xx__it_8c__incl.png" border="0" usemap="#aCore_2Src_2stm32h5xx__it_8c" alt=""/></div>
-<map name="aCore_2Src_2stm32h5xx__it_8c" id="aCore_2Src_2stm32h5xx__it_8c">
-<area shape="rect" title="Interrupt Service Routines." alt="" coords="2229,5,2409,31"/>
-<area shape="rect" href="main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="1345,152,1412,177"/>
-<area shape="rect" title=" " alt="" coords="2132,225,2228,251"/>
-<area shape="rect" title=" " alt="" coords="2252,225,2327,251"/>
-<area shape="rect" href="stm32h5xx__it_8h.html" title="This file contains the headers of the interrupt handlers." alt="" coords="2257,79,2380,104"/>
-<area shape="rect" title=" " alt="" coords="2405,79,2507,104"/>
-<area shape="rect" title=" " alt="" coords="2531,79,2701,104"/>
-<area shape="rect" href="usart_8h.html" title="This file contains all the function prototypes for the usart.c file." alt="" coords="1901,79,1968,104"/>
-<area shape="rect" href="usb__config_8h.html" title=" " alt="" coords="2725,79,2827,104"/>
-<area shape="rect" href="led_8h.html" title=" " alt="" coords="2921,79,2975,104"/>
-<area shape="rect" title=" " alt="" coords="514,225,649,251"/>
-<area shape="rect" title=" " alt="" coords="673,225,825,251"/>
-<area shape="rect" title=" " alt="" coords="849,225,1020,251"/>
-<area shape="rect" title=" " alt="" coords="1045,225,1193,251"/>
-<area shape="rect" title=" " alt="" coords="1217,225,1375,251"/>
-<area shape="rect" title=" " alt="" coords="1400,225,1557,251"/>
-<area shape="rect" title=" " alt="" coords="1581,225,1733,251"/>
-<area shape="rect" title=" " alt="" coords="1758,225,1906,251"/>
-<area shape="rect" title=" " alt="" coords="1930,225,2107,251"/>
-<area shape="rect" title=" " alt="" coords="5,225,163,251"/>
-<area shape="rect" title=" " alt="" coords="187,225,341,251"/>
-<area shape="rect" title=" " alt="" coords="366,225,490,251"/>
-<area shape="rect" href="usbd__core_8h.html" title="Header file for usbd_core.c file." alt="" coords="2457,152,2557,177"/>
-<area shape="rect" title=" " alt="" coords="2729,152,2823,177"/>
-<area shape="rect" title=" " alt="" coords="2848,152,2957,177"/>
-<area shape="rect" href="usbd__desc_8h.html" title=" " alt="" coords="2602,152,2705,177"/>
-<area shape="rect" href="usbd__conf_8h.html" title=" " alt="" coords="2447,372,2545,397"/>
-<area shape="rect" href="usbd__ctlreq_8h.html" title=" " alt="" coords="2624,225,2733,251"/>
-<area shape="rect" href="usbd__def_8h.html" title="General defines for the usb device library." alt="" coords="2541,299,2633,324"/>
-<area shape="rect" href="usbd__ioreq_8h.html" title="Header file for the usbd_ioreq.c file." alt="" coords="2443,225,2549,251"/>
-<area shape="rect" title=" " alt="" coords="2285,445,2392,471"/>
-<area shape="rect" title=" " alt="" coords="2416,445,2483,471"/>
-<area shape="rect" title=" " alt="" coords="2507,445,2578,471"/>
-<area shape="rect" title=" " alt="" coords="2602,445,2673,471"/>
-<area shape="rect" title=" " alt="" coords="2982,152,3053,177"/>
-</map>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="stm32h5xx__it_8c__incl.svg" width="100%" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-</div><table class="memberdecls">
+</div>
+</div>
+<p><a href="stm32h5xx__it_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6ad7a5e3ee69cb6db6a6b9111ba898bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32h5xx__it_8c.html#a6ad7a5e3ee69cb6db6a6b9111ba898bc">NMI_Handler</a> (void)</td></tr>
@@ -233,6 +215,8 @@ Variables</h2></td></tr>
 <dl class="section attention"><dt>Attention</dt><dd></dd></dl>
 <p>Copyright (c) 2025 STMicroelectronics. All rights reserved.</p>
 <p>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS. </p>
+
+<p class="definition">Definition in file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a850cefb17a977292ae5eb4cafa9976c3" name="a850cefb17a977292ae5eb4cafa9976c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a850cefb17a977292ae5eb4cafa9976c3">&#9670;&#160;</a></span>BusFault_Handler()</h2>
@@ -251,6 +235,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This function handles Pre-fetch fault, memory access fault. </p>
+
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00136">136</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
 
 </div>
 </div>
@@ -272,6 +258,8 @@ Variables</h2></td></tr>
 
 <p>This function handles Debug monitor. </p>
 
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00166">166</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
 </div>
 </div>
 <a id="ad223df7a6e18784d7aa64456b668278b" name="ad223df7a6e18784d7aa64456b668278b"></a>
@@ -291,6 +279,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This function handles EXTI Line12 interrupt. </p>
+
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00200">200</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
+<p class="reference">References <a class="el" href="main_8h_source.html#l00140">RFM95W_DIO_Pin</a>.</p>
 
 </div>
 </div>
@@ -312,6 +304,10 @@ Variables</h2></td></tr>
 
 <p>This function handles EXTI Line8 interrupt. </p>
 
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00186">186</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
+<p class="reference">References <a class="el" href="main_8h_source.html#l00163">SD_DETECT_Pin</a>.</p>
+
 </div>
 </div>
 <a id="ae478869b219c74c487ac1ede2a02ad0a" name="ae478869b219c74c487ac1ede2a02ad0a"></a>
@@ -331,6 +327,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This function handles GPDMA1 Channel 0 global interrupt. </p>
+
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00214">214</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
+<p class="reference">References <a class="el" href="tim_8c_source.html#l00029">handle_GPDMA1_Channel0</a>.</p>
 
 </div>
 </div>
@@ -352,6 +352,10 @@ Variables</h2></td></tr>
 
 <p>This function handles GPDMA1 Channel 2 global interrupt. </p>
 
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00228">228</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
+<p class="reference">References <a class="el" href="usart_8c_source.html#l00026">handle_GPDMA1_Channel2</a>.</p>
+
 </div>
 </div>
 <a id="adc520d0616108fb6beaaeefe876b956c" name="adc520d0616108fb6beaaeefe876b956c"></a>
@@ -371,6 +375,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This function handles GPDMA1 Channel 5 global interrupt. </p>
+
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00242">242</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
+<p class="reference">References <a class="el" href="usart_8c_source.html#l00025">handle_GPDMA1_Channel5</a>.</p>
 
 </div>
 </div>
@@ -392,6 +400,10 @@ Variables</h2></td></tr>
 
 <p>This function handles GPDMA1 Channel 6 global interrupt. </p>
 
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00256">256</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
+<p class="reference">References <a class="el" href="usart_8c_source.html#l00024">handle_GPDMA1_Channel6</a>.</p>
+
 </div>
 </div>
 <a id="a491a266bcb91206706cd4ddb3c695adc" name="a491a266bcb91206706cd4ddb3c695adc"></a>
@@ -411,6 +423,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This function handles GPDMA1 Channel 7 global interrupt. </p>
+
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00270">270</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
+<p class="reference">References <a class="el" href="usart_8c_source.html#l00021">handle_GPDMA1_Channel7</a>.</p>
 
 </div>
 </div>
@@ -432,6 +448,16 @@ Variables</h2></td></tr>
 
 <p>This function handles Hard fault interrupt. </p>
 
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00106">106</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
+<p class="reference">References <a class="el" href="led_8h_source.html#l00013">LED_COLOR_RED</a>, and <a class="el" href="led_8c_source.html#l00144">led_fault_color()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="stm32h5xx__it_8c_a2bffc10d5bd4106753b7c30e86903bea_cgraph.svg" width="100%" height="419"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a3150f74512510287a942624aa9b44cc5" name="a3150f74512510287a942624aa9b44cc5"></a>
@@ -451,6 +477,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This function handles Memory management fault. </p>
+
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00121">121</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
 
 </div>
 </div>
@@ -472,6 +500,8 @@ Variables</h2></td></tr>
 
 <p>This function handles Non maskable interrupt. </p>
 
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00091">91</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
 </div>
 </div>
 <a id="ac59ea818a0646d6693f12d991f3e7f66" name="ac59ea818a0646d6693f12d991f3e7f66"></a>
@@ -491,6 +521,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This function handles SDMMC1 global interrupt. </p>
+
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00353">353</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sdmmc_8c_source.html#l00027">hsd1</a>.</p>
 
 </div>
 </div>
@@ -512,6 +546,10 @@ Variables</h2></td></tr>
 
 <p>This function handles SPI2 global interrupt. </p>
 
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00297">297</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
+<p class="reference">References <a class="el" href="spi_8c_source.html#l00010">hspi2</a>.</p>
+
 </div>
 </div>
 <a id="a0453d4621224d4aed7b6f727f12657b2" name="a0453d4621224d4aed7b6f727f12657b2"></a>
@@ -531,6 +569,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This function handles TIM6 global interrupt. </p>
+
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00283">283</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
+<p class="reference">References <a class="el" href="stm32h5xx__hal__timebase__tim_8c_source.html#l00028">htim6</a>.</p>
 
 </div>
 </div>
@@ -552,6 +594,8 @@ Variables</h2></td></tr>
 
 <p>This function handles Undefined instruction or illegal state. </p>
 
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00151">151</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
 </div>
 </div>
 <a id="a7139cd4baabbbcbab0c1fe6d7d4ae1cc" name="a7139cd4baabbbcbab0c1fe6d7d4ae1cc"></a>
@@ -571,6 +615,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This function handles USART1 global interrupt. </p>
+
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00311">311</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
+<p class="reference">References <a class="el" href="usart_8c_source.html#l00019">huart1</a>.</p>
 
 </div>
 </div>
@@ -592,6 +640,10 @@ Variables</h2></td></tr>
 
 <p>This function handles USART2 global interrupt. </p>
 
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00325">325</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
+<p class="reference">References <a class="el" href="usart_8c_source.html#l00020">huart2</a>.</p>
+
 </div>
 </div>
 <a id="a61097fe083a7404e807fc52bf48f57e7" name="a61097fe083a7404e807fc52bf48f57e7"></a>
@@ -611,6 +663,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This function handles USB FS global interrupt. </p>
+
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__it_8c_source.html#l00339">339</a> of file <a class="el" href="stm32h5xx__it_8c_source.html">stm32h5xx_it.c</a>.</p>
+
+<p class="reference">References <a class="el" href="usb_8c_source.html#l00009">hpcd_USB_DRD_FS</a>.</p>
 
 </div>
 </div>
@@ -635,6 +691,10 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="cmd__task_8c_source.html#l00017">17</a> of file <a class="el" href="cmd__task_8c_source.html">cmd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="cmd__task_8c_source.html#l00036">cmd_task()</a>, and <a class="el" href="cmd__task_8c_source.html#l00020">CMD_Task_Init()</a>.</p>
+
 </div>
 </div>
 <a id="a9cd9cf4cf979cf2c7fdeef16ed594f4c" name="a9cd9cf4cf979cf2c7fdeef16ed594f4c"></a>
@@ -656,6 +716,10 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tim_8c_source.html#l00029">29</a> of file <a class="el" href="tim_8c_source.html">tim.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="stm32h5xx__it_8c_source.html#l00214">GPDMA1_Channel0_IRQHandler()</a>, and <a class="el" href="tim_8c_source.html#l00132">HAL_TIM_PWM_MspInit()</a>.</p>
 
 </div>
 </div>
@@ -679,6 +743,10 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="usart_8c_source.html#l00026">26</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="stm32h5xx__it_8c_source.html#l00228">GPDMA1_Channel2_IRQHandler()</a>, and <a class="el" href="usart_8c_source.html#l00103">HAL_UART_MspInit()</a>.</p>
+
 </div>
 </div>
 <a id="ae3985c2bfd7e12fba0418901b4f826c9" name="ae3985c2bfd7e12fba0418901b4f826c9"></a>
@@ -700,6 +768,10 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="usart_8c_source.html#l00025">25</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="stm32h5xx__it_8c_source.html#l00242">GPDMA1_Channel5_IRQHandler()</a>, and <a class="el" href="usart_8c_source.html#l00103">HAL_UART_MspInit()</a>.</p>
 
 </div>
 </div>
@@ -723,6 +795,10 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="usart_8c_source.html#l00024">24</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="stm32h5xx__it_8c_source.html#l00256">GPDMA1_Channel6_IRQHandler()</a>, and <a class="el" href="usart_8c_source.html#l00103">HAL_UART_MspInit()</a>.</p>
+
 </div>
 </div>
 <a id="a61cf14ccf4ae32d80f08cc7caa9ecd5d" name="a61cf14ccf4ae32d80f08cc7caa9ecd5d"></a>
@@ -744,6 +820,10 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="usart_8c_source.html#l00021">21</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="stm32h5xx__it_8c_source.html#l00270">GPDMA1_Channel7_IRQHandler()</a>, and <a class="el" href="usart_8c_source.html#l00103">HAL_UART_MspInit()</a>.</p>
 
 </div>
 </div>
@@ -767,6 +847,10 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="usb_8c_source.html#l00009">9</a> of file <a class="el" href="usb_8c_source.html">usb.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="usb_8c_source.html#l00013">MX_USB_PCD_Init()</a>, and <a class="el" href="stm32h5xx__it_8c_source.html#l00339">USB_DRD_FS_IRQHandler()</a>.</p>
+
 </div>
 </div>
 <a id="ad0b867cf724e111d6329c1eb91f3b30b" name="ad0b867cf724e111d6329c1eb91f3b30b"></a>
@@ -788,6 +872,10 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sdmmc_8c_source.html#l00027">27</a> of file <a class="el" href="sdmmc_8c_source.html">sdmmc.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="stm32h5xx__it_8c_source.html#l00353">SDMMC1_IRQHandler()</a>.</p>
 
 </div>
 </div>
@@ -811,6 +899,10 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="spi_8c_source.html#l00010">10</a> of file <a class="el" href="spi_8c_source.html">spi.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="spi_8c_source.html#l00050">MX_SPI2_Init()</a>, and <a class="el" href="stm32h5xx__it_8c_source.html#l00297">SPI2_IRQHandler()</a>.</p>
+
 </div>
 </div>
 <a id="a1564492831a79fa18466467c3420c3c3" name="a1564492831a79fa18466467c3420c3c3"></a>
@@ -832,6 +924,10 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="stm32h5xx__hal__timebase__tim_8c_source.html#l00028">28</a> of file <a class="el" href="stm32h5xx__hal__timebase__tim_8c_source.html">stm32h5xx_hal_timebase_tim.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="stm32h5xx__hal__timebase__tim_8c_source.html#l00042">HAL_InitTick()</a>, <a class="el" href="stm32h5xx__hal__timebase__tim_8c_source.html#l00121">HAL_ResumeTick()</a>, <a class="el" href="stm32h5xx__hal__timebase__tim_8c_source.html#l00110">HAL_SuspendTick()</a>, and <a class="el" href="stm32h5xx__it_8c_source.html#l00283">TIM6_IRQHandler()</a>.</p>
 
 </div>
 </div>
@@ -855,6 +951,10 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="usart_8c_source.html#l00019">19</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="usart_8c_source.html#l00030">MX_USART1_UART_Init()</a>, and <a class="el" href="stm32h5xx__it_8c_source.html#l00311">USART1_IRQHandler()</a>.</p>
+
 </div>
 </div>
 <a id="aa9479c261d65eecedd3d9582f7f0f89c" name="aa9479c261d65eecedd3d9582f7f0f89c"></a>
@@ -876,6 +976,10 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="usart_8c_source.html#l00020">20</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="usart_8c_source.html#l00067">MX_USART2_UART_Init()</a>, <a class="el" href="usart_8c_source.html#l00009">Start_UART2_DMA_Receiver()</a>, and <a class="el" href="stm32h5xx__it_8c_source.html#l00325">USART2_IRQHandler()</a>.</p>
 
 </div>
 </div>
@@ -899,6 +1003,10 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="usart_8c_source.html#l00023">23</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="usart_8c_source.html#l00103">HAL_UART_MspInit()</a>.</p>
+
 </div>
 </div>
 <a id="a14efdb6f0ffd6862d0ce711f62d261d4" name="a14efdb6f0ffd6862d0ce711f62d261d4"></a>
@@ -920,6 +1028,10 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="usart_8c_source.html#l00022">22</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="usart_8c_source.html#l00103">HAL_UART_MspInit()</a>.</p>
 
 </div>
 </div>
@@ -943,12 +1055,20 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="usart_8c_source.html#l00007">7</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="usart_8c_source.html#l00009">Start_UART2_DMA_Receiver()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li><li class="navelem"><a class="el" href="stm32h5xx__it_8c.html">stm32h5xx_it.c</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

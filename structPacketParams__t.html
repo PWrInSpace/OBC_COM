@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structPacketParams__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,7 +89,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
@@ -79,98 +99,110 @@ $(function() {
 <p>The type describing the packet parameters for every packet types.  
  <a href="structPacketParams__t.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="sx1280_8h_source.html">sx1280.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="sx1280_8h_source.html">/home/runner/work/OBC_COM/OBC_COM/modules/sx1280/include/sx1280.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a98634d0cf04f04f54b06d8d283353555"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sx1280_8h.html#aa28671d92415a1b4b16724c72128cdc1">RadioPacketTypes_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPacketParams__t.html#a98634d0cf04f04f54b06d8d283353555">PacketType</a></td></tr>
 <tr class="memdesc:a98634d0cf04f04f54b06d8d283353555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet to which the packet parameters are referring to.  <br /></td></tr>
 <tr class="separator:a98634d0cf04f04f54b06d8d283353555"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f05f7ac657f6caa307d59d3e6a1b09e"><td class="memItemLeft" >struct {</td></tr>
-<tr class="memitem:a5e86babc8192cf3db96314a773f8d262"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:a121200496353cc4ae4c90bf80f4e2f9d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#ae7a464745824e8dba5be2a8a37abc18e">RadioPreambleLengths_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#acbbfeba727cd9bab7c46d11486a67b3b">PreambleLength</a></td></tr>
-<tr class="memdesc:a121200496353cc4ae4c90bf80f4e2f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The preamble length for GFSK packet type.  <a href="structPacketParams__t.html#acbbfeba727cd9bab7c46d11486a67b3b">More...</a><br /></td></tr>
-<tr class="separator:a121200496353cc4ae4c90bf80f4e2f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a44eb8ca0724db5b64c32e3ea1c34d5"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#aa231b3aa032cf7fa92ddd3a35f117841">RadioSyncWordLengths_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a550aad01cede1d10646e2fa812643c67">SyncWordLength</a></td></tr>
-<tr class="separator:a1a44eb8ca0724db5b64c32e3ea1c34d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f5ec2c45bb40803442c92dd0ed06583"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43">RadioSyncWordRxMatchs_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a1c1211522ced8cf15146d9b5c7a6d42f">SyncWordMatch</a></td></tr>
-<tr class="separator:a8f5ec2c45bb40803442c92dd0ed06583"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af965cdbf2ddd4c962f6389c307e8cd85"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a7c1d244a48abeb98b6bf3f0ada087df6">RadioPacketLengthModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#aa8bad4d4e0b2fedea70695db619fcfe0">HeaderType</a></td></tr>
-<tr class="separator:af965cdbf2ddd4c962f6389c307e8cd85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95b49cbc412841a26e66ee37429bedbc"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a2b8958e77fa8ca3bc96bba928344ec4a">PayloadLength</a></td></tr>
-<tr class="memdesc:a95b49cbc412841a26e66ee37429bedbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the payload in the GFSK packet.  <a href="structPacketParams__t.html#a2b8958e77fa8ca3bc96bba928344ec4a">More...</a><br /></td></tr>
-<tr class="separator:a95b49cbc412841a26e66ee37429bedbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc1f0d100462809f05cd8f737a0e211d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a95490d3a239c9354c0e0781c88037c91">RadioCrcTypes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a0b1bdc1ef1ea606a5e85f1bb3f8235e0">CrcLength</a></td></tr>
-<tr class="memdesc:abc1f0d100462809f05cd8f737a0e211d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the CRC block in the GFSK packet.  <a href="structPacketParams__t.html#a0b1bdc1ef1ea606a5e85f1bb3f8235e0">More...</a><br /></td></tr>
-<tr class="separator:abc1f0d100462809f05cd8f737a0e211d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b975310466e2eea6d4ee5591262436c"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#aaa95872408de7f5248fbb08a29ec92b2">RadioWhiteningModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#ac53713d59de50e0d98e2be0c47791257">Whitening</a></td></tr>
-<tr class="separator:a7b975310466e2eea6d4ee5591262436c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e86babc8192cf3db96314a773f8d262"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a176dc25f181e664e4279d7eea8fa3d30">Gfsk</a></td></tr>
-<tr class="memdesc:a5e86babc8192cf3db96314a773f8d262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the GFSK packet parameters.  <a href="structPacketParams__t.html#a176dc25f181e664e4279d7eea8fa3d30">More...</a><br /></td></tr>
-<tr class="separator:a5e86babc8192cf3db96314a773f8d262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a7d4c0b83149018b1718a6d8f8469e1"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:a2df7d50c2bca03046778e19836d75117"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#ae8406e3fa7b72d4ecb5ccbc39380686c">PreambleLength</a></td></tr>
-<tr class="separator:a2df7d50c2bca03046778e19836d75117"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45949a57115bd21a094f8fe0cefb9016"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a3f09d0d8dc9e0e113a1d864f1c67707e">RadioLoRaPacketLengthsModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a7f01e08bc32722afbeb3591a44e449bf">HeaderType</a></td></tr>
-<tr class="separator:a45949a57115bd21a094f8fe0cefb9016"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad09044861b17aa87abefeccae6d42dd9"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a2b8958e77fa8ca3bc96bba928344ec4a">PayloadLength</a></td></tr>
-<tr class="memdesc:ad09044861b17aa87abefeccae6d42dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the payload in the LORA packet.  <a href="structPacketParams__t.html#a2b8958e77fa8ca3bc96bba928344ec4a">More...</a><br /></td></tr>
-<tr class="separator:ad09044861b17aa87abefeccae6d42dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac01063ae49729d61d6da7f74f01c59aa"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a90effa48f3a0b25ee38fb03ba596e411">RadioLoRaCrcModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a1c2a6db8a2982e86797c0fe80e1660b4">CrcMode</a></td></tr>
-<tr class="memdesc:ac01063ae49729d61d6da7f74f01c59aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of CRC block in LORA packet.  <a href="structPacketParams__t.html#a1c2a6db8a2982e86797c0fe80e1660b4">More...</a><br /></td></tr>
-<tr class="separator:ac01063ae49729d61d6da7f74f01c59aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10e3167a017b1dee5bae2abf6405a1f8"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a6a276b14912d46ab79330d9572503162">RadioLoRaIQModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a3b76a1da4fd3d71e2509790cce45533f">InvertIQ</a></td></tr>
-<tr class="memdesc:a10e3167a017b1dee5bae2abf6405a1f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to swap IQ for LORA packet.  <a href="structPacketParams__t.html#a3b76a1da4fd3d71e2509790cce45533f">More...</a><br /></td></tr>
-<tr class="separator:a10e3167a017b1dee5bae2abf6405a1f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a7d4c0b83149018b1718a6d8f8469e1"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a2aa8ba21b9d67773d990d0640a405b10">LoRa</a></td></tr>
-<tr class="memdesc:a4a7d4c0b83149018b1718a6d8f8469e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the LORA packet parameters.  <a href="structPacketParams__t.html#a2aa8ba21b9d67773d990d0640a405b10">More...</a><br /></td></tr>
-<tr class="separator:a4a7d4c0b83149018b1718a6d8f8469e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c40e717efd5db5f3173f7047a4fdac4"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:a9a713db7a05143dec2de956e43c44550"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#ae7a464745824e8dba5be2a8a37abc18e">RadioPreambleLengths_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#acbbfeba727cd9bab7c46d11486a67b3b">PreambleLength</a></td></tr>
-<tr class="memdesc:a9a713db7a05143dec2de956e43c44550"><td class="mdescLeft">&#160;</td><td class="mdescRight">The preamble length for FLRC packet type.  <a href="structPacketParams__t.html#acbbfeba727cd9bab7c46d11486a67b3b">More...</a><br /></td></tr>
-<tr class="separator:a9a713db7a05143dec2de956e43c44550"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76ca40deaf52ef44aa70fe35bf502794"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a89bc43fbfde7dcfd4eb69b6558d195a2">RadioFlrcSyncWordLengths_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a246dcbb0819fd0e8e8bd1b98965af24b">SyncWordLength</a></td></tr>
-<tr class="separator:a76ca40deaf52ef44aa70fe35bf502794"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a588cf68eae8402f0fe32b48fba76726f"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43">RadioSyncWordRxMatchs_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a1c1211522ced8cf15146d9b5c7a6d42f">SyncWordMatch</a></td></tr>
-<tr class="separator:a588cf68eae8402f0fe32b48fba76726f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40daca0a36180d9f78f8fd20a1e202cc"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a7c1d244a48abeb98b6bf3f0ada087df6">RadioPacketLengthModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#aa8bad4d4e0b2fedea70695db619fcfe0">HeaderType</a></td></tr>
-<tr class="separator:a40daca0a36180d9f78f8fd20a1e202cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a150aa198ba7476b0d0ad2e43d07fcb7d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a2b8958e77fa8ca3bc96bba928344ec4a">PayloadLength</a></td></tr>
-<tr class="memdesc:a150aa198ba7476b0d0ad2e43d07fcb7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the payload in the FLRC packet.  <a href="structPacketParams__t.html#a2b8958e77fa8ca3bc96bba928344ec4a">More...</a><br /></td></tr>
-<tr class="separator:a150aa198ba7476b0d0ad2e43d07fcb7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94301759ed832811dda852169106f8a6"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a95490d3a239c9354c0e0781c88037c91">RadioCrcTypes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a0b1bdc1ef1ea606a5e85f1bb3f8235e0">CrcLength</a></td></tr>
-<tr class="memdesc:a94301759ed832811dda852169106f8a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the CRC block in the FLRC packet.  <a href="structPacketParams__t.html#a0b1bdc1ef1ea606a5e85f1bb3f8235e0">More...</a><br /></td></tr>
-<tr class="separator:a94301759ed832811dda852169106f8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53a8a63ef47b38aefe0b2be7bb72f58b"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#aaa95872408de7f5248fbb08a29ec92b2">RadioWhiteningModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#ac53713d59de50e0d98e2be0c47791257">Whitening</a></td></tr>
-<tr class="separator:a53a8a63ef47b38aefe0b2be7bb72f58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c40e717efd5db5f3173f7047a4fdac4"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a7c3edd4d1bad1181f6fdaba43f61db8d">Flrc</a></td></tr>
-<tr class="memdesc:a4c40e717efd5db5f3173f7047a4fdac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the FLRC packet parameters.  <a href="structPacketParams__t.html#a7c3edd4d1bad1181f6fdaba43f61db8d">More...</a><br /></td></tr>
-<tr class="separator:a4c40e717efd5db5f3173f7047a4fdac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42c7b8d4c3baf8c19d8016c1c7018975"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:a5004bcf0b0fd437e8bd90edca67d77fc"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#abfe3d3956f451b205c4f735351ed6e35">RadioBleConnectionStates_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a0d4b3ed762930eb83cafdc503e351f8b">ConnectionState</a></td></tr>
-<tr class="memdesc:a5004bcf0b0fd437e8bd90edca67d77fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The BLE state.  <a href="structPacketParams__t.html#a0d4b3ed762930eb83cafdc503e351f8b">More...</a><br /></td></tr>
-<tr class="separator:a5004bcf0b0fd437e8bd90edca67d77fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a201dc76adf385c68a2bfe388a280c99e"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a68e5ec8239d71bebcc07fb2536a55e26">RadioBleCrcFields_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a309871b88306053f37428c1fd36d7dc2">CrcField</a></td></tr>
-<tr class="memdesc:a201dc76adf385c68a2bfe388a280c99e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the CRC block in the BLE packet.  <a href="structPacketParams__t.html#a309871b88306053f37428c1fd36d7dc2">More...</a><br /></td></tr>
-<tr class="separator:a201dc76adf385c68a2bfe388a280c99e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeec18807bee5049e68a3435b49b209f9"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#afce664bcc1f0b8e5d7d9db9656398b44">RadioBlePacketTypes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a854b0bb62fdf038ba4aa30e9c826913f">BlePacketType</a></td></tr>
-<tr class="memdesc:aeec18807bee5049e68a3435b49b209f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Special BLE packet types.  <a href="structPacketParams__t.html#a854b0bb62fdf038ba4aa30e9c826913f">More...</a><br /></td></tr>
-<tr class="separator:aeec18807bee5049e68a3435b49b209f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35f59958d1eaa3f9f3e3da4e4de0dac5"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#aaa95872408de7f5248fbb08a29ec92b2">RadioWhiteningModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#ac53713d59de50e0d98e2be0c47791257">Whitening</a></td></tr>
-<tr class="memdesc:a35f59958d1eaa3f9f3e3da4e4de0dac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage of whitening on PDU and CRC blocks of BLE packet.  <a href="structPacketParams__t.html#ac53713d59de50e0d98e2be0c47791257">More...</a><br /></td></tr>
-<tr class="separator:a35f59958d1eaa3f9f3e3da4e4de0dac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42c7b8d4c3baf8c19d8016c1c7018975"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#ac4e8aea05d0cb14330efc190769cdf2e">Ble</a></td></tr>
-<tr class="memdesc:a42c7b8d4c3baf8c19d8016c1c7018975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the BLE packet parameters.  <a href="structPacketParams__t.html#ac4e8aea05d0cb14330efc190769cdf2e">More...</a><br /></td></tr>
-<tr class="separator:a42c7b8d4c3baf8c19d8016c1c7018975"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f05f7ac657f6caa307d59d3e6a1b09e"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPacketParams__t.html#a8f05f7ac657f6caa307d59d3e6a1b09e">Params</a></td></tr>
-<tr class="memdesc:a8f05f7ac657f6caa307d59d3e6a1b09e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the packet parameters structure.  <br /></td></tr>
-<tr class="separator:a8f05f7ac657f6caa307d59d3e6a1b09e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05f226fb50b38d2ac012912ca46a15e3"><td class="memItemLeft" >struct {</td></tr>
+<tr class="memitem:a4e46aebd71d8e1e3aa4f7cf8a395263a"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a005343773f80d1250f76bfacd9105f53"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#ae7a464745824e8dba5be2a8a37abc18e">RadioPreambleLengths_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#acbbfeba727cd9bab7c46d11486a67b3b">PreambleLength</a></td></tr>
+<tr class="memdesc:a005343773f80d1250f76bfacd9105f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">The preamble length for GFSK packet type.  <a href="structPacketParams__t.html#acbbfeba727cd9bab7c46d11486a67b3b">More...</a><br /></td></tr>
+<tr class="separator:a005343773f80d1250f76bfacd9105f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08b5212f5989d5c8d9edb1bb8722254b"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#aa231b3aa032cf7fa92ddd3a35f117841">RadioSyncWordLengths_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a550aad01cede1d10646e2fa812643c67">SyncWordLength</a></td></tr>
+<tr class="memdesc:a08b5212f5989d5c8d9edb1bb8722254b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The synchronization word length for GFSK packet type.  <a href="structPacketParams__t.html#a550aad01cede1d10646e2fa812643c67">More...</a><br /></td></tr>
+<tr class="separator:a08b5212f5989d5c8d9edb1bb8722254b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97545f7fea67bb29696f311dfefe842a"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43">RadioSyncWordRxMatchs_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a1c1211522ced8cf15146d9b5c7a6d42f">SyncWordMatch</a></td></tr>
+<tr class="memdesc:a97545f7fea67bb29696f311dfefe842a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The synchronization correlator to use to check synchronization word.  <a href="structPacketParams__t.html#a1c1211522ced8cf15146d9b5c7a6d42f">More...</a><br /></td></tr>
+<tr class="separator:a97545f7fea67bb29696f311dfefe842a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afef614beef392df1398b3146221161db"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a7c1d244a48abeb98b6bf3f0ada087df6">RadioPacketLengthModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#aa8bad4d4e0b2fedea70695db619fcfe0">HeaderType</a></td></tr>
+<tr class="memdesc:afef614beef392df1398b3146221161db"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the header is explicit, it will be transmitted in the GFSK packet.  <a href="structPacketParams__t.html#aa8bad4d4e0b2fedea70695db619fcfe0">More...</a><br /></td></tr>
+<tr class="separator:afef614beef392df1398b3146221161db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4462d685a23178e5e307cdf247e7d57e"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a2b8958e77fa8ca3bc96bba928344ec4a">PayloadLength</a></td></tr>
+<tr class="memdesc:a4462d685a23178e5e307cdf247e7d57e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the payload in the GFSK packet.  <a href="structPacketParams__t.html#a2b8958e77fa8ca3bc96bba928344ec4a">More...</a><br /></td></tr>
+<tr class="separator:a4462d685a23178e5e307cdf247e7d57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ad2178ea875ba9e6b98768d51d75c78"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a95490d3a239c9354c0e0781c88037c91">RadioCrcTypes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a0b1bdc1ef1ea606a5e85f1bb3f8235e0">CrcLength</a></td></tr>
+<tr class="memdesc:a4ad2178ea875ba9e6b98768d51d75c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the CRC block in the GFSK packet.  <a href="structPacketParams__t.html#a0b1bdc1ef1ea606a5e85f1bb3f8235e0">More...</a><br /></td></tr>
+<tr class="separator:a4ad2178ea875ba9e6b98768d51d75c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13a14f76fb8a42e749db5de8608fbd20"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#aaa95872408de7f5248fbb08a29ec92b2">RadioWhiteningModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#ac53713d59de50e0d98e2be0c47791257">Whitening</a></td></tr>
+<tr class="memdesc:a13a14f76fb8a42e749db5de8608fbd20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage of whitening on payload and CRC blocks plus header block if header type is variable.  <a href="structPacketParams__t.html#ac53713d59de50e0d98e2be0c47791257">More...</a><br /></td></tr>
+<tr class="separator:a13a14f76fb8a42e749db5de8608fbd20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e46aebd71d8e1e3aa4f7cf8a395263a"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a9f9a3a2ee88e8feafb796c814ea2a8f6">Gfsk</a></td></tr>
+<tr class="memdesc:a4e46aebd71d8e1e3aa4f7cf8a395263a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the GFSK packet parameters.  <a href="structPacketParams__t.html#a9f9a3a2ee88e8feafb796c814ea2a8f6">More...</a><br /></td></tr>
+<tr class="separator:a4e46aebd71d8e1e3aa4f7cf8a395263a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb039ce33b2e093a54905aa4bdd0d980"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:ad3d14cfb773561d9ef125a23b752b620"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#ae8406e3fa7b72d4ecb5ccbc39380686c">PreambleLength</a></td></tr>
+<tr class="memdesc:ad3d14cfb773561d9ef125a23b752b620"><td class="mdescLeft">&#160;</td><td class="mdescRight">The preamble length is the number of LORA symbols in the preamble.  <a href="structPacketParams__t.html#ae8406e3fa7b72d4ecb5ccbc39380686c">More...</a><br /></td></tr>
+<tr class="separator:ad3d14cfb773561d9ef125a23b752b620"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f20a68f24d62be1ae7cca26291564df"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a3f09d0d8dc9e0e113a1d864f1c67707e">RadioLoRaPacketLengthsModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a7f01e08bc32722afbeb3591a44e449bf">HeaderType</a></td></tr>
+<tr class="memdesc:a4f20a68f24d62be1ae7cca26291564df"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the header is explicit, it will be transmitted in the LORA packet.  <a href="structPacketParams__t.html#a7f01e08bc32722afbeb3591a44e449bf">More...</a><br /></td></tr>
+<tr class="separator:a4f20a68f24d62be1ae7cca26291564df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f4c852657d3b90ae5a52fcc251e575d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a2b8958e77fa8ca3bc96bba928344ec4a">PayloadLength</a></td></tr>
+<tr class="memdesc:a4f4c852657d3b90ae5a52fcc251e575d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the payload in the LORA packet.  <a href="structPacketParams__t.html#a2b8958e77fa8ca3bc96bba928344ec4a">More...</a><br /></td></tr>
+<tr class="separator:a4f4c852657d3b90ae5a52fcc251e575d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad52d20269aba4a77a0dc8e5088585cc6"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a90effa48f3a0b25ee38fb03ba596e411">RadioLoRaCrcModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a1c2a6db8a2982e86797c0fe80e1660b4">CrcMode</a></td></tr>
+<tr class="memdesc:ad52d20269aba4a77a0dc8e5088585cc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of CRC block in LORA packet.  <a href="structPacketParams__t.html#a1c2a6db8a2982e86797c0fe80e1660b4">More...</a><br /></td></tr>
+<tr class="separator:ad52d20269aba4a77a0dc8e5088585cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39b23cb6dbf0a0e7f8f8b0073c6e21f6"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a6a276b14912d46ab79330d9572503162">RadioLoRaIQModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a3b76a1da4fd3d71e2509790cce45533f">InvertIQ</a></td></tr>
+<tr class="memdesc:a39b23cb6dbf0a0e7f8f8b0073c6e21f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to swap IQ for LORA packet.  <a href="structPacketParams__t.html#a3b76a1da4fd3d71e2509790cce45533f">More...</a><br /></td></tr>
+<tr class="separator:a39b23cb6dbf0a0e7f8f8b0073c6e21f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb039ce33b2e093a54905aa4bdd0d980"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#ad1a96d1d20de8ae01b25dd2e7a7c1dbd">LoRa</a></td></tr>
+<tr class="memdesc:afb039ce33b2e093a54905aa4bdd0d980"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the LORA packet parameters.  <a href="structPacketParams__t.html#ad1a96d1d20de8ae01b25dd2e7a7c1dbd">More...</a><br /></td></tr>
+<tr class="separator:afb039ce33b2e093a54905aa4bdd0d980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adefa96b27f7f3438d86e32e987676989"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:ad9a8ec3f2c0ff2a817a9b102b270a75b"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#ae7a464745824e8dba5be2a8a37abc18e">RadioPreambleLengths_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#acbbfeba727cd9bab7c46d11486a67b3b">PreambleLength</a></td></tr>
+<tr class="memdesc:ad9a8ec3f2c0ff2a817a9b102b270a75b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The preamble length for FLRC packet type.  <a href="structPacketParams__t.html#acbbfeba727cd9bab7c46d11486a67b3b">More...</a><br /></td></tr>
+<tr class="separator:ad9a8ec3f2c0ff2a817a9b102b270a75b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a193e6d6f3585932197e7a91c2e45f1a4"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a89bc43fbfde7dcfd4eb69b6558d195a2">RadioFlrcSyncWordLengths_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a246dcbb0819fd0e8e8bd1b98965af24b">SyncWordLength</a></td></tr>
+<tr class="memdesc:a193e6d6f3585932197e7a91c2e45f1a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The synchronization word length for FLRC packet type.  <a href="structPacketParams__t.html#a246dcbb0819fd0e8e8bd1b98965af24b">More...</a><br /></td></tr>
+<tr class="separator:a193e6d6f3585932197e7a91c2e45f1a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7467ae0e42982aca31c0ea9ec9e4ab96"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43">RadioSyncWordRxMatchs_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a1c1211522ced8cf15146d9b5c7a6d42f">SyncWordMatch</a></td></tr>
+<tr class="memdesc:a7467ae0e42982aca31c0ea9ec9e4ab96"><td class="mdescLeft">&#160;</td><td class="mdescRight">The synchronization correlator to use to check synchronization word.  <a href="structPacketParams__t.html#a1c1211522ced8cf15146d9b5c7a6d42f">More...</a><br /></td></tr>
+<tr class="separator:a7467ae0e42982aca31c0ea9ec9e4ab96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39f391ec6e32cd892f5be4f15c01438d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a7c1d244a48abeb98b6bf3f0ada087df6">RadioPacketLengthModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#aa8bad4d4e0b2fedea70695db619fcfe0">HeaderType</a></td></tr>
+<tr class="memdesc:a39f391ec6e32cd892f5be4f15c01438d"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the header is explicit, it will be transmitted in the FLRC packet.  <a href="structPacketParams__t.html#aa8bad4d4e0b2fedea70695db619fcfe0">More...</a><br /></td></tr>
+<tr class="separator:a39f391ec6e32cd892f5be4f15c01438d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb58d80fd4c14a0dfdf5019812b00a4"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a2b8958e77fa8ca3bc96bba928344ec4a">PayloadLength</a></td></tr>
+<tr class="memdesc:addb58d80fd4c14a0dfdf5019812b00a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the payload in the FLRC packet.  <a href="structPacketParams__t.html#a2b8958e77fa8ca3bc96bba928344ec4a">More...</a><br /></td></tr>
+<tr class="separator:addb58d80fd4c14a0dfdf5019812b00a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad97f12f7e87352e8268228ce8816ddec"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a95490d3a239c9354c0e0781c88037c91">RadioCrcTypes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a0b1bdc1ef1ea606a5e85f1bb3f8235e0">CrcLength</a></td></tr>
+<tr class="memdesc:ad97f12f7e87352e8268228ce8816ddec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the CRC block in the FLRC packet.  <a href="structPacketParams__t.html#a0b1bdc1ef1ea606a5e85f1bb3f8235e0">More...</a><br /></td></tr>
+<tr class="separator:ad97f12f7e87352e8268228ce8816ddec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43095cc3ab77ff39de86c6134d5fb560"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#aaa95872408de7f5248fbb08a29ec92b2">RadioWhiteningModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#ac53713d59de50e0d98e2be0c47791257">Whitening</a></td></tr>
+<tr class="memdesc:a43095cc3ab77ff39de86c6134d5fb560"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage of whitening on payload and CRC blocks plus header block if header type is variable.  <a href="structPacketParams__t.html#ac53713d59de50e0d98e2be0c47791257">More...</a><br /></td></tr>
+<tr class="separator:a43095cc3ab77ff39de86c6134d5fb560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adefa96b27f7f3438d86e32e987676989"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#aaa42bc225785520655903c66db899c60">Flrc</a></td></tr>
+<tr class="memdesc:adefa96b27f7f3438d86e32e987676989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the FLRC packet parameters.  <a href="structPacketParams__t.html#aaa42bc225785520655903c66db899c60">More...</a><br /></td></tr>
+<tr class="separator:adefa96b27f7f3438d86e32e987676989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87f01bed1670efaa00a78490086509b7"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a33990524d3cfe6e4d8bef688124efbbe"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#abfe3d3956f451b205c4f735351ed6e35">RadioBleConnectionStates_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a0d4b3ed762930eb83cafdc503e351f8b">ConnectionState</a></td></tr>
+<tr class="memdesc:a33990524d3cfe6e4d8bef688124efbbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The BLE state.  <a href="structPacketParams__t.html#a0d4b3ed762930eb83cafdc503e351f8b">More...</a><br /></td></tr>
+<tr class="separator:a33990524d3cfe6e4d8bef688124efbbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9187fef3c83065163f84b04db8c7ce75"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#a68e5ec8239d71bebcc07fb2536a55e26">RadioBleCrcFields_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a309871b88306053f37428c1fd36d7dc2">CrcField</a></td></tr>
+<tr class="memdesc:a9187fef3c83065163f84b04db8c7ce75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the CRC block in the BLE packet.  <a href="structPacketParams__t.html#a309871b88306053f37428c1fd36d7dc2">More...</a><br /></td></tr>
+<tr class="separator:a9187fef3c83065163f84b04db8c7ce75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee8cf7b58666f698c63d25e58d58c086"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#afce664bcc1f0b8e5d7d9db9656398b44">RadioBlePacketTypes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a854b0bb62fdf038ba4aa30e9c826913f">BlePacketType</a></td></tr>
+<tr class="memdesc:aee8cf7b58666f698c63d25e58d58c086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Special BLE packet types.  <a href="structPacketParams__t.html#a854b0bb62fdf038ba4aa30e9c826913f">More...</a><br /></td></tr>
+<tr class="separator:aee8cf7b58666f698c63d25e58d58c086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65212f7e68872482e522390036f2cd75"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="sx1280_8h.html#aaa95872408de7f5248fbb08a29ec92b2">RadioWhiteningModes_t</a>&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#ac53713d59de50e0d98e2be0c47791257">Whitening</a></td></tr>
+<tr class="memdesc:a65212f7e68872482e522390036f2cd75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage of whitening on PDU and CRC blocks of BLE packet.  <a href="structPacketParams__t.html#ac53713d59de50e0d98e2be0c47791257">More...</a><br /></td></tr>
+<tr class="separator:a65212f7e68872482e522390036f2cd75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87f01bed1670efaa00a78490086509b7"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structPacketParams__t.html#a313d4283f806f54128677e11fb1a92ed">Ble</a></td></tr>
+<tr class="memdesc:a87f01bed1670efaa00a78490086509b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the BLE packet parameters.  <a href="structPacketParams__t.html#a313d4283f806f54128677e11fb1a92ed">More...</a><br /></td></tr>
+<tr class="separator:a87f01bed1670efaa00a78490086509b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05f226fb50b38d2ac012912ca46a15e3"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPacketParams__t.html#a05f226fb50b38d2ac012912ca46a15e3">Params</a></td></tr>
+<tr class="memdesc:a05f226fb50b38d2ac012912ca46a15e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the packet parameters structure.  <br /></td></tr>
+<tr class="separator:a05f226fb50b38d2ac012912ca46a15e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The type describing the packet parameters for every packet types. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00908">908</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="ac4e8aea05d0cb14330efc190769cdf2e" name="ac4e8aea05d0cb14330efc190769cdf2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4e8aea05d0cb14330efc190769cdf2e">&#9670;&#160;</a></span></h2>
+<a id="a313d4283f806f54128677e11fb1a92ed" name="a313d4283f806f54128677e11fb1a92ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a313d4283f806f54128677e11fb1a92ed">&#9670;&#160;</a></span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,6 +214,8 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Holds the BLE packet parameters. </p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
 
 </div>
 </div>
@@ -199,6 +233,10 @@ Data Fields</h2></td></tr>
 
 <p>Special BLE packet types. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00979">979</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
+
 </div>
 </div>
 <a id="a0d4b3ed762930eb83cafdc503e351f8b" name="a0d4b3ed762930eb83cafdc503e351f8b"></a>
@@ -215,6 +253,10 @@ Data Fields</h2></td></tr>
 
 <p>The BLE state. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00977">977</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
+
 </div>
 </div>
 <a id="a309871b88306053f37428c1fd36d7dc2" name="a309871b88306053f37428c1fd36d7dc2"></a>
@@ -230,6 +272,10 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Size of the CRC block in the BLE packet. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00978">978</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
 
 </div>
 </div>
@@ -248,6 +294,10 @@ Data Fields</h2></td></tr>
 <p>Size of the CRC block in the GFSK packet. </p>
 <p>Size of the CRC block in the FLRC packet. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00929">929</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
+
 </div>
 </div>
 <a id="a1c2a6db8a2982e86797c0fe80e1660b4" name="a1c2a6db8a2982e86797c0fe80e1660b4"></a>
@@ -264,10 +314,14 @@ Data Fields</h2></td></tr>
 
 <p>Size of CRC block in LORA packet. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00948">948</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
+
 </div>
 </div>
-<a id="a7c3edd4d1bad1181f6fdaba43f61db8d" name="a7c3edd4d1bad1181f6fdaba43f61db8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c3edd4d1bad1181f6fdaba43f61db8d">&#9670;&#160;</a></span></h2>
+<a id="aaa42bc225785520655903c66db899c60" name="aaa42bc225785520655903c66db899c60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa42bc225785520655903c66db899c60">&#9670;&#160;</a></span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,10 +334,12 @@ Data Fields</h2></td></tr>
 
 <p>Holds the FLRC packet parameters. </p>
 
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
+
 </div>
 </div>
-<a id="a176dc25f181e664e4279d7eea8fa3d30" name="a176dc25f181e664e4279d7eea8fa3d30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a176dc25f181e664e4279d7eea8fa3d30">&#9670;&#160;</a></span></h2>
+<a id="a9f9a3a2ee88e8feafb796c814ea2a8f6" name="a9f9a3a2ee88e8feafb796c814ea2a8f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f9a3a2ee88e8feafb796c814ea2a8f6">&#9670;&#160;</a></span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -295,6 +351,8 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Holds the GFSK packet parameters. </p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
 
 </div>
 </div>
@@ -309,8 +367,15 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>If the header is explicit, it will be transmitted in the GFSK packet. If the header is implicit, it will not be transmitted</p>
-<p>If the header is explicit, it will be transmitted in the FLRC packet. If the header is implicit, it will not be transmitted. </p>
+
+<p>If the header is explicit, it will be transmitted in the GFSK packet. </p>
+<p>If the header is explicit, it will be transmitted in the FLRC packet.</p>
+<p>If the header is implicit, it will not be transmitted</p>
+<p>If the header is implicit, it will not be transmitted. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00925">925</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
 
 </div>
 </div>
@@ -325,7 +390,11 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>If the header is explicit, it will be transmitted in the LORA packet. If the header is implicit, it will not be transmitted </p>
+
+<p>If the header is explicit, it will be transmitted in the LORA packet. </p>
+<p>If the header is implicit, it will not be transmitted </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00944">944</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -343,10 +412,14 @@ Data Fields</h2></td></tr>
 
 <p>Allows to swap IQ for LORA packet. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00949">949</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
+
 </div>
 </div>
-<a id="a2aa8ba21b9d67773d990d0640a405b10" name="a2aa8ba21b9d67773d990d0640a405b10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2aa8ba21b9d67773d990d0640a405b10">&#9670;&#160;</a></span></h2>
+<a id="ad1a96d1d20de8ae01b25dd2e7a7c1dbd" name="ad1a96d1d20de8ae01b25dd2e7a7c1dbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a96d1d20de8ae01b25dd2e7a7c1dbd">&#9670;&#160;</a></span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -358,6 +431,8 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Holds the LORA packet parameters. </p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
 
 </div>
 </div>
@@ -375,10 +450,14 @@ Data Fields</h2></td></tr>
 
 <p>Packet to which the packet parameters are referring to. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00910">910</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
+
 </div>
 </div>
-<a id="a8f05f7ac657f6caa307d59d3e6a1b09e" name="a8f05f7ac657f6caa307d59d3e6a1b09e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f05f7ac657f6caa307d59d3e6a1b09e">&#9670;&#160;</a></span></h2>
+<a id="a05f226fb50b38d2ac012912ca46a15e3" name="a05f226fb50b38d2ac012912ca46a15e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05f226fb50b38d2ac012912ca46a15e3">&#9670;&#160;</a></span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -390,6 +469,8 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Holds the packet parameters structure. </p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
 
 </div>
 </div>
@@ -409,6 +490,10 @@ Data Fields</h2></td></tr>
 <p>Size of the payload in the FLRC packet.</p>
 <p>Size of the payload in the LORA packet. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00928">928</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
+
 </div>
 </div>
 <a id="acbbfeba727cd9bab7c46d11486a67b3b" name="acbbfeba727cd9bab7c46d11486a67b3b"></a>
@@ -426,6 +511,10 @@ Data Fields</h2></td></tr>
 <p>The preamble length for GFSK packet type. </p>
 <p>The preamble length for FLRC packet type. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00918">918</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
+
 </div>
 </div>
 <a id="ae8406e3fa7b72d4ecb5ccbc39380686c" name="ae8406e3fa7b72d4ecb5ccbc39380686c"></a>
@@ -439,11 +528,15 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The preamble length is the number of LORA symbols in the preamble. To set it, use the following formula </p><div class="fragment"><div class="line"> Number of symbols =</div>
+
+<p>The preamble length is the number of LORA symbols in the preamble. </p>
+<p>To set it, use the following formula </p><div class="fragment"><div class="line"> Number of symbols =</div>
 <div class="line">&lt; <a class="code hl_variable" href="structPacketParams__t.html#acbbfeba727cd9bab7c46d11486a67b3b">PreambleLength</a>[3:0] * ( 2^<a class="code hl_variable" href="structPacketParams__t.html#acbbfeba727cd9bab7c46d11486a67b3b">PreambleLength</a>[7:4]</div>
 <div class="line">&lt; ) </div>
-<div class="ttc" id="astructPacketParams__t_html_acbbfeba727cd9bab7c46d11486a67b3b"><div class="ttname"><a href="structPacketParams__t.html#acbbfeba727cd9bab7c46d11486a67b3b">PacketParams_t::PreambleLength</a></div><div class="ttdeci">RadioPreambleLengths_t PreambleLength</div><div class="ttdoc">The preamble length for GFSK packet type.</div><div class="ttdef"><b>Definition:</b> sx1280.h:918</div></div>
+<div class="ttc" id="astructPacketParams__t_html_acbbfeba727cd9bab7c46d11486a67b3b"><div class="ttname"><a href="structPacketParams__t.html#acbbfeba727cd9bab7c46d11486a67b3b">PacketParams_t::PreambleLength</a></div><div class="ttdeci">RadioPreambleLengths_t PreambleLength</div><div class="ttdoc">The preamble length for GFSK packet type.</div><div class="ttdef"><b>Definition:</b> <a href="sx1280_8h_source.html#l00918">sx1280.h:918</a></div></div>
 </div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00938">938</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
 </div>
 </div>
 <a id="a550aad01cede1d10646e2fa812643c67" name="a550aad01cede1d10646e2fa812643c67"></a>
@@ -457,7 +550,12 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The synchronization word length for GFSK packet type </p>
+
+<p>The synchronization word length for GFSK packet type. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00919">919</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
 
 </div>
 </div>
@@ -472,7 +570,10 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The synchronization word length for FLRC packet type </p>
+
+<p>The synchronization word length for FLRC packet type. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00958">958</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -487,7 +588,12 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The synchronization correlator to use to check synchronization word </p>
+
+<p>The synchronization correlator to use to check synchronization word. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00922">922</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
 
 </div>
 </div>
@@ -503,8 +609,12 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Usage of whitening on payload and CRC blocks plus header block if header type is variable. </p>
 <p>Usage of whitening on PDU and CRC blocks of BLE packet. </p>
-<p>Usage of whitening on payload and CRC blocks plus header block if header type is variable </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00931">931</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00304">SX1280SetPacketParams()</a>.</p>
 
 </div>
 </div>
@@ -512,9 +622,13 @@ Data Fields</h2></td></tr>
 <li>modules/sx1280/include/<a class="el" href="sx1280_8h_source.html">sx1280.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structPacketParams__t.html">PacketParams_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

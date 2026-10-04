@@ -1,0 +1,13 @@
+<map id="SX1280SetStandby" name="SX1280SetStandby">
+<area shape="rect" id="node1" title="Sets the radio in configuration mode." alt="" coords="713,135,859,160"/>
+<area shape="rect" id="node2" href="$sx1280__task_8c.html#a811104046034a4384c8ceb110e8b50d2" title=" " alt="" coords="467,5,641,31"/>
+<area shape="rect" id="node5" href="$sx1280__task_8c.html#aa3e5f314d579c8192dcfb785648bca96" title=" " alt="" coords="499,55,609,80"/>
+<area shape="rect" id="node6" href="$sx1280__task_8c.html#af9b8000bc81e28fbd95180c677bf58c4" title=" " alt="" coords="245,93,395,119"/>
+<area shape="rect" id="node7" href="$sx1280_8c.html#af6fffb5681b52a42682edeb7159a23c6" title="Return the last ranging result power indicator." alt="" coords="443,155,665,195"/>
+<area shape="rect" id="node8" href="$sx1280_8c.html#a17d5de63553dd70d443bc4ec852a0344" title="Return the ranging result value." alt="" coords="460,220,648,245"/>
+<area shape="rect" id="node9" href="$sx1280__task_8c.html#a08a0d39a0c2e7c960630f1125434da42" title=" " alt="" coords="508,269,600,295"/>
+<area shape="rect" id="node3" href="$sx1280__task_8c.html#ad29d477ada983b118b9139bafba10196" title=" " alt="" coords="251,19,389,44"/>
+<area shape="rect" id="node4" href="$sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0" title=" " alt="" coords="5,69,197,95"/>
+<area shape="rect" id="node10" href="$sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a" title=" " alt="" coords="254,269,386,295"/>
+<area shape="rect" id="node11" href="$sx1280__task_8c.html#ae81733e32db03c2f8c8859b7fa9cb942" title=" " alt="" coords="34,269,169,295"/>
+</map>

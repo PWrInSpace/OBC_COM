@@ -1,0 +1,8 @@
+<map id="ws2812_hdma" name="ws2812_hdma">
+<area shape="rect" id="node1" title=" " alt="" coords="833,31,949,56"/>
+<area shape="rect" id="node2" href="$ws2812_8c.html#af345d63e55c471a0717d5bc9439c8a50" title=" " alt="" coords="611,31,785,56"/>
+<area shape="rect" id="node3" href="$led_8c.html#a574d5b595aad34aba3753bed55f2d73f" title=" " alt="" coords="403,5,523,31"/>
+<area shape="rect" id="node4" href="$ws2812_8c.html#ac74c81a843f133c7660347fc62cedc26" title=" " alt="" coords="363,55,563,80"/>
+<area shape="rect" id="node5" href="$led_8c.html#a0a16f10b59c73161b57d844082fa1dca" title=" " alt="" coords="196,55,315,80"/>
+<area shape="rect" id="node6" href="$stm32h5xx__it_8c.html#a2bffc10d5bd4106753b7c30e86903bea" title="This function handles Hard fault interrupt." alt="" coords="5,55,148,80"/>
+</map>

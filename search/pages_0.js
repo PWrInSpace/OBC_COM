@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['obc_5fcom_0',['OBC_COM',['../index.html',1,'']]]
+  ['cmd_20module_20_28command_20line_20interface_29_0',['CMD Module (Command Line Interface)',['../cmd_module.html',1,'']]]
 ];

@@ -1,15 +1,7 @@
 <map id="app/include/usb_config.h" name="app/include/usb_config.h">
-<area shape="rect" id="node1" title=" " alt="" coords="354,5,537,31"/>
-<area shape="rect" id="node2" href="$usbd__core_8h.html" title="Header file for usbd_core.c file." alt="" coords="211,79,311,104"/>
-<area shape="rect" id="node11" title=" " alt="" coords="335,79,430,104"/>
-<area shape="rect" id="node12" title=" " alt="" coords="455,79,564,104"/>
-<area shape="rect" id="node13" href="$usbd__desc_8h.html" title=" " alt="" coords="513,152,615,177"/>
-<area shape="rect" id="node3" href="$usbd__conf_8h.html" title=" " alt="" coords="167,299,265,324"/>
-<area shape="rect" id="node8" href="$usbd__ctlreq_8h.html" title=" " alt="" coords="161,152,271,177"/>
-<area shape="rect" id="node9" href="$usbd__def_8h.html" title="General defines for the usb device library." alt="" coords="262,225,354,251"/>
-<area shape="rect" id="node10" href="$usbd__ioreq_8h.html" title="Header file for the usbd_ioreq.c file." alt="" coords="346,152,451,177"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,372,112,397"/>
-<area shape="rect" id="node5" title=" " alt="" coords="136,372,203,397"/>
-<area shape="rect" id="node6" title=" " alt="" coords="227,372,298,397"/>
-<area shape="rect" id="node7" title=" " alt="" coords="322,372,393,397"/>
+<area shape="rect" id="node1" title=" " alt="" coords="97,5,280,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,79,105,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="141,152,236,177"/>
+<area shape="rect" id="node4" href="$usbd__cdc__if_8h.html" title=" " alt="" coords="181,79,290,104"/>
+<area shape="rect" id="node5" title=" " alt="" coords="315,79,417,104"/>
 </map>

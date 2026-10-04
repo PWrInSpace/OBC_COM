@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['lora_5fdevs_5ft_0',['lora_devs_t',['../structlora__devs__t.html',1,'']]],
-  ['lora_5ftx_5fitem_5ft_1',['lora_tx_item_t',['../structlora__tx__item__t.html',1,'']]],
-  ['lora_5ftx_5fqueue_5ft_2',['lora_tx_queue_t',['../structlora__tx__queue__t.html',1,'']]]
+  ['sky66114_5ft_0',['sky66114_t',['../structsky66114__t.html',1,'']]],
+  ['sleepparams_5ft_1',['SleepParams_t',['../structSleepParams__t.html',1,'']]],
+  ['sx1280_5fs_2',['SX1280_s',['../structSX1280__s.html',1,'']]]
 ];

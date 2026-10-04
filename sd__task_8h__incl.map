@@ -1,6 +1,6 @@
 <map id="app/include/sd_task.h" name="app/include/sd_task.h">
 <area shape="rect" id="node1" title=" " alt="" coords="2291,5,2453,31"/>
-<area shape="rect" id="node2" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="1267,79,1333,104"/>
+<area shape="rect" id="node2" href="$main_8h.html" title=": Header for main.c file." alt="" coords="1267,79,1333,104"/>
 <area shape="rect" id="node14" title=" " alt="" coords="2231,152,2327,177"/>
 <area shape="rect" id="node15" title=" " alt="" coords="2132,152,2207,177"/>
 <area shape="rect" id="node17" title=" " alt="" coords="2351,152,2422,177"/>

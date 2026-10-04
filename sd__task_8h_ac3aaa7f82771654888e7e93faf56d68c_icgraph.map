@@ -1,0 +1,6 @@
+<map id="sd_logger_log_data" name="sd_logger_log_data">
+<area shape="rect" id="node1" title=" " alt="" coords="624,5,772,31"/>
+<area shape="rect" id="node2" href="$telemetry__task_8c.html#adf01cf2576afc3ce53d9f36372a5748e" title="Główna pętla wątku telemetrii." alt="" coords="405,5,576,31"/>
+<area shape="rect" id="node3" href="$telemetry__task_8c.html#afcd60b31f762920f35539834b72abfce" title="Inicjalizuje i uruchamia wątek telemetrii." alt="" coords="199,5,357,31"/>
+<area shape="rect" id="node4" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,5,151,31"/>
+</map>

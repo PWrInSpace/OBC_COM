@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('main_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,11 +89,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
@@ -83,7 +99,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>: Header for <a class="el" href="main_8c.html" title=": Main program body">main.c</a> file. This file contains the common defines of the application.  
+<p>: Header for <a class="el" href="main_8c.html" title=": Main program body">main.c</a> file.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;stm32h5xx_hal.h&quot;</code><br />
 <code>#include &quot;stm32h5xx_ll_bus.h&quot;</code><br />
@@ -102,81 +118,14 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="main_8h__incl.png" border="0" usemap="#aCore_2Inc_2main_8h" alt=""/></div>
-<map name="aCore_2Inc_2main_8h" id="aCore_2Inc_2main_8h">
-<area shape="rect" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="1173,5,1297,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,140,104"/>
-<area shape="rect" title=" " alt="" coords="165,79,317,104"/>
-<area shape="rect" title=" " alt="" coords="341,79,511,104"/>
-<area shape="rect" title=" " alt="" coords="536,79,684,104"/>
-<area shape="rect" title=" " alt="" coords="708,79,867,104"/>
-<area shape="rect" title=" " alt="" coords="891,79,1049,104"/>
-<area shape="rect" title=" " alt="" coords="1073,79,1225,104"/>
-<area shape="rect" title=" " alt="" coords="1249,79,1397,104"/>
-<area shape="rect" title=" " alt="" coords="1421,79,1599,104"/>
-<area shape="rect" title=" " alt="" coords="1623,79,1781,104"/>
-<area shape="rect" title=" " alt="" coords="1805,79,1959,104"/>
-<area shape="rect" title=" " alt="" coords="1983,79,2079,104"/>
-<area shape="rect" title=" " alt="" coords="2103,79,2178,104"/>
-<area shape="rect" title=" " alt="" coords="2203,79,2327,104"/>
-</map>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8h__incl.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="main_8h__dep__incl.png" border="0" usemap="#aCore_2Inc_2main_8hdep" alt=""/></div>
-<map name="aCore_2Inc_2main_8hdep" id="aCore_2Inc_2main_8hdep">
-<area shape="rect" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="2518,5,2642,31"/>
-<area shape="rect" href="adc_8h.html" title="This file contains all the function prototypes for the adc.c file." alt="" coords="303,86,417,111"/>
-<area shape="rect" href="main_8c.html" title=": Main program body" alt="" coords="734,174,858,199"/>
-<area shape="rect" href="app__freertos_8h.html" title=" " alt="" coords="3044,86,3217,111"/>
-<area shape="rect" href="app__freertos_8c.html" title=" " alt="" coords="3276,174,3449,199"/>
-<area shape="rect" href="usb__config_8c.html" title=" " alt="" coords="3098,174,3251,199"/>
-<area shape="rect" href="crc_8h.html" title="This file contains all the function prototypes for the crc.c file." alt="" coords="442,86,553,111"/>
-<area shape="rect" href="fdcan_8h.html" title="This file contains all the function prototypes for the fdcan.c file." alt="" coords="577,86,703,111"/>
-<area shape="rect" href="gpdma_8h.html" title="This file contains all the function prototypes for the gpdma.c file." alt="" coords="728,86,864,111"/>
-<area shape="rect" href="gpio_8h.html" title="This file contains all the function prototypes for the gpio.c file." alt="" coords="889,86,1007,111"/>
-<area shape="rect" href="i2c_8h.html" title="This file contains all the function prototypes for the i2c.c file." alt="" coords="1083,86,1194,111"/>
-<area shape="rect" href="sdmmc_8h.html" title="This file contains all the function prototypes for the sdmmc.c file." alt="" coords="1219,86,1357,111"/>
-<area shape="rect" href="spi_8h.html" title="This file contains all the function prototypes for the spi.c file." alt="" coords="1593,86,1703,111"/>
-<area shape="rect" href="rfm95w__task_8c.html" title=" " alt="" coords="1985,262,2154,287"/>
-<area shape="rect" href="sx1280__task_8c.html" title=" " alt="" coords="2217,262,2383,287"/>
-<area shape="rect" href="sx1280__hal__wrapper_8c.html" title=" " alt="" coords="2068,167,2239,207"/>
-<area shape="rect" href="tim_8h.html" title="This file contains all the function prototypes for the tim.c file." alt="" coords="2365,86,2478,111"/>
-<area shape="rect" href="usart_8h.html" title="This file contains all the function prototypes for the usart.c file." alt="" coords="3485,86,3609,111"/>
-<area shape="rect" href="stm32h5xx__it_8c.html" title="Interrupt Service Routines." alt="" coords="3961,174,4141,199"/>
-<area shape="rect" href="usb_8h.html" title="This file contains all the function prototypes for the usb.c file." alt="" coords="2855,86,2969,111"/>
-<area shape="rect" href="stm32h5xx__hal__msp_8c.html" title="This file provides code for the MSP Initialization and de&#45;Initialization codes." alt="" coords="4126,79,4279,119"/>
-<area shape="rect" href="sd__task_8h.html" title=" " alt="" coords="3837,86,4000,111"/>
-<area shape="rect" href="sd__task_8c.html" title=" " alt="" coords="4165,174,4299,199"/>
-<area shape="rect" href="cmd__interface_8c.html" title=" " alt="" coords="4303,86,4486,111"/>
-<area shape="rect" href="buzzer_8h.html" title=" " alt="" coords="2682,79,2830,119"/>
-<area shape="rect" href="GNSS_8h.html" title=" " alt="" coords="3633,86,3813,111"/>
-<area shape="rect" href="sky66114_8h.html" title=" " alt="" coords="3242,79,3409,119"/>
-<area shape="rect" href="ws2812_8h.html" title=" " alt="" coords="2503,79,2657,119"/>
-<area shape="rect" href="adc_8c.html" title="This file provides code for the configuration of the ADC instances." alt="" coords="5,174,120,199"/>
-<area shape="rect" href="crc_8c.html" title="This file provides code for the configuration of the CRC instances." alt="" coords="145,174,255,199"/>
-<area shape="rect" href="fdcan_8c.html" title=" " alt="" coords="279,174,406,199"/>
-<area shape="rect" href="gpdma_8c.html" title="This file provides code for the configuration of the GPDMA instances." alt="" coords="431,174,567,199"/>
-<area shape="rect" href="gpio_8c.html" title=" " alt="" coords="591,174,710,199"/>
-<area shape="rect" href="i2c_8c.html" title="This file provides code for the configuration of the I2C instances." alt="" coords="882,174,993,199"/>
-<area shape="rect" href="sdmmc_8c.html" title="This file provides code for the configuration of the SDMMC instances." alt="" coords="1017,174,1156,199"/>
-<area shape="rect" href="spi_8c.html" title=" " alt="" coords="1231,174,1342,199"/>
-<area shape="rect" href="lora__config_8h.html" title=" " alt="" coords="1860,174,2044,199"/>
-<area shape="rect" href="lora__config_8c.html" title=" " alt="" coords="1527,262,1681,287"/>
-<area shape="rect" href="rfm95w__wrapper_8h.html" title=" " alt="" coords="1367,167,1553,207"/>
-<area shape="rect" href="rfm95w__wrapper_8c.html" title=" " alt="" coords="1235,255,1394,295"/>
-<area shape="rect" href="spi__callbacks_8h.html" title=" " alt="" coords="1629,167,1785,207"/>
-<area shape="rect" href="spi__callbacks_8c.html" title=" " alt="" coords="1733,255,1883,295"/>
-<area shape="rect" href="tim_8c.html" title="This file provides code for the configuration of the TIM instances." alt="" coords="2365,174,2478,199"/>
-<area shape="rect" href="led_8c.html" title=" " alt="" coords="2503,174,2607,199"/>
-<area shape="rect" href="sound_8c.html" title=" " alt="" coords="2812,174,2935,199"/>
-<area shape="rect" href="ws2812_8c.html" title=" " alt="" coords="2631,167,2787,207"/>
-<area shape="rect" href="usart_8c.html" title=" " alt="" coords="3474,174,3598,199"/>
-<area shape="rect" href="cmd__task_8c.html" title=" " alt="" coords="3623,174,3769,199"/>
-<area shape="rect" href="gps__task_8c.html" title=" " alt="" coords="3794,174,3937,199"/>
-<area shape="rect" href="usb_8c.html" title=" " alt="" coords="2959,174,3073,199"/>
-</map>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8h__dep__incl.svg" width="100%" height="580"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="main_8h_source.html">Go to the source code of this file.</a></p>
@@ -415,9 +364,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1730ffe1e560465665eb47d9264826f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a> (void)</td></tr>
-<tr class="memdesc:a1730ffe1e560465665eb47d9264826f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is executed in case of error occurrence.  <br /></td></tr>
-<tr class="separator:a1730ffe1e560465665eb47d9264826f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad4e07955fadfeb416e9620ddb42f8fe9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__EEPROM__Emulation.html#gad4e07955fadfeb416e9620ddb42f8fe9">Error_Handler</a> (void)</td></tr>
+<tr class="memdesc:gad4e07955fadfeb416e9620ddb42f8fe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is executed in case of error occurrence.  <br /></td></tr>
+<tr class="separator:gad4e07955fadfeb416e9620ddb42f8fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -429,10 +378,13 @@ Variables</h2></td></tr>
 <tr class="separator:a514200cb33ad3cc3d365ea5802820606"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>: Header for <a class="el" href="main_8c.html" title=": Main program body">main.c</a> file. This file contains the common defines of the application. </p>
+<div class="textblock"><p>: Header for <a class="el" href="main_8c.html" title=": Main program body">main.c</a> file. </p>
+<p>This file contains the common defines of the application.</p>
 <dl class="section attention"><dt>Attention</dt><dd></dd></dl>
 <p>Copyright (c) 2025 STMicroelectronics. All rights reserved.</p>
 <p>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS. </p>
+
+<p class="definition">Definition in file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a6b20d41d6252e9871430c242cb1a56e7" name="a6b20d41d6252e9871430c242cb1a56e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6b20d41d6252e9871430c242cb1a56e7">&#9670;&#160;</a></span>BUFFER_SIZE</h2>
@@ -445,6 +397,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00062">62</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -460,6 +414,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00171">171</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="ac0f050faf586d6fb652d66c2795cf6ba" name="ac0f050faf586d6fb652d66c2795cf6ba"></a>
@@ -473,6 +429,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00170">170</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -488,6 +446,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00139">139</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="aa19b651760783dd35e93960cffe9841f" name="aa19b651760783dd35e93960cffe9841f"></a>
@@ -501,6 +461,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00138">138</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -516,6 +478,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00177">177</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="aebf0cb90e9a500338f385115c060450b" name="aebf0cb90e9a500338f385115c060450b"></a>
@@ -529,6 +493,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00176">176</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -544,6 +510,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00185">185</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="ad3db62d466cbb3faedb53b02b97b1475" name="ad3db62d466cbb3faedb53b02b97b1475"></a>
@@ -557,6 +525,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00184">184</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -572,6 +542,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00175">175</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a3fb0599ae717221ad08c83dac7d37e3f" name="a3fb0599ae717221ad08c83dac7d37e3f"></a>
@@ -585,6 +557,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00174">174</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -600,6 +574,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00183">183</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a6cc400ba192503fbffd9607c88a0fd85" name="a6cc400ba192503fbffd9607c88a0fd85"></a>
@@ -613,6 +589,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00182">182</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -628,6 +606,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00107">107</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a53ad320cd8d7d54a43f8264c9a86b69f" name="a53ad320cd8d7d54a43f8264c9a86b69f"></a>
@@ -641,6 +621,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00106">106</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -656,6 +638,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00111">111</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a8364626b9ce9d03300cb3f2f12065564" name="a8364626b9ce9d03300cb3f2f12065564"></a>
@@ -669,6 +653,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00110">110</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -684,6 +670,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00109">109</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a5b6d7e5b77b64b8c7f9240d00700d72a" name="a5b6d7e5b77b64b8c7f9240d00700d72a"></a>
@@ -697,6 +685,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00108">108</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -712,6 +702,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00195">195</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a439a83b0ed879b9c3ce84fe4809c607d" name="a439a83b0ed879b9c3ce84fe4809c607d"></a>
@@ -725,6 +717,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00194">194</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -740,6 +734,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00193">193</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="ac8b369de9af0db02c43a0395214bc006" name="ac8b369de9af0db02c43a0395214bc006"></a>
@@ -753,6 +749,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00192">192</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -768,6 +766,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00191">191</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a140000689a0c9c670eb5d7198996ffb9" name="a140000689a0c9c670eb5d7198996ffb9"></a>
@@ -781,6 +781,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00190">190</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -796,6 +798,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00189">189</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a6ed839505cd11726b979c0a1d82820c8" name="a6ed839505cd11726b979c0a1d82820c8"></a>
@@ -809,6 +813,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00188">188</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -824,6 +830,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00156">156</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a3d3244765967b2d498effb2e5e8afe85" name="a3d3244765967b2d498effb2e5e8afe85"></a>
@@ -837,6 +845,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00155">155</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -852,6 +862,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00158">158</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="ac63ffd5d87de44287e751b81fa58fb08" name="ac63ffd5d87de44287e751b81fa58fb08"></a>
@@ -865,6 +877,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00157">157</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -880,6 +894,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00160">160</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="ae91bb81b7d10094803d3253ff11bbc20" name="ae91bb81b7d10094803d3253ff11bbc20"></a>
@@ -893,6 +909,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00159">159</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -908,6 +926,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00067">67</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a2987a823a1b38548e751362aba25ccd9" name="a2987a823a1b38548e751362aba25ccd9"></a>
@@ -921,6 +941,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00181">181</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -936,6 +958,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00180">180</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a9bfda8485e91c6e246349a735b620a59" name="a9bfda8485e91c6e246349a735b620a59"></a>
@@ -949,6 +973,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00179">179</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -964,6 +990,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00178">178</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="aa2ac54564b3514084afd2c5dafe9d232" name="aa2ac54564b3514084afd2c5dafe9d232"></a>
@@ -977,6 +1005,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00061">61</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -992,6 +1022,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00187">187</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a6a0ddcea53bb42ba163862b7a93cc008" name="a6a0ddcea53bb42ba163862b7a93cc008"></a>
@@ -1005,6 +1037,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00186">186</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1020,6 +1054,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00095">95</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a18cdee0edfb06ffb38ce31a4c20dd075" name="a18cdee0edfb06ffb38ce31a4c20dd075"></a>
@@ -1033,6 +1069,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00094">94</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1048,6 +1086,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00154">154</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a3085015905d6c3019c0b87d65243ba7d" name="a3085015905d6c3019c0b87d65243ba7d"></a>
@@ -1061,6 +1101,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00153">153</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1076,6 +1118,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00137">137</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a5cbb23759dc1868d85077ab72a5fb90b" name="a5cbb23759dc1868d85077ab72a5fb90b"></a>
@@ -1089,6 +1133,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00136">136</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1104,6 +1150,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00150">150</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="aa8c68f5e7dabeb53ef11c836f775d89c" name="aa8c68f5e7dabeb53ef11c836f775d89c"></a>
@@ -1117,6 +1165,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00149">149</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1132,6 +1182,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00142">142</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a5ca9d387ad4d8f4409c97de81090bb57" name="a5ca9d387ad4d8f4409c97de81090bb57"></a>
@@ -1145,6 +1197,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00141">141</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1160,6 +1214,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00140">140</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="acc5ec94420786d9735e14a011625a35e" name="acc5ec94420786d9735e14a011625a35e"></a>
@@ -1173,6 +1229,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00146">146</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1188,6 +1246,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00145">145</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a71e5b85aa7509f95e12bad0fa28cb656" name="a71e5b85aa7509f95e12bad0fa28cb656"></a>
@@ -1201,6 +1261,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00148">148</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1216,6 +1278,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00147">147</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="aa3f93e0ddb7a788ac16a366925e615c0" name="aa3f93e0ddb7a788ac16a366925e615c0"></a>
@@ -1229,6 +1293,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00152">152</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1244,6 +1310,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00151">151</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a0d2a1e51081340b5edc5cd24525b899b" name="a0d2a1e51081340b5edc5cd24525b899b"></a>
@@ -1257,6 +1325,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00144">144</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1272,6 +1342,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00143">143</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a690f985c933da2ce6fe62b6c61dfa662" name="a690f985c933da2ce6fe62b6c61dfa662"></a>
@@ -1285,6 +1357,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00058">58</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1300,6 +1374,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00123">123</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a6ecebb001c727df25d0a899e01fee540" name="a6ecebb001c727df25d0a899e01fee540"></a>
@@ -1313,6 +1389,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00122">122</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1328,6 +1406,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00127">127</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="aada3dfb08c0334edc719bfe2675bb330" name="aada3dfb08c0334edc719bfe2675bb330"></a>
@@ -1341,6 +1421,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00126">126</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1356,6 +1438,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00097">97</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a19649ffbe70186ca46abec8813e06c4f" name="a19649ffbe70186ca46abec8813e06c4f"></a>
@@ -1369,6 +1453,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00096">96</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1384,6 +1470,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00099">99</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="aeaeaef2c0855da386b1d10db4cb7af1a" name="aeaeaef2c0855da386b1d10db4cb7af1a"></a>
@@ -1397,6 +1485,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00098">98</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1412,6 +1502,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00101">101</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a622a3557e448ec2da0d64065ecb6d82d" name="a622a3557e448ec2da0d64065ecb6d82d"></a>
@@ -1425,6 +1517,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00100">100</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1440,6 +1534,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00103">103</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a8551bd9723e8d373dd876f13d3378e96" name="a8551bd9723e8d373dd876f13d3378e96"></a>
@@ -1453,6 +1549,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00102">102</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1468,6 +1566,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00093">93</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="ad80eddb2cffe614202fe1752aa28ce72" name="ad80eddb2cffe614202fe1752aa28ce72"></a>
@@ -1481,6 +1581,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00092">92</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1496,6 +1598,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00173">173</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a0c7d0200649f5ff6ed068e581e14e2a2" name="a0c7d0200649f5ff6ed068e581e14e2a2"></a>
@@ -1509,6 +1613,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00172">172</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1524,6 +1630,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00165">165</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="ad55845a4f06734f42b42b0bc9d60f961" name="ad55845a4f06734f42b42b0bc9d60f961"></a>
@@ -1537,6 +1645,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00164">164</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1552,6 +1662,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00163">163</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="af7e39198b602f00e7b1f7c15534c0598" name="af7e39198b602f00e7b1f7c15534c0598"></a>
@@ -1565,6 +1677,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00162">162</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1580,6 +1694,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00161">161</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a1b0cbc8dd94e5aee69ae2ff4d034a1ff" name="a1b0cbc8dd94e5aee69ae2ff4d034a1ff"></a>
@@ -1593,6 +1709,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00068">68</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1608,6 +1726,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00169">169</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a2fe8e81ba14a03156810195afd510655" name="a2fe8e81ba14a03156810195afd510655"></a>
@@ -1621,6 +1741,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00168">168</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1636,6 +1758,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00167">167</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a99a23c4195cdf78d1686c997cc3ce733" name="a99a23c4195cdf78d1686c997cc3ce733"></a>
@@ -1649,6 +1773,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00166">166</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1664,6 +1790,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00131">131</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a451e873161d9dfbf67a287cff17f464f" name="a451e873161d9dfbf67a287cff17f464f"></a>
@@ -1677,6 +1805,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00130">130</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1692,6 +1822,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00129">129</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="aa5108e10cdfb7e20871f5f59dccc1eb5" name="aa5108e10cdfb7e20871f5f59dccc1eb5"></a>
@@ -1705,6 +1837,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00128">128</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1720,6 +1854,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00133">133</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a406f782d74a8dfa1b62b92df475147aa" name="a406f782d74a8dfa1b62b92df475147aa"></a>
@@ -1733,6 +1869,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00132">132</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1748,6 +1886,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00135">135</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="af5c40760465dbe6e325606f29af86cd2" name="af5c40760465dbe6e325606f29af86cd2"></a>
@@ -1761,6 +1901,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00134">134</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1776,6 +1918,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00117">117</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a21bfa11f7c77a6f9a4ed28c6594175e9" name="a21bfa11f7c77a6f9a4ed28c6594175e9"></a>
@@ -1789,6 +1933,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00116">116</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1804,6 +1950,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00119">119</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="ad675b2fd26b27ed2cdcc910a909fefbb" name="ad675b2fd26b27ed2cdcc910a909fefbb"></a>
@@ -1817,6 +1965,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00118">118</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1832,6 +1982,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00113">113</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a8cc72f216f2f2cf77daea8436747bf11" name="a8cc72f216f2f2cf77daea8436747bf11"></a>
@@ -1845,6 +1997,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00112">112</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1860,6 +2014,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00115">115</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a9f04620e31d51e615c9a5d0a1b38de6e" name="a9f04620e31d51e615c9a5d0a1b38de6e"></a>
@@ -1873,6 +2029,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00114">114</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1888,6 +2046,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00121">121</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a971c5c04e39fb8956fe4d8c4c3ed57a6" name="a971c5c04e39fb8956fe4d8c4c3ed57a6"></a>
@@ -1901,6 +2061,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00120">120</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1916,6 +2078,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00125">125</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a9b1939da541312bc4781f0f980a80533" name="a9b1939da541312bc4781f0f980a80533"></a>
@@ -1929,6 +2093,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00124">124</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1944,6 +2110,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00066">66</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a46bf56a22aa28010d1823652b85f8ad6" name="a46bf56a22aa28010d1823652b85f8ad6"></a>
@@ -1957,6 +2125,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00066">66</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -1972,6 +2142,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00064">64</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
+
 </div>
 </div>
 <a id="a60f3e59f21350e24450e76c522f54288" name="a60f3e59f21350e24450e76c522f54288"></a>
@@ -1985,6 +2157,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00105">105</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -2000,32 +2174,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a1730ffe1e560465665eb47d9264826f9" name="a1730ffe1e560465665eb47d9264826f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1730ffe1e560465665eb47d9264826f9">&#9670;&#160;</a></span>Error_Handler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Error_Handler </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function is executed in case of error occurrence. </p>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00104">104</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
 
 </div>
 </div>
@@ -2050,6 +2199,10 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00080">80</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00089">BufferPool_UART_Start()</a>, <a class="el" href="cmd__task_8c_source.html#l00036">cmd_task()</a>, and <a class="el" href="main_8c_source.html#l00166">HAL_UARTEx_RxEventCallback()</a>.</p>
+
 </div>
 </div>
 <a id="aba71ee56c7afab3cdb0ac97447c1c069" name="aba71ee56c7afab3cdb0ac97447c1c069"></a>
@@ -2071,6 +2224,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00076">76</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -2094,12 +2249,20 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00063">63</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="usbd__cdc__if_8c_source.html#l00224">CDC_Receive_FS()</a>, <a class="el" href="cmd__task_8c_source.html#l00036">cmd_task()</a>, <a class="el" href="main_8c_source.html#l00228">main()</a>, and <a class="el" href="main_8c_source.html#l00068">USB_StreamBuffer_Init()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li><li class="navelem"><a class="el" href="main_8h.html">main.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

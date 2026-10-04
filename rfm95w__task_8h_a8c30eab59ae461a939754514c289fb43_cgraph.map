@@ -1,0 +1,12 @@
+<map id="rfm95_send_window" name="rfm95_send_window">
+<area shape="rect" id="node1" title=" " alt="" coords="5,225,161,250"/>
+<area shape="rect" id="node2" href="$rfm95w_8c.html#ada484e99227682a5957298608b2d7c9a" title="Checks whether the transmission has finished." alt="" coords="452,326,617,352"/>
+<area shape="rect" id="node4" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="714,73,806,98"/>
+<area shape="rect" id="node5" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="903,149,1032,174"/>
+<area shape="rect" id="node6" href="$rfm95w_8c.html#a0229ba67005c578a5bc1f3db8f1549c0" title="Send a packet." alt="" coords="232,225,381,250"/>
+<area shape="rect" id="node10" href="$rfm95w_8c.html#a3adc3507c8b3ca5e44045380b6e3797a" title="Sets the radio transceiver in transmit mode." alt="" coords="209,9,404,34"/>
+<area shape="rect" id="node3" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="697,301,823,326"/>
+<area shape="rect" id="node7" href="$rfm95w_8c.html#a6ff0eccd2a2bfbeb889d11249ca6e5db" title="Fills the REG_FIFO buffer with desired values, and the REG_PAYLOAD_LENGTH with buffer size." alt="" coords="465,110,605,150"/>
+<area shape="rect" id="node8" href="$rfm95w_8c.html#af86811708bcd2722cec9b0e8dab5276b" title="Writes the REG_OP_MODE to mode TX." alt="" coords="665,225,855,250"/>
+<area shape="rect" id="node9" href="$rfm95w_8c.html#a57c55bef3200c876fd87864d39ecbb17" title="Writes the REG_IRQ_FLAGS buffer with IRQ_TX_DONE_MASK." alt="" coords="453,174,616,200"/>
+</map>

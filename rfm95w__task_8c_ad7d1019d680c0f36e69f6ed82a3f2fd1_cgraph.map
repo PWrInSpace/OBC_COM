@@ -1,0 +1,8 @@
+<map id="gs_poll_rx" name="gs_poll_rx">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,93,107"/>
+<area shape="rect" id="node2" href="$rfm95w_8c.html#aa38e58dba103790e491c5b9e760d32dd" title=" " alt="" coords="154,5,295,31"/>
+<area shape="rect" id="node3" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="356,31,481,56"/>
+<area shape="rect" id="node4" href="$rfm95w_8c.html#a1c2af535e7de30ee4a285c490a4cee6c" title="Read a received packet." alt="" coords="141,107,308,132"/>
+<area shape="rect" id="node6" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="529,131,659,156"/>
+<area shape="rect" id="node5" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="373,80,465,105"/>
+</map>

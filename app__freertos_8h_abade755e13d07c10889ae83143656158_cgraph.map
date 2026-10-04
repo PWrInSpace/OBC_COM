@@ -1,0 +1,102 @@
+<map id="MX_FREERTOS_Init" name="MX_FREERTOS_Init">
+<area shape="rect" id="node1" title="FreeRTOS initialization." alt="" coords="5,1164,151,1189"/>
+<area shape="rect" id="node2" href="$board__data_8c.html#ae1f72427126dd1e29892df7a730a9d33" title=" " alt="" coords="217,285,339,311"/>
+<area shape="rect" id="node3" href="$cmd__task_8c.html#a2874a497f674aefb689fe541ead54c66" title=" " alt="" coords="219,335,337,360"/>
+<area shape="rect" id="node12" href="$led_8c.html#a7eb4d382bdd4b42c57dbb7154d03ac66" title=" " alt="" coords="243,384,313,409"/>
+<area shape="rect" id="node23" href="$led_8c.html#a92042acbd604a83ddb34a02cd1fc057b" title=" " alt="" coords="232,512,324,537"/>
+<area shape="rect" id="node25" href="$logger_8c.html#a7f0a1ef369c8017a21abc0f68371b64e" title=" " alt="" coords="666,551,757,576"/>
+<area shape="rect" id="node40" href="$nvs__config_8c.html#a40eed21ee293313b466102cd353180c6" title="Unlock Flash and Init EEPROM Emulation." alt="" coords="239,808,317,833"/>
+<area shape="rect" id="node52" href="$rfm95w__task_8c.html#a5766e691677be755740c5d264c637139" title=" " alt="" coords="207,1053,349,1079"/>
+<area shape="rect" id="node71" href="$sd__task_8c.html#ad2d90dfe4e88382623bd9874937356e5" title=" " alt="" coords="221,1336,335,1361"/>
+<area shape="rect" id="node75" href="$sound_8c.html#ae96e6433ed18b83c2ccc8a7db9f0d3de" title=" " alt="" coords="904,1512,1000,1537"/>
+<area shape="rect" id="node81" href="$sky66114_8c.html#a647a84469acd04f3cecd6f5cda3ecc3b" title=" " alt="" coords="211,1460,345,1485"/>
+<area shape="rect" id="node84" href="$sound_8c.html#a90e396bab2471f72285f290ce7a5cab1" title=" " alt="" coords="233,1613,323,1639"/>
+<area shape="rect" id="node89" href="$gps__task_8c.html#ae757343c80f47f1e3f63a2a86c62220a" title=" " alt="" coords="219,1681,337,1707"/>
+<area shape="rect" id="node95" href="$telemetry__task_8c.html#afcd60b31f762920f35539834b72abfce" title="Inicjalizuje i uruchamia wątek telemetrii." alt="" coords="199,1769,357,1795"/>
+<area shape="rect" id="node98" href="$app__freertos_8c.html#a99d0fdb0434092bcb24d9c9af917e4e9" title="Function implementing the defaultTask thread." alt="" coords="213,1895,343,1920"/>
+<area shape="rect" id="node4" href="$cmd__task_8c.html#a4277e3032edf4828adec6ef2f88ac235" title=" " alt="" coords="448,129,533,155"/>
+<area shape="rect" id="node5" href="$rfm95w__task_8c.html#aa4d6b5c21ad55e5a3fa935e378767e09" title="Queue a fully&#45;formed frame for the GS to transmit in its next slot." alt="" coords="635,104,787,129"/>
+<area shape="rect" id="node7" href="$cmd__interface_8c.html#a9fbe128e63157dbdbd120e0a1f114c8e" title=" " alt="" coords="639,55,783,80"/>
+<area shape="rect" id="node10" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="1137,791,1249,816"/>
+<area shape="rect" id="node6" href="$lora__tx__queue_8c.html#a89ed5c1059722f03064494917238a7bf" title=" " alt="" coords="895,104,1009,129"/>
+<area shape="rect" id="node8" href="$cmd__interface_8c.html#a57d85fd4fa4007c732e903f4847ca286" title=" " alt="" coords="867,55,1037,80"/>
+<area shape="rect" id="node9" href="$cmd__interface_8c.html#a6a3cde87386a92623e597936724e60c4" title=" " alt="" coords="875,5,1029,31"/>
+<area shape="rect" id="node11" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="1380,955,1515,980"/>
+<area shape="rect" id="node13" href="$led_8c.html#a70d133c4354945f0beab946c4ddce781" title=" " alt="" coords="459,328,523,353"/>
+<area shape="rect" id="node22" href="$ws2812_8c.html#ae59e7c649371df520f17e774767abb1a" title=" " alt="" coords="441,279,541,304"/>
+<area shape="rect" id="node14" href="$led_8c.html#a911c1445888ee842028dabe011d0cbea" title=" " alt="" coords="678,304,745,329"/>
+<area shape="rect" id="node16" href="$led_8c.html#a9fd23871e64ce76441d76650cd8e9c34" title=" " alt="" coords="647,353,776,379"/>
+<area shape="rect" id="node19" href="$ws2812_8c.html#a1a336aa93a09eae96e568550794abdad" title=" " alt="" coords="643,255,780,280"/>
+<area shape="rect" id="node20" href="$ws2812_8c.html#afa32209d857563f721e36211b80d8308" title="Encode the frame and begin the DMA transfer (non&#45;blocking)" alt="" coords="655,205,768,231"/>
+<area shape="rect" id="node15" href="$led_8c.html#a64b160e194323340cb7afc6ad9a505f0" title=" " alt="" coords="924,255,980,280"/>
+<area shape="rect" id="node17" href="$led_8c.html#a992f9c52317e7e374b7463b240a4db94" title=" " alt="" coords="917,304,987,329"/>
+<area shape="rect" id="node18" href="$led_8c.html#a31772f07d54f0340d3b178fdb9d4a977" title=" " alt="" coords="921,353,983,379"/>
+<area shape="rect" id="node21" href="$ws2812_8c.html#aa57ef631af02e08bc7dc99c41fe8dfde" title=" " alt="" coords="889,205,1015,231"/>
+<area shape="rect" id="node24" href="$led_8c.html#a7b41155cb8af3488e0cb31618d0d85b2" title=" " alt="" coords="456,512,525,537"/>
+<area shape="rect" id="node26" href="$logger__serial__output_8c.html#a11f34d592d82012d43be17a610e10766" title=" " alt="" coords="875,701,1029,741"/>
+<area shape="rect" id="node27" href="$logger_8c.html#a954f4d99db6d9cafb8ff295102c1f015" title=" " alt="" coords="887,452,1017,477"/>
+<area shape="rect" id="node28" href="$logger_8c.html#aab0bbbc6ab7c7de493ad1ea8700880f0" title=" " alt="" coords="852,501,1052,527"/>
+<area shape="rect" id="node29" href="$logger_8c.html#aaf6d07588cfc5fb4f43a946b1c0f9de6" title=" " alt="" coords="847,551,1057,576"/>
+<area shape="rect" id="node38" href="$logger_8c.html#a002c8213d7f7b4c21f85c7d07e45435d" title=" " alt="" coords="875,600,1029,625"/>
+<area shape="rect" id="node39" href="$nvs__config_8c.html#a924f756b6492e945fdf2e73e9290e049" title=" " alt="" coords="877,403,1027,428"/>
+<area shape="rect" id="node30" href="$nvs__config_8c.html#aa9ef86be60e92cdb7220069d8653c66a" title=" " alt="" coords="1148,477,1237,503"/>
+<area shape="rect" id="node31" href="$group__EEPROM__Exported__Functions.html#gadd96f1176b1503cfbc15074faa9375b2" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="1362,247,1533,272"/>
+<area shape="rect" id="node32" href="$group__EEPROM__Private__Functions.html#gad111ea700245720d7f0cc24b0b8f4f58" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="1678,399,1786,424"/>
+<area shape="rect" id="node33" href="$group__EEPROM__Private__Functions.html#ga3c5f9766c0fb9b289576dabfc958c0f9" title="This function performs CRC calculation on Data and Virtual Address." alt="" coords="1897,449,2001,475"/>
+<area shape="rect" id="node34" href="$group__EEPROM__Private__Functions.html#ga155bacb56c1c6ea24464cdd408fc8ebb" title="Find suitable page for read/write/erase operation." alt="" coords="1909,499,1989,524"/>
+<area shape="rect" id="node35" href="$group__EEPROM__Private__Functions.html#ga2304deed602aa5aa10ecebbf7de5352c" title="Get page state in page header." alt="" coords="2049,373,2160,399"/>
+<area shape="rect" id="node36" href="$group__EEPROM__Private__Functions.html#gab2cc682a7689c76d4188bda3af6e9b0f" title="Set page state in page header." alt="" coords="2051,651,2159,676"/>
+<area shape="rect" id="node37" href="$group__EEPROM__Private__Functions.html#gaaf190b387699ec8d894cfe8449522084" title="Write a quad word at the given address in Flash (function is called FI_WriteDoubleWord to respect leg..." alt="" coords="2208,625,2363,651"/>
+<area shape="rect" id="node41" href="$group__EEPROM__Exported__Functions.html#ga08e3105698f17d96ff57c20e0b44517c" title="Restore the pages to a known good state in case of power loss." alt="" coords="1159,651,1226,676"/>
+<area shape="rect" id="node42" href="$group__EEPROM__Private__Functions.html#gafd8f74acc0db4e4d275c77730ab957d3" title="This function configures CRC Instance." alt="" coords="1395,600,1500,625"/>
+<area shape="rect" id="node43" href="$group__EEPROM__Exported__Functions.html#ga4f8175ee3f457d3456f51cf2e915be67" title="Delete corrupted Flash address, can be called under NMI." alt="" coords="1328,551,1567,576"/>
+<area shape="rect" id="node45" href="$group__EEPROM__Exported__Functions.html#ga9f8f1474998167a0928861938a57596f" title="Erases all flash pages of eeprom emulation, and set first page header as ACTIVE." alt="" coords="1402,803,1493,828"/>
+<area shape="rect" id="node46" href="$group__EEPROM__Private__Functions.html#ga4375dd5bf83e259a3481a83b5993a1a3" title="Flush the caches if needed to keep coherency when the flash content is modified." alt="" coords="1674,701,1790,727"/>
+<area shape="rect" id="node47" href="$group__EEPROM__Private__Functions.html#ga9d827241e39d1cfc7a06a70a25cd8eaa" title="Check if the configuration is 128&#45;bits bank or 2*64&#45;bits bank." alt="" coords="1655,752,1809,777"/>
+<area shape="rect" id="node48" href="$group__EEPROM__Private__Functions.html#gaf950461e14bae3fd51f89e9dd59db26b" title="Erase a page in polling mode." alt="" coords="1678,853,1786,879"/>
+<area shape="rect" id="node49" href="$group__EEPROM__Private__Functions.html#gacb9d63489e090b5adc55b3c4e587e083" title="Verify if specified page is fully erased." alt="" coords="1649,903,1815,928"/>
+<area shape="rect" id="node50" href="$group__EEPROM__Private__Functions.html#ga8d8715ee491b7eae710c3deabc74dd0d" title="Writes a new variable data in fresh new page in case of normal transfer, and transfers last updated e..." alt="" coords="1391,449,1503,475"/>
+<area shape="rect" id="node51" href="$group__EEPROM__Private__Functions.html#gaf47e9f09b5a17c1e9fafbd1ca8e967cc" title="Verify if pages are full then if not the case, writes variable in EEPROM." alt="" coords="1628,551,1836,576"/>
+<area shape="rect" id="node44" href="$group__EEPROM__Private__Functions.html#ga75609bda4bd6ce9d7e7919116d22a7ee" title="Delete corrupted Flash address, can be called from NMI." alt="" coords="1615,600,1849,625"/>
+<area shape="rect" id="node53" href="$rfm95w__task_8c.html#af8b08547037ee5614a6b8e7f8bc00b23" title=" " alt="" coords="423,967,558,992"/>
+<area shape="rect" id="node54" href="$rfm95w__task_8c.html#aec3803cc26789b3cbf72bb31223778d2" title=" " alt="" coords="638,967,785,992"/>
+<area shape="rect" id="node55" href="$nvs__config_8c.html#ad30a9d28942ae7f3b8ae3e244c083c09" title=" " alt="" coords="863,765,1041,791"/>
+<area shape="rect" id="node58" href="$lora__config_8c.html#addd84c4f747b3fd55b32ef082437cc21" title=" " alt="" coords="879,915,1025,955"/>
+<area shape="rect" id="node59" href="$lora__config_8c.html#a381ec50efe029e7793eda40dd4f03ea6" title=" " alt="" coords="1105,895,1280,920"/>
+<area shape="rect" id="node60" href="$rfm95w__task_8c.html#a3d5edaf75b38f61868f1c2416cd0ae9e" title=" " alt="" coords="662,1065,761,1091"/>
+<area shape="rect" id="node62" href="$rfm95w__task_8c.html#afc9e5aad71050eafeeaed4d72e1af8fc" title=" " alt="" coords="905,815,999,840"/>
+<area shape="rect" id="node63" href="$rfm95w__task_8c.html#a99167165b4cfbfc7129d98dd170893fd" title=" " alt="" coords="662,1016,761,1041"/>
+<area shape="rect" id="node64" href="$rfm95w__task_8c.html#ad7d1019d680c0f36e69f6ed82a3f2fd1" title=" " alt="" coords="667,1213,755,1239"/>
+<area shape="rect" id="node67" href="$gs__scheduler_8c.html#a815b48fae98b1fdf545b4693a720cca3" title=" " alt="" coords="658,1115,765,1140"/>
+<area shape="rect" id="node68" href="$rfm95w__task_8c.html#ad09b3088ae86c18f441bef09676c7933" title=" " alt="" coords="674,1164,749,1189"/>
+<area shape="rect" id="node69" href="$lora__tx__queue_8c.html#a79cfbedffc39de6ac50666d4d7f26a48" title=" " alt="" coords="660,715,763,740"/>
+<area shape="rect" id="node70" href="$lora__config_8c.html#ad5bfaa68e5000acde54daa44ae48f970" title=" " alt="" coords="638,764,785,789"/>
+<area shape="rect" id="node56" href="$rfm95w_8c.html#a33c72632717848203646e7d95c033057" title="Sets the radio transceiver in sleep mode." alt="" coords="901,984,1003,1009"/>
+<area shape="rect" id="node57" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="1128,1061,1257,1087"/>
+<area shape="rect" id="node61" href="$rfm95w_8c.html#aec391f2d77ea33a0a3a3c51a0856396c" title="Sets the radio transceiver in receive mode." alt="" coords="859,1036,1045,1061"/>
+<area shape="rect" id="node65" href="$rfm95w_8c.html#aa38e58dba103790e491c5b9e760d32dd" title=" " alt="" coords="881,1212,1023,1237"/>
+<area shape="rect" id="node66" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="1130,1237,1255,1263"/>
+<area shape="rect" id="node72" href="$sd__task_8c.html#a0db1b2ecd079a48393cae891b54c5926" title=" " alt="" coords="412,1424,569,1449"/>
+<area shape="rect" id="node76" href="$sd__task_8c.html#a3d0ac7cbbf5091a5473d4d99d63292dd" title=" " alt="" coords="416,1312,565,1337"/>
+<area shape="rect" id="node79" href="$sd__task_8c.html#a1ddaddf73d5115aee83e334481151dbb" title=" " alt="" coords="430,1361,551,1387"/>
+<area shape="rect" id="node73" href="$sd__task_8c.html#a8f51bc671c8cb315e9e6ac9d50f0157f" title=" " alt="" coords="650,1463,773,1488"/>
+<area shape="rect" id="node74" href="$sd__task_8c.html#ac1cf0c55de40244f99ffeabc7c06a059" title=" " alt="" coords="909,1437,995,1463"/>
+<area shape="rect" id="node77" href="$board__data_8c.html#ac6df3fa4a3d3b7270de6032e0074f096" title=" " alt="" coords="633,1263,790,1288"/>
+<area shape="rect" id="node78" href="$sd__task_8c.html#ae89045edea742bdd7453c51f2ed80c21" title=" " alt="" coords="639,1312,784,1337"/>
+<area shape="rect" id="node80" href="$user__diskio_8c.html#a4353c16b6d5c8bd627871a468037e7ee" title=" " alt="" coords="624,1361,799,1387"/>
+<area shape="rect" id="node82" href="$sky66114_8c.html#a8b4c6e8f485b9e6b6abdec62967bb602" title=" " alt="" coords="435,1487,547,1512"/>
+<area shape="rect" id="node83" href="$sky66114_8c.html#a939adbab935cb7b407fbb4dacaa0b4d0" title=" " alt="" coords="634,1512,789,1537"/>
+<area shape="rect" id="node85" href="$buzzer_8c.html#a67474891465afd17e4c01ba17d1a05bd" title=" " alt="" coords="444,1613,537,1639"/>
+<area shape="rect" id="node87" href="$sound_8c.html#a2db46f98f8f8fde5eba0156cacc10c51" title=" " alt="" coords="457,1664,524,1689"/>
+<area shape="rect" id="node86" href="$buzzer_8c.html#aa68304d0537a12b41497d1306904306c" title=" " alt="" coords="899,1664,1005,1689"/>
+<area shape="rect" id="node88" href="$buzzer_8c.html#a8b5df1d0f87be9e9fdb23896369f96bf" title=" " alt="" coords="647,1715,775,1740"/>
+<area shape="rect" id="node90" href="$gps__task_8c.html#a2b4ba50a0ecdfbe3864bc6cf9ad0b8b4" title=" " alt="" coords="451,1835,531,1860"/>
+<area shape="rect" id="node91" href="$gps__task_8c.html#ae5fc8034e9ce13657187e2a7df794409" title=" " alt="" coords="655,1964,767,1989"/>
+<area shape="rect" id="node92" href="$GNSS_8c.html#aaba3740a3ad0f0f596ab5c8aee7da859" title="Parse received data from GPS module." alt="" coords="633,1816,789,1841"/>
+<area shape="rect" id="node93" href="$gps__task_8c.html#ac936b9a955932af5020b0aa7af8d09ad" title="Szuka nagłówka NAV&#45;PVT w buforze 256B i kopiuje 100B na początek bufora roboczego." alt="" coords="648,1865,775,1891"/>
+<area shape="rect" id="node94" href="$gps__task_8c.html#a6eae2e3cf49d0681be46c984ad81c1fa" title=" " alt="" coords="648,1915,775,1940"/>
+<area shape="rect" id="node96" href="$telemetry__task_8c.html#adf01cf2576afc3ce53d9f36372a5748e" title="Główna pętla wątku telemetrii." alt="" coords="405,1921,576,1947"/>
+<area shape="rect" id="node97" href="$sd__task_8c.html#ac3aaa7f82771654888e7e93faf56d68c" title=" " alt="" coords="637,2013,785,2039"/>
+<area shape="rect" id="node99" href="$usb__config_8c.html#a81616d4ccb93cf271a9b9c382f2dc01b" title=" " alt="" coords="425,2044,557,2069"/>
+<area shape="rect" id="node100" href="$group__EEPROM__Emulation.html#gad4e07955fadfeb416e9620ddb42f8fe9" title="This function is executed in case of error occurrence." alt="" coords="656,2063,767,2088"/>
+</map>

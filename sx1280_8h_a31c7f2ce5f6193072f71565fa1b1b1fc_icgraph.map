@@ -1,0 +1,9 @@
+<map id="SX1280GetIrqStatus" name="SX1280GetIrqStatus">
+<area shape="rect" id="node1" title="Returns the current IRQ status." alt="" coords="439,55,591,80"/>
+<area shape="rect" id="node2" href="$sx1280__task_8c.html#ad29d477ada983b118b9139bafba10196" title=" " alt="" coords="249,5,387,31"/>
+<area shape="rect" id="node4" href="$sx1280_8c.html#af08aac82fe5e983a4671967275b5dab8" title="Process the analysis of radio IRQs and calls callback functions depending on radio state." alt="" coords="245,55,391,80"/>
+<area shape="rect" id="node6" href="$sx1280__task_8c.html#ab2b4adc4b092efe2c6680ed44a07fe72" title=" " alt="" coords="251,104,385,129"/>
+<area shape="rect" id="node3" href="$sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0" title=" " alt="" coords="5,5,197,31"/>
+<area shape="rect" id="node5" href="$sx1280_8c.html#a4b390ccc0f9d28283afff36f11a94263" title="DIOs interrupt callback." alt="" coords="37,55,165,80"/>
+<area shape="rect" id="node7" href="$sx1280__task_8c.html#aa3e5f314d579c8192dcfb785648bca96" title=" " alt="" coords="46,104,157,129"/>
+</map>

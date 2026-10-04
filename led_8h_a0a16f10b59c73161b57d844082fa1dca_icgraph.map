@@ -1,0 +1,4 @@
+<map id="led_fault_color" name="led_fault_color">
+<area shape="rect" id="node1" title=" " alt="" coords="196,5,315,31"/>
+<area shape="rect" id="node2" href="$stm32h5xx__it_8c.html#a2bffc10d5bd4106753b7c30e86903bea" title="This function handles Hard fault interrupt." alt="" coords="5,5,148,31"/>
+</map>

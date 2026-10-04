@@ -1,0 +1,10 @@
+<map id="SX1280ProcessIrqs" name="SX1280ProcessIrqs">
+<area shape="rect" id="node1" title="Process the analysis of radio IRQs and calls callback functions depending on radio state." alt="" coords="5,80,151,105"/>
+<area shape="rect" id="node2" href="$sx1280_8c.html#a24c5e4e70bd2db5b0513a3610b43043f" title="Clears the IRQs." alt="" coords="201,5,363,31"/>
+<area shape="rect" id="node5" href="$sx1280_8c.html#a31c7f2ce5f6193072f71565fa1b1b1fc" title="Returns the current IRQ status." alt="" coords="206,55,358,80"/>
+<area shape="rect" id="node7" href="$sx1280_8c.html#a1fc0c006b1a67d076823bd34811118bc" title="Gets the current Operation Mode of the Radio." alt="" coords="208,104,356,129"/>
+<area shape="rect" id="node8" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="199,153,365,179"/>
+<area shape="rect" id="node3" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="413,5,608,31"/>
+<area shape="rect" id="node4" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="656,31,828,56"/>
+<area shape="rect" id="node6" href="$sx1280-hal_8c.html#abc1ed10f83057922610c0ef2b3893733" title="Send a command that read data from the radio." alt="" coords="414,55,607,80"/>
+</map>

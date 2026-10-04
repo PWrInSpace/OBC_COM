@@ -1,0 +1,20 @@
+<map id="EE_Init" name="EE_Init">
+<area shape="rect" id="node1" title="Restore the pages to a known good state in case of power loss." alt="" coords="5,460,72,485"/>
+<area shape="rect" id="node2" href="$group__EEPROM__Private__Functions.html#gafd8f74acc0db4e4d275c77730ab957d3" title="This function configures CRC Instance." alt="" coords="187,5,292,31"/>
+<area shape="rect" id="node3" href="$group__EEPROM__Exported__Functions.html#ga4f8175ee3f457d3456f51cf2e915be67" title="Delete corrupted Flash address, can be called under NMI." alt="" coords="120,55,359,80"/>
+<area shape="rect" id="node5" href="$group__EEPROM__Exported__Functions.html#ga9f8f1474998167a0928861938a57596f" title="Erases all flash pages of eeprom emulation, and set first page header as ACTIVE." alt="" coords="194,687,285,712"/>
+<area shape="rect" id="node6" href="$group__EEPROM__Private__Functions.html#ga4375dd5bf83e259a3481a83b5993a1a3" title="Flush the caches if needed to keep coherency when the flash content is modified." alt="" coords="1017,511,1133,536"/>
+<area shape="rect" id="node7" href="$group__EEPROM__Private__Functions.html#ga9d827241e39d1cfc7a06a70a25cd8eaa" title="Check if the configuration is 128&#45;bits bank or 2*64&#45;bits bank." alt="" coords="447,764,601,789"/>
+<area shape="rect" id="node8" href="$group__EEPROM__Private__Functions.html#gaf950461e14bae3fd51f89e9dd59db26b" title="Erase a page in polling mode." alt="" coords="1021,612,1129,637"/>
+<area shape="rect" id="node9" href="$group__EEPROM__Private__Functions.html#gab2cc682a7689c76d4188bda3af6e9b0f" title="Set page state in page header." alt="" coords="841,409,949,435"/>
+<area shape="rect" id="node11" href="$group__EEPROM__Private__Functions.html#gacb9d63489e090b5adc55b3c4e587e083" title="Verify if specified page is fully erased." alt="" coords="441,813,607,839"/>
+<area shape="rect" id="node12" href="$group__EEPROM__Private__Functions.html#ga2304deed602aa5aa10ecebbf7de5352c" title="Get page state in page header." alt="" coords="1019,207,1130,232"/>
+<area shape="rect" id="node13" href="$group__EEPROM__Private__Functions.html#ga8d8715ee491b7eae710c3deabc74dd0d" title="Writes a new variable data in fresh new page in case of normal transfer, and transfers last updated e..." alt="" coords="183,359,295,384"/>
+<area shape="rect" id="node18" href="$group__EEPROM__Private__Functions.html#gaf47e9f09b5a17c1e9fafbd1ca8e967cc" title="Verify if pages are full then if not the case, writes variable in EEPROM." alt="" coords="420,308,628,333"/>
+<area shape="rect" id="node4" href="$group__EEPROM__Private__Functions.html#ga75609bda4bd6ce9d7e7919116d22a7ee" title="Delete corrupted Flash address, can be called from NMI." alt="" coords="407,55,641,80"/>
+<area shape="rect" id="node10" href="$group__EEPROM__Private__Functions.html#gaaf190b387699ec8d894cfe8449522084" title="Write a quad word at the given address in Flash (function is called FI_WriteDoubleWord to respect leg..." alt="" coords="997,359,1152,384"/>
+<area shape="rect" id="node14" href="$group__EEPROM__Private__Functions.html#ga155bacb56c1c6ea24464cdd408fc8ebb" title="Find suitable page for read/write/erase operation." alt="" coords="701,359,781,384"/>
+<area shape="rect" id="node16" href="$group__EEPROM__Private__Functions.html#gad111ea700245720d7f0cc24b0b8f4f58" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="470,257,578,283"/>
+<area shape="rect" id="node15" href="$group__EEPROM__Exported__Functions.html#gaa5483980e10a634ccae116ca5afcb911" title="Erase group of pages which are erasing state, in polling mode." alt="" coords="845,360,945,385"/>
+<area shape="rect" id="node17" href="$group__EEPROM__Private__Functions.html#ga3c5f9766c0fb9b289576dabfc958c0f9" title="This function performs CRC calculation on Data and Virtual Address." alt="" coords="689,257,793,283"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="EEPROM_Emulation" name="EEPROM_Emulation">
+<area shape="rect" id="node1" title=" " alt="" coords="5,153,156,179"/>
+<area shape="rect" id="node2" href="$group__EEPROM__Exported__Constants.html" title=" " alt="" coords="204,5,412,31"/>
+<area shape="rect" id="node3" href="$group__EEPROM__Exported__Functions.html" title=" " alt="" coords="205,55,411,80"/>
+<area shape="rect" id="node4" href="$group__EEPROM__Private__Constants.html" title=" " alt="" coords="210,104,406,129"/>
+<area shape="rect" id="node5" href="$group__EEPROM__Private__Functions.html" title=" " alt="" coords="211,153,405,179"/>
+<area shape="rect" id="node6" href="$group__EEPROM__Private__Macros.html" title=" " alt="" coords="219,203,397,228"/>
+<area shape="rect" id="node7" href="$group__EEPROM__Private__Structures.html" title=" " alt="" coords="209,252,407,277"/>
+<area shape="rect" id="node8" href="$group__EEPROM__Private__Variables.html" title=" " alt="" coords="213,301,403,327"/>
+</map>

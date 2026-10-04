@@ -1,7 +1,0 @@
-<map id="Core/tinyusbsrc/portable/raspberrypi/rp2040/dcd_rp2040.c" name="Core/tinyusbsrc/portable/raspberrypi/rp2040/dcd_rp2040.c">
-<area shape="rect" id="node1" title=" " alt="" coords="180,5,361,60"/>
-<area shape="rect" id="node2" href="$tusb__option_8h.html" title=" " alt="" coords="215,108,326,133"/>
-<area shape="rect" id="node3" href="$tusb__compiler_8h.html" title=" " alt="" coords="5,181,192,207"/>
-<area shape="rect" id="node4" title=" " alt="" coords="217,181,325,207"/>
-<area shape="rect" id="node5" href="$tusb__mcu_8h.html" title=" " alt="" coords="349,181,507,207"/>
-</map>

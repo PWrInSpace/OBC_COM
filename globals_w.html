@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('globals_w.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,17 +93,22 @@ $(function() {
 <div class="textblock">Here is a list of all functions, variables, defines, enums, and typedefs with links to the files they belong to:</div>
 
 <h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
+<li>wait_for_tx_done()&#160;:&#160;<a class="el" href="sx1280__task_8c.html#ab2b4adc4b092efe2c6680ed44a07fe72">sx1280_task.c</a></li>
+<li>wheel()&#160;:&#160;<a class="el" href="led_8c.html#a31772f07d54f0340d3b178fdb9d4a977">led.c</a></li>
 <li>Wirst&#160;:&#160;<a class="el" href="GNSS_8h.html#a0e90ac1141399e8e79d865d54f275537aa030c8df7e68d9640b35a03d4f63e3c1">GNSS.h</a></li>
+<li>WriteVariable()&#160;:&#160;<a class="el" href="group__EEPROM__Private__Functions.html#gab1030d083e54bb50edcd083851de0620">eeprom_emul.c</a></li>
 <li>WS2812_BITS_PER_LED&#160;:&#160;<a class="el" href="ws2812_8c.html#a5b0497367a16f3ccc082f116a639f629">ws2812.c</a></li>
 <li>WS2812_BUF_LEN&#160;:&#160;<a class="el" href="ws2812_8c.html#af5ec9453c40f135b727a9469964ecb15">ws2812.c</a></li>
 <li>WS2812_BUSY&#160;:&#160;<a class="el" href="ws2812_8h.html#a8a7fcb21a301f16d01a0325d3594a137ac009402010040f38df92d8462d3c47ad">ws2812.h</a></li>
 <li>ws2812_clear()&#160;:&#160;<a class="el" href="ws2812_8h.html#aedfe2f767491f794098f3d02d056965b">ws2812.h</a>, <a class="el" href="ws2812_8c.html#aedfe2f767491f794098f3d02d056965b">ws2812.c</a></li>
 <li>WS2812_DUTY_HI&#160;:&#160;<a class="el" href="ws2812_8c.html#aef75db61a89fe6f174865cc214cce372">ws2812.c</a></li>
 <li>WS2812_DUTY_LO&#160;:&#160;<a class="el" href="ws2812_8c.html#aa069e30988e1f9467cf27c9effcd59b5">ws2812.c</a></li>
+<li>ws2812_encode()&#160;:&#160;<a class="el" href="ws2812_8c.html#aa57ef631af02e08bc7dc99c41fe8dfde">ws2812.c</a></li>
 <li>WS2812_ERROR&#160;:&#160;<a class="el" href="ws2812_8h.html#a8a7fcb21a301f16d01a0325d3594a137a1dd8d45415302468ab827a51dd606474">ws2812.h</a></li>
 <li>ws2812_error_t&#160;:&#160;<a class="el" href="ws2812_8h.html#a8a7fcb21a301f16d01a0325d3594a137">ws2812.h</a></li>
-<li>ws2812_init()&#160;:&#160;<a class="el" href="ws2812_8h.html#ae59e7c649371df520f17e774767abb1a">ws2812.h</a>, <a class="el" href="ws2812_8c.html#ae59e7c649371df520f17e774767abb1a">ws2812.c</a></li>
-<li>ws2812_is_busy()&#160;:&#160;<a class="el" href="ws2812_8c.html#a72e5447360ecc4a52fd580ed72e58b5d">ws2812.c</a>, <a class="el" href="ws2812_8h.html#a72e5447360ecc4a52fd580ed72e58b5d">ws2812.h</a></li>
+<li>ws2812_hdma()&#160;:&#160;<a class="el" href="ws2812_8c.html#a9dbc72bdc8207fbb90566ca4fc90c487">ws2812.c</a></li>
+<li>ws2812_init()&#160;:&#160;<a class="el" href="ws2812_8c.html#ae59e7c649371df520f17e774767abb1a">ws2812.c</a>, <a class="el" href="ws2812_8h.html#ae59e7c649371df520f17e774767abb1a">ws2812.h</a></li>
+<li>ws2812_is_busy()&#160;:&#160;<a class="el" href="ws2812_8h.html#a72e5447360ecc4a52fd580ed72e58b5d">ws2812.h</a>, <a class="el" href="ws2812_8c.html#a72e5447360ecc4a52fd580ed72e58b5d">ws2812.c</a></li>
 <li>WS2812_MAX_LEDS&#160;:&#160;<a class="el" href="ws2812_8h.html#ab11b12e6edebea09d32a37a8277d1413">ws2812.h</a></li>
 <li>WS2812_OK&#160;:&#160;<a class="el" href="ws2812_8h.html#a8a7fcb21a301f16d01a0325d3594a137a4758a17e7d70a6ba6214768202c0e639">ws2812.h</a></li>
 <li>WS2812_RESET_SLOTS&#160;:&#160;<a class="el" href="ws2812_8c.html#aff889ea6debeeac01adc4ab2ad925f2c">ws2812.c</a></li>
@@ -94,9 +119,12 @@ $(function() {
 <li>ws2812_show_blocking()&#160;:&#160;<a class="el" href="ws2812_8h.html#af345d63e55c471a0717d5bc9439c8a50">ws2812.h</a>, <a class="el" href="ws2812_8c.html#af345d63e55c471a0717d5bc9439c8a50">ws2812.c</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

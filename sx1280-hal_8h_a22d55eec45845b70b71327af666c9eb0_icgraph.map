@@ -1,0 +1,18 @@
+<map id="SX1280HalWriteRegister" name="SX1280HalWriteRegister">
+<area shape="rect" id="node1" title="Write a single byte of data to the radio memory." alt="" coords="576,373,759,399"/>
+<area shape="rect" id="node2" href="$sx1280_8c.html#ab20bd70738864a9b138c4011737564f6" title="Disable the manual gain control and enable AGC." alt="" coords="304,5,503,31"/>
+<area shape="rect" id="node3" href="$sx1280_8c.html#a5750a2fb3ceb08f2452659d3d0f27bec" title="Enable manual gain and disable AGC." alt="" coords="307,55,500,80"/>
+<area shape="rect" id="node4" href="$sx1280_8c.html#af6fffb5681b52a42682edeb7159a23c6" title="Return the last ranging result power indicator." alt="" coords="292,105,515,145"/>
+<area shape="rect" id="node5" href="$sx1280_8c.html#a17d5de63553dd70d443bc4ec852a0344" title="Return the ranging result value." alt="" coords="309,169,497,195"/>
+<area shape="rect" id="node6" href="$sx1280_8c.html#a96e7651f094c68cc7a01b423ba1ecaff" title="Clears the ranging filter." alt="" coords="308,219,499,259"/>
+<area shape="rect" id="node7" href="$sx1280_8c.html#a292618ae8f2bad9751e6395d6b7f61e5" title="Set the number of samples considered in the built&#45;in filter." alt="" coords="299,283,508,323"/>
+<area shape="rect" id="node8" href="$sx1280_8c.html#aa46493a37bd71913098c34874cf26f24" title="Set the Access Address field of BLE packet." alt="" coords="298,348,509,373"/>
+<area shape="rect" id="node10" href="$sx1280_8c.html#ad347825b06ac5a8528c2cd8230640be5" title="Configure the LNA regime of operation." alt="" coords="306,397,501,423"/>
+<area shape="rect" id="node11" href="$sx1280_8c.html#ab37a43d55219dcc4967108b13c1c6f87" title="Set the gain for LNA." alt="" coords="300,447,507,472"/>
+<area shape="rect" id="node12" href="$sx1280_8c.html#a65893dd4a4968a2436a6575c62a17b6b" title="Sets the standard processing delay between Master and Slave." alt="" coords="295,496,511,521"/>
+<area shape="rect" id="node13" href="$sx1280_8c.html#a6ec0596e20db056316d667e6fc48eee8" title="Sets the number of bits used to check that ranging request match ranging ID." alt="" coords="303,545,504,571"/>
+<area shape="rect" id="node14" href="$sx1280_8c.html#ab6fbfc728e91b36d83edb3620721a231" title="Initializes the radio registers to the recommended default values." alt="" coords="303,595,504,620"/>
+<area shape="rect" id="node15" href="$sx1280_8c.html#a3d6b0585417c6ecb78be4ed9275e586c" title="Defines how many error bits are tolerated in sync word detection." alt="" coords="279,644,528,669"/>
+<area shape="rect" id="node16" href="$sx1280_8c.html#a0bc70b7f827c9e2d82592c76d456de56" title="Sets the Initial value of the LFSR used for the whitening in GFSK, FLRC and BLE protocols." alt="" coords="308,693,499,719"/>
+<area shape="rect" id="node9" href="$sx1280_8c.html#a8d0b3e416ba586e139f3ff3947a341a8" title="Set the Access Address for Advertizer BLE packets." alt="" coords="5,341,231,381"/>
+</map>

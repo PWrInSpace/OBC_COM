@@ -1,0 +1,4 @@
+<map id="SX1280HalClearInstructionRam" name="SX1280HalClearInstructionRam">
+<area shape="rect" id="node1" title="Clears the instruction ram memory block." alt="" coords="5,5,232,31"/>
+<area shape="rect" id="node2" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="280,5,452,31"/>
+</map>

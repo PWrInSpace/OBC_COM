@@ -1,0 +1,4 @@
+<map id="SX1280HalReadRegisters" name="SX1280HalReadRegisters">
+<area shape="rect" id="node1" title="Read data from the radio memory." alt="" coords="5,5,192,31"/>
+<area shape="rect" id="node2" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="240,5,412,31"/>
+</map>

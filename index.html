@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -76,7 +96,7 @@ $(function() {
 <div class="textblock"><p><a class="anchor" id="mainpage"></a> <img src="https://img.shields.io/badge/MCU-STM32H563-blue.svg" alt="MCU" style="pointer-events: none;" class="inline"/> <img src="https://img.shields.io/badge/RTOS-FreeRTOS%20CMSIS--V2-green.svg" alt="RTOS" style="pointer-events: none;" class="inline"/> <img src="https://img.shields.io/badge/Build-CMake-orange.svg" alt="Build" style="pointer-events: none;" class="inline"/> <img src="https://img.shields.io/badge/Code_Style-Clang--Format-blueviolet.svg" alt="Code Style" style="pointer-events: none;" class="inline"/></p>
 <p>Firmware for the On-Board Computer (OBC) communication subsystem. This project is based on the <b>STM32H563</b> processor, chosen for its high reliability and integrated security features—essential requirements for robust communication systems in aerospace.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md33"></a>
+<h1><a class="anchor" id="autotoc_md1"></a>
 📂 Project Structure</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -91,14 +111,14 @@ $(function() {
 <td class="markdownTableBodyLeft">**<code>wrappers/</code>**   </td><td class="markdownTableBodyLeft">Hardware abstraction layers for simplified peripheral access.   </td></tr>
 </table>
 <hr  />
-<h1><a class="anchor" id="autotoc_md35"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 🛠 VS Code Automation &amp; Build Process</h1>
 <p>The repository is configured to streamline development and enforce code quality using automated VS Code tasks (<code>.vscode/tasks.json</code>).</p>
 <ul>
 <li>**Format &amp; Build (<code>CTRL + SHIFT + B</code>)**: Pressing this shortcut will automatically run <code>clang-format</code> to style your C/C++ files, and then build the project using CMake.</li>
 <li><b>Flash Firmware</b>: To upload the code, go to <b>Terminal -&gt; Run Task...</b> in the top menu and select **<code>Flash DFU</code>**.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md36"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Required Configuration for Flashing:</h2>
 <p>Before flashing for the first time, check the <code>Flash DFU</code> task in <code>.vscode/tasks.json</code>:</p><ol type="1">
 <li><b>Programmer Path</b>: Ensure the path to the <code>STM32_Programmer_CLI</code> matches your local <b>STM32CubeProgrammer</b> installation.</li>
@@ -108,19 +128,19 @@ Required Configuration for Flashing:</h2>
 <p>&zwj;[!IMPORTANT] <br  />
  <b>Build before flashing:</b> The flash task targets the **<code>.bin</code>** file. You must successfully build the project (<code>CTRL + SHIFT + B</code>) before flashing to ensure the binary is up-to-date. </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md37"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 &lt;/blockquote&gt;</h1>
-<h1><a class="anchor" id="autotoc_md38"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 🚀 Flashing Instructions (USB DFU Mode)</h1>
 <p>The board uses USB DFU for firmware updates. Follow these steps to toggle between programming and execution modes:</p>
-<h2><a class="anchor" id="autotoc_md39"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Step 1: Programming Mode (Bootloader)</h2>
 <ol type="1">
 <li>Set the <b>BOOT0</b> jumper/switch to <b>GND</b>.</li>
 <li>Press the <b>RESET (RST)</b> button.</li>
 <li>In VS Code, navigate to <b>Terminal -&gt; Run Task...</b> and select **<code>Flash DFU</code>**. The system will automatically upload the binary.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md40"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Step 2: Execution Mode (Run)</h2>
 <ol type="1">
 <li>Once the upload is complete, move the <b>BOOT0</b> switch to <b>3V3 (VCC)</b>.</li>
@@ -128,16 +148,25 @@ Step 2: Execution Mode (Run)</h2>
 <li>The firmware will now start executing from the Flash memory.</li>
 </ol>
 <hr  />
-<h1><a class="anchor" id="autotoc_md42"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 🛠 STM32CubeMX Notes</h1>
 <ol type="1">
-<li>After STM32CubeMX code generation, change the <code>cmake/stm32cubemx/CMakeLists.txt</code> file as follows: ```cmake set(MX_LINK_LIBS STM32_Drivers ${TOOLCHAIN_LINK_LIBRARIES} RTOS2 "-u _printf_float" ) </li>
+<li>After STM32CubeMX code generation, change the <code>cmake/stm32cubemx/CMakeLists.txt</code> file as follows: <div class="fragment"><div class="line">set(MX_LINK_LIBS </div>
+<div class="line">    STM32_Drivers</div>
+<div class="line">    ${TOOLCHAIN_LINK_LIBRARIES}</div>
+<div class="line">    RTOS2</div>
+<div class="line">    &quot;-u _printf_float&quot;</div>
+<div class="line">)</div>
+</div><!-- fragment --> </li>
 </ol>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

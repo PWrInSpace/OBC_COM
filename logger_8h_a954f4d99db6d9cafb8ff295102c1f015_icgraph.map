@@ -1,0 +1,7 @@
+<map id="logger_set_level" name="logger_set_level">
+<area shape="rect" id="node1" title=" " alt="" coords="364,55,493,80"/>
+<area shape="rect" id="node2" href="$cmd__interface_8c.html#aebe7b81b6c8e63dca0a157d58ce11af5" title=" " alt="" coords="199,5,316,31"/>
+<area shape="rect" id="node3" href="$cmd__interface_8c.html#a17b431758d6294661d9adb69c55ba0dd" title=" " alt="" coords="199,55,315,80"/>
+<area shape="rect" id="node4" href="$logger_8c.html#a7f0a1ef369c8017a21abc0f68371b64e" title=" " alt="" coords="212,104,303,129"/>
+<area shape="rect" id="node5" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,104,151,129"/>
+</map>

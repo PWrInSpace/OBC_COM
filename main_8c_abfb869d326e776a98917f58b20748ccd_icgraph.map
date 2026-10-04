@@ -1,0 +1,4 @@
+<map id="BufferPool_UART_Start" name="BufferPool_UART_Start">
+<area shape="rect" id="node1" title="Kompleksowa inicjalizacja puli buforów i pierwsze uruchomienie DMA dla UART." alt="" coords="108,5,277,31"/>
+<area shape="rect" id="node2" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,60,31"/>
+</map>

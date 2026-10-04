@@ -1,0 +1,6 @@
+<map id="SX1280GetPacketStatus" name="SX1280GetPacketStatus">
+<area shape="rect" id="node1" title="Gets the last received packet payload length." alt="" coords="5,31,183,56"/>
+<area shape="rect" id="node2" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="244,5,411,31"/>
+<area shape="rect" id="node3" href="$sx1280-hal_8c.html#abc1ed10f83057922610c0ef2b3893733" title="Send a command that read data from the radio." alt="" coords="231,55,424,80"/>
+<area shape="rect" id="node4" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="472,55,644,80"/>
+</map>

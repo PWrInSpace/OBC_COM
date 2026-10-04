@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('sound_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,16 +89,12 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="dir_a8f641299cfea9f7461c2df1141b7786.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">sound.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -92,35 +109,12 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for sound.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="sound_8c__incl.png" border="0" usemap="#aapp_2src_2sound_8c" alt=""/></div>
-<map name="aapp_2src_2sound_8c" id="aapp_2src_2sound_8c">
-<area shape="rect" title=" " alt="" coords="1410,5,1533,31"/>
-<area shape="rect" href="sound_8h.html" title=" " alt="" coords="1145,79,1219,104"/>
-<area shape="rect" href="buzzer_8h.html" title=" " alt="" coords="1243,79,1319,104"/>
-<area shape="rect" title=" " alt="" coords="2231,225,2327,251"/>
-<area shape="rect" href="tim_8h.html" title="This file contains all the function prototypes for the tim.c file." alt="" coords="1343,79,1399,104"/>
-<area shape="rect" title=" " alt="" coords="1475,79,1537,104"/>
-<area shape="rect" title=" " alt="" coords="1561,79,1664,104"/>
-<area shape="rect" title=" " alt="" coords="1689,79,1771,104"/>
-<area shape="rect" title=" " alt="" coords="1795,79,1870,104"/>
-<area shape="rect" href="main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="1290,152,1357,177"/>
-<area shape="rect" title=" " alt="" coords="1195,152,1265,177"/>
-<area shape="rect" title=" " alt="" coords="5,225,140,251"/>
-<area shape="rect" title=" " alt="" coords="165,225,317,251"/>
-<area shape="rect" title=" " alt="" coords="341,225,511,251"/>
-<area shape="rect" title=" " alt="" coords="536,225,684,251"/>
-<area shape="rect" title=" " alt="" coords="708,225,867,251"/>
-<area shape="rect" title=" " alt="" coords="891,225,1049,251"/>
-<area shape="rect" title=" " alt="" coords="1073,225,1225,251"/>
-<area shape="rect" title=" " alt="" coords="1249,225,1397,251"/>
-<area shape="rect" title=" " alt="" coords="1421,225,1599,251"/>
-<area shape="rect" title=" " alt="" coords="1623,225,1781,251"/>
-<area shape="rect" title=" " alt="" coords="1805,225,1959,251"/>
-<area shape="rect" title=" " alt="" coords="1983,225,2058,251"/>
-<area shape="rect" title=" " alt="" coords="2083,225,2207,251"/>
-</map>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sound_8c__incl.svg" width="100%" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-</div><table class="memberdecls">
+</div>
+</div>
+<p><a href="sound_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnote__t.html">note_t</a></td></tr>
@@ -161,12 +155,41 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a2db46f98f8f8fde5eba0156cacc10c51"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a2db46f98f8f8fde5eba0156cacc10c51">snd_cb</a> (void *arg)</td></tr>
+<tr class="separator:a2db46f98f8f8fde5eba0156cacc10c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90e396bab2471f72285f290ce7a5cab1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a90e396bab2471f72285f290ce7a5cab1">sound_init</a> (void)</td></tr>
 <tr class="separator:a90e396bab2471f72285f290ce7a5cab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae96e6433ed18b83c2ccc8a7db9f0d3de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#ae96e6433ed18b83c2ccc8a7db9f0d3de">sound_play</a> (<a class="el" href="sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4">sound_id_t</a> id)</td></tr>
 <tr class="separator:ae96e6433ed18b83c2ccc8a7db9f0d3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05ffba4b6e960e4a0699f50b8a72d795"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795">sound_stop</a> (void)</td></tr>
 <tr class="separator:a05ffba4b6e960e4a0699f50b8a72d795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a168d9ab84e5c654008c87318840f7ccd"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structnote__t.html">note_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a168d9ab84e5c654008c87318840f7ccd">snd_startup</a> [] = { {<a class="el" href="sound_8c.html#a54087ffb7da518f038a39025b2a9ee7e">NOTE_C6</a>, 90}, {<a class="el" href="sound_8c.html#af61315e1c4a04436923a5c52196cdd3c">REST</a>, 30}, {<a class="el" href="sound_8c.html#a857f52119eedaadce999e3918ae9959f">NOTE_E6</a>, 90}, {<a class="el" href="sound_8c.html#af61315e1c4a04436923a5c52196cdd3c">REST</a>, 30}, {<a class="el" href="sound_8c.html#abc6a20319564cb37b2de2d3ef3b90c56">NOTE_G6</a>, 120}, {<a class="el" href="sound_8c.html#af61315e1c4a04436923a5c52196cdd3c">REST</a>, 30}, {<a class="el" href="sound_8c.html#a4a673e851d3b7e3b56a7cd83fba56cc3">NOTE_C7</a>, 320} }</td></tr>
+<tr class="separator:a168d9ab84e5c654008c87318840f7ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72fc31e810a4d9033fdad24c1b7169d0"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structnote__t.html">note_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a72fc31e810a4d9033fdad24c1b7169d0">snd_ack</a> [] = { {<a class="el" href="sound_8c.html#a857f52119eedaadce999e3918ae9959f">NOTE_E6</a>, 50}, {<a class="el" href="sound_8c.html#abc6a20319564cb37b2de2d3ef3b90c56">NOTE_G6</a>, 50}, {<a class="el" href="sound_8c.html#a4a673e851d3b7e3b56a7cd83fba56cc3">NOTE_C7</a>, 90} }</td></tr>
+<tr class="separator:a72fc31e810a4d9033fdad24c1b7169d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb545acb9c6a3e67b126641b3fe25107"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structnote__t.html">note_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#acb545acb9c6a3e67b126641b3fe25107">snd_error</a> [] = { {<a class="el" href="sound_8c.html#a4ede898d3fa744ffb02d5e9b66994ef3">NOTE_A4</a>, 200}, {<a class="el" href="sound_8c.html#af61315e1c4a04436923a5c52196cdd3c">REST</a>, 60}, {<a class="el" href="sound_8c.html#aff20d9abb2ef6f25afeb44245129eba6">NOTE_F4</a>, 260} }</td></tr>
+<tr class="separator:acb545acb9c6a3e67b126641b3fe25107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8b870e235ac5037223ac8e0233a9642"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structnote__t.html">note_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#ae8b870e235ac5037223ac8e0233a9642">snd_warning</a> [] = { {<a class="el" href="sound_8c.html#a88aac44b58d74d5aa5749e17a22b8cdd">NOTE_B5</a>, 110}, {<a class="el" href="sound_8c.html#af61315e1c4a04436923a5c52196cdd3c">REST</a>, 70}, {<a class="el" href="sound_8c.html#a88aac44b58d74d5aa5749e17a22b8cdd">NOTE_B5</a>, 110} }</td></tr>
+<tr class="separator:ae8b870e235ac5037223ac8e0233a9642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b75e93fede6081900f733ab247d468"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structnote__t.html">note_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a21b75e93fede6081900f733ab247d468">snd_sd_mount</a> [] = { {<a class="el" href="sound_8c.html#a54087ffb7da518f038a39025b2a9ee7e">NOTE_C6</a>, 60}, {<a class="el" href="sound_8c.html#abc6a20319564cb37b2de2d3ef3b90c56">NOTE_G6</a>, 90} }</td></tr>
+<tr class="separator:a21b75e93fede6081900f733ab247d468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5203163f226585988a3fab3977771183"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structnote__t.html">note_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a5203163f226585988a3fab3977771183">snd_sd_unmount</a> [] = { {<a class="el" href="sound_8c.html#abc6a20319564cb37b2de2d3ef3b90c56">NOTE_G6</a>, 60}, {<a class="el" href="sound_8c.html#a54087ffb7da518f038a39025b2a9ee7e">NOTE_C6</a>, 90} }</td></tr>
+<tr class="separator:a5203163f226585988a3fab3977771183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9af31e2e0e2c5565e52726b0b53813d"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structmelody__t.html">melody_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#ad9af31e2e0e2c5565e52726b0b53813d">g_melodies</a> [<a class="el" href="sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4a25985ebdb34dadfdc9ed58354dfc242c">SOUND_COUNT</a>]</td></tr>
+<tr class="separator:ad9af31e2e0e2c5565e52726b0b53813d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a867da4c207b4dd692b942c53db9512"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structbuzzer__t.html">buzzer_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a9a867da4c207b4dd692b942c53db9512">g_buzzer</a></td></tr>
+<tr class="separator:a9a867da4c207b4dd692b942c53db9512"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae51f8c0a2de57af54e693f7bf263f8b3"><td class="memItemLeft" align="right" valign="top">static osTimerId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#ae51f8c0a2de57af54e693f7bf263f8b3">g_timer</a></td></tr>
+<tr class="separator:ae51f8c0a2de57af54e693f7bf263f8b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af30e0326ed3d20bf7fe99016ed613764"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structnote__t.html">note_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#af30e0326ed3d20bf7fe99016ed613764">g_seq</a></td></tr>
+<tr class="separator:af30e0326ed3d20bf7fe99016ed613764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e88c560a348b6e3766144d576b6cac6"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a5e88c560a348b6e3766144d576b6cac6">g_len</a></td></tr>
+<tr class="separator:a5e88c560a348b6e3766144d576b6cac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad77e9dd086903096c8aaa801ba17c799"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#ad77e9dd086903096c8aaa801ba17c799">g_idx</a></td></tr>
+<tr class="separator:ad77e9dd086903096c8aaa801ba17c799"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ab88e6ca6540a96aabb1904a249880bc7" name="ab88e6ca6540a96aabb1904a249880bc7"></a>
@@ -180,6 +203,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00016">16</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -199,6 +224,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00048">48</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
 </div>
 </div>
 <a id="a4ede898d3fa744ffb02d5e9b66994ef3" name="a4ede898d3fa744ffb02d5e9b66994ef3"></a>
@@ -212,6 +239,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00025">25</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -227,6 +256,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00029">29</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
 </div>
 </div>
 <a id="a88aac44b58d74d5aa5749e17a22b8cdd" name="a88aac44b58d74d5aa5749e17a22b8cdd"></a>
@@ -240,6 +271,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00030">30</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -255,6 +288,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00026">26</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
 </div>
 </div>
 <a id="a54087ffb7da518f038a39025b2a9ee7e" name="a54087ffb7da518f038a39025b2a9ee7e"></a>
@@ -268,6 +303,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00031">31</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -283,6 +320,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00034">34</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
 </div>
 </div>
 <a id="a441475178599565b3dd4572cebbdf28c" name="a441475178599565b3dd4572cebbdf28c"></a>
@@ -296,6 +335,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00027">27</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -311,6 +352,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00032">32</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
 </div>
 </div>
 <a id="aff20d9abb2ef6f25afeb44245129eba6" name="aff20d9abb2ef6f25afeb44245129eba6"></a>
@@ -324,6 +367,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00024">24</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -339,6 +384,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00028">28</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
 </div>
 </div>
 <a id="abc6a20319564cb37b2de2d3ef3b90c56" name="abc6a20319564cb37b2de2d3ef3b90c56"></a>
@@ -352,6 +399,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00033">33</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -367,9 +416,55 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00023">23</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a2db46f98f8f8fde5eba0156cacc10c51" name="a2db46f98f8f8fde5eba0156cacc10c51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2db46f98f8f8fde5eba0156cacc10c51">&#9670;&#160;</a></span>snd_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void snd_cb </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00065">65</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+<p class="reference">References <a class="el" href="buzzer_8c_source.html#l00040">buzzer_mute()</a>, <a class="el" href="buzzer_8c_source.html#l00021">buzzer_set_tone()</a>, <a class="el" href="sound_8c_source.html#l00019">note_t::freq_hz</a>, <a class="el" href="sound_8c_source.html#l00059">g_buzzer</a>, <a class="el" href="sound_8c_source.html#l00063">g_idx</a>, <a class="el" href="sound_8c_source.html#l00062">g_len</a>, <a class="el" href="sound_8c_source.html#l00061">g_seq</a>, <a class="el" href="sound_8c_source.html#l00060">g_timer</a>, and <a class="el" href="sound_8c_source.html#l00020">note_t::ms</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sound_8c_source.html#l00086">sound_init()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sound_8c_a2db46f98f8f8fde5eba0156cacc10c51_cgraph.svg" width="408" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sound_8c_a2db46f98f8f8fde5eba0156cacc10c51_icgraph.svg" width="408" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a90e396bab2471f72285f290ce7a5cab1" name="a90e396bab2471f72285f290ce7a5cab1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90e396bab2471f72285f290ce7a5cab1">&#9670;&#160;</a></span>sound_init()</h2>
 
@@ -385,6 +480,24 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00086">86</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+<p class="reference">References <a class="el" href="buzzer_8c_source.html#l00009">buzzer_init()</a>, <a class="el" href="sound_8c_source.html#l00016">BUZZER_TIMER_HZ</a>, <a class="el" href="sound_8c_source.html#l00059">g_buzzer</a>, <a class="el" href="sound_8c_source.html#l00060">g_timer</a>, <a class="el" href="buzzer_8h_source.html#l00017">buzzer_t::htim</a>, <a class="el" href="tim_8c_source.html#l00027">htim2</a>, and <a class="el" href="sound_8c_source.html#l00065">snd_cb()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__freertos_8c_source.html#l00097">MX_FREERTOS_Init()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sound_8c_a90e396bab2471f72285f290ce7a5cab1_cgraph.svg" width="546" height="138"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sound_8c_a90e396bab2471f72285f290ce7a5cab1_icgraph.svg" width="294" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -404,6 +517,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00099">99</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sound_8c_source.html#l00063">g_idx</a>, <a class="el" href="sound_8c_source.html#l00062">g_len</a>, <a class="el" href="sound_8c_source.html#l00050">g_melodies</a>, <a class="el" href="sound_8c_source.html#l00061">g_seq</a>, <a class="el" href="sound_8c_source.html#l00060">g_timer</a>, <a class="el" href="sound_8c_source.html#l00045">melody_t::len</a>, <a class="el" href="sound_8c_source.html#l00044">melody_t::seq</a>, and <a class="el" href="sound_8h_source.html#l00016">SOUND_COUNT</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__freertos_8c_source.html#l00097">MX_FREERTOS_Init()</a>, and <a class="el" href="sd__task_8c_source.html#l00324">sd_detect_sync()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sound_8c_ae96e6433ed18b83c2ccc8a7db9f0d3de_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a05ffba4b6e960e4a0699f50b8a72d795" name="a05ffba4b6e960e4a0699f50b8a72d795"></a>
@@ -422,12 +547,348 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00114">114</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+<p class="reference">References <a class="el" href="buzzer_8c_source.html#l00040">buzzer_mute()</a>, <a class="el" href="sound_8c_source.html#l00059">g_buzzer</a>, <a class="el" href="sound_8c_source.html#l00063">g_idx</a>, <a class="el" href="sound_8c_source.html#l00062">g_len</a>, <a class="el" href="sound_8c_source.html#l00061">g_seq</a>, and <a class="el" href="sound_8c_source.html#l00060">g_timer</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sound_8c_a05ffba4b6e960e4a0699f50b8a72d795_cgraph.svg" width="262" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a9a867da4c207b4dd692b942c53db9512" name="a9a867da4c207b4dd692b942c53db9512"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a867da4c207b4dd692b942c53db9512">&#9670;&#160;</a></span>g_buzzer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structbuzzer__t.html">buzzer_t</a> g_buzzer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00059">59</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sound_8c_source.html#l00065">snd_cb()</a>, <a class="el" href="sound_8c_source.html#l00086">sound_init()</a>, and <a class="el" href="sound_8c_source.html#l00114">sound_stop()</a>.</p>
+
+</div>
+</div>
+<a id="ad77e9dd086903096c8aaa801ba17c799" name="ad77e9dd086903096c8aaa801ba17c799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad77e9dd086903096c8aaa801ba17c799">&#9670;&#160;</a></span>g_idx</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t g_idx</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00063">63</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sound_8c_source.html#l00065">snd_cb()</a>, <a class="el" href="sound_8c_source.html#l00099">sound_play()</a>, and <a class="el" href="sound_8c_source.html#l00114">sound_stop()</a>.</p>
+
+</div>
+</div>
+<a id="a5e88c560a348b6e3766144d576b6cac6" name="a5e88c560a348b6e3766144d576b6cac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e88c560a348b6e3766144d576b6cac6">&#9670;&#160;</a></span>g_len</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t g_len</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00062">62</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sound_8c_source.html#l00065">snd_cb()</a>, <a class="el" href="sound_8c_source.html#l00099">sound_play()</a>, and <a class="el" href="sound_8c_source.html#l00114">sound_stop()</a>.</p>
+
+</div>
+</div>
+<a id="ad9af31e2e0e2c5565e52726b0b53813d" name="ad9af31e2e0e2c5565e52726b0b53813d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9af31e2e0e2c5565e52726b0b53813d">&#9670;&#160;</a></span>g_melodies</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structmelody__t.html">melody_t</a> g_melodies[<a class="el" href="sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4a25985ebdb34dadfdc9ed58354dfc242c">SOUND_COUNT</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    [<a class="code hl_enumvalue" href="sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4a0ad9c21ae5807e81bf01154d2460bf78">SOUND_STARTUP</a>] = <a class="code hl_define" href="sound_8c.html#a06df1e5dae37a4b6bb39adfe7724cb3c">MELODY</a>(<a class="code hl_variable" href="sound_8c.html#a168d9ab84e5c654008c87318840f7ccd">snd_startup</a>),</div>
+<div class="line">    [<a class="code hl_enumvalue" href="sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4aa93c3c855699161a7f960ba4cc948521">SOUND_ACK</a>] = <a class="code hl_define" href="sound_8c.html#a06df1e5dae37a4b6bb39adfe7724cb3c">MELODY</a>(<a class="code hl_variable" href="sound_8c.html#a72fc31e810a4d9033fdad24c1b7169d0">snd_ack</a>),</div>
+<div class="line">    [<a class="code hl_enumvalue" href="sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4ab57c47c472e0723b27379dae1622730e">SOUND_ERROR</a>] = <a class="code hl_define" href="sound_8c.html#a06df1e5dae37a4b6bb39adfe7724cb3c">MELODY</a>(<a class="code hl_variable" href="sound_8c.html#acb545acb9c6a3e67b126641b3fe25107">snd_error</a>),</div>
+<div class="line">    [<a class="code hl_enumvalue" href="sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4a0ad8e437b9518b6a6d119cd9388429ba">SOUND_WARNING</a>] = <a class="code hl_define" href="sound_8c.html#a06df1e5dae37a4b6bb39adfe7724cb3c">MELODY</a>(<a class="code hl_variable" href="sound_8c.html#ae8b870e235ac5037223ac8e0233a9642">snd_warning</a>),</div>
+<div class="line">    [<a class="code hl_enumvalue" href="sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4aa85cc87d67d1301180e9f87ec8ea0544">SOUND_SD_MOUNT</a>] = <a class="code hl_define" href="sound_8c.html#a06df1e5dae37a4b6bb39adfe7724cb3c">MELODY</a>(<a class="code hl_variable" href="sound_8c.html#a21b75e93fede6081900f733ab247d468">snd_sd_mount</a>),</div>
+<div class="line">    [<a class="code hl_enumvalue" href="sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4aa82f2183afdb0c022a9648f9ef2db472">SOUND_SD_UNMOUNT</a>] = <a class="code hl_define" href="sound_8c.html#a06df1e5dae37a4b6bb39adfe7724cb3c">MELODY</a>(<a class="code hl_variable" href="sound_8c.html#a5203163f226585988a3fab3977771183">snd_sd_unmount</a>),</div>
+<div class="line">}</div>
+<div class="ttc" id="asound_8c_html_a06df1e5dae37a4b6bb39adfe7724cb3c"><div class="ttname"><a href="sound_8c.html#a06df1e5dae37a4b6bb39adfe7724cb3c">MELODY</a></div><div class="ttdeci">#define MELODY(arr)</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00048">sound.c:48</a></div></div>
+<div class="ttc" id="asound_8c_html_a168d9ab84e5c654008c87318840f7ccd"><div class="ttname"><a href="sound_8c.html#a168d9ab84e5c654008c87318840f7ccd">snd_startup</a></div><div class="ttdeci">static const note_t snd_startup[]</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00036">sound.c:36</a></div></div>
+<div class="ttc" id="asound_8c_html_a21b75e93fede6081900f733ab247d468"><div class="ttname"><a href="sound_8c.html#a21b75e93fede6081900f733ab247d468">snd_sd_mount</a></div><div class="ttdeci">static const note_t snd_sd_mount[]</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00040">sound.c:40</a></div></div>
+<div class="ttc" id="asound_8c_html_a5203163f226585988a3fab3977771183"><div class="ttname"><a href="sound_8c.html#a5203163f226585988a3fab3977771183">snd_sd_unmount</a></div><div class="ttdeci">static const note_t snd_sd_unmount[]</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00041">sound.c:41</a></div></div>
+<div class="ttc" id="asound_8c_html_a72fc31e810a4d9033fdad24c1b7169d0"><div class="ttname"><a href="sound_8c.html#a72fc31e810a4d9033fdad24c1b7169d0">snd_ack</a></div><div class="ttdeci">static const note_t snd_ack[]</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00037">sound.c:37</a></div></div>
+<div class="ttc" id="asound_8c_html_acb545acb9c6a3e67b126641b3fe25107"><div class="ttname"><a href="sound_8c.html#acb545acb9c6a3e67b126641b3fe25107">snd_error</a></div><div class="ttdeci">static const note_t snd_error[]</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00038">sound.c:38</a></div></div>
+<div class="ttc" id="asound_8c_html_ae8b870e235ac5037223ac8e0233a9642"><div class="ttname"><a href="sound_8c.html#ae8b870e235ac5037223ac8e0233a9642">snd_warning</a></div><div class="ttdeci">static const note_t snd_warning[]</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00039">sound.c:39</a></div></div>
+<div class="ttc" id="asound_8h_html_abcbe73aafb782838cdc9835983fdc3a4a0ad8e437b9518b6a6d119cd9388429ba"><div class="ttname"><a href="sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4a0ad8e437b9518b6a6d119cd9388429ba">SOUND_WARNING</a></div><div class="ttdeci">@ SOUND_WARNING</div><div class="ttdef"><b>Definition:</b> <a href="sound_8h_source.html#l00013">sound.h:13</a></div></div>
+<div class="ttc" id="asound_8h_html_abcbe73aafb782838cdc9835983fdc3a4a0ad9c21ae5807e81bf01154d2460bf78"><div class="ttname"><a href="sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4a0ad9c21ae5807e81bf01154d2460bf78">SOUND_STARTUP</a></div><div class="ttdeci">@ SOUND_STARTUP</div><div class="ttdef"><b>Definition:</b> <a href="sound_8h_source.html#l00010">sound.h:10</a></div></div>
+<div class="ttc" id="asound_8h_html_abcbe73aafb782838cdc9835983fdc3a4aa82f2183afdb0c022a9648f9ef2db472"><div class="ttname"><a href="sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4aa82f2183afdb0c022a9648f9ef2db472">SOUND_SD_UNMOUNT</a></div><div class="ttdeci">@ SOUND_SD_UNMOUNT</div><div class="ttdef"><b>Definition:</b> <a href="sound_8h_source.html#l00015">sound.h:15</a></div></div>
+<div class="ttc" id="asound_8h_html_abcbe73aafb782838cdc9835983fdc3a4aa85cc87d67d1301180e9f87ec8ea0544"><div class="ttname"><a href="sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4aa85cc87d67d1301180e9f87ec8ea0544">SOUND_SD_MOUNT</a></div><div class="ttdeci">@ SOUND_SD_MOUNT</div><div class="ttdef"><b>Definition:</b> <a href="sound_8h_source.html#l00014">sound.h:14</a></div></div>
+<div class="ttc" id="asound_8h_html_abcbe73aafb782838cdc9835983fdc3a4aa93c3c855699161a7f960ba4cc948521"><div class="ttname"><a href="sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4aa93c3c855699161a7f960ba4cc948521">SOUND_ACK</a></div><div class="ttdeci">@ SOUND_ACK</div><div class="ttdef"><b>Definition:</b> <a href="sound_8h_source.html#l00011">sound.h:11</a></div></div>
+<div class="ttc" id="asound_8h_html_abcbe73aafb782838cdc9835983fdc3a4ab57c47c472e0723b27379dae1622730e"><div class="ttname"><a href="sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4ab57c47c472e0723b27379dae1622730e">SOUND_ERROR</a></div><div class="ttdeci">@ SOUND_ERROR</div><div class="ttdef"><b>Definition:</b> <a href="sound_8h_source.html#l00012">sound.h:12</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00050">50</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sound_8c_source.html#l00099">sound_play()</a>.</p>
+
+</div>
+</div>
+<a id="af30e0326ed3d20bf7fe99016ed613764" name="af30e0326ed3d20bf7fe99016ed613764"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af30e0326ed3d20bf7fe99016ed613764">&#9670;&#160;</a></span>g_seq</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structnote__t.html">note_t</a>* g_seq</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00061">61</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sound_8c_source.html#l00065">snd_cb()</a>, <a class="el" href="sound_8c_source.html#l00099">sound_play()</a>, and <a class="el" href="sound_8c_source.html#l00114">sound_stop()</a>.</p>
+
+</div>
+</div>
+<a id="ae51f8c0a2de57af54e693f7bf263f8b3" name="ae51f8c0a2de57af54e693f7bf263f8b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae51f8c0a2de57af54e693f7bf263f8b3">&#9670;&#160;</a></span>g_timer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">osTimerId_t g_timer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00060">60</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sound_8c_source.html#l00065">snd_cb()</a>, <a class="el" href="sound_8c_source.html#l00086">sound_init()</a>, <a class="el" href="sound_8c_source.html#l00099">sound_play()</a>, and <a class="el" href="sound_8c_source.html#l00114">sound_stop()</a>.</p>
+
+</div>
+</div>
+<a id="a72fc31e810a4d9033fdad24c1b7169d0" name="a72fc31e810a4d9033fdad24c1b7169d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72fc31e810a4d9033fdad24c1b7169d0">&#9670;&#160;</a></span>snd_ack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structnote__t.html">note_t</a> snd_ack[] = { {<a class="el" href="sound_8c.html#a857f52119eedaadce999e3918ae9959f">NOTE_E6</a>, 50}, {<a class="el" href="sound_8c.html#abc6a20319564cb37b2de2d3ef3b90c56">NOTE_G6</a>, 50}, {<a class="el" href="sound_8c.html#a4a673e851d3b7e3b56a7cd83fba56cc3">NOTE_C7</a>, 90} }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00037">37</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="acb545acb9c6a3e67b126641b3fe25107" name="acb545acb9c6a3e67b126641b3fe25107"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb545acb9c6a3e67b126641b3fe25107">&#9670;&#160;</a></span>snd_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structnote__t.html">note_t</a> snd_error[] = { {<a class="el" href="sound_8c.html#a4ede898d3fa744ffb02d5e9b66994ef3">NOTE_A4</a>, 200}, {<a class="el" href="sound_8c.html#af61315e1c4a04436923a5c52196cdd3c">REST</a>, 60}, {<a class="el" href="sound_8c.html#aff20d9abb2ef6f25afeb44245129eba6">NOTE_F4</a>, 260} }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00038">38</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="a21b75e93fede6081900f733ab247d468" name="a21b75e93fede6081900f733ab247d468"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21b75e93fede6081900f733ab247d468">&#9670;&#160;</a></span>snd_sd_mount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structnote__t.html">note_t</a> snd_sd_mount[] = { {<a class="el" href="sound_8c.html#a54087ffb7da518f038a39025b2a9ee7e">NOTE_C6</a>, 60}, {<a class="el" href="sound_8c.html#abc6a20319564cb37b2de2d3ef3b90c56">NOTE_G6</a>, 90} }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00040">40</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="a5203163f226585988a3fab3977771183" name="a5203163f226585988a3fab3977771183"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5203163f226585988a3fab3977771183">&#9670;&#160;</a></span>snd_sd_unmount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structnote__t.html">note_t</a> snd_sd_unmount[] = { {<a class="el" href="sound_8c.html#abc6a20319564cb37b2de2d3ef3b90c56">NOTE_G6</a>, 60}, {<a class="el" href="sound_8c.html#a54087ffb7da518f038a39025b2a9ee7e">NOTE_C6</a>, 90} }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00041">41</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="a168d9ab84e5c654008c87318840f7ccd" name="a168d9ab84e5c654008c87318840f7ccd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a168d9ab84e5c654008c87318840f7ccd">&#9670;&#160;</a></span>snd_startup</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structnote__t.html">note_t</a> snd_startup[] = { {<a class="el" href="sound_8c.html#a54087ffb7da518f038a39025b2a9ee7e">NOTE_C6</a>, 90}, {<a class="el" href="sound_8c.html#af61315e1c4a04436923a5c52196cdd3c">REST</a>, 30}, {<a class="el" href="sound_8c.html#a857f52119eedaadce999e3918ae9959f">NOTE_E6</a>, 90}, {<a class="el" href="sound_8c.html#af61315e1c4a04436923a5c52196cdd3c">REST</a>, 30}, {<a class="el" href="sound_8c.html#abc6a20319564cb37b2de2d3ef3b90c56">NOTE_G6</a>, 120}, {<a class="el" href="sound_8c.html#af61315e1c4a04436923a5c52196cdd3c">REST</a>, 30}, {<a class="el" href="sound_8c.html#a4a673e851d3b7e3b56a7cd83fba56cc3">NOTE_C7</a>, 320} }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00036">36</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="ae8b870e235ac5037223ac8e0233a9642" name="ae8b870e235ac5037223ac8e0233a9642"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8b870e235ac5037223ac8e0233a9642">&#9670;&#160;</a></span>snd_warning</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structnote__t.html">note_t</a> snd_warning[] = { {<a class="el" href="sound_8c.html#a88aac44b58d74d5aa5749e17a22b8cdd">NOTE_B5</a>, 110}, {<a class="el" href="sound_8c.html#af61315e1c4a04436923a5c52196cdd3c">REST</a>, 70}, {<a class="el" href="sound_8c.html#a88aac44b58d74d5aa5749e17a22b8cdd">NOTE_B5</a>, 110} }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00039">39</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="dir_a8f641299cfea9f7461c2df1141b7786.html">src</a></li><li class="navelem"><a class="el" href="sound_8c.html">sound.c</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,0 +1,4 @@
+<map id="SX1280HalReadBuffer" name="SX1280HalReadBuffer">
+<area shape="rect" id="node1" title="Read data from the buffer holding the payload in the radio." alt="" coords="5,5,171,31"/>
+<area shape="rect" id="node2" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="219,5,391,31"/>
+</map>

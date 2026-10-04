@@ -1,0 +1,7 @@
+<map id="SX1280HalReadBuffer" name="SX1280HalReadBuffer">
+<area shape="rect" id="node1" title="Read data from the buffer holding the payload in the radio." alt="" coords="829,13,995,38"/>
+<area shape="rect" id="node2" href="$sx1280_8c.html#a88aa3739b37c983bbea244aa58fd4a6a" title="Reads the payload received." alt="" coords="636,13,781,38"/>
+<area shape="rect" id="node3" href="$sx1280__task_8c.html#a2558054bd23939c02ad7d8e95cd5a501" title=" " alt="" coords="432,5,588,45"/>
+<area shape="rect" id="node4" href="$sx1280__task_8c.html#ad29d477ada983b118b9139bafba10196" title=" " alt="" coords="245,13,384,38"/>
+<area shape="rect" id="node5" href="$sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0" title=" " alt="" coords="5,13,197,38"/>
+</map>

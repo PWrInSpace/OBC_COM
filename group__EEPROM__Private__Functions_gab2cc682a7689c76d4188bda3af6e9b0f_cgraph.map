@@ -1,0 +1,4 @@
+<map id="SetPageState" name="SetPageState">
+<area shape="rect" id="node1" title="Set page state in page header." alt="" coords="5,5,113,31"/>
+<area shape="rect" id="node2" href="$group__EEPROM__Private__Functions.html#gaaf190b387699ec8d894cfe8449522084" title="Write a quad word at the given address in Flash (function is called FI_WriteDoubleWord to respect leg..." alt="" coords="161,5,316,31"/>
+</map>

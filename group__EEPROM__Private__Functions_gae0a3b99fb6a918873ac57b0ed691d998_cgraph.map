@@ -1,0 +1,4 @@
+<map id="OB_Init" name="OB_Init">
+<area shape="rect" id="node1" title="INSERT BRIEF." alt="" coords="5,5,75,31"/>
+<area shape="rect" id="node2" href="$group__EEPROM__Emulation.html#gad4e07955fadfeb416e9620ddb42f8fe9" title="This function is executed in case of error occurrence." alt="" coords="123,5,233,31"/>
+</map>

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structrfm95__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,7 +89,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
@@ -76,16 +96,13 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="rfm95w_8h_source.html">rfm95w.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="rfm95w_8h_source.html">/home/runner/work/OBC_COM/OBC_COM/modules/rfm95w/include/rfm95w.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for rfm95_t:</div>
 <div class="dyncontent">
-<div class="center"><img src="structrfm95__t__coll__graph.png" border="0" usemap="#arfm95__t_coll__map" alt="Collaboration graph"/></div>
-<map name="arfm95__t_coll__map" id="arfm95__t_coll__map">
-<area shape="rect" title=" " alt="" coords="33,93,106,119"/>
-<area shape="rect" href="structRFM95__param__t.html" title=" " alt="" coords="5,5,133,31"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structrfm95__t__coll__graph.svg" width="139" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -110,7 +127,10 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a1a8428c60955694a474ba94fd9df5d98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRFM95__param__t.html">RFM95_param_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrfm95__t.html#a1a8428c60955694a474ba94fd9df5d98">param</a></td></tr>
 <tr class="separator:a1a8428c60955694a474ba94fd9df5d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="rfm95w_8h_source.html#l00175">175</a> of file <a class="el" href="rfm95w_8h_source.html">rfm95w.h</a>.</p>
+</div><h2 class="groupheader">Field Documentation</h2>
 <a id="aa6f057417d8364df2bab6342a95e6e74" name="aa6f057417d8364df2bab6342a95e6e74"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa6f057417d8364df2bab6342a95e6e74">&#9670;&#160;</a></span>_delay</h2>
 
@@ -122,6 +142,10 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rfm95w_8h_source.html#l00177">177</a> of file <a class="el" href="rfm95w_8h_source.html">rfm95w.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w_8c_source.html#l00004">rfm95_init()</a>, <a class="el" href="rfm95w_8c_source.html#l00418">rfm95_map_d0_interrupt()</a>, <a class="el" href="rfm95w_8c_source.html#l00145">rfm95_reset()</a>, and <a class="el" href="rfm95w_8c_source.html#l00342">rfm95_send_packet()</a>.</p>
 
 </div>
 </div>
@@ -137,6 +161,10 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="rfm95w_8h_source.html#l00178">178</a> of file <a class="el" href="rfm95w_8h_source.html">rfm95w.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w_8c_source.html#l00145">rfm95_reset()</a>.</p>
+
 </div>
 </div>
 <a id="a64cdb0d4a4a487f3ff51cd42d20f8c3d" name="a64cdb0d4a4a487f3ff51cd42d20f8c3d"></a>
@@ -150,6 +178,10 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rfm95w_8h_source.html#l00176">176</a> of file <a class="el" href="rfm95w_8h_source.html">rfm95w.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w_8c_source.html#l00133">rfm95_read_reg()</a>, and <a class="el" href="rfm95w_8c_source.html#l00122">rfm95_write_reg()</a>.</p>
 
 </div>
 </div>
@@ -165,6 +197,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="rfm95w_8h_source.html#l00181">181</a> of file <a class="el" href="rfm95w_8h_source.html">rfm95w.h</a>.</p>
+
 </div>
 </div>
 <a id="a117107745a382355960c8e10c200c16c" name="a117107745a382355960c8e10c200c16c"></a>
@@ -178,6 +212,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rfm95w_8h_source.html#l00182">182</a> of file <a class="el" href="rfm95w_8h_source.html">rfm95w.h</a>.</p>
 
 </div>
 </div>
@@ -193,6 +229,10 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="rfm95w_8h_source.html#l00184">184</a> of file <a class="el" href="rfm95w_8h_source.html">rfm95w.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w_8c_source.html#l00220">rfm95_get_frequency()</a>, <a class="el" href="rfm95w_8c_source.html#l00409">rfm95_packet_rssi()</a>, and <a class="el" href="rfm95w_8c_source.html#l00208">rfm95_set_frequency()</a>.</p>
+
 </div>
 </div>
 <a id="a2a9110746e964f1d33595aad393e4075" name="a2a9110746e964f1d33595aad393e4075"></a>
@@ -206,6 +246,10 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rfm95w_8h_source.html#l00183">183</a> of file <a class="el" href="rfm95w_8h_source.html">rfm95w.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w_8c_source.html#l00156">rfm95_explicit_header_mode()</a>, <a class="el" href="rfm95w_8c_source.html#l00164">rfm95_implicit_header_mode()</a>, and <a class="el" href="rfm95w_8c_source.html#l00357">rfm95_receive_packet()</a>.</p>
 
 </div>
 </div>
@@ -221,6 +265,10 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="rfm95w_8h_source.html#l00179">179</a> of file <a class="el" href="rfm95w_8h_source.html">rfm95w.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w_8c_source.html#l00418">rfm95_map_d0_interrupt()</a>, <a class="el" href="rfm95w_8c_source.html#l00395">rfm95_received()</a>, <a class="el" href="rfm95w_8c_source.html#l00239">rfm95_set_bandwidth()</a>, and <a class="el" href="lora__config_8c_source.html#l00121">rfm95w_config_init_param()</a>.</p>
+
 </div>
 </div>
 <a id="a1a8428c60955694a474ba94fd9df5d98" name="a1a8428c60955694a474ba94fd9df5d98"></a>
@@ -234,6 +282,10 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rfm95w_8h_source.html#l00185">185</a> of file <a class="el" href="rfm95w_8h_source.html">rfm95w.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="nvs__config_8c_source.html#l00061">nvs_get_rfm95_settings()</a>, <a class="el" href="nvs__config_8c_source.html#l00120">nvs_save_rfm95_settings()</a>, and <a class="el" href="rfm95w_8c_source.html#l00065">rfm95_default_config_param()</a>.</p>
 
 </div>
 </div>
@@ -249,15 +301,23 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="rfm95w_8h_source.html#l00180">180</a> of file <a class="el" href="rfm95w_8h_source.html">rfm95w.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rfm95w_8c_source.html#l00145">rfm95_reset()</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>modules/rfm95w/include/<a class="el" href="rfm95w_8h_source.html">rfm95w.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structrfm95__t.html">rfm95_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,0 +1,5 @@
+<map id="SX1280SetPayload" name="SX1280SetPayload">
+<area shape="rect" id="node1" title="Saves the payload to be send in the radio buffer." alt="" coords="5,5,148,31"/>
+<area shape="rect" id="node2" href="$sx1280-hal_8c.html#af6e4be534a9eb8ca5baa5c1da6ff5b99" title="Write data to the buffer holding the payload in the radio." alt="" coords="196,5,363,31"/>
+<area shape="rect" id="node3" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="411,5,583,31"/>
+</map>

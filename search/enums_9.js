@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['led_5fcolor_5ft_0',['led_color_t',['../led_8h.html#a653c9a28baf93cfe8106400a53ecea2e',1,'led.h']]],
-  ['led_5feffect_5ft_1',['led_effect_t',['../led_8h.html#ac684ee5e2b2771f0c91c435173b35bb4',1,'led.h']]],
-  ['log_5flevel_5ft_2',['log_level_t',['../logger_8h.html#a98121d38a8cf3daf5246a349f912ca1d',1,'logger.h']]],
-  ['lora_5fcommand_5ft_3',['lora_command_t',['../lora__commands_8h.html#ac5754d9a92185ea9a93c143417fc0f42',1,'lora_commands.h']]]
+  ['sky66114_5ferror_5ft_0',['sky66114_error_t',['../sky66114_8h.html#a3665343e05d668b0546f543c46208b40',1,'sky66114.h']]],
+  ['sky66114_5fmode_5ft_1',['sky66114_mode_t',['../sky66114_8h.html#a693e08d4b6df154aa82a7c99ae0e59f6',1,'sky66114.h']]],
+  ['sound_5fid_5ft_2',['sound_id_t',['../sound_8h.html#abcbe73aafb782838cdc9835983fdc3a4',1,'sound.h']]]
 ];

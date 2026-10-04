@@ -1,6 +1,6 @@
 <map id="Core/Src/stm32h5xx_hal_msp.c" name="Core/Src/stm32h5xx_hal_msp.c">
 <area shape="rect" id="node1" title="This file provides code for the MSP Initialization and de&#45;Initialization codes." alt="" coords="1159,5,1312,45"/>
-<area shape="rect" id="node2" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="1202,93,1269,119"/>
+<area shape="rect" id="node2" href="$main_8h.html" title=": Header for main.c file." alt="" coords="1202,93,1269,119"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,167,140,192"/>
 <area shape="rect" id="node4" title=" " alt="" coords="165,167,317,192"/>
 <area shape="rect" id="node5" title=" " alt="" coords="341,167,511,192"/>

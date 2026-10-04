@@ -1,0 +1,6 @@
+<map id="SX1280Init" name="SX1280Init">
+<area shape="rect" id="node1" title="Initializes the radio driver." alt="" coords="5,31,97,56"/>
+<area shape="rect" id="node2" href="$sx1280-hal_8c.html#a5d6637ee3fce18944e0dae57ca12995f" title=" " alt="" coords="145,31,260,56"/>
+<area shape="rect" id="node3" href="$sx1280-hal_8c.html#aceea5e604bb54817f0c8d38ebb554b27" title=" " alt="" coords="308,5,451,31"/>
+<area shape="rect" id="node4" href="$sx1280-hal_8c.html#ad166767283bbb3d7a387ecf2f089cd23" title="Soft resets the radio." alt="" coords="314,55,445,80"/>
+</map>

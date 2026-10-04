@@ -1,0 +1,4 @@
+<map id="rfm95_write_irq_flags" name="rfm95_write_irq_flags">
+<area shape="rect" id="node1" title="Writes the REG_IRQ_FLAGS buffer with IRQ_TX_DONE_MASK." alt="" coords="5,5,168,31"/>
+<area shape="rect" id="node2" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="216,5,345,31"/>
+</map>

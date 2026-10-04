@@ -1,0 +1,8 @@
+<map id="SX1280EnableManualGain" name="SX1280EnableManualGain">
+<area shape="rect" id="node1" title="Enable manual gain and disable AGC." alt="" coords="5,31,199,56"/>
+<area shape="rect" id="node2" href="$sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea" title="Read a single byte of data from the radio memory." alt="" coords="248,5,428,31"/>
+<area shape="rect" id="node5" href="$sx1280-hal_8c.html#a22d55eec45845b70b71327af666c9eb0" title="Write a single byte of data to the radio memory." alt="" coords="247,55,429,80"/>
+<area shape="rect" id="node3" href="$sx1280-hal_8c.html#a6a9c356cd998a6f2dad05049941b5939" title="Read data from the radio memory." alt="" coords="479,5,665,31"/>
+<area shape="rect" id="node4" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="715,31,887,56"/>
+<area shape="rect" id="node6" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="477,55,667,80"/>
+</map>

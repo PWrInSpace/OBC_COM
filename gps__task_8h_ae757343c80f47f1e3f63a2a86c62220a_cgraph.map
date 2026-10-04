@@ -1,0 +1,10 @@
+<map id="start_gps_task" name="start_gps_task">
+<area shape="rect" id="node1" title=" " alt="" coords="5,104,123,129"/>
+<area shape="rect" id="node2" href="$gps__task_8c.html#a2b4ba50a0ecdfbe3864bc6cf9ad0b8b4" title=" " alt="" coords="171,104,251,129"/>
+<area shape="rect" id="node3" href="$gps__task_8c.html#ae5fc8034e9ce13657187e2a7df794409" title=" " alt="" coords="321,5,433,31"/>
+<area shape="rect" id="node4" href="$GNSS_8c.html#aaba3740a3ad0f0f596ab5c8aee7da859" title="Parse received data from GPS module." alt="" coords="299,55,455,80"/>
+<area shape="rect" id="node5" href="$gps__task_8c.html#ac936b9a955932af5020b0aa7af8d09ad" title="Szuka nagłówka NAV&#45;PVT w buforze 256B i kopiuje 100B na początek bufora roboczego." alt="" coords="313,104,440,129"/>
+<area shape="rect" id="node6" href="$gps__task_8c.html#a6eae2e3cf49d0681be46c984ad81c1fa" title=" " alt="" coords="313,153,440,179"/>
+<area shape="rect" id="node7" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="321,203,433,228"/>
+<area shape="rect" id="node8" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="503,203,637,228"/>
+</map>

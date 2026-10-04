@@ -1,0 +1,7 @@
+<map id="obc_lo_ra_frame_repeated_t" name="obc_lo_ra_frame_repeated_t">
+<area shape="rect" id="node1" title="Message obc.LoRaFrame." alt="" coords="141,181,347,207"/>
+<area shape="rect" id="node2" href="$structobc__lo__ra__frame__t.html" title=" " alt="" coords="173,93,315,119"/>
+<area shape="rect" id="node3" href="$structobc__mcb__frame__t.html" title=" " alt="" coords="5,5,144,31"/>
+<area shape="rect" id="node4" href="$structobc__tanwa__frame__t.html" title=" " alt="" coords="169,5,319,31"/>
+<area shape="rect" id="node5" href="$structobc__app__frame__t.html" title=" " alt="" coords="343,5,478,31"/>
+</map>

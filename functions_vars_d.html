@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('functions_vars_d.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -74,251 +94,20 @@ $(function() {
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
 <li>d0_gpio_num&#160;:&#160;<a class="el" href="structrfm95__t.html#a117107745a382355960c8e10c200c16c">rfm95_t</a></li>
-<li>D0FIFO&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a5bf3e002e667bcb7f77ffe08b304ab31">_ccrx_evenaccess</a></li>
-<li>D0FIFOCTR&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ad1f0b6736103f5e5461d5eac9e4a3edd">_ccrx_evenaccess</a></li>
-<li>D0FIFOCTR_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a04b1ed2d88d8930ab346b545f2415128">_ccrx_evenaccess</a></li>
-<li>D0FIFOH&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a5f715e2729d28a665d256135265d9a16">_ccrx_evenaccess</a></li>
-<li>D0FIFOHH&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a4cf7f54314b547ac383fb121f48e1ea6">_ccrx_evenaccess</a></li>
-<li>D0FIFOL&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a040045f5c29a87c470111358eb055a00">_ccrx_evenaccess</a></li>
-<li>D0FIFOLL&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ad336315632eee637524ba13e9bc94881">_ccrx_evenaccess</a></li>
-<li>D0FIFOSEL&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a28801d0ded910c3bc9c270a59b776db6">_ccrx_evenaccess</a></li>
-<li>D0FIFOSEL_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a045025a7749f446d34b07c262b803882">_ccrx_evenaccess</a></li>
-<li>D1FIFO&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a1e37d27bc313bbb08d054e9f97a2eaf9">_ccrx_evenaccess</a></li>
-<li>D1FIFOCTR&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a6406bcc04f0d73cc96d6c121225cd8c3">_ccrx_evenaccess</a></li>
-<li>D1FIFOCTR_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a9462742b8777da3b2c6a11d2d83a9144">_ccrx_evenaccess</a></li>
-<li>D1FIFOH&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a51d9523f4de51990803ab638232475c8">_ccrx_evenaccess</a></li>
-<li>D1FIFOHH&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#aa2ef116707140135b7a53894299d6376">_ccrx_evenaccess</a></li>
-<li>D1FIFOL&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a82deb0570b233ee15c13832f86191dbf">_ccrx_evenaccess</a></li>
-<li>D1FIFOLL&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#aeac8a85d1bd77969171f5622481b52f1">_ccrx_evenaccess</a></li>
-<li>D1FIFOSEL&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a6d760c4bd80ffbb44f719742b35a2162">_ccrx_evenaccess</a></li>
-<li>D1FIFOSEL_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a10d9252107f1e5ffcfa97a1b4b4fa8e8">_ccrx_evenaccess</a></li>
-<li>DADDR&#160;:&#160;<a class="el" href="structfsdev__regs__t.html#a9c0df36b1917a690a14a812f3e30dd76">fsdev_regs_t</a></li>
-<li>daddr&#160;:&#160;<a class="el" href="structtuh__itf__info__t.html#ac9b1c831feb9ccc1ef97c247ffc004dd">tuh_itf_info_t</a>, <a class="el" href="structtuh__midi__mount__cb__t.html#af41431d822f4c2161e7e5ec674ec571f">tuh_midi_mount_cb_t</a>, <a class="el" href="structtuh__xfer__s.html#a6cdc9ec3964e47f7b6479b5aea5abeb4">tuh_xfer_s</a></li>
-<li>daint&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a14807d9213af34d0ad760e7ff89c93e9">dwc2_regs_t</a></li>
-<li>daintmsk&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a0f3bcdd19d57fef544a75f7688380763">dwc2_regs_t</a></li>
-<li>data&#160;:&#160;<a class="el" href="structCMD__Buffer__t.html#ac779acfc944e0bf11dd6950aabaf1bb4">CMD_Buffer_t</a>, <a class="el" href="structcmd__params__t.html#abff02251c1550cf0cb2a0991a994f89f">cmd_params_t</a>, <a class="el" href="structlora__tx__item__t.html#a3f4ae05616c880b4a8ca6fef608c49bf">lora_tx_item_t</a>, <a class="el" href="structrndis__msg__out__of__band__data__t.html#a99a3b3343a7c97415eedd0b762e3d445">rndis_msg_out_of_band_data_t</a>, <a class="el" href="structTU__ATTR__PACKED.html#a5b71feb8af52c402857d562f110f34dd">TU_ATTR_PACKED</a></li>
-<li>data_bits&#160;:&#160;<a class="el" href="group__ClassDriver__CDC.html#gac638bc12cdb8f9065d74c7133500dcf1">TU_ATTR_PACKED</a></li>
-<li>data_len&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a27bdddb76135d8cfdbfb1e87eec2b5da">TU_ATTR_PACKED</a></li>
-<li>data_length&#160;:&#160;<a class="el" href="structrndis__msg__packet__t.html#aaa15961dd9bb1329b73ab51b63c3ce45">rndis_msg_packet_t</a></li>
-<li>data_offset&#160;:&#160;<a class="el" href="structrndis__msg__packet__t.html#ab15badcb13b9f0fe138983417f142192">rndis_msg_packet_t</a></li>
-<li>data_residue&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a925fec8719c3626a570d9baadee863b9">TU_ATTR_PACKED</a></li>
-<li>data_role&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a2b416591d9cebc33c2c3bc944a0b6d84">TU_ATTR_PACKED</a></li>
-<li>data_size&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#abac5fc7a34dafa241ff84bc5a5038f73">TU_ATTR_PACKED</a></li>
-<li>data_stride&#160;:&#160;<a class="el" href="structtu__hwfifo__access__t.html#a88f7b1a1acbdef57b6a6e5c55de2b773">tu_hwfifo_access_t</a></li>
-<li>data_toggle&#160;:&#160;<a class="el" href="structehci__qtd__t.html#aa16a66a7d890e0a2b31d8292191e99f8">ehci_qtd_t</a></li>
+<li>data&#160;:&#160;<a class="el" href="structCMD__Buffer__t.html#ac779acfc944e0bf11dd6950aabaf1bb4">CMD_Buffer_t</a>, <a class="el" href="structcmd__params__t.html#abff02251c1550cf0cb2a0991a994f89f">cmd_params_t</a>, <a class="el" href="structlora__tx__item__t.html#a3f4ae05616c880b4a8ca6fef608c49bf">lora_tx_item_t</a></li>
 <li>DataBufferRetention&#160;:&#160;<a class="el" href="structSleepParams__t.html#afd1b8348563249dfa2aea9d723c7bc7f">SleepParams_t</a></li>
-<li>DataIn&#160;:&#160;<a class="el" href="struct__Device__cb.html#a738aeb6f356681ffed4a0c9b71927603">_Device_cb</a></li>
-<li>DataOut&#160;:&#160;<a class="el" href="struct__Device__cb.html#ad68db7e355ba6e706d75a27ca3a9fd7c">_Device_cb</a></li>
 <li>DataRamRetention&#160;:&#160;<a class="el" href="structSleepParams__t.html#aea8b7435e6811f5ca53fe48ae1168193">SleepParams_t</a></li>
 <li>day&#160;:&#160;<a class="el" href="structGNSS__StateHandle.html#aa3b84396a063a12cd7441c5173dedcd2">GNSS_StateHandle</a></li>
-<li>DBLB&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a13b8111b9d2337ffc8455cc3c7bb7e14">_ccrx_evenaccess</a></li>
-<li>dbnc_done&#160;:&#160;<a class="el" href="structdwc2__gotgctl__t_1_1TU__ATTR__PACKED.html#a414f7bf6c96a6b084c180f23600d2f1b">dwc2_gotgctl_t::TU_ATTR_PACKED</a>, <a class="el" href="structdwc2__gotgint__t_1_1TU__ATTR__PACKED.html#af33e402fba1197dafad4133ac539a409">dwc2_gotgint_t::TU_ATTR_PACKED</a></li>
-<li>dbnc_filter_bypass&#160;:&#160;<a class="el" href="structdwc2__gotgctl__t_1_1TU__ATTR__PACKED.html#a05aa40f96738dc82424159753c789d19">dwc2_gotgctl_t::TU_ATTR_PACKED</a></li>
-<li>DCCPARAMS&#160;:&#160;<a class="el" href="structci__hs__regs__t.html#ab1f14f3aa5a49cf37e53e442540b89c6">ci_hs_regs_t</a></li>
-<li>dcd&#160;:&#160;<a class="el" href="group__ClassDriver__CDC.html#ga51e7d2d4928b4eff7cb9667a9c6ba820">TU_ATTR_PACKED::TU_ATTR_PACKED</a></li>
-<li>dcfg&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#ac854e98d72facc80f25573a9671a3681">dwc2_regs_t</a></li>
-<li>DCFM&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#abab60fedddcac2558de15cc0514cb8d6">_ccrx_evenaccess</a></li>
-<li>DCIVERSION&#160;:&#160;<a class="el" href="structci__hs__regs__t.html#a3296a5a2cdd7077ceb82edf1b5560405">ci_hs_regs_t</a></li>
-<li>DCLRM&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a20bcd3c5c4a51c8a364630bdacfac243">_ccrx_evenaccess</a></li>
-<li>DCPCFG&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#abf0e0aa2d90cdb7d6e05b27dbd8459d9">_ccrx_evenaccess</a></li>
-<li>DCPCFG_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a84653b94e53035f5e0d02ad2cf00c3e1">_ccrx_evenaccess</a></li>
-<li>DCPCTR&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a26ca7466e74edb59da0c19f0ce0af4d0">_ccrx_evenaccess</a></li>
-<li>DCPCTR_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a4bf60e98140a60bebc3a496b4fa9d458">_ccrx_evenaccess</a></li>
-<li>DCPMAXP&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a5b4742146c4b47cfae8a9a546f6e2b5b">_ccrx_evenaccess</a></li>
-<li>DCPMAXP_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ac98e898b04cbbaaeeb6d67d8fdc5b18f">_ccrx_evenaccess</a></li>
-<li>DCPMODE&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a2e6f32a7064bfe2be9b8b956d0a6ff9b">_ccrx_evenaccess</a></li>
-<li>dctl&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#ae3e580e296bdf3375f0b5774e456dbfb">dwc2_regs_t</a></li>
-<li>ddr_sel&#160;:&#160;<a class="el" href="structdwc2__gusbcfg__t_1_1TU__ATTR__PACKED.html#a51980ab6e33e08af47dbf9beced680da">dwc2_gusbcfg_t::TU_ATTR_PACKED</a></li>
-<li>deachint&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a5c92d4feb9e096c28379798e291bfce1">dwc2_regs_t</a></li>
-<li>deachmsk&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a91f114e2dfd95ccd707a8b5210cd6935">dwc2_regs_t</a></li>
-<li>dedicated_fifos&#160;:&#160;<a class="el" href="structdwc2__ghwcfg4__t_1_1TU__ATTR__PACKED.html#abbaac31ceb9b11f8995bf3347347d09a">dwc2_ghwcfg4_t::TU_ATTR_PACKED</a></li>
-<li>deep_sleep_besl_reject&#160;:&#160;<a class="el" href="structdwc2__dctl__t_1_1TU__ATTR__PACKED.html#aefadb611919b77b44db83d0f88924c59">dwc2_dctl_t::TU_ATTR_PACKED</a></li>
-<li>DeInit&#160;:&#160;<a class="el" href="struct__Device__cb.html#abbf5b7be021892ef4a9496c992784846">_Device_cb</a></li>
-<li>deinit&#160;:&#160;<a class="el" href="structusbd__class__driver__t.html#a4154bbd9a9062799a4a86a521b307cd0">usbd_class_driver_t</a>, <a class="el" href="structusbh__class__driver__t.html#a5745a64fefcfafd45c5f3cc398809cbb">usbh_class_driver_t</a></li>
-<li>delay_ms&#160;:&#160;<a class="el" href="structSX1280__s.html#aff95d10341007187796f6e6b42835d92">SX1280_s</a></li>
-<li>depth&#160;:&#160;<a class="el" href="structosal__queue__def__t.html#ac960793c7ffb0c12b32fd002b7605fa4">osal_queue_def_t</a>, <a class="el" href="structtu__fifo__t.html#a3dfff98adc95216871ffd2bfb91d36e6">tu_fifo_t</a></li>
-<li>desc&#160;:&#160;<a class="el" href="structtuh__itf__info__t.html#a4639b9c3e357eefd3f753337a8597f90">tuh_itf_info_t</a></li>
-<li>desc_audio_control&#160;:&#160;<a class="el" href="structtuh__midi__descriptor__cb__t.html#adb3823bccb14ece294d91849b0f2a0ac">tuh_midi_descriptor_cb_t</a></li>
-<li>desc_element&#160;:&#160;<a class="el" href="structtuh__midi__descriptor__cb__t.html#a19b074759acb00fd8bb98f57e59273a6">tuh_midi_descriptor_cb_t</a></li>
-<li>desc_epin&#160;:&#160;<a class="el" href="structtuh__midi__descriptor__cb__t.html#a637a6343155bcb5157ef4e4a6c74779f">tuh_midi_descriptor_cb_t</a></li>
-<li>desc_epout&#160;:&#160;<a class="el" href="structtuh__midi__descriptor__cb__t.html#a4718ab1197944a7c6cc7e98c2fb042c2">tuh_midi_descriptor_cb_t</a></li>
-<li>desc_header&#160;:&#160;<a class="el" href="structtuh__midi__descriptor__cb__t.html#ab40c5a74bbbd6d6deb73eb65bfc0fde7">tuh_midi_descriptor_cb_t</a></li>
-<li>desc_jack&#160;:&#160;<a class="el" href="structtuh__midi__descriptor__cb__t.html#aa64736417c06d312f267a0af614764c8">tuh_midi_descriptor_cb_t</a></li>
-<li>desc_midi&#160;:&#160;<a class="el" href="structtuh__midi__descriptor__cb__t.html#a41cd71eaa2cd73f33575dc5dcf713f70">tuh_midi_descriptor_cb_t</a></li>
-<li>desc_midi_total_len&#160;:&#160;<a class="el" href="structtuh__midi__descriptor__cb__t.html#a16866cbb1152e08511fa946bf9afaa57">tuh_midi_descriptor_cb_t</a></li>
-<li>descriptor_type&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a88f7bcd59328285d783bb8e80a9eee05">TU_ATTR_PACKED</a></li>
-<li>dev_addr&#160;:&#160;<a class="el" href="structdwc2__channel__char__t_1_1TU__ATTR__PACKED.html#a41065fb89a83107035e0fa31df75e20b">dwc2_channel_char_t::TU_ATTR_PACKED</a>, <a class="el" href="structhcd__event__t.html#ad60257e01a8ddd467f1e181f9d4c21eb">hcd_event_t</a>, <a class="el" href="unionohci__ed__word0__t.html#a9f84832fb5cf66a7f6541e233b95efbe">ohci_ed_word0_t</a></li>
-<li>dev_address&#160;:&#160;<a class="el" href="struct__USBD__HandleTypeDef.html#af3d7a614a6c303c650c170be0db9e4b9">_USBD_HandleTypeDef</a></li>
-<li>dev_config&#160;:&#160;<a class="el" href="struct__USBD__HandleTypeDef.html#a6ca03ac14a91825f90cfbcf60e7b137b">_USBD_HandleTypeDef</a></li>
-<li>dev_config_status&#160;:&#160;<a class="el" href="struct__USBD__HandleTypeDef.html#a15beabef5122d0052a174f8199aba0fb">_USBD_HandleTypeDef</a></li>
-<li>dev_connection_status&#160;:&#160;<a class="el" href="struct__USBD__HandleTypeDef.html#aab8828b36430a92401a77d7d99afbc16">_USBD_HandleTypeDef</a></li>
-<li>dev_default_config&#160;:&#160;<a class="el" href="struct__USBD__HandleTypeDef.html#a106d00710a2670cb78eb7c60d5ee7148">_USBD_HandleTypeDef</a></li>
-<li>dev_hnp_en&#160;:&#160;<a class="el" href="structdwc2__gotgctl__t_1_1TU__ATTR__PACKED.html#a68580c1494163645ba6ada095c244624">dwc2_gotgctl_t::TU_ATTR_PACKED</a></li>
-<li>dev_old_state&#160;:&#160;<a class="el" href="struct__USBD__HandleTypeDef.html#ada8cf946bea80eddd4e02d625cd12ec3">_USBD_HandleTypeDef</a></li>
-<li>dev_remote_wakeup&#160;:&#160;<a class="el" href="struct__USBD__HandleTypeDef.html#a57d4048d7f8c526945dd0aecd1ec963e">_USBD_HandleTypeDef</a></li>
-<li>dev_speed&#160;:&#160;<a class="el" href="struct__USBD__HandleTypeDef.html#ab040c3b6da2606cb0271eeb0e69bf380">_USBD_HandleTypeDef</a></li>
-<li>dev_state&#160;:&#160;<a class="el" href="struct__USBD__HandleTypeDef.html#ab353692b2c17b45da559adbd2fb82ee2">_USBD_HandleTypeDef</a></li>
-<li>dev_test_mode&#160;:&#160;<a class="el" href="struct__USBD__HandleTypeDef.html#a88ced0f8fd9995ddc0deca1dc6c6eeaf">_USBD_HandleTypeDef</a></li>
-<li>DEVADD&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a163037b30209fcc8967a7e43c9fbfb50">_ccrx_evenaccess</a></li>
-<li>DEVADD_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a739237299d58deb7a43ce6e1cb74f002">_ccrx_evenaccess</a></li>
-<li>devctl&#160;:&#160;<a class="el" href="structmusb__regs__t.html#a0e165f0407b546eb357a4bc726989b32">musb_regs_t</a></li>
-<li>DEVCTRL&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a438934dd54829dc22e2d2bf5a5c90fd8">dcd_registers_t</a></li>
-<li>DEVDMA&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a129d67d308afaaadc2bd37cb83320b60">dcd_registers_t</a></li>
-<li>DEVDMAADDRESS&#160;:&#160;<a class="el" href="structdevdma__t.html#a330b61b62ea49fe16f5c8468e2cd8711">devdma_t</a></li>
-<li>DEVDMACONTROL&#160;:&#160;<a class="el" href="structdevdma__t.html#a57ef5830b1c9f054ce967a198ee49ebd">devdma_t</a></li>
-<li>DEVDMANXTDSC&#160;:&#160;<a class="el" href="structdevdma__t.html#a90dfd0896bb38c4479b95e8e753a47e9">devdma_t</a></li>
-<li>DEVDMASTATUS&#160;:&#160;<a class="el" href="structdevdma__t.html#af45f82fb1534ec1fbbcec4a5c1d327e7">devdma_t</a></li>
-<li>DEVEPT&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a037001f831b9581dfbc9a6343d0db584">dcd_registers_t</a></li>
-<li>DEVEPTCFG&#160;:&#160;<a class="el" href="structdcd__registers__t.html#ab8c8a2495421ca9afc009557ef06f0c3">dcd_registers_t</a></li>
-<li>DEVEPTICR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a53aab211798b426fbff513bd43ddbb73">dcd_registers_t</a></li>
-<li>DEVEPTIDR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a9ad3a5afb88cb495ec41f242db779e58">dcd_registers_t</a></li>
-<li>DEVEPTIER&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a1405ff37bd7344cade3886169f5346c3">dcd_registers_t</a></li>
-<li>DEVEPTIFR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#ac42d3e689b118782bc5e54312f38bcac">dcd_registers_t</a></li>
-<li>DEVEPTIMR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a0fc327a151c8d5c5312c6b683ea9c130">dcd_registers_t</a></li>
-<li>DEVEPTISR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#aa6da14744c5cea37a9fbeaa4e698bcb1">dcd_registers_t</a></li>
-<li>DEVFNUM&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a6d3c450004360f67e3bdbb2577dfcece">dcd_registers_t</a></li>
-<li>device_flags&#160;:&#160;<a class="el" href="structrndis__msg__initialize__cmplt__t.html#ac6a9a2ab47a2449b0629fcee8178c7f8">rndis_msg_initialize_cmplt_t</a></li>
-<li>device_remote_wakeup_enable&#160;:&#160;<a class="el" href="structohci__registers__t.html#a2f1cf651bb67ca4f6cd1096bb3141945">ohci_registers_t</a></li>
-<li>device_removable&#160;:&#160;<a class="el" href="structohci__registers__t.html#aa2473980eb72717ac57e20fdecafe3f9">ohci_registers_t</a></li>
-<li>device_type&#160;:&#160;<a class="el" href="structohci__registers__t.html#a516d6dd3db018ee8f39d0fc3eabbad9e">ohci_registers_t</a></li>
-<li>DEVICEADDR&#160;:&#160;<a class="el" href="structci__hs__regs__t.html#af4f5cc7cf48e270e4459084051f2fedd">ci_hs_regs_t</a></li>
-<li>DeviceRemovable&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a950c681f52455c22901fe108e35fa1d8">TU_ATTR_PACKED</a></li>
-<li>DEVICR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a63627d751b2c63959f012ed7f2b7466a">dcd_registers_t</a></li>
-<li>DEVIDR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a3623982e2a9105f861e1ecb7a06245e1">dcd_registers_t</a></li>
-<li>DEVIER&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a342a2e1be33e305ec9dfc7ea89c1aade">dcd_registers_t</a></li>
-<li>DEVIFR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a1d7c6f0bfc419af874b1d31b753e5ad6">dcd_registers_t</a></li>
-<li>DEVIMR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a0e45c4ae96acbd0164a512024bbb527a">dcd_registers_t</a></li>
-<li>DEVISR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a0ec60eb3c6f8c87898322d5d10fe242c">dcd_registers_t</a></li>
-<li>DEVSEL&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ab85b3cbb1601f8d48f4eaa0c7a53a1fb">_ccrx_evenaccess</a></li>
-<li>DFALL&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a96beefb91b319a30371ee4e17d7a7c5c">_ccrx_evenaccess</a></li>
-<li>dfifo_depth&#160;:&#160;<a class="el" href="structdwc2__ghwcfg3__t_1_1TU__ATTR__PACKED.html#aa84cfeaadd2facc1d8eba93ac39903ba">dwc2_ghwcfg3_t::TU_ATTR_PACKED</a></li>
-<li>diepctl&#160;:&#160;<a class="el" href="structdwc2__dep__t.html#a6db03b7c9e47564bd3f6a794d1a233f4">dwc2_dep_t</a></li>
-<li>diepdma&#160;:&#160;<a class="el" href="structdwc2__dep__t.html#a88b409a13f20d93fa5b63025b246536e">dwc2_dep_t</a></li>
-<li>diepeachmsk&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#aea48fd0c37a9f4b2b59393bad505a0c9">dwc2_regs_t</a></li>
-<li>diepempmsk&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a0cdcc810134299d8ab020d95ce6ccafe">dwc2_regs_t</a></li>
-<li>diepint&#160;:&#160;<a class="el" href="structdwc2__dep__t.html#ac4d99e208e4b6c8ec344d6d31362a0f1">dwc2_dep_t</a></li>
-<li>diepmsk&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a670a437bb0d5b9b47814c0afd5edcbf9">dwc2_regs_t</a></li>
-<li>dieptsiz&#160;:&#160;<a class="el" href="structdwc2__dep__t.html#a49bc7f79dc384c9c183d6cf3a78d04f9">dwc2_dep_t</a></li>
-<li>dieptxf&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#af1f6558e3f3b96a0673d95a75220a447">dwc2_regs_t</a></li>
-<li>dieptxf0&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a375ecf44aca74e551a780bf750b5849d">dwc2_regs_t</a></li>
-<li>DIR&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a49a52ddd088cdee92ca56f833cb6a511">_ccrx_evenaccess</a></li>
-<li>dir&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a57253a58547249719bef1ff12e2eecd5">TU_ATTR_PACKED</a></li>
-<li>direction&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a86d99694f12d21fa149cff53b1889c79">TU_ATTR_PACKED</a></li>
-<li>DIRPD&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a7ca7ff7a0b2436fa2da55877026a12d7">_ccrx_evenaccess</a></li>
-<li>DIS&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a761a5980971b10e531a42dccc0574c2c">_ccrx_evenaccess</a></li>
-<li>disable&#160;:&#160;<a class="el" href="structdwc2__channel__char__t_1_1TU__ATTR__PACKED.html#ace48100b1ad2ff19eb025a9789651cf0">dwc2_channel_char_t::TU_ATTR_PACKED</a>, <a class="el" href="structdwc2__depctl__t_1_1TU__ATTR__PACKED.html#a70579d4567bc2b5e86458b7ea475fee9">dwc2_depctl_t::TU_ATTR_PACKED</a></li>
-<li>disable_block_descriptor&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a697321cc5457f00d355fbbaa8f752a78">TU_ATTR_PACKED</a></li>
-<li>disabled&#160;:&#160;<a class="el" href="structdwc2__diepint__t_1_1TU__ATTR__PACKED.html#a0e59929ab6409890cde4cf6288942407">dwc2_diepint_t::TU_ATTR_PACKED</a>, <a class="el" href="structdwc2__doepint__t_1_1TU__ATTR__PACKED.html#ac34f43126e824e82f5ad1497a6c28e06">dwc2_doepint_t::TU_ATTR_PACKED</a></li>
-<li>DM0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ae65956e8373062b83f8d7f935f5cee0e">_ccrx_evenaccess</a></li>
-<li>dma&#160;:&#160;<a class="el" href="structmusb__regs__t.html#a665663a5104dc179f378125cad5e4fc6">musb_regs_t</a></li>
-<li>dma_channel&#160;:&#160;<a class="el" href="structmusb__regs__t.html#acd26ec1cb0b9eba846832d2f0a7a18fd">musb_regs_t</a></li>
-<li>dma_desc&#160;:&#160;<a class="el" href="structdwc2__dcfg__t_1_1TU__ATTR__PACKED.html#a322c4107d81f38059efdd1b338aaabd1">dwc2_dcfg_t::TU_ATTR_PACKED</a></li>
-<li>dma_desc_dynamic&#160;:&#160;<a class="el" href="structdwc2__ghwcfg4__t_1_1TU__ATTR__PACKED.html#ae58a2c34aa2fc454387f7fa692ee9ef0">dwc2_ghwcfg4_t::TU_ATTR_PACKED</a></li>
-<li>dma_desc_enabled&#160;:&#160;<a class="el" href="structdwc2__ghwcfg4__t_1_1TU__ATTR__PACKED.html#a1a1428dda4ad3987e67a9923ead1d5c2">dwc2_ghwcfg4_t::TU_ATTR_PACKED</a></li>
-<li>dma_en&#160;:&#160;<a class="el" href="structdwc2__gahbcfg__t_1_1TU__ATTR__PACKED.html#a56f70c3d62c76e3999544bb28f0681de">dwc2_gahbcfg_t::TU_ATTR_PACKED</a></li>
-<li>dma_intr&#160;:&#160;<a class="el" href="structmusb__regs__t.html#a360fcdbe095a0886350ee5a51469ce4a">musb_regs_t</a></li>
-<li>dma_req&#160;:&#160;<a class="el" href="structdwc2__grstctl__t_1_1TU__ATTR__PACKED.html#ae3d2a59b0024368617403822ba083e6c">dwc2_grstctl_t::TU_ATTR_PACKED</a></li>
+<li>delay_ms&#160;:&#160;<a class="el" href="structSX1280__s.html#a5d5a1d99c5545c55c87ade621f513ab3">SX1280_t</a></li>
 <li>DmaBusy&#160;:&#160;<a class="el" href="unionRadioStatus__t.html#a1c100ece490af5693ff8f4b03ae471b9">RadioStatus_t</a></li>
-<li>DMINT&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a8a5e37765c5334e18c46ceac828d05b3">_ccrx_evenaccess</a></li>
-<li>DMINT0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ac650c284190770410df7bdaf6f6cbefe">_ccrx_evenaccess</a></li>
-<li>DMINTE&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ac119254fe35f5a1d1ef01677f91f3765">_ccrx_evenaccess</a></li>
-<li>DMINTE0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#acd354a1261c243a0ab619564c05dcf95">_ccrx_evenaccess</a></li>
-<li>DMRPU&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a00f90c663fd90c9812dfaa89ed4ba1c9">_ccrx_evenaccess</a></li>
-<li>DMVAL&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a5f051d65f807b3f4f9d01d3de558565e">_ccrx_evenaccess</a></li>
-<li>do_ping&#160;:&#160;<a class="el" href="structdwc2__channel__tsize__t_1_1TU__ATTR__PACKED.html#af24048b7497d92b39c8e1085634ef42d">dwc2_channel_tsize_t::TU_ATTR_PACKED</a></li>
-<li>doepctl&#160;:&#160;<a class="el" href="structdwc2__dep__t.html#ac2e2d5fc5a651732efaa9658a0a1556d">dwc2_dep_t</a></li>
-<li>doepdma&#160;:&#160;<a class="el" href="structdwc2__dep__t.html#abc209d326853e3aee7ab8a68ddfad9e4">dwc2_dep_t</a></li>
-<li>doepeachmsk&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#aba34ea4f2f106aaf4d066f02f3b38039">dwc2_regs_t</a></li>
-<li>doepint&#160;:&#160;<a class="el" href="structdwc2__dep__t.html#a7ee1091ea1d2a5dcf0f2435ca29117fd">dwc2_dep_t</a></li>
-<li>doepmsk&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#aac16d85ee61d6146be73dfae3867882c">dwc2_regs_t</a></li>
-<li>doeptsiz&#160;:&#160;<a class="el" href="structdwc2__dep__t.html#a3ff29382ae60d8ec3b883d2572bc5d6d">dwc2_dep_t</a></li>
-<li>done_head&#160;:&#160;<a class="el" href="structohci__hcca__t.html#a3c8403a46de6ac086b1d92fdbcc5f2e9">ohci_hcca_t</a>, <a class="el" href="structohci__registers__t.html#ad07dcf30530285f89c213f795e048130">ohci_registers_t</a></li>
-<li>DOVCA0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a2245907961fd135edcaecab46a0e42e0">_ccrx_evenaccess</a></li>
-<li>DOVCAH&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a2e2d150885c0098780dc84d89438df3f">_ccrx_evenaccess</a></li>
-<li>DOVCAHE&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#acfcba7c25e2e85b8b0a90d8492f2a776">_ccrx_evenaccess</a></li>
-<li>DOVCAHM&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a59108c03db8e74b9b5b320820e0b4254">_ccrx_evenaccess</a></li>
-<li>DOVCB0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#af3785c056b4349564020b6c2c589aa4e">_ccrx_evenaccess</a></li>
-<li>DOVCBH&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#afd77273b7b9226aa71c2c7acd60107be">_ccrx_evenaccess</a></li>
-<li>DOVCBHE&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a1bcfbe2332939375f57d3ad11d25c0a0">_ccrx_evenaccess</a></li>
-<li>DOVCBHM&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a88753d2fd6d925725f9274bf6caf54f2">_ccrx_evenaccess</a></li>
-<li>DOVRCRA0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a6e337760a2643bbcc9650d5cb8511d82">_ccrx_evenaccess</a></li>
-<li>DOVRCRAE0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#abe6144b4844b4fa5632d77ca36a7af6a">_ccrx_evenaccess</a></li>
-<li>DOVRCRB0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a2d6bda940848cbf5d35a67d10427bff3">_ccrx_evenaccess</a></li>
-<li>DOVRCRBE0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ab8eca1931ea8293463b35753ef538eb5">_ccrx_evenaccess</a></li>
-<li>downlink&#160;:&#160;<a class="el" href="structncm__notify__t.html#ae0ff0cdb34937e90521d36e470556742">ncm_notify_t</a></li>
-<li>downstream_bitrate&#160;:&#160;<a class="el" href="group__ClassDriver__CDC.html#gaa31be30756bddea74b5f79259059350e">TU_ATTR_PACKED</a></li>
-<li>DP0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a7c850e89f5d2e2190aa50637a345b208">_ccrx_evenaccess</a></li>
-<li>dpid&#160;:&#160;<a class="el" href="structdwc2__grxstsp__t_1_1TU__ATTR__PACKED.html#a35638899c642bbe03d289751e3cbf2b4">dwc2_grxstsp_t::TU_ATTR_PACKED</a></li>
-<li>dpid_iso_odd&#160;:&#160;<a class="el" href="structdwc2__depctl__t_1_1TU__ATTR__PACKED.html#ac796b4c897affbc1bee111738ecf756a">dwc2_depctl_t::TU_ATTR_PACKED</a></li>
-<li>DPINT&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a594f1cb0a6317d4acacf9b9797dfbac1">_ccrx_evenaccess</a></li>
-<li>DPINT0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a15c70ace2a06cc4d86b4a8919a3c8724">_ccrx_evenaccess</a></li>
-<li>DPINTE&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ae19ed8d1972244feae531f75ab91e7d8">_ccrx_evenaccess</a></li>
-<li>DPINTE0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a5976664631244457c295189e52860a76">_ccrx_evenaccess</a></li>
-<li>DPRPU&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#abb2a9016f89b5ec3ef6f32a85a3b9bd9">_ccrx_evenaccess</a></li>
-<li>DPUSR0R&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#af8ad9c7440ae698994c6c8ed12974dd3">_ccrx_evenaccess</a></li>
-<li>DPUSR0R_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a7ec49f8077049969adf0862af9a33cd2">_ccrx_evenaccess</a></li>
-<li>DPUSR0R_FS&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ab38bec11997a46f116947faa7331b6c8">_ccrx_evenaccess</a></li>
-<li>DPUSR0R_FS_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#aea86b199462041abaadf2fa77da13e30">_ccrx_evenaccess</a></li>
-<li>DPUSR1R&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a1a2e426f81e9ffaa18954f57cc2a6b05">_ccrx_evenaccess</a></li>
-<li>DPUSR1R_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a30180e724cfe7a0a1fc94f81e5c01c1a">_ccrx_evenaccess</a></li>
-<li>DPUSR1R_FS&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a3318e7f1d45ca4b9ab943c175c98953e">_ccrx_evenaccess</a></li>
-<li>DPUSR1R_FS_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ab939fb9e2ae6979f6854c9d8d5de13bc">_ccrx_evenaccess</a></li>
-<li>DPUSR2R&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ab4f64ef29964ddc8b224f12e83c791ef">_ccrx_evenaccess</a></li>
-<li>DPUSR2R_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a309df9f6c5f309b19ad1b0e0a10d32f5">_ccrx_evenaccess</a></li>
-<li>DPUSRCR&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#accf2b8452cd421798081a1857bbd6d02">_ccrx_evenaccess</a></li>
-<li>DPUSRCR_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a36892a7e6c65639633da67a6c42e7151">_ccrx_evenaccess</a></li>
-<li>DPVAL&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a5efc98f749a9e76fef0158c276cda4dd">_ccrx_evenaccess</a></li>
-<li>DREQE&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#aa8eeca77a1b4e2b4bbf5fc525aaf9e53">_ccrx_evenaccess</a></li>
-<li>DRISE&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a6a9df0e02cfbd3a9b0fb4476081654cc">_ccrx_evenaccess</a></li>
-<li>DRPD&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ad86e51bf5a1977f03de6f5aa21b6a0c3">_ccrx_evenaccess</a></li>
-<li>DRPD0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ae66798351b53d193ba07f80a40220155">_ccrx_evenaccess</a></li>
-<li>dsr&#160;:&#160;<a class="el" href="group__ClassDriver__CDC.html#ga2ef64a0ea437153088930a5f63b3922a">TU_ATTR_PACKED::TU_ATTR_PACKED</a></li>
-<li>dsts&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a856c37289776c7a33aa79678f7ab402c">dwc2_regs_t</a></li>
-<li>DT1&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED_1_1TU__ATTR__PACKED.html#a888896b01983fca28d2dee5dd296dcf6">TU_ATTR_PACKED::TU_ATTR_PACKED</a></li>
-<li>DTCH&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a32eb12f97452b998bed4f8d1703d414d">_ccrx_evenaccess</a></li>
-<li>DTCHE&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a10492172ef1aebfe4b7c7d1357ea7c5a">_ccrx_evenaccess</a></li>
-<li>dthrctl&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a921a4e084fbddea73f6e0a5bdd6ccb4f">dwc2_regs_t</a></li>
-<li>dtknqr1&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a7e3f25884a72e07ad5d16fb82decc072">dwc2_regs_t</a></li>
-<li>dtknqr2&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#ac09896338d3075409d85996894b6e386">dwc2_regs_t</a></li>
-<li>DTLN&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#aa32d3ed00278101b6fe15f6f0ea15f60">_ccrx_evenaccess</a></li>
-<li>dtr&#160;:&#160;<a class="el" href="group__ClassDriver__CDC.html#ga19caf7110a2f5b13fba1d76d64d59696">TU_ATTR_PACKED::TU_ATTR_PACKED</a></li>
-<li>dtxfsts&#160;:&#160;<a class="el" href="structdwc2__dep__t.html#a8cee3f153c372058c0a6de1ceb1e1286">dwc2_dep_t</a></li>
-<li>dual_role_data&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a666fe9980ca5e09fcd836250666f3f36">TU_ATTR_PACKED</a></li>
-<li>dual_role_power&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a0b2e9fd2f7305e482c568f747aa9ea13">TU_ATTR_PACKED</a></li>
-<li>dual_tone_multi_freq&#160;:&#160;<a class="el" href="group__ClassDriver__CDC.html#ga00aea78426e0964f4236f1281a728078">TU_ATTR_PACKED</a></li>
-<li>DVBINT0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a59f007a0a5a7cf222bff3b00a85d4c6c">_ccrx_evenaccess</a></li>
-<li>DVBSE0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#abc7d516c08495937169a15533d7adeb5">_ccrx_evenaccess</a></li>
-<li>DVBSTS0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a600553b49c285040557fcba52b8b966a">_ccrx_evenaccess</a></li>
-<li>DVBSTSH&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a9b7fcb7212b54948d66432032f0c6c9d">_ccrx_evenaccess</a></li>
-<li>DVBSTSHE&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ad0d952a09b8bb6755ddb0ae64b3c1371">_ccrx_evenaccess</a></li>
-<li>DVBSTSHM&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ac806c4096e73d81c06836f188b0da5fa">_ccrx_evenaccess</a></li>
-<li>dvbusdis&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a3de95510706d3eafc37ce019e0227c91">dwc2_regs_t</a></li>
-<li>dvbuspulse&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#af111a5840374b3c91afb7fb5b03f5e69">dwc2_regs_t</a></li>
-<li>DVCHG&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a018d3f6adf1c26ccb2c378c7d58b1adf">_ccrx_evenaccess</a></li>
-<li>DVSE&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#afa05accf1d91e6a6b6ae32c7210d715d">_ccrx_evenaccess</a></li>
-<li>DVSQ&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a3668c431421e3013ff655f59eb754aec">_ccrx_evenaccess</a></li>
-<li>DVST&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a9958258a68eb949cbf78e6a9fbb6e710">_ccrx_evenaccess</a></li>
-<li>DVSTCTR0&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a2a8ad6458dd7ccd58543a82ca481ee53">_ccrx_evenaccess</a></li>
-<li>DVSTCTR0_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#abde54945c3ce2024946655d0c92e8169">_ccrx_evenaccess</a></li>
-<li>dwBytesPerLine&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#aaa47e2a997ca2a1a969a4581a6ece652">TU_ATTR_PACKED</a></li>
-<li>dwc2&#160;:&#160;<a class="el" href="uniontud__configure__param__t.html#a856a868ce1410316526fb037abec2716">tud_configure_param_t</a>, <a class="el" href="uniontuh__configure__param__t.html#aef9094cf8cbabf66afb5e18514bccf38">tuh_configure_param_t</a></li>
-<li>dwClockFrequency&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a6dc7284a1f3a4fcb828b1a48b76d6e27">TU_ATTR_PACKED</a></li>
-<li>dwDefaultFrameInterval&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#aaa8264532337757bde2082e3fba49a79">TU_ATTR_PACKED</a></li>
-<li>dwFrameInterval&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a226bb3f2159a7f90d4d1cf21f55d684a">TU_ATTR_PACKED</a></li>
-<li>dwMaxBitRate&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a19320ffdd6bad7db719bf761a515d854">TU_ATTR_PACKED</a></li>
-<li>dwMaxPayloadTransferSize&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a2d2032dea664f683c9cb39818ef89b0f">TU_ATTR_PACKED</a></li>
-<li>dwMaxVideoFrameBufferSize&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a4c6ad6a544d067ad08b281fd19080ce1">TU_ATTR_PACKED</a></li>
-<li>dwMaxVideoFrameSize&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a277a914644e6c37e90fa201dd3cc8ff5">TU_ATTR_PACKED</a></li>
-<li>dwMinBitRate&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#aa670aa34cc717e8e753f14c0d22e9994">TU_ATTR_PACKED</a></li>
-<li>dwNtbInMaxSize&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#af2c80737d48ceea704c2fae9b096616c">TU_ATTR_PACKED</a></li>
-<li>dwNtbOutMaxSize&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a86df6bc4673fd7f33967b11488d62572">TU_ATTR_PACKED</a></li>
-<li>dwSignature&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a4ce924aa8a0c09dea6ed3ec9e3bd7db9">TU_ATTR_PACKED</a></li>
-<li>dynamic_fifo&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a54672f558b260ddb2ba2ef1ee7e142d5">TU_ATTR_PACKED</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

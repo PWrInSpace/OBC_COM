@@ -1,0 +1,10 @@
+<map id="led_fault_color" name="led_fault_color">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,124,56"/>
+<area shape="rect" id="node2" href="$led_8c.html#a992f9c52317e7e374b7463b240a4db94" title=" " alt="" coords="237,5,307,31"/>
+<area shape="rect" id="node3" href="$ws2812_8c.html#ac74c81a843f133c7660347fc62cedc26" title=" " alt="" coords="172,55,372,80"/>
+<area shape="rect" id="node4" href="$ws2812_8c.html#ae4667756a152b0feae6848fcfe6f037d" title=" " alt="" coords="446,29,569,55"/>
+<area shape="rect" id="node6" href="$ws2812_8c.html#af345d63e55c471a0717d5bc9439c8a50" title=" " alt="" coords="420,79,595,104"/>
+<area shape="rect" id="node5" href="$ws2812_8c.html#a1a336aa93a09eae96e568550794abdad" title=" " alt="" coords="643,29,780,55"/>
+<area shape="rect" id="node7" href="$ws2812_8c.html#aa57ef631af02e08bc7dc99c41fe8dfde" title=" " alt="" coords="648,79,775,104"/>
+<area shape="rect" id="node8" href="$ws2812_8c.html#a9dbc72bdc8207fbb90566ca4fc90c487" title=" " alt="" coords="653,128,769,153"/>
+</map>

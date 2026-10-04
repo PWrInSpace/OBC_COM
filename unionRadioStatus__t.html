@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('unionRadioStatus__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,7 +89,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
@@ -79,32 +99,34 @@ $(function() {
 <p>Structure describing the radio status.  
  <a href="unionRadioStatus__t.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="sx1280_8h_source.html">sx1280.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="sx1280_8h_source.html">/home/runner/work/OBC_COM/OBC_COM/modules/sx1280/include/sx1280.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:adc47beba01232d8ebb3a5da53c78eb52"><td class="memItemLeft" >struct {</td></tr>
-<tr class="memitem:a07bb8144982b0ba9636e9ffe08e6334d"><td class="memItemLeft" >&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="unionRadioStatus__t.html#af14f941ae3a873fc21ffe090bf87164d">CpuBusy</a>: 1</td></tr>
-<tr class="memdesc:a07bb8144982b0ba9636e9ffe08e6334d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag for CPU radio busy.  <a href="unionRadioStatus__t.html#af14f941ae3a873fc21ffe090bf87164d">More...</a><br /></td></tr>
-<tr class="separator:a07bb8144982b0ba9636e9ffe08e6334d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad799114fe28079bcebd78140de73aaee"><td class="memItemLeft" >&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="unionRadioStatus__t.html#a1c100ece490af5693ff8f4b03ae471b9">DmaBusy</a>: 1</td></tr>
-<tr class="memdesc:ad799114fe28079bcebd78140de73aaee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag for DMA busy.  <a href="unionRadioStatus__t.html#a1c100ece490af5693ff8f4b03ae471b9">More...</a><br /></td></tr>
-<tr class="separator:ad799114fe28079bcebd78140de73aaee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5571adfb6a52f0f3b20cb39490f73a59"><td class="memItemLeft" >&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="unionRadioStatus__t.html#af7f1a77fc58a179289235c43f97ca7f4">CmdStatus</a>: 3</td></tr>
-<tr class="memdesc:a5571adfb6a52f0f3b20cb39490f73a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command status.  <a href="unionRadioStatus__t.html#af7f1a77fc58a179289235c43f97ca7f4">More...</a><br /></td></tr>
-<tr class="separator:a5571adfb6a52f0f3b20cb39490f73a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cb1799477cf4f7aab2bfc6c517960a5"><td class="memItemLeft" >&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="unionRadioStatus__t.html#a8ba961caa459db467b195b6602f88b5b">ChipMode</a>: 3</td></tr>
-<tr class="memdesc:a1cb1799477cf4f7aab2bfc6c517960a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip mode.  <a href="unionRadioStatus__t.html#a8ba961caa459db467b195b6602f88b5b">More...</a><br /></td></tr>
-<tr class="separator:a1cb1799477cf4f7aab2bfc6c517960a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc47beba01232d8ebb3a5da53c78eb52"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionRadioStatus__t.html#adc47beba01232d8ebb3a5da53c78eb52">Fields</a></td></tr>
-<tr class="memdesc:adc47beba01232d8ebb3a5da53c78eb52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure of the radio status.  <br /></td></tr>
-<tr class="separator:adc47beba01232d8ebb3a5da53c78eb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae53f7fd76b164f02d62f820b7327b938"><td class="memItemLeft" >struct {</td></tr>
+<tr class="memitem:aed9cac6a3c84f259f14ff4021bfe6de3"><td class="memItemLeft" >&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="unionRadioStatus__t.html#af14f941ae3a873fc21ffe090bf87164d">CpuBusy</a>: 1</td></tr>
+<tr class="memdesc:aed9cac6a3c84f259f14ff4021bfe6de3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag for CPU radio busy.  <a href="unionRadioStatus__t.html#af14f941ae3a873fc21ffe090bf87164d">More...</a><br /></td></tr>
+<tr class="separator:aed9cac6a3c84f259f14ff4021bfe6de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76be06bbd03de8314bb92059e732ca96"><td class="memItemLeft" >&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="unionRadioStatus__t.html#a1c100ece490af5693ff8f4b03ae471b9">DmaBusy</a>: 1</td></tr>
+<tr class="memdesc:a76be06bbd03de8314bb92059e732ca96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag for DMA busy.  <a href="unionRadioStatus__t.html#a1c100ece490af5693ff8f4b03ae471b9">More...</a><br /></td></tr>
+<tr class="separator:a76be06bbd03de8314bb92059e732ca96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb515e48d68293957b0a5ce6a14cf7d"><td class="memItemLeft" >&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="unionRadioStatus__t.html#af7f1a77fc58a179289235c43f97ca7f4">CmdStatus</a>: 3</td></tr>
+<tr class="memdesc:aafb515e48d68293957b0a5ce6a14cf7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command status.  <a href="unionRadioStatus__t.html#af7f1a77fc58a179289235c43f97ca7f4">More...</a><br /></td></tr>
+<tr class="separator:aafb515e48d68293957b0a5ce6a14cf7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d2477f42bcf11ab9451a70d0c3c5e83"><td class="memItemLeft" >&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="unionRadioStatus__t.html#a8ba961caa459db467b195b6602f88b5b">ChipMode</a>: 3</td></tr>
+<tr class="memdesc:a1d2477f42bcf11ab9451a70d0c3c5e83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip mode.  <a href="unionRadioStatus__t.html#a8ba961caa459db467b195b6602f88b5b">More...</a><br /></td></tr>
+<tr class="separator:a1d2477f42bcf11ab9451a70d0c3c5e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae53f7fd76b164f02d62f820b7327b938"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionRadioStatus__t.html#ae53f7fd76b164f02d62f820b7327b938">Fields</a></td></tr>
+<tr class="memdesc:ae53f7fd76b164f02d62f820b7327b938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure of the radio status.  <br /></td></tr>
+<tr class="separator:ae53f7fd76b164f02d62f820b7327b938"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac664d60f5d4bda0bc082d2a8f928dac0"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionRadioStatus__t.html#ac664d60f5d4bda0bc082d2a8f928dac0">Value</a></td></tr>
 <tr class="memdesc:ac664d60f5d4bda0bc082d2a8f928dac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialized radio status.  <br /></td></tr>
 <tr class="separator:ac664d60f5d4bda0bc082d2a8f928dac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Structure describing the radio status. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00275">275</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a8ba961caa459db467b195b6602f88b5b" name="a8ba961caa459db467b195b6602f88b5b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ba961caa459db467b195b6602f88b5b">&#9670;&#160;</a></span>ChipMode</h2>
@@ -119,6 +141,8 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Chip mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00283">283</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -136,6 +160,8 @@ Data Fields</h2></td></tr>
 
 <p>Command status. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00282">282</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
 </div>
 </div>
 <a id="af14f941ae3a873fc21ffe090bf87164d" name="af14f941ae3a873fc21ffe090bf87164d"></a>
@@ -151,6 +177,8 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Flag for CPU radio busy. </p>
+
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00280">280</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
 
 </div>
 </div>
@@ -168,10 +196,12 @@ Data Fields</h2></td></tr>
 
 <p>Flag for DMA busy. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00281">281</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
 </div>
 </div>
-<a id="adc47beba01232d8ebb3a5da53c78eb52" name="adc47beba01232d8ebb3a5da53c78eb52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc47beba01232d8ebb3a5da53c78eb52">&#9670;&#160;</a></span></h2>
+<a id="ae53f7fd76b164f02d62f820b7327b938" name="ae53f7fd76b164f02d62f820b7327b938"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae53f7fd76b164f02d62f820b7327b938">&#9670;&#160;</a></span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,15 +230,23 @@ Data Fields</h2></td></tr>
 
 <p>Serialized radio status. </p>
 
+<p class="definition">Definition at line <a class="el" href="sx1280_8h_source.html#l00289">289</a> of file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sx1280_8c_source.html#l00113">SX1280GetStatus()</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this union was generated from the following file:<ul>
 <li>modules/sx1280/include/<a class="el" href="sx1280_8h_source.html">sx1280.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="unionRadioStatus__t.html">RadioStatus_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

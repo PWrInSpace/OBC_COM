@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('board__data_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,11 +89,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="dir_78f5ecd95a37a67589a284a718a0be9c.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">board_data.h</div></div>
 </div><!--header-->
@@ -110,27 +126,31 @@ $(function() {
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">void</span> <a class="code hl_function" href="board__data_8h.html#ae1f72427126dd1e29892df7a730a9d33">board_data_init</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">int</span> <a class="code hl_function" href="board__data_8h.html#ac6df3fa4a3d3b7270de6032e0074f096">board_data_serialize</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structBoardData__t.html">BoardData_t</a> *data, <span class="keywordtype">char</span> *out_buffer, <span class="keywordtype">size_t</span> buffer_size);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keywordtype">int</span> <a class="code hl_function" href="board__data_8h.html#aba4f4450ce2fe899c33b54f6cbe46ec4">board_data_get_header</a>(<span class="keywordtype">char</span> *out_buffer, <span class="keywordtype">size_t</span> buffer_size);</div>
-<div class="ttc" id="aboard__data_8h_html_a5462b542db6c8df52c00b85867662257"><div class="ttname"><a href="board__data_8h.html#a5462b542db6c8df52c00b85867662257">g_state_mutex</a></div><div class="ttdeci">SemaphoreHandle_t g_state_mutex</div><div class="ttdef"><b>Definition:</b> board_data.c:11</div></div>
-<div class="ttc" id="aboard__data_8h_html_a90e747e77a671a8da706f305c3a647c1"><div class="ttname"><a href="board__data_8h.html#a90e747e77a671a8da706f305c3a647c1">g_system_state</a></div><div class="ttdeci">BoardData_t g_system_state</div><div class="ttdef"><b>Definition:</b> board_data.c:10</div></div>
-<div class="ttc" id="aboard__data_8h_html_aba4f4450ce2fe899c33b54f6cbe46ec4"><div class="ttname"><a href="board__data_8h.html#aba4f4450ce2fe899c33b54f6cbe46ec4">board_data_get_header</a></div><div class="ttdeci">int board_data_get_header(char *out_buffer, size_t buffer_size)</div><div class="ttdef"><b>Definition:</b> board_data.c:40</div></div>
-<div class="ttc" id="aboard__data_8h_html_ac6df3fa4a3d3b7270de6032e0074f096"><div class="ttname"><a href="board__data_8h.html#ac6df3fa4a3d3b7270de6032e0074f096">board_data_serialize</a></div><div class="ttdeci">int board_data_serialize(const BoardData_t *data, char *out_buffer, size_t buffer_size)</div><div class="ttdef"><b>Definition:</b> board_data.c:18</div></div>
-<div class="ttc" id="aboard__data_8h_html_ae1f72427126dd1e29892df7a730a9d33"><div class="ttname"><a href="board__data_8h.html#ae1f72427126dd1e29892df7a730a9d33">board_data_init</a></div><div class="ttdeci">void board_data_init(void)</div><div class="ttdef"><b>Definition:</b> board_data.c:13</div></div>
-<div class="ttc" id="astructBoardData__t_html"><div class="ttname"><a href="structBoardData__t.html">BoardData_t</a></div><div class="ttdef"><b>Definition:</b> board_data.h:12</div></div>
-<div class="ttc" id="astructBoardData__t_html_a062b027f6b00f029c8f9177e62fa3f6e"><div class="ttname"><a href="structBoardData__t.html#a062b027f6b00f029c8f9177e62fa3f6e">BoardData_t::temperature</a></div><div class="ttdeci">float temperature</div><div class="ttdef"><b>Definition:</b> board_data.h:14</div></div>
-<div class="ttc" id="astructBoardData__t_html_a1eecd4ca7d033344af61a2ed3fbc04c6"><div class="ttname"><a href="structBoardData__t.html#a1eecd4ca7d033344af61a2ed3fbc04c6">BoardData_t::lon</a></div><div class="ttdeci">int32_t lon</div><div class="ttdef"><b>Definition:</b> board_data.h:21</div></div>
-<div class="ttc" id="astructBoardData__t_html_a3087fde7191fa4c77c89eee251ab4ca7"><div class="ttname"><a href="structBoardData__t.html#a3087fde7191fa4c77c89eee251ab4ca7">BoardData_t::timestamp_ms</a></div><div class="ttdeci">uint32_t timestamp_ms</div><div class="ttdef"><b>Definition:</b> board_data.h:13</div></div>
-<div class="ttc" id="astructBoardData__t_html_a390e6a418d06b11a7e9e671f2005f35b"><div class="ttname"><a href="structBoardData__t.html#a390e6a418d06b11a7e9e671f2005f35b">BoardData_t::numSV</a></div><div class="ttdeci">uint8_t numSV</div><div class="ttdef"><b>Definition:</b> board_data.h:24</div></div>
-<div class="ttc" id="astructBoardData__t_html_a6a75b2f83273b109281e5e1e1f0d0452"><div class="ttname"><a href="structBoardData__t.html#a6a75b2f83273b109281e5e1e1f0d0452">BoardData_t::gSpeed</a></div><div class="ttdeci">int32_t gSpeed</div><div class="ttdef"><b>Definition:</b> board_data.h:23</div></div>
-<div class="ttc" id="astructBoardData__t_html_ab6266a8ae596d153206ffcb3d0df4e3a"><div class="ttname"><a href="structBoardData__t.html#ab6266a8ae596d153206ffcb3d0df4e3a">BoardData_t::status_flags</a></div><div class="ttdeci">uint32_t status_flags</div><div class="ttdef"><b>Definition:</b> board_data.h:16</div></div>
-<div class="ttc" id="astructBoardData__t_html_ac233a7f00f5426e048bbb5ba7e963385"><div class="ttname"><a href="structBoardData__t.html#ac233a7f00f5426e048bbb5ba7e963385">BoardData_t::lat</a></div><div class="ttdeci">int32_t lat</div><div class="ttdef"><b>Definition:</b> board_data.h:20</div></div>
-<div class="ttc" id="astructBoardData__t_html_acc15fc811efeb42d841d081e4a276658"><div class="ttname"><a href="structBoardData__t.html#acc15fc811efeb42d841d081e4a276658">BoardData_t::RSSI</a></div><div class="ttdeci">int16_t RSSI</div><div class="ttdef"><b>Definition:</b> board_data.h:18</div></div>
-<div class="ttc" id="astructBoardData__t_html_ad57013a1d1fe6cc4be254109b0a625e5"><div class="ttname"><a href="structBoardData__t.html#ad57013a1d1fe6cc4be254109b0a625e5">BoardData_t::fixType</a></div><div class="ttdeci">uint8_t fixType</div><div class="ttdef"><b>Definition:</b> board_data.h:25</div></div>
-<div class="ttc" id="astructBoardData__t_html_ae05ccb77f1e71e8023bc72160102f00c"><div class="ttname"><a href="structBoardData__t.html#ae05ccb77f1e71e8023bc72160102f00c">BoardData_t::pressure</a></div><div class="ttdeci">float pressure</div><div class="ttdef"><b>Definition:</b> board_data.h:15</div></div>
-<div class="ttc" id="astructBoardData__t_html_af7e387dd162dfa4f58e0e96e9909ece1"><div class="ttname"><a href="structBoardData__t.html#af7e387dd162dfa4f58e0e96e9909ece1">BoardData_t::hMSL</a></div><div class="ttdeci">int32_t hMSL</div><div class="ttdef"><b>Definition:</b> board_data.h:22</div></div>
+<div class="ttc" id="aboard__data_8h_html_a5462b542db6c8df52c00b85867662257"><div class="ttname"><a href="board__data_8h.html#a5462b542db6c8df52c00b85867662257">g_state_mutex</a></div><div class="ttdeci">SemaphoreHandle_t g_state_mutex</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8c_source.html#l00011">board_data.c:11</a></div></div>
+<div class="ttc" id="aboard__data_8h_html_a90e747e77a671a8da706f305c3a647c1"><div class="ttname"><a href="board__data_8h.html#a90e747e77a671a8da706f305c3a647c1">g_system_state</a></div><div class="ttdeci">BoardData_t g_system_state</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8c_source.html#l00010">board_data.c:10</a></div></div>
+<div class="ttc" id="aboard__data_8h_html_aba4f4450ce2fe899c33b54f6cbe46ec4"><div class="ttname"><a href="board__data_8h.html#aba4f4450ce2fe899c33b54f6cbe46ec4">board_data_get_header</a></div><div class="ttdeci">int board_data_get_header(char *out_buffer, size_t buffer_size)</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8c_source.html#l00040">board_data.c:40</a></div></div>
+<div class="ttc" id="aboard__data_8h_html_ac6df3fa4a3d3b7270de6032e0074f096"><div class="ttname"><a href="board__data_8h.html#ac6df3fa4a3d3b7270de6032e0074f096">board_data_serialize</a></div><div class="ttdeci">int board_data_serialize(const BoardData_t *data, char *out_buffer, size_t buffer_size)</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8c_source.html#l00018">board_data.c:18</a></div></div>
+<div class="ttc" id="aboard__data_8h_html_ae1f72427126dd1e29892df7a730a9d33"><div class="ttname"><a href="board__data_8h.html#ae1f72427126dd1e29892df7a730a9d33">board_data_init</a></div><div class="ttdeci">void board_data_init(void)</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8c_source.html#l00013">board_data.c:13</a></div></div>
+<div class="ttc" id="astructBoardData__t_html"><div class="ttname"><a href="structBoardData__t.html">BoardData_t</a></div><div class="ttdef"><b>Definition:</b> <a href="board__data_8h_source.html#l00012">board_data.h:12</a></div></div>
+<div class="ttc" id="astructBoardData__t_html_a062b027f6b00f029c8f9177e62fa3f6e"><div class="ttname"><a href="structBoardData__t.html#a062b027f6b00f029c8f9177e62fa3f6e">BoardData_t::temperature</a></div><div class="ttdeci">float temperature</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8h_source.html#l00014">board_data.h:14</a></div></div>
+<div class="ttc" id="astructBoardData__t_html_a1eecd4ca7d033344af61a2ed3fbc04c6"><div class="ttname"><a href="structBoardData__t.html#a1eecd4ca7d033344af61a2ed3fbc04c6">BoardData_t::lon</a></div><div class="ttdeci">int32_t lon</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8h_source.html#l00021">board_data.h:21</a></div></div>
+<div class="ttc" id="astructBoardData__t_html_a3087fde7191fa4c77c89eee251ab4ca7"><div class="ttname"><a href="structBoardData__t.html#a3087fde7191fa4c77c89eee251ab4ca7">BoardData_t::timestamp_ms</a></div><div class="ttdeci">uint32_t timestamp_ms</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8h_source.html#l00013">board_data.h:13</a></div></div>
+<div class="ttc" id="astructBoardData__t_html_a390e6a418d06b11a7e9e671f2005f35b"><div class="ttname"><a href="structBoardData__t.html#a390e6a418d06b11a7e9e671f2005f35b">BoardData_t::numSV</a></div><div class="ttdeci">uint8_t numSV</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8h_source.html#l00024">board_data.h:24</a></div></div>
+<div class="ttc" id="astructBoardData__t_html_a6a75b2f83273b109281e5e1e1f0d0452"><div class="ttname"><a href="structBoardData__t.html#a6a75b2f83273b109281e5e1e1f0d0452">BoardData_t::gSpeed</a></div><div class="ttdeci">int32_t gSpeed</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8h_source.html#l00023">board_data.h:23</a></div></div>
+<div class="ttc" id="astructBoardData__t_html_ab6266a8ae596d153206ffcb3d0df4e3a"><div class="ttname"><a href="structBoardData__t.html#ab6266a8ae596d153206ffcb3d0df4e3a">BoardData_t::status_flags</a></div><div class="ttdeci">uint32_t status_flags</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8h_source.html#l00016">board_data.h:16</a></div></div>
+<div class="ttc" id="astructBoardData__t_html_ac233a7f00f5426e048bbb5ba7e963385"><div class="ttname"><a href="structBoardData__t.html#ac233a7f00f5426e048bbb5ba7e963385">BoardData_t::lat</a></div><div class="ttdeci">int32_t lat</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8h_source.html#l00020">board_data.h:20</a></div></div>
+<div class="ttc" id="astructBoardData__t_html_acc15fc811efeb42d841d081e4a276658"><div class="ttname"><a href="structBoardData__t.html#acc15fc811efeb42d841d081e4a276658">BoardData_t::RSSI</a></div><div class="ttdeci">int16_t RSSI</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8h_source.html#l00018">board_data.h:18</a></div></div>
+<div class="ttc" id="astructBoardData__t_html_ad57013a1d1fe6cc4be254109b0a625e5"><div class="ttname"><a href="structBoardData__t.html#ad57013a1d1fe6cc4be254109b0a625e5">BoardData_t::fixType</a></div><div class="ttdeci">uint8_t fixType</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8h_source.html#l00025">board_data.h:25</a></div></div>
+<div class="ttc" id="astructBoardData__t_html_ae05ccb77f1e71e8023bc72160102f00c"><div class="ttname"><a href="structBoardData__t.html#ae05ccb77f1e71e8023bc72160102f00c">BoardData_t::pressure</a></div><div class="ttdeci">float pressure</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8h_source.html#l00015">board_data.h:15</a></div></div>
+<div class="ttc" id="astructBoardData__t_html_af7e387dd162dfa4f58e0e96e9909ece1"><div class="ttname"><a href="structBoardData__t.html#af7e387dd162dfa4f58e0e96e9909ece1">BoardData_t::hMSL</a></div><div class="ttdeci">int32_t hMSL</div><div class="ttdef"><b>Definition:</b> <a href="board__data_8h_source.html#l00022">board_data.h:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="dir_78f5ecd95a37a67589a284a718a0be9c.html">include</a></li><li class="navelem"><a class="el" href="board__data_8h.html">board_data.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

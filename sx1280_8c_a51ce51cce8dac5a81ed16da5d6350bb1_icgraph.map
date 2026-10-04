@@ -1,0 +1,10 @@
+<map id="SX1280SetPacketType" name="SX1280SetPacketType">
+<area shape="rect" id="node1" title="Sets the radio for the given protocol." alt="" coords="640,54,804,80"/>
+<area shape="rect" id="node2" href="$lora__config_8c.html#ad1a1b26a7f98a0b3da77f219667b234b" title="RFM95W CODE:" alt="" coords="188,29,331,54"/>
+<area shape="rect" id="node4" href="$sx1280_8c.html#a69909f6f37cec7f935a475e7d780fdbb" title="Set the modulation parameters." alt="" coords="379,29,592,54"/>
+<area shape="rect" id="node5" href="$sx1280_8c.html#ab6a428414c21ce55c5f3682b51390194" title="Sets the packet parameters." alt="" coords="394,78,577,104"/>
+<area shape="rect" id="node6" href="$sx1280__task_8c.html#a08a0d39a0c2e7c960630f1125434da42" title=" " alt="" coords="439,128,531,153"/>
+<area shape="rect" id="node3" href="$lora__config_8c.html#aa1a41e7cceea88bf0cdc915ebc3e0b5a" title=" " alt="" coords="12,29,133,54"/>
+<area shape="rect" id="node7" href="$sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a" title=" " alt="" coords="193,128,325,153"/>
+<area shape="rect" id="node8" href="$sx1280__task_8c.html#ae81733e32db03c2f8c8859b7fa9cb942" title=" " alt="" coords="5,128,140,153"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="rfm95_set_transmit_mode" name="rfm95_set_transmit_mode">
+<area shape="rect" id="node1" title="Sets the radio transceiver in transmit mode." alt="" coords="5,5,200,31"/>
+<area shape="rect" id="node2" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="248,5,377,31"/>
+</map>

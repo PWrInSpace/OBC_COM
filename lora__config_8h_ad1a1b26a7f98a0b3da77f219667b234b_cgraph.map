@@ -1,0 +1,15 @@
+<map id="sx1280_config_init" name="sx1280_config_init">
+<area shape="rect" id="node1" title="RFM95W CODE:" alt="" coords="5,256,148,281"/>
+<area shape="rect" id="node2" href="$sx1280_8c.html#a5c87eaffe8fd7c359c2d834e4c9917bc" title="Calibrates the given radio block." alt="" coords="487,180,618,205"/>
+<area shape="rect" id="node4" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="939,156,1111,181"/>
+<area shape="rect" id="node5" href="$sx1280_8c.html#ae97f22ad3f1cd7ff7daece379531a78d" title="Resets the radio." alt="" coords="249,129,357,155"/>
+<area shape="rect" id="node7" href="$sx1280_8c.html#a9660cec41eed347d90d058fae6cb6fcb" title="Sets the IRQ mask and DIO masks." alt="" coords="463,281,642,307"/>
+<area shape="rect" id="node8" href="$sx1280_8c.html#a69909f6f37cec7f935a475e7d780fdbb" title="Set the modulation parameters." alt="" coords="196,332,409,357"/>
+<area shape="rect" id="node9" href="$sx1280_8c.html#a51ce51cce8dac5a81ed16da5d6350bb1" title="Sets the radio for the given protocol." alt="" coords="471,383,635,408"/>
+<area shape="rect" id="node10" href="$sx1280_8c.html#ab6a428414c21ce55c5f3682b51390194" title="Sets the packet parameters." alt="" coords="211,433,394,459"/>
+<area shape="rect" id="node11" href="$sx1280_8c.html#adc41cbbfa238d4ac463a93975f8c7eb1" title="Sets the power regulators operating mode." alt="" coords="457,484,648,509"/>
+<area shape="rect" id="node12" href="$sx1280_8c.html#a4b53cd57d78c3bbc143164769912140a" title="Sets the RF frequency." alt="" coords="216,80,389,105"/>
+<area shape="rect" id="node13" href="$sx1280_8c.html#a1c5345ef8b25e8092415fd50f53ffa24" title="Sets the transmission parameters." alt="" coords="225,231,381,256"/>
+<area shape="rect" id="node3" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="696,281,891,307"/>
+<area shape="rect" id="node6" href="$sx1280-hal_8c.html#ad166767283bbb3d7a387ecf2f089cd23" title="Soft resets the radio." alt="" coords="487,131,618,156"/>
+</map>

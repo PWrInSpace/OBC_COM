@@ -1,6 +1,6 @@
 <map id="Core/Inc/fdcan.h" name="Core/Inc/fdcan.h">
 <area shape="rect" id="node1" title="This file contains all the function prototypes for the fdcan.c file." alt="" coords="1172,5,1299,31"/>
-<area shape="rect" id="node2" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="1202,79,1269,104"/>
+<area shape="rect" id="node2" href="$main_8h.html" title=": Header for main.c file." alt="" coords="1202,79,1269,104"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,152,140,177"/>
 <area shape="rect" id="node4" title=" " alt="" coords="165,152,317,177"/>
 <area shape="rect" id="node5" title=" " alt="" coords="341,152,511,177"/>

@@ -1,0 +1,5 @@
+<map id="led_fault_pixel" name="led_fault_pixel">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,123,56"/>
+<area shape="rect" id="node2" href="$led_8c.html#a992f9c52317e7e374b7463b240a4db94" title=" " alt="" coords="205,5,274,31"/>
+<area shape="rect" id="node3" href="$ws2812_8c.html#a1a336aa93a09eae96e568550794abdad" title=" " alt="" coords="171,55,308,80"/>
+</map>

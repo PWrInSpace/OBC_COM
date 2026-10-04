@@ -1,18 +1,16 @@
 var searchData=
 [
-  ['board_5fdata_5fget_5fheader_0',['board_data_get_header',['../board__data_8c.html#aba4f4450ce2fe899c33b54f6cbe46ec4',1,'board_data_get_header(char *out_buffer, size_t buffer_size):&#160;board_data.c'],['../board__data_8h.html#aba4f4450ce2fe899c33b54f6cbe46ec4',1,'board_data_get_header(char *out_buffer, size_t buffer_size):&#160;board_data.c']]],
-  ['board_5fdata_5finit_1',['board_data_init',['../board__data_8h.html#ae1f72427126dd1e29892df7a730a9d33',1,'board_data_init(void):&#160;board_data.c'],['../board__data_8c.html#ae1f72427126dd1e29892df7a730a9d33',1,'board_data_init(void):&#160;board_data.c']]],
-  ['board_5fdata_5fserialize_2',['board_data_serialize',['../board__data_8h.html#ac6df3fa4a3d3b7270de6032e0074f096',1,'board_data_serialize(const BoardData_t *data, char *out_buffer, size_t buffer_size):&#160;board_data.c'],['../board__data_8c.html#ac6df3fa4a3d3b7270de6032e0074f096',1,'board_data_serialize(const BoardData_t *data, char *out_buffer, size_t buffer_size):&#160;board_data.c']]],
-  ['btable_5fset_5frx_5fbufsize_3',['btable_set_rx_bufsize',['../fsdev__common_8h.html#aaeca17bf53c156ad1e1f8769212fef57',1,'fsdev_common.h']]],
-  ['btd_5fcontrol_5fxfer_5fcb_4',['btd_control_xfer_cb',['../bth__device_8h.html#a3ffed698b5afe18aa95c5b0f96cdcd64',1,'bth_device.h']]],
-  ['btd_5fdeinit_5',['btd_deinit',['../bth__device_8h.html#aa728b26d7ecef58f9e664da9be44a339',1,'bth_device.h']]],
-  ['btd_5finit_6',['btd_init',['../bth__device_8h.html#a34173a613bd4ee7c2bb58a118ca13514',1,'bth_device.h']]],
-  ['btd_5fopen_7',['btd_open',['../bth__device_8h.html#a822abc760633e0817742baeec1d07a8a',1,'bth_device.h']]],
-  ['btd_5freset_8',['btd_reset',['../bth__device_8h.html#a38ee1e9886bb66988d2ece13c0ba1019',1,'bth_device.h']]],
-  ['btd_5fxfer_5fcb_9',['btd_xfer_cb',['../bth__device_8h.html#a523c5941d52f5c9ab894b0c04cb8d047',1,'bth_device.h']]],
-  ['bufferpool_5fuart_5fstart_10',['BufferPool_UART_Start',['../main_8c.html#abfb869d326e776a98917f58b20748ccd',1,'main.c']]],
-  ['busfault_5fhandler_11',['BusFault_Handler',['../stm32h5xx__it_8h.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;stm32h5xx_it.c'],['../stm32h5xx__it_8c.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;stm32h5xx_it.c']]],
-  ['buzzer_5finit_12',['buzzer_init',['../buzzer_8h.html#a67474891465afd17e4c01ba17d1a05bd',1,'buzzer_init(buzzer_t *dev, const buzzer_t *config):&#160;buzzer.c'],['../buzzer_8c.html#a67474891465afd17e4c01ba17d1a05bd',1,'buzzer_init(buzzer_t *dev, const buzzer_t *config):&#160;buzzer.c']]],
-  ['buzzer_5fmute_13',['buzzer_mute',['../buzzer_8h.html#aa68304d0537a12b41497d1306904306c',1,'buzzer_mute(buzzer_t *dev):&#160;buzzer.c'],['../buzzer_8c.html#aa68304d0537a12b41497d1306904306c',1,'buzzer_mute(buzzer_t *dev):&#160;buzzer.c']]],
-  ['buzzer_5fset_5ftone_14',['buzzer_set_tone',['../buzzer_8h.html#a8b5df1d0f87be9e9fdb23896369f96bf',1,'buzzer_set_tone(buzzer_t *dev, uint32_t freq_hz):&#160;buzzer.c'],['../buzzer_8c.html#a8b5df1d0f87be9e9fdb23896369f96bf',1,'buzzer_set_tone(buzzer_t *dev, uint32_t freq_hz):&#160;buzzer.c']]]
+  ['calculatecrc_0',['CalculateCrc',['../group__EEPROM__Private__Functions.html#ga3c5f9766c0fb9b289576dabfc958c0f9',1,'eeprom_emul.c']]],
+  ['cdc_5fcontrol_5ffs_1',['CDC_Control_FS',['../group__USBD__CDC__Private__FunctionPrototypes.html#ga617e289cd860bc4c6831e01c7f2893a2',1,'usbd_cdc_if.c']]],
+  ['cdc_5fdeinit_5ffs_2',['CDC_DeInit_FS',['../group__USBD__CDC__Private__FunctionPrototypes.html#ga3aaa6d7ac8cd77d9aed892348d83a8a8',1,'usbd_cdc_if.c']]],
+  ['cdc_5finit_5ffs_3',['CDC_Init_FS',['../group__USBD__CDC__Private__FunctionPrototypes.html#ga400c7977253a3ee946cf2a1197bc940d',1,'usbd_cdc_if.c']]],
+  ['cdc_5freceive_5ffs_4',['CDC_Receive_FS',['../group__USBD__CDC__Private__FunctionPrototypes.html#ga89250023659c1f485873b20514959f0a',1,'usbd_cdc_if.c']]],
+  ['cdc_5ftransmit_5ffs_5',['CDC_Transmit_FS',['../group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4',1,'CDC_Transmit_FS(uint8_t *Buf, uint16_t Len):&#160;usbd_cdc_if.c'],['../group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4',1,'CDC_Transmit_FS(uint8_t *Buf, uint16_t Len):&#160;usbd_cdc_if.c']]],
+  ['cdc_5ftransmitcplt_5ffs_6',['CDC_TransmitCplt_FS',['../group__USBD__CDC__Private__FunctionPrototypes.html#gae24fdd4367d73478b63eec15af3f5f70',1,'usbd_cdc_if.c']]],
+  ['clear_5firqs_5fand_5fstandby_7',['clear_irqs_and_standby',['../sx1280__task_8c.html#a811104046034a4384c8ceb110e8b50d2',1,'sx1280_task.c']]],
+  ['cmd_5ftask_8',['cmd_task',['../cmd__task_8h.html#a4277e3032edf4828adec6ef2f88ac235',1,'cmd_task(void *argument):&#160;cmd_task.c'],['../cmd__task_8c.html#a4277e3032edf4828adec6ef2f88ac235',1,'cmd_task(void *argument):&#160;cmd_task.c']]],
+  ['cmd_5ftask_5finit_9',['CMD_Task_Init',['../cmd__task_8h.html#a2874a497f674aefb689fe541ead54c66',1,'CMD_Task_Init(void):&#160;cmd_task.c'],['../cmd__task_8c.html#a2874a497f674aefb689fe541ead54c66',1,'CMD_Task_Init(void):&#160;cmd_task.c']]],
+  ['configure_5fgps_10',['configure_gps',['../gps__task_8c.html#ae5fc8034e9ce13657187e2a7df794409',1,'gps_task.c']]],
+  ['configurecrc_11',['ConfigureCrc',['../group__EEPROM__Private__Functions.html#gafd8f74acc0db4e4d275c77730ab957d3',1,'eeprom_emul.c']]],
+  ['correct_12',['correct',['../led_8c.html#a911c1445888ee842028dabe011d0cbea',1,'led.c']]]
 ];

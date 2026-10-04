@@ -1,0 +1,26 @@
+<map id="PagesTransfer" name="PagesTransfer">
+<area shape="rect" id="node1" title="Writes a new variable data in fresh new page in case of normal transfer, and transfers last updated e..." alt="" coords="980,253,1092,279"/>
+<area shape="rect" id="node2" href="$group__EEPROM__Exported__Functions.html#ga08e3105698f17d96ff57c20e0b44517c" title="Restore the pages to a known good state in case of power loss." alt="" coords="843,204,910,229"/>
+<area shape="rect" id="node5" href="$group__EEPROM__Private__Functions.html#gab1030d083e54bb50edcd083851de0620" title="Writes/updates variable data in EEPROM Trig internal Pages transfer if half of the pages are full." alt="" coords="821,277,932,303"/>
+<area shape="rect" id="node3" href="$nvs__config_8c.html#a40eed21ee293313b466102cd353180c6" title="Unlock Flash and Init EEPROM Emulation." alt="" coords="648,179,725,204"/>
+<area shape="rect" id="node4" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="407,179,552,204"/>
+<area shape="rect" id="node6" href="$group__EEPROM__Exported__Functions.html#ga56222a4e6cc365436e34da1e68cdeda4" title="Writes/updates variable data in EEPROM." alt="" coords="600,228,773,253"/>
+<area shape="rect" id="node7" href="$group__EEPROM__Exported__Functions.html#ga8aeb1ab28357d073af8ed7e62c96877f" title="Writes/updates variable data in EEPROM." alt="" coords="600,277,773,303"/>
+<area shape="rect" id="node23" href="$group__EEPROM__Exported__Functions.html#ga7133bc23467568daf0b52ff25e958a8e" title="Writes/updates variable data in EEPROM." alt="" coords="604,327,769,352"/>
+<area shape="rect" id="node24" href="$group__EEPROM__Exported__Functions.html#ga0a164053ef9fa4596d2c7ab6668d9e63" title="Writes/updates variable data in EEPROM." alt="" coords="600,376,773,401"/>
+<area shape="rect" id="node8" href="$nvs__config_8c.html#a9001a4d9eea93c6f521f1b94014e967a" title=" " alt="" coords="434,277,525,303"/>
+<area shape="rect" id="node9" href="$cmd__interface_8c.html#a8d62ddad816faebffd6b3ce1eb69ee23" title=" " alt="" coords="219,5,311,31"/>
+<area shape="rect" id="node10" href="$cmd__interface_8c.html#a0829a343683a10c8b46e3e555d960141" title=" " alt="" coords="222,55,307,80"/>
+<area shape="rect" id="node11" href="$cmd__interface_8c.html#ab9b1f85f73eb8f0cf090404b16aab535" title=" " alt="" coords="219,104,311,129"/>
+<area shape="rect" id="node12" href="$cmd__interface_8c.html#a96f1f5d0f266c2a2d29be6917c7e77f3" title=" " alt="" coords="215,153,314,179"/>
+<area shape="rect" id="node13" href="$cmd__interface_8c.html#a750cb44a19509201ebaa3de659b434d0" title=" " alt="" coords="197,203,332,228"/>
+<area shape="rect" id="node14" href="$cmd__interface_8c.html#a73611767caa272c8166e62aaa8279d7f" title=" " alt="" coords="189,252,340,277"/>
+<area shape="rect" id="node15" href="$cmd__interface_8c.html#a849218a785209e69259ac0b9bd9bbd23" title=" " alt="" coords="193,301,336,327"/>
+<area shape="rect" id="node16" href="$cmd__interface_8c.html#af99f2c7576338e31f5b707a6272c9b9c" title=" " alt="" coords="208,351,321,376"/>
+<area shape="rect" id="node17" href="$cmd__interface_8c.html#a947223adc947591791664b600f889d7e" title=" " alt="" coords="222,400,307,425"/>
+<area shape="rect" id="node18" href="$cmd__interface_8c.html#a0a2c132a3978fb3605049cd69d855e69" title=" " alt="" coords="213,449,316,475"/>
+<area shape="rect" id="node19" href="$nvs__config_8c.html#adbd355e95694e999ec36e42edc586bd4" title=" " alt="" coords="171,499,359,524"/>
+<area shape="rect" id="node20" href="$nvs__config_8c.html#a734183f29b003698ccadcade366e7306" title=" " alt="" coords="191,548,339,573"/>
+<area shape="rect" id="node21" href="$cmd__interface_8c.html#aebe7b81b6c8e63dca0a157d58ce11af5" title=" " alt="" coords="5,523,123,548"/>
+<area shape="rect" id="node22" href="$cmd__interface_8c.html#a17b431758d6294661d9adb69c55ba0dd" title=" " alt="" coords="6,572,122,597"/>
+</map>

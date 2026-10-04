@@ -1,0 +1,11 @@
+<map id="SX1280OnDioIrq" name="SX1280OnDioIrq">
+<area shape="rect" id="node1" title="DIOs interrupt callback." alt="" coords="5,80,133,105"/>
+<area shape="rect" id="node2" href="$sx1280_8c.html#af08aac82fe5e983a4671967275b5dab8" title="Process the analysis of radio IRQs and calls callback functions depending on radio state." alt="" coords="181,80,327,105"/>
+<area shape="rect" id="node3" href="$sx1280_8c.html#a24c5e4e70bd2db5b0513a3610b43043f" title="Clears the IRQs." alt="" coords="377,5,539,31"/>
+<area shape="rect" id="node6" href="$sx1280_8c.html#a31c7f2ce5f6193072f71565fa1b1b1fc" title="Returns the current IRQ status." alt="" coords="382,55,534,80"/>
+<area shape="rect" id="node8" href="$sx1280_8c.html#a1fc0c006b1a67d076823bd34811118bc" title="Gets the current Operation Mode of the Radio." alt="" coords="384,104,532,129"/>
+<area shape="rect" id="node9" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="375,153,541,179"/>
+<area shape="rect" id="node4" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="589,5,784,31"/>
+<area shape="rect" id="node5" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="832,31,1004,56"/>
+<area shape="rect" id="node7" href="$sx1280-hal_8c.html#abc1ed10f83057922610c0ef2b3893733" title="Send a command that read data from the radio." alt="" coords="590,55,783,80"/>
+</map>

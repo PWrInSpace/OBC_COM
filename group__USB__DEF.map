@@ -1,9 +1,0 @@
-<map id="USB_DEF" name="USB_DEF">
-<area shape="rect" id="node1" href="$group__STM32__USBD__DEVICE__LIBRARY.html" title=" " alt="" coords="5,119,232,145"/>
-<area shape="rect" id="node6" title="general defines for the usb device library file" alt="" coords="280,119,363,145"/>
-<area shape="rect" id="node2" href="$group__USBD__DEF__Exported__FunctionsPrototype.html" title=" " alt="" coords="433,5,659,45"/>
-<area shape="rect" id="node3" href="$group__USBD__DEF__Exported__Macros.html" title=" " alt="" coords="441,70,651,95"/>
-<area shape="rect" id="node4" href="$group__USBD__DEF__Exported__TypesDefinitions.html" title=" " alt="" coords="411,119,681,145"/>
-<area shape="rect" id="node5" href="$group__USBD__DEF__Exported__Variables.html" title=" " alt="" coords="434,169,658,194"/>
-<area shape="rect" id="node7" href="$group__USB__DEF__Exported__Defines.html" title=" " alt="" coords="445,218,647,243"/>
-</map>

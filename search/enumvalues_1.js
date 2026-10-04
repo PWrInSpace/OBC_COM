@@ -15,8 +15,6 @@ var searchData=
   ['ble_5fprbs_5f15_12',['BLE_PRBS_15',['../sx1280_8h.html#afce664bcc1f0b8e5d7d9db9656398b44a63a7024c9222f33fecb1d60d94d8e7b1',1,'sx1280.h']]],
   ['ble_5fprbs_5f9_13',['BLE_PRBS_9',['../sx1280_8h.html#afce664bcc1f0b8e5d7d9db9656398b44a04c323e5aa9502f15823362e5dbba8a4',1,'sx1280.h']]],
   ['ble_5ftx_5ftest_5fmode_14',['BLE_TX_TEST_MODE',['../sx1280_8h.html#abfe3d3956f451b205c4f735351ed6e35a22c2b2605a5b4970b3db172e203db95a',1,'sx1280.h']]],
-  ['btable_5fbuf_5frx_15',['BTABLE_BUF_RX',['../fsdev__common_8h.html#a952bcb44e3c63bf96d2788cb3460cae2a5b898d326f59373896a08b128772f676',1,'fsdev_common.h']]],
-  ['btable_5fbuf_5ftx_16',['BTABLE_BUF_TX',['../fsdev__common_8h.html#a952bcb44e3c63bf96d2788cb3460cae2acf27b3f0f3b5e80c77ff43fa13a42182',1,'fsdev_common.h']]],
-  ['buzzer_5ferror_17',['BUZZER_ERROR',['../buzzer_8h.html#a1dcc31f1c4555e21bb913a12c4d8a4bda7f1d814b222cd5f1e5920ad368efc234',1,'buzzer.h']]],
-  ['buzzer_5fok_18',['BUZZER_OK',['../buzzer_8h.html#a1dcc31f1c4555e21bb913a12c4d8a4bdafb9faebfe17c540572b83e1e0720b9bb',1,'buzzer.h']]]
+  ['buzzer_5ferror_15',['BUZZER_ERROR',['../buzzer_8h.html#a1dcc31f1c4555e21bb913a12c4d8a4bda7f1d814b222cd5f1e5920ad368efc234',1,'buzzer.h']]],
+  ['buzzer_5fok_16',['BUZZER_OK',['../buzzer_8h.html#a1dcc31f1c4555e21bb913a12c4d8a4bdafb9faebfe17c540572b83e1e0720b9bb',1,'buzzer.h']]]
 ];

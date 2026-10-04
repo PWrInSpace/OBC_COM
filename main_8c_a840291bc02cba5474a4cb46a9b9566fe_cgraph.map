@@ -1,0 +1,24 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title="The application entry point." alt="" coords="5,425,60,451"/>
+<area shape="rect" id="node2" href="$main_8c.html#abfb869d326e776a98917f58b20748ccd" title="Kompleksowa inicjalizacja puli buforów i pierwsze uruchomienie DMA dla UART." alt="" coords="109,499,279,524"/>
+<area shape="rect" id="node4" href="$adc_8c.html#acccd58aa70215a6b184ad242312ffd0c" title=" " alt="" coords="137,5,251,31"/>
+<area shape="rect" id="node5" href="$crc_8c.html#a9f720fe95d685258cfe2ba29dc395c48" title=" " alt="" coords="141,696,247,721"/>
+<area shape="rect" id="node6" href="$fdcan_8c.html#af122e1c28b11c5b8771e82328e10fa2c" title=" " alt="" coords="128,55,260,80"/>
+<area shape="rect" id="node7" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="121,745,267,771"/>
+<area shape="rect" id="node8" href="$gpdma_8c.html#a582079fe71ee35836eb2241c852d080f" title=" " alt="" coords="127,795,261,820"/>
+<area shape="rect" id="node9" href="$gpio_8c.html#ac724e431d2af879252de35615be2bdea" title="Configure pins PH0&#45;OSC_IN(PH0) &#45;&#45;&#45;—&gt; RCC_OSC_IN PH1&#45;OSC_OUT(PH1) &#45;&#45;&#45;—&gt; RCC_OSC_OUT PA13(JTMS/SWDIO) &#45;..." alt="" coords="139,844,249,869"/>
+<area shape="rect" id="node10" href="$i2c_8c.html#aff347bba84984e13d80fbd89994ef3f7" title=" " alt="" coords="141,104,247,129"/>
+<area shape="rect" id="node11" href="$sdmmc_8c.html#aa2f8ae212178095807e5e647e686e719" title=" " alt="" coords="113,153,275,179"/>
+<area shape="rect" id="node12" href="$spi_8c.html#af81398f9775695df0b172367651ca3e6" title=" " alt="" coords="141,203,247,228"/>
+<area shape="rect" id="node13" href="$spi_8c.html#aea85daa666c03d85fd59edef711ebb08" title=" " alt="" coords="141,252,247,277"/>
+<area shape="rect" id="node14" href="$spi_8c.html#a5ea97db0d8624acd4fc61ff9c5cfcc9e" title=" " alt="" coords="141,301,247,327"/>
+<area shape="rect" id="node15" href="$tim_8c.html#a4b8ff887fd3fdf26605e35927e4ff202" title=" " alt="" coords="139,548,249,573"/>
+<area shape="rect" id="node17" href="$tim_8c.html#aef1e0b132b1af1c923cc420a57180c67" title=" " alt="" coords="139,597,249,623"/>
+<area shape="rect" id="node18" href="$usart_8c.html#a57d1167735baafab8e3288526c424929" title=" " alt="" coords="108,351,280,376"/>
+<area shape="rect" id="node19" href="$usart_8c.html#a052088fe5bb3f807a4b2502e664fd4fd" title=" " alt="" coords="108,400,280,425"/>
+<area shape="rect" id="node20" href="$usb_8c.html#acade11ca9152720e1fcaaf9efa6ed337" title=" " alt="" coords="125,449,263,475"/>
+<area shape="rect" id="node21" href="$main_8c.html#a70af21c671abfcc773614a9a4f63d920" title="System Clock Configuration." alt="" coords="117,647,271,672"/>
+<area shape="rect" id="node3" href="$group__EEPROM__Emulation.html#gad4e07955fadfeb416e9620ddb42f8fe9" title="This function is executed in case of error occurrence." alt="" coords="354,327,465,352"/>
+<area shape="rect" id="node16" href="$tim_8c.html#a708f19bbc41b292fccf38f2d9796c46a" title=" " alt="" coords="328,572,491,597"/>
+<area shape="rect" id="node22" href="$stm32h5xx__hal__timebase__tim_8c.html#a879cdb21ef051eb81ec51c18147397d5" title="This function configures the TIM6 as a time base source." alt="" coords="358,647,461,672"/>
+</map>

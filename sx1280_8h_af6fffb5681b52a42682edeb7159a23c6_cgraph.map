@@ -1,0 +1,10 @@
+<map id="SX1280GetRangingPowerDeltaThresholdIndicator" name="SX1280GetRangingPowerDeltaThresholdIndicator">
+<area shape="rect" id="node1" title="Return the last ranging result power indicator." alt="" coords="5,47,228,87"/>
+<area shape="rect" id="node2" href="$sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea" title="Read a single byte of data from the radio memory." alt="" coords="277,5,457,31"/>
+<area shape="rect" id="node5" href="$sx1280-hal_8c.html#a22d55eec45845b70b71327af666c9eb0" title="Write a single byte of data to the radio memory." alt="" coords="276,55,459,80"/>
+<area shape="rect" id="node7" href="$sx1280_8c.html#a074d83ce6ba238f9af19b8bdbff61360" title="Sets the radio in configuration mode." alt="" coords="295,104,440,129"/>
+<area shape="rect" id="node3" href="$sx1280-hal_8c.html#a6a9c356cd998a6f2dad05049941b5939" title="Read data from the radio memory." alt="" coords="511,5,697,31"/>
+<area shape="rect" id="node4" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="749,55,921,80"/>
+<area shape="rect" id="node6" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="509,55,699,80"/>
+<area shape="rect" id="node8" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="507,104,701,129"/>
+</map>

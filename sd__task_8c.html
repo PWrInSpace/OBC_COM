@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('sd__task_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,13 +89,9 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="dir_a8f641299cfea9f7461c2df1141b7786.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">sd_task.c File Reference</div></div>
@@ -96,56 +113,36 @@ $(function() {
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &quot;cmsis_os2.h&quot;</code><br />
 <code>#include &quot;stm32h5xx_hal.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="FreeRTOSConfig_8h_source.html">FreeRTOSConfig.h</a>&quot;</code><br />
+<code>#include &quot;FreeRTOSConfig.h&quot;</code><br />
 <code>#include &quot;stm32h5xx_hal_def.h&quot;</code><br />
 <code>#include &quot;ff_gen_drv.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="user__diskio_8h_source.html">user_diskio.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for sd_task.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="sd__task_8c__incl.png" border="0" usemap="#aapp_2src_2sd__task_8c" alt=""/></div>
-<map name="aapp_2src_2sd__task_8c" id="aapp_2src_2sd__task_8c">
-<area shape="rect" title=" " alt="" coords="2871,5,3005,31"/>
-<area shape="rect" href="sd__task_8h.html" title=" " alt="" coords="2353,79,2437,104"/>
-<area shape="rect" href="main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="1386,152,1453,177"/>
-<area shape="rect" title=" " alt="" coords="5,225,140,251"/>
-<area shape="rect" title=" " alt="" coords="2556,225,2627,251"/>
-<area shape="rect" href="board__data_8h.html" title=" " alt="" coords="2271,152,2378,177"/>
-<area shape="rect" title=" " alt="" coords="2449,225,2531,251"/>
-<area shape="rect" title=" " alt="" coords="2758,225,2859,251"/>
-<area shape="rect" href="user__diskio_8h.html" title=" " alt="" coords="2755,152,2863,177"/>
-<area shape="rect" href="sound_8h.html" title=" " alt="" coords="2939,79,3012,104"/>
-<area shape="rect" href="logger_8h.html" title=" " alt="" coords="2655,152,2730,177"/>
-<area shape="rect" title=" " alt="" coords="3037,79,3079,104"/>
-<area shape="rect" href="logger__macros_8h.html" title=" " alt="" coords="2682,79,2813,104"/>
-<area shape="rect" title=" " alt="" coords="3104,79,3191,104"/>
-<area shape="rect" title=" " alt="" coords="3215,79,3384,104"/>
-<area shape="rect" title=" " alt="" coords="3408,79,3471,104"/>
-<area shape="rect" title=" " alt="" coords="3495,79,3562,104"/>
-<area shape="rect" title=" " alt="" coords="3587,79,3657,104"/>
-<area shape="rect" title=" " alt="" coords="3681,79,3784,104"/>
-<area shape="rect" href="FreeRTOSConfig_8h.html" title=" " alt="" coords="3808,79,3945,104"/>
-<area shape="rect" title=" " alt="" coords="3969,79,4131,104"/>
-<area shape="rect" title=" " alt="" coords="2230,225,2326,251"/>
-<area shape="rect" title=" " alt="" coords="2131,225,2206,251"/>
-<area shape="rect" title=" " alt="" coords="2651,225,2734,251"/>
-<area shape="rect" title=" " alt="" coords="1761,225,1913,251"/>
-<area shape="rect" title=" " alt="" coords="1937,225,2107,251"/>
-<area shape="rect" title=" " alt="" coords="164,225,312,251"/>
-<area shape="rect" title=" " alt="" coords="336,225,495,251"/>
-<area shape="rect" title=" " alt="" coords="519,225,677,251"/>
-<area shape="rect" title=" " alt="" coords="701,225,853,251"/>
-<area shape="rect" title=" " alt="" coords="877,225,1025,251"/>
-<area shape="rect" title=" " alt="" coords="1049,225,1227,251"/>
-<area shape="rect" title=" " alt="" coords="1251,225,1409,251"/>
-<area shape="rect" title=" " alt="" coords="1433,225,1587,251"/>
-<area shape="rect" title=" " alt="" coords="1612,225,1736,251"/>
-<area shape="rect" title=" " alt="" coords="2350,225,2425,251"/>
-</map>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sd__task_8c__incl.svg" width="100%" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-</div><table class="memberdecls">
+</div>
+</div>
+<p><a href="sd__task_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a1b7002b94256a03c20e25e62c456c3b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a1b7002b94256a03c20e25e62c456c3b6">SD_DETECT_EVENT_FLAG</a>&#160;&#160;&#160;0x01U</td></tr>
+<tr class="separator:a1b7002b94256a03c20e25e62c456c3b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab77a321f6f5d5a5a3ab041d6e79a76f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#ab77a321f6f5d5a5a3ab041d6e79a76f2">SD_DEBOUNCE_MS</a>&#160;&#160;&#160;300U</td></tr>
+<tr class="separator:ab77a321f6f5d5a5a3ab041d6e79a76f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a3d0ac7cbbf5091a5473d4d99d63292dd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a3d0ac7cbbf5091a5473d4d99d63292dd">packer_task_thread</a> (void *arg)</td></tr>
+<tr class="separator:a3d0ac7cbbf5091a5473d4d99d63292dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ddaddf73d5115aee83e334481151dbb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a1ddaddf73d5115aee83e334481151dbb">sd_task_thread</a> (void *arg)</td></tr>
+<tr class="separator:a1ddaddf73d5115aee83e334481151dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db1b2ecd079a48393cae891b54c5926"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a0db1b2ecd079a48393cae891b54c5926">monitor_task_thread</a> (void *arg)</td></tr>
+<tr class="separator:a0db1b2ecd079a48393cae891b54c5926"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bed749d1a272c2837109ba43a85984a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a9bed749d1a272c2837109ba43a85984a">find_next_filename</a> ()</td></tr>
+<tr class="separator:a9bed749d1a272c2837109ba43a85984a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1cf0c55de40244f99ffeabc7c06a059"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#ac1cf0c55de40244f99ffeabc7c06a059">sd_mount</a> (void)</td></tr>
 <tr class="separator:ac1cf0c55de40244f99ffeabc7c06a059"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc34183a78c00656584eb7eed83e8f47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#abc34183a78c00656584eb7eed83e8f47">sd_unmount</a> (void)</td></tr>
@@ -160,11 +157,59 @@ Functions</h2></td></tr>
 <tr class="separator:ad2d90dfe4e88382623bd9874937356e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3aaa7f82771654888e7e93faf56d68c"><td class="memItemLeft" align="right" valign="top">HAL_StatusTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#ac3aaa7f82771654888e7e93faf56d68c">sd_logger_log_data</a> (const <a class="el" href="structBoardData__t.html">BoardData_t</a> *data)</td></tr>
 <tr class="separator:ac3aaa7f82771654888e7e93faf56d68c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae89045edea742bdd7453c51f2ed80c21"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#ae89045edea742bdd7453c51f2ed80c21">flush_active_buffer</a> (void)</td></tr>
+<tr class="separator:ae89045edea742bdd7453c51f2ed80c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef0d3d785fba86eedc350246c4362032"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#aef0d3d785fba86eedc350246c4362032">sd_unmount_removed</a> (void)</td></tr>
+<tr class="separator:aef0d3d785fba86eedc350246c4362032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f51bc671c8cb315e9e6ac9d50f0157f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a8f51bc671c8cb315e9e6ac9d50f0157f">sd_detect_sync</a> (bool announce)</td></tr>
+<tr class="separator:a8f51bc671c8cb315e9e6ac9d50f0157f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafecd8bc371346876c011acb5eadac49"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#aafecd8bc371346876c011acb5eadac49">sd_detect_isr_notify</a> (uint16_t GPIO_Pin)</td></tr>
+<tr class="separator:aafecd8bc371346876c011acb5eadac49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537318eafe9182b60dc22ef54966c6a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a537318eafe9182b60dc22ef54966c6a1">HAL_GPIO_EXTI_Rising_Callback</a> (uint16_t GPIO_Pin)</td></tr>
+<tr class="separator:a537318eafe9182b60dc22ef54966c6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b334860563f4a109443e0a604af2300"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a0b334860563f4a109443e0a604af2300">HAL_GPIO_EXTI_Falling_Callback</a> (uint16_t GPIO_Pin)</td></tr>
+<tr class="separator:a0b334860563f4a109443e0a604af2300"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ac78c37fab0b97155c085f61bf544be42"><td class="memItemLeft" align="right" valign="top">const osMemoryPoolAttr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#ac78c37fab0b97155c085f61bf544be42">pool_attr</a> = { .mp_mem = log_pool_mem, .mp_size = sizeof(log_pool_mem) }</td></tr>
+<tr class="memitem:a754972d9204225aafa1e58a004c40ba4"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a754972d9204225aafa1e58a004c40ba4">filename</a> [32] = {}</td></tr>
+<tr class="separator:a754972d9204225aafa1e58a004c40ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae12e92bcc10786d488866a32e4062ced"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#ae12e92bcc10786d488866a32e4062ced">buffer_A</a> [<a class="el" href="sd__task_8h.html#a70c802fd8494ecd9b20e891c51e4ea81">SD_BUFFER_BYTES</a>]</td></tr>
+<tr class="separator:ae12e92bcc10786d488866a32e4062ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b0dcb17b9011068b4a5d00857a64222"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a7b0dcb17b9011068b4a5d00857a64222">buffer_B</a> [<a class="el" href="sd__task_8h.html#a70c802fd8494ecd9b20e891c51e4ea81">SD_BUFFER_BYTES</a>]</td></tr>
+<tr class="separator:a7b0dcb17b9011068b4a5d00857a64222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aab86771e3eb7f1f96768ce03d47922"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a5aab86771e3eb7f1f96768ce03d47922">double_buffer</a> [2] = {<a class="el" href="sd__task_8c.html#ae12e92bcc10786d488866a32e4062ced">buffer_A</a>, <a class="el" href="sd__task_8c.html#a7b0dcb17b9011068b4a5d00857a64222">buffer_B</a>}</td></tr>
+<tr class="separator:a5aab86771e3eb7f1f96768ce03d47922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad39a34c32efe992a2ccea2aa7b8f9e1b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structBoardData__t.html">BoardData_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#ad39a34c32efe992a2ccea2aa7b8f9e1b">log_pool_mem</a> [<a class="el" href="sd__task_8h.html#ade9f467eed0029931eeb73b24671cf62">SD_QUEUE_LENGTH</a>]</td></tr>
+<tr class="separator:ad39a34c32efe992a2ccea2aa7b8f9e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5276d999deb2c0134b23976eca95ce59"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a5276d999deb2c0134b23976eca95ce59">active_idx</a> = 0</td></tr>
+<tr class="separator:a5276d999deb2c0134b23976eca95ce59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add34ee0c3a6fa9a3b965d71f5d22f2d2"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#add34ee0c3a6fa9a3b965d71f5d22f2d2">active_buffer_pos</a> = 0</td></tr>
+<tr class="separator:add34ee0c3a6fa9a3b965d71f5d22f2d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724245bd0e91afd542ecfd71458012ca"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a724245bd0e91afd542ecfd71458012ca">bytes_to_write</a> [2] = {0, 0}</td></tr>
+<tr class="separator:a724245bd0e91afd542ecfd71458012ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac78c37fab0b97155c085f61bf544be42"><td class="memItemLeft" align="right" valign="top">const osMemoryPoolAttr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#ac78c37fab0b97155c085f61bf544be42">pool_attr</a> = { .mp_mem = <a class="el" href="sd__task_8c.html#ad39a34c32efe992a2ccea2aa7b8f9e1b">log_pool_mem</a>, .mp_size = sizeof(<a class="el" href="sd__task_8c.html#ad39a34c32efe992a2ccea2aa7b8f9e1b">log_pool_mem</a>) }</td></tr>
 <tr class="separator:ac78c37fab0b97155c085f61bf544be42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd0aa9c6a7dabd980e43e05feb52c9b3"><td class="memItemLeft" align="right" valign="top">static osMemoryPoolId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#afd0aa9c6a7dabd980e43e05feb52c9b3">log_pool_id</a></td></tr>
+<tr class="separator:afd0aa9c6a7dabd980e43e05feb52c9b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8377a57dc1f19033350511126a081176"><td class="memItemLeft" align="right" valign="top">static osMessageQueueId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a8377a57dc1f19033350511126a081176">log_queue_id</a></td></tr>
+<tr class="separator:a8377a57dc1f19033350511126a081176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac39ea912261e99387ffdf725b27a0cfb"><td class="memItemLeft" align="right" valign="top">static osThreadId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#ac39ea912261e99387ffdf725b27a0cfb">packer_task_id</a></td></tr>
+<tr class="separator:ac39ea912261e99387ffdf725b27a0cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5bdb9859e1ec9106962e4f4acda262e"><td class="memItemLeft" align="right" valign="top">static osThreadId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#af5bdb9859e1ec9106962e4f4acda262e">sd_task_id</a></td></tr>
+<tr class="separator:af5bdb9859e1ec9106962e4f4acda262e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d29f9cc3aa5c0306d7e17ec14539d00"><td class="memItemLeft" align="right" valign="top">static osThreadId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a4d29f9cc3aa5c0306d7e17ec14539d00">monitor_task_id</a></td></tr>
+<tr class="separator:a4d29f9cc3aa5c0306d7e17ec14539d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d694a7ae35eef8e32686463b92d47fb"><td class="memItemLeft" align="right" valign="top">static osSemaphoreId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a0d694a7ae35eef8e32686463b92d47fb">buffer_free_sem_id</a> [2]</td></tr>
+<tr class="separator:a0d694a7ae35eef8e32686463b92d47fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87137133c402a2a97137b1fe744a0a62"><td class="memItemLeft" align="right" valign="top">static osMutexId_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a87137133c402a2a97137b1fe744a0a62">sd_mutex_id</a></td></tr>
+<tr class="separator:a87137133c402a2a97137b1fe744a0a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5bcde72e0e0b29ec86d00ba3e5cd51f"><td class="memItemLeft" align="right" valign="top">static FATFS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#ae5bcde72e0e0b29ec86d00ba3e5cd51f">fs</a></td></tr>
+<tr class="separator:ae5bcde72e0e0b29ec86d00ba3e5cd51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb7cc8752fe7d7ceed1f46b13346c285"><td class="memItemLeft" align="right" valign="top">static FIL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#abb7cc8752fe7d7ceed1f46b13346c285">log_file</a></td></tr>
+<tr class="separator:abb7cc8752fe7d7ceed1f46b13346c285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a954a85a2cb19396d9d6e717c52c70898"><td class="memItemLeft" align="right" valign="top">static volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a954a85a2cb19396d9d6e717c52c70898">is_mounted</a> = false</td></tr>
+<tr class="separator:a954a85a2cb19396d9d6e717c52c70898"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07c50f7d5577591438e4585f13994d49"><td class="memItemLeft" align="right" valign="top">Diskio_drvTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a07c50f7d5577591438e4585f13994d49">USER_Driver</a></td></tr>
 <tr class="separator:a07c50f7d5577591438e4585f13994d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe5c7eca20c5b43d6d1a3bda215941bb"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#afe5c7eca20c5b43d6d1a3bda215941bb">SDPath</a> [4]</td></tr>
@@ -173,8 +218,344 @@ Variables</h2></td></tr>
 <tr class="separator:a45570b5c2f48fcd2cce9f9cf4fc228d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec97baebdcd4c2a18d6307e84e6fa79d"><td class="memItemLeft" align="right" valign="top">const osThreadAttr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#aec97baebdcd4c2a18d6307e84e6fa79d">sd_write_attr</a> = { .name = &quot;sd_task&quot;, .priority = osPriorityNormal, .stack_size = 4096 }</td></tr>
 <tr class="separator:aec97baebdcd4c2a18d6307e84e6fa79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82e5bc617b8497fd044205fe2cea771d"><td class="memItemLeft" align="right" valign="top">const osThreadAttr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a82e5bc617b8497fd044205fe2cea771d">monitor_attr</a> = { .name = &quot;monitor_task&quot;, .priority = osPriorityLow, .stack_size = 2048 }</td></tr>
+<tr class="separator:a82e5bc617b8497fd044205fe2cea771d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ab77a321f6f5d5a5a3ab041d6e79a76f2" name="ab77a321f6f5d5a5a3ab041d6e79a76f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab77a321f6f5d5a5a3ab041d6e79a76f2">&#9670;&#160;</a></span>SD_DEBOUNCE_MS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SD_DEBOUNCE_MS&#160;&#160;&#160;300U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00313">313</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+</div>
+</div>
+<a id="a1b7002b94256a03c20e25e62c456c3b6" name="a1b7002b94256a03c20e25e62c456c3b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b7002b94256a03c20e25e62c456c3b6">&#9670;&#160;</a></span>SD_DETECT_EVENT_FLAG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SD_DETECT_EVENT_FLAG&#160;&#160;&#160;0x01U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00312">312</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a9bed749d1a272c2837109ba43a85984a" name="a9bed749d1a272c2837109ba43a85984a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bed749d1a272c2837109ba43a85984a">&#9670;&#160;</a></span>find_next_filename()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool find_next_filename </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00071">71</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00028">filename</a>, <a class="el" href="sd__task_8h_source.html#l00020">LOG_DIR</a>, <a class="el" href="sd__task_8h_source.html#l00022">LOG_FILENAME_EXT</a>, <a class="el" href="sd__task_8h_source.html#l00021">LOG_FILENAME_PREFIX</a>, and <a class="el" href="sd__task_8h_source.html#l00023">LOG_MAX_FILES</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00084">sd_mount()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a9bed749d1a272c2837109ba43a85984a_icgraph.svg" width="100%" height="383"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae89045edea742bdd7453c51f2ed80c21" name="ae89045edea742bdd7453c51f2ed80c21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae89045edea742bdd7453c51f2ed80c21">&#9670;&#160;</a></span>flush_active_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void flush_active_buffer </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00233">233</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00036">active_buffer_pos</a>, <a class="el" href="sd__task_8c_source.html#l00035">active_idx</a>, <a class="el" href="sd__task_8c_source.html#l00049">buffer_free_sem_id</a>, <a class="el" href="sd__task_8c_source.html#l00037">bytes_to_write</a>, and <a class="el" href="sd__task_8c_source.html#l00044">sd_task_id</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00246">packer_task_thread()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sd__task_8c_ae89045edea742bdd7453c51f2ed80c21_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0b334860563f4a109443e0a604af2300" name="a0b334860563f4a109443e0a604af2300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b334860563f4a109443e0a604af2300">&#9670;&#160;</a></span>HAL_GPIO_EXTI_Falling_Callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_GPIO_EXTI_Falling_Callback </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>GPIO_Pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00356">356</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00349">sd_detect_isr_notify()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a0b334860563f4a109443e0a604af2300_cgraph.svg" width="383" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a537318eafe9182b60dc22ef54966c6a1" name="a537318eafe9182b60dc22ef54966c6a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a537318eafe9182b60dc22ef54966c6a1">&#9670;&#160;</a></span>HAL_GPIO_EXTI_Rising_Callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_GPIO_EXTI_Rising_Callback </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>GPIO_Pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00355">355</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00349">sd_detect_isr_notify()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a537318eafe9182b60dc22ef54966c6a1_cgraph.svg" width="382" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0db1b2ecd079a48393cae891b54c5926" name="a0db1b2ecd079a48393cae891b54c5926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0db1b2ecd079a48393cae891b54c5926">&#9670;&#160;</a></span>monitor_task_thread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void monitor_task_thread </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00334">334</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00313">SD_DEBOUNCE_MS</a>, <a class="el" href="sd__task_8c_source.html#l00312">SD_DETECT_EVENT_FLAG</a>, and <a class="el" href="sd__task_8c_source.html#l00324">sd_detect_sync()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a0db1b2ecd079a48393cae891b54c5926_cgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a0db1b2ecd079a48393cae891b54c5926_icgraph.svg" width="523" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a3d0ac7cbbf5091a5473d4d99d63292dd" name="a3d0ac7cbbf5091a5473d4d99d63292dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d0ac7cbbf5091a5473d4d99d63292dd">&#9670;&#160;</a></span>packer_task_thread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void packer_task_thread </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00246">246</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00036">active_buffer_pos</a>, <a class="el" href="sd__task_8c_source.html#l00035">active_idx</a>, <a class="el" href="board__data_8c_source.html#l00018">board_data_serialize()</a>, <a class="el" href="sd__task_8c_source.html#l00049">buffer_free_sem_id</a>, <a class="el" href="sd__task_8c_source.html#l00032">double_buffer</a>, <a class="el" href="sd__task_8c_source.html#l00233">flush_active_buffer()</a>, <a class="el" href="sd__task_8c_source.html#l00040">log_pool_id</a>, <a class="el" href="sd__task_8c_source.html#l00041">log_queue_id</a>, <a class="el" href="sd__task_8h_source.html#l00026">SD_BUFFER_BYTES</a>, <a class="el" href="sd__task_8h_source.html#l00028">SD_BUFFER_MARGIN</a>, and <a class="el" href="sd__task_8h_source.html#l00027">SD_FORCE_FLUSH_INTERVAL_MS</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a3d0ac7cbbf5091a5473d4d99d63292dd_cgraph.svg" width="366" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a3d0ac7cbbf5091a5473d4d99d63292dd_icgraph.svg" width="515" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aafecd8bc371346876c011acb5eadac49" name="aafecd8bc371346876c011acb5eadac49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafecd8bc371346876c011acb5eadac49">&#9670;&#160;</a></span>sd_detect_isr_notify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void sd_detect_isr_notify </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>GPIO_Pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00349">349</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00046">monitor_task_id</a>, <a class="el" href="sd__task_8c_source.html#l00312">SD_DETECT_EVENT_FLAG</a>, and <a class="el" href="main_8h_source.html#l00163">SD_DETECT_Pin</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00356">HAL_GPIO_EXTI_Falling_Callback()</a>, and <a class="el" href="sd__task_8c_source.html#l00355">HAL_GPIO_EXTI_Rising_Callback()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_aafecd8bc371346876c011acb5eadac49_icgraph.svg" width="383" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8f51bc671c8cb315e9e6ac9d50f0157f" name="a8f51bc671c8cb315e9e6ac9d50f0157f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f51bc671c8cb315e9e6ac9d50f0157f">&#9670;&#160;</a></span>sd_detect_sync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void sd_detect_sync </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>announce</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00324">324</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00054">is_mounted</a>, <a class="el" href="main_8h_source.html#l00164">SD_DETECT_GPIO_Port</a>, <a class="el" href="main_8h_source.html#l00163">SD_DETECT_Pin</a>, <a class="el" href="sd__task_8c_source.html#l00084">sd_mount()</a>, <a class="el" href="sd__task_8c_source.html#l00315">sd_unmount_removed()</a>, <a class="el" href="sound_8c_source.html#l00099">sound_play()</a>, <a class="el" href="sound_8h_source.html#l00014">SOUND_SD_MOUNT</a>, and <a class="el" href="sound_8h_source.html#l00015">SOUND_SD_UNMOUNT</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00334">monitor_task_thread()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a8f51bc671c8cb315e9e6ac9d50f0157f_cgraph.svg" width="571" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a8f51bc671c8cb315e9e6ac9d50f0157f_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a44072fa1e667db874b4497aa039096d2" name="a44072fa1e667db874b4497aa039096d2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a44072fa1e667db874b4497aa039096d2">&#9670;&#160;</a></span>sd_is_mounted()</h2>
 
@@ -190,6 +571,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00160">160</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00054">is_mounted</a>.</p>
 
 </div>
 </div>
@@ -209,6 +594,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00164">164</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00049">buffer_free_sem_id</a>, <a class="el" href="sd__task_8c_source.html#l00040">log_pool_id</a>, <a class="el" href="sd__task_8c_source.html#l00041">log_queue_id</a>, <a class="el" href="sd__task_8c_source.html#l00062">monitor_attr</a>, <a class="el" href="sd__task_8c_source.html#l00046">monitor_task_id</a>, <a class="el" href="sd__task_8c_source.html#l00334">monitor_task_thread()</a>, <a class="el" href="sd__task_8c_source.html#l00059">packer_attr</a>, <a class="el" href="sd__task_8c_source.html#l00043">packer_task_id</a>, <a class="el" href="sd__task_8c_source.html#l00246">packer_task_thread()</a>, <a class="el" href="sd__task_8c_source.html#l00039">pool_attr</a>, <a class="el" href="sd__task_8c_source.html#l00050">sd_mutex_id</a>, <a class="el" href="sd__task_8h_source.html#l00025">SD_QUEUE_LENGTH</a>, <a class="el" href="sd__task_8c_source.html#l00044">sd_task_id</a>, <a class="el" href="sd__task_8c_source.html#l00278">sd_task_thread()</a>, <a class="el" href="sd__task_8c_source.html#l00060">sd_write_attr</a>, <a class="el" href="sd__task_8c_source.html#l00057">SDPath</a>, and <a class="el" href="user__diskio_8c_source.html#l00024">USER_Driver</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__freertos_8c_source.html#l00097">MX_FREERTOS_Init()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sd__task_8c_ad2d90dfe4e88382623bd9874937356e5_cgraph.svg" width="100%" height="476"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_ad2d90dfe4e88382623bd9874937356e5_icgraph.svg" width="318" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <a id="ac3aaa7f82771654888e7e93faf56d68c" name="ac3aaa7f82771654888e7e93faf56d68c"></a>
@@ -226,6 +629,18 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00217">217</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00054">is_mounted</a>, <a class="el" href="sd__task_8c_source.html#l00040">log_pool_id</a>, and <a class="el" href="sd__task_8c_source.html#l00041">log_queue_id</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="telemetry__task_8c_source.html#l00031">telemetry_task_thread()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sd__task_8c_ac3aaa7f82771654888e7e93faf56d68c_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
 
 </div>
 </div>
@@ -245,6 +660,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00084">84</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="board__data_8c_source.html#l00040">board_data_get_header()</a>, <a class="el" href="sd__task_8c_source.html#l00028">filename</a>, <a class="el" href="sd__task_8c_source.html#l00071">find_next_filename()</a>, <a class="el" href="sd__task_8c_source.html#l00052">fs</a>, <a class="el" href="sd__task_8c_source.html#l00054">is_mounted</a>, <a class="el" href="sd__task_8h_source.html#l00020">LOG_DIR</a>, <a class="el" href="logger_8h_source.html#l00044">LOG_ERROR</a>, <a class="el" href="sd__task_8c_source.html#l00053">log_file</a>, <a class="el" href="sd__task_8c_source.html#l00050">sd_mutex_id</a>, <a class="el" href="main_8h_source.html#l00162">SD_STATUS_GPIO_Port</a>, <a class="el" href="main_8h_source.html#l00161">SD_STATUS_Pin</a>, and <a class="el" href="sd__task_8c_source.html#l00057">SDPath</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00324">sd_detect_sync()</a>, <a class="el" href="sd__task_8c_source.html#l00149">sd_remount()</a>, and <a class="el" href="sd__task_8c_source.html#l00278">sd_task_thread()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_ac1cf0c55de40244f99ffeabc7c06a059_cgraph.svg" width="320" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sd__task_8c_ac1cf0c55de40244f99ffeabc7c06a059_icgraph.svg" width="100%" height="383"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a84e74a0658ac9c470c3e09eb0cc58f62" name="a84e74a0658ac9c470c3e09eb0cc58f62"></a>
@@ -262,6 +695,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00149">149</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00084">sd_mount()</a>, and <a class="el" href="sd__task_8c_source.html#l00134">sd_unmount()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a84e74a0658ac9c470c3e09eb0cc58f62_cgraph.svg" width="483" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -281,6 +724,54 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00154">154</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00054">is_mounted</a>, <a class="el" href="sd__task_8c_source.html#l00053">log_file</a>, and <a class="el" href="sd__task_8c_source.html#l00050">sd_mutex_id</a>.</p>
+
+</div>
+</div>
+<a id="a1ddaddf73d5115aee83e334481151dbb" name="a1ddaddf73d5115aee83e334481151dbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ddaddf73d5115aee83e334481151dbb">&#9670;&#160;</a></span>sd_task_thread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void sd_task_thread </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00278">278</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00049">buffer_free_sem_id</a>, <a class="el" href="sd__task_8c_source.html#l00037">bytes_to_write</a>, <a class="el" href="sd__task_8c_source.html#l00032">double_buffer</a>, <a class="el" href="sd__task_8c_source.html#l00054">is_mounted</a>, <a class="el" href="logger_8h_source.html#l00044">LOG_ERROR</a>, <a class="el" href="sd__task_8c_source.html#l00053">log_file</a>, <a class="el" href="sd__task_8c_source.html#l00084">sd_mount()</a>, <a class="el" href="sd__task_8c_source.html#l00050">sd_mutex_id</a>, <a class="el" href="main_8h_source.html#l00162">SD_STATUS_GPIO_Port</a>, <a class="el" href="main_8h_source.html#l00161">SD_STATUS_Pin</a>, <a class="el" href="sd__task_8c_source.html#l00057">SDPath</a>, and <a class="el" href="user__diskio_8c_source.html#l00051">USER_diskio_invalidate()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a1ddaddf73d5115aee83e334481151dbb_cgraph.svg" width="578" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a1ddaddf73d5115aee83e334481151dbb_icgraph.svg" width="487" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <a id="abc34183a78c00656584eb7eed83e8f47" name="abc34183a78c00656584eb7eed83e8f47"></a>
@@ -299,9 +790,473 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00134">134</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00054">is_mounted</a>, <a class="el" href="sd__task_8c_source.html#l00053">log_file</a>, <a class="el" href="sd__task_8c_source.html#l00050">sd_mutex_id</a>, <a class="el" href="main_8h_source.html#l00162">SD_STATUS_GPIO_Port</a>, <a class="el" href="main_8h_source.html#l00161">SD_STATUS_Pin</a>, <a class="el" href="sd__task_8c_source.html#l00057">SDPath</a>, and <a class="el" href="user__diskio_8c_source.html#l00051">USER_diskio_invalidate()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00149">sd_remount()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_abc34183a78c00656584eb7eed83e8f47_cgraph.svg" width="336" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_abc34183a78c00656584eb7eed83e8f47_icgraph.svg" width="260" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aef0d3d785fba86eedc350246c4362032" name="aef0d3d785fba86eedc350246c4362032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef0d3d785fba86eedc350246c4362032">&#9670;&#160;</a></span>sd_unmount_removed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void sd_unmount_removed </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00315">315</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00054">is_mounted</a>, <a class="el" href="sd__task_8c_source.html#l00050">sd_mutex_id</a>, <a class="el" href="main_8h_source.html#l00162">SD_STATUS_GPIO_Port</a>, <a class="el" href="main_8h_source.html#l00161">SD_STATUS_Pin</a>, <a class="el" href="sd__task_8c_source.html#l00057">SDPath</a>, and <a class="el" href="user__diskio_8c_source.html#l00051">USER_diskio_invalidate()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00324">sd_detect_sync()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_aef0d3d785fba86eedc350246c4362032_cgraph.svg" width="400" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="sd__task_8c_aef0d3d785fba86eedc350246c4362032_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="add34ee0c3a6fa9a3b965d71f5d22f2d2" name="add34ee0c3a6fa9a3b965d71f5d22f2d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add34ee0c3a6fa9a3b965d71f5d22f2d2">&#9670;&#160;</a></span>active_buffer_pos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t active_buffer_pos = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00036">36</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00233">flush_active_buffer()</a>, and <a class="el" href="sd__task_8c_source.html#l00246">packer_task_thread()</a>.</p>
+
+</div>
+</div>
+<a id="a5276d999deb2c0134b23976eca95ce59" name="a5276d999deb2c0134b23976eca95ce59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5276d999deb2c0134b23976eca95ce59">&#9670;&#160;</a></span>active_idx</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t active_idx = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00035">35</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00233">flush_active_buffer()</a>, and <a class="el" href="sd__task_8c_source.html#l00246">packer_task_thread()</a>.</p>
+
+</div>
+</div>
+<a id="ae12e92bcc10786d488866a32e4062ced" name="ae12e92bcc10786d488866a32e4062ced"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae12e92bcc10786d488866a32e4062ced">&#9670;&#160;</a></span>buffer_A</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char buffer_A[<a class="el" href="sd__task_8h.html#a70c802fd8494ecd9b20e891c51e4ea81">SD_BUFFER_BYTES</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00030">30</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+</div>
+</div>
+<a id="a7b0dcb17b9011068b4a5d00857a64222" name="a7b0dcb17b9011068b4a5d00857a64222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b0dcb17b9011068b4a5d00857a64222">&#9670;&#160;</a></span>buffer_B</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char buffer_B[<a class="el" href="sd__task_8h.html#a70c802fd8494ecd9b20e891c51e4ea81">SD_BUFFER_BYTES</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00031">31</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+</div>
+</div>
+<a id="a0d694a7ae35eef8e32686463b92d47fb" name="a0d694a7ae35eef8e32686463b92d47fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d694a7ae35eef8e32686463b92d47fb">&#9670;&#160;</a></span>buffer_free_sem_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">osSemaphoreId_t buffer_free_sem_id[2]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00049">49</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00233">flush_active_buffer()</a>, <a class="el" href="sd__task_8c_source.html#l00246">packer_task_thread()</a>, <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>, and <a class="el" href="sd__task_8c_source.html#l00278">sd_task_thread()</a>.</p>
+
+</div>
+</div>
+<a id="a724245bd0e91afd542ecfd71458012ca" name="a724245bd0e91afd542ecfd71458012ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a724245bd0e91afd542ecfd71458012ca">&#9670;&#160;</a></span>bytes_to_write</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t bytes_to_write[2] = {0, 0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00037">37</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00233">flush_active_buffer()</a>, and <a class="el" href="sd__task_8c_source.html#l00278">sd_task_thread()</a>.</p>
+
+</div>
+</div>
+<a id="a5aab86771e3eb7f1f96768ce03d47922" name="a5aab86771e3eb7f1f96768ce03d47922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aab86771e3eb7f1f96768ce03d47922">&#9670;&#160;</a></span>double_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* double_buffer[2] = {<a class="el" href="sd__task_8c.html#ae12e92bcc10786d488866a32e4062ced">buffer_A</a>, <a class="el" href="sd__task_8c.html#a7b0dcb17b9011068b4a5d00857a64222">buffer_B</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00032">32</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00246">packer_task_thread()</a>, and <a class="el" href="sd__task_8c_source.html#l00278">sd_task_thread()</a>.</p>
+
+</div>
+</div>
+<a id="a754972d9204225aafa1e58a004c40ba4" name="a754972d9204225aafa1e58a004c40ba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a754972d9204225aafa1e58a004c40ba4">&#9670;&#160;</a></span>filename</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char filename[32] = {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00028">28</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00071">find_next_filename()</a>, <a class="el" href="logger_8c_source.html#l00083">logger_format_and_write()</a>, and <a class="el" href="sd__task_8c_source.html#l00084">sd_mount()</a>.</p>
+
+</div>
+</div>
+<a id="ae5bcde72e0e0b29ec86d00ba3e5cd51f" name="ae5bcde72e0e0b29ec86d00ba3e5cd51f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5bcde72e0e0b29ec86d00ba3e5cd51f">&#9670;&#160;</a></span>fs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FATFS fs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00052">52</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00084">sd_mount()</a>.</p>
+
+</div>
+</div>
+<a id="a954a85a2cb19396d9d6e717c52c70898" name="a954a85a2cb19396d9d6e717c52c70898"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a954a85a2cb19396d9d6e717c52c70898">&#9670;&#160;</a></span>is_mounted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool is_mounted = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00054">54</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00324">sd_detect_sync()</a>, <a class="el" href="sd__task_8c_source.html#l00160">sd_is_mounted()</a>, <a class="el" href="sd__task_8c_source.html#l00217">sd_logger_log_data()</a>, <a class="el" href="sd__task_8c_source.html#l00084">sd_mount()</a>, <a class="el" href="sd__task_8c_source.html#l00154">sd_sync()</a>, <a class="el" href="sd__task_8c_source.html#l00278">sd_task_thread()</a>, <a class="el" href="sd__task_8c_source.html#l00134">sd_unmount()</a>, and <a class="el" href="sd__task_8c_source.html#l00315">sd_unmount_removed()</a>.</p>
+
+</div>
+</div>
+<a id="abb7cc8752fe7d7ceed1f46b13346c285" name="abb7cc8752fe7d7ceed1f46b13346c285"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb7cc8752fe7d7ceed1f46b13346c285">&#9670;&#160;</a></span>log_file</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FIL log_file</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00053">53</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00084">sd_mount()</a>, <a class="el" href="sd__task_8c_source.html#l00154">sd_sync()</a>, <a class="el" href="sd__task_8c_source.html#l00278">sd_task_thread()</a>, and <a class="el" href="sd__task_8c_source.html#l00134">sd_unmount()</a>.</p>
+
+</div>
+</div>
+<a id="afd0aa9c6a7dabd980e43e05feb52c9b3" name="afd0aa9c6a7dabd980e43e05feb52c9b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd0aa9c6a7dabd980e43e05feb52c9b3">&#9670;&#160;</a></span>log_pool_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">osMemoryPoolId_t log_pool_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00040">40</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00246">packer_task_thread()</a>, <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>, and <a class="el" href="sd__task_8c_source.html#l00217">sd_logger_log_data()</a>.</p>
+
+</div>
+</div>
+<a id="ad39a34c32efe992a2ccea2aa7b8f9e1b" name="ad39a34c32efe992a2ccea2aa7b8f9e1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad39a34c32efe992a2ccea2aa7b8f9e1b">&#9670;&#160;</a></span>log_pool_mem</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structBoardData__t.html">BoardData_t</a> log_pool_mem[<a class="el" href="sd__task_8h.html#ade9f467eed0029931eeb73b24671cf62">SD_QUEUE_LENGTH</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00033">33</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+</div>
+</div>
+<a id="a8377a57dc1f19033350511126a081176" name="a8377a57dc1f19033350511126a081176"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8377a57dc1f19033350511126a081176">&#9670;&#160;</a></span>log_queue_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">osMessageQueueId_t log_queue_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00041">41</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00246">packer_task_thread()</a>, <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>, and <a class="el" href="sd__task_8c_source.html#l00217">sd_logger_log_data()</a>.</p>
+
+</div>
+</div>
+<a id="a82e5bc617b8497fd044205fe2cea771d" name="a82e5bc617b8497fd044205fe2cea771d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82e5bc617b8497fd044205fe2cea771d">&#9670;&#160;</a></span>monitor_attr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const osThreadAttr_t monitor_attr = { .name = &quot;monitor_task&quot;, .priority = osPriorityLow, .stack_size = 2048 }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00062">62</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>.</p>
+
+</div>
+</div>
+<a id="a4d29f9cc3aa5c0306d7e17ec14539d00" name="a4d29f9cc3aa5c0306d7e17ec14539d00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d29f9cc3aa5c0306d7e17ec14539d00">&#9670;&#160;</a></span>monitor_task_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">osThreadId_t monitor_task_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00046">46</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00349">sd_detect_isr_notify()</a>, and <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>.</p>
+
+</div>
+</div>
 <a id="a45570b5c2f48fcd2cce9f9cf4fc228d8" name="a45570b5c2f48fcd2cce9f9cf4fc228d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a45570b5c2f48fcd2cce9f9cf4fc228d8">&#9670;&#160;</a></span>packer_attr</h2>
 
@@ -314,6 +1269,36 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00059">59</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>.</p>
+
+</div>
+</div>
+<a id="ac39ea912261e99387ffdf725b27a0cfb" name="ac39ea912261e99387ffdf725b27a0cfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac39ea912261e99387ffdf725b27a0cfb">&#9670;&#160;</a></span>packer_task_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">osThreadId_t packer_task_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00043">43</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>.</p>
+
 </div>
 </div>
 <a id="ac78c37fab0b97155c085f61bf544be42" name="ac78c37fab0b97155c085f61bf544be42"></a>
@@ -323,10 +1308,66 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const osMemoryPoolAttr_t pool_attr = { .mp_mem = log_pool_mem, .mp_size = sizeof(log_pool_mem) }</td>
+          <td class="memname">const osMemoryPoolAttr_t pool_attr = { .mp_mem = <a class="el" href="sd__task_8c.html#ad39a34c32efe992a2ccea2aa7b8f9e1b">log_pool_mem</a>, .mp_size = sizeof(<a class="el" href="sd__task_8c.html#ad39a34c32efe992a2ccea2aa7b8f9e1b">log_pool_mem</a>) }</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00039">39</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>.</p>
+
+</div>
+</div>
+<a id="a87137133c402a2a97137b1fe744a0a62" name="a87137133c402a2a97137b1fe744a0a62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87137133c402a2a97137b1fe744a0a62">&#9670;&#160;</a></span>sd_mutex_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">osMutexId_t sd_mutex_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00050">50</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>, <a class="el" href="sd__task_8c_source.html#l00084">sd_mount()</a>, <a class="el" href="sd__task_8c_source.html#l00154">sd_sync()</a>, <a class="el" href="sd__task_8c_source.html#l00278">sd_task_thread()</a>, <a class="el" href="sd__task_8c_source.html#l00134">sd_unmount()</a>, and <a class="el" href="sd__task_8c_source.html#l00315">sd_unmount_removed()</a>.</p>
+
+</div>
+</div>
+<a id="af5bdb9859e1ec9106962e4f4acda262e" name="af5bdb9859e1ec9106962e4f4acda262e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5bdb9859e1ec9106962e4f4acda262e">&#9670;&#160;</a></span>sd_task_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">osThreadId_t sd_task_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00044">44</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00233">flush_active_buffer()</a>, and <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>.</p>
 
 </div>
 </div>
@@ -342,6 +1383,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00060">60</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>.</p>
+
 </div>
 </div>
 <a id="afe5c7eca20c5b43d6d1a3bda215941bb" name="afe5c7eca20c5b43d6d1a3bda215941bb"></a>
@@ -355,6 +1400,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00057">57</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>, <a class="el" href="sd__task_8c_source.html#l00084">sd_mount()</a>, <a class="el" href="sd__task_8c_source.html#l00278">sd_task_thread()</a>, <a class="el" href="sd__task_8c_source.html#l00134">sd_unmount()</a>, and <a class="el" href="sd__task_8c_source.html#l00315">sd_unmount_removed()</a>.</p>
 
 </div>
 </div>
@@ -378,12 +1427,20 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="user__diskio_8c_source.html#l00024">24</a> of file <a class="el" href="user__diskio_8c_source.html">user_diskio.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="dir_a8f641299cfea9f7461c2df1141b7786.html">src</a></li><li class="navelem"><a class="el" href="sd__task_8c.html">sd_task.c</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

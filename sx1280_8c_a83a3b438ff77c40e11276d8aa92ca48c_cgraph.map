@@ -1,0 +1,9 @@
+<map id="SX1280GetFrequencyError" name="SX1280GetFrequencyError">
+<area shape="rect" id="node1" title="Return the Estimated Frequency Error in LORA and RANGING operations." alt="" coords="5,80,197,105"/>
+<area shape="rect" id="node2" href="$sx1280_8c.html#af2627b99f460b1da0b41f4f958b8c381" title="Compute the two&#39;s complement for a register of size lower than 32bits." alt="" coords="262,5,423,31"/>
+<area shape="rect" id="node3" href="$sx1280_8c.html#aff34f516b7df452f5ac160459c69a6af" title="Returns the value of LoRa bandwidth from driver&#39;s value." alt="" coords="245,55,440,80"/>
+<area shape="rect" id="node4" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="259,104,426,129"/>
+<area shape="rect" id="node5" href="$sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea" title="Read a single byte of data from the radio memory." alt="" coords="253,153,433,179"/>
+<area shape="rect" id="node6" href="$sx1280-hal_8c.html#a6a9c356cd998a6f2dad05049941b5939" title="Read data from the radio memory." alt="" coords="488,153,675,179"/>
+<area shape="rect" id="node7" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="723,153,895,179"/>
+</map>

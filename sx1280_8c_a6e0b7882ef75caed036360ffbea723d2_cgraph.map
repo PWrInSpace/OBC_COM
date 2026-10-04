@@ -1,0 +1,11 @@
+<map id="SX1280SendPayload" name="SX1280SendPayload">
+<area shape="rect" id="node1" title="Sends a payload." alt="" coords="5,69,160,95"/>
+<area shape="rect" id="node2" href="$sx1280_8c.html#a52ef6145dd56f07591231dc6aed93231" title="Saves the payload to be send in the radio buffer." alt="" coords="208,19,351,44"/>
+<area shape="rect" id="node5" href="$sx1280_8c.html#aec1515be5729bc30af9d9803c3f14e54" title="Sets the radio in transmission mode." alt="" coords="225,93,333,119"/>
+<area shape="rect" id="node3" href="$sx1280-hal_8c.html#af6e4be534a9eb8ca5baa5c1da6ff5b99" title="Write data to the buffer holding the payload in the radio." alt="" coords="635,5,802,31"/>
+<area shape="rect" id="node4" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="864,44,1036,69"/>
+<area shape="rect" id="node6" href="$sx1280_8c.html#a24c5e4e70bd2db5b0513a3610b43043f" title="Clears the IRQs." alt="" coords="405,43,567,68"/>
+<area shape="rect" id="node7" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="621,68,816,93"/>
+<area shape="rect" id="node8" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="403,144,569,169"/>
+<area shape="rect" id="node9" href="$sx1280_8c.html#a054708c6562732737571056e239285ac" title="Set the role of the radio during ranging operations." alt="" coords="399,193,573,219"/>
+</map>

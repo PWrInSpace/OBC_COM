@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('functions_vars_e.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,91 +93,26 @@ $(function() {
 &#160;
 
 <h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
-<li>E&#160;:&#160;<a class="el" href="structRUSB2__PIPE__TR__t.html#a513ac4afbb6b0fa8595a64ab0645bdeb">RUSB2_PIPE_TR_t</a></li>
-<li>E_b&#160;:&#160;<a class="el" href="structRUSB2__PIPE__TR__t.html#a40c4ec086ab45fafce82b38f0df9cc19">RUSB2_PIPE_TR_t</a></li>
-<li>EDGESTS&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a8bcc1dff188615df36cbf55f7e3699be">_ccrx_evenaccess</a></li>
-<li>eecp&#160;:&#160;<a class="el" href="structehci__cap__registers__t.html#ab5ca77c2f5c5d107aa8c31a5fe48e64a">ehci_cap_registers_t</a></li>
-<li>embedded_host_en&#160;:&#160;<a class="el" href="structdwc2__gotgctl__t_1_1TU__ATTR__PACKED.html#a671ce0e2eafdcc2d440e757dcf50c9db">dwc2_gotgctl_t::TU_ATTR_PACKED</a></li>
-<li>en_32khz_suspsend&#160;:&#160;<a class="el" href="structdwc2__dcfg__t_1_1TU__ATTR__PACKED.html#a5317c706a908b963a2dd0a1c9cce158a">dwc2_dcfg_t::TU_ATTR_PACKED</a></li>
-<li>en_cont_on_bna&#160;:&#160;<a class="el" href="structdwc2__dctl__t_1_1TU__ATTR__PACKED.html#a9def8700b9dcfa3182046f3775b83310">dwc2_dctl_t::TU_ATTR_PACKED</a></li>
-<li>en_out_nak&#160;:&#160;<a class="el" href="structdwc2__dcfg__t_1_1TU__ATTR__PACKED.html#a1c035871e847ec1263f163b951eafef2">dwc2_dcfg_t::TU_ATTR_PACKED</a></li>
-<li>enable&#160;:&#160;<a class="el" href="structdwc2__channel__char__t_1_1TU__ATTR__PACKED.html#a12d458e452378b9a31ef5a560373e3e7">dwc2_channel_char_t::TU_ATTR_PACKED</a>, <a class="el" href="structdwc2__depctl__t_1_1TU__ATTR__PACKED.html#a9117c10e6010221837264b198a685f14">dwc2_depctl_t::TU_ATTR_PACKED</a>, <a class="el" href="structdwc2__hprt__t_1_1TU__ATTR__PACKED.html#a214bbe06ca2d89c798b45d2be57ee72a">dwc2_hprt_t::TU_ATTR_PACKED</a></li>
-<li>enable_change&#160;:&#160;<a class="el" href="structdwc2__hprt__t_1_1TU__ATTR__PACKED.html#a77be56802623bde5aa0c33a2de1dc4d4">dwc2_hprt_t::TU_ATTR_PACKED</a></li>
-<li>enable_dynamic_fifo&#160;:&#160;<a class="el" href="structdwc2__ghwcfg2__t_1_1TU__ATTR__PACKED.html#aaed2957562cf2f84deb9ff3fe598b5a9">dwc2_ghwcfg2_t::TU_ATTR_PACKED</a></li>
 <li>enable_pin&#160;:&#160;<a class="el" href="structsky66114__t.html#a485c6b7d5dc5003037ef661b8445e9ac">sky66114_t</a></li>
 <li>enable_port&#160;:&#160;<a class="el" href="structsky66114__t.html#a6ed98c009c3e52b39cb734446f09ead1">sky66114_t</a></li>
-<li>enclosure_service&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#ad26538553bd2238ea0250a79fab28af7">TU_ATTR_PACKED</a></li>
-<li>end_of_medium&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a0010f48b8531363211937f9b48268536">TU_ATTR_PACKED</a></li>
-<li>EndOfFrame&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a0cf5aa8195e7d8f5f1ee5c65a0c2d96b">TU_ATTR_PACKED</a></li>
-<li>EndOfHeader&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a0a3218c576e15cf6d87cbc544325bf3c">TU_ATTR_PACKED</a></li>
-<li>EndOfSlice&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#adc1ff47385534a19763d0ef915122d34">TU_ATTR_PACKED</a></li>
-<li>ENDPTCOMPLETE&#160;:&#160;<a class="el" href="structci__hs__regs__t.html#a3cf7ce7b0f1b82c45806a1eede8ac7de">ci_hs_regs_t</a></li>
-<li>ENDPTCTRL&#160;:&#160;<a class="el" href="structci__hs__regs__t.html#a1d264f35f018e0ea00e06d555ea073af">ci_hs_regs_t</a></li>
-<li>ENDPTFLUSH&#160;:&#160;<a class="el" href="structci__hs__regs__t.html#ab8edf153a46e4c19d967f89091b5154f">ci_hs_regs_t</a></li>
-<li>ENDPTLISTADDR&#160;:&#160;<a class="el" href="structci__hs__regs__t.html#a3ace9932ae0d93341b43758d341b69fd">ci_hs_regs_t</a></li>
-<li>ENDPTNAK&#160;:&#160;<a class="el" href="structci__hs__regs__t.html#a4b3d1cf479ea99adc34eff14e6fa6ed9">ci_hs_regs_t</a></li>
-<li>ENDPTNAKEN&#160;:&#160;<a class="el" href="structci__hs__regs__t.html#a2736102f46e859a59e556cbbac25d5ea">ci_hs_regs_t</a></li>
-<li>ENDPTPRIME&#160;:&#160;<a class="el" href="structci__hs__regs__t.html#ad6de4d9b4e34ae766b4f7a0efc3ddd8b">ci_hs_regs_t</a></li>
-<li>ENDPTSETUPSTAT&#160;:&#160;<a class="el" href="structci__hs__regs__t.html#abc2a51aaea14aea8cc51372297e1840e">ci_hs_regs_t</a></li>
-<li>ENDPTSTAT&#160;:&#160;<a class="el" href="structci__hs__regs__t.html#ac5875a401da518a3c3a7ee097f27f8af">ci_hs_regs_t</a></li>
-<li>enhanced_lpm_support&#160;:&#160;<a class="el" href="structdwc2__ghwcfg4__t_1_1TU__ATTR__PACKED.html#ab936191f3fa4fa85dcda9f74d15d9fb8">dwc2_ghwcfg4_t::TU_ATTR_PACKED</a></li>
-<li>enhanced_lpm_support1&#160;:&#160;<a class="el" href="structdwc2__ghwcfg4__t_1_1TU__ATTR__PACKED.html#a956973a7ac18d7b8f5c6649294ef73e1">dwc2_ghwcfg4_t::TU_ATTR_PACKED</a></li>
-<li>enter_rx&#160;:&#160;<a class="el" href="structgs__radio__iface.html#a45392f5b6604b5edb16d9e5ac1f82a8d">gs_radio_iface</a></li>
-<li>enum_speed&#160;:&#160;<a class="el" href="structdwc2__dsts__t_1_1TU__ATTR__PACKED.html#afa458741c7e855efb88114a0ef87da98">dwc2_dsts_t::TU_ATTR_PACKED</a></li>
-<li>EOFERR&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a4b5ae4e4a2eb1f73620ec345594bc645">_ccrx_evenaccess</a></li>
-<li>EOFERRE&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a63923ee85eb8805572579219eb5db5bc">_ccrx_evenaccess</a></li>
-<li>EOM&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED_1_1TU__ATTR__PACKED.html#aea71f8e3dbdc6c0449fbd26f8e2c26f8">TU_ATTR_PACKED::TU_ATTR_PACKED</a></li>
-<li>EP&#160;:&#160;<a class="el" href="structci__fs__regs__t.html#ab5f80fc52faa608cfcbed1c2185426d1">ci_fs_regs_t</a></li>
-<li>ep&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a7f429acbc8402233b2a5f934e27aa2a9">dwc2_regs_t</a>, <a class="el" href="structfsdev__regs__t.html#aa20591b908807ce1e26492d1806d1800">fsdev_regs_t</a></li>
-<li>ep0_data_len&#160;:&#160;<a class="el" href="struct__USBD__HandleTypeDef.html#ad0232e00e7b26d4fd44703e7aa1967e8">_USBD_HandleTypeDef</a></li>
-<li>EP0_RxReady&#160;:&#160;<a class="el" href="struct__Device__cb.html#a0af3fa3bae60f9a22cfa9a94987c13ee">_Device_cb</a></li>
-<li>ep0_state&#160;:&#160;<a class="el" href="struct__USBD__HandleTypeDef.html#a613cd6cd788fc7e1192af174f5b52038">_USBD_HandleTypeDef</a></li>
-<li>EP0_TxSent&#160;:&#160;<a class="el" href="struct__Device__cb.html#ae255c5e7a01c487c937726970d55ba7f">_Device_cb</a></li>
-<li>ep16&#160;:&#160;<a class="el" href="unionfsdev__btable__t.html#abc9b4d600a772859288232858330e3d9">fsdev_btable_t</a></li>
-<li>ep32&#160;:&#160;<a class="el" href="unionfsdev__btable__t.html#aeb49ae022659d801b2794c6950d3d89d">fsdev_btable_t</a></li>
-<li>ep_addr&#160;:&#160;<a class="el" href="structhcd__event__t.html#a322c00e84336ba097ce129c6c9b1a5df">hcd_event_t</a>, <a class="el" href="structhw__endpoint.html#a9965c51e3fcdec7de4d975fd55a925a8">hw_endpoint</a>, <a class="el" href="structtu__edpt__stream__t.html#ae230dd1b673824eaa00192614cf64fde">tu_edpt_stream_t</a>, <a class="el" href="structtuh__xfer__s.html#a9cb8ca5bb2fa937a92eb1fa83069c374">tuh_xfer_s</a></li>
-<li>ep_buf&#160;:&#160;<a class="el" href="structtu__edpt__stream__t.html#a0952de762d904e3bb52e639cadb7dfed">tu_edpt_stream_t</a></li>
-<li>ep_bufsize&#160;:&#160;<a class="el" href="structtu__edpt__stream__t.html#a77a87a2efc616c204bdfbbba6de1fb56">tu_edpt_stream_t</a></li>
-<li>ep_ch_num&#160;:&#160;<a class="el" href="structdwc2__grxstsp__t_1_1TU__ATTR__PACKED.html#a9d83b83ac4af6bf143ff14aff02a0076">dwc2_grxstsp_t::TU_ATTR_PACKED</a></li>
-<li>ep_count&#160;:&#160;<a class="el" href="structdwc2__controller__t.html#afa15d2261188108275688b81023e30a7">dwc2_controller_t</a></li>
-<li>ep_dir&#160;:&#160;<a class="el" href="structdwc2__channel__char__t_1_1TU__ATTR__PACKED.html#af89d6e36a5f788cf9d72c06f003070e0">dwc2_channel_char_t::TU_ATTR_PACKED</a></li>
-<li>ep_fifo_size&#160;:&#160;<a class="el" href="structdwc2__controller__t.html#a4148667e597d92b7c447c9098f2c6a0f">dwc2_controller_t</a></li>
-<li>ep_in&#160;:&#160;<a class="el" href="struct__USBD__HandleTypeDef.html#a349168e0c5b8446a99acfe17a4baeb4a">_USBD_HandleTypeDef</a></li>
-<li>ep_in_count&#160;:&#160;<a class="el" href="structdwc2__controller__t.html#a043003db11203e2eea286f7ef85b8872">dwc2_controller_t</a></li>
-<li>ep_num&#160;:&#160;<a class="el" href="structdwc2__channel__char__t_1_1TU__ATTR__PACKED.html#aa73118aae519f12767987159a31a1036">dwc2_channel_char_t::TU_ATTR_PACKED</a></li>
-<li>ep_number&#160;:&#160;<a class="el" href="unionohci__ed__word0__t.html#a4f1f4ded5d2a03735a532199ced9a3f7">ohci_ed_word0_t</a></li>
-<li>ep_out&#160;:&#160;<a class="el" href="struct__USBD__HandleTypeDef.html#a44d0772ecdbc82857e4838d82cd41cbd">_USBD_HandleTypeDef</a></li>
-<li>ep_size&#160;:&#160;<a class="el" href="structdwc2__channel__char__t_1_1TU__ATTR__PACKED.html#ac25661ebd154d1b34e46fd343111e9ec">dwc2_channel_char_t::TU_ATTR_PACKED</a></li>
-<li>ep_type&#160;:&#160;<a class="el" href="structdwc2__channel__char__t_1_1TU__ATTR__PACKED.html#aab0b905a1d47d5eaf0aed820a48dd8f5">dwc2_channel_char_t::TU_ATTR_PACKED</a></li>
-<li>epin&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a7e0c4ee900fff633e31970e93c714bdc">dwc2_regs_t</a></li>
-<li>epin_mismatch_count&#160;:&#160;<a class="el" href="structdwc2__dcfg__t_1_1TU__ATTR__PACKED.html#a9a81a72175a1ba4299192ae52835de91">dwc2_dcfg_t::TU_ATTR_PACKED</a></li>
-<li>epinfo&#160;:&#160;<a class="el" href="structmusb__regs__t.html#a983166e52aa833118e0b16e3f27254ae">musb_regs_t</a></li>
-<li>epinfo_bit&#160;:&#160;<a class="el" href="structmusb__regs__t.html#aba25ae50646e4c810c1ad47fe4261f35">musb_regs_t</a></li>
-<li>EPNUM&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ad58b4d5dddf8f1f95355eba92a23fff5">_ccrx_evenaccess</a></li>
-<li>epool&#160;:&#160;<a class="el" href="structosal__queue__def__t.html#aff72e47a2a65becb2db90d03b9b296ff">osal_queue_def_t</a></li>
-<li>epout&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#ab7e26690b12b4bae69bf2b67d4f8fd68">dwc2_regs_t</a></li>
-<li>epr_mode_capable&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a0519dc27e65908945e94de65c968b102">TU_ATTR_PACKED</a></li>
-<li>epsize&#160;:&#160;<a class="el" href="structxfer__desc__t.html#a8ff1ca3f5d71397df24ce8874694d96a">xfer_desc_t</a></li>
-<li>err_count&#160;:&#160;<a class="el" href="structehci__qtd__t.html#adbaf58822ed58104b0ddddabb396a255">ehci_qtd_t</a></li>
-<li>ERR_ENB&#160;:&#160;<a class="el" href="structci__fs__regs__t.html#a4e8e0800167daeaa2377129dcb9e2159">ci_fs_regs_t</a></li>
-<li>err_multi_count&#160;:&#160;<a class="el" href="structdwc2__channel__char__t_1_1TU__ATTR__PACKED.html#a95a128b021114326026378ae60bd16e6">dwc2_channel_char_t::TU_ATTR_PACKED</a></li>
-<li>ERR_STAT&#160;:&#160;<a class="el" href="structci__fs__regs__t.html#addb9b7a2537d2c1eae2346348607b35a">ci_fs_regs_t</a></li>
-<li>erratic_err&#160;:&#160;<a class="el" href="structdwc2__dsts__t_1_1TU__ATTR__PACKED.html#afd01828ec333058536fa90c532e30708">dwc2_dsts_t::TU_ATTR_PACKED</a></li>
-<li>erratic_int_mask&#160;:&#160;<a class="el" href="structdwc2__dcfg__t_1_1TU__ATTR__PACKED.html#aac0f90a51814e4857921a6faa866c3fb">dwc2_dcfg_t::TU_ATTR_PACKED</a></li>
-<li>Error&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#adb28c211e294df6b5b38d09732afa39a">TU_ATTR_PACKED</a></li>
-<li>ErrorStatus&#160;:&#160;<a class="el" href="structPacketStatus__t.html#aafc619b4e2801650c14a619cd48b8a01">PacketStatus_t</a></li>
-<li>evbuf&#160;:&#160;<a class="el" href="structosal__queue__def__t.html#a0914a357cf61949c23e57142bae2b0ea">osal_queue_def_t</a></li>
-<li>event_id&#160;:&#160;<a class="el" href="structhcd__event__t.html#ae0b27f98f9ea659166be6ca91e4fd21f">hcd_event_t</a>, <a class="el" href="structTU__ATTR__PACKED.html#ad088010d1b8e04037c81f35a81e9dbc9">TU_ATTR_PACKED</a></li>
-<li>evq&#160;:&#160;<a class="el" href="structosal__queue__def__t.html#a9aa9b3beffb1ea179930384d4a4fd016">osal_queue_def_t</a></li>
-<li>EXICEN&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ad0c3b4dc27f5005e91f9b350ef015b04">_ccrx_evenaccess</a></li>
-<li>expected_bytes&#160;:&#160;<a class="el" href="structehci__qtd__t.html#a95721c75bba9efa5396f6a3d23941ed8">ehci_qtd_t</a>, <a class="el" href="structgtd__extra__data__t.html#a22360ecacd7e547c21163a8307d61ee8">gtd_extra_data_t</a></li>
-<li>extended&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#aeb053bc3b669c69be6029560b869a311">TU_ATTR_PACKED</a></li>
-<li>extended_hibernation&#160;:&#160;<a class="el" href="structdwc2__ghwcfg4__t_1_1TU__ATTR__PACKED.html#a8c382eba1fab55b30c05de54a1f267ec">dwc2_ghwcfg4_t::TU_ATTR_PACKED</a></li>
+<li>enter_rx&#160;:&#160;<a class="el" href="structgs__radio__iface__t.html#a760bc7d4be498a4786ab314ddaddc680">gs_radio_iface_t</a></li>
+<li>errors&#160;:&#160;<a class="el" href="structobc__mcb__frame__t.html#a974635eef2d22e8779d890e033d27726">obc_mcb_frame_t</a></li>
+<li>ErrorStatus&#160;:&#160;<a class="el" href="structPacketStatus__t.html#aef089e8ce2c5f60f2dc7f0167ec7ea81">PacketStatus_t</a></li>
+<li>esp_now_connected_flags&#160;:&#160;<a class="el" href="structobc__mcb__frame__t.html#a59dbadaea8342f7071dd42be8f78d8d9">obc_mcb_frame_t</a></li>
+<li>esp_now_wkup_flags&#160;:&#160;<a class="el" href="structobc__mcb__frame__t.html#aa6d363b9d249d519b353a3f1c4ee4f75">obc_mcb_frame_t</a></li>
+<li>eth_vent_n2_main_bit_data_a&#160;:&#160;<a class="el" href="structobc__mcb__frame__t.html#af7b259ca19cd4933876f9dfe2c01442d">obc_mcb_frame_t</a></li>
+<li>eth_vent_n2_main_bit_data_b&#160;:&#160;<a class="el" href="structobc__mcb__frame__t.html#a645fdc139b677a7060599b15a75bd989">obc_mcb_frame_t</a></li>
+<li>euler_fi&#160;:&#160;<a class="el" href="structobc__mcb__frame__t.html#a641edbe89b8d426e9f46343e0a60f44b">obc_mcb_frame_t</a></li>
+<li>euler_psi&#160;:&#160;<a class="el" href="structobc__mcb__frame__t.html#aae0950541e20387f4b00711a49dd54c6">obc_mcb_frame_t</a></li>
+<li>euler_theta&#160;:&#160;<a class="el" href="structobc__mcb__frame__t.html#a799fa0dadd709c185506c5fe8fdc897a">obc_mcb_frame_t</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

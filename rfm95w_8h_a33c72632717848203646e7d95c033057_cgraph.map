@@ -1,0 +1,4 @@
+<map id="rfm95_sleep" name="rfm95_sleep">
+<area shape="rect" id="node1" title="Sets the radio transceiver in sleep mode." alt="" coords="5,5,108,31"/>
+<area shape="rect" id="node2" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="156,5,285,31"/>
+</map>

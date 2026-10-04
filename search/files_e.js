@@ -1,17 +1,5 @@
 var searchData=
 [
-  ['readme_2emd_0',['README.md',['../README_8md.html',1,'']]],
-  ['rfm95w_2ec_1',['rfm95w.c',['../rfm95w_8c.html',1,'']]],
-  ['rfm95w_2eh_2',['rfm95w.h',['../rfm95w_8h.html',1,'']]],
-  ['rfm95w_5ftask_2ec_3',['rfm95w_task.c',['../rfm95w__task_8c.html',1,'']]],
-  ['rfm95w_5ftask_2eh_4',['rfm95w_task.h',['../rfm95w__task_8h.html',1,'']]],
-  ['rfm95w_5fwrapper_2ec_5',['rfm95w_wrapper.c',['../rfm95w__wrapper_8c.html',1,'']]],
-  ['rfm95w_5fwrapper_2eh_6',['rfm95w_wrapper.h',['../rfm95w__wrapper_8h.html',1,'']]],
-  ['rp2040_5fusb_2ec_7',['rp2040_usb.c',['../rp2040__usb_8c.html',1,'']]],
-  ['rp2040_5fusb_2eh_8',['rp2040_usb.h',['../rp2040__usb_8h.html',1,'']]],
-  ['rusb2_5fcommon_2ec_9',['rusb2_common.c',['../rusb2__common_8c.html',1,'']]],
-  ['rusb2_5fcommon_2eh_10',['rusb2_common.h',['../rusb2__common_8h.html',1,'']]],
-  ['rusb2_5fra_2eh_11',['rusb2_ra.h',['../rusb2__ra_8h.html',1,'']]],
-  ['rusb2_5frx_2eh_12',['rusb2_rx.h',['../rusb2__rx_8h.html',1,'']]],
-  ['rusb2_5ftype_2eh_13',['rusb2_type.h',['../rusb2__type_8h.html',1,'']]]
+  ['ws2812_2ec_0',['ws2812.c',['../ws2812_8c.html',1,'']]],
+  ['ws2812_2eh_1',['ws2812.h',['../ws2812_8h.html',1,'']]]
 ];

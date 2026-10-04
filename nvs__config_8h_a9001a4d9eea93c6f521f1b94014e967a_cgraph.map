@@ -1,0 +1,16 @@
+<map id="NVS_Write" name="NVS_Write">
+<area shape="rect" id="node1" title=" " alt="" coords="5,257,96,283"/>
+<area shape="rect" id="node2" href="$group__EEPROM__Exported__Functions.html#gaa5483980e10a634ccae116ca5afcb911" title="Erase group of pages which are erasing state, in polling mode." alt="" coords="1096,283,1196,308"/>
+<area shape="rect" id="node6" href="$group__EEPROM__Exported__Functions.html#ga8aeb1ab28357d073af8ed7e62c96877f" title="Writes/updates variable data in EEPROM." alt="" coords="144,183,317,208"/>
+<area shape="rect" id="node3" href="$group__EEPROM__Private__Functions.html#ga4375dd5bf83e259a3481a83b5993a1a3" title="Flush the caches if needed to keep coherency when the flash content is modified." alt="" coords="1267,257,1383,283"/>
+<area shape="rect" id="node4" href="$group__EEPROM__Private__Functions.html#gaf950461e14bae3fd51f89e9dd59db26b" title="Erase a page in polling mode." alt="" coords="1271,307,1379,332"/>
+<area shape="rect" id="node5" href="$group__EEPROM__Private__Functions.html#ga2304deed602aa5aa10ecebbf7de5352c" title="Get page state in page header." alt="" coords="1270,195,1381,220"/>
+<area shape="rect" id="node7" href="$group__EEPROM__Private__Functions.html#gab1030d083e54bb50edcd083851de0620" title="Writes/updates variable data in EEPROM Trig internal Pages transfer if half of the pages are full." alt="" coords="365,132,476,157"/>
+<area shape="rect" id="node8" href="$group__EEPROM__Private__Functions.html#ga8d8715ee491b7eae710c3deabc74dd0d" title="Writes a new variable data in fresh new page in case of normal transfer, and transfers last updated e..." alt="" coords="524,132,636,157"/>
+<area shape="rect" id="node14" href="$group__EEPROM__Private__Functions.html#gaf47e9f09b5a17c1e9fafbd1ca8e967cc" title="Verify if pages are full then if not the case, writes variable in EEPROM." alt="" coords="684,81,892,107"/>
+<area shape="rect" id="node9" href="$group__EEPROM__Private__Functions.html#ga155bacb56c1c6ea24464cdd408fc8ebb" title="Find suitable page for read/write/erase operation." alt="" coords="952,131,1032,156"/>
+<area shape="rect" id="node10" href="$group__EEPROM__Private__Functions.html#gab2cc682a7689c76d4188bda3af6e9b0f" title="Set page state in page header." alt="" coords="1092,31,1200,56"/>
+<area shape="rect" id="node12" href="$group__EEPROM__Private__Functions.html#gad111ea700245720d7f0cc24b0b8f4f58" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="734,131,842,156"/>
+<area shape="rect" id="node11" href="$group__EEPROM__Private__Functions.html#gaaf190b387699ec8d894cfe8449522084" title="Write a quad word at the given address in Flash (function is called FI_WriteDoubleWord to respect leg..." alt="" coords="1248,5,1403,31"/>
+<area shape="rect" id="node13" href="$group__EEPROM__Private__Functions.html#ga3c5f9766c0fb9b289576dabfc958c0f9" title="This function performs CRC calculation on Data and Virtual Address." alt="" coords="940,81,1044,107"/>
+</map>

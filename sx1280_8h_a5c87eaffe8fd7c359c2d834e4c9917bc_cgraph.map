@@ -1,0 +1,5 @@
+<map id="SX1280Calibrate" name="SX1280Calibrate">
+<area shape="rect" id="node1" title="Calibrates the given radio block." alt="" coords="5,5,136,31"/>
+<area shape="rect" id="node2" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="184,5,379,31"/>
+<area shape="rect" id="node3" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="427,5,599,31"/>
+</map>

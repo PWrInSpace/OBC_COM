@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('globals_func_e.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,16 +93,32 @@ $(function() {
 &#160;
 
 <h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
-<li>ehci_deinit()&#160;:&#160;<a class="el" href="ehci__api_8h.html#a8dd1fbf3e5384869df84c9eb225a3ddc">ehci_api.h</a></li>
-<li>ehci_init()&#160;:&#160;<a class="el" href="ehci__api_8h.html#a923077fdab0f6bcf814321a262f07c74">ehci_api.h</a></li>
-<li>Error_Handler()&#160;:&#160;<a class="el" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">main.h</a>, <a class="el" href="main_8c.html#a1730ffe1e560465665eb47d9264826f9">main.c</a>, <a class="el" href="usbd__conf_8c.html#a1730ffe1e560465665eb47d9264826f9">usbd_conf.c</a></li>
+<li>EE_CleanUp()&#160;:&#160;<a class="el" href="group__EEPROM__Exported__Functions.html#gaa5483980e10a634ccae116ca5afcb911">eeprom_emul.h</a></li>
+<li>EE_CleanUp_IT()&#160;:&#160;<a class="el" href="group__EEPROM__Exported__Functions.html#ga678d338529401e4c3e79235783f46a27">eeprom_emul.h</a></li>
+<li>EE_DeleteCorruptedFlashAddress()&#160;:&#160;<a class="el" href="group__EEPROM__Exported__Functions.html#ga4f8175ee3f457d3456f51cf2e915be67">eeprom_emul.h</a></li>
+<li>EE_EndOfCleanup_UserCallback()&#160;:&#160;<a class="el" href="group__EEPROM__Exported__Functions.html#ga1df78c718b048c4e12216750f0efee48">eeprom_emul.h</a></li>
+<li>EE_Format()&#160;:&#160;<a class="el" href="group__EEPROM__Exported__Functions.html#ga9f8f1474998167a0928861938a57596f">eeprom_emul.h</a></li>
+<li>EE_Init()&#160;:&#160;<a class="el" href="group__EEPROM__Exported__Functions.html#ga08e3105698f17d96ff57c20e0b44517c">eeprom_emul.h</a></li>
+<li>EE_ReadVariable16bits()&#160;:&#160;<a class="el" href="group__EEPROM__Exported__Functions.html#ga8985f62cfd8bd312568a1740d96538d4">eeprom_emul.h</a></li>
+<li>EE_ReadVariable32bits()&#160;:&#160;<a class="el" href="group__EEPROM__Exported__Functions.html#gadd96f1176b1503cfbc15074faa9375b2">eeprom_emul.h</a></li>
+<li>EE_ReadVariable8bits()&#160;:&#160;<a class="el" href="group__EEPROM__Exported__Functions.html#gaa7fb81cd5fb8b9ec877074be3b29bc74">eeprom_emul.h</a></li>
+<li>EE_ReadVariable96bits()&#160;:&#160;<a class="el" href="group__EEPROM__Exported__Functions.html#ga885aea9eed61ae9c8f0578ad62a9a97b">eeprom_emul.h</a></li>
+<li>EE_WriteVariable16bits()&#160;:&#160;<a class="el" href="group__EEPROM__Exported__Functions.html#ga56222a4e6cc365436e34da1e68cdeda4">eeprom_emul.h</a></li>
+<li>EE_WriteVariable32bits()&#160;:&#160;<a class="el" href="group__EEPROM__Exported__Functions.html#ga8aeb1ab28357d073af8ed7e62c96877f">eeprom_emul.h</a></li>
+<li>EE_WriteVariable8bits()&#160;:&#160;<a class="el" href="group__EEPROM__Exported__Functions.html#ga7133bc23467568daf0b52ff25e958a8e">eeprom_emul.h</a></li>
+<li>EE_WriteVariable96bits()&#160;:&#160;<a class="el" href="group__EEPROM__Exported__Functions.html#ga0a164053ef9fa4596d2c7ab6668d9e63">eeprom_emul.h</a></li>
+<li>elapsed_since()&#160;:&#160;<a class="el" href="gs__scheduler_8c.html#a7ddee0a85ef16df4042b9861638153b6">gs_scheduler.c</a></li>
+<li>Error_Handler()&#160;:&#160;<a class="el" href="group__EEPROM__Emulation.html#gad4e07955fadfeb416e9620ddb42f8fe9">flash_interface.c</a>, <a class="el" href="group__EEPROM__Emulation.html#gad4e07955fadfeb416e9620ddb42f8fe9">main.h</a>, <a class="el" href="group__EEPROM__Emulation.html#gad4e07955fadfeb416e9620ddb42f8fe9">main.c</a></li>
 <li>EXTI12_IRQHandler()&#160;:&#160;<a class="el" href="stm32h5xx__it_8h.html#ad223df7a6e18784d7aa64456b668278b">stm32h5xx_it.h</a>, <a class="el" href="stm32h5xx__it_8c.html#ad223df7a6e18784d7aa64456b668278b">stm32h5xx_it.c</a></li>
 <li>EXTI8_IRQHandler()&#160;:&#160;<a class="el" href="stm32h5xx__it_8h.html#af306185660ce4c4ff5b89398916f26ef">stm32h5xx_it.h</a>, <a class="el" href="stm32h5xx__it_8c.html#af306185660ce4c4ff5b89398916f26ef">stm32h5xx_it.c</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

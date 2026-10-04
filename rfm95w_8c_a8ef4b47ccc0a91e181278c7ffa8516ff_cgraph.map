@@ -1,0 +1,6 @@
+<map id="rfm95_set_bandwidth" name="rfm95_set_bandwidth">
+<area shape="rect" id="node1" title="Set bandwidth (bit rate)" alt="" coords="5,55,168,80"/>
+<area shape="rect" id="node2" href="$rfm95w_8c.html#a769c7222dfcbf25876a9b84f1cc25440" title="Get the frequency set on Rfm95." alt="" coords="216,5,377,31"/>
+<area shape="rect" id="node3" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="234,55,359,80"/>
+<area shape="rect" id="node4" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="232,104,361,129"/>
+</map>

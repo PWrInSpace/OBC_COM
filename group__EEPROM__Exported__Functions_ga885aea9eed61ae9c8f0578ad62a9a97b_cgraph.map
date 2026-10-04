@@ -1,0 +1,12 @@
+<map id="EE_ReadVariable96bits" name="EE_ReadVariable96bits">
+<area shape="rect" id="node1" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="5,116,176,141"/>
+<area shape="rect" id="node2" href="$group__EEPROM__Private__Functions.html#gad111ea700245720d7f0cc24b0b8f4f58" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="224,116,332,141"/>
+<area shape="rect" id="node3" href="$group__EEPROM__Private__Functions.html#ga3c5f9766c0fb9b289576dabfc958c0f9" title="This function performs CRC calculation on Data and Virtual Address." alt="" coords="380,67,484,92"/>
+<area shape="rect" id="node4" href="$group__EEPROM__Private__Functions.html#ga155bacb56c1c6ea24464cdd408fc8ebb" title="Find suitable page for read/write/erase operation." alt="" coords="392,116,472,141"/>
+<area shape="rect" id="node8" href="$group__EEPROM__Private__Functions.html#ga2304deed602aa5aa10ecebbf7de5352c" title="Get page state in page header." alt="" coords="710,153,821,179"/>
+<area shape="rect" id="node5" href="$group__EEPROM__Exported__Functions.html#gaa5483980e10a634ccae116ca5afcb911" title="Erase group of pages which are erasing state, in polling mode." alt="" coords="536,91,636,116"/>
+<area shape="rect" id="node9" href="$group__EEPROM__Private__Functions.html#gab2cc682a7689c76d4188bda3af6e9b0f" title="Set page state in page header." alt="" coords="532,17,640,43"/>
+<area shape="rect" id="node6" href="$group__EEPROM__Private__Functions.html#ga4375dd5bf83e259a3481a83b5993a1a3" title="Flush the caches if needed to keep coherency when the flash content is modified." alt="" coords="707,104,823,129"/>
+<area shape="rect" id="node7" href="$group__EEPROM__Private__Functions.html#gaf950461e14bae3fd51f89e9dd59db26b" title="Erase a page in polling mode." alt="" coords="711,55,819,80"/>
+<area shape="rect" id="node10" href="$group__EEPROM__Private__Functions.html#gaaf190b387699ec8d894cfe8449522084" title="Write a quad word at the given address in Flash (function is called FI_WriteDoubleWord to respect leg..." alt="" coords="688,5,843,31"/>
+</map>

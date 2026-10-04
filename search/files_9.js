@@ -1,17 +1,5 @@
 var searchData=
 [
-  ['led_2ec_0',['led.c',['../led_8c.html',1,'']]],
-  ['led_2eh_1',['led.h',['../led_8h.html',1,'']]],
-  ['logger_2ec_2',['logger.c',['../logger_8c.html',1,'']]],
-  ['logger_2eh_3',['logger.h',['../logger_8h.html',1,'']]],
-  ['logger_5fmacros_2eh_4',['logger_macros.h',['../logger__macros_8h.html',1,'']]],
-  ['logger_5fserial_5foutput_2ec_5',['logger_serial_output.c',['../logger__serial__output_8c.html',1,'']]],
-  ['logger_5fserial_5foutput_2eh_6',['logger_serial_output.h',['../logger__serial__output_8h.html',1,'']]],
-  ['lora_5fcommands_2eh_7',['lora_commands.h',['../lora__commands_8h.html',1,'']]],
-  ['lora_5fconfig_2ec_8',['lora_config.c',['../lora__config_8c.html',1,'']]],
-  ['lora_5fconfig_2eh_9',['lora_config.h',['../lora__config_8h.html',1,'']]],
-  ['lora_5fframe_2ec_10',['lora_frame.c',['../lora__frame_8c.html',1,'']]],
-  ['lora_5fframe_2eh_11',['lora_frame.h',['../lora__frame_8h.html',1,'']]],
-  ['lora_5ftx_5fqueue_2ec_12',['lora_tx_queue.c',['../lora__tx__queue_8c.html',1,'']]],
-  ['lora_5ftx_5fqueue_2eh_13',['lora_tx_queue.h',['../lora__tx__queue_8h.html',1,'']]]
+  ['nvs_5fconfig_2ec_0',['nvs_config.c',['../nvs__config_8c.html',1,'']]],
+  ['nvs_5fconfig_2eh_1',['nvs_config.h',['../nvs__config_8h.html',1,'']]]
 ];

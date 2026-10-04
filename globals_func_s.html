@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('globals_func_s.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,32 +93,50 @@ $(function() {
 &#160;
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>scale()&#160;:&#160;<a class="el" href="led_8c.html#a64b160e194323340cb7afc6ad9a505f0">led.c</a></li>
+<li>SD_check_status()&#160;:&#160;<a class="el" href="sd__diskio_8c.html#a5b1864961d459705bbef77e08b75b701">sd_diskio.c</a></li>
+<li>sd_detect_isr_notify()&#160;:&#160;<a class="el" href="sd__task_8c.html#aafecd8bc371346876c011acb5eadac49">sd_task.c</a></li>
+<li>sd_detect_sync()&#160;:&#160;<a class="el" href="sd__task_8c.html#a8f51bc671c8cb315e9e6ac9d50f0157f">sd_task.c</a></li>
+<li>SD_initialize()&#160;:&#160;<a class="el" href="sd__diskio_8c.html#a7a7db25b309942168851882967ddd49e">sd_diskio.c</a></li>
+<li>SD_ioctl()&#160;:&#160;<a class="el" href="sd__diskio_8c.html#a3784d4eb9b42118436b022c9e3f2e730">sd_diskio.c</a></li>
 <li>sd_is_mounted()&#160;:&#160;<a class="el" href="sd__task_8c.html#a44072fa1e667db874b4497aa039096d2">sd_task.c</a>, <a class="el" href="sd__task_8h.html#a44072fa1e667db874b4497aa039096d2">sd_task.h</a></li>
-<li>sd_logger_init()&#160;:&#160;<a class="el" href="sd__task_8c.html#ad2d90dfe4e88382623bd9874937356e5">sd_task.c</a>, <a class="el" href="sd__task_8h.html#ad2d90dfe4e88382623bd9874937356e5">sd_task.h</a></li>
-<li>sd_logger_log_data()&#160;:&#160;<a class="el" href="sd__task_8c.html#ac3aaa7f82771654888e7e93faf56d68c">sd_task.c</a>, <a class="el" href="sd__task_8h.html#ac3aaa7f82771654888e7e93faf56d68c">sd_task.h</a></li>
-<li>sd_mount()&#160;:&#160;<a class="el" href="sd__task_8c.html#ac1cf0c55de40244f99ffeabc7c06a059">sd_task.c</a>, <a class="el" href="sd__task_8h.html#ac1cf0c55de40244f99ffeabc7c06a059">sd_task.h</a></li>
+<li>sd_logger_init()&#160;:&#160;<a class="el" href="sd__task_8h.html#ad2d90dfe4e88382623bd9874937356e5">sd_task.h</a>, <a class="el" href="sd__task_8c.html#ad2d90dfe4e88382623bd9874937356e5">sd_task.c</a></li>
+<li>sd_logger_log_data()&#160;:&#160;<a class="el" href="sd__task_8h.html#ac3aaa7f82771654888e7e93faf56d68c">sd_task.h</a>, <a class="el" href="sd__task_8c.html#ac3aaa7f82771654888e7e93faf56d68c">sd_task.c</a></li>
+<li>sd_mount()&#160;:&#160;<a class="el" href="sd__task_8h.html#ac1cf0c55de40244f99ffeabc7c06a059">sd_task.h</a>, <a class="el" href="sd__task_8c.html#ac1cf0c55de40244f99ffeabc7c06a059">sd_task.c</a></li>
+<li>SD_read()&#160;:&#160;<a class="el" href="sd__diskio_8c.html#ad7b2f5cae0422763db26cb55f35ab466">sd_diskio.c</a></li>
 <li>sd_remount()&#160;:&#160;<a class="el" href="sd__task_8h.html#a84e74a0658ac9c470c3e09eb0cc58f62">sd_task.h</a>, <a class="el" href="sd__task_8c.html#a84e74a0658ac9c470c3e09eb0cc58f62">sd_task.c</a></li>
+<li>SD_status()&#160;:&#160;<a class="el" href="sd__diskio_8c.html#aaf8cae5cdeb02d586f2d18d19678021f">sd_diskio.c</a></li>
 <li>sd_sync()&#160;:&#160;<a class="el" href="sd__task_8h.html#a36e28e893929ecb62e8c54acebdec9e4">sd_task.h</a>, <a class="el" href="sd__task_8c.html#a36e28e893929ecb62e8c54acebdec9e4">sd_task.c</a></li>
+<li>sd_task_thread()&#160;:&#160;<a class="el" href="sd__task_8c.html#a1ddaddf73d5115aee83e334481151dbb">sd_task.c</a></li>
 <li>sd_unmount()&#160;:&#160;<a class="el" href="sd__task_8h.html#abc34183a78c00656584eb7eed83e8f47">sd_task.h</a>, <a class="el" href="sd__task_8c.html#abc34183a78c00656584eb7eed83e8f47">sd_task.c</a></li>
+<li>sd_unmount_removed()&#160;:&#160;<a class="el" href="sd__task_8c.html#aef0d3d785fba86eedc350246c4362032">sd_task.c</a></li>
+<li>SD_write()&#160;:&#160;<a class="el" href="sd__diskio_8c.html#a772eeebcaedbea75e80bfe702d4c8ae4">sd_diskio.c</a></li>
 <li>SDMMC1_IRQHandler()&#160;:&#160;<a class="el" href="stm32h5xx__it_8h.html#ac59ea818a0646d6693f12d991f3e7f66">stm32h5xx_it.h</a>, <a class="el" href="stm32h5xx__it_8c.html#ac59ea818a0646d6693f12d991f3e7f66">stm32h5xx_it.c</a></li>
+<li>send_one_from_queue()&#160;:&#160;<a class="el" href="gs__scheduler_8c.html#a1af324444ec6235ebd562ed04ace541f">gs_scheduler.c</a></li>
+<li>send_window()&#160;:&#160;<a class="el" href="sx1280__task_8c.html#aa3e5f314d579c8192dcfb785648bca96">sx1280_task.c</a></li>
 <li>set_mode_all()&#160;:&#160;<a class="el" href="sky66114_8h.html#acd10a15a09cb17bb27f7451a489331d4">sky66114.h</a>, <a class="el" href="sky66114_8c.html#acd10a15a09cb17bb27f7451a489331d4">sky66114.c</a></li>
-<li>sky66114_init()&#160;:&#160;<a class="el" href="sky66114_8c.html#a8b4c6e8f485b9e6b6abdec62967bb602">sky66114.c</a>, <a class="el" href="sky66114_8h.html#a8b4c6e8f485b9e6b6abdec62967bb602">sky66114.h</a></li>
-<li>sky66114_init_all()&#160;:&#160;<a class="el" href="sky66114_8h.html#a647a84469acd04f3cecd6f5cda3ecc3b">sky66114.h</a>, <a class="el" href="sky66114_8c.html#a647a84469acd04f3cecd6f5cda3ecc3b">sky66114.c</a></li>
+<li>SetPageState()&#160;:&#160;<a class="el" href="group__EEPROM__Private__Functions.html#gab2cc682a7689c76d4188bda3af6e9b0f">eeprom_emul.c</a></li>
+<li>sky66114_init()&#160;:&#160;<a class="el" href="sky66114_8h.html#a8b4c6e8f485b9e6b6abdec62967bb602">sky66114.h</a>, <a class="el" href="sky66114_8c.html#a8b4c6e8f485b9e6b6abdec62967bb602">sky66114.c</a></li>
+<li>sky66114_init_all()&#160;:&#160;<a class="el" href="sky66114_8c.html#a647a84469acd04f3cecd6f5cda3ecc3b">sky66114.c</a>, <a class="el" href="sky66114_8h.html#a647a84469acd04f3cecd6f5cda3ecc3b">sky66114.h</a></li>
 <li>sky66114_set_mode()&#160;:&#160;<a class="el" href="sky66114_8h.html#a939adbab935cb7b407fbb4dacaa0b4d0">sky66114.h</a>, <a class="el" href="sky66114_8c.html#a939adbab935cb7b407fbb4dacaa0b4d0">sky66114.c</a></li>
+<li>snd_cb()&#160;:&#160;<a class="el" href="sound_8c.html#a2db46f98f8f8fde5eba0156cacc10c51">sound.c</a></li>
 <li>sound_init()&#160;:&#160;<a class="el" href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1">sound.h</a>, <a class="el" href="sound_8c.html#a90e396bab2471f72285f290ce7a5cab1">sound.c</a></li>
 <li>sound_play()&#160;:&#160;<a class="el" href="sound_8h.html#ae96e6433ed18b83c2ccc8a7db9f0d3de">sound.h</a>, <a class="el" href="sound_8c.html#ae96e6433ed18b83c2ccc8a7db9f0d3de">sound.c</a></li>
 <li>sound_stop()&#160;:&#160;<a class="el" href="sound_8h.html#a05ffba4b6e960e4a0699f50b8a72d795">sound.h</a>, <a class="el" href="sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795">sound.c</a></li>
 <li>SPI2_IRQHandler()&#160;:&#160;<a class="el" href="stm32h5xx__it_8h.html#a68d8880cd80cb17a2501487c3d649ea1">stm32h5xx_it.h</a>, <a class="el" href="stm32h5xx__it_8c.html#a68d8880cd80cb17a2501487c3d649ea1">stm32h5xx_it.c</a></li>
 <li>start_gps_task()&#160;:&#160;<a class="el" href="gps__task_8h.html#ae757343c80f47f1e3f63a2a86c62220a">gps_task.h</a>, <a class="el" href="gps__task_8c.html#ae757343c80f47f1e3f63a2a86c62220a">gps_task.c</a></li>
+<li>start_rx()&#160;:&#160;<a class="el" href="sx1280__task_8c.html#aeb43006f8eb6d0162d00590ffe9017f9">sx1280_task.c</a></li>
 <li>start_telemetry_task()&#160;:&#160;<a class="el" href="telemetry__task_8h.html#afcd60b31f762920f35539834b72abfce">telemetry_task.h</a>, <a class="el" href="telemetry__task_8c.html#afcd60b31f762920f35539834b72abfce">telemetry_task.c</a></li>
 <li>Start_UART2_DMA_Receiver()&#160;:&#160;<a class="el" href="usart_8h.html#a2253fb583fa5636645a6c92ed22a4ca2">usart.h</a>, <a class="el" href="usart_8c.html#a2253fb583fa5636645a6c92ed22a4ca2">usart.c</a></li>
 <li>StartDefaultTask()&#160;:&#160;<a class="el" href="app__freertos_8h.html#a99d0fdb0434092bcb24d9c9af917e4e9">app_freertos.h</a>, <a class="el" href="app__freertos_8c.html#a99d0fdb0434092bcb24d9c9af917e4e9">app_freertos.c</a></li>
+<li>stop_radio_standby()&#160;:&#160;<a class="el" href="sx1280__task_8c.html#af9b8000bc81e28fbd95180c677bf58c4">sx1280_task.c</a></li>
 <li>sx1280_config_init()&#160;:&#160;<a class="el" href="lora__config_8h.html#ad1a1b26a7f98a0b3da77f219667b234b">lora_config.h</a>, <a class="el" href="lora__config_8c.html#ad1a1b26a7f98a0b3da77f219667b234b">lora_config.c</a></li>
 <li>sx1280_delay_ms()&#160;:&#160;<a class="el" href="sx1280__hal__wrapper_8h.html#af5056fc5085c914a4229c712307af987">sx1280_hal_wrapper.h</a>, <a class="el" href="sx1280__hal__wrapper_8c.html#af5056fc5085c914a4229c712307af987">sx1280_hal_wrapper.c</a></li>
 <li>sx1280_get_busy()&#160;:&#160;<a class="el" href="sx1280__hal__wrapper_8h.html#a7bef1a617e678c5d92c9678304f68da5">sx1280_hal_wrapper.h</a>, <a class="el" href="sx1280__hal__wrapper_8c.html#a7bef1a617e678c5d92c9678304f68da5">sx1280_hal_wrapper.c</a></li>
-<li>sx1280_get_dio1()&#160;:&#160;<a class="el" href="sx1280__hal__wrapper_8c.html#ab7c31fdc0296e796f1f6a37d062243b6">sx1280_hal_wrapper.c</a>, <a class="el" href="sx1280__hal__wrapper_8h.html#ab7c31fdc0296e796f1f6a37d062243b6">sx1280_hal_wrapper.h</a></li>
+<li>sx1280_get_dio1()&#160;:&#160;<a class="el" href="sx1280__hal__wrapper_8h.html#ab7c31fdc0296e796f1f6a37d062243b6">sx1280_hal_wrapper.h</a>, <a class="el" href="sx1280__hal__wrapper_8c.html#ab7c31fdc0296e796f1f6a37d062243b6">sx1280_hal_wrapper.c</a></li>
 <li>sx1280_get_dio2()&#160;:&#160;<a class="el" href="sx1280__hal__wrapper_8h.html#ae931bcde8e5386d12c6b62325595d8d4">sx1280_hal_wrapper.h</a>, <a class="el" href="sx1280__hal__wrapper_8c.html#ae931bcde8e5386d12c6b62325595d8d4">sx1280_hal_wrapper.c</a></li>
-<li>sx1280_set_reset()&#160;:&#160;<a class="el" href="sx1280__hal__wrapper_8h.html#a417de486ecdb3e148edafbe2b1753ec1">sx1280_hal_wrapper.h</a>, <a class="el" href="sx1280__hal__wrapper_8c.html#a417de486ecdb3e148edafbe2b1753ec1">sx1280_hal_wrapper.c</a></li>
+<li>sx1280_recv_once_ceiling()&#160;:&#160;<a class="el" href="sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0">sx1280_task.c</a></li>
+<li>sx1280_set_reset()&#160;:&#160;<a class="el" href="sx1280__hal__wrapper_8c.html#a417de486ecdb3e148edafbe2b1753ec1">sx1280_hal_wrapper.c</a>, <a class="el" href="sx1280__hal__wrapper_8h.html#a417de486ecdb3e148edafbe2b1753ec1">sx1280_hal_wrapper.h</a></li>
 <li>sx1280_spi_read()&#160;:&#160;<a class="el" href="sx1280__hal__wrapper_8h.html#a877be19611dfb83a5d90953bc47fbb10">sx1280_hal_wrapper.h</a>, <a class="el" href="sx1280__hal__wrapper_8c.html#a877be19611dfb83a5d90953bc47fbb10">sx1280_hal_wrapper.c</a></li>
 <li>sx1280_spi_read_dma()&#160;:&#160;<a class="el" href="sx1280__hal__wrapper_8h.html#ab8478d2dce4bb3c35421a4bfe49957e9">sx1280_hal_wrapper.h</a>, <a class="el" href="sx1280__hal__wrapper_8c.html#ab8478d2dce4bb3c35421a4bfe49957e9">sx1280_hal_wrapper.c</a></li>
 <li>sx1280_spi_write()&#160;:&#160;<a class="el" href="sx1280__hal__wrapper_8h.html#a3c7a2ad21cb8a59c651d5fc2355df6b3">sx1280_hal_wrapper.h</a>, <a class="el" href="sx1280__hal__wrapper_8c.html#a3c7a2ad21cb8a59c651d5fc2355df6b3">sx1280_hal_wrapper.c</a></li>
@@ -112,8 +150,8 @@ $(function() {
 <li>SX1280ComputeRangingCorrectionPolynome()&#160;:&#160;<a class="el" href="sx1280_8h.html#a9465720bf867c399b2b17c7bd05f2f2d">sx1280.h</a></li>
 <li>SX1280DisableManualGain()&#160;:&#160;<a class="el" href="sx1280_8h.html#ab20bd70738864a9b138c4011737564f6">sx1280.h</a>, <a class="el" href="sx1280_8c.html#ab20bd70738864a9b138c4011737564f6">sx1280.c</a></li>
 <li>SX1280EnableManualGain()&#160;:&#160;<a class="el" href="sx1280_8h.html#a5750a2fb3ceb08f2452659d3d0f27bec">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a5750a2fb3ceb08f2452659d3d0f27bec">sx1280.c</a></li>
-<li>SX1280GetFirmwareVersion()&#160;:&#160;<a class="el" href="sx1280_8c.html#a5be9d8aa815c8b46abde691b3f4070ca">sx1280.c</a>, <a class="el" href="sx1280_8h.html#a5be9d8aa815c8b46abde691b3f4070ca">sx1280.h</a></li>
-<li>SX1280GetFrequencyError()&#160;:&#160;<a class="el" href="sx1280_8h.html#a83a3b438ff77c40e11276d8aa92ca48c">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a83a3b438ff77c40e11276d8aa92ca48c">sx1280.c</a></li>
+<li>SX1280GetFirmwareVersion()&#160;:&#160;<a class="el" href="sx1280_8h.html#a5be9d8aa815c8b46abde691b3f4070ca">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a5be9d8aa815c8b46abde691b3f4070ca">sx1280.c</a></li>
+<li>SX1280GetFrequencyError()&#160;:&#160;<a class="el" href="sx1280_8c.html#a83a3b438ff77c40e11276d8aa92ca48c">sx1280.c</a>, <a class="el" href="sx1280_8h.html#a83a3b438ff77c40e11276d8aa92ca48c">sx1280.h</a></li>
 <li>SX1280GetHexFileLineFields()&#160;:&#160;<a class="el" href="sx1280_8h.html#a9603f189daf79f11421995b67e8658da">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a9603f189daf79f11421995b67e8658da">sx1280.c</a></li>
 <li>SX1280GetIrqStatus()&#160;:&#160;<a class="el" href="sx1280_8h.html#a31c7f2ce5f6193072f71565fa1b1b1fc">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a31c7f2ce5f6193072f71565fa1b1b1fc">sx1280.c</a></li>
 <li>SX1280GetLoRaBandwidth()&#160;:&#160;<a class="el" href="sx1280_8h.html#aff34f516b7df452f5ac160459c69a6af">sx1280.h</a>, <a class="el" href="sx1280_8c.html#aff34f516b7df452f5ac160459c69a6af">sx1280.c</a></li>
@@ -131,10 +169,10 @@ $(function() {
 <li>SX1280HalGetDioStatus()&#160;:&#160;<a class="el" href="sx1280-hal_8h.html#addbc1b589fbc570ee4281ea5800f5c89">sx1280-hal.h</a>, <a class="el" href="sx1280-hal_8c.html#addbc1b589fbc570ee4281ea5800f5c89">sx1280-hal.c</a></li>
 <li>SX1280HalInit()&#160;:&#160;<a class="el" href="sx1280-hal_8h.html#a5d6637ee3fce18944e0dae57ca12995f">sx1280-hal.h</a>, <a class="el" href="sx1280-hal_8c.html#a5d6637ee3fce18944e0dae57ca12995f">sx1280-hal.c</a></li>
 <li>SX1280HalIoInit()&#160;:&#160;<a class="el" href="sx1280-hal_8h.html#a6cbc0ef9c15b41690670224338c2745e">sx1280-hal.h</a></li>
-<li>SX1280HalIoIrqInit()&#160;:&#160;<a class="el" href="sx1280-hal_8h.html#aceea5e604bb54817f0c8d38ebb554b27">sx1280-hal.h</a>, <a class="el" href="sx1280-hal_8c.html#aceea5e604bb54817f0c8d38ebb554b27">sx1280-hal.c</a></li>
-<li>SX1280HalReadBuffer()&#160;:&#160;<a class="el" href="sx1280-hal_8h.html#a92ac9625cd9b4efdb6facffe6fdaaa4b">sx1280-hal.h</a>, <a class="el" href="sx1280-hal_8c.html#a92ac9625cd9b4efdb6facffe6fdaaa4b">sx1280-hal.c</a></li>
+<li>SX1280HalIoIrqInit()&#160;:&#160;<a class="el" href="sx1280-hal_8c.html#aceea5e604bb54817f0c8d38ebb554b27">sx1280-hal.c</a>, <a class="el" href="sx1280-hal_8h.html#aceea5e604bb54817f0c8d38ebb554b27">sx1280-hal.h</a></li>
+<li>SX1280HalReadBuffer()&#160;:&#160;<a class="el" href="sx1280-hal_8c.html#a92ac9625cd9b4efdb6facffe6fdaaa4b">sx1280-hal.c</a>, <a class="el" href="sx1280-hal_8h.html#a92ac9625cd9b4efdb6facffe6fdaaa4b">sx1280-hal.h</a></li>
 <li>SX1280HalReadCommand()&#160;:&#160;<a class="el" href="sx1280-hal_8h.html#af8f6970d692baa122c62cd489c832809">sx1280-hal.h</a>, <a class="el" href="sx1280-hal_8c.html#abc1ed10f83057922610c0ef2b3893733">sx1280-hal.c</a></li>
-<li>SX1280HalReadRegister()&#160;:&#160;<a class="el" href="sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea">sx1280-hal.c</a>, <a class="el" href="sx1280-hal_8h.html#a524a5157b1dcf068aca1240dc6e10aea">sx1280-hal.h</a></li>
+<li>SX1280HalReadRegister()&#160;:&#160;<a class="el" href="sx1280-hal_8h.html#a524a5157b1dcf068aca1240dc6e10aea">sx1280-hal.h</a>, <a class="el" href="sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea">sx1280-hal.c</a></li>
 <li>SX1280HalReadRegisters()&#160;:&#160;<a class="el" href="sx1280-hal_8h.html#a6a9c356cd998a6f2dad05049941b5939">sx1280-hal.h</a>, <a class="el" href="sx1280-hal_8c.html#a6a9c356cd998a6f2dad05049941b5939">sx1280-hal.c</a></li>
 <li>SX1280HalReset()&#160;:&#160;<a class="el" href="sx1280-hal_8h.html#ad166767283bbb3d7a387ecf2f089cd23">sx1280-hal.h</a>, <a class="el" href="sx1280-hal_8c.html#ad166767283bbb3d7a387ecf2f089cd23">sx1280-hal.c</a></li>
 <li>SX1280HalWaitOnBusy()&#160;:&#160;<a class="el" href="sx1280-hal_8h.html#af63c987628865d85cf78fde47290858a">sx1280-hal.h</a>, <a class="el" href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a">sx1280-hal.c</a></li>
@@ -143,7 +181,7 @@ $(function() {
 <li>SX1280HalWriteCommand()&#160;:&#160;<a class="el" href="sx1280-hal_8h.html#aca9fd5ad0acf9be515d536b5a0f0b8c4">sx1280-hal.h</a>, <a class="el" href="sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284">sx1280-hal.c</a></li>
 <li>SX1280HalWriteRegister()&#160;:&#160;<a class="el" href="sx1280-hal_8h.html#a22d55eec45845b70b71327af666c9eb0">sx1280-hal.h</a>, <a class="el" href="sx1280-hal_8c.html#a22d55eec45845b70b71327af666c9eb0">sx1280-hal.c</a></li>
 <li>SX1280HalWriteRegisters()&#160;:&#160;<a class="el" href="sx1280-hal_8h.html#ae119d1f319bab7b61b23e04e52699ebc">sx1280-hal.h</a>, <a class="el" href="sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc">sx1280-hal.c</a></li>
-<li>SX1280Init()&#160;:&#160;<a class="el" href="sx1280_8c.html#ab12790b6acc261331b93caba77b310c3">sx1280.c</a>, <a class="el" href="sx1280_8h.html#ab12790b6acc261331b93caba77b310c3">sx1280.h</a></li>
+<li>SX1280Init()&#160;:&#160;<a class="el" href="sx1280_8h.html#ab12790b6acc261331b93caba77b310c3">sx1280.h</a>, <a class="el" href="sx1280_8c.html#ab12790b6acc261331b93caba77b310c3">sx1280.c</a></li>
 <li>SX1280OnDioIrq()&#160;:&#160;<a class="el" href="sx1280_8h.html#a4b390ccc0f9d28283afff36f11a94263">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a4b390ccc0f9d28283afff36f11a94263">sx1280.c</a></li>
 <li>SX1280ParseHexFileLine()&#160;:&#160;<a class="el" href="sx1280_8h.html#a8b0d063ad18415c950505c01d5939a25">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a8b0d063ad18415c950505c01d5939a25">sx1280.c</a></li>
 <li>SX1280ProcessIrqs()&#160;:&#160;<a class="el" href="sx1280_8h.html#af08aac82fe5e983a4671967275b5dab8">sx1280.h</a>, <a class="el" href="sx1280_8c.html#af08aac82fe5e983a4671967275b5dab8">sx1280.c</a></li>
@@ -157,11 +195,11 @@ $(function() {
 <li>SX1280SetBleAdvertizerAccessAddress()&#160;:&#160;<a class="el" href="sx1280_8h.html#a8d0b3e416ba586e139f3ff3947a341a8">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a8d0b3e416ba586e139f3ff3947a341a8">sx1280.c</a></li>
 <li>SX1280SetBufferBaseAddresses()&#160;:&#160;<a class="el" href="sx1280_8h.html#a3d4e8e360fd3ed31e993628b7435fd63">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a3d4e8e360fd3ed31e993628b7435fd63">sx1280.c</a></li>
 <li>SX1280SetCad()&#160;:&#160;<a class="el" href="sx1280_8h.html#abbf7da2bb4f27b6ed091eea8a659ed69">sx1280.h</a>, <a class="el" href="sx1280_8c.html#abbf7da2bb4f27b6ed091eea8a659ed69">sx1280.c</a></li>
-<li>SX1280SetCadParams()&#160;:&#160;<a class="el" href="sx1280_8c.html#a8fc5c164ec7c90e54fa36333df0cdce5">sx1280.c</a>, <a class="el" href="sx1280_8h.html#a8fc5c164ec7c90e54fa36333df0cdce5">sx1280.h</a></li>
+<li>SX1280SetCadParams()&#160;:&#160;<a class="el" href="sx1280_8h.html#a8fc5c164ec7c90e54fa36333df0cdce5">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a8fc5c164ec7c90e54fa36333df0cdce5">sx1280.c</a></li>
 <li>SX1280SetCrcPolynomial()&#160;:&#160;<a class="el" href="sx1280_8h.html#a1bb54a6a3f04a3c3280910eac39d07d0">sx1280.h</a>, <a class="el" href="sx1280_8c.html#ad4bd9b6cb13697e45346a9c3817bb1ef">sx1280.c</a></li>
 <li>SX1280SetCrcSeed()&#160;:&#160;<a class="el" href="sx1280_8h.html#ac801f2566ba572ac6a288adb7d55f85b">sx1280.h</a>, <a class="el" href="sx1280_8c.html#ac801f2566ba572ac6a288adb7d55f85b">sx1280.c</a></li>
 <li>SX1280SetDeviceRangingAddress()&#160;:&#160;<a class="el" href="sx1280_8h.html#aa5c52ba562ac2ec272975c3ed76e9b38">sx1280.h</a>, <a class="el" href="sx1280_8c.html#aa5c52ba562ac2ec272975c3ed76e9b38">sx1280.c</a></li>
-<li>SX1280SetDioIrqParams()&#160;:&#160;<a class="el" href="sx1280_8h.html#a9660cec41eed347d90d058fae6cb6fcb">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a9660cec41eed347d90d058fae6cb6fcb">sx1280.c</a></li>
+<li>SX1280SetDioIrqParams()&#160;:&#160;<a class="el" href="sx1280_8c.html#a9660cec41eed347d90d058fae6cb6fcb">sx1280.c</a>, <a class="el" href="sx1280_8h.html#a9660cec41eed347d90d058fae6cb6fcb">sx1280.h</a></li>
 <li>SX1280SetFs()&#160;:&#160;<a class="el" href="sx1280_8h.html#adfa5a2e84299fa8cbbef5f5e70f7f724">sx1280.h</a>, <a class="el" href="sx1280_8c.html#adfa5a2e84299fa8cbbef5f5e70f7f724">sx1280.c</a></li>
 <li>SX1280SetInterruptMode()&#160;:&#160;<a class="el" href="sx1280_8h.html#a01ccc77d25dc9175056165d79b9b3502">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a01ccc77d25dc9175056165d79b9b3502">sx1280.c</a></li>
 <li>SX1280SetLNAGainSetting()&#160;:&#160;<a class="el" href="sx1280_8h.html#ad347825b06ac5a8528c2cd8230640be5">sx1280.h</a>, <a class="el" href="sx1280_8c.html#ad347825b06ac5a8528c2cd8230640be5">sx1280.c</a></li>
@@ -172,7 +210,7 @@ $(function() {
 <li>SX1280SetPacketType()&#160;:&#160;<a class="el" href="sx1280_8h.html#a51ce51cce8dac5a81ed16da5d6350bb1">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a51ce51cce8dac5a81ed16da5d6350bb1">sx1280.c</a></li>
 <li>SX1280SetPayload()&#160;:&#160;<a class="el" href="sx1280_8h.html#afb492736cecfa999d056ac418b949ccf">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a52ef6145dd56f07591231dc6aed93231">sx1280.c</a></li>
 <li>SX1280SetPollingMode()&#160;:&#160;<a class="el" href="sx1280_8h.html#afa7c975cd55c78d0d67d5deb1ce8f861">sx1280.h</a>, <a class="el" href="sx1280_8c.html#afa7c975cd55c78d0d67d5deb1ce8f861">sx1280.c</a></li>
-<li>SX1280SetRangingCalibration()&#160;:&#160;<a class="el" href="sx1280_8c.html#a65893dd4a4968a2436a6575c62a17b6b">sx1280.c</a>, <a class="el" href="sx1280_8h.html#a65893dd4a4968a2436a6575c62a17b6b">sx1280.h</a></li>
+<li>SX1280SetRangingCalibration()&#160;:&#160;<a class="el" href="sx1280_8h.html#a65893dd4a4968a2436a6575c62a17b6b">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a65893dd4a4968a2436a6575c62a17b6b">sx1280.c</a></li>
 <li>SX1280SetRangingIdLength()&#160;:&#160;<a class="el" href="sx1280_8h.html#a6ec0596e20db056316d667e6fc48eee8">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a6ec0596e20db056316d667e6fc48eee8">sx1280.c</a></li>
 <li>SX1280SetRangingRequestAddress()&#160;:&#160;<a class="el" href="sx1280_8h.html#abb9f4cd97533b23b761205d16e4349cf">sx1280.h</a>, <a class="el" href="sx1280_8c.html#abb9f4cd97533b23b761205d16e4349cf">sx1280.c</a></li>
 <li>SX1280SetRangingRole()&#160;:&#160;<a class="el" href="sx1280_8h.html#a054708c6562732737571056e239285ac">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a054708c6562732737571056e239285ac">sx1280.c</a></li>
@@ -186,7 +224,7 @@ $(function() {
 <li>SX1280SetStandby()&#160;:&#160;<a class="el" href="sx1280_8h.html#a42e396d2ab06989b52e183378e71dee1">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a074d83ce6ba238f9af19b8bdbff61360">sx1280.c</a></li>
 <li>SX1280SetSyncWord()&#160;:&#160;<a class="el" href="sx1280_8h.html#a62396db5d9005980e27f483258a3e16b">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a62396db5d9005980e27f483258a3e16b">sx1280.c</a></li>
 <li>SX1280SetSyncWordErrorTolerance()&#160;:&#160;<a class="el" href="sx1280_8h.html#a4a94136daa138b3021e2e06f43a3806f">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a3d6b0585417c6ecb78be4ed9275e586c">sx1280.c</a></li>
-<li>SX1280SetTx()&#160;:&#160;<a class="el" href="sx1280_8c.html#aec1515be5729bc30af9d9803c3f14e54">sx1280.c</a>, <a class="el" href="sx1280_8h.html#aec1515be5729bc30af9d9803c3f14e54">sx1280.h</a></li>
+<li>SX1280SetTx()&#160;:&#160;<a class="el" href="sx1280_8h.html#aec1515be5729bc30af9d9803c3f14e54">sx1280.h</a>, <a class="el" href="sx1280_8c.html#aec1515be5729bc30af9d9803c3f14e54">sx1280.c</a></li>
 <li>SX1280SetTxContinuousPreamble()&#160;:&#160;<a class="el" href="sx1280_8h.html#a7ffa12faccfb445a786d3c98a1ff1bf2">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a7ffa12faccfb445a786d3c98a1ff1bf2">sx1280.c</a></li>
 <li>SX1280SetTxContinuousWave()&#160;:&#160;<a class="el" href="sx1280_8h.html#a8f1857114c7a4d9fe1b4611fbd5221b0">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a8f1857114c7a4d9fe1b4611fbd5221b0">sx1280.c</a></li>
 <li>SX1280SetTxParams()&#160;:&#160;<a class="el" href="sx1280_8h.html#a1c5345ef8b25e8092415fd50f53ffa24">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a1c5345ef8b25e8092415fd50f53ffa24">sx1280.c</a></li>
@@ -194,13 +232,14 @@ $(function() {
 <li>SX1280StopAutoTx()&#160;:&#160;<a class="el" href="sx1280_8h.html#a81a8bf9a1d3d0ff1c6dc1807c1cb4f29">sx1280.h</a>, <a class="el" href="sx1280_8c.html#a81a8bf9a1d3d0ff1c6dc1807c1cb4f29">sx1280.c</a></li>
 <li>sx1280TaskEntry()&#160;:&#160;<a class="el" href="sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a">sx1280_task.c</a></li>
 <li>SystemClock_Config()&#160;:&#160;<a class="el" href="main_8c.html#a70af21c671abfcc773614a9a4f63d920">main.c</a></li>
-<li>SystemCoreClockUpdate()&#160;:&#160;<a class="el" href="group__STM32H5xx__System__Private__Functions.html#gae0c36a9591fe6e9c45ecb21a794f0f0f">system_stm32h5xx.c</a></li>
-<li>SystemInit()&#160;:&#160;<a class="el" href="group__STM32H5xx__System__Private__Functions.html#ga93f514700ccf00d08dbdcff7f1224eb2">system_stm32h5xx.c</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

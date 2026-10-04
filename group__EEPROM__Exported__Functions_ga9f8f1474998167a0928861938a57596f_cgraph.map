@@ -1,0 +1,9 @@
+<map id="EE_Format" name="EE_Format">
+<area shape="rect" id="node1" title="Erases all flash pages of eeprom emulation, and set first page header as ACTIVE." alt="" coords="5,104,96,129"/>
+<area shape="rect" id="node2" href="$group__EEPROM__Private__Functions.html#ga4375dd5bf83e259a3481a83b5993a1a3" title="Flush the caches if needed to keep coherency when the flash content is modified." alt="" coords="169,5,285,31"/>
+<area shape="rect" id="node3" href="$group__EEPROM__Private__Functions.html#ga9d827241e39d1cfc7a06a70a25cd8eaa" title="Check if the configuration is 128&#45;bits bank or 2*64&#45;bits bank." alt="" coords="149,55,304,80"/>
+<area shape="rect" id="node4" href="$group__EEPROM__Private__Functions.html#gaf950461e14bae3fd51f89e9dd59db26b" title="Erase a page in polling mode." alt="" coords="173,104,281,129"/>
+<area shape="rect" id="node5" href="$group__EEPROM__Private__Functions.html#gab2cc682a7689c76d4188bda3af6e9b0f" title="Set page state in page header." alt="" coords="173,153,281,179"/>
+<area shape="rect" id="node7" href="$group__EEPROM__Private__Functions.html#gacb9d63489e090b5adc55b3c4e587e083" title="Verify if specified page is fully erased." alt="" coords="144,203,309,228"/>
+<area shape="rect" id="node6" href="$group__EEPROM__Private__Functions.html#gaaf190b387699ec8d894cfe8449522084" title="Write a quad word at the given address in Flash (function is called FI_WriteDoubleWord to respect leg..." alt="" coords="357,153,512,179"/>
+</map>

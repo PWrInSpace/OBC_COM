@@ -1,0 +1,4 @@
+<map id="SX1280ProcessIrqs" name="SX1280ProcessIrqs">
+<area shape="rect" id="node1" title="Process the analysis of radio IRQs and calls callback functions depending on radio state." alt="" coords="181,5,327,31"/>
+<area shape="rect" id="node2" href="$sx1280_8c.html#a4b390ccc0f9d28283afff36f11a94263" title="DIOs interrupt callback." alt="" coords="5,5,133,31"/>
+</map>

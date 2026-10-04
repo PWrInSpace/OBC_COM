@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('spi__callbacks_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,11 +89,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_5cec92fd47c0900910bbc2480fdfd7be.html">wrappers</a></li><li class="navelem"><a class="el" href="dir_96c33e86f75da1fafd4983034924b6f0.html">spi</a></li><li class="navelem"><a class="el" href="dir_f7d9de7b7cbaebec72fab52eb5a0c8a3.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -85,38 +101,14 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for spi_callbacks.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="spi__callbacks_8h__incl.png" border="0" usemap="#awrappers_2spi_2include_2spi__callbacks_8h" alt=""/></div>
-<map name="awrappers_2spi_2include_2spi__callbacks_8h" id="awrappers_2spi_2include_2spi__callbacks_8h">
-<area shape="rect" title=" " alt="" coords="1065,5,1221,45"/>
-<area shape="rect" title=" " alt="" coords="1007,93,1077,119"/>
-<area shape="rect" title=" " alt="" coords="1102,93,1185,119"/>
-<area shape="rect" href="spi_8h.html" title="This file contains all the function prototypes for the spi.c file." alt="" coords="1209,93,1262,119"/>
-<area shape="rect" href="main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="1202,167,1269,192"/>
-<area shape="rect" title=" " alt="" coords="5,240,140,265"/>
-<area shape="rect" title=" " alt="" coords="165,240,317,265"/>
-<area shape="rect" title=" " alt="" coords="341,240,511,265"/>
-<area shape="rect" title=" " alt="" coords="536,240,684,265"/>
-<area shape="rect" title=" " alt="" coords="708,240,867,265"/>
-<area shape="rect" title=" " alt="" coords="891,240,1049,265"/>
-<area shape="rect" title=" " alt="" coords="1073,240,1225,265"/>
-<area shape="rect" title=" " alt="" coords="1249,240,1397,265"/>
-<area shape="rect" title=" " alt="" coords="1421,240,1599,265"/>
-<area shape="rect" title=" " alt="" coords="1623,240,1781,265"/>
-<area shape="rect" title=" " alt="" coords="1805,240,1959,265"/>
-<area shape="rect" title=" " alt="" coords="1983,240,2079,265"/>
-<area shape="rect" title=" " alt="" coords="2103,240,2178,265"/>
-<area shape="rect" title=" " alt="" coords="2203,240,2327,265"/>
-</map>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="spi__callbacks_8h__incl.svg" width="100%" height="503"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="spi__callbacks_8h__dep__incl.png" border="0" usemap="#awrappers_2spi_2include_2spi__callbacks_8hdep" alt=""/></div>
-<map name="awrappers_2spi_2include_2spi__callbacks_8hdep" id="awrappers_2spi_2include_2spi__callbacks_8hdep">
-<area shape="rect" title=" " alt="" coords="93,5,249,45"/>
-<area shape="rect" href="lora__config_8c.html" title=" " alt="" coords="5,101,160,126"/>
-<area shape="rect" href="spi__callbacks_8c.html" title=" " alt="" coords="185,93,335,133"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="spi__callbacks_8h__dep__incl.svg" width="342" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="spi__callbacks_8h_source.html">Go to the source code of this file.</a></p>
@@ -147,6 +139,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="spi__callbacks_8c_source.html#l00035">35</a> of file <a class="el" href="spi__callbacks_8c_source.html">spi_callbacks.c</a>.</p>
+
+<p class="reference">References <a class="el" href="main_8h_source.html#l00129">SX1280_CS_GPIO_Port</a>, <a class="el" href="main_8h_source.html#l00128">SX1280_CS_Pin</a>, and <a class="el" href="spi__callbacks_8c_source.html#l00008">sx1280_spi_sem</a>.</p>
+
 </div>
 </div>
 <a id="a3df7021fe24cf874f8b1eec5bd5f4cb3" name="a3df7021fe24cf874f8b1eec5bd5f4cb3"></a>
@@ -164,6 +160,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="spi__callbacks_8c_source.html#l00026">26</a> of file <a class="el" href="spi__callbacks_8c_source.html">spi_callbacks.c</a>.</p>
+
+<p class="reference">References <a class="el" href="main_8h_source.html#l00129">SX1280_CS_GPIO_Port</a>, <a class="el" href="main_8h_source.html#l00128">SX1280_CS_Pin</a>, and <a class="el" href="spi__callbacks_8c_source.html#l00008">sx1280_spi_sem</a>.</p>
 
 </div>
 </div>
@@ -183,12 +183,20 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="spi__callbacks_8c_source.html#l00017">17</a> of file <a class="el" href="spi__callbacks_8c_source.html">spi_callbacks.c</a>.</p>
+
+<p class="reference">References <a class="el" href="main_8h_source.html#l00129">SX1280_CS_GPIO_Port</a>, <a class="el" href="main_8h_source.html#l00128">SX1280_CS_Pin</a>, and <a class="el" href="spi__callbacks_8c_source.html#l00008">sx1280_spi_sem</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_5cec92fd47c0900910bbc2480fdfd7be.html">wrappers</a></li><li class="navelem"><a class="el" href="dir_96c33e86f75da1fafd4983034924b6f0.html">spi</a></li><li class="navelem"><a class="el" href="dir_f7d9de7b7cbaebec72fab52eb5a0c8a3.html">include</a></li><li class="navelem"><a class="el" href="spi__callbacks_8h.html">spi_callbacks.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

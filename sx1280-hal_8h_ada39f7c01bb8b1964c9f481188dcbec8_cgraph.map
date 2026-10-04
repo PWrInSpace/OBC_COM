@@ -1,0 +1,4 @@
+<map id="SX1280HalWakeup" name="SX1280HalWakeup">
+<area shape="rect" id="node1" title="Wakes up the radio." alt="" coords="5,5,149,31"/>
+<area shape="rect" id="node2" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="197,5,369,31"/>
+</map>

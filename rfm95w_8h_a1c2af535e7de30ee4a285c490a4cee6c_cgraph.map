@@ -1,0 +1,6 @@
+<map id="rfm95_receive_packet" name="rfm95_receive_packet">
+<area shape="rect" id="node1" title="Read a received packet." alt="" coords="5,56,172,81"/>
+<area shape="rect" id="node2" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="237,5,329,31"/>
+<area shape="rect" id="node3" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="393,31,523,56"/>
+<area shape="rect" id="node4" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="220,107,345,132"/>
+</map>

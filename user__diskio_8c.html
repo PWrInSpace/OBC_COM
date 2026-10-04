@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('user__diskio_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,11 +89,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
@@ -87,18 +103,12 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for user_diskio.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="user__diskio_8c__incl.png" border="0" usemap="#aCore_2Src_2user__diskio_8c" alt=""/></div>
-<map name="aCore_2Src_2user__diskio_8c" id="aCore_2Src_2user__diskio_8c">
-<area shape="rect" title=" " alt="" coords="93,5,258,31"/>
-<area shape="rect" href="user__diskio_8h.html" title=" " alt="" coords="5,79,113,104"/>
-<area shape="rect" href="logger_8h.html" title=" " alt="" coords="138,79,213,104"/>
-<area shape="rect" title=" " alt="" coords="237,79,372,104"/>
-<area shape="rect" title=" " alt="" coords="9,152,110,177"/>
-<area shape="rect" title=" " alt="" coords="134,152,217,177"/>
-<area shape="rect" title=" " alt="" coords="241,152,312,177"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="user__diskio_8c__incl.svg" width="378" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
-</div><table class="memberdecls">
+</div>
+</div>
+<p><a href="user__diskio_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a1dd0d2b46dce637878416d489d2ddde2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user__diskio_8c.html#a1dd0d2b46dce637878416d489d2ddde2">_USE_WRITE</a>&#160;&#160;&#160;1</td></tr>
@@ -116,10 +126,6 @@ Functions</h2></td></tr>
 <tr class="separator:acad62f0921dab790286ab9d9fb15d968"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88796a0aa72bbd4403b90faf88d36d8d"><td class="memItemLeft" align="right" valign="top">DRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user__diskio_8c.html#a88796a0aa72bbd4403b90faf88d36d8d">USER_read</a> (BYTE pdrv, BYTE *buff, DWORD sector, UINT count)</td></tr>
 <tr class="separator:a88796a0aa72bbd4403b90faf88d36d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89059a7752ad15b7bb4344bf8618df4d"><td class="memItemLeft" align="right" valign="top">DRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user__diskio_8c.html#a89059a7752ad15b7bb4344bf8618df4d">USER_write</a> (BYTE pdrv, const BYTE *buff, DWORD sector, UINT count)</td></tr>
-<tr class="separator:a89059a7752ad15b7bb4344bf8618df4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af357e958756dde7402febce4af628c31"><td class="memItemLeft" align="right" valign="top">DRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user__diskio_8c.html#af357e958756dde7402febce4af628c31">USER_ioctl</a> (BYTE pdrv, BYTE cmd, void *buff)</td></tr>
-<tr class="separator:af357e958756dde7402febce4af628c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4353c16b6d5c8bd627871a468037e7ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user__diskio_8c.html#a4353c16b6d5c8bd627871a468037e7ee">USER_diskio_invalidate</a> (void)</td></tr>
 <tr class="separator:a4353c16b6d5c8bd627871a468037e7ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -129,6 +135,8 @@ Variables</h2></td></tr>
 <tr class="separator:ad0b867cf724e111d6329c1eb91f3b30b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f7b47d38580804ca8176a57cc78cb89"><td class="memItemLeft" align="right" valign="top">Disk_drvTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user__diskio_8c.html#a8f7b47d38580804ca8176a57cc78cb89">disk</a></td></tr>
 <tr class="separator:a8f7b47d38580804ca8176a57cc78cb89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a014a1e17b21e3c0b80fe0afc0106976f"><td class="memItemLeft" align="right" valign="top">static volatile DSTATUS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user__diskio_8c.html#a014a1e17b21e3c0b80fe0afc0106976f">Stat</a> = STA_NOINIT</td></tr>
+<tr class="separator:a014a1e17b21e3c0b80fe0afc0106976f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07c50f7d5577591438e4585f13994d49"><td class="memItemLeft" align="right" valign="top">Diskio_drvTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user__diskio_8c.html#a07c50f7d5577591438e4585f13994d49">USER_Driver</a></td></tr>
 <tr class="separator:a07c50f7d5577591438e4585f13994d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -145,6 +153,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="user__diskio_8c_source.html#l00006">6</a> of file <a class="el" href="user__diskio_8c_source.html">user_diskio.c</a>.</p>
+
 </div>
 </div>
 <a id="a1dd0d2b46dce637878416d489d2ddde2" name="a1dd0d2b46dce637878416d489d2ddde2"></a>
@@ -159,6 +169,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="user__diskio_8c_source.html#l00005">5</a> of file <a class="el" href="user__diskio_8c_source.html">user_diskio.c</a>.</p>
+
 </div>
 </div>
 <a id="af66ac3f06e9c0dc8eb85e9a62c0247dc" name="af66ac3f06e9c0dc8eb85e9a62c0247dc"></a>
@@ -172,6 +184,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="user__diskio_8c_source.html#l00012">12</a> of file <a class="el" href="user__diskio_8c_source.html">user_diskio.c</a>.</p>
 
 </div>
 </div>
@@ -192,6 +206,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="user__diskio_8c_source.html#l00051">51</a> of file <a class="el" href="user__diskio_8c_source.html">user_diskio.c</a>.</p>
+
+<p class="reference">References <a class="el" href="user__diskio_8c.html#a8f7b47d38580804ca8176a57cc78cb89">disk</a>, and <a class="el" href="user__diskio_8c_source.html#l00010">Stat</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00278">sd_task_thread()</a>, <a class="el" href="sd__task_8c_source.html#l00134">sd_unmount()</a>, and <a class="el" href="sd__task_8c_source.html#l00315">sd_unmount_removed()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="user__diskio_8c_a4353c16b6d5c8bd627871a468037e7ee_icgraph.svg" width="100%" height="392"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a525eefa6ed9c9fd5eb6194d78e120588" name="a525eefa6ed9c9fd5eb6194d78e120588"></a>
@@ -210,39 +236,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="af357e958756dde7402febce4af628c31" name="af357e958756dde7402febce4af628c31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af357e958756dde7402febce4af628c31">&#9670;&#160;</a></span>USER_ioctl()</h2>
+<p class="definition">Definition at line <a class="el" href="user__diskio_8c_source.html#l00034">34</a> of file <a class="el" href="user__diskio_8c_source.html">user_diskio.c</a>.</p>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DRESULT USER_ioctl </td>
-          <td>(</td>
-          <td class="paramtype">BYTE&#160;</td>
-          <td class="paramname"><em>pdrv</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">BYTE&#160;</td>
-          <td class="paramname"><em>cmd</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>buff</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p class="reference">References <a class="el" href="sdmmc_8c_source.html#l00027">hsd1</a>, <a class="el" href="logger_8h_source.html#l00042">LOG_INFO</a>, and <a class="el" href="user__diskio_8c_source.html#l00010">Stat</a>.</p>
 
 </div>
 </div>
@@ -284,6 +280,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="user__diskio_8c_source.html#l00058">58</a> of file <a class="el" href="user__diskio_8c_source.html">user_diskio.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sdmmc_8c_source.html#l00027">hsd1</a>, <a class="el" href="logger_8h_source.html#l00044">LOG_ERROR</a>, and <a class="el" href="user__diskio_8c_source.html#l00012">SD_IO_TIMEOUT_MS</a>.</p>
+
 </div>
 </div>
 <a id="acad62f0921dab790286ab9d9fb15d968" name="acad62f0921dab790286ab9d9fb15d968"></a>
@@ -302,45 +302,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a89059a7752ad15b7bb4344bf8618df4d" name="a89059a7752ad15b7bb4344bf8618df4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89059a7752ad15b7bb4344bf8618df4d">&#9670;&#160;</a></span>USER_write()</h2>
+<p class="definition">Definition at line <a class="el" href="user__diskio_8c_source.html#l00049">49</a> of file <a class="el" href="user__diskio_8c_source.html">user_diskio.c</a>.</p>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DRESULT USER_write </td>
-          <td>(</td>
-          <td class="paramtype">BYTE&#160;</td>
-          <td class="paramname"><em>pdrv</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const BYTE *&#160;</td>
-          <td class="paramname"><em>buff</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">DWORD&#160;</td>
-          <td class="paramname"><em>sector</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">UINT&#160;</td>
-          <td class="paramname"><em>count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p class="reference">References <a class="el" href="user__diskio_8c_source.html#l00010">Stat</a>.</p>
 
 </div>
 </div>
@@ -365,6 +329,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="user__diskio_8c_source.html#l00051">USER_diskio_invalidate()</a>.</p>
+
 </div>
 </div>
 <a id="ad0b867cf724e111d6329c1eb91f3b30b" name="ad0b867cf724e111d6329c1eb91f3b30b"></a>
@@ -387,6 +353,36 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="sdmmc_8c_source.html#l00027">27</a> of file <a class="el" href="sdmmc_8c_source.html">sdmmc.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sdmmc_8c_source.html#l00031">MX_SDMMC1_SD_Init()</a>, <a class="el" href="user__diskio_8c_source.html#l00034">USER_initialize()</a>, and <a class="el" href="user__diskio_8c_source.html#l00058">USER_read()</a>.</p>
+
+</div>
+</div>
+<a id="a014a1e17b21e3c0b80fe0afc0106976f" name="a014a1e17b21e3c0b80fe0afc0106976f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a014a1e17b21e3c0b80fe0afc0106976f">&#9670;&#160;</a></span>Stat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile DSTATUS Stat = STA_NOINIT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="user__diskio_8c_source.html#l00010">10</a> of file <a class="el" href="user__diskio_8c_source.html">user_diskio.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="user__diskio_8c_source.html#l00051">USER_diskio_invalidate()</a>, <a class="el" href="user__diskio_8c_source.html#l00034">USER_initialize()</a>, and <a class="el" href="user__diskio_8c_source.html#l00049">USER_status()</a>.</p>
+
 </div>
 </div>
 <a id="a07c50f7d5577591438e4585f13994d49" name="a07c50f7d5577591438e4585f13994d49"></a>
@@ -403,24 +399,30 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">    <a class="code hl_function" href="user__diskio_8c.html#a525eefa6ed9c9fd5eb6194d78e120588">USER_initialize</a>, <a class="code hl_function" href="user__diskio_8c.html#acad62f0921dab790286ab9d9fb15d968">USER_status</a>, <a class="code hl_function" href="user__diskio_8c.html#a88796a0aa72bbd4403b90faf88d36d8d">USER_read</a>,</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="user__diskio_8c.html#a89059a7752ad15b7bb4344bf8618df4d">USER_write</a>,</div>
 <div class="line"> </div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="user__diskio_8c.html#af357e958756dde7402febce4af628c31">USER_ioctl</a>,</div>
+<div class="line"> </div>
+<div class="line"> </div>
 <div class="line"> </div>
 <div class="line">}</div>
-<div class="ttc" id="auser__diskio_8c_html_a525eefa6ed9c9fd5eb6194d78e120588"><div class="ttname"><a href="user__diskio_8c.html#a525eefa6ed9c9fd5eb6194d78e120588">USER_initialize</a></div><div class="ttdeci">DSTATUS USER_initialize(BYTE pdrv)</div><div class="ttdef"><b>Definition:</b> user_diskio.c:34</div></div>
-<div class="ttc" id="auser__diskio_8c_html_a88796a0aa72bbd4403b90faf88d36d8d"><div class="ttname"><a href="user__diskio_8c.html#a88796a0aa72bbd4403b90faf88d36d8d">USER_read</a></div><div class="ttdeci">DRESULT USER_read(BYTE pdrv, BYTE *buff, DWORD sector, UINT count)</div><div class="ttdef"><b>Definition:</b> user_diskio.c:58</div></div>
-<div class="ttc" id="auser__diskio_8c_html_a89059a7752ad15b7bb4344bf8618df4d"><div class="ttname"><a href="user__diskio_8c.html#a89059a7752ad15b7bb4344bf8618df4d">USER_write</a></div><div class="ttdeci">DRESULT USER_write(BYTE pdrv, const BYTE *buff, DWORD sector, UINT count)</div><div class="ttdef"><b>Definition:</b> user_diskio.c:75</div></div>
-<div class="ttc" id="auser__diskio_8c_html_acad62f0921dab790286ab9d9fb15d968"><div class="ttname"><a href="user__diskio_8c.html#acad62f0921dab790286ab9d9fb15d968">USER_status</a></div><div class="ttdeci">DSTATUS USER_status(BYTE pdrv)</div><div class="ttdef"><b>Definition:</b> user_diskio.c:49</div></div>
-<div class="ttc" id="auser__diskio_8c_html_af357e958756dde7402febce4af628c31"><div class="ttname"><a href="user__diskio_8c.html#af357e958756dde7402febce4af628c31">USER_ioctl</a></div><div class="ttdeci">DRESULT USER_ioctl(BYTE pdrv, BYTE cmd, void *buff)</div><div class="ttdef"><b>Definition:</b> user_diskio.c:91</div></div>
+<div class="ttc" id="auser__diskio_8c_html_a525eefa6ed9c9fd5eb6194d78e120588"><div class="ttname"><a href="user__diskio_8c.html#a525eefa6ed9c9fd5eb6194d78e120588">USER_initialize</a></div><div class="ttdeci">DSTATUS USER_initialize(BYTE pdrv)</div><div class="ttdef"><b>Definition:</b> <a href="user__diskio_8c_source.html#l00034">user_diskio.c:34</a></div></div>
+<div class="ttc" id="auser__diskio_8c_html_a88796a0aa72bbd4403b90faf88d36d8d"><div class="ttname"><a href="user__diskio_8c.html#a88796a0aa72bbd4403b90faf88d36d8d">USER_read</a></div><div class="ttdeci">DRESULT USER_read(BYTE pdrv, BYTE *buff, DWORD sector, UINT count)</div><div class="ttdef"><b>Definition:</b> <a href="user__diskio_8c_source.html#l00058">user_diskio.c:58</a></div></div>
+<div class="ttc" id="auser__diskio_8c_html_acad62f0921dab790286ab9d9fb15d968"><div class="ttname"><a href="user__diskio_8c.html#acad62f0921dab790286ab9d9fb15d968">USER_status</a></div><div class="ttdeci">DSTATUS USER_status(BYTE pdrv)</div><div class="ttdef"><b>Definition:</b> <a href="user__diskio_8c_source.html#l00049">user_diskio.c:49</a></div></div>
 </div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="user__diskio_8c_source.html#l00024">24</a> of file <a class="el" href="user__diskio_8c_source.html">user_diskio.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li><li class="navelem"><a class="el" href="user__diskio_8c.html">user_diskio.c</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

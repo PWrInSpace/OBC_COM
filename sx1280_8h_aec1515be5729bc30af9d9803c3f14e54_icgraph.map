@@ -1,0 +1,5 @@
+<map id="SX1280SetTx" name="SX1280SetTx">
+<area shape="rect" id="node1" title="Sets the radio in transmission mode." alt="" coords="367,5,475,31"/>
+<area shape="rect" id="node2" href="$sx1280_8c.html#a6e0b7882ef75caed036360ffbea723d2" title="Sends a payload." alt="" coords="164,5,319,31"/>
+<area shape="rect" id="node3" href="$sx1280__task_8c.html#aa3e5f314d579c8192dcfb785648bca96" title=" " alt="" coords="5,5,116,31"/>
+</map>

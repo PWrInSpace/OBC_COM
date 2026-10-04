@@ -1,0 +1,5 @@
+<map id="SystemClock_Config" name="SystemClock_Config">
+<area shape="rect" id="node1" title="System Clock Configuration." alt="" coords="5,31,160,56"/>
+<area shape="rect" id="node2" href="$group__EEPROM__Emulation.html#gad4e07955fadfeb416e9620ddb42f8fe9" title="This function is executed in case of error occurrence." alt="" coords="208,5,319,31"/>
+<area shape="rect" id="node3" href="$stm32h5xx__hal__timebase__tim_8c.html#a879cdb21ef051eb81ec51c18147397d5" title="This function configures the TIM6 as a time base source." alt="" coords="212,55,315,80"/>
+</map>

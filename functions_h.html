@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('functions_h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -74,122 +94,26 @@ $(function() {
 
 <h3><a id="index_h" name="index_h"></a>- h -</h3><ul>
 <li>hAcc&#160;:&#160;<a class="el" href="structGNSS__StateHandle.html#a9ae34c1731c88ffbdbbbf908e341f1b8">GNSS_StateHandle</a></li>
-<li>haint&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#af05d5f87cf6ed5e9418cba6e4203b15e">dwc2_regs_t</a></li>
-<li>haintmsk&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a53155e56112e147eb0ccfd09c15b5928">dwc2_regs_t</a></li>
-<li>halted&#160;:&#160;<a class="el" href="structehci__qtd__t.html#aa13f83b225547723bb3a306a63a53772">ehci_qtd_t</a>, <a class="el" href="unionohci__ed__word2__t.html#a7a3b0568376ba2817bcac36c1f1bbeb5">ohci_ed_word2_t</a></li>
-<li>handle_call&#160;:&#160;<a class="el" href="group__ClassDriver__CDC.html#ga4b036fc380d9d6f4e56ca669c1ef0335">TU_ATTR_PACKED</a></li>
 <li>handler&#160;:&#160;<a class="el" href="structCommandMap__t.html#ae6afcd7bd2dc40a8cbd30643e25c1d51">CommandMap_t</a></li>
-<li>hat&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#afc7db7fb23671990522be322b21ffce4">TU_ATTR_PACKED</a></li>
-<li>hb_rx_en&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a25c94b2bbea4a5d5de87bce5d1b8794f">TU_ATTR_PACKED</a></li>
-<li>hb_tx_en&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a47294c126bbd5311cbd763ecb0daf052">TU_ATTR_PACKED</a></li>
-<li>hbst_len&#160;:&#160;<a class="el" href="structdwc2__gahbcfg__t_1_1TU__ATTR__PACKED.html#a5feff3085436ec2a94b89766844b784c">dwc2_gahbcfg_t::TU_ATTR_PACKED</a></li>
-<li>hc_functional_state&#160;:&#160;<a class="el" href="structohci__registers__t.html#ad0640f9d2a71fc8c3f4db6ae7a4de0a6">ohci_registers_t</a></li>
-<li>hc_halted&#160;:&#160;<a class="el" href="structehci__registers__t.html#a9981adb544611207fe43391ce3f667ab">ehci_registers_t</a></li>
-<li>hcca&#160;:&#160;<a class="el" href="structohci__registers__t.html#ac032f8d21d514c4ca4e4b54841a285b1">ohci_registers_t</a></li>
-<li>hcchar&#160;:&#160;<a class="el" href="structdwc2__channel__t.html#af3ad01bea2f46081a03efd5847d70fde">dwc2_channel_t</a></li>
-<li>HCCPARAMS&#160;:&#160;<a class="el" href="structci__hs__regs__t.html#aa35892952d74cdf8fafd5441f31292d3">ci_hs_regs_t</a></li>
-<li>hccparams&#160;:&#160;<a class="el" href="structehci__cap__registers__t.html#abaf10f1a93238a8bd02c00dfb6aaa218">ehci_cap_registers_t</a></li>
-<li>hccparams_bm&#160;:&#160;<a class="el" href="structehci__cap__registers__t.html#aef8bca7399b9778bd2d7a9f1db25dd72">ehci_cap_registers_t</a></li>
-<li>hcdma&#160;:&#160;<a class="el" href="structdwc2__channel__t.html#ae7af7bf7e551bb9fd5e0bcbca1d49af9">dwc2_channel_t</a></li>
-<li>hcdmab&#160;:&#160;<a class="el" href="structdwc2__channel__t.html#a84d048de2a4b2e79195968f78c7b7bea">dwc2_channel_t</a></li>
-<li>hcfg&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a071795d30d76834ebcaf03ff1a5ad2c1">dwc2_regs_t</a></li>
-<li>hcint&#160;:&#160;<a class="el" href="structdwc2__channel__t.html#a159ec555e8f30c2b5c1136f733b5846f">dwc2_channel_t</a></li>
-<li>hcintmsk&#160;:&#160;<a class="el" href="structdwc2__channel__t.html#ab16a252b16e20e1d24754e35a41f86d7">dwc2_channel_t</a></li>
-<li>HCIVERSION&#160;:&#160;<a class="el" href="structci__hs__regs__t.html#aecca4850534123c3174d1973e26071b9">ci_hs_regs_t</a></li>
-<li>hciversion&#160;:&#160;<a class="el" href="structehci__cap__registers__t.html#acdec864b5ea18c1dffc6e995391e1dfe">ehci_cap_registers_t</a></li>
-<li>hcsp_portroute&#160;:&#160;<a class="el" href="structehci__cap__registers__t.html#a9f979aa0ec2f9273789b08453abffff0">ehci_cap_registers_t</a></li>
-<li>HCSPARAMS&#160;:&#160;<a class="el" href="structci__hs__regs__t.html#aa77f3c6d939eae8e9b6564bdb8676ce4">ci_hs_regs_t</a></li>
-<li>hcsparams&#160;:&#160;<a class="el" href="structehci__cap__registers__t.html#aebce4f2a8a76c463408b46b46af10234">ehci_cap_registers_t</a></li>
-<li>hcsparams_bm&#160;:&#160;<a class="el" href="structehci__cap__registers__t.html#a38c049cea8be9eeec422e78cfbe4d11d">ehci_cap_registers_t</a></li>
-<li>hcsplt&#160;:&#160;<a class="el" href="structdwc2__channel__t.html#a42b0e299eee526ad2e0669bd684c31ea">dwc2_channel_t</a></li>
-<li>hctsiz&#160;:&#160;<a class="el" href="structdwc2__channel__t.html#a959187f115be1ec82afc5e0ba608a3ea">dwc2_channel_t</a></li>
 <li>head&#160;:&#160;<a class="el" href="structlora__tx__queue__t.html#a14e4ea4d21d12af9c4315993be85166e">lora_tx_queue_t</a></li>
-<li>header&#160;:&#160;<a class="el" href="structncm__notify__t.html#ad784df38ca58c718a091e6be53317c61">ncm_notify_t</a>, <a class="el" href="structTU__ATTR__PACKED.html#ab1acf148c96a7f1478d2b48005b2255b">TU_ATTR_PACKED</a></li>
 <li>HeaderReceived&#160;:&#160;<a class="el" href="structPacketStatus__t.html#a0d293062177346802ff4c7de47a53a55">PacketStatus_t</a></li>
 <li>HeaderType&#160;:&#160;<a class="el" href="structPacketParams__t.html#aa8bad4d4e0b2fedea70695db619fcfe0">PacketParams_t</a></li>
 <li>HeaderValid&#160;:&#160;<a class="el" href="structRxCounter__t.html#aedc5ba6e8bbdbebd882b42674e0cc3c7">RxCounter_t</a></li>
 <li>headMot&#160;:&#160;<a class="el" href="structGNSS__StateHandle.html#a4e969010eebc8ddd78ea5373960ca2f6">GNSS_StateHandle</a></li>
 <li>height&#160;:&#160;<a class="el" href="structGNSS__StateHandle.html#a9181fdf0504a49e82b864a243e403847">GNSS_StateHandle</a></li>
 <li>help&#160;:&#160;<a class="el" href="structCommandMap__t.html#a5f8d3fcaf1d9f6139a047c7be1126713">CommandMap_t</a></li>
-<li>hfir&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a17e11534985e36cc7548a510ace8f7b9">dwc2_regs_t</a></li>
-<li>hflbaddr&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a0d2c67f01baf24baa74f3d2dcd23a2af">dwc2_regs_t</a></li>
-<li>hfnum&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a46e23580c4a9a1c8b8cc6e34d322c365">dwc2_regs_t</a></li>
-<li>hibernation&#160;:&#160;<a class="el" href="structdwc2__ghwcfg4__t_1_1TU__ATTR__PACKED.html#a77d9edde6f75c2eff7ca794acc33d89d">dwc2_ghwcfg4_t::TU_ATTR_PACKED</a></li>
-<li>hierarchical_support&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#ae48e5f7851029335a6d6ed8e49e4f801">TU_ATTR_PACKED</a></li>
-<li>high_speed&#160;:&#160;<a class="el" href="structhub__port__status__response__t_1_1TU__ATTR__PACKED_1_1TU__ATTR__PACKED.html#a28eb295145348b1a604dbc97d4626e05">hub_port_status_response_t::TU_ATTR_PACKED::TU_ATTR_PACKED</a></li>
-<li>highspeed_en&#160;:&#160;<a class="el" href="structmusb__regs__t.html#ae96a1fccb08360b4f9a977da98b50010">musb_regs_t</a></li>
-<li>highspeed_mode&#160;:&#160;<a class="el" href="structmusb__regs__t.html#aebbb56c1f45be2c3be70f46c066751a8">musb_regs_t</a></li>
-<li>Hint&#160;:&#160;<a class="el" href="structTU__ATTR__PACKED.html#a41307023c53a60b140152013a396a8e4">TU_ATTR_PACKED</a></li>
-<li>HIRD&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#aa1f466f4b3bf5b7b1303072daacc3352">_ccrx_evenaccess</a></li>
-<li>HIRDMON&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a3bac62104cea5f73f7acdf0083ac0150">_ccrx_evenaccess</a></li>
-<li>HIRDTHR&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ad47fb6bde2ed939d324779522b47ab9d">_ccrx_evenaccess</a></li>
-<li>HL1CTRL1&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a19c8f1aa980aaa1b695244b01434ce61">_ccrx_evenaccess</a></li>
-<li>HL1CTRL1_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ae520d22e9a3f0a9ac6c57a06c5c9732f">_ccrx_evenaccess</a></li>
-<li>HL1CTRL2&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a887c360f1ae98e19d04492fb4618c67a">_ccrx_evenaccess</a></li>
-<li>HL1CTRL2_b&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a8f482633f85473a3f381ac38b53eb832">_ccrx_evenaccess</a></li>
 <li>hMSL&#160;:&#160;<a class="el" href="structBoardData__t.html#af7e387dd162dfa4f58e0e96e9909ece1">BoardData_t</a>, <a class="el" href="structGNSS__StateHandle.html#ac92706051660acc317b5ad58ce890387">GNSS_StateHandle</a></li>
-<li>hng_det&#160;:&#160;<a class="el" href="structdwc2__gotgint__t_1_1TU__ATTR__PACKED.html#ae52533120ce18c62f6e15c040cb63603">dwc2_gotgint_t::TU_ATTR_PACKED</a></li>
-<li>hng_scs&#160;:&#160;<a class="el" href="structdwc2__gotgctl__t_1_1TU__ATTR__PACKED.html#aa2edd0c1f78fd951043776b639f711a9">dwc2_gotgctl_t::TU_ATTR_PACKED</a></li>
-<li>hnp_capable&#160;:&#160;<a class="el" href="structdwc2__gusbcfg__t_1_1TU__ATTR__PACKED.html#a10a4f8408d787c473d12f1da5088f57e">dwc2_gusbcfg_t::TU_ATTR_PACKED</a></li>
-<li>hnp_rq&#160;:&#160;<a class="el" href="structdwc2__gotgctl__t_1_1TU__ATTR__PACKED.html#aad70a11f46f7b73c3864e2a048c8b779">dwc2_gotgctl_t::TU_ATTR_PACKED</a></li>
-<li>HNPBTOA&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#aae22d503d20bc6846818c5463fd5ba18">_ccrx_evenaccess</a></li>
-<li>hnptxsts&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a8022cf538a089e1b75715a51ce01fad2">dwc2_regs_t</a></li>
-<li>hns_status_change&#160;:&#160;<a class="el" href="structdwc2__gotgint__t_1_1TU__ATTR__PACKED.html#a169ac829221f4562bdf8289e2b2769c5">dwc2_gotgint_t::TU_ATTR_PACKED</a></li>
-<li>host_set_hnp_en&#160;:&#160;<a class="el" href="structdwc2__gotgctl__t_1_1TU__ATTR__PACKED.html#a2e3c2b3e8a5d99d7d71b4e5a0cc37964">dwc2_gotgctl_t::TU_ATTR_PACKED</a></li>
 <li>hour&#160;:&#160;<a class="el" href="structGNSS__StateHandle.html#a60dde7039692e1adea3f960ae0a12a43">GNSS_StateHandle</a></li>
-<li>hprt&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a5f23329b5b82a8d5bf53e507390a52f1">dwc2_regs_t</a></li>
-<li>hptxfsiz&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a3223581a5043bde56c641a20e39d45ee">dwc2_regs_t</a></li>
-<li>hptxsts&#160;:&#160;<a class="el" href="structdwc2__regs__t.html#a7ea40adab7e108cf219c013ede80c6d9">dwc2_regs_t</a></li>
-<li>hs_eof1&#160;:&#160;<a class="el" href="structmusb__regs__t.html#a0eb1f7e2cda0b3435ec25e150d76c4e3">musb_regs_t</a></li>
-<li>hs_phy_type&#160;:&#160;<a class="el" href="structdwc2__ghwcfg2__t_1_1TU__ATTR__PACKED.html#a96d4ebcab481a77e5335d80ea6a086c8">dwc2_ghwcfg2_t::TU_ATTR_PACKED</a></li>
-<li>hs_timeout_adder&#160;:&#160;<a class="el" href="structmusb__regs__t.html#a4ddb2e01b058631d0a298d7eb0ca90f7">musb_regs_t</a></li>
-<li>hs_to_utm&#160;:&#160;<a class="el" href="structmusb__regs__t.html#afe446f6b4ea422e56df64f22fbfdccdd">musb_regs_t</a></li>
-<li>HSE&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a3c9a210ce2d44757f7d4c96b01d2e861">_ccrx_evenaccess</a></li>
-<li>HSEB&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ad1a74e8ff3b9607f417e3e91934e102d">_ccrx_evenaccess</a></li>
-<li>HSIUP&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ad6289e21a86bcae6bc78c0325ceb8fa9">_ccrx_evenaccess</a></li>
-<li>HSRXENMO&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a1afce9cc1f0e672fbf296735b57d8787">_ccrx_evenaccess</a></li>
-<li>HSTADDR1&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a387ef1980e6c0bd6d46b43b3441ab8e3">dcd_registers_t</a></li>
-<li>HSTADDR2&#160;:&#160;<a class="el" href="structdcd__registers__t.html#adff0eefdfaa4709d2950be8eed8f43a0">dcd_registers_t</a></li>
-<li>HSTADDR3&#160;:&#160;<a class="el" href="structdcd__registers__t.html#aecd61bdd57f6f56b9040a74c8fe0acbc">dcd_registers_t</a></li>
-<li>HSTCTRL&#160;:&#160;<a class="el" href="structdcd__registers__t.html#aa283756cd976150a063876e2a8a793ef">dcd_registers_t</a></li>
-<li>HSTDMA&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a0f601ccfbe574e0ca1dc97f536cafb8f">dcd_registers_t</a></li>
-<li>HSTDMAADDRESS&#160;:&#160;<a class="el" href="structhstdma__t.html#a54b8c4f1665a3023f98588e4b09c04ac">hstdma_t</a></li>
-<li>HSTDMACONTROL&#160;:&#160;<a class="el" href="structhstdma__t.html#af485d828b523066f25d2b671f4330795">hstdma_t</a></li>
-<li>HSTDMANXTDSC&#160;:&#160;<a class="el" href="structhstdma__t.html#a2892cfe3e25822963722b322910b3d46">hstdma_t</a></li>
-<li>HSTDMASTATUS&#160;:&#160;<a class="el" href="structhstdma__t.html#a4a200d7b5703d8432ed952fd2ab28dbc">hstdma_t</a></li>
-<li>HSTFNUM&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a56ff970be3ecbce0f9e267541449b2f4">dcd_registers_t</a></li>
-<li>HSTICR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a4b85b81b3604ee8699264756adddb8d4">dcd_registers_t</a></li>
-<li>HSTIDR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a52a17e5c5a534cdc8e5a9f2c2a7e8f43">dcd_registers_t</a></li>
-<li>HSTIER&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a86ffc01db7b2173a33cba8b4d796990e">dcd_registers_t</a></li>
-<li>HSTIFR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a7cdd526f7cb84747fabef8bc77dc43d3">dcd_registers_t</a></li>
-<li>HSTIMR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#ace1e428a27784c2c4e5b79425c4ea22a">dcd_registers_t</a></li>
-<li>HSTISR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#ae4942c1fb0917c46839c30ed7fc95e6d">dcd_registers_t</a></li>
-<li>HSTPIP&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a88e965009be752aa3d2711b2001f2353">dcd_registers_t</a></li>
-<li>HSTPIPCFG&#160;:&#160;<a class="el" href="structdcd__registers__t.html#aab4135f6a9b04ca7b72446360aa9787a">dcd_registers_t</a></li>
-<li>HSTPIPERR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#ad46f7e07854c09a12f6f7ab9de4c5236">dcd_registers_t</a></li>
-<li>HSTPIPICR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#ab48b8e1179ff2b99166df12cf3878407">dcd_registers_t</a></li>
-<li>HSTPIPIDR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#ac321143d7c28ddf4e432c92e1b709a4b">dcd_registers_t</a></li>
-<li>HSTPIPIER&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a872b8d28890de4bdeb770aeefca5be09">dcd_registers_t</a></li>
-<li>HSTPIPIFR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#aad958436d9fe7bfcff7721f7a33b4224">dcd_registers_t</a></li>
-<li>HSTPIPIMR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a58f03dc78f523d317a993da5e813f553">dcd_registers_t</a></li>
-<li>HSTPIPINRQ&#160;:&#160;<a class="el" href="structdcd__registers__t.html#a85b00d4de891e476cfd27ecc81b36003">dcd_registers_t</a></li>
-<li>HSTPIPISR&#160;:&#160;<a class="el" href="structdcd__registers__t.html#affafeb0500a173abc6633ed84c71a432">dcd_registers_t</a></li>
-<li>HTACT&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#a0fa8fe4e07f947829384eb56e96651a1">_ccrx_evenaccess</a></li>
 <li>htim&#160;:&#160;<a class="el" href="structbuzzer__t.html#acd9b467492366dc2c8e6ea401a5c9048">buzzer_t</a>, <a class="el" href="structws2812__t.html#a3e0e769fb338c02cfa888ebbccdd2d82">ws2812_t</a></li>
 <li>huart&#160;:&#160;<a class="el" href="structGNSS__StateHandle.html#a359d50c2974bca624aa91b2eee216806">GNSS_StateHandle</a></li>
-<li>hub_addr&#160;:&#160;<a class="el" href="structdwc2__channel__split__t_1_1TU__ATTR__PACKED.html#a0c6ed3cedce1c92d3f817d461a4c4a3d">dwc2_channel_split_t::TU_ATTR_PACKED</a>, <a class="el" href="structhcd__event__t.html#a5b930e759c251e453ffc467386bc0641">hcd_event_t</a>, <a class="el" href="structtuh__bus__info__t.html#afb7a8f4b55e1c5a819e0f3775d1d91b4">tuh_bus_info_t</a></li>
-<li>hub_port&#160;:&#160;<a class="el" href="structdwc2__channel__split__t_1_1TU__ATTR__PACKED.html#a2e2902cb84e3eaec9b0da683aa942f8a">dwc2_channel_split_t::TU_ATTR_PACKED</a>, <a class="el" href="structhcd__event__t.html#a402ed40fc9b86b0510e76d4842eaf6dc">hcd_event_t</a>, <a class="el" href="structtuh__bus__info__t.html#ae88e5d404b3c1b5450f5c81465695f63">tuh_bus_info_t</a></li>
-<li>HUBPORT&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ad49774951a30b1f474f39b617292d7a8">_ccrx_evenaccess</a></li>
-<li>hw_data_buf&#160;:&#160;<a class="el" href="structhw__endpoint.html#a61ab124bf9a6cde1b1fb1e6943daff89">hw_endpoint</a></li>
-<li>hwid&#160;:&#160;<a class="el" href="structtu__edpt__stream__t.html#a87ce5bd5ea576fe9bffae91d022e224f">tu_edpt_stream_t</a></li>
-<li>HWUPM&#160;:&#160;<a class="el" href="struct__ccrx__evenaccess.html#ae5c561562f4bfcf41e507c70a807b9b0">_ccrx_evenaccess</a></li>
-<li>hwvers&#160;:&#160;<a class="el" href="structmusb__regs__t.html#aa66f546543bcd0f7cfa714670324c4ca">musb_regs_t</a></li>
-<li>hwvers_bit&#160;:&#160;<a class="el" href="structmusb__regs__t.html#a2813b126cc6e1ab1127968b1458581fc">musb_regs_t</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('globals_m.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -74,16 +94,11 @@ $(function() {
 
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
 <li>main()&#160;:&#160;<a class="el" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main.c</a></li>
-<li>make_iso_compilers_happy&#160;:&#160;<a class="el" href="tusb__option_8h.html#a7aced504ae5e6032aeb8dd0a72fcb5bc">tusb_option.h</a></li>
 <li>MASK_DEMOD_DETECTION&#160;:&#160;<a class="el" href="sx1280_8h.html#ab2dbadfa460fc63436a3f78a996494cc">sx1280.h</a></li>
 <li>MASK_LNA_REGIME&#160;:&#160;<a class="el" href="sx1280_8h.html#a34f36db5914976e622ea1cd36cc61301">sx1280.h</a></li>
 <li>MASK_MANUAL_GAIN_CONTROL&#160;:&#160;<a class="el" href="sx1280_8h.html#ae91a7c7457e98847cb17ebcf23bbe6e1">sx1280.h</a></li>
 <li>MASK_MANUAL_GAIN_VALUE&#160;:&#160;<a class="el" href="sx1280_8h.html#a960790d1c28142982c2b0629791e7bf0">sx1280.h</a></li>
 <li>MASK_RANGINGMUXSEL&#160;:&#160;<a class="el" href="sx1280_8h.html#a2bf18dbfb62713dc25d2ea001d3e173a">sx1280.h</a></li>
-<li>MASK_UIS_ENDP&#160;:&#160;<a class="el" href="ch32__usbhs__reg_8h.html#a36f8e95adc0e5fff4f9fd7cbe499f7a4">ch32_usbhs_reg.h</a></li>
-<li>MASK_UIS_H_RES&#160;:&#160;<a class="el" href="ch32__usbhs__reg_8h.html#a3be782736036845b1a78c0cc0f37b31d">ch32_usbhs_reg.h</a></li>
-<li>MASK_UIS_TOKEN&#160;:&#160;<a class="el" href="ch32__usbhs__reg_8h.html#a8377f1e7fc0cd2efbbe49c1faa405394">ch32_usbhs_reg.h</a></li>
-<li>MAX&#160;:&#160;<a class="el" href="group__USBD__DEF__Exported__Macros.html#gafa99ec4acc4ecb2dc3c2d05da15d0e3f">usbd_def.h</a></li>
 <li>MAX_CMD_LEN&#160;:&#160;<a class="el" href="cmd__interface_8h.html#a1eb73c104b484cf18752169509cebfe2">cmd_interface.h</a></li>
 <li>MAX_FILTERED_TAGS&#160;:&#160;<a class="el" href="logger_8c.html#ae15a4e7cc7b0d7c2c131f1e6acc736a2">logger.c</a></li>
 <li>MAX_HAL_BUFFER_SIZE&#160;:&#160;<a class="el" href="sx1280-hal_8c.html#af856de48c37b03a1427abab70bfefc70">sx1280-hal.c</a></li>
@@ -93,74 +108,7 @@ $(function() {
 <li>MCB_UART_TX_GPIO_Port&#160;:&#160;<a class="el" href="main_8h.html#a9bfda8485e91c6e246349a735b620a59">main.h</a></li>
 <li>MCB_UART_TX_Pin&#160;:&#160;<a class="el" href="main_8h.html#abd46ba7d1706d777e97c0055607ddd19">main.h</a></li>
 <li>MELODY&#160;:&#160;<a class="el" href="sound_8c.html#a06df1e5dae37a4b6bb39adfe7724cb3c">sound.c</a></li>
-<li>MemManage_Handler()&#160;:&#160;<a class="el" href="stm32h5xx__it_8h.html#a3150f74512510287a942624aa9b44cc5">stm32h5xx_it.h</a>, <a class="el" href="stm32h5xx__it_8c.html#a3150f74512510287a942624aa9b44cc5">stm32h5xx_it.c</a></li>
-<li>microsoft_os_20_type_t&#160;:&#160;<a class="el" href="tusb__types_8h.html#aeb2f72368db30eb42854ed359c37ef2d">tusb_types.h</a></li>
-<li>MIDI_CIN_1BYTE_DATA&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354bab5090c2c846fc11bb6c1e7780cbba921">midi.h</a></li>
-<li>MIDI_CIN_CABLE_EVENT&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354ba474d57c2833a008c83def2855ce3c7bd">midi.h</a></li>
-<li>MIDI_CIN_CHANNEL_PRESSURE&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354ba9768b2537539d8720deb3ffd747e1258">midi.h</a></li>
-<li>MIDI_CIN_CONTROL_CHANGE&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354ba1dd9d311e0f520457c2d0f3e9affbf46">midi.h</a></li>
-<li>MIDI_CIN_MISC&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354bacd7173b10309dd6674189bee0f4fafac">midi.h</a></li>
-<li>MIDI_CIN_NOTE_OFF&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354ba3fad1489a9dc46f9c28f241657051b7d">midi.h</a></li>
-<li>MIDI_CIN_NOTE_ON&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354baaf55cdfbc9d189fb332dbc0531e4ec0e">midi.h</a></li>
-<li>MIDI_CIN_PITCH_BEND_CHANGE&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354ba171fa5944074a5fe21c6dc142e1d7868">midi.h</a></li>
-<li>MIDI_CIN_POLY_KEYPRESS&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354ba929782cc8d931826822cc76006265edd">midi.h</a></li>
-<li>MIDI_CIN_PROGRAM_CHANGE&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354ba0bce335d41c18367416a6265343606e0">midi.h</a></li>
-<li>MIDI_CIN_SYSCOM_2BYTE&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354ba9e382fa3cb50d3c0c84d1d68695b3018">midi.h</a></li>
-<li>MIDI_CIN_SYSCOM_3BYTE&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354ba3949ecafd3ba9381e228173fb409bdf2">midi.h</a></li>
-<li>MIDI_CIN_SYSEX_END_1BYTE&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354ba7afb1cffa030d1b38950c5e03a18b0e6">midi.h</a></li>
-<li>MIDI_CIN_SYSEX_END_2BYTE&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354ba9f09f66b9ee51479418e575e407fe0d1">midi.h</a></li>
-<li>MIDI_CIN_SYSEX_END_3BYTE&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354baf84558e1a23003bca49a340e9eac3f98">midi.h</a></li>
-<li>MIDI_CIN_SYSEX_START&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354bac4642a3e2b980688a810b2e58f50b631">midi.h</a></li>
-<li>midi_code_index_number_t&#160;:&#160;<a class="el" href="midi_8h.html#aaff14066c85f32d293dc602e188e354b">midi.h</a></li>
-<li>MIDI_CS_ENDPOINT_GENERAL&#160;:&#160;<a class="el" href="midi_8h.html#a756176d791688adb26d5e3db6ceccf93a235dc746349dd6a958c49ac1194944a8">midi.h</a></li>
-<li>MIDI_CS_ENDPOINT_GENERAL_2_0&#160;:&#160;<a class="el" href="midi_8h.html#a756176d791688adb26d5e3db6ceccf93a614fc6d081a506229ffcf0e1ef65348f">midi.h</a></li>
-<li>midi_cs_endpoint_subtype_t&#160;:&#160;<a class="el" href="midi_8h.html#a756176d791688adb26d5e3db6ceccf93">midi.h</a></li>
-<li>MIDI_CS_INTERFACE_ELEMENT&#160;:&#160;<a class="el" href="midi_8h.html#a055a137d9b1b965f2dd1660846bd316fa2376acb5ec71b29a0bc066ffe9ac4973">midi.h</a></li>
-<li>MIDI_CS_INTERFACE_HEADER&#160;:&#160;<a class="el" href="midi_8h.html#a055a137d9b1b965f2dd1660846bd316fa6492628ec4e995163b5c50e95b59ea61">midi.h</a></li>
-<li>MIDI_CS_INTERFACE_IN_JACK&#160;:&#160;<a class="el" href="midi_8h.html#a055a137d9b1b965f2dd1660846bd316fa8cb0e9d2ebc47964f2f8d7d09c35e6cf">midi.h</a></li>
-<li>MIDI_CS_INTERFACE_OUT_JACK&#160;:&#160;<a class="el" href="midi_8h.html#a055a137d9b1b965f2dd1660846bd316faa923f8c90a42bf6dee5d89df699f8226">midi.h</a></li>
-<li>midi_cs_interface_subtype_t&#160;:&#160;<a class="el" href="midi_8h.html#a055a137d9b1b965f2dd1660846bd316f">midi.h</a></li>
-<li>midi_desc_cs_endpoint_n_t&#160;:&#160;<a class="el" href="midi_8h.html#a8ec47c3580694a744a59d8c39377983e">midi.h</a></li>
-<li>midi_desc_element_n_t&#160;:&#160;<a class="el" href="midi_8h.html#a6e5971aa47b076616b2e5fcc96a6d9dc">midi.h</a></li>
-<li>midi_desc_header_t&#160;:&#160;<a class="el" href="midi_8h.html#a38fc1ac4c3565bad2243225cf19442ed">midi.h</a></li>
-<li>midi_desc_in_jack_t&#160;:&#160;<a class="el" href="midi_8h.html#acaf1a8ca9c9da605aa3afd803cd193e8">midi.h</a></li>
-<li>midi_desc_out_jack_n_t&#160;:&#160;<a class="el" href="midi_8h.html#a280f0512a20518f4b35b03754745c859">midi.h</a></li>
-<li>midi_desc_out_jack_t&#160;:&#160;<a class="el" href="midi_8h.html#a683f5538dcb0df4411b78207aa764b63">midi.h</a></li>
-<li>MIDI_JACK_EMBEDDED&#160;:&#160;<a class="el" href="midi_8h.html#a9d46601df0e30cdb102f29eae0e8e60da5fcd82595a551aae2d755c87b409ab07">midi.h</a></li>
-<li>MIDI_JACK_EXTERNAL&#160;:&#160;<a class="el" href="midi_8h.html#a9d46601df0e30cdb102f29eae0e8e60dac6939996bba7083140630e3edf71936f">midi.h</a></li>
-<li>midi_jack_type_t&#160;:&#160;<a class="el" href="midi_8h.html#a9d46601df0e30cdb102f29eae0e8e60d">midi.h</a></li>
-<li>MIDI_MAX_DATA_VAL&#160;:&#160;<a class="el" href="midi_8h.html#a96a58e29e8dbf2b5bdeb775cba46556ea325c47d4d42a4f045da93306209c7af9">midi.h</a></li>
-<li>MIDI_STATUS_SYSCOM_SONG_POSITION_POINTER&#160;:&#160;<a class="el" href="midi_8h.html#a4caf8d8f829279fba122163d961608a4a866bf08c459fcc09fe3e11ef3b61fa16">midi.h</a></li>
-<li>MIDI_STATUS_SYSCOM_SONG_SELECT&#160;:&#160;<a class="el" href="midi_8h.html#a4caf8d8f829279fba122163d961608a4a46790f8c2e7d6c35a55a656f1a836afc">midi.h</a></li>
-<li>MIDI_STATUS_SYSCOM_TIME_CODE_QUARTER_FRAME&#160;:&#160;<a class="el" href="midi_8h.html#a4caf8d8f829279fba122163d961608a4a991c7c99cdeaaa83d9fc50f246163a07">midi.h</a></li>
-<li>MIDI_STATUS_SYSCOM_TUNE_REQUEST&#160;:&#160;<a class="el" href="midi_8h.html#a4caf8d8f829279fba122163d961608a4a331697a232cb1ebce5395ac19903924b">midi.h</a></li>
-<li>MIDI_STATUS_SYSEX_END&#160;:&#160;<a class="el" href="midi_8h.html#a4caf8d8f829279fba122163d961608a4ac2ea0ceaaa38389e03ead8a076a4ff6e">midi.h</a></li>
-<li>MIDI_STATUS_SYSEX_START&#160;:&#160;<a class="el" href="midi_8h.html#a4caf8d8f829279fba122163d961608a4afad8c0b837912db67d541ddc936b7681">midi.h</a></li>
-<li>MIDI_STATUS_SYSREAL_ACTIVE_SENSING&#160;:&#160;<a class="el" href="midi_8h.html#a4caf8d8f829279fba122163d961608a4abb9204bf6d25a68a294af23c80b18ff1">midi.h</a></li>
-<li>MIDI_STATUS_SYSREAL_CONTINUE&#160;:&#160;<a class="el" href="midi_8h.html#a4caf8d8f829279fba122163d961608a4ab77e761729a74afb176cc58694a322f5">midi.h</a></li>
-<li>MIDI_STATUS_SYSREAL_START&#160;:&#160;<a class="el" href="midi_8h.html#a4caf8d8f829279fba122163d961608a4ae5552c1f219c36012e95cbc990b48599">midi.h</a></li>
-<li>MIDI_STATUS_SYSREAL_STOP&#160;:&#160;<a class="el" href="midi_8h.html#a4caf8d8f829279fba122163d961608a4a880120aa43b1f9df969ee45f7c7ca542">midi.h</a></li>
-<li>MIDI_STATUS_SYSREAL_SYSTEM_RESET&#160;:&#160;<a class="el" href="midi_8h.html#a4caf8d8f829279fba122163d961608a4a18a1496e309208635da67b55812e8989">midi.h</a></li>
-<li>MIDI_STATUS_SYSREAL_TIMING_CLOCK&#160;:&#160;<a class="el" href="midi_8h.html#a4caf8d8f829279fba122163d961608a4aa5d45ac13cd0ac07b9ffbef812f2bd9d">midi.h</a></li>
-<li>MIDI_VERSION_1_0&#160;:&#160;<a class="el" href="midi_8h.html#a4790f45dcc812c1b00184a2edccdddf5affd396d22b1b5bf8c3af1cf199e38671">midi.h</a></li>
-<li>MIDI_VERSION_2_0&#160;:&#160;<a class="el" href="midi_8h.html#a4790f45dcc812c1b00184a2edccdddf5afe3ad38f59a672c55096cfd3902c7c17">midi.h</a></li>
-<li>midid_control_xfer_cb()&#160;:&#160;<a class="el" href="midi__device_8h.html#a54654756d8556169ceff7ed2a7a19156">midi_device.h</a></li>
-<li>midid_deinit()&#160;:&#160;<a class="el" href="midi__device_8h.html#af2e0fcd81f7e0fcb60904a01739e0be4">midi_device.h</a></li>
-<li>midid_init()&#160;:&#160;<a class="el" href="midi__device_8h.html#a5807ad9ef77b35341944e974045cab9f">midi_device.h</a></li>
-<li>midid_open()&#160;:&#160;<a class="el" href="midi__device_8h.html#ac9f73201660cb41ef2bb690e84455f0b">midi_device.h</a></li>
-<li>midid_reset()&#160;:&#160;<a class="el" href="midi__device_8h.html#ae2fe979f84a64ca2ab1341ac3bb24c56">midi_device.h</a></li>
-<li>midid_xfer_cb()&#160;:&#160;<a class="el" href="midi__device_8h.html#a079eac1433087f225fc8601effb6d641">midi_device.h</a></li>
-<li>midih_close()&#160;:&#160;<a class="el" href="midi__host_8h.html#a320b70bb1e7f43738ec464eed292276f">midi_host.h</a></li>
-<li>midih_deinit()&#160;:&#160;<a class="el" href="midi__host_8h.html#a9d23b6f03e76c7aef09125af18bffce5">midi_host.h</a></li>
-<li>midih_init()&#160;:&#160;<a class="el" href="midi__host_8h.html#aef4b79e35448cf55922d5940ef597248">midi_host.h</a></li>
-<li>midih_open()&#160;:&#160;<a class="el" href="midi__host_8h.html#a90e4a5933c10f643116f3f1e7ce6f8f1">midi_host.h</a></li>
-<li>midih_set_config()&#160;:&#160;<a class="el" href="midi__host_8h.html#a3a5ee24baee51d3196ea3cceb126c57b">midi_host.h</a></li>
-<li>midih_xfer_cb()&#160;:&#160;<a class="el" href="midi__host_8h.html#a093c51b2d806b6b08cb0fbcb4547b625">midi_host.h</a></li>
-<li>MIN&#160;:&#160;<a class="el" href="group__USBD__DEF__Exported__Macros.html#ga3acffbd305ee72dcd4593c0d8af64a4f">usbd_def.h</a></li>
-<li>MISC_PROTOCOL_IAD&#160;:&#160;<a class="el" href="tusb__types_8h.html#a5724637351ad72f54af87503067e713cafd40ae4e11db256c97dd9b750beeec81">tusb_types.h</a></li>
-<li>misc_protocol_type_t&#160;:&#160;<a class="el" href="tusb__types_8h.html#a5724637351ad72f54af87503067e713c">tusb_types.h</a></li>
-<li>MISC_SUBCLASS_COMMON&#160;:&#160;<a class="el" href="tusb__types_8h.html#a0203a5979a4fc3e98387db53acb0511cae9eb76a5fe9501ce2a4ad1993583d76b">tusb_types.h</a></li>
-<li>misc_subclass_type_t&#160;:&#160;<a class="el" href="tusb__types_8h.html#a0203a5979a4fc3e98387db53acb0511c">tusb_types.h</a></li>
+<li>MemManage_Handler()&#160;:&#160;<a class="el" href="stm32h5xx__it_8c.html#a3150f74512510287a942624aa9b44cc5">stm32h5xx_it.c</a>, <a class="el" href="stm32h5xx__it_8h.html#a3150f74512510287a942624aa9b44cc5">stm32h5xx_it.h</a></li>
 <li>MODE_CAD&#160;:&#160;<a class="el" href="sx1280_8h.html#a6bba4c8ec751e4cdb319d72b21cd88ffa08446969dfcfe3fb2c9a89e28ab893ca">sx1280.h</a></li>
 <li>MODE_FS&#160;:&#160;<a class="el" href="sx1280_8h.html#a6bba4c8ec751e4cdb319d72b21cd88ffaf3c99e31e242a0451e04bb10a70afcfe">sx1280.h</a></li>
 <li>MODE_LONG_RANGE_MODE&#160;:&#160;<a class="el" href="rfm95w_8h.html#a3fc02479d24561e80c3c13262de1c114">rfm95w.h</a></li>
@@ -172,282 +120,22 @@ $(function() {
 <li>MODE_STDBY_RC&#160;:&#160;<a class="el" href="sx1280_8h.html#a6bba4c8ec751e4cdb319d72b21cd88ffabb2c2a23f6762cc2bc9fbad8c4e326be">sx1280.h</a></li>
 <li>MODE_STDBY_XOSC&#160;:&#160;<a class="el" href="sx1280_8h.html#a6bba4c8ec751e4cdb319d72b21cd88ffa4a6612c23101b732182833821453a5fe">sx1280.h</a></li>
 <li>MODE_TX&#160;:&#160;<a class="el" href="rfm95w_8h.html#a77e098c32c4c29fe83f5c0010c70c146">rfm95w.h</a></li>
-<li>MOUSE_BUTTON_BACKWARD&#160;:&#160;<a class="el" href="group__ClassDriver__HID__Mouse.html#gga67fa26a659c18a393d7a83e807560929a2c0df80a8920975bc3b7528e9fc4f227">hid.h</a></li>
-<li>MOUSE_BUTTON_FORWARD&#160;:&#160;<a class="el" href="group__ClassDriver__HID__Mouse.html#gga67fa26a659c18a393d7a83e807560929a1dcc16e6a491263be0143ec3aa951910">hid.h</a></li>
-<li>MOUSE_BUTTON_LEFT&#160;:&#160;<a class="el" href="group__ClassDriver__HID__Mouse.html#gga67fa26a659c18a393d7a83e807560929a3c2e62b97b30d850c5539d0f3a6d0958">hid.h</a></li>
-<li>MOUSE_BUTTON_MIDDLE&#160;:&#160;<a class="el" href="group__ClassDriver__HID__Mouse.html#gga67fa26a659c18a393d7a83e807560929a9b37b35bcb71185dafcb151b3dde9a06">hid.h</a></li>
-<li>MOUSE_BUTTON_RIGHT&#160;:&#160;<a class="el" href="group__ClassDriver__HID__Mouse.html#gga67fa26a659c18a393d7a83e807560929a5b61e63e73f15ed6af97d5cd3124bc6f">hid.h</a></li>
-<li>MS_OS_20_FEATURE_CCGP_DEVICE&#160;:&#160;<a class="el" href="tusb__types_8h.html#aeb2f72368db30eb42854ed359c37ef2dab457a91ffd658376d87d7d32ad770004">tusb_types.h</a></li>
-<li>MS_OS_20_FEATURE_COMPATBLE_ID&#160;:&#160;<a class="el" href="tusb__types_8h.html#aeb2f72368db30eb42854ed359c37ef2dabc65f1295e37d769bbec03e08e378b63">tusb_types.h</a></li>
-<li>MS_OS_20_FEATURE_MIN_RESUME_TIME&#160;:&#160;<a class="el" href="tusb__types_8h.html#aeb2f72368db30eb42854ed359c37ef2da7061acf1dbbeb7e2fbb88d149d295009">tusb_types.h</a></li>
-<li>MS_OS_20_FEATURE_MODEL_ID&#160;:&#160;<a class="el" href="tusb__types_8h.html#aeb2f72368db30eb42854ed359c37ef2dac7fc46a0124656e986871ae3b085536c">tusb_types.h</a></li>
-<li>MS_OS_20_FEATURE_REG_PROPERTY&#160;:&#160;<a class="el" href="tusb__types_8h.html#aeb2f72368db30eb42854ed359c37ef2dad49ae449e2e2ff519a69018612ab5e62">tusb_types.h</a></li>
-<li>MS_OS_20_FEATURE_VENDOR_REVISION&#160;:&#160;<a class="el" href="tusb__types_8h.html#aeb2f72368db30eb42854ed359c37ef2da2f7940f495e1a996692f474a456d63d6">tusb_types.h</a></li>
-<li>MS_OS_20_SET_HEADER_DESCRIPTOR&#160;:&#160;<a class="el" href="tusb__types_8h.html#aeb2f72368db30eb42854ed359c37ef2dac74a28d4e873b255d5b027af5ffffb5d">tusb_types.h</a></li>
-<li>MS_OS_20_SUBSET_HEADER_CONFIGURATION&#160;:&#160;<a class="el" href="tusb__types_8h.html#aeb2f72368db30eb42854ed359c37ef2dafe117782c0101a880e152a8a1110ecbc">tusb_types.h</a></li>
-<li>MS_OS_20_SUBSET_HEADER_FUNCTION&#160;:&#160;<a class="el" href="tusb__types_8h.html#aeb2f72368db30eb42854ed359c37ef2da1200730075635cba8dea3420be41d1a7">tusb_types.h</a></li>
-<li>MSC_CBW_SIGNATURE&#160;:&#160;<a class="el" href="msc_8h.html#ab48899087cc647f0f791ed0c459adc53a1d7a1491e63c8fa476a37677bd4defa9">msc.h</a></li>
-<li>msc_cbw_t&#160;:&#160;<a class="el" href="msc_8h.html#a822e5cafac4f4e07f9514332fd648fef">msc.h</a></li>
-<li>MSC_CSW_SIGNATURE&#160;:&#160;<a class="el" href="msc_8h.html#ab48899087cc647f0f791ed0c459adc53a6a3e02fda8ecf085a11ec330d9a09d1a">msc.h</a></li>
-<li>MSC_CSW_STATUS_FAILED&#160;:&#160;<a class="el" href="msc_8h.html#ab78ea3586ce0c7a8bb2680d7fbcca3aea0a54ee9dea6d496ba86ce54b0a5bc390">msc.h</a></li>
-<li>MSC_CSW_STATUS_PASSED&#160;:&#160;<a class="el" href="msc_8h.html#ab78ea3586ce0c7a8bb2680d7fbcca3aeafeaad74e991e7bbc602c60cfb2fef201">msc.h</a></li>
-<li>MSC_CSW_STATUS_PHASE_ERROR&#160;:&#160;<a class="el" href="msc_8h.html#ab78ea3586ce0c7a8bb2680d7fbcca3aea468aa5999b40fc91fe73b73e2e1fd4f3">msc.h</a></li>
-<li>msc_csw_status_t&#160;:&#160;<a class="el" href="msc_8h.html#ab78ea3586ce0c7a8bb2680d7fbcca3ae">msc.h</a></li>
-<li>msc_csw_t&#160;:&#160;<a class="el" href="msc_8h.html#add138ea30cd714806ed5f743e9457419">msc.h</a></li>
-<li>MSC_PROTOCOL_BOT&#160;:&#160;<a class="el" href="msc_8h.html#a09dab9a66502b8e228c8640678f97867a3fe931957ba4eea5705debeb1eb286df">msc.h</a></li>
-<li>MSC_PROTOCOL_CBI&#160;:&#160;<a class="el" href="msc_8h.html#a09dab9a66502b8e228c8640678f97867ab04e8cf10f7051f073921a9177cd1dd9">msc.h</a></li>
-<li>MSC_PROTOCOL_CBI_NO_INTERRUPT&#160;:&#160;<a class="el" href="msc_8h.html#a09dab9a66502b8e228c8640678f97867a7b86ece435e956868a9eab981705f018">msc.h</a></li>
-<li>msc_protocol_type_t&#160;:&#160;<a class="el" href="msc_8h.html#a09dab9a66502b8e228c8640678f97867">msc.h</a></li>
-<li>MSC_REQ_GET_MAX_LUN&#160;:&#160;<a class="el" href="msc_8h.html#af0f486b972468c53352266648012bf2fadd74ed92c1c2ad06e06e973bc1328376">msc.h</a></li>
-<li>MSC_REQ_RESET&#160;:&#160;<a class="el" href="msc_8h.html#af0f486b972468c53352266648012bf2faa42b7fbfd86d42ce4db427a579781e6f">msc.h</a></li>
-<li>msc_request_type_t&#160;:&#160;<a class="el" href="msc_8h.html#af0f486b972468c53352266648012bf2f">msc.h</a></li>
-<li>MSC_SUBCLASS_QIC&#160;:&#160;<a class="el" href="msc_8h.html#a26bc41b71a6b4d66b10c8649163caa21a531078b1e8d44d892397a241925471cd">msc.h</a></li>
-<li>MSC_SUBCLASS_RBC&#160;:&#160;<a class="el" href="msc_8h.html#a26bc41b71a6b4d66b10c8649163caa21a17dd1074a9e2e0dd5b7fb04ccf93eef5">msc.h</a></li>
-<li>MSC_SUBCLASS_SCSI&#160;:&#160;<a class="el" href="msc_8h.html#a26bc41b71a6b4d66b10c8649163caa21ac81abb5906ba3b8543001a8f3b2d62f5">msc.h</a></li>
-<li>MSC_SUBCLASS_SFF&#160;:&#160;<a class="el" href="msc_8h.html#a26bc41b71a6b4d66b10c8649163caa21a4c50de5ae13afdbf4dc44c659823672e">msc.h</a></li>
-<li>MSC_SUBCLASS_SFF_MMC&#160;:&#160;<a class="el" href="msc_8h.html#a26bc41b71a6b4d66b10c8649163caa21aea214cb6cbebd772dd6f369330b80783">msc.h</a></li>
-<li>msc_subclass_type_t&#160;:&#160;<a class="el" href="msc_8h.html#a26bc41b71a6b4d66b10c8649163caa21">msc.h</a></li>
-<li>MSC_SUBCLASS_UFI&#160;:&#160;<a class="el" href="msc_8h.html#a26bc41b71a6b4d66b10c8649163caa21a671b4e9a3c91a1f5d1d0baa68b9d937c">msc.h</a></li>
-<li>mscd_control_xfer_cb()&#160;:&#160;<a class="el" href="msc__device_8h.html#adc18d9c97fcbd636c71dab72302fa6b3">msc_device.h</a></li>
-<li>mscd_deinit()&#160;:&#160;<a class="el" href="msc__device_8h.html#a70d56238db44bce4d77c8297211e7e27">msc_device.h</a></li>
-<li>mscd_init()&#160;:&#160;<a class="el" href="msc__device_8h.html#aaf4981315a4d70a7057edd4064fd90ce">msc_device.h</a></li>
-<li>mscd_open()&#160;:&#160;<a class="el" href="msc__device_8h.html#a88c3deff8b6784aa3c5b273c3f34deb0">msc_device.h</a></li>
-<li>mscd_reset()&#160;:&#160;<a class="el" href="msc__device_8h.html#a2b8d7cd18e5e49f3378e1f5bdd7bf196">msc_device.h</a></li>
-<li>mscd_xfer_cb()&#160;:&#160;<a class="el" href="msc__device_8h.html#a0a30469f504fc9d9add41321908d4988">msc_device.h</a></li>
-<li>msch_close()&#160;:&#160;<a class="el" href="msc__host_8h.html#a6807cd61b3cd2833ade45c7f58663081">msc_host.h</a></li>
-<li>msch_deinit()&#160;:&#160;<a class="el" href="msc__host_8h.html#af39352bf31c77f3baac73211435fe242">msc_host.h</a></li>
-<li>msch_init()&#160;:&#160;<a class="el" href="msc__host_8h.html#a68ac067fd192fa723fd6b2033b205118">msc_host.h</a></li>
-<li>msch_open()&#160;:&#160;<a class="el" href="msc__host_8h.html#af292d389bf0fe39e01752ff22a5fbc03">msc_host.h</a></li>
-<li>msch_set_config()&#160;:&#160;<a class="el" href="msc__host_8h.html#a382683b401a8f36f0c69b3dd4094ae3d">msc_host.h</a></li>
-<li>msch_xfer_cb()&#160;:&#160;<a class="el" href="msc__host_8h.html#a9cd6b09df7e5d6ec3e1b00e5c1e98e7f">msc_host.h</a></li>
-<li>MUSB_BASES&#160;:&#160;<a class="el" href="musb__ti_8h.html#af795de4ec15478f12274869580d1a123">musb_ti.h</a>, <a class="el" href="musb__max32_8h.html#af795de4ec15478f12274869580d1a123">musb_max32.h</a></li>
-<li>MUSB_CCONF_RXEDMA&#160;:&#160;<a class="el" href="musb__type_8h.html#a2ea400c331faea5058ac8bb8984067d8">musb_type.h</a></li>
-<li>MUSB_CCONF_TXEDMA&#160;:&#160;<a class="el" href="musb__type_8h.html#a0a8712fbd122578001803059d9045b4c">musb_type.h</a></li>
-<li>MUSB_CFG_DYNAMIC_FIFO&#160;:&#160;<a class="el" href="musb__max32_8h.html#aa187bd06bbd2f227cbfb36d2184a66de">musb_max32.h</a>, <a class="el" href="musb__ti_8h.html#aa187bd06bbd2f227cbfb36d2184a66de">musb_ti.h</a></li>
-<li>MUSB_CFG_DYNAMIC_FIFO_SIZE&#160;:&#160;<a class="el" href="musb__ti_8h.html#a1428a2b330e9b040beb159aef62fd692">musb_ti.h</a></li>
-<li>MUSB_CFG_SHARED_FIFO&#160;:&#160;<a class="el" href="musb__max32_8h.html#aa209d7dabd6a72d25c2a9e1c090cd9dc">musb_max32.h</a>, <a class="el" href="musb__ti_8h.html#aa209d7dabd6a72d25c2a9e1c090cd9dc">musb_ti.h</a></li>
-<li>MUSB_CONTIM_WTCON_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a27de4d16f86a92ba039a31271e66ca0a">musb_type.h</a></li>
-<li>MUSB_CONTIM_WTCON_S&#160;:&#160;<a class="el" href="musb__type_8h.html#ad4c4405457aaf6cf420839e195972365">musb_type.h</a></li>
-<li>MUSB_CONTIM_WTID_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a054ad1c9244afac2bd7287978bec6ec7">musb_type.h</a></li>
-<li>MUSB_CONTIM_WTID_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a9b20b327246c6d8e4e476551c0f85b99">musb_type.h</a></li>
-<li>MUSB_CSRH0_DISPING&#160;:&#160;<a class="el" href="musb__type_8h.html#a58a8104ad920d335a4c1891210ca878b">musb_type.h</a></li>
-<li>MUSB_CSRH0_DT&#160;:&#160;<a class="el" href="musb__type_8h.html#a58106e2559d14cc43ffdab18ff0acfde">musb_type.h</a></li>
-<li>MUSB_CSRH0_DTWE&#160;:&#160;<a class="el" href="musb__type_8h.html#ae271ba30e75a6dd26dd517b54865d21e">musb_type.h</a></li>
-<li>MUSB_CSRH0_FLUSH&#160;:&#160;<a class="el" href="musb__type_8h.html#a388d4a7a7244a05c699f5bbf3bc390ad">musb_type.h</a></li>
-<li>MUSB_CSRH_DISABLE_DOUBLE_PACKET&#160;:&#160;<a class="el" href="musb__type_8h.html#aadf85241e861dfd45a2adcc6545cc3eb">musb_type.h</a></li>
-<li>MUSB_CSRH_ISO&#160;:&#160;<a class="el" href="musb__type_8h.html#aa235ac8ae804d6e831d39d1a5c567699">musb_type.h</a></li>
-<li>MUSB_CSRH_TX_MODE&#160;:&#160;<a class="el" href="musb__type_8h.html#a25c45ba57801ae04ff2111d2a0fe1c16">musb_type.h</a></li>
-<li>MUSB_CSRL0_DATAEND&#160;:&#160;<a class="el" href="musb__type_8h.html#a88a14fd364a647f31b04da468eb2e5ed">musb_type.h</a></li>
-<li>MUSB_CSRL0_ERROR&#160;:&#160;<a class="el" href="musb__type_8h.html#a4b352ed520fb4a7df7c845f0d2674133">musb_type.h</a></li>
-<li>MUSB_CSRL0_NAKTO&#160;:&#160;<a class="el" href="musb__type_8h.html#a8478054d50f492640b06f6e96d4c99af">musb_type.h</a></li>
-<li>MUSB_CSRL0_REQPKT&#160;:&#160;<a class="el" href="musb__type_8h.html#a520d1c59ea5f4e7c69cfd1fcd3077bba">musb_type.h</a></li>
-<li>MUSB_CSRL0_RXRDY&#160;:&#160;<a class="el" href="musb__type_8h.html#a3ba36b899d918a3f9af4d4eeb594b28d">musb_type.h</a></li>
-<li>MUSB_CSRL0_RXRDYC&#160;:&#160;<a class="el" href="musb__type_8h.html#ab143a897f06f06cb09ec418ea155faa3">musb_type.h</a></li>
-<li>MUSB_CSRL0_SETEND&#160;:&#160;<a class="el" href="musb__type_8h.html#acf720d6566ae68a3ab6615585baad3b7">musb_type.h</a></li>
-<li>MUSB_CSRL0_SETENDC&#160;:&#160;<a class="el" href="musb__type_8h.html#aad52f8807ad551f76a89a0fbd618fa6d">musb_type.h</a></li>
-<li>MUSB_CSRL0_SETUP&#160;:&#160;<a class="el" href="musb__type_8h.html#a21bfebe0048035e381a822c398b7c903">musb_type.h</a></li>
-<li>MUSB_CSRL0_STALL&#160;:&#160;<a class="el" href="musb__type_8h.html#a9c11a6782716816014d61be345f5fec3">musb_type.h</a></li>
-<li>MUSB_CSRL0_STALLED&#160;:&#160;<a class="el" href="musb__type_8h.html#a5cdc222c8e93ee399d1f3bbd0624c48f">musb_type.h</a></li>
-<li>MUSB_CSRL0_STATUS&#160;:&#160;<a class="el" href="musb__type_8h.html#a17e2985fd4dd3d2981258068c24ebbf3">musb_type.h</a></li>
-<li>MUSB_CSRL0_TXRDY&#160;:&#160;<a class="el" href="musb__type_8h.html#a4e5e08de6a55450b786ed8f5e41ce8b7">musb_type.h</a></li>
-<li>MUSB_CSRL_CLEAR_DATA_TOGGLE&#160;:&#160;<a class="el" href="musb__type_8h.html#a59c60c1028b3e7eecae21aedafdf4c55">musb_type.h</a></li>
-<li>MUSB_CSRL_FLUSH_FIFO&#160;:&#160;<a class="el" href="musb__type_8h.html#a929951e135e122fd2cc18f36b195eee6">musb_type.h</a></li>
-<li>MUSB_CSRL_PACKET_READY&#160;:&#160;<a class="el" href="musb__type_8h.html#ab196140c85b9241f8e3f2a8c244c8d68">musb_type.h</a></li>
-<li>MUSB_CSRL_SEND_STALL&#160;:&#160;<a class="el" href="musb__type_8h.html#a67335fabdb4d0d2730b7def3fa0d3338">musb_type.h</a></li>
-<li>MUSB_CSRL_STALLED&#160;:&#160;<a class="el" href="musb__type_8h.html#ad9f2889371af3be0189442cf2c808b30">musb_type.h</a></li>
-<li>MUSB_CTO_CCTV_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a48cf11f348ff17c9b643c4d50cbafb4a">musb_type.h</a></li>
-<li>MUSB_CTO_CCTV_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a0af7559332918f53fbac7f0948e952b8">musb_type.h</a></li>
-<li>MUSB_DEVCTL_DEV&#160;:&#160;<a class="el" href="musb__type_8h.html#a1cf05d284dd1fd70a626cae2f497e518">musb_type.h</a></li>
-<li>MUSB_DEVCTL_FSDEV&#160;:&#160;<a class="el" href="musb__type_8h.html#ae47f10b3348ed235fbf79a62461e69aa">musb_type.h</a></li>
-<li>MUSB_DEVCTL_HOST&#160;:&#160;<a class="el" href="musb__type_8h.html#aa6bd146ecd323170b57c3ab729d50a0f">musb_type.h</a></li>
-<li>MUSB_DEVCTL_HOSTREQ&#160;:&#160;<a class="el" href="musb__type_8h.html#a517adfc83274c3a78f45e99c3458d552">musb_type.h</a></li>
-<li>MUSB_DEVCTL_LSDEV&#160;:&#160;<a class="el" href="musb__type_8h.html#a2a7a7f921288929a40c2f9ef15b45c51">musb_type.h</a></li>
-<li>MUSB_DEVCTL_SESSION&#160;:&#160;<a class="el" href="musb__type_8h.html#a16f2eb6eb621755491e2bb6cfd8ea526">musb_type.h</a></li>
-<li>MUSB_DEVCTL_VBUS_AVALID&#160;:&#160;<a class="el" href="musb__type_8h.html#ab27cc838128b6fd8c9a6b58c753f1e6e">musb_type.h</a></li>
-<li>MUSB_DEVCTL_VBUS_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a0d24419c6f588e1bce760137739eae0a">musb_type.h</a></li>
-<li>MUSB_DEVCTL_VBUS_NONE&#160;:&#160;<a class="el" href="musb__type_8h.html#aabab0211d0559495bb661ef9734f860a">musb_type.h</a></li>
-<li>MUSB_DEVCTL_VBUS_SEND&#160;:&#160;<a class="el" href="musb__type_8h.html#acaef55ba7b7336d1d7cd855b9d3d1a4b">musb_type.h</a></li>
-<li>MUSB_DEVCTL_VBUS_VALID&#160;:&#160;<a class="el" href="musb__type_8h.html#ad166b83b3454d544c2278c4cbccbd4c9">musb_type.h</a></li>
-<li>MUSB_DMAADDR0_ADDR_M&#160;:&#160;<a class="el" href="musb__type_8h.html#acf2e2446fd97abfaa16e52edc2d052bd">musb_type.h</a></li>
-<li>MUSB_DMAADDR0_ADDR_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a5fc3c475c97da8416a4c83b2ed05a700">musb_type.h</a></li>
-<li>MUSB_DMACOUNT0_COUNT_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a4f2324b0498b5c35f471a844a1f57cc6">musb_type.h</a></li>
-<li>MUSB_DMACOUNT0_COUNT_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a0a6e664a25533a36780fa7cc9ca38dd5">musb_type.h</a></li>
-<li>MUSB_DMACTL0_BRSTM_ANY&#160;:&#160;<a class="el" href="musb__type_8h.html#a62833839bd6b322d4a05f7cf021293be">musb_type.h</a></li>
-<li>MUSB_DMACTL0_BRSTM_INC16&#160;:&#160;<a class="el" href="musb__type_8h.html#a80e47c6f4b960d25801e4ffbd86f3350">musb_type.h</a></li>
-<li>MUSB_DMACTL0_BRSTM_INC4&#160;:&#160;<a class="el" href="musb__type_8h.html#a482ce5900c0175e0825d1d230243621c">musb_type.h</a></li>
-<li>MUSB_DMACTL0_BRSTM_INC8&#160;:&#160;<a class="el" href="musb__type_8h.html#a766cfe858c7572a646e84160ad4c7d2a">musb_type.h</a></li>
-<li>MUSB_DMACTL0_BRSTM_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a911e4fa4dcb35bf133a3f8797e723fb9">musb_type.h</a></li>
-<li>MUSB_DMACTL0_DIR&#160;:&#160;<a class="el" href="musb__type_8h.html#a40310bb32d048f6068d8a520b6c492bc">musb_type.h</a></li>
-<li>MUSB_DMACTL0_ENABLE&#160;:&#160;<a class="el" href="musb__type_8h.html#ace141f9e996dfdeaeaa66d7b6a78d892">musb_type.h</a></li>
-<li>MUSB_DMACTL0_EP_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a959d6b4a3d620228c480e80cd590ce4c">musb_type.h</a></li>
-<li>MUSB_DMACTL0_EP_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a4027dcf19cc49ee049571a14dd959f2b">musb_type.h</a></li>
-<li>MUSB_DMACTL0_ERR&#160;:&#160;<a class="el" href="musb__type_8h.html#a64fe38c353bcc00a4919823ff35b43bc">musb_type.h</a></li>
-<li>MUSB_DMACTL0_IE&#160;:&#160;<a class="el" href="musb__type_8h.html#a48529eec3caf14b1e27b7b38053bdbf6">musb_type.h</a></li>
-<li>MUSB_DMACTL0_MODE&#160;:&#160;<a class="el" href="musb__type_8h.html#ad1a119643e2765145d6d96ab6dbfaa53">musb_type.h</a></li>
-<li>musb_ep_csr_t&#160;:&#160;<a class="el" href="musb__type_8h.html#ab47006547f9a9ac6c88d7c53bd442a15">musb_type.h</a></li>
-<li>musb_ep_maxp_csr_t&#160;:&#160;<a class="el" href="musb__type_8h.html#ace821e5e2f454346e4280bb1201b375f">musb_type.h</a></li>
-<li>MUSB_EPINFO_RXEP_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a0770dac2e24b7444b2238c965ff226a6">musb_type.h</a></li>
-<li>MUSB_EPINFO_RXEP_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a599b47d773b110a64aa61f720c6734a7">musb_type.h</a></li>
-<li>MUSB_EPINFO_TXEP_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a87b4cc698f14ead13bbc0adfb9232666">musb_type.h</a></li>
-<li>MUSB_EPINFO_TXEP_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a4c64dd5a9395f523c12169829ec59e79">musb_type.h</a></li>
-<li>MUSB_FIFOSZ_DOUBLE_PACKET&#160;:&#160;<a class="el" href="musb__type_8h.html#a5a74a1c6204f9234ff6cb0508ce8c879">musb_type.h</a></li>
-<li>MUSB_FRAME_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a2486fd0dbcd4be250c3361d3c1562011">musb_type.h</a></li>
-<li>MUSB_FRAME_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a133a07ceb5d621b5c9d00af94d0f4960">musb_type.h</a></li>
-<li>MUSB_FSEOF_FSEOFG_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a25a0a7f9eb8d4381cf6fb06fbb3f9e82">musb_type.h</a></li>
-<li>MUSB_FSEOF_FSEOFG_S&#160;:&#160;<a class="el" href="musb__type_8h.html#aad7ec9ccf3a8dc1f2b9c9bf4f7561b53">musb_type.h</a></li>
-<li>MUSB_HHSRTN_HHSRTN_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a608471fb081d145eefb05d322c16dec1">musb_type.h</a></li>
-<li>MUSB_HHSRTN_HHSRTN_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a2e4d9ca2c58284f2832d03316bb8a943">musb_type.h</a></li>
-<li>MUSB_HSBT_HSBT_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a51a427b4f84dcfa18ccfcc3269eab846">musb_type.h</a></li>
-<li>MUSB_HSBT_HSBT_S&#160;:&#160;<a class="el" href="musb__type_8h.html#ad1023102fed77deb3a7766feeaf8b8c5">musb_type.h</a></li>
-<li>MUSB_HSEOF_HSEOFG_M&#160;:&#160;<a class="el" href="musb__type_8h.html#af7456b1c2391360c88df8b26ba800cc5">musb_type.h</a></li>
-<li>MUSB_HSEOF_HSEOFG_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a93f80906908ec7a5c9d65957d519d6a0">musb_type.h</a></li>
-<li>MUSB_HWVERS_MAJOR_MASK&#160;:&#160;<a class="el" href="musb__type_8h.html#ab6bdc396e4b45a9aaee8dbaac9068938">musb_type.h</a></li>
-<li>MUSB_HWVERS_MAJOR_SHIFT&#160;:&#160;<a class="el" href="musb__type_8h.html#a0d202b28d004f005d6704f94d8e7cae2">musb_type.h</a></li>
-<li>MUSB_HWVERS_MINOR_MASK&#160;:&#160;<a class="el" href="musb__type_8h.html#a513d8bdefc51d4c6699464b832c28d2c">musb_type.h</a></li>
-<li>MUSB_HWVERS_MINOR_SHIFT&#160;:&#160;<a class="el" href="musb__type_8h.html#adfaf185ee54aa005258ecd21a517d6c0">musb_type.h</a></li>
-<li>MUSB_HWVERS_RC_MASK&#160;:&#160;<a class="el" href="musb__type_8h.html#a235ecf7fff3e45ecdbf90694e43fb731">musb_type.h</a></li>
-<li>MUSB_HWVERS_RC_SHIFT&#160;:&#160;<a class="el" href="musb__type_8h.html#a7542a66d6e7f551994bf98b0bd4eaf48">musb_type.h</a></li>
-<li>MUSB_IE_BABBLE&#160;:&#160;<a class="el" href="musb__type_8h.html#af74a6fa5ffa651272329750620adce3d">musb_type.h</a></li>
-<li>MUSB_IE_CONN&#160;:&#160;<a class="el" href="musb__type_8h.html#aac1e061a9fc32f81884be39358dc9d31">musb_type.h</a></li>
-<li>MUSB_IE_DISCON&#160;:&#160;<a class="el" href="musb__type_8h.html#a85579b98d5a0f2b4fd88533171b0aec8">musb_type.h</a></li>
-<li>MUSB_IE_RESET&#160;:&#160;<a class="el" href="musb__type_8h.html#a8b60555da542ac03d8014294f7c5ecaf">musb_type.h</a></li>
-<li>MUSB_IE_RESUME&#160;:&#160;<a class="el" href="musb__type_8h.html#a60b972a3eed3bb48ddc5591eb152ad56">musb_type.h</a></li>
-<li>MUSB_IE_SESREQ&#160;:&#160;<a class="el" href="musb__type_8h.html#acd7a1c5376212b6ec63d8b6a485ebfe5">musb_type.h</a></li>
-<li>MUSB_IE_SOF&#160;:&#160;<a class="el" href="musb__type_8h.html#a9918764a64af66d25cfb4c24e9ce5b65">musb_type.h</a></li>
-<li>MUSB_IE_SUSPND&#160;:&#160;<a class="el" href="musb__type_8h.html#ab465ad4dfd6385e00ae5b5874c67fcc2">musb_type.h</a></li>
-<li>MUSB_IE_VBUSERR&#160;:&#160;<a class="el" href="musb__type_8h.html#ab0f0cca6a63f1ac79f88851413977c84">musb_type.h</a></li>
-<li>MUSB_IS_BABBLE&#160;:&#160;<a class="el" href="musb__type_8h.html#a9eef1cdb95d649e2ae54dee9e6df001c">musb_type.h</a></li>
-<li>MUSB_IS_CONN&#160;:&#160;<a class="el" href="musb__type_8h.html#ab884646a4abb2fb9ba67f69a04d16df5">musb_type.h</a></li>
-<li>MUSB_IS_DISCON&#160;:&#160;<a class="el" href="musb__type_8h.html#a3b057c226262a29f3fc10b97f9906d5c">musb_type.h</a></li>
-<li>MUSB_IS_RESET&#160;:&#160;<a class="el" href="musb__type_8h.html#a7ca7ae75091bb6d3e1644f2ba7ec5199">musb_type.h</a></li>
-<li>MUSB_IS_RESUME&#160;:&#160;<a class="el" href="musb__type_8h.html#ac6aaf22a6bd7866ebf8cb1e6f402c56a">musb_type.h</a></li>
-<li>MUSB_IS_SESREQ&#160;:&#160;<a class="el" href="musb__type_8h.html#a26163f91e9eb35b6c097005e15e22b84">musb_type.h</a></li>
-<li>MUSB_IS_SOF&#160;:&#160;<a class="el" href="musb__type_8h.html#a9f9cfac7232593b91457ed5f063496e7">musb_type.h</a></li>
-<li>MUSB_IS_SUSPEND&#160;:&#160;<a class="el" href="musb__type_8h.html#a5290ba73b3272aa08cd6bf124bbfc74a">musb_type.h</a></li>
-<li>MUSB_IS_VBUSERR&#160;:&#160;<a class="el" href="musb__type_8h.html#acd1e867282dd982f8eccc01f9d039ff6">musb_type.h</a></li>
-<li>MUSB_LSEOF_LSEOFG_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a45c1a91ae865464130a720d4d00afa91">musb_type.h</a></li>
-<li>MUSB_LSEOF_LSEOFG_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a72627fcaa57af3be24e0ccaea4ac6037">musb_type.h</a></li>
-<li>MUSB_NAKLMT_NAKLMT_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a1ba161fec3940a9bfc821eebeef72d74">musb_type.h</a></li>
-<li>MUSB_NAKLMT_NAKLMT_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a1f109bb2263ffa421b8c8200068b83c8">musb_type.h</a></li>
-<li>MUSB_POWER_HSENAB&#160;:&#160;<a class="el" href="musb__type_8h.html#a9334782be646e4d38d01ee278c29c5e1">musb_type.h</a></li>
-<li>MUSB_POWER_HSMODE&#160;:&#160;<a class="el" href="musb__type_8h.html#adc45b9d93bf11c6e499929a493ad16e5">musb_type.h</a></li>
-<li>MUSB_POWER_ISOUP&#160;:&#160;<a class="el" href="musb__type_8h.html#a257251912fe460a3b2ac9f74e532d538">musb_type.h</a></li>
-<li>MUSB_POWER_PWRDNPHY&#160;:&#160;<a class="el" href="musb__type_8h.html#aa35de9f6adeb125f0118ec577eaf146c">musb_type.h</a></li>
-<li>MUSB_POWER_RESET&#160;:&#160;<a class="el" href="musb__type_8h.html#a9c1868c6d633f40192c52c23061fb6ac">musb_type.h</a></li>
-<li>MUSB_POWER_RESUME&#160;:&#160;<a class="el" href="musb__type_8h.html#aa08269e5008a4ce26ed81dff28a219dc">musb_type.h</a></li>
-<li>MUSB_POWER_SOFTCONN&#160;:&#160;<a class="el" href="musb__type_8h.html#a0b9d03d97458660f73a9f98eb0ebad35">musb_type.h</a></li>
-<li>MUSB_POWER_SUSPEND&#160;:&#160;<a class="el" href="musb__type_8h.html#a1ac9ede5e32f04bcb25ebd2deb00ff40">musb_type.h</a></li>
-<li>MUSB_RAMINFO_DMACHAN_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a0092be30da69cc23f68e76cd984f7830">musb_type.h</a></li>
-<li>MUSB_RAMINFO_DMACHAN_S&#160;:&#160;<a class="el" href="musb__type_8h.html#aa69adeee7d49d43564ccd70533483f08">musb_type.h</a></li>
-<li>MUSB_RAMINFO_RAMBITS_M&#160;:&#160;<a class="el" href="musb__type_8h.html#aa9b858673050bf7c0441b92ff553342f">musb_type.h</a></li>
-<li>MUSB_RAMINFO_RAMBITS_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a10594c4ee55ae667bf6f407d31c2ad26">musb_type.h</a></li>
-<li>MUSB_RXCSRH1_AUTOCL&#160;:&#160;<a class="el" href="musb__type_8h.html#a2b9517a72b143beb37d41011735db5fb">musb_type.h</a></li>
-<li>MUSB_RXCSRH1_AUTORQ&#160;:&#160;<a class="el" href="musb__type_8h.html#aa15274c56a7f2c7b764259e9222f4961">musb_type.h</a></li>
-<li>MUSB_RXCSRH1_DISNYET&#160;:&#160;<a class="el" href="musb__type_8h.html#a11963b4e1eef2a11153ea5ced7a05175">musb_type.h</a></li>
-<li>MUSB_RXCSRH1_DMAEN&#160;:&#160;<a class="el" href="musb__type_8h.html#a8d325e397efcdacaf0374b4d74fc110f">musb_type.h</a></li>
-<li>MUSB_RXCSRH1_DMAMOD&#160;:&#160;<a class="el" href="musb__type_8h.html#acb713f0ebaa02af36bb4690ce5929229">musb_type.h</a></li>
-<li>MUSB_RXCSRH1_DT&#160;:&#160;<a class="el" href="musb__type_8h.html#ad8f1a76f4438009f25fc277ecbdceaa3">musb_type.h</a></li>
-<li>MUSB_RXCSRH1_DTWE&#160;:&#160;<a class="el" href="musb__type_8h.html#a392857379f6b9243a06f7c4062844b9b">musb_type.h</a></li>
-<li>MUSB_RXCSRH1_INCOMPRX&#160;:&#160;<a class="el" href="musb__type_8h.html#a0f89a7ae854df0638f5ff86705a89d04">musb_type.h</a></li>
-<li>MUSB_RXCSRH1_ISO&#160;:&#160;<a class="el" href="musb__type_8h.html#ab5c375400752ded5ca4811e2b204a731">musb_type.h</a></li>
-<li>MUSB_RXCSRH1_PIDERR&#160;:&#160;<a class="el" href="musb__type_8h.html#a210cfaa5f25bd931d801e607919e361c">musb_type.h</a></li>
-<li>MUSB_RXCSRL1_CLRDT&#160;:&#160;<a class="el" href="musb__type_8h.html#a085c2de83bddaae12a0366287c27c1ce">musb_type.h</a></li>
-<li>MUSB_RXCSRL1_DATAERR&#160;:&#160;<a class="el" href="musb__type_8h.html#aaf930c3bb8a5bfc4b40da9822d4cd7c6">musb_type.h</a></li>
-<li>MUSB_RXCSRL1_ERROR&#160;:&#160;<a class="el" href="musb__type_8h.html#a7aea4e051213db6ac314fc7c27b60aa0">musb_type.h</a></li>
-<li>MUSB_RXCSRL1_FLUSH&#160;:&#160;<a class="el" href="musb__type_8h.html#aa0a2de965d6e95fe9b0df116a395cbb9">musb_type.h</a></li>
-<li>MUSB_RXCSRL1_FULL&#160;:&#160;<a class="el" href="musb__type_8h.html#a730a2475851853e261bc1e1e577a9451">musb_type.h</a></li>
-<li>MUSB_RXCSRL1_NAKTO&#160;:&#160;<a class="el" href="musb__type_8h.html#aefe23d1e69a868114bc07661c3839d62">musb_type.h</a></li>
-<li>MUSB_RXCSRL1_OVER&#160;:&#160;<a class="el" href="musb__type_8h.html#ae23fa0d10b9413844e7abe86735580a5">musb_type.h</a></li>
-<li>MUSB_RXCSRL1_REQPKT&#160;:&#160;<a class="el" href="musb__type_8h.html#aa793a7ea8faee747e9b0f69f5139de2b">musb_type.h</a></li>
-<li>MUSB_RXCSRL1_RXRDY&#160;:&#160;<a class="el" href="musb__type_8h.html#aadc7510ba61c2b5a65b16980af8731ee">musb_type.h</a></li>
-<li>MUSB_RXCSRL1_STALL&#160;:&#160;<a class="el" href="musb__type_8h.html#a53325837d9969bbd83bf4ff6b661f861">musb_type.h</a></li>
-<li>MUSB_RXCSRL1_STALLED&#160;:&#160;<a class="el" href="musb__type_8h.html#abf4ef70d0ca71a3598173cdea97cdb56">musb_type.h</a></li>
-<li>MUSB_RXINTERVAL1_NAKLMT_M&#160;:&#160;<a class="el" href="musb__type_8h.html#aac4dbaaaf6b35fcfe10321717ad0c930">musb_type.h</a></li>
-<li>MUSB_RXINTERVAL1_NAKLMT_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a9e0fc3c8a5f93c800db8c770543b40a4">musb_type.h</a></li>
-<li>MUSB_RXINTERVAL1_TXPOLL_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a4b64b2fb265c0ff0d23576786c1ec1fd">musb_type.h</a></li>
-<li>MUSB_RXINTERVAL1_TXPOLL_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a56ceaa2ecad5f6c32e53a1d5d7af1e8d">musb_type.h</a></li>
-<li>MUSB_RXTYPE1_PROTO_BULK&#160;:&#160;<a class="el" href="musb__type_8h.html#a79e1371107b62295e18ea7110ff16c30">musb_type.h</a></li>
-<li>MUSB_RXTYPE1_PROTO_CTRL&#160;:&#160;<a class="el" href="musb__type_8h.html#a9858af8030cb1acbfcd6918d34f51f89">musb_type.h</a></li>
-<li>MUSB_RXTYPE1_PROTO_INT&#160;:&#160;<a class="el" href="musb__type_8h.html#a2b94f89611aa9bf9194a4b16e0c6e04e">musb_type.h</a></li>
-<li>MUSB_RXTYPE1_PROTO_ISOC&#160;:&#160;<a class="el" href="musb__type_8h.html#aba4c4a74bf9384fd2918ba1a12f94924">musb_type.h</a></li>
-<li>MUSB_RXTYPE1_PROTO_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a5cb6c8697997cb089e5466ac96c485e6">musb_type.h</a></li>
-<li>MUSB_RXTYPE1_SPEED_DFLT&#160;:&#160;<a class="el" href="musb__type_8h.html#afb33b6ba887ba16619670b150c567fae">musb_type.h</a></li>
-<li>MUSB_RXTYPE1_SPEED_FULL&#160;:&#160;<a class="el" href="musb__type_8h.html#a8e0abfc81274283c3d7117fd9d7adba3">musb_type.h</a></li>
-<li>MUSB_RXTYPE1_SPEED_HIGH&#160;:&#160;<a class="el" href="musb__type_8h.html#a199003a97741567472bf325230eeca68">musb_type.h</a></li>
-<li>MUSB_RXTYPE1_SPEED_LOW&#160;:&#160;<a class="el" href="musb__type_8h.html#abf94aa531ec7a741b07af72ff8138ec5">musb_type.h</a></li>
-<li>MUSB_RXTYPE1_SPEED_M&#160;:&#160;<a class="el" href="musb__type_8h.html#ad381f3f71a5b8f8cd5905abc901dac0f">musb_type.h</a></li>
-<li>MUSB_RXTYPE1_TEP_M&#160;:&#160;<a class="el" href="musb__type_8h.html#afafbdcea950cdd6d5678dfdd07fa5d05">musb_type.h</a></li>
-<li>MUSB_RXTYPE1_TEP_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a6b182bf4a129db4a0ee43864708fef73">musb_type.h</a></li>
-<li>MUSB_TEST_FIFOACC&#160;:&#160;<a class="el" href="musb__type_8h.html#afeae6d0b5bb87b1533c65732f84be744">musb_type.h</a></li>
-<li>MUSB_TEST_FORCEFS&#160;:&#160;<a class="el" href="musb__type_8h.html#aae53441f082d29bc29256e14f9ee44f2">musb_type.h</a></li>
-<li>MUSB_TEST_FORCEH&#160;:&#160;<a class="el" href="musb__type_8h.html#adfddc22e39b151c469d5cad2b848db64">musb_type.h</a></li>
-<li>MUSB_TEST_FORCEHS&#160;:&#160;<a class="el" href="musb__type_8h.html#ac675eb2f13825ac60787b1fe5c734886">musb_type.h</a></li>
-<li>MUSB_TEST_TESTJ&#160;:&#160;<a class="el" href="musb__type_8h.html#a70cf5e863fde5f09228247536f948270">musb_type.h</a></li>
-<li>MUSB_TEST_TESTK&#160;:&#160;<a class="el" href="musb__type_8h.html#a82db12f6f3171eb7c3561edfbe3b4325">musb_type.h</a></li>
-<li>MUSB_TEST_TESTPKT&#160;:&#160;<a class="el" href="musb__type_8h.html#a4f0bb6eb99a7543115c93418e78bc0e1">musb_type.h</a></li>
-<li>MUSB_TEST_TESTSE0NAK&#160;:&#160;<a class="el" href="musb__type_8h.html#a50f3dd6e08ba9fdf42c4c889ad619cc8">musb_type.h</a></li>
-<li>MUSB_TXCSRH1_AUTOSET&#160;:&#160;<a class="el" href="musb__type_8h.html#a720c2a8624125bd09e820ce50add9952">musb_type.h</a></li>
-<li>MUSB_TXCSRH1_DMAEN&#160;:&#160;<a class="el" href="musb__type_8h.html#a8ad95c60800e2b182dccb76b44112359">musb_type.h</a></li>
-<li>MUSB_TXCSRH1_DMAMOD&#160;:&#160;<a class="el" href="musb__type_8h.html#a050ce6392557fe990bc399f70713ff0f">musb_type.h</a></li>
-<li>MUSB_TXCSRH1_DT&#160;:&#160;<a class="el" href="musb__type_8h.html#ac5f1374ddd00d17652a0b77f0fc43b96">musb_type.h</a></li>
-<li>MUSB_TXCSRH1_DTWE&#160;:&#160;<a class="el" href="musb__type_8h.html#a2d0f240fadda8168e6dfdd5cfd1a812b">musb_type.h</a></li>
-<li>MUSB_TXCSRH1_FDT&#160;:&#160;<a class="el" href="musb__type_8h.html#ac0048434d2c1b0da1a948d12f2bf39d0">musb_type.h</a></li>
-<li>MUSB_TXCSRH1_ISO&#160;:&#160;<a class="el" href="musb__type_8h.html#a563be33f403d40e8361d7bedbc824d58">musb_type.h</a></li>
-<li>MUSB_TXCSRH1_MODE&#160;:&#160;<a class="el" href="musb__type_8h.html#a4ec90797a2fc50a47c164e2a7bd239c5">musb_type.h</a></li>
-<li>MUSB_TXCSRL1_CLRDT&#160;:&#160;<a class="el" href="musb__type_8h.html#ac9cd544f75afb3c2a17c6f367711d0c9">musb_type.h</a></li>
-<li>MUSB_TXCSRL1_ERROR&#160;:&#160;<a class="el" href="musb__type_8h.html#a3d8284aa3f26e38c9a84dddb87fc39ab">musb_type.h</a></li>
-<li>MUSB_TXCSRL1_FIFONE&#160;:&#160;<a class="el" href="musb__type_8h.html#a9ebab1568791bfee488702bb600c827b">musb_type.h</a></li>
-<li>MUSB_TXCSRL1_FLUSH&#160;:&#160;<a class="el" href="musb__type_8h.html#a6bd1cd29cbe48a4c44bfbd1704d285f7">musb_type.h</a></li>
-<li>MUSB_TXCSRL1_NAKTO&#160;:&#160;<a class="el" href="musb__type_8h.html#aeebe126ada1f1f515fdb42c7cb92188c">musb_type.h</a></li>
-<li>MUSB_TXCSRL1_SETUP&#160;:&#160;<a class="el" href="musb__type_8h.html#ac87bd09ce2c0376aa28a9233968a59d9">musb_type.h</a></li>
-<li>MUSB_TXCSRL1_STALL&#160;:&#160;<a class="el" href="musb__type_8h.html#a4ad734118d5376f826a6d1c6f7100cbd">musb_type.h</a></li>
-<li>MUSB_TXCSRL1_STALLED&#160;:&#160;<a class="el" href="musb__type_8h.html#ae1268c945998528ff5599cffdda07749">musb_type.h</a></li>
-<li>MUSB_TXCSRL1_TXRDY&#160;:&#160;<a class="el" href="musb__type_8h.html#ae0a1007d06ffb97dece9ba8381431d7a">musb_type.h</a></li>
-<li>MUSB_TXCSRL1_UNDRN&#160;:&#160;<a class="el" href="musb__type_8h.html#a3da3ea7f2c15d464b7f29a3c9c040b95">musb_type.h</a></li>
-<li>MUSB_TXINTERVAL1_NAKLMT_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a64f2fa09013be38c0a01d1e0816a0a5c">musb_type.h</a></li>
-<li>MUSB_TXINTERVAL1_NAKLMT_S&#160;:&#160;<a class="el" href="musb__type_8h.html#aac1925a145d42fa139399644e133f556">musb_type.h</a></li>
-<li>MUSB_TXINTERVAL1_TXPOLL_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a922ae1fd84bd76ff1928bd1ac83e644d">musb_type.h</a></li>
-<li>MUSB_TXINTERVAL1_TXPOLL_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a5473fc8e8769ab5def9d2f6f1b732875">musb_type.h</a></li>
-<li>MUSB_TXTYPE1_PROTO_BULK&#160;:&#160;<a class="el" href="musb__type_8h.html#a3fcc90832e64a6e1e33f7fa5eadbd7ca">musb_type.h</a></li>
-<li>MUSB_TXTYPE1_PROTO_CTRL&#160;:&#160;<a class="el" href="musb__type_8h.html#a1db7b5b2b734459503689ef840b56539">musb_type.h</a></li>
-<li>MUSB_TXTYPE1_PROTO_INT&#160;:&#160;<a class="el" href="musb__type_8h.html#a23d95c14d21fcd73e8e66517db08084e">musb_type.h</a></li>
-<li>MUSB_TXTYPE1_PROTO_ISOC&#160;:&#160;<a class="el" href="musb__type_8h.html#a333b7a0463098fb259f3d347880dfe97">musb_type.h</a></li>
-<li>MUSB_TXTYPE1_PROTO_M&#160;:&#160;<a class="el" href="musb__type_8h.html#ae7adb6214eb904c1b73debe5c50a162a">musb_type.h</a></li>
-<li>MUSB_TXTYPE1_SPEED_DFLT&#160;:&#160;<a class="el" href="musb__type_8h.html#a4b676405502185e915ab49e0fa5b01bf">musb_type.h</a></li>
-<li>MUSB_TXTYPE1_SPEED_FULL&#160;:&#160;<a class="el" href="musb__type_8h.html#aa11273ad0687325b4708a28c158b91a9">musb_type.h</a></li>
-<li>MUSB_TXTYPE1_SPEED_HIGH&#160;:&#160;<a class="el" href="musb__type_8h.html#a8c02066553a9e105aeaff475a5787cac">musb_type.h</a></li>
-<li>MUSB_TXTYPE1_SPEED_LOW&#160;:&#160;<a class="el" href="musb__type_8h.html#a388e59ff4844169b8c95516aec0eb765">musb_type.h</a></li>
-<li>MUSB_TXTYPE1_SPEED_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a0bd80861c3720664c2883b6704d66db1">musb_type.h</a></li>
-<li>MUSB_TXTYPE1_TEP_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a56a2e5874b1a9f4c77f42c7fd8907af6">musb_type.h</a></li>
-<li>MUSB_TXTYPE1_TEP_S&#160;:&#160;<a class="el" href="musb__type_8h.html#ae540b40e68098881ca3e036714754cf4">musb_type.h</a></li>
-<li>MUSB_TYPE0_SPEED_FULL&#160;:&#160;<a class="el" href="musb__type_8h.html#affe2d52228f7f005f5ffd0974100dbac">musb_type.h</a></li>
-<li>MUSB_TYPE0_SPEED_HIGH&#160;:&#160;<a class="el" href="musb__type_8h.html#a1670a97b88bc56401aa475c43932877e">musb_type.h</a></li>
-<li>MUSB_TYPE0_SPEED_LOW&#160;:&#160;<a class="el" href="musb__type_8h.html#abb9ebf5bdf61c66d7228ef6e339963b9">musb_type.h</a></li>
-<li>MUSB_TYPE0_SPEED_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a3840c454d6c4de12d673bada4ab23a6d">musb_type.h</a></li>
-<li>MUSB_ULPIREGADDR_ADDR_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a7c6ca6752a028bfe71170107c06c948f">musb_type.h</a></li>
-<li>MUSB_ULPIREGADDR_ADDR_S&#160;:&#160;<a class="el" href="musb__type_8h.html#ae0e48d710a38f79a45efbeaf2ebcad8a">musb_type.h</a></li>
-<li>MUSB_ULPIREGCTL_RDWR&#160;:&#160;<a class="el" href="musb__type_8h.html#a788e8919486212ebb26c9961854b9596">musb_type.h</a></li>
-<li>MUSB_ULPIREGCTL_REGACC&#160;:&#160;<a class="el" href="musb__type_8h.html#a621a41648fd764689d6ea746dad606ab">musb_type.h</a></li>
-<li>MUSB_ULPIREGCTL_REGCMPLT&#160;:&#160;<a class="el" href="musb__type_8h.html#a9bca3e66c450da0cf42a98b830108b5e">musb_type.h</a></li>
-<li>MUSB_ULPIREGDATA_REGDATA_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a2e6ae672e0585b18881b3e4266828c9e">musb_type.h</a></li>
-<li>MUSB_ULPIREGDATA_REGDATA_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a3fa720f93c7ccfd986e7007bab15bb0b">musb_type.h</a></li>
-<li>MUSB_ULPIVBUSCTL_USEEXTVBUS&#160;:&#160;<a class="el" href="musb__type_8h.html#ab01d65a6536674c6dd69e5777823d08f">musb_type.h</a></li>
-<li>MUSB_ULPIVBUSCTL_USEEXTVBUSIND&#160;:&#160;<a class="el" href="musb__type_8h.html#a8ea07cfce0f89c2e2e3799d92ce126b6">musb_type.h</a></li>
-<li>MUSB_VPLEN_VPLEN_M&#160;:&#160;<a class="el" href="musb__type_8h.html#a61b04e67af0b994df5e222c5e6240385">musb_type.h</a></li>
-<li>MUSB_VPLEN_VPLEN_S&#160;:&#160;<a class="el" href="musb__type_8h.html#a67d2b2c6ae0cb471eaf45cb51f3b0b78">musb_type.h</a></li>
-<li>MX_ADC1_Init()&#160;:&#160;<a class="el" href="adc_8h.html#acccd58aa70215a6b184ad242312ffd0c">adc.h</a>, <a class="el" href="adc_8c.html#acccd58aa70215a6b184ad242312ffd0c">adc.c</a></li>
+<li>monitor_attr&#160;:&#160;<a class="el" href="sd__task_8c.html#a82e5bc617b8497fd044205fe2cea771d">sd_task.c</a></li>
+<li>monitor_task_id&#160;:&#160;<a class="el" href="sd__task_8c.html#a4d29f9cc3aa5c0306d7e17ec14539d00">sd_task.c</a></li>
+<li>monitor_task_thread()&#160;:&#160;<a class="el" href="sd__task_8c.html#a0db1b2ecd079a48393cae891b54c5926">sd_task.c</a></li>
+<li>MX_ADC1_Init()&#160;:&#160;<a class="el" href="adc_8c.html#acccd58aa70215a6b184ad242312ffd0c">adc.c</a>, <a class="el" href="adc_8h.html#acccd58aa70215a6b184ad242312ffd0c">adc.h</a></li>
 <li>MX_CRC_Init()&#160;:&#160;<a class="el" href="crc_8h.html#a9f720fe95d685258cfe2ba29dc395c48">crc.h</a>, <a class="el" href="crc_8c.html#a9f720fe95d685258cfe2ba29dc395c48">crc.c</a></li>
 <li>MX_FDCAN1_Init()&#160;:&#160;<a class="el" href="fdcan_8h.html#af122e1c28b11c5b8771e82328e10fa2c">fdcan.h</a>, <a class="el" href="fdcan_8c.html#af122e1c28b11c5b8771e82328e10fa2c">fdcan.c</a></li>
 <li>MX_FREERTOS_Init()&#160;:&#160;<a class="el" href="app__freertos_8h.html#abade755e13d07c10889ae83143656158">app_freertos.h</a>, <a class="el" href="app__freertos_8c.html#abade755e13d07c10889ae83143656158">app_freertos.c</a>, <a class="el" href="main_8c.html#abade755e13d07c10889ae83143656158">main.c</a></li>
-<li>MX_GPDMA1_Init()&#160;:&#160;<a class="el" href="gpdma_8c.html#a582079fe71ee35836eb2241c852d080f">gpdma.c</a>, <a class="el" href="gpdma_8h.html#a582079fe71ee35836eb2241c852d080f">gpdma.h</a></li>
+<li>MX_GPDMA1_Init()&#160;:&#160;<a class="el" href="gpdma_8h.html#a582079fe71ee35836eb2241c852d080f">gpdma.h</a>, <a class="el" href="gpdma_8c.html#a582079fe71ee35836eb2241c852d080f">gpdma.c</a></li>
 <li>MX_GPIO_Init()&#160;:&#160;<a class="el" href="gpio_8h.html#ac724e431d2af879252de35615be2bdea">gpio.h</a>, <a class="el" href="gpio_8c.html#ac724e431d2af879252de35615be2bdea">gpio.c</a></li>
 <li>MX_I2C4_Init()&#160;:&#160;<a class="el" href="i2c_8h.html#aff347bba84984e13d80fbd89994ef3f7">i2c.h</a>, <a class="el" href="i2c_8c.html#aff347bba84984e13d80fbd89994ef3f7">i2c.c</a></li>
 <li>MX_SDMMC1_SD_Init()&#160;:&#160;<a class="el" href="sdmmc_8h.html#aa2f8ae212178095807e5e647e686e719">sdmmc.h</a>, <a class="el" href="sdmmc_8c.html#aa2f8ae212178095807e5e647e686e719">sdmmc.c</a></li>
-<li>MX_SPI1_Init()&#160;:&#160;<a class="el" href="spi_8h.html#af81398f9775695df0b172367651ca3e6">spi.h</a>, <a class="el" href="spi_8c.html#af81398f9775695df0b172367651ca3e6">spi.c</a></li>
+<li>MX_SPI1_Init()&#160;:&#160;<a class="el" href="spi_8c.html#af81398f9775695df0b172367651ca3e6">spi.c</a>, <a class="el" href="spi_8h.html#af81398f9775695df0b172367651ca3e6">spi.h</a></li>
 <li>MX_SPI2_Init()&#160;:&#160;<a class="el" href="spi_8h.html#aea85daa666c03d85fd59edef711ebb08">spi.h</a>, <a class="el" href="spi_8c.html#aea85daa666c03d85fd59edef711ebb08">spi.c</a></li>
-<li>MX_SPI4_Init()&#160;:&#160;<a class="el" href="spi_8c.html#a5ea97db0d8624acd4fc61ff9c5cfcc9e">spi.c</a>, <a class="el" href="spi_8h.html#a5ea97db0d8624acd4fc61ff9c5cfcc9e">spi.h</a></li>
+<li>MX_SPI4_Init()&#160;:&#160;<a class="el" href="spi_8h.html#a5ea97db0d8624acd4fc61ff9c5cfcc9e">spi.h</a>, <a class="el" href="spi_8c.html#a5ea97db0d8624acd4fc61ff9c5cfcc9e">spi.c</a></li>
 <li>MX_TIM2_Init()&#160;:&#160;<a class="el" href="tim_8h.html#a4b8ff887fd3fdf26605e35927e4ff202">tim.h</a>, <a class="el" href="tim_8c.html#a4b8ff887fd3fdf26605e35927e4ff202">tim.c</a></li>
-<li>MX_TIM4_Init()&#160;:&#160;<a class="el" href="tim_8h.html#aef1e0b132b1af1c923cc420a57180c67">tim.h</a>, <a class="el" href="tim_8c.html#aef1e0b132b1af1c923cc420a57180c67">tim.c</a></li>
+<li>MX_TIM4_Init()&#160;:&#160;<a class="el" href="tim_8c.html#aef1e0b132b1af1c923cc420a57180c67">tim.c</a>, <a class="el" href="tim_8h.html#aef1e0b132b1af1c923cc420a57180c67">tim.h</a></li>
 <li>MX_USART1_UART_Init()&#160;:&#160;<a class="el" href="usart_8h.html#a57d1167735baafab8e3288526c424929">usart.h</a>, <a class="el" href="usart_8c.html#a57d1167735baafab8e3288526c424929">usart.c</a></li>
 <li>MX_USART2_UART_Init()&#160;:&#160;<a class="el" href="usart_8h.html#a052088fe5bb3f807a4b2502e664fd4fd">usart.h</a>, <a class="el" href="usart_8c.html#a052088fe5bb3f807a4b2502e664fd4fd">usart.c</a></li>
 <li>MX_USB_PCD_Init()&#160;:&#160;<a class="el" href="usb_8h.html#acade11ca9152720e1fcaaf9efa6ed337">usb.h</a>, <a class="el" href="usb_8c.html#acade11ca9152720e1fcaaf9efa6ed337">usb.c</a></li>
@@ -455,9 +143,12 @@ $(function() {
 <li>MycontrolBlocTask00&#160;:&#160;<a class="el" href="app__freertos_8c.html#aa3bee020b7eae24b2e1ee4f4ce2bf13a">app_freertos.c</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

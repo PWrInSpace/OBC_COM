@@ -1,6 +1,0 @@
-<map id="dwc2_regs_t" name="dwc2_regs_t">
-<area shape="rect" id="node1" title=" " alt="" coords="173,123,275,148"/>
-<area shape="rect" id="node2" href="$uniondwc2__ghwcfg4__t.html" title=" " alt="" coords="5,5,136,31"/>
-<area shape="rect" id="node3" href="$structdwc2__channel__t.html" title=" " alt="" coords="161,5,287,31"/>
-<area shape="rect" id="node4" href="$structdwc2__dep__t.html" title=" " alt="" coords="312,5,411,31"/>
-</map>

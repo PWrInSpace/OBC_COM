@@ -1,8 +1,0 @@
-<map id="Human Interface Device (HID)" name="Human Interface Device (HID)">
-<area shape="rect" id="node1" title=" " alt="" coords="5,97,185,137"/>
-<area shape="rect" id="node2" href="$group__ClassDriver__HID__Common.html" title=" " alt="" coords="233,5,388,31"/>
-<area shape="rect" id="node3" href="$group__ClassDriver__HID__Gamepad.html" title=" " alt="" coords="268,55,353,80"/>
-<area shape="rect" id="node4" href="$group__ClassDriver__HID__Keyboard.html" title=" " alt="" coords="269,104,352,129"/>
-<area shape="rect" id="node5" href="$group__ClassDriver__HID__Mouse.html" title=" " alt="" coords="278,153,343,179"/>
-<area shape="rect" id="node6" href="$group__ClassDriver__HID__Stylus.html" title=" " alt="" coords="279,203,342,228"/>
-</map>

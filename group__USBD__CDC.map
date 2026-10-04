@@ -1,0 +1,8 @@
+<map id="USBD_CDC" name="USBD_CDC">
+<area shape="rect" id="node1" href="$group__STM32__USB__DEVICE__LIBRARY.html" title=" " alt="" coords="5,92,221,117"/>
+<area shape="rect" id="node2" title="usbd core module" alt="" coords="269,92,364,117"/>
+<area shape="rect" id="node3" href="$group__USBD__CDC__Private__Defines.html" title=" " alt="" coords="441,5,644,31"/>
+<area shape="rect" id="node4" href="$group__USBD__CDC__Private__FunctionPrototypes.html" title=" " alt="" coords="438,55,647,95"/>
+<area shape="rect" id="node5" href="$group__USBD__CDC__Private__Macros.html" title=" " alt="" coords="442,120,643,145"/>
+<area shape="rect" id="node6" href="$group__USBD__CDC__Private__TypesDefinitions.html" title=" " alt="" coords="412,169,673,195"/>
+</map>

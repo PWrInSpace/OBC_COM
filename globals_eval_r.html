@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('globals_eval_r.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,8 +93,8 @@ $(function() {
 &#160;
 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
-<li>RADIO_CALIBRATE&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cddac40a8b72b52dc7d8d18b9da572f2fd52">sx1280.h</a></li>
-<li>RADIO_CLR_IRQSTATUS&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda2075a8c068db1868a429e06a62562ffa">sx1280.h</a></li>
+<li>RADIO_CALIBRATE&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aeac40a8b72b52dc7d8d18b9da572f2fd52">sx1280.h</a></li>
+<li>RADIO_CLR_IRQSTATUS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea2075a8c068db1868a429e06a62562ffa">sx1280.h</a></li>
 <li>RADIO_CRC_1_BYTES&#160;:&#160;<a class="el" href="sx1280_8h.html#a95490d3a239c9354c0e0781c88037c91ab6855363ce701460d7fac8d3687d0fd5">sx1280.h</a></li>
 <li>RADIO_CRC_2_BYTES&#160;:&#160;<a class="el" href="sx1280_8h.html#a95490d3a239c9354c0e0781c88037c91a0701118195ea48074f34e34bd536183b">sx1280.h</a></li>
 <li>RADIO_CRC_3_BYTES&#160;:&#160;<a class="el" href="sx1280_8h.html#a95490d3a239c9354c0e0781c88037c91a7b45fcc09fc5981bbbed5410ee4d7e21">sx1280.h</a></li>
@@ -82,12 +102,12 @@ $(function() {
 <li>RADIO_DIO1&#160;:&#160;<a class="el" href="sx1280_8h.html#a6d040e08f3ff6163ba3d44bc3f657bbba82de08ce33f047d504c345c4fcaf34f6">sx1280.h</a></li>
 <li>RADIO_DIO2&#160;:&#160;<a class="el" href="sx1280_8h.html#a6d040e08f3ff6163ba3d44bc3f657bbbae3265dc5e220b6dd56c15cdda43ee535">sx1280.h</a></li>
 <li>RADIO_DIO3&#160;:&#160;<a class="el" href="sx1280_8h.html#a6d040e08f3ff6163ba3d44bc3f657bbba3658bee25f8a5315a295063d16ac8340">sx1280.h</a></li>
-<li>RADIO_GET_IRQSTATUS&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda6fd5e5a4660fb418d57e692e939b9245">sx1280.h</a></li>
-<li>RADIO_GET_PACKETSTATUS&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda9a43866a7ea3935c4268b300f5d8c1fb">sx1280.h</a></li>
-<li>RADIO_GET_PACKETTYPE&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cddad6a9b474ec27effc0146159e1a2c1ac7">sx1280.h</a></li>
-<li>RADIO_GET_RSSIINST&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cddaacc7e1257423f15422ddd4362743622c">sx1280.h</a></li>
-<li>RADIO_GET_RXBUFFERSTATUS&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda03c9987770f8a26304c4ae9481d3dfad">sx1280.h</a></li>
-<li>RADIO_GET_STATUS&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda0c48577b9a8f77ed7d04d93dc8098b7a">sx1280.h</a></li>
+<li>RADIO_GET_IRQSTATUS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea6fd5e5a4660fb418d57e692e939b9245">sx1280.h</a></li>
+<li>RADIO_GET_PACKETSTATUS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea9a43866a7ea3935c4268b300f5d8c1fb">sx1280.h</a></li>
+<li>RADIO_GET_PACKETTYPE&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aead6a9b474ec27effc0146159e1a2c1ac7">sx1280.h</a></li>
+<li>RADIO_GET_RSSIINST&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aeaacc7e1257423f15422ddd4362743622c">sx1280.h</a></li>
+<li>RADIO_GET_RXBUFFERSTATUS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea03c9987770f8a26304c4ae9481d3dfad">sx1280.h</a></li>
+<li>RADIO_GET_STATUS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea0c48577b9a8f77ed7d04d93dc8098b7a">sx1280.h</a></li>
 <li>RADIO_MOD_SHAPING_BT_0_5&#160;:&#160;<a class="el" href="sx1280_8h.html#a75861340797b61727c732cd276a6ae77a50ae880d9929d6df9f076c9d439f449b">sx1280.h</a></li>
 <li>RADIO_MOD_SHAPING_BT_1_0&#160;:&#160;<a class="el" href="sx1280_8h.html#a75861340797b61727c732cd276a6ae77aec432398cbd5dca6e07c39bac754863e">sx1280.h</a></li>
 <li>RADIO_MOD_SHAPING_BT_OFF&#160;:&#160;<a class="el" href="sx1280_8h.html#a75861340797b61727c732cd276a6ae77ae9ec7c01e125e4af8a562cc226cd0a87">sx1280.h</a></li>
@@ -103,8 +123,8 @@ $(function() {
 <li>RADIO_RAMP_20_US&#160;:&#160;<a class="el" href="sx1280_8h.html#a8f1d07f2043b67f4c220abed47f7ea97a40522ccd1dc276eadf6ae21a03003e7e">sx1280.h</a></li>
 <li>RADIO_RANGING_ROLE_MASTER&#160;:&#160;<a class="el" href="sx1280_8h.html#af8dfcc3848324814e51c7fa81af51839a3b64e255729345bab0430d59593a8d64">sx1280.h</a></li>
 <li>RADIO_RANGING_ROLE_SLAVE&#160;:&#160;<a class="el" href="sx1280_8h.html#af8dfcc3848324814e51c7fa81af51839a18f3fd7faf7f3ba1e8900f9e44b76bb7">sx1280.h</a></li>
-<li>RADIO_READ_BUFFER&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cddab7039c8abf8dbccc4b841a34e11b26ae">sx1280.h</a></li>
-<li>RADIO_READ_REGISTER&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda1a263c9e0abf2a83b9c54634dc06b3ef">sx1280.h</a></li>
+<li>RADIO_READ_BUFFER&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aeab7039c8abf8dbccc4b841a34e11b26ae">sx1280.h</a></li>
+<li>RADIO_READ_REGISTER&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea1a263c9e0abf2a83b9c54634dc06b3ef">sx1280.h</a></li>
 <li>RADIO_RX_MATCH_SYNCWORD_1&#160;:&#160;<a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43a511da33b5c76d81518323d84d07a0423">sx1280.h</a></li>
 <li>RADIO_RX_MATCH_SYNCWORD_1_2&#160;:&#160;<a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43aa2eaa95ba140af44c9434e7579bc7938">sx1280.h</a></li>
 <li>RADIO_RX_MATCH_SYNCWORD_1_2_3&#160;:&#160;<a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43aeed00d746a4014ef2aef5bb0aa9cc9bb">sx1280.h</a></li>
@@ -113,38 +133,38 @@ $(function() {
 <li>RADIO_RX_MATCH_SYNCWORD_2_3&#160;:&#160;<a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43ae68c9c90230fac33d3f216421f4ef468">sx1280.h</a></li>
 <li>RADIO_RX_MATCH_SYNCWORD_3&#160;:&#160;<a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43ac3bcd6c2b19a703d2cc3185867875566">sx1280.h</a></li>
 <li>RADIO_RX_MATCH_SYNCWORD_OFF&#160;:&#160;<a class="el" href="sx1280_8h.html#a0177c4999ed4e4ab96e34ec13183ed43aba429f7628d9dc2c5ed04a0ceac1ffa1">sx1280.h</a></li>
-<li>RADIO_SET_AUTOFS&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda64e501829db16a7a48f5161768b43222">sx1280.h</a></li>
-<li>RADIO_SET_AUTOTX&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cddac6b6a7978839ada88f3fca8406381581">sx1280.h</a></li>
-<li>RADIO_SET_BUFFERBASEADDRESS&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda2c9281dcf7faeff85752512f01f2bbc2">sx1280.h</a></li>
-<li>RADIO_SET_CAD&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cddaccabe18433f17daace91752ba58ff709">sx1280.h</a></li>
-<li>RADIO_SET_CADPARAMS&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cddac9d3186ddfc0a98fc92ee65f7b20c246">sx1280.h</a></li>
-<li>RADIO_SET_DIOIRQPARAMS&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda3694ca0a71622f6117495093ab25e3e8">sx1280.h</a></li>
-<li>RADIO_SET_FS&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cddaa860d1b77fe98d9c0756660e4fe1e6dc">sx1280.h</a></li>
-<li>RADIO_SET_LONGPREAMBLE&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cddaa664e949c5546fae52c9b2594c03eab3">sx1280.h</a></li>
-<li>RADIO_SET_MODULATIONPARAMS&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cddabc7bc733133082ec71d7814f4d76b255">sx1280.h</a></li>
-<li>RADIO_SET_PACKETPARAMS&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda76b8b54aeaa5e897af57e490fccb1d8c">sx1280.h</a></li>
-<li>RADIO_SET_PACKETTYPE&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda902ce2f0cb8d8bdaf0828edf13de2515">sx1280.h</a></li>
-<li>RADIO_SET_RANGING_ROLE&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda036988c2f5d9378a7a2a74c9b69d9fa3">sx1280.h</a></li>
-<li>RADIO_SET_REGULATORMODE&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cddaef09727e2cd3cd28cd745c80547f83da">sx1280.h</a></li>
-<li>RADIO_SET_RFFREQUENCY&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda5ac4b87e195f1ff7dfc045639dc9b2fd">sx1280.h</a></li>
-<li>RADIO_SET_RX&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda0fadce2bdd140140e702a8228f838c2b">sx1280.h</a></li>
-<li>RADIO_SET_RXDUTYCYCLE&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda250b7786b5efc3de5d0654ee5aa71d13">sx1280.h</a></li>
-<li>RADIO_SET_SAVECONTEXT&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cddaa64455101239e41b0d8579eab01f7c77">sx1280.h</a></li>
-<li>RADIO_SET_SLEEP&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda1d34b760a894aeb6b00b2d18d0996055">sx1280.h</a></li>
-<li>RADIO_SET_STANDBY&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cddaf18cf726988103e927c6bf8dc0a9981f">sx1280.h</a></li>
-<li>RADIO_SET_TX&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda0c0de1e06b8eb1d562667c1ac774b83f">sx1280.h</a></li>
-<li>RADIO_SET_TXCONTINUOUSPREAMBLE&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda960760f75874b119cf3ff622e045eee6">sx1280.h</a></li>
-<li>RADIO_SET_TXCONTINUOUSWAVE&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda9aeb08af6e78ae707324babc0e2f1fa0">sx1280.h</a></li>
-<li>RADIO_SET_TXPARAMS&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda347d0197a8d480e4f9310470c36770a1">sx1280.h</a></li>
-<li>RADIO_SET_UARTSPEED&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda143eddb8afd05a85958bca3498233d6d">sx1280.h</a></li>
+<li>RADIO_SET_AUTOFS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea64e501829db16a7a48f5161768b43222">sx1280.h</a></li>
+<li>RADIO_SET_AUTOTX&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aeac6b6a7978839ada88f3fca8406381581">sx1280.h</a></li>
+<li>RADIO_SET_BUFFERBASEADDRESS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea2c9281dcf7faeff85752512f01f2bbc2">sx1280.h</a></li>
+<li>RADIO_SET_CAD&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aeaccabe18433f17daace91752ba58ff709">sx1280.h</a></li>
+<li>RADIO_SET_CADPARAMS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aeac9d3186ddfc0a98fc92ee65f7b20c246">sx1280.h</a></li>
+<li>RADIO_SET_DIOIRQPARAMS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea3694ca0a71622f6117495093ab25e3e8">sx1280.h</a></li>
+<li>RADIO_SET_FS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aeaa860d1b77fe98d9c0756660e4fe1e6dc">sx1280.h</a></li>
+<li>RADIO_SET_LONGPREAMBLE&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aeaa664e949c5546fae52c9b2594c03eab3">sx1280.h</a></li>
+<li>RADIO_SET_MODULATIONPARAMS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aeabc7bc733133082ec71d7814f4d76b255">sx1280.h</a></li>
+<li>RADIO_SET_PACKETPARAMS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea76b8b54aeaa5e897af57e490fccb1d8c">sx1280.h</a></li>
+<li>RADIO_SET_PACKETTYPE&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea902ce2f0cb8d8bdaf0828edf13de2515">sx1280.h</a></li>
+<li>RADIO_SET_RANGING_ROLE&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea036988c2f5d9378a7a2a74c9b69d9fa3">sx1280.h</a></li>
+<li>RADIO_SET_REGULATORMODE&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aeaef09727e2cd3cd28cd745c80547f83da">sx1280.h</a></li>
+<li>RADIO_SET_RFFREQUENCY&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea5ac4b87e195f1ff7dfc045639dc9b2fd">sx1280.h</a></li>
+<li>RADIO_SET_RX&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea0fadce2bdd140140e702a8228f838c2b">sx1280.h</a></li>
+<li>RADIO_SET_RXDUTYCYCLE&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea250b7786b5efc3de5d0654ee5aa71d13">sx1280.h</a></li>
+<li>RADIO_SET_SAVECONTEXT&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aeaa64455101239e41b0d8579eab01f7c77">sx1280.h</a></li>
+<li>RADIO_SET_SLEEP&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea1d34b760a894aeb6b00b2d18d0996055">sx1280.h</a></li>
+<li>RADIO_SET_STANDBY&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aeaf18cf726988103e927c6bf8dc0a9981f">sx1280.h</a></li>
+<li>RADIO_SET_TX&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea0c0de1e06b8eb1d562667c1ac774b83f">sx1280.h</a></li>
+<li>RADIO_SET_TXCONTINUOUSPREAMBLE&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea960760f75874b119cf3ff622e045eee6">sx1280.h</a></li>
+<li>RADIO_SET_TXCONTINUOUSWAVE&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea9aeb08af6e78ae707324babc0e2f1fa0">sx1280.h</a></li>
+<li>RADIO_SET_TXPARAMS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea347d0197a8d480e4f9310470c36770a1">sx1280.h</a></li>
+<li>RADIO_SET_UARTSPEED&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea143eddb8afd05a85958bca3498233d6d">sx1280.h</a></li>
 <li>RADIO_TICK_SIZE_0015_US&#160;:&#160;<a class="el" href="sx1280_8h.html#ac4c3d6e4b5a1a739ee585d3d89fb5457a2ed6c56cbe56585ccba5ea392034e0d0">sx1280.h</a></li>
 <li>RADIO_TICK_SIZE_0062_US&#160;:&#160;<a class="el" href="sx1280_8h.html#ac4c3d6e4b5a1a739ee585d3d89fb5457a3162a2c96c24b05cd795f7423ea7d07e">sx1280.h</a></li>
 <li>RADIO_TICK_SIZE_1000_US&#160;:&#160;<a class="el" href="sx1280_8h.html#ac4c3d6e4b5a1a739ee585d3d89fb5457a325d253f94ed7d6dd19619d5d724ef33">sx1280.h</a></li>
 <li>RADIO_TICK_SIZE_4000_US&#160;:&#160;<a class="el" href="sx1280_8h.html#ac4c3d6e4b5a1a739ee585d3d89fb5457a272053943f42da10b41c61077b436829">sx1280.h</a></li>
 <li>RADIO_WHITENING_OFF&#160;:&#160;<a class="el" href="sx1280_8h.html#aaa95872408de7f5248fbb08a29ec92b2a348e4038352afe4b3f9350cf486290a8">sx1280.h</a></li>
 <li>RADIO_WHITENING_ON&#160;:&#160;<a class="el" href="sx1280_8h.html#aaa95872408de7f5248fbb08a29ec92b2a4b530e51e3487da7328da5c501ca5c89">sx1280.h</a></li>
-<li>RADIO_WRITE_BUFFER&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cdda2d09f372878959512f981db630d6a72e">sx1280.h</a></li>
-<li>RADIO_WRITE_REGISTER&#160;:&#160;<a class="el" href="sx1280_8h.html#aca719b86da218dc171844bdc33a79cddadb2122ce5f851c742c0ba8dd36ad2523">sx1280.h</a></li>
+<li>RADIO_WRITE_BUFFER&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aea2d09f372878959512f981db630d6a72e">sx1280.h</a></li>
+<li>RADIO_WRITE_REGISTER&#160;:&#160;<a class="el" href="sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aeadb2122ce5f851c742c0ba8dd36ad2523">sx1280.h</a></li>
 <li>RANGING_IDCHECK_LENGTH_08_BITS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7233bbefdc52d07cbbb03a1e49443b0ca84d2815f6edefd6f09aba05b61a26ae2">sx1280.h</a></li>
 <li>RANGING_IDCHECK_LENGTH_16_BITS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7233bbefdc52d07cbbb03a1e49443b0cac79cf4befa916ae43e747178c44d4d07">sx1280.h</a></li>
 <li>RANGING_IDCHECK_LENGTH_24_BITS&#160;:&#160;<a class="el" href="sx1280_8h.html#a7233bbefdc52d07cbbb03a1e49443b0caac5331f47ef0bcdce81ded36ed941a41">sx1280.h</a></li>
@@ -188,105 +208,24 @@ $(function() {
 <li>RFM95_TX_POWER_14_dBm&#160;:&#160;<a class="el" href="rfm95w_8h.html#a4d7bebb1b69f16f1dcc58d153dbc4206ad719484f3c15480afb273301b8a38f45">rfm95w.h</a></li>
 <li>RFM95_TX_POWER_17_dBm&#160;:&#160;<a class="el" href="rfm95w_8h.html#a4d7bebb1b69f16f1dcc58d153dbc4206a26a6c33018ce41022ce6a02ae060c0ca">rfm95w.h</a></li>
 <li>RFM95_WRITE_ERR&#160;:&#160;<a class="el" href="rfm95w_8h.html#a297414c42b6a5c6fb9f6978e575c42f9ad5a23c95c04a0c02f13705f4def508d2">rfm95w.h</a></li>
-<li>RI_GLOBAL_LOGICAL_MAX&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaae05225933a42f81e7c4a9fb286596f9af3c4e67145a09c8796eef1184fc3b624">hid.h</a></li>
-<li>RI_GLOBAL_LOGICAL_MIN&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaae05225933a42f81e7c4a9fb286596f9a8382aa3a3ccc3e97ab72251106945f28">hid.h</a></li>
-<li>RI_GLOBAL_PHYSICAL_MAX&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaae05225933a42f81e7c4a9fb286596f9aa42f73481340ce01e0e85bca67542550">hid.h</a></li>
-<li>RI_GLOBAL_PHYSICAL_MIN&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaae05225933a42f81e7c4a9fb286596f9a3f9db897ae8ff5ab6c2c23e5ad1da973">hid.h</a></li>
-<li>RI_GLOBAL_POP&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaae05225933a42f81e7c4a9fb286596f9a9718e652f78d3f5b60dc88a3f96ba67d">hid.h</a></li>
-<li>RI_GLOBAL_PUSH&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaae05225933a42f81e7c4a9fb286596f9a1f7e5d58e008722e438e84d8c95588af">hid.h</a></li>
-<li>RI_GLOBAL_REPORT_COUNT&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaae05225933a42f81e7c4a9fb286596f9af52909b9036e977ea154d11c03c0ad3d">hid.h</a></li>
-<li>RI_GLOBAL_REPORT_ID&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaae05225933a42f81e7c4a9fb286596f9ad0b031134bd543df0ec9e5e9aaacf65a">hid.h</a></li>
-<li>RI_GLOBAL_REPORT_SIZE&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaae05225933a42f81e7c4a9fb286596f9ae9c71206f045df442ab8ff28682aee48">hid.h</a></li>
-<li>RI_GLOBAL_UNIT&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaae05225933a42f81e7c4a9fb286596f9a3e08c687d505e805865840d5dcfdf5cb">hid.h</a></li>
-<li>RI_GLOBAL_UNIT_EXPONENT&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaae05225933a42f81e7c4a9fb286596f9abd87d7d573efb147f5d560447b025f05">hid.h</a></li>
-<li>RI_GLOBAL_USAGE_PAGE&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaae05225933a42f81e7c4a9fb286596f9a694503bc2c922f765acd6a6d6df96e11">hid.h</a></li>
-<li>RI_LOCAL_DELIMITER&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#gga39fca1837c5ce7715cbf571669660c13a3c2dbc1ef1d9c96f22dc80ffb18b573c">hid.h</a></li>
-<li>RI_LOCAL_DESIGNATOR_INDEX&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#gga39fca1837c5ce7715cbf571669660c13adb4610514dfdf0355a40eea298cdb3ac">hid.h</a></li>
-<li>RI_LOCAL_DESIGNATOR_MAX&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#gga39fca1837c5ce7715cbf571669660c13a985f3c6257b2b421ecd620e70d231d76">hid.h</a></li>
-<li>RI_LOCAL_DESIGNATOR_MIN&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#gga39fca1837c5ce7715cbf571669660c13a8419bfe8083669b07ae2bb525c907e01">hid.h</a></li>
-<li>RI_LOCAL_STRING_INDEX&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#gga39fca1837c5ce7715cbf571669660c13a24c297cccc9c90fe7c22cf864e95cef8">hid.h</a></li>
-<li>RI_LOCAL_STRING_MAX&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#gga39fca1837c5ce7715cbf571669660c13a29b23c558677145277b34eba204d632e">hid.h</a></li>
-<li>RI_LOCAL_STRING_MIN&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#gga39fca1837c5ce7715cbf571669660c13a3691adc42f9f0203d282f514096cb710">hid.h</a></li>
-<li>RI_LOCAL_USAGE&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#gga39fca1837c5ce7715cbf571669660c13a646332d28505ca33e6aeaeff20ebd47f">hid.h</a></li>
-<li>RI_LOCAL_USAGE_MAX&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#gga39fca1837c5ce7715cbf571669660c13a3a2d83ec325d3655781a968a732fcb94">hid.h</a></li>
-<li>RI_LOCAL_USAGE_MIN&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#gga39fca1837c5ce7715cbf571669660c13abf47509e685546712d15b51f318b1e03">hid.h</a></li>
-<li>RI_MAIN_COLLECTION&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaf9bdc3014f3d54c426b6d2df10de4960a978d375f5abcd681e9829afc363deafb">hid.h</a></li>
-<li>RI_MAIN_COLLECTION_END&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaf9bdc3014f3d54c426b6d2df10de4960a2f76fdde93797154725d6f5042bcab29">hid.h</a></li>
-<li>RI_MAIN_FEATURE&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaf9bdc3014f3d54c426b6d2df10de4960ad6b70d04d6f2ae6253bc9f7215385d67">hid.h</a></li>
-<li>RI_MAIN_INPUT&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaf9bdc3014f3d54c426b6d2df10de4960abea1d8b6469c21e02a8fdf43d2c16b1a">hid.h</a></li>
-<li>RI_MAIN_OUTPUT&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#ggaf9bdc3014f3d54c426b6d2df10de4960abde65a20ef03aa457bb5bf73d9977754">hid.h</a></li>
-<li>RI_TYPE_GLOBAL&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#gga6b7b47dd702d9e331586d485013fd1eaaf8ed68d9538a3faa1bc7739e8c31e406">hid.h</a></li>
-<li>RI_TYPE_LOCAL&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#gga6b7b47dd702d9e331586d485013fd1eaa79334274222896548722204c8347d60e">hid.h</a></li>
-<li>RI_TYPE_MAIN&#160;:&#160;<a class="el" href="group__ClassDriver__HID.html#gga6b7b47dd702d9e331586d485013fd1eaa91061ff5afdf49f070bd1204400f9e9e">hid.h</a></li>
-<li>RNDIS_MSG_HALT&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#ggaa16227b27f1dd78363fe6d7b7a4d521aae299f01b1f75406307be3eceaaf068e7">cdc_rndis.h</a></li>
-<li>RNDIS_MSG_INDICATE_STATUS&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#ggaa16227b27f1dd78363fe6d7b7a4d521aa987a92da96bfdad17fb69f631f567093">cdc_rndis.h</a></li>
-<li>RNDIS_MSG_INITIALIZE&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#ggaa16227b27f1dd78363fe6d7b7a4d521aaed9a44798f16a25bbce433245ccced93">cdc_rndis.h</a></li>
-<li>RNDIS_MSG_INITIALIZE_CMPLT&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#ggaa16227b27f1dd78363fe6d7b7a4d521aa1df18d6cfc194db4e36c90f8058a2b80">cdc_rndis.h</a></li>
-<li>RNDIS_MSG_KEEP_ALIVE&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#ggaa16227b27f1dd78363fe6d7b7a4d521aa7576360eb4c13a0ae3869c3c82ee7b12">cdc_rndis.h</a></li>
-<li>RNDIS_MSG_KEEP_ALIVE_CMPLT&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#ggaa16227b27f1dd78363fe6d7b7a4d521aabf692209672a91cad385ca37b9088a96">cdc_rndis.h</a></li>
-<li>RNDIS_MSG_PACKET&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#ggaa16227b27f1dd78363fe6d7b7a4d521aa1c214c3138308ceecd73caa80034ea90">cdc_rndis.h</a></li>
-<li>RNDIS_MSG_QUERY&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#ggaa16227b27f1dd78363fe6d7b7a4d521aa5527f05930d3cd882b24b96e1821defa">cdc_rndis.h</a></li>
-<li>RNDIS_MSG_QUERY_CMPLT&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#ggaa16227b27f1dd78363fe6d7b7a4d521aa78965b9677feda32d32b563afc828e99">cdc_rndis.h</a></li>
-<li>RNDIS_MSG_RESET&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#ggaa16227b27f1dd78363fe6d7b7a4d521aa23756e5dcaf592c4a8505b98cb8d5784">cdc_rndis.h</a></li>
-<li>RNDIS_MSG_RESET_CMPLT&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#ggaa16227b27f1dd78363fe6d7b7a4d521aa69307a8330008c3cbcdfe9afcd6d148a">cdc_rndis.h</a></li>
-<li>RNDIS_MSG_SET&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#ggaa16227b27f1dd78363fe6d7b7a4d521aaefb2d74724e34d962de91d42aa47c61e">cdc_rndis.h</a></li>
-<li>RNDIS_MSG_SET_CMPLT&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#ggaa16227b27f1dd78363fe6d7b7a4d521aa80d1bae27e52bba0d83719dcc6088d56">cdc_rndis.h</a></li>
-<li>RNDIS_OID_802_3_CURRENT_ADDRESS&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aaf509eb06271336da15296595b42f8e89">cdc_rndis.h</a></li>
-<li>RNDIS_OID_802_3_MAXIMUM_LIST_SIZE&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa6b8c3af3d5ee425ad52026583cde8477">cdc_rndis.h</a></li>
-<li>RNDIS_OID_802_3_MULTICAST_LIST&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aaa660ca07ef06a3cb99c099569b7ae5c3">cdc_rndis.h</a></li>
-<li>RNDIS_OID_802_3_PERMANENT_ADDRESS&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aacfaa316f73bb2f57dd8063e0f0a40646">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_CURRENT_LOOKAHEAD&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa56ba289c3cfd3bf268a9cd8f47dd9fcc">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_CURRENT_PACKET_FILTER&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa0b7edd6d0275c76c9a7360973607263b">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_DRIVER_VERSION&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa753821ea71f9093b97d373f06341a43c">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_HARDWARE_STATUS&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aaebe41d8125589a49d4265d7149a24b6d">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_LINK_SPEED&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa37ce8730f037d8a128202456f33d2829">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_MAC_OPTIONS&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aac2ad230d76bcdf04f0effcd5171553e9">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_MAXIMUM_FRAME_SIZE&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aaa9af6565d6466682118a7671f7576c78">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_MAXIMUM_LOOKAHEAD&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa45cb3d2157dbab2a48d5d8b9800fa038">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_MAXIMUM_SEND_PACKETS&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa65bbda2196f7dba9961ee5ecc936ba29">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_MAXIMUM_TOTAL_SIZE&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa31287da412f38fec9e6863c7657b205a">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_MEDIA_CAPABILITIES&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa7e2b443cae3804c467343b30f8d6e318">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_MEDIA_CONNECT_STATUS&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa84e01f9d34554e673f8443fc0ea9c193">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_MEDIA_IN_USE&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aaa033fd98ff90cdae7192a2ef773d4fc1">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_MEDIA_SUPPORTED&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa4a4893eb877abb159692b5bb2a5ea8c4">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_NETWORK_LAYER_ADDRESSES&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aafc3283d7c1af9991fb825b5e9438892e">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_PHYSICAL_MEDIUM&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa58dbd409c0dfd01f71bd4a5750c766cc">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_PROTOCOL_OPTIONS&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa71480ae360f8985f49383e911d5c71cd">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_RECEIVE_BLOCK_SIZE&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa58e9714a0843302915e78a03d303523b">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_RECEIVE_BUFFER_SPACE&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aad5fdd26e878e3588f2400e121b8a1f1f">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_SUPPORTED_GUIDS&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aac8090a102d49e9d8c395b1a1c13dd077">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_SUPPORTED_LIST&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aaac97e4537e8149cf8c6e3da995711b50">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_TRANSMIT_BLOCK_SIZE&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa8fc9d49dece76a12fba4e493d156c570">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_TRANSMIT_BUFFER_SPACE&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa029dd0810811b30df4679f92aa052a5d">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_TRANSPORT_HEADER_OFFSET&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa242af860920c43cccfbeb68a83db78c2">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_VENDOR_DESCRIPTION&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aaf4016c37806548b22e75001911287157">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_VENDOR_DRIVER_VERSION&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa61424b98c364c8b95b5b29145c7d059a">cdc_rndis.h</a></li>
-<li>RNDIS_OID_GEN_VENDOR_ID&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga1f481916fd3d96784ade7285b72c8e7aa487f4665385e306b69d1c8956469603b">cdc_rndis.h</a></li>
-<li>RNDIS_PACKET_TYPE_ALL_FUNCTIONAL&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga4e92796a7b6193715d6db3d55e52be58a6f19034349c04e2613a95aaee633d15a">cdc_rndis.h</a></li>
-<li>RNDIS_PACKET_TYPE_ALL_LOCAL&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga4e92796a7b6193715d6db3d55e52be58a4d9dd9737ae0bb619fbe6c48a50310f2">cdc_rndis.h</a></li>
-<li>RNDIS_PACKET_TYPE_ALL_MULTICAST&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga4e92796a7b6193715d6db3d55e52be58ae7b282666432c9cbce406eb143f65294">cdc_rndis.h</a></li>
-<li>RNDIS_PACKET_TYPE_BROADCAST&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga4e92796a7b6193715d6db3d55e52be58a988a38afd422356b791fe1932782c767">cdc_rndis.h</a></li>
-<li>RNDIS_PACKET_TYPE_DIRECTED&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga4e92796a7b6193715d6db3d55e52be58a0270fc4d5ee3ba871b26a6328c06a939">cdc_rndis.h</a></li>
-<li>RNDIS_PACKET_TYPE_FUNCTIONAL&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga4e92796a7b6193715d6db3d55e52be58ab0a739679d9a32ce8e785e1df90c864d">cdc_rndis.h</a></li>
-<li>RNDIS_PACKET_TYPE_GROUP&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga4e92796a7b6193715d6db3d55e52be58a4e121789e72f8730ef65e45ad44fa5f6">cdc_rndis.h</a></li>
-<li>RNDIS_PACKET_TYPE_MAC_FRAME&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga4e92796a7b6193715d6db3d55e52be58a3e39e1a1fd749501b2c77952a0c2b4e3">cdc_rndis.h</a></li>
-<li>RNDIS_PACKET_TYPE_MULTICAST&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga4e92796a7b6193715d6db3d55e52be58a98c0274754aa091912f4df0004aeb9bd">cdc_rndis.h</a></li>
-<li>RNDIS_PACKET_TYPE_NO_LOCAL&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga4e92796a7b6193715d6db3d55e52be58af034aca894719134a85d5de8a69d6045">cdc_rndis.h</a></li>
-<li>RNDIS_PACKET_TYPE_PROMISCUOUS&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga4e92796a7b6193715d6db3d55e52be58aa2da03b9029ca52b53f265c642ae272c">cdc_rndis.h</a></li>
-<li>RNDIS_PACKET_TYPE_SMT&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga4e92796a7b6193715d6db3d55e52be58af048f9e480a4d7ba68a6d9421d3f9a6f">cdc_rndis.h</a></li>
-<li>RNDIS_PACKET_TYPE_SOURCE_ROUTING&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga4e92796a7b6193715d6db3d55e52be58a6ec804f3c92568364e48e4718716bcdb">cdc_rndis.h</a></li>
-<li>RNDIS_STATUS_FAILURE&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga68258ea157c329f651e9e539eb1b268da1aa623c37f22c157c0a570f5ba0eaba8">cdc_rndis.h</a></li>
-<li>RNDIS_STATUS_INVALID_DATA&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga68258ea157c329f651e9e539eb1b268dac2d84f122e7e5d25d6e37ccfc13f2e98">cdc_rndis.h</a></li>
-<li>RNDIS_STATUS_MEDIA_CONNECT&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga68258ea157c329f651e9e539eb1b268dabdf284c9be959b194f636d30c6cd3f6e">cdc_rndis.h</a></li>
-<li>RNDIS_STATUS_MEDIA_DISCONNECT&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga68258ea157c329f651e9e539eb1b268dabb205e925d84f29bedb5d90b036c5a8e">cdc_rndis.h</a></li>
-<li>RNDIS_STATUS_NOT_SUPPORTED&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga68258ea157c329f651e9e539eb1b268da3898ef69ce52b18d6b960dac12934e9e">cdc_rndis.h</a></li>
-<li>RNDIS_STATUS_SUCCESS&#160;:&#160;<a class="el" href="group__CDC__RNDIS__Common.html#gga68258ea157c329f651e9e539eb1b268da60a3b810656d00e78327c554c74961e8">cdc_rndis.h</a></li>
+<li>RFM95W_PARAM_BW&#160;:&#160;<a class="el" href="nvs__config_8h.html#a25ef621073c83641594e22f9ee454bdaabb1086d545ca15c70baaf0c05547fae6">nvs_config.h</a></li>
+<li>RFM95W_PARAM_CR&#160;:&#160;<a class="el" href="nvs__config_8h.html#a25ef621073c83641594e22f9ee454bdaaabefa692e177e840b20f924f20651b17">nvs_config.h</a></li>
+<li>RFM95W_PARAM_CRC&#160;:&#160;<a class="el" href="nvs__config_8h.html#a25ef621073c83641594e22f9ee454bdaa91b38f5f72485d4036c8205d5bf3ffc4">nvs_config.h</a></li>
+<li>RFM95W_PARAM_FREQ&#160;:&#160;<a class="el" href="nvs__config_8h.html#a25ef621073c83641594e22f9ee454bdaac4f4fbe23e37e716813c5a8aff78da81">nvs_config.h</a></li>
+<li>RFM95W_PARAM_MODE&#160;:&#160;<a class="el" href="nvs__config_8h.html#a25ef621073c83641594e22f9ee454bdaaa0275fdff907766353604bc8228e3f1f">nvs_config.h</a></li>
+<li>RFM95W_PARAM_PWR&#160;:&#160;<a class="el" href="nvs__config_8h.html#a25ef621073c83641594e22f9ee454bdaa5a0cc99d36716abe7d450017893e486b">nvs_config.h</a></li>
+<li>RFM95W_PARAM_SF&#160;:&#160;<a class="el" href="nvs__config_8h.html#a25ef621073c83641594e22f9ee454bdaaf2b3d4010ca0b0021b363b4985ed626d">nvs_config.h</a></li>
+<li>RFM95W_PARAM_STATE&#160;:&#160;<a class="el" href="nvs__config_8h.html#a25ef621073c83641594e22f9ee454bdaaa30bcf579409787d506a1e2857fdc45e">nvs_config.h</a></li>
+<li>RFM95W_PARAM_SYNC&#160;:&#160;<a class="el" href="nvs__config_8h.html#a25ef621073c83641594e22f9ee454bdaa5ba339b153063a868e4f6d1cd5b178ea">nvs_config.h</a></li>
 <li>RX_MODE&#160;:&#160;<a class="el" href="rfm95w_8h.html#aac4bdd3fb58857e18d9c8b29cc3ed2f4ae5e96b5cebd8b31efa34211ac73abc1e">rfm95w.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

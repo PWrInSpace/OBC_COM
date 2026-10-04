@@ -1,0 +1,9 @@
+<map id="sd_detect_sync" name="sd_detect_sync">
+<area shape="rect" id="node1" title=" " alt="" coords="5,104,128,129"/>
+<area shape="rect" id="node2" href="$sd__task_8c.html#ac1cf0c55de40244f99ffeabc7c06a059" title=" " alt="" coords="216,55,303,80"/>
+<area shape="rect" id="node5" href="$sd__task_8c.html#aef0d3d785fba86eedc350246c4362032" title=" " alt="" coords="176,104,343,129"/>
+<area shape="rect" id="node7" href="$sound_8c.html#ae96e6433ed18b83c2ccc8a7db9f0d3de" title=" " alt="" coords="211,153,307,179"/>
+<area shape="rect" id="node3" href="$board__data_8c.html#aba4f4450ce2fe899c33b54f6cbe46ec4" title=" " alt="" coords="391,5,565,31"/>
+<area shape="rect" id="node4" href="$sd__task_8c.html#a9bed749d1a272c2837109ba43a85984a" title=" " alt="" coords="405,55,551,80"/>
+<area shape="rect" id="node6" href="$user__diskio_8c.html#a4353c16b6d5c8bd627871a468037e7ee" title=" " alt="" coords="391,104,565,129"/>
+</map>

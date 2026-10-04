@@ -1,14 +1,14 @@
 <map id="Core/Src/stm32h5xx_it.c" name="Core/Src/stm32h5xx_it.c">
-<area shape="rect" id="node1" title="Interrupt Service Routines." alt="" coords="2229,5,2409,31"/>
-<area shape="rect" id="node2" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="1345,152,1412,177"/>
+<area shape="rect" id="node1" title="Interrupt Service Routines." alt="" coords="2090,5,2270,31"/>
+<area shape="rect" id="node2" href="$main_8h.html" title=": Header for main.c file." alt="" coords="1309,152,1376,177"/>
 <area shape="rect" id="node14" title=" " alt="" coords="2132,225,2228,251"/>
 <area shape="rect" id="node15" title=" " alt="" coords="2252,225,2327,251"/>
-<area shape="rect" id="node17" href="$stm32h5xx__it_8h.html" title="This file contains the headers of the interrupt handlers." alt="" coords="2257,79,2380,104"/>
-<area shape="rect" id="node18" title=" " alt="" coords="2405,79,2507,104"/>
-<area shape="rect" id="node19" title=" " alt="" coords="2531,79,2701,104"/>
-<area shape="rect" id="node20" href="$usart_8h.html" title="This file contains all the function prototypes for the usart.c file." alt="" coords="1901,79,1968,104"/>
-<area shape="rect" id="node21" href="$usb__config_8h.html" title=" " alt="" coords="2725,79,2827,104"/>
-<area shape="rect" id="node34" href="$led_8h.html" title=" " alt="" coords="2921,79,2975,104"/>
+<area shape="rect" id="node17" href="$stm32h5xx__it_8h.html" title="This file contains the headers of the interrupt handlers." alt="" coords="2119,79,2241,104"/>
+<area shape="rect" id="node18" title=" " alt="" coords="2266,79,2369,104"/>
+<area shape="rect" id="node19" title=" " alt="" coords="2393,79,2562,104"/>
+<area shape="rect" id="node20" href="$usart_8h.html" title="This file contains all the function prototypes for the usart.c file." alt="" coords="1596,79,1663,104"/>
+<area shape="rect" id="node21" href="$usb__config_8h.html" title=" " alt="" coords="2586,79,2689,104"/>
+<area shape="rect" id="node26" href="$led_8h.html" title=" " alt="" coords="2782,79,2837,104"/>
 <area shape="rect" id="node3" title=" " alt="" coords="514,225,649,251"/>
 <area shape="rect" id="node4" title=" " alt="" coords="673,225,825,251"/>
 <area shape="rect" id="node5" title=" " alt="" coords="849,225,1020,251"/>
@@ -21,17 +21,9 @@
 <area shape="rect" id="node12" title=" " alt="" coords="5,225,163,251"/>
 <area shape="rect" id="node13" title=" " alt="" coords="187,225,341,251"/>
 <area shape="rect" id="node16" title=" " alt="" coords="366,225,490,251"/>
-<area shape="rect" id="node22" href="$usbd__core_8h.html" title="Header file for usbd_core.c file." alt="" coords="2457,152,2557,177"/>
-<area shape="rect" id="node31" title=" " alt="" coords="2729,152,2823,177"/>
-<area shape="rect" id="node32" title=" " alt="" coords="2848,152,2957,177"/>
-<area shape="rect" id="node33" href="$usbd__desc_8h.html" title=" " alt="" coords="2602,152,2705,177"/>
-<area shape="rect" id="node23" href="$usbd__conf_8h.html" title=" " alt="" coords="2447,372,2545,397"/>
-<area shape="rect" id="node28" href="$usbd__ctlreq_8h.html" title=" " alt="" coords="2624,225,2733,251"/>
-<area shape="rect" id="node29" href="$usbd__def_8h.html" title="General defines for the usb device library." alt="" coords="2541,299,2633,324"/>
-<area shape="rect" id="node30" href="$usbd__ioreq_8h.html" title="Header file for the usbd_ioreq.c file." alt="" coords="2443,225,2549,251"/>
-<area shape="rect" id="node24" title=" " alt="" coords="2285,445,2392,471"/>
-<area shape="rect" id="node25" title=" " alt="" coords="2416,445,2483,471"/>
-<area shape="rect" id="node26" title=" " alt="" coords="2507,445,2578,471"/>
-<area shape="rect" id="node27" title=" " alt="" coords="2602,445,2673,471"/>
-<area shape="rect" id="node35" title=" " alt="" coords="2982,152,3053,177"/>
+<area shape="rect" id="node22" title=" " alt="" coords="2407,152,2507,177"/>
+<area shape="rect" id="node23" title=" " alt="" coords="2545,225,2639,251"/>
+<area shape="rect" id="node24" href="$usbd__cdc__if_8h.html" title=" " alt="" coords="2583,152,2692,177"/>
+<area shape="rect" id="node25" title=" " alt="" coords="2717,152,2819,177"/>
+<area shape="rect" id="node27" title=" " alt="" coords="2843,152,2914,177"/>
 </map>

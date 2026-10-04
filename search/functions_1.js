@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['audio10_5fdesc_5fcs_5fac_5finterface_5fn_5ft_0',['audio10_desc_cs_ac_interface_n_t',['../group__ClassDriver__Audio.html#gaef52cd0a78edc52da211896ce3ab56c7',1,'audio.h']]],
-  ['audiod_5fcontrol_5fxfer_5fcb_1',['audiod_control_xfer_cb',['../group__AUDIO__Serial__Device.html#ga203ac09097d03c0e5669883120698746',1,'audio_device.h']]],
-  ['audiod_5fdeinit_2',['audiod_deinit',['../group__AUDIO__Serial__Device.html#ga6b1f479dddacbab1d2b2c7f050e358d9',1,'audio_device.h']]],
-  ['audiod_5finit_3',['audiod_init',['../group__AUDIO__Serial__Device.html#ga4fa6dd742c1d1fd387767079876c8f19',1,'audio_device.h']]],
-  ['audiod_5fopen_4',['audiod_open',['../group__AUDIO__Serial__Device.html#ga05dc4cf6537e042cceacbc9fddcf5bd4',1,'audio_device.h']]],
-  ['audiod_5freset_5',['audiod_reset',['../group__AUDIO__Serial__Device.html#ga94447dfe41f27fdde46871973a236886',1,'audio_device.h']]],
-  ['audiod_5fsof_5fisr_6',['audiod_sof_isr',['../group__AUDIO__Serial__Device.html#ga11bf9129dfada6cf2d4b82b70cee49e1',1,'audio_device.h']]],
-  ['audiod_5fxfer_5fcb_7',['audiod_xfer_cb',['../group__AUDIO__Serial__Device.html#ga267968271f1e5533c5a529a4bb452fe9',1,'audio_device.h']]],
-  ['audiod_5fxfer_5fisr_8',['audiod_xfer_isr',['../group__AUDIO__Serial__Device.html#ga1028a29326bfb871cde57881ef7835bf',1,'audio_device.h']]]
+  ['board_5fdata_5fget_5fheader_0',['board_data_get_header',['../board__data_8h.html#aba4f4450ce2fe899c33b54f6cbe46ec4',1,'board_data_get_header(char *out_buffer, size_t buffer_size):&#160;board_data.c'],['../board__data_8c.html#aba4f4450ce2fe899c33b54f6cbe46ec4',1,'board_data_get_header(char *out_buffer, size_t buffer_size):&#160;board_data.c']]],
+  ['board_5fdata_5finit_1',['board_data_init',['../board__data_8h.html#ae1f72427126dd1e29892df7a730a9d33',1,'board_data_init(void):&#160;board_data.c'],['../board__data_8c.html#ae1f72427126dd1e29892df7a730a9d33',1,'board_data_init(void):&#160;board_data.c']]],
+  ['board_5fdata_5fserialize_2',['board_data_serialize',['../board__data_8h.html#ac6df3fa4a3d3b7270de6032e0074f096',1,'board_data_serialize(const BoardData_t *data, char *out_buffer, size_t buffer_size):&#160;board_data.c'],['../board__data_8c.html#ac6df3fa4a3d3b7270de6032e0074f096',1,'board_data_serialize(const BoardData_t *data, char *out_buffer, size_t buffer_size):&#160;board_data.c']]],
+  ['bufferpool_5fuart_5fstart_3',['BufferPool_UART_Start',['../main_8c.html#abfb869d326e776a98917f58b20748ccd',1,'main.c']]],
+  ['busfault_5fhandler_4',['BusFault_Handler',['../stm32h5xx__it_8h.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;stm32h5xx_it.c'],['../stm32h5xx__it_8c.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;stm32h5xx_it.c']]],
+  ['buzzer_5finit_5',['buzzer_init',['../buzzer_8h.html#a67474891465afd17e4c01ba17d1a05bd',1,'buzzer_init(buzzer_t *dev, const buzzer_t *config):&#160;buzzer.c'],['../buzzer_8c.html#a67474891465afd17e4c01ba17d1a05bd',1,'buzzer_init(buzzer_t *dev, const buzzer_t *config):&#160;buzzer.c']]],
+  ['buzzer_5fmute_6',['buzzer_mute',['../buzzer_8h.html#aa68304d0537a12b41497d1306904306c',1,'buzzer_mute(buzzer_t *dev):&#160;buzzer.c'],['../buzzer_8c.html#aa68304d0537a12b41497d1306904306c',1,'buzzer_mute(buzzer_t *dev):&#160;buzzer.c']]],
+  ['buzzer_5fset_5ftone_7',['buzzer_set_tone',['../buzzer_8h.html#a8b5df1d0f87be9e9fdb23896369f96bf',1,'buzzer_set_tone(buzzer_t *dev, uint32_t freq_hz):&#160;buzzer.c'],['../buzzer_8c.html#a8b5df1d0f87be9e9fdb23896369f96bf',1,'buzzer_set_tone(buzzer_t *dev, uint32_t freq_hz):&#160;buzzer.c']]]
 ];
