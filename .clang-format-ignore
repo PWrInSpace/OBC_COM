@@ -1,12 +1,20 @@
-# Ignoruj pliki systemowe i konfiguracyjne rdzenia STM32
-Core/Src/system_stm32*.c
-Core/Inc/system_stm32*.h
+# clang-format: pliki pomijane przy formatowaniu.
 
-# Ignoruj pliki przerwań i inicjalizacji sprzętu generowane przez CubeMX
-Core/Src/stm32*_it.c
-Core/Inc/stm32*_it.h
-Core/Src/stm32*_hal_msp.c
-Core/Inc/stm32*_hal_conf.h   <-- DODAJ TO TUTAJ
+# --- STM32CubeMX: Core (peryferia, HAL glue, startup, system, it, msp, main, freertos) ---
+Core/**
 
-# Ignoruj cały folder Drivers (HAL / CMSIS), gdyby narzędzie tam zajrzało
+# --- HAL + CMSIS ---
 Drivers/**
+
+# --- Middleware (FreeRTOS, FatFs, USB device stack) ---
+Middlewares/**
+My_Middlewares/**
+
+# --- stack USB device (ST) ---
+modules/USB/**
+
+# --- driver Semtech SX1280 (upstream) ---
+modules/sx1280/**
+
+# !Core/Src/user_diskio.c
+# !Core/Inc/user_diskio.h
