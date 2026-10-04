@@ -62,4 +62,3 @@ set(MX_LINK_LIBS
     RTOS2
     "-u _printf_float"
 )
-```
