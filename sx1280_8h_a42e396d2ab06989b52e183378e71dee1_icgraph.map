@@ -1,13 +1,24 @@
 <map id="SX1280SetStandby" name="SX1280SetStandby">
-<area shape="rect" id="node1" title="Sets the radio in configuration mode." alt="" coords="713,135,859,160"/>
-<area shape="rect" id="node2" href="$sx1280__task_8c.html#a811104046034a4384c8ceb110e8b50d2" title=" " alt="" coords="467,5,641,31"/>
-<area shape="rect" id="node5" href="$sx1280__task_8c.html#aa3e5f314d579c8192dcfb785648bca96" title=" " alt="" coords="499,55,609,80"/>
-<area shape="rect" id="node6" href="$sx1280__task_8c.html#af9b8000bc81e28fbd95180c677bf58c4" title=" " alt="" coords="245,93,395,119"/>
-<area shape="rect" id="node7" href="$sx1280_8c.html#af6fffb5681b52a42682edeb7159a23c6" title="Return the last ranging result power indicator." alt="" coords="443,155,665,195"/>
-<area shape="rect" id="node8" href="$sx1280_8c.html#a17d5de63553dd70d443bc4ec852a0344" title="Return the ranging result value." alt="" coords="460,220,648,245"/>
-<area shape="rect" id="node9" href="$sx1280__task_8c.html#a08a0d39a0c2e7c960630f1125434da42" title=" " alt="" coords="508,269,600,295"/>
-<area shape="rect" id="node3" href="$sx1280__task_8c.html#ad29d477ada983b118b9139bafba10196" title=" " alt="" coords="251,19,389,44"/>
-<area shape="rect" id="node4" href="$sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0" title=" " alt="" coords="5,69,197,95"/>
-<area shape="rect" id="node10" href="$sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a" title=" " alt="" coords="254,269,386,295"/>
-<area shape="rect" id="node11" href="$sx1280__task_8c.html#ae81733e32db03c2f8c8859b7fa9cb942" title=" " alt="" coords="34,269,169,295"/>
+<area shape="rect" id="Node000001" title="Sets the radio in configuration mode." alt="" coords="713,135,859,160"/>
+<area shape="rect" id="Node000002" href="$sx1280__task_8c.html#a811104046034a4384c8ceb110e8b50d2" title=" " alt="" coords="467,5,641,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="763,126,720,84,693,62,664,44,635,33,637,28,667,40,696,58,724,80,767,122"/>
+<area shape="rect" id="Node000005" href="$sx1280__task_8c.html#aa3e5f314d579c8192dcfb785648bca96" title=" " alt="" coords="499,55,609,80"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="741,132,664,102,602,83,604,77,666,97,743,127"/>
+<area shape="rect" id="Node000006" href="$sx1280__task_8c.html#af9b8000bc81e28fbd95180c677bf58c4" title=" " alt="" coords="245,93,395,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="699,142,394,115,395,110,700,137"/>
+<area shape="rect" id="Node000007" href="$sx1280_8c.html#af6fffb5681b52a42682edeb7159a23c6" title="Return the last ranging result power indicator." alt="" coords="443,155,665,195"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="700,160,666,165,665,159,699,155"/>
+<area shape="rect" id="Node000008" href="$sx1280_8c.html#a17d5de63553dd70d443bc4ec852a0344" title="Return the ranging result value." alt="" coords="460,220,648,245"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="753,169,712,190,666,210,623,222,622,217,664,205,710,185,750,164"/>
+<area shape="rect" id="Node000009" href="$sx1280__task_8c.html#a08a0d39a0c2e7c960630f1125434da42" title=" " alt="" coords="508,269,600,295"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="768,173,725,218,697,241,667,260,634,273,601,280,599,275,632,268,664,256,694,237,721,214,764,169"/>
+<area shape="rect" id="Node000003" href="$sx1280__task_8c.html#ad29d477ada983b118b9139bafba10196" title=" " alt="" coords="251,19,389,44"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="453,26,390,30,389,25,452,21"/>
+<area shape="rect" id="Node000004" href="$sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0" title=" " alt="" coords="5,69,197,95"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="252,50,157,72,156,67,250,45"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="231,99,197,95,198,90,232,94"/>
+<area shape="rect" id="Node000010" href="$sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a" title=" " alt="" coords="254,269,386,295"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="494,285,386,285,386,279,494,279"/>
+<area shape="rect" id="Node000011" href="$sx1280__task_8c.html#ae81733e32db03c2f8c8859b7fa9cb942" title=" " alt="" coords="34,269,169,295"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="240,285,169,285,169,279,240,279"/>
 </map>

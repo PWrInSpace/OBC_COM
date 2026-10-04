@@ -1,9 +1,16 @@
 <map id="app/include/lora_config.h" name="app/include/lora_config.h">
-<area shape="rect" id="node1" title=" " alt="" coords="407,5,591,31"/>
-<area shape="rect" id="node2" href="$rfm95w__task_8h.html" title=" " alt="" coords="235,79,386,119"/>
-<area shape="rect" id="node5" href="$rfm95w__task_8c.html" title=" " alt="" coords="374,167,543,192"/>
-<area shape="rect" id="node6" href="$lora__config_8c.html" title=" " alt="" coords="479,86,633,111"/>
-<area shape="rect" id="node7" href="$sx1280__task_8c.html" title=" " alt="" coords="658,86,825,111"/>
-<area shape="rect" id="node3" href="$app__freertos_8c.html" title=" " alt="" coords="5,167,179,192"/>
-<area shape="rect" id="node4" href="$cmd__task_8c.html" title=" " alt="" coords="203,167,349,192"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="407,5,591,31"/>
+<area shape="rect" id="Node000002" href="$rfm95w__task_8h.html" title=" " alt="" coords="235,79,386,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="460,38,357,81,355,76,458,33"/>
+<area shape="rect" id="Node000005" href="$rfm95w__task_8c.html" title=" " alt="" coords="374,167,543,192"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="486,44,469,79,461,127,461,166,455,166,456,126,464,78,481,41"/>
+<area shape="rect" id="Node000006" href="$lora__config_8c.html" title=" " alt="" coords="479,86,633,111"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="517,40,550,84,545,87,513,43"/>
+<area shape="rect" id="Node000007" href="$sx1280__task_8c.html" title=" " alt="" coords="658,86,825,111"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="548,32,707,83,705,89,546,37"/>
+<area shape="rect" id="Node000003" href="$app__freertos_8c.html" title=" " alt="" coords="5,167,179,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="247,126,125,169,123,164,245,121"/>
+<area shape="rect" id="Node000004" href="$cmd__task_8c.html" title=" " alt="" coords="203,167,349,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="299,132,284,167,279,165,294,130"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="359,123,438,164,436,169,357,127"/>
 </map>

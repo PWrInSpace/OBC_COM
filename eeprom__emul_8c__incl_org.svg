@@ -9,118 +9,139 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 188)">
 <title>nvs/src/eeprom_emul.c</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="264.5,-184 134.5,-184 134.5,-165 264.5,-165 264.5,-184"/>
 <text text-anchor="middle" x="199.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">nvs/src/eeprom_emul.c</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="eeprom__emul_8h.html" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="eeprom__emul_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="246,-129 153,-129 153,-110 246,-110 246,-129"/>
 <text text-anchor="middle" x="199.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">eeprom_emul.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M199.5,-164.75C199.5,-157.8 199.5,-147.85 199.5,-139.13"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="203,-139.09 199.5,-129.09 196,-139.09 203,-139.09"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="eeprom__emul__conf_8h.html" target="_top" xlink:title="EEPROM emulation configuration file. This file should be copied to the application folder and renamed...">
+<g id="a_Node000003"><a xlink:href="eeprom__emul__conf_8h.html" target="_top" xlink:title="EEPROM emulation configuration file. This file should be copied to the application folder and renamed...">
 <polygon fill="white" stroke="#666666" points="119,-74 0,-74 0,-55 119,-55 119,-74"/>
 <text text-anchor="middle" x="59.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">eeprom_emul_conf.h</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M177.01,-109.98C153.98,-101.27 117.96,-87.63 91.87,-77.75"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="92.99,-74.44 82.4,-74.17 90.52,-80.98 92.99,-74.44"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="eeprom__emul__types_8h.html" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="eeprom__emul__types_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="262,-74 137,-74 137,-55 262,-55 262,-74"/>
 <text text-anchor="middle" x="199.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">eeprom_emul_types.h</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000002_Node000004" class="edge">
 <title>Node2&#45;&gt;Node4</title>
+<g id="a_edge3_Node000002_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M199.5,-109.75C199.5,-102.8 199.5,-92.85 199.5,-84.13"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="203,-84.09 199.5,-74.09 196,-84.09 203,-84.09"/>
+</a>
+</g>
 </g>
 <!-- Node5 -->
-<g id="node5" class="node">
+<g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="flash__interface_8h.html" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="flash__interface_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="378.5,-74 280.5,-74 280.5,-55 378.5,-55 378.5,-74"/>
 <text text-anchor="middle" x="329.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">flash_interface.h</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
+<g id="edge4_Node000002_Node000005" class="edge">
 <title>Node2&#45;&gt;Node5</title>
+<g id="a_edge4_Node000002_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M220.39,-109.98C241.58,-101.34 274.63,-87.87 298.8,-78.02"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="300.29,-81.19 308.23,-74.17 297.65,-74.7 300.29,-81.19"/>
+</a>
+</g>
 </g>
 <!-- Node6 -->
-<g id="node6" class="node">
+<g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:title=" ">
+<g id="a_Node000006"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="256,-19 155,-19 155,0 256,0 256,-19"/>
 <text text-anchor="middle" x="205.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">stm32h5xx_hal.h</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node6 -->
-<g id="edge5" class="edge">
+<g id="edge5_Node000005_Node000006" class="edge">
 <title>Node5&#45;&gt;Node6</title>
+<g id="a_edge5_Node000005_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M309.58,-54.98C289.45,-46.38 258.12,-32.99 235.09,-23.15"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="236.36,-19.88 225.79,-19.17 233.6,-26.32 236.36,-19.88"/>
+</a>
+</g>
 </g>
 <!-- Node7 -->
-<g id="node7" class="node">
+<g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:title=" ">
+<g id="a_Node000007"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="385,-19 274,-19 274,0 385,0 385,-19"/>
 <text text-anchor="middle" x="329.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">stm32h5xx_ll_crc.h</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node7 -->
-<g id="edge6" class="edge">
+<g id="edge6_Node000005_Node000007" class="edge">
 <title>Node5&#45;&gt;Node7</title>
+<g id="a_edge6_Node000005_Node000007"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M329.5,-54.75C329.5,-47.8 329.5,-37.85 329.5,-29.13"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="333,-29.09 329.5,-19.09 326,-29.09 333,-29.09"/>
+</a>
+</g>
 </g>
 <!-- Node8 -->
-<g id="node8" class="node">
+<g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:title=" ">
+<g id="a_Node000008"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="517.5,-19 403.5,-19 403.5,0 517.5,0 517.5,-19"/>
 <text text-anchor="middle" x="460.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">stm32h5xx_ll_bus.h</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node8 -->
-<g id="edge7" class="edge">
+<g id="edge7_Node000005_Node000008" class="edge">
 <title>Node5&#45;&gt;Node8</title>
+<g id="a_edge7_Node000005_Node000008"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M350.55,-54.98C371.91,-46.34 405.2,-32.87 429.56,-23.02"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="431.11,-26.17 439.07,-19.17 428.49,-19.68 431.11,-26.17"/>
+</a>
+</g>
 </g>
 </g>
 </svg>

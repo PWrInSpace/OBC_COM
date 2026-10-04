@@ -9,43 +9,49 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>SX1280SetTxContinuousPreamble</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Sets the radio in continuous preamble transmission mode.">
+<g id="a_Node000001"><a xlink:title="Sets the radio in continuous preamble transmission mode.">
 <polygon fill="#999999" stroke="#666666" points="182,-19 0,-19 0,0 182,0 182,-19"/>
 <text text-anchor="middle" x="91" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280SetTxContinuousPreamble</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" target="_top" xlink:title="Send a command that write data to the radio.">
+<g id="a_Node000002"><a xlink:href="sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" target="_top" xlink:title="Send a command that write data to the radio.">
 <polygon fill="white" stroke="#666666" points="364,-19 218,-19 218,0 364,0 364,-19"/>
 <text text-anchor="middle" x="291" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWriteCommand</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M182.02,-9.5C190.59,-9.5 199.25,-9.5 207.74,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="208,-13 218,-9.5 208,-6 208,-13"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
+<g id="a_Node000003"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
 <polygon fill="white" stroke="#666666" points="529,-19 400,-19 400,0 529,0 529,-19"/>
 <text text-anchor="middle" x="464.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWaitOnBusy</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M364.23,-9.5C372.63,-9.5 381.2,-9.5 389.62,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="389.79,-13 399.79,-9.5 389.79,-6 389.79,-13"/>
+</a>
+</g>
 </g>
 </g>
 </svg>

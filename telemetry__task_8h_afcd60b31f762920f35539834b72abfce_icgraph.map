@@ -1,4 +1,5 @@
 <map id="start_telemetry_task" name="start_telemetry_task">
-<area shape="rect" id="node1" title="Inicjalizuje i uruchamia wątek telemetrii." alt="" coords="199,5,357,31"/>
-<area shape="rect" id="node2" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,5,151,31"/>
+<area shape="rect" id="Node000001" title="Inicjalizuje i uruchamia wątek telemetrii." alt="" coords="199,5,357,31"/>
+<area shape="rect" id="Node000002" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,5,151,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,21,151,21,151,15,185,15"/>
 </map>

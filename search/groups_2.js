@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['private_20configuration_20constants_0',['Private Configuration Constants',['../group__Private__Configuration__Constants.html',1,'']]],
-  ['private_20other_20constants_1',['Private Other Constants',['../group__Private__Other__Constants.html',1,'']]]
+  ['functions_0',['functions',['../group__EEPROM__Exported__Functions.html',1,'EEPROM Exported Functions'],['../group__EEPROM__Private__Functions.html',1,'EEPROM Private Functions']]]
 ];

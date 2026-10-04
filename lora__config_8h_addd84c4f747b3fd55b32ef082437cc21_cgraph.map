@@ -1,17 +1,42 @@
 <map id="rfm95w_config_init_param" name="rfm95w_config_init_param">
-<area shape="rect" id="node1" title=" " alt="" coords="5,206,152,246"/>
-<area shape="rect" id="node2" href="$lora__config_8c.html#a381ec50efe029e7793eda40dd4f03ea6" title=" " alt="" coords="200,184,375,209"/>
-<area shape="rect" id="node3" href="$rfm95w_8c.html#a4f47d99ceb32427929eb25c0ed306183" title=" " alt="" coords="207,234,367,274"/>
-<area shape="rect" id="node4" href="$rfm95w_8c.html#a8227c00dd5424cf7bfb04a88e8eb62ef" title="Disable appending/verifying packet CRC." alt="" coords="437,44,579,69"/>
-<area shape="rect" id="node5" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="646,69,771,94"/>
-<area shape="rect" id="node6" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="644,241,773,266"/>
-<area shape="rect" id="node7" href="$rfm95w_8c.html#a02773451cdcfe2f849c8a57e66fc96ed" title="Enable appending/verifying packet CRC." alt="" coords="439,93,577,118"/>
-<area shape="rect" id="node8" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="462,392,554,417"/>
-<area shape="rect" id="node9" href="$rfm95w_8c.html#a0a2e6647e90c0463cce5205a63adc47b" title="Set coding rate." alt="" coords="423,142,593,168"/>
-<area shape="rect" id="node10" href="$rfm95w_8c.html#a70616dfa9fac771817ed31fbcae5d2ae" title="Set carrier frequency." alt="" coords="428,441,588,466"/>
-<area shape="rect" id="node11" href="$rfm95w_8c.html#affdac2f93066e1e83f6ec2ea79d083a1" title="Change radio sync word." alt="" coords="426,192,590,217"/>
-<area shape="rect" id="node12" href="$rfm95w_8c.html#a084b810c8724c14b77c5f09bd602988f" title="Configure power level for transmission." alt="" coords="431,241,585,266"/>
-<area shape="rect" id="node13" href="$rfm95w_8c.html#a33c72632717848203646e7d95c033057" title="Sets the radio transceiver in sleep mode." alt="" coords="457,290,559,316"/>
-<area shape="rect" id="node14" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="452,490,564,516"/>
-<area shape="rect" id="node15" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="641,490,776,516"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,206,152,246"/>
+<area shape="rect" id="Node000002" href="$lora__config_8c.html#a381ec50efe029e7793eda40dd4f03ea6" title=" " alt="" coords="200,184,375,209"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,213,186,208,187,213,152,218"/>
+<area shape="rect" id="Node000003" href="$rfm95w_8c.html#a4f47d99ceb32427929eb25c0ed306183" title=" " alt="" coords="207,234,367,274"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,233,194,239,194,244,152,238"/>
+<area shape="rect" id="Node000004" href="$rfm95w_8c.html#a8227c00dd5424cf7bfb04a88e8eb62ef" title="Disable appending/verifying packet CRC." alt="" coords="437,44,579,69"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="356,232,373,219,386,201,392,184,395,149,399,114,406,96,421,79,426,74,429,79,425,82,411,99,404,115,401,150,397,186,390,204,377,222,359,236"/>
+<area shape="rect" id="Node000005" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="646,69,771,94"/>
+<area shape="poly" id="edge11_Node000003_Node000005" title=" " alt="" coords="357,232,373,219,388,195,394,171,392,122,390,97,392,73,401,50,421,29,452,12,486,4,521,4,557,10,624,33,677,60,675,64,622,38,556,15,521,9,486,9,454,17,424,33,406,53,397,75,395,97,397,121,399,171,393,197,377,222,360,236"/>
+<area shape="rect" id="Node000006" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="644,241,773,266"/>
+<area shape="poly" id="edge23_Node000003_Node000006" title=" " alt="" coords="317,272,365,301,394,315,423,325,471,335,508,340,546,336,592,325,642,302,682,273,685,277,644,306,594,330,547,341,508,345,470,341,422,330,392,319,363,306,314,276"/>
+<area shape="rect" id="Node000007" href="$rfm95w_8c.html#a02773451cdcfe2f849c8a57e66fc96ed" title="Enable appending/verifying packet CRC." alt="" coords="439,93,577,118"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="354,231,373,219,389,196,396,174,403,151,421,128,428,123,431,127,425,132,407,153,401,175,394,199,377,222,357,236"/>
+<area shape="rect" id="Node000008" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="462,392,554,417"/>
+<area shape="poly" id="edge9_Node000003_Node000008" title=" " alt="" coords="309,272,358,320,390,347,424,370,453,384,451,389,421,375,387,351,355,324,305,276"/>
+<area shape="rect" id="Node000009" href="$rfm95w_8c.html#a0a2e6647e90c0463cce5205a63adc47b" title="Set coding rate." alt="" coords="423,142,593,168"/>
+<area shape="poly" id="edge12_Node000003_Node000009" title=" " alt="" coords="347,231,373,218,397,197,406,187,421,177,435,170,438,175,424,181,410,191,400,201,376,223,349,236"/>
+<area shape="rect" id="Node000010" href="$rfm95w_8c.html#a70616dfa9fac771817ed31fbcae5d2ae" title="Set carrier frequency." alt="" coords="428,441,588,466"/>
+<area shape="poly" id="edge15_Node000003_Node000010" title=" " alt="" coords="301,273,320,306,347,348,383,390,424,426,436,433,434,438,421,431,379,394,343,351,315,309,296,275"/>
+<area shape="rect" id="Node000011" href="$rfm95w_8c.html#affdac2f93066e1e83f6ec2ea79d083a1" title="Change radio sync word." alt="" coords="426,192,590,217"/>
+<area shape="poly" id="edge17_Node000003_Node000011" title=" " alt="" coords="367,233,437,218,438,223,368,239"/>
+<area shape="rect" id="Node000012" href="$rfm95w_8c.html#a084b810c8724c14b77c5f09bd602988f" title="Configure power level for transmission." alt="" coords="431,241,585,266"/>
+<area shape="poly" id="edge19_Node000003_Node000012" title=" " alt="" coords="367,251,417,251,417,256,367,256"/>
+<area shape="rect" id="Node000013" href="$rfm95w_8c.html#a33c72632717848203646e7d95c033057" title="Sets the radio transceiver in sleep mode." alt="" coords="457,290,559,316"/>
+<area shape="poly" id="edge21_Node000003_Node000013" title=" " alt="" coords="368,269,444,286,442,291,367,274"/>
+<area shape="rect" id="Node000014" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="452,490,564,516"/>
+<area shape="poly" id="edge24_Node000003_Node000014" title=" " alt="" coords="297,273,314,316,340,371,377,428,399,454,424,477,441,487,438,491,421,481,395,458,372,432,335,374,309,318,292,275"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="579,63,632,69,631,75,579,68"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="574,67,595,78,632,113,661,153,684,193,700,227,695,229,679,196,657,156,628,116,592,83,571,72"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="577,95,632,88,633,94,578,100"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="570,116,595,128,625,150,653,177,693,228,689,231,649,181,622,154,592,132,568,121"/>
+<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="553,389,592,370,621,348,647,323,688,276,692,279,651,327,624,352,595,375,555,394"/>
+<area shape="poly" id="edge13_Node000009_Node000005" title=" " alt="" coords="554,140,592,127,666,98,668,103,594,132,555,145"/>
+<area shape="poly" id="edge14_Node000009_Node000006" title=" " alt="" coords="564,165,594,177,642,203,682,230,679,235,639,207,592,182,562,170"/>
+<area shape="poly" id="edge16_Node000010_Node000006" title=" " alt="" coords="569,439,592,426,628,392,657,352,679,312,695,278,700,280,684,314,661,355,632,396,595,431,571,443"/>
+<area shape="poly" id="edge18_Node000011_Node000006" title=" " alt="" coords="561,215,644,235,642,240,560,220"/>
+<area shape="poly" id="edge20_Node000012_Node000006" title=" " alt="" coords="586,251,630,251,630,256,586,256"/>
+<area shape="poly" id="edge22_Node000013_Node000006" title=" " alt="" coords="559,288,642,267,644,272,560,293"/>
+<area shape="rect" id="Node000015" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="641,490,776,516"/>
+<area shape="poly" id="edge25_Node000014_Node000015" title=" " alt="" coords="564,500,628,500,628,506,564,506"/>
 </map>

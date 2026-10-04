@@ -1,6 +1,9 @@
 <map id="Core/Inc/usb.h" name="Core/Inc/usb.h">
-<area shape="rect" id="node1" title="This file contains all the function prototypes for the usb.c file." alt="" coords="154,5,269,31"/>
-<area shape="rect" id="node2" href="$main_8c.html" title=": Main program body" alt="" coords="5,79,129,104"/>
-<area shape="rect" id="node3" href="$usb_8c.html" title=" " alt="" coords="154,79,269,104"/>
-<area shape="rect" id="node4" href="$usb__config_8c.html" title=" " alt="" coords="293,79,447,104"/>
+<area shape="rect" id="Node000001" title="This file contains all the function prototypes for the usb.c file." alt="" coords="154,5,269,31"/>
+<area shape="rect" id="Node000002" href="$main_8c.html" title=": Main program body" alt="" coords="5,79,129,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,39,92,81,90,76,175,34"/>
+<area shape="rect" id="Node000003" href="$usb_8c.html" title=" " alt="" coords="154,79,269,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,44,214,79,209,79,209,44"/>
+<area shape="rect" id="Node000004" href="$usb__config_8c.html" title=" " alt="" coords="293,79,447,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="250,34,345,76,343,81,248,39"/>
 </map>

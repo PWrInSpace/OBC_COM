@@ -1,7 +1,11 @@
 <map id="SX1280SetWhiteningSeed" name="SX1280SetWhiteningSeed">
-<area shape="rect" id="node1" title="Sets the Initial value of the LFSR used for the whitening in GFSK, FLRC and BLE protocols." alt="" coords="5,31,196,56"/>
-<area shape="rect" id="node2" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="252,5,419,31"/>
-<area shape="rect" id="node3" href="$sx1280-hal_8c.html#a22d55eec45845b70b71327af666c9eb0" title="Write a single byte of data to the radio memory." alt="" coords="244,55,427,80"/>
-<area shape="rect" id="node4" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="475,55,664,80"/>
-<area shape="rect" id="node5" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="712,55,884,80"/>
+<area shape="rect" id="Node000001" title="Sets the Initial value of the LFSR used for the whitening in GFSK, FLRC and BLE protocols." alt="" coords="5,31,196,56"/>
+<area shape="rect" id="Node000002" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="252,5,419,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,30,238,26,239,31,196,36"/>
+<area shape="rect" id="Node000003" href="$sx1280-hal_8c.html#a22d55eec45845b70b71327af666c9eb0" title="Write a single byte of data to the radio memory." alt="" coords="244,55,427,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,50,231,54,230,59,196,56"/>
+<area shape="rect" id="Node000004" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="475,55,664,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="427,65,461,65,461,70,427,70"/>
+<area shape="rect" id="Node000005" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="712,55,884,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="665,65,698,65,698,70,665,70"/>
 </map>

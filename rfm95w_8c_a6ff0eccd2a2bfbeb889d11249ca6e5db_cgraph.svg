@@ -6,12 +6,22 @@
 <!-- Title: rfm95_fill_fifo_buf_to_send Pages: 1 -->
 <svg width="351pt" height="52pt"
  viewBox="0.00 0.00 351.00 51.50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
+<style type="text/css"><![CDATA[
+.node, .edge {opacity: 0.7;}
+.node.selected, .edge.selected {opacity: 1;}
+.edge:hover path { stroke: red; }
+.edge:hover polygon { stroke: red; fill: red; }
+]]></style>
+<script type="application/ecmascript" xlink:href="svg.min.js"/>
+<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 47.5)">
 <title>rfm95_fill_fifo_buf_to_send</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Fills the REG_FIFO buffer with desired values, and the REG_PAYLOAD_LENGTH with buffer size.">
+<g id="a_Node000001"><a xlink:title="Fills the REG_FIFO buffer with desired values, and the REG_PAYLOAD_LENGTH with buffer size.">
 <polygon fill="#999999" stroke="#666666" points="105,-30 0,-30 0,0 105,0 105,-30"/>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95_fill_fifo_buf</text>
 <text text-anchor="middle" x="52.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_to_send</text>
@@ -19,40 +29,64 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" target="_top" xlink:title="Sets the radio transceiver in idle mode.">
+<g id="a_Node000002"><a xlink:href="rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" target="_top" xlink:title="Sets the radio transceiver in idle mode.">
 <polygon fill="white" stroke="#666666" points="210,-43.5 141,-43.5 141,-24.5 210,-24.5 210,-43.5"/>
 <text text-anchor="middle" x="175.5" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95_idle</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M105.17,-23.11C113.75,-24.46 122.58,-25.85 130.94,-27.16"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="130.43,-30.62 140.85,-28.72 131.52,-23.71 130.43,-30.62"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" target="_top" xlink:title="Write a value to a register.">
+<g id="a_Node000003"><a xlink:href="rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" target="_top" xlink:title="Write a value to a register.">
 <polygon fill="white" stroke="#666666" points="343,-24.5 246,-24.5 246,-5.5 343,-5.5 343,-24.5"/>
 <text text-anchor="middle" x="294.5" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95_write_reg</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
+<g id="a_edge3_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M105.28,-15C143.69,-15 196.06,-15 235.81,-15"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="235.89,-18.5 245.89,-15 235.89,-11.5 235.89,-18.5"/>
+</a>
+</g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M210.03,-28.56C218.07,-27.25 226.9,-25.82 235.7,-24.39"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="236.27,-27.84 245.58,-22.78 235.15,-20.93 236.27,-27.84"/>
+</a>
 </g>
 </g>
+</g>
+</svg>
+</svg>
+
+<style type='text/css'>
+<![CDATA[
+[data-mouse-over-selected='false'] { opacity: 0.7; }
+[data-mouse-over-selected='true']  { opacity: 1.0; }
+]]>
+</style>
+<script type="application/ecmascript"><![CDATA[
+document.addEventListener('DOMContentLoaded', (event) => {
+  highlightEdges();
+  highlightAdjacentNodes();
+});
+]]></script>
 </svg>

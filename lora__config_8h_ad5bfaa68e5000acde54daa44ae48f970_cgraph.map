@@ -1,10 +1,20 @@
 <map id="rfm95w_config_init" name="rfm95w_config_init">
-<area shape="rect" id="node1" title=" " alt="" coords="5,132,152,157"/>
-<area shape="rect" id="node2" href="$rfm95w_8c.html#a6e61164f61a1f17347ebf79f2963b0d2" title="Create default config and set parameters." alt="" coords="200,107,360,132"/>
-<area shape="rect" id="node8" href="$rfm95w_8c.html#a2be2b59e8a8f0265803de985863cb3ec" title="Perform physical reset on the Rfm95 chip." alt="" coords="229,156,331,181"/>
-<area shape="rect" id="node3" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="439,5,531,31"/>
-<area shape="rect" id="node4" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="611,107,740,132"/>
-<area shape="rect" id="node5" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="423,107,548,132"/>
-<area shape="rect" id="node6" href="$rfm95w_8c.html#a084b810c8724c14b77c5f09bd602988f" title="Configure power level for transmission." alt="" coords="408,156,563,181"/>
-<area shape="rect" id="node7" href="$rfm95w_8c.html#a33c72632717848203646e7d95c033057" title="Sets the radio transceiver in sleep mode." alt="" coords="434,205,537,231"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,132,152,157"/>
+<area shape="rect" id="Node000002" href="$rfm95w_8c.html#a6e61164f61a1f17347ebf79f2963b0d2" title="Create default config and set parameters." alt="" coords="200,107,360,132"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,133,186,128,187,134,153,138"/>
+<area shape="rect" id="Node000008" href="$rfm95w_8c.html#a2be2b59e8a8f0265803de985863cb3ec" title="Perform physical reset on the Rfm95 chip." alt="" coords="229,156,331,181"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="153,151,216,158,215,164,152,156"/>
+<area shape="rect" id="Node000003" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="439,5,531,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="302,104,407,48,438,33,441,38,409,52,304,109"/>
+<area shape="rect" id="Node000004" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="611,107,740,132"/>
+<area shape="poly" id="edge9_Node000002_Node000004" title=" " alt="" coords="332,104,408,91,485,86,563,91,616,101,615,106,562,97,485,91,408,97,333,109"/>
+<area shape="rect" id="Node000005" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="423,107,548,132"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="360,117,409,117,409,122,360,122"/>
+<area shape="rect" id="Node000006" href="$rfm95w_8c.html#a084b810c8724c14b77c5f09bd602988f" title="Configure power level for transmission." alt="" coords="408,156,563,181"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="334,129,419,150,418,155,333,135"/>
+<area shape="rect" id="Node000007" href="$rfm95w_8c.html#a33c72632717848203646e7d95c033057" title="Sets the radio transceiver in sleep mode." alt="" coords="434,205,537,231"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="337,130,361,141,377,154,386,167,395,180,409,192,423,199,420,203,407,196,391,183,382,170,373,158,359,146,335,134"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="521,28,564,48,646,97,643,101,561,52,519,33"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="534,153,611,133,613,138,536,159"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="533,203,562,192,607,166,646,138,649,143,610,170,564,196,535,208"/>
 </map>

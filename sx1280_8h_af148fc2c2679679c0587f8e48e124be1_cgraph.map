@@ -1,5 +1,7 @@
 <map id="SX1280GetStatus" name="SX1280GetStatus">
-<area shape="rect" id="node1" title="Gets the current radio status." alt="" coords="5,5,140,31"/>
-<area shape="rect" id="node2" href="$sx1280-hal_8c.html#abc1ed10f83057922610c0ef2b3893733" title="Send a command that read data from the radio." alt="" coords="188,5,381,31"/>
-<area shape="rect" id="node3" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="429,5,601,31"/>
+<area shape="rect" id="Node000001" title="Gets the current radio status." alt="" coords="5,5,140,31"/>
+<area shape="rect" id="Node000002" href="$sx1280-hal_8c.html#abc1ed10f83057922610c0ef2b3893733" title="Send a command that read data from the radio." alt="" coords="188,5,381,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,15,174,15,174,21,140,21"/>
+<area shape="rect" id="Node000003" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="429,5,601,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="381,15,415,15,415,21,381,21"/>
 </map>

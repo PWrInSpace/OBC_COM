@@ -1,6 +1,9 @@
 <map id="rfm95_print_actual_settings" name="rfm95_print_actual_settings">
-<area shape="rect" id="node1" title=" " alt="" coords="5,23,151,63"/>
-<area shape="rect" id="node2" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="199,5,324,31"/>
-<area shape="rect" id="node3" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="205,55,317,80"/>
-<area shape="rect" id="node4" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="372,55,507,80"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,151,63"/>
+<area shape="rect" id="Node000002" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="199,5,324,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,31,185,26,185,31,151,36"/>
+<area shape="rect" id="Node000003" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="205,55,317,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,50,192,56,191,61,150,55"/>
+<area shape="rect" id="Node000004" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="372,55,507,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="318,65,358,65,358,70,318,70"/>
 </map>

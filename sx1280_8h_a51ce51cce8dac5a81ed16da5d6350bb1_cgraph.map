@@ -1,5 +1,7 @@
 <map id="SX1280SetPacketType" name="SX1280SetPacketType">
-<area shape="rect" id="node1" title="Sets the radio for the given protocol." alt="" coords="5,5,169,31"/>
-<area shape="rect" id="node2" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="217,5,412,31"/>
-<area shape="rect" id="node3" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="460,5,632,31"/>
+<area shape="rect" id="Node000001" title="Sets the radio for the given protocol." alt="" coords="5,5,169,31"/>
+<area shape="rect" id="Node000002" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="217,5,412,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,15,204,15,204,21,170,21"/>
+<area shape="rect" id="Node000003" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="460,5,632,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="412,15,446,15,446,21,412,21"/>
 </map>

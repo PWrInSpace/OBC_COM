@@ -6,136 +6,185 @@
 <!-- Title: led_cb Pages: 1 -->
 <svg width="326pt" height="138pt"
  viewBox="0.00 0.00 326.00 138.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
+<style type="text/css"><![CDATA[
+.node, .edge {opacity: 0.7;}
+.node.selected, .edge.selected {opacity: 1;}
+.edge:hover path { stroke: red; }
+.edge:hover polygon { stroke: red; fill: red; }
+]]></style>
+<script type="application/ecmascript" xlink:href="svg.min.js"/>
+<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 134)">
 <title>led_cb</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="48,-74 0,-74 0,-55 48,-55 48,-74"/>
 <text text-anchor="middle" x="24" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">led_cb</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="led_8c.html#a911c1445888ee842028dabe011d0cbea" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="led_8c.html#a911c1445888ee842028dabe011d0cbea" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="160.5,-130 110.5,-130 110.5,-111 160.5,-111 160.5,-130"/>
 <text text-anchor="middle" x="135.5" y="-118" font-family="Helvetica,sans-Serif" font-size="10.00">correct</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M38.07,-74.17C49.7,-82.46 67.38,-94.32 84,-102.5 89.35,-105.13 95.18,-107.57 100.93,-109.76"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="99.81,-113.07 110.4,-113.17 102.18,-106.49 99.81,-113.07"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="led_8c.html#a9fd23871e64ce76441d76650cd8e9c34" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="led_8c.html#a9fd23871e64ce76441d76650cd8e9c34" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="184,-93 87,-93 87,-74 184,-74 184,-93"/>
 <text text-anchor="middle" x="135.5" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">led_render_pixel</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000001_Node000004" class="edge">
 <title>Node1&#45;&gt;Node4</title>
+<g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M48.22,-68.53C56.7,-70 66.7,-71.74 76.84,-73.49"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="76.52,-76.99 86.97,-75.25 77.71,-70.09 76.52,-76.99"/>
+</a>
+</g>
 </g>
 <!-- Node7 -->
-<g id="node7" class="node">
+<g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="ws2812_8c.html#a1a336aa93a09eae96e568550794abdad" target="_top" xlink:title=" ">
+<g id="a_Node000007"><a xlink:href="ws2812_8c.html#a1a336aa93a09eae96e568550794abdad" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="187,-56 84,-56 84,-37 187,-37 187,-56"/>
 <text text-anchor="middle" x="135.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ws2812_set_pixel</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
-<g id="edge6" class="edge">
+<g id="edge6_Node000001_Node000007" class="edge">
 <title>Node1&#45;&gt;Node7</title>
+<g id="a_edge6_Node000001_Node000007"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M48.22,-60.68C55.88,-59.42 64.78,-57.96 73.89,-56.46"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="74.53,-59.91 83.83,-54.83 73.39,-53 74.53,-59.91"/>
+</a>
+</g>
 </g>
 <!-- Node8 -->
-<g id="node8" class="node">
+<g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="ws2812_8c.html#afa32209d857563f721e36211b80d8308" target="_top" xlink:title="Encode the frame and begin the DMA transfer (non&#45;blocking)">
+<g id="a_Node000008"><a xlink:href="ws2812_8c.html#afa32209d857563f721e36211b80d8308" target="_top" xlink:title="Encode the frame and begin the DMA transfer (non&#45;blocking)">
 <polygon fill="white" stroke="#666666" points="178,-19 93,-19 93,0 178,0 178,-19"/>
 <text text-anchor="middle" x="135.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ws2812_show</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node8 -->
-<g id="edge7" class="edge">
+<g id="edge7_Node000001_Node000008" class="edge">
 <title>Node1&#45;&gt;Node8</title>
+<g id="a_edge7_Node000001_Node000008"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M39.12,-54.84C50.81,-47.1 68.04,-36.29 84,-28.5 88.09,-26.51 92.44,-24.58 96.82,-22.78"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="98.3,-25.96 106.32,-19.03 95.73,-19.44 98.3,-25.96"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="led_8c.html#a64b160e194323340cb7afc6ad9a505f0" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="led_8c.html#a64b160e194323340cb7afc6ad9a505f0" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="291.5,-130 249.5,-130 249.5,-111 291.5,-111 291.5,-130"/>
 <text text-anchor="middle" x="270.5" y="-118" font-family="Helvetica,sans-Serif" font-size="10.00">scale</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M160.59,-120.5C182.53,-120.5 215.04,-120.5 238.83,-120.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="239.08,-124 249.08,-120.5 239.08,-117 239.08,-124"/>
+</a>
+</g>
 </g>
 <!-- Node5 -->
-<g id="node5" class="node">
+<g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="led_8c.html#a992f9c52317e7e374b7463b240a4db94" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="led_8c.html#a992f9c52317e7e374b7463b240a4db94" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="296.5,-93 244.5,-93 244.5,-74 296.5,-74 296.5,-93"/>
 <text text-anchor="middle" x="270.5" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">unpack</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
+<g id="edge4_Node000004_Node000005" class="edge">
 <title>Node4&#45;&gt;Node5</title>
+<g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M184.14,-83.5C200.61,-83.5 218.77,-83.5 234.09,-83.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="234.18,-87 244.18,-83.5 234.18,-80 234.18,-87"/>
+</a>
+</g>
 </g>
 <!-- Node6 -->
-<g id="node6" class="node">
+<g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="led_8c.html#a31772f07d54f0340d3b178fdb9d4a977" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="led_8c.html#a31772f07d54f0340d3b178fdb9d4a977" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="293.5,-56 247.5,-56 247.5,-37 293.5,-37 293.5,-56"/>
 <text text-anchor="middle" x="270.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">wheel</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node6 -->
-<g id="edge5" class="edge">
+<g id="edge5_Node000004_Node000006" class="edge">
 <title>Node4&#45;&gt;Node6</title>
+<g id="a_edge5_Node000004_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M170.75,-73.97C191.43,-68.22 217.59,-60.94 237.79,-55.32"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="238.76,-58.68 247.46,-52.63 236.89,-51.94 238.76,-58.68"/>
+</a>
+</g>
 </g>
 <!-- Node9 -->
-<g id="node9" class="node">
+<g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="ws2812_8c.html#aa57ef631af02e08bc7dc99c41fe8dfde" target="_top" xlink:title=" ">
+<g id="a_Node000009"><a xlink:href="ws2812_8c.html#aa57ef631af02e08bc7dc99c41fe8dfde" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="318,-19 223,-19 223,0 318,0 318,-19"/>
 <text text-anchor="middle" x="270.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ws2812_encode</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node9 -->
-<g id="edge8" class="edge">
+<g id="edge8_Node000008_Node000009" class="edge">
 <title>Node8&#45;&gt;Node9</title>
+<g id="a_edge8_Node000008_Node000009"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M178.22,-9.5C189.18,-9.5 201.18,-9.5 212.78,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="212.84,-13 222.84,-9.5 212.84,-6 212.84,-13"/>
+</a>
 </g>
 </g>
+</g>
+</svg>
+</svg>
+
+<style type='text/css'>
+<![CDATA[
+[data-mouse-over-selected='false'] { opacity: 0.7; }
+[data-mouse-over-selected='true']  { opacity: 1.0; }
+]]>
+</style>
+<script type="application/ecmascript"><![CDATA[
+document.addEventListener('DOMContentLoaded', (event) => {
+  highlightEdges();
+  highlightAdjacentNodes();
+});
+]]></script>
 </svg>

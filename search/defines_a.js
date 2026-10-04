@@ -8,7 +8,7 @@ var searchData=
   ['max_5fcmd_5flen_5',['MAX_CMD_LEN',['../cmd__interface_8h.html#a1eb73c104b484cf18752169509cebfe2',1,'cmd_interface.h']]],
   ['max_5ffiltered_5ftags_6',['MAX_FILTERED_TAGS',['../logger_8c.html#ae15a4e7cc7b0d7c2c131f1e6acc736a2',1,'logger.c']]],
   ['max_5fhal_5fbuffer_5fsize_7',['MAX_HAL_BUFFER_SIZE',['../sx1280-hal_8c.html#af856de48c37b03a1427abab70bfefc70',1,'sx1280-hal.c']]],
-  ['max_5fspi_5fbuffer_8',['MAX_SPI_BUFFER',['../rfm95w__wrapper_8c.html#a2839a847d15d712d8e679a5738ba209b',1,'MAX_SPI_BUFFER():&#160;rfm95w_wrapper.c'],['../sx1280__hal__wrapper_8c.html#a2839a847d15d712d8e679a5738ba209b',1,'MAX_SPI_BUFFER():&#160;sx1280_hal_wrapper.c']]],
+  ['max_5fspi_5fbuffer_8',['max_spi_buffer',['../rfm95w__wrapper_8c.html#a2839a847d15d712d8e679a5738ba209b',1,'MAX_SPI_BUFFER:&#160;rfm95w_wrapper.c'],['../sx1280__hal__wrapper_8c.html#a2839a847d15d712d8e679a5738ba209b',1,'MAX_SPI_BUFFER:&#160;sx1280_hal_wrapper.c']]],
   ['mcb_5fuart_5frx_5fgpio_5fport_9',['MCB_UART_RX_GPIO_Port',['../main_8h.html#a2987a823a1b38548e751362aba25ccd9',1,'main.h']]],
   ['mcb_5fuart_5frx_5fpin_10',['MCB_UART_RX_Pin',['../main_8h.html#a33b8ea78cc098e52f2399e3903d2279f',1,'main.h']]],
   ['mcb_5fuart_5ftx_5fgpio_5fport_11',['MCB_UART_TX_GPIO_Port',['../main_8h.html#a9bfda8485e91c6e246349a735b620a59',1,'main.h']]],

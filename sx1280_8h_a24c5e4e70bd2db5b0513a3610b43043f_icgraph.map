@@ -1,15 +1,32 @@
 <map id="SX1280ClearIrqStatus" name="SX1280ClearIrqStatus">
-<area shape="rect" id="node1" title="Clears the IRQs." alt="" coords="671,196,833,221"/>
-<area shape="rect" id="node2" href="$sx1280__task_8c.html#a811104046034a4384c8ceb110e8b50d2" title=" " alt="" coords="448,5,623,31"/>
-<area shape="rect" id="node5" href="$sx1280__task_8c.html#a2558054bd23939c02ad7d8e95cd5a501" title=" " alt="" coords="457,55,613,95"/>
-<area shape="rect" id="node6" href="$sx1280__task_8c.html#aa3e5f314d579c8192dcfb785648bca96" title=" " alt="" coords="46,321,157,347"/>
-<area shape="rect" id="node7" href="$sx1280__task_8c.html#aeb43006f8eb6d0162d00590ffe9017f9" title=" " alt="" coords="287,145,359,171"/>
-<area shape="rect" id="node8" href="$sx1280__task_8c.html#af9b8000bc81e28fbd95180c677bf58c4" title=" " alt="" coords="248,195,397,220"/>
-<area shape="rect" id="node9" href="$sx1280_8c.html#af08aac82fe5e983a4671967275b5dab8" title="Process the analysis of radio IRQs and calls callback functions depending on radio state." alt="" coords="463,323,608,348"/>
-<area shape="rect" id="node11" href="$sx1280_8c.html#a5c13f6957fa2593d47760a6062a21aac" title="Sets the radio in reception mode." alt="" coords="481,171,590,196"/>
-<area shape="rect" id="node12" href="$sx1280_8c.html#aec1515be5729bc30af9d9803c3f14e54" title="Sets the radio in transmission mode." alt="" coords="481,372,589,397"/>
-<area shape="rect" id="node3" href="$sx1280__task_8c.html#ad29d477ada983b118b9139bafba10196" title=" " alt="" coords="253,63,392,88"/>
-<area shape="rect" id="node4" href="$sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0" title=" " alt="" coords="5,145,197,171"/>
-<area shape="rect" id="node10" href="$sx1280_8c.html#a4b390ccc0f9d28283afff36f11a94263" title="DIOs interrupt callback." alt="" coords="259,323,387,348"/>
-<area shape="rect" id="node13" href="$sx1280_8c.html#a6e0b7882ef75caed036360ffbea723d2" title="Sends a payload." alt="" coords="245,372,400,397"/>
+<area shape="rect" id="Node000001" title="Clears the IRQs." alt="" coords="671,196,833,221"/>
+<area shape="rect" id="Node000002" href="$sx1280__task_8c.html#a811104046034a4384c8ceb110e8b50d2" title=" " alt="" coords="448,5,623,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="736,185,691,115,659,78,621,46,596,33,599,28,624,41,663,74,695,112,740,182"/>
+<area shape="rect" id="Node000005" href="$sx1280__task_8c.html#a2558054bd23939c02ad7d8e95cd5a501" title=" " alt="" coords="457,55,613,95"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="724,189,677,153,621,116,585,98,587,93,624,112,680,149,727,185"/>
+<area shape="rect" id="Node000006" href="$sx1280__task_8c.html#aa3e5f314d579c8192dcfb785648bca96" title=" " alt="" coords="46,321,157,347"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="672,227,157,326,156,321,671,221"/>
+<area shape="rect" id="Node000007" href="$sx1280__task_8c.html#aeb43006f8eb6d0162d00590ffe9017f9" title=" " alt="" coords="287,145,359,171"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="713,192,670,174,622,161,550,152,477,150,359,156,359,151,477,144,550,146,623,155,672,169,715,188"/>
+<area shape="rect" id="Node000008" href="$sx1280__task_8c.html#af9b8000bc81e28fbd95180c677bf58c4" title=" " alt="" coords="248,195,397,220"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="657,211,397,210,397,205,657,206"/>
+<area shape="rect" id="Node000009" href="$sx1280_8c.html#af08aac82fe5e983a4671967275b5dab8" title="Process the analysis of radio IRQs and calls callback functions depending on radio state." alt="" coords="463,323,608,348"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="728,232,681,269,624,306,579,325,577,320,621,301,678,265,724,228"/>
+<area shape="rect" id="Node000011" href="$sx1280_8c.html#a5c13f6957fa2593d47760a6062a21aac" title="Sets the radio in reception mode." alt="" coords="481,171,590,196"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="657,200,590,192,590,187,657,195"/>
+<area shape="rect" id="Node000012" href="$sx1280_8c.html#aec1515be5729bc30af9d9803c3f14e54" title="Sets the radio in transmission mode." alt="" coords="481,372,589,397"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="738,235,693,298,661,332,624,362,591,377,589,372,621,357,657,328,689,295,734,232"/>
+<area shape="rect" id="Node000003" href="$sx1280__task_8c.html#ad29d477ada983b118b9139bafba10196" title=" " alt="" coords="253,63,392,88"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="475,37,371,65,370,60,474,32"/>
+<area shape="rect" id="Node000004" href="$sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0" title=" " alt="" coords="5,145,197,171"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="276,95,137,148,135,143,274,90"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="443,78,392,78,392,73,443,73"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="272,161,198,161,198,155,272,155"/>
+<area shape="poly" id="edge10_Node000008_Node000004" title=" " alt="" coords="251,194,159,173,160,168,252,189"/>
+<area shape="rect" id="Node000010" href="$sx1280_8c.html#a4b390ccc0f9d28283afff36f11a94263" title="DIOs interrupt callback." alt="" coords="259,323,387,348"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="449,338,387,338,387,333,449,333"/>
+<area shape="poly" id="edge14_Node000011_Node000007" title=" " alt="" coords="467,178,359,165,359,160,467,173"/>
+<area shape="rect" id="Node000013" href="$sx1280_8c.html#a6e0b7882ef75caed036360ffbea723d2" title="Sends a payload." alt="" coords="245,372,400,397"/>
+<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="467,387,400,387,400,382,467,382"/>
+<area shape="poly" id="edge17_Node000013_Node000006" title=" " alt="" coords="252,371,156,349,157,344,253,366"/>
 </map>

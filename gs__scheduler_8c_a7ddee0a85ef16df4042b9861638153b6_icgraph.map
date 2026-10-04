@@ -1,10 +1,19 @@
 <map id="elapsed_since" name="elapsed_since">
-<area shape="rect" id="node1" title=" " alt="" coords="944,55,1059,80"/>
-<area shape="rect" id="node2" href="$gs__scheduler_8c.html#a17094fe4392fd4b32f59fb44e36b170c" title=" " alt="" coords="760,5,863,31"/>
-<area shape="rect" id="node7" href="$gs__scheduler_8c.html#a0a017ffd3501437cd3bf31ce015e4f8f" title=" " alt="" coords="747,55,876,80"/>
-<area shape="rect" id="node8" href="$gs__scheduler_8c.html#a1af324444ec6235ebd562ed04ace541f" title=" " alt="" coords="727,104,896,129"/>
-<area shape="rect" id="node3" href="$gs__scheduler_8c.html#a815b48fae98b1fdf545b4693a720cca3" title=" " alt="" coords="572,55,679,80"/>
-<area shape="rect" id="node4" href="$rfm95w__task_8c.html#af8b08547037ee5614a6b8e7f8bc00b23" title=" " alt="" coords="389,55,524,80"/>
-<area shape="rect" id="node5" href="$rfm95w__task_8c.html#a5766e691677be755740c5d264c637139" title=" " alt="" coords="199,55,341,80"/>
-<area shape="rect" id="node6" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,55,151,80"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="944,55,1059,80"/>
+<area shape="rect" id="Node000002" href="$gs__scheduler_8c.html#a17094fe4392fd4b32f59fb44e36b170c" title=" " alt="" coords="760,5,863,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="938,54,861,33,862,28,939,49"/>
+<area shape="rect" id="Node000007" href="$gs__scheduler_8c.html#a0a017ffd3501437cd3bf31ce015e4f8f" title=" " alt="" coords="747,55,876,80"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="930,70,876,70,876,65,930,65"/>
+<area shape="rect" id="Node000008" href="$gs__scheduler_8c.html#a1af324444ec6235ebd562ed04ace541f" title=" " alt="" coords="727,104,896,129"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="939,86,862,106,861,101,938,81"/>
+<area shape="rect" id="Node000003" href="$gs__scheduler_8c.html#a815b48fae98b1fdf545b4693a720cca3" title=" " alt="" coords="572,55,679,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="750,37,675,57,674,52,749,32"/>
+<area shape="rect" id="Node000004" href="$rfm95w__task_8c.html#af8b08547037ee5614a6b8e7f8bc00b23" title=" " alt="" coords="389,55,524,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="559,70,525,70,525,65,559,65"/>
+<area shape="rect" id="Node000005" href="$rfm95w__task_8c.html#a5766e691677be755740c5d264c637139" title=" " alt="" coords="199,55,341,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="375,70,341,70,341,65,375,65"/>
+<area shape="rect" id="Node000006" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,55,151,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="185,70,151,70,151,65,185,65"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="733,70,679,70,679,65,733,65"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="749,103,674,83,675,78,750,98"/>
 </map>

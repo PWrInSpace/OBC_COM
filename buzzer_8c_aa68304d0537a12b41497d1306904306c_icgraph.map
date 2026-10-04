@@ -1,9 +1,17 @@
 <map id="buzzer_mute" name="buzzer_mute">
-<area shape="rect" id="node1" title=" " alt="" coords="653,80,760,105"/>
-<area shape="rect" id="node2" href="$buzzer_8c.html#a67474891465afd17e4c01ba17d1a05bd" title=" " alt="" coords="336,5,429,31"/>
-<area shape="rect" id="node5" href="$buzzer_8c.html#a8b5df1d0f87be9e9fdb23896369f96bf" title=" " alt="" coords="477,55,605,80"/>
-<area shape="rect" id="node6" href="$sound_8c.html#a2db46f98f8f8fde5eba0156cacc10c51" title=" " alt="" coords="349,55,416,80"/>
-<area shape="rect" id="node7" href="$sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795" title=" " alt="" coords="493,156,589,181"/>
-<area shape="rect" id="node3" href="$sound_8c.html#a90e396bab2471f72285f290ce7a5cab1" title=" " alt="" coords="199,31,288,56"/>
-<area shape="rect" id="node4" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,31,151,56"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="653,80,760,105"/>
+<area shape="rect" id="Node000002" href="$buzzer_8c.html#a67474891465afd17e4c01ba17d1a05bd" title=" " alt="" coords="336,5,429,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="672,76,640,59,605,46,559,35,512,28,429,21,430,16,513,22,560,30,606,41,642,55,674,71"/>
+<area shape="rect" id="Node000005" href="$buzzer_8c.html#a8b5df1d0f87be9e9fdb23896369f96bf" title=" " alt="" coords="477,55,605,80"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="639,85,605,80,606,75,640,80"/>
+<area shape="rect" id="Node000006" href="$sound_8c.html#a2db46f98f8f8fde5eba0156cacc10c51" title=" " alt="" coords="349,55,416,80"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="639,100,561,101,477,95,416,81,417,76,478,90,562,96,639,95"/>
+<area shape="rect" id="Node000007" href="$sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795" title=" " alt="" coords="493,156,589,181"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="667,114,571,158,569,153,665,109"/>
+<area shape="rect" id="Node000003" href="$sound_8c.html#a90e396bab2471f72285f290ce7a5cab1" title=" " alt="" coords="199,31,288,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="323,32,289,38,288,33,322,26"/>
+<area shape="rect" id="Node000004" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,31,151,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="185,46,151,46,151,41,185,41"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="463,70,416,70,416,65,463,65"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="335,62,288,54,289,48,336,57"/>
 </map>

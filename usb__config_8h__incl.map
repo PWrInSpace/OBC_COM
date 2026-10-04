@@ -1,7 +1,12 @@
 <map id="app/include/usb_config.h" name="app/include/usb_config.h">
-<area shape="rect" id="node1" title=" " alt="" coords="97,5,280,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,79,105,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="141,152,236,177"/>
-<area shape="rect" id="node4" href="$usbd__cdc__if_8h.html" title=" " alt="" coords="181,79,290,104"/>
-<area shape="rect" id="node5" title=" " alt="" coords="315,79,417,104"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="97,5,280,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,105,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,33,90,74,88,70,166,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="141,152,236,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,32,171,79,172,110,180,139,175,140,167,111,166,78,181,30"/>
+<area shape="rect" id="Node000004" href="$usbd__cdc__if_8h.html" title=" " alt="" coords="181,79,290,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="199,30,222,66,218,69,194,32"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="315,79,417,104"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="218,28,326,71,324,76,216,33"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="230,106,206,142,202,139,225,103"/>
 </map>

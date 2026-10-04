@@ -1,5 +1,7 @@
 <map id="USB_Transmit_Hex" name="USB_Transmit_Hex">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,151,31"/>
-<area shape="rect" id="node2" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="199,5,311,31"/>
-<area shape="rect" id="node3" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="359,5,493,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,151,31"/>
+<area shape="rect" id="Node000002" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="199,5,311,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,15,185,15,185,21,151,21"/>
+<area shape="rect" id="Node000003" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="359,5,493,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="311,15,345,15,345,21,311,21"/>
 </map>

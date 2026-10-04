@@ -1,12 +1,21 @@
 <map id="CMD_Task_Init" name="CMD_Task_Init">
-<area shape="rect" id="node1" title=" " alt="" coords="5,68,123,93"/>
-<area shape="rect" id="node2" href="$cmd__task_8c.html#a4277e3032edf4828adec6ef2f88ac235" title=" " alt="" coords="171,68,256,93"/>
-<area shape="rect" id="node3" href="$rfm95w__task_8c.html#aa4d6b5c21ad55e5a3fa935e378767e09" title="Queue a fully&#45;formed frame for the GS to transmit in its next slot." alt="" coords="304,12,456,37"/>
-<area shape="rect" id="node6" href="$cmd__interface_8c.html#a9fbe128e63157dbdbd120e0a1f114c8e" title=" " alt="" coords="308,68,452,93"/>
-<area shape="rect" id="node9" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="324,129,436,155"/>
-<area shape="rect" id="node4" href="$lora__tx__queue_8c.html#a89ed5c1059722f03064494917238a7bf" title=" " alt="" coords="533,5,646,31"/>
-<area shape="rect" id="node5" href="$lora__tx__queue_8c.html#a94059b396c7488833c7050b56acfc2dc" title=" " alt="" coords="723,5,817,31"/>
-<area shape="rect" id="node7" href="$cmd__interface_8c.html#a57d85fd4fa4007c732e903f4847ca286" title=" " alt="" coords="504,55,675,80"/>
-<area shape="rect" id="node8" href="$cmd__interface_8c.html#a6a3cde87386a92623e597936724e60c4" title=" " alt="" coords="512,104,667,129"/>
-<area shape="rect" id="node10" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="522,153,657,179"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,68,123,93"/>
+<area shape="rect" id="Node000002" href="$cmd__task_8c.html#a4277e3032edf4828adec6ef2f88ac235" title=" " alt="" coords="171,68,256,93"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,78,157,78,157,83,123,83"/>
+<area shape="rect" id="Node000003" href="$rfm95w__task_8c.html#aa4d6b5c21ad55e5a3fa935e378767e09" title="Queue a fully&#45;formed frame for the GS to transmit in its next slot." alt="" coords="304,12,456,37"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="251,65,327,39,329,44,253,70"/>
+<area shape="rect" id="Node000006" href="$cmd__interface_8c.html#a9fbe128e63157dbdbd120e0a1f114c8e" title=" " alt="" coords="308,68,452,93"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="256,78,295,78,295,83,256,83"/>
+<area shape="rect" id="Node000009" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="324,129,436,155"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="250,91,333,122,331,127,248,96"/>
+<area shape="rect" id="Node000004" href="$lora__tx__queue_8c.html#a89ed5c1059722f03064494917238a7bf" title=" " alt="" coords="533,5,646,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="456,20,519,18,519,23,457,25"/>
+<area shape="rect" id="Node000005" href="$lora__tx__queue_8c.html#a94059b396c7488833c7050b56acfc2dc" title=" " alt="" coords="723,5,817,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="646,15,709,15,709,21,646,21"/>
+<area shape="rect" id="Node000007" href="$cmd__interface_8c.html#a57d85fd4fa4007c732e903f4847ca286" title=" " alt="" coords="504,55,675,80"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="452,73,490,71,491,76,453,79"/>
+<area shape="rect" id="Node000008" href="$cmd__interface_8c.html#a6a3cde87386a92623e597936724e60c4" title=" " alt="" coords="512,104,667,129"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="453,90,502,99,501,104,452,96"/>
+<area shape="rect" id="Node000010" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="522,153,657,179"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="436,146,509,154,508,159,436,151"/>
 </map>

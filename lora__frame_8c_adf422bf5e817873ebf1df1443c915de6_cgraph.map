@@ -1,4 +1,5 @@
 <map id="lora_frame_validate" name="lora_frame_validate">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,159,31"/>
-<area shape="rect" id="node2" href="$lora__frame_8c.html#aeed92c1e040123a94781bba03eb08384" title=" " alt="" coords="207,5,373,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,159,31"/>
+<area shape="rect" id="Node000002" href="$lora__frame_8c.html#aeed92c1e040123a94781bba03eb08384" title=" " alt="" coords="207,5,373,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,15,193,15,193,21,159,21"/>
 </map>

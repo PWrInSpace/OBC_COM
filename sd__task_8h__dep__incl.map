@@ -1,7 +1,11 @@
 <map id="app/include/sd_task.h" name="app/include/sd_task.h">
-<area shape="rect" id="node1" title=" " alt="" coords="275,5,437,31"/>
-<area shape="rect" id="node2" href="$app__freertos_8c.html" title=" " alt="" coords="5,79,179,104"/>
-<area shape="rect" id="node3" href="$gps__task_8c.html" title=" " alt="" coords="203,79,346,104"/>
-<area shape="rect" id="node4" href="$sd__task_8c.html" title=" " alt="" coords="370,79,505,104"/>
-<area shape="rect" id="node5" href="$telemetry__task_8c.html" title=" " alt="" coords="529,79,711,104"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="275,5,437,31"/>
+<area shape="rect" id="Node000002" href="$app__freertos_8c.html" title=" " alt="" coords="5,79,179,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="301,37,135,81,134,76,300,32"/>
+<area shape="rect" id="Node000003" href="$gps__task_8c.html" title=" " alt="" coords="203,79,346,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="334,42,290,80,286,76,331,38"/>
+<area shape="rect" id="Node000004" href="$sd__task_8c.html" title=" " alt="" coords="370,79,505,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="381,38,426,76,422,80,378,42"/>
+<area shape="rect" id="Node000005" href="$telemetry__task_8c.html" title=" " alt="" coords="529,79,711,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="412,32,578,76,577,81,411,37"/>
 </map>

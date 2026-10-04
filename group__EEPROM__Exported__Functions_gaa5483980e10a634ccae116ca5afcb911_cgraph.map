@@ -1,6 +1,9 @@
 <map id="EE_CleanUp" name="EE_CleanUp">
-<area shape="rect" id="node1" title="Erase group of pages which are erasing state, in polling mode." alt="" coords="5,55,105,80"/>
-<area shape="rect" id="node2" href="$group__EEPROM__Private__Functions.html#ga4375dd5bf83e259a3481a83b5993a1a3" title="Flush the caches if needed to keep coherency when the flash content is modified." alt="" coords="153,5,269,31"/>
-<area shape="rect" id="node3" href="$group__EEPROM__Private__Functions.html#gaf950461e14bae3fd51f89e9dd59db26b" title="Erase a page in polling mode." alt="" coords="157,55,265,80"/>
-<area shape="rect" id="node4" href="$group__EEPROM__Private__Functions.html#ga2304deed602aa5aa10ecebbf7de5352c" title="Get page state in page header." alt="" coords="156,104,267,129"/>
+<area shape="rect" id="Node000001" title="Erase group of pages which are erasing state, in polling mode." alt="" coords="5,55,105,80"/>
+<area shape="rect" id="Node000002" href="$group__EEPROM__Private__Functions.html#ga4375dd5bf83e259a3481a83b5993a1a3" title="Flush the caches if needed to keep coherency when the flash content is modified." alt="" coords="153,5,269,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,52,157,32,158,37,97,57"/>
+<area shape="rect" id="Node000003" href="$group__EEPROM__Private__Functions.html#gaf950461e14bae3fd51f89e9dd59db26b" title="Erase a page in polling mode." alt="" coords="157,55,265,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="106,65,144,65,144,70,106,70"/>
+<area shape="rect" id="Node000004" href="$group__EEPROM__Private__Functions.html#ga2304deed602aa5aa10ecebbf7de5352c" title="Get page state in page header." alt="" coords="156,104,267,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="97,77,158,97,157,102,95,83"/>
 </map>

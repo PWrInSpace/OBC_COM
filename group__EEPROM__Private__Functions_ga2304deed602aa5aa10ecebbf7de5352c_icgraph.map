@@ -1,45 +1,100 @@
 <map id="GetPageState" name="GetPageState">
-<area shape="rect" id="node1" title="Get page state in page header." alt="" coords="2007,625,2117,651"/>
-<area shape="rect" id="node2" href="$group__EEPROM__Exported__Functions.html#gaa5483980e10a634ccae116ca5afcb911" title="Erase group of pages which are erasing state, in polling mode." alt="" coords="1849,499,1949,524"/>
-<area shape="rect" id="node3" href="$group__EEPROM__Private__Functions.html#ga155bacb56c1c6ea24464cdd408fc8ebb" title="Find suitable page for read/write/erase operation." alt="" coords="1712,549,1792,575"/>
-<area shape="rect" id="node4" href="$group__EEPROM__Private__Functions.html#ga8d8715ee491b7eae710c3deabc74dd0d" title="Writes a new variable data in fresh new page in case of normal transfer, and transfers last updated e..." alt="" coords="1267,549,1379,575"/>
-<area shape="rect" id="node5" href="$group__EEPROM__Exported__Functions.html#ga08e3105698f17d96ff57c20e0b44517c" title="Restore the pages to a known good state in case of power loss." alt="" coords="1101,549,1167,575"/>
-<area shape="rect" id="node28" href="$group__EEPROM__Private__Functions.html#gad111ea700245720d7f0cc24b0b8f4f58" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="1506,651,1614,676"/>
-<area shape="rect" id="node43" href="$group__EEPROM__Exported__Functions.html#ga678d338529401e4c3e79235783f46a27" title="Erase group of pages which are erasing state, in IT mode." alt="" coords="1840,848,1959,873"/>
-<area shape="rect" id="node11" href="$nvs__config_8c.html#a9001a4d9eea93c6f521f1b94014e967a" title=" " alt="" coords="653,301,744,327"/>
-<area shape="rect" id="node42" href="$group__EEPROM__Private__Functions.html#gaf47e9f09b5a17c1e9fafbd1ca8e967cc" title="Verify if pages are full then if not the case, writes variable in EEPROM." alt="" coords="1456,499,1664,524"/>
-<area shape="rect" id="node8" href="$group__EEPROM__Private__Functions.html#gab1030d083e54bb50edcd083851de0620" title="Writes/updates variable data in EEPROM Trig internal Pages transfer if half of the pages are full." alt="" coords="1079,449,1189,475"/>
-<area shape="rect" id="node6" href="$nvs__config_8c.html#a40eed21ee293313b466102cd353180c6" title="Unlock Flash and Init EEPROM Emulation." alt="" coords="660,549,737,575"/>
-<area shape="rect" id="node7" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,649,151,675"/>
-<area shape="rect" id="node9" href="$group__EEPROM__Exported__Functions.html#ga56222a4e6cc365436e34da1e68cdeda4" title="Writes/updates variable data in EEPROM." alt="" coords="839,351,1012,376"/>
-<area shape="rect" id="node10" href="$group__EEPROM__Exported__Functions.html#ga8aeb1ab28357d073af8ed7e62c96877f" title="Writes/updates variable data in EEPROM." alt="" coords="839,400,1012,425"/>
-<area shape="rect" id="node26" href="$group__EEPROM__Exported__Functions.html#ga7133bc23467568daf0b52ff25e958a8e" title="Writes/updates variable data in EEPROM." alt="" coords="843,449,1008,475"/>
-<area shape="rect" id="node27" href="$group__EEPROM__Exported__Functions.html#ga0a164053ef9fa4596d2c7ab6668d9e63" title="Writes/updates variable data in EEPROM." alt="" coords="839,499,1012,524"/>
-<area shape="rect" id="node12" href="$cmd__interface_8c.html#a8d62ddad816faebffd6b3ce1eb69ee23" title=" " alt="" coords="437,301,529,327"/>
-<area shape="rect" id="node13" href="$cmd__interface_8c.html#a0829a343683a10c8b46e3e555d960141" title=" " alt="" coords="441,351,526,376"/>
-<area shape="rect" id="node14" href="$cmd__interface_8c.html#ab9b1f85f73eb8f0cf090404b16aab535" title=" " alt="" coords="437,400,529,425"/>
-<area shape="rect" id="node15" href="$cmd__interface_8c.html#a96f1f5d0f266c2a2d29be6917c7e77f3" title=" " alt="" coords="434,449,533,475"/>
-<area shape="rect" id="node16" href="$cmd__interface_8c.html#a750cb44a19509201ebaa3de659b434d0" title=" " alt="" coords="416,499,551,524"/>
-<area shape="rect" id="node17" href="$cmd__interface_8c.html#a73611767caa272c8166e62aaa8279d7f" title=" " alt="" coords="408,548,559,573"/>
-<area shape="rect" id="node18" href="$cmd__interface_8c.html#a849218a785209e69259ac0b9bd9bbd23" title=" " alt="" coords="412,5,555,31"/>
-<area shape="rect" id="node19" href="$cmd__interface_8c.html#af99f2c7576338e31f5b707a6272c9b9c" title=" " alt="" coords="427,55,540,80"/>
-<area shape="rect" id="node20" href="$cmd__interface_8c.html#a947223adc947591791664b600f889d7e" title=" " alt="" coords="441,104,526,129"/>
-<area shape="rect" id="node21" href="$cmd__interface_8c.html#a0a2c132a3978fb3605049cd69d855e69" title=" " alt="" coords="432,153,535,179"/>
-<area shape="rect" id="node22" href="$nvs__config_8c.html#adbd355e95694e999ec36e42edc586bd4" title=" " alt="" coords="389,203,577,228"/>
-<area shape="rect" id="node23" href="$nvs__config_8c.html#a734183f29b003698ccadcade366e7306" title=" " alt="" coords="409,252,557,277"/>
-<area shape="rect" id="node24" href="$cmd__interface_8c.html#aebe7b81b6c8e63dca0a157d58ce11af5" title=" " alt="" coords="211,228,329,253"/>
-<area shape="rect" id="node25" href="$cmd__interface_8c.html#a17b431758d6294661d9adb69c55ba0dd" title=" " alt="" coords="212,277,328,303"/>
-<area shape="rect" id="node29" href="$group__EEPROM__Exported__Functions.html#ga8985f62cfd8bd312568a1740d96538d4" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="1237,747,1408,772"/>
-<area shape="rect" id="node30" href="$group__EEPROM__Exported__Functions.html#gadd96f1176b1503cfbc15074faa9375b2" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="1237,599,1408,624"/>
-<area shape="rect" id="node40" href="$group__EEPROM__Exported__Functions.html#gaa7fb81cd5fb8b9ec877074be3b29bc74" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="1241,697,1404,723"/>
-<area shape="rect" id="node41" href="$group__EEPROM__Exported__Functions.html#ga885aea9eed61ae9c8f0578ad62a9a97b" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="1237,648,1408,673"/>
-<area shape="rect" id="node31" href="$nvs__config_8c.html#aa9ef86be60e92cdb7220069d8653c66a" title=" " alt="" coords="1089,651,1179,676"/>
-<area shape="rect" id="node32" href="$logger_8c.html#aaf6d07588cfc5fb4f43a946b1c0f9de6" title=" " alt="" coords="820,700,1031,725"/>
-<area shape="rect" id="node34" href="$nvs__config_8c.html#a924f756b6492e945fdf2e73e9290e049" title=" " alt="" coords="851,651,1000,676"/>
-<area shape="rect" id="node35" href="$nvs__config_8c.html#ad30a9d28942ae7f3b8ae3e244c083c09" title=" " alt="" coords="836,601,1015,627"/>
-<area shape="rect" id="node39" href="$nvs__config_8c.html#a6d39a27e265f5d039fb96df6f8e6944a" title=" " alt="" coords="849,749,1001,775"/>
-<area shape="rect" id="node33" href="$logger_8c.html#a7f0a1ef369c8017a21abc0f68371b64e" title=" " alt="" coords="653,700,744,725"/>
-<area shape="rect" id="node36" href="$rfm95w__task_8c.html#aec3803cc26789b3cbf72bb31223778d2" title=" " alt="" coords="625,651,772,676"/>
-<area shape="rect" id="node37" href="$rfm95w__task_8c.html#af8b08547037ee5614a6b8e7f8bc00b23" title=" " alt="" coords="416,649,551,675"/>
-<area shape="rect" id="node38" href="$rfm95w__task_8c.html#a5766e691677be755740c5d264c637139" title=" " alt="" coords="199,649,341,675"/>
+<area shape="rect" id="Node000001" title="Get page state in page header." alt="" coords="2007,625,2117,651"/>
+<area shape="rect" id="Node000002" href="$group__EEPROM__Exported__Functions.html#gaa5483980e10a634ccae116ca5afcb911" title="Erase group of pages which are erasing state, in polling mode." alt="" coords="1849,499,1949,524"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2038,618,2001,582,1957,546,1926,526,1928,522,1960,541,2005,578,2042,614"/>
+<area shape="rect" id="Node000003" href="$group__EEPROM__Private__Functions.html#ga155bacb56c1c6ea24464cdd408fc8ebb" title="Find suitable page for read/write/erase operation." alt="" coords="1712,549,1792,575"/>
+<area shape="poly" id="edge53_Node000001_Node000003" title=" " alt="" coords="2022,622,1958,597,1869,578,1792,568,1793,562,1870,572,1959,591,2024,617"/>
+<area shape="rect" id="Node000004" href="$group__EEPROM__Private__Functions.html#ga8d8715ee491b7eae710c3deabc74dd0d" title="Writes a new variable data in fresh new page in case of normal transfer, and transfers last updated e..." alt="" coords="1267,549,1379,575"/>
+<area shape="poly" id="edge54_Node000001_Node000004" title=" " alt="" coords="1993,634,1378,570,1379,565,1993,628"/>
+<area shape="rect" id="Node000005" href="$group__EEPROM__Exported__Functions.html#ga08e3105698f17d96ff57c20e0b44517c" title="Restore the pages to a known good state in case of power loss." alt="" coords="1101,549,1167,575"/>
+<area shape="poly" id="edge52_Node000001_Node000005" title=" " alt="" coords="2041,662,1993,706,1925,755,1886,777,1843,796,1799,808,1753,813,1559,813,1509,815,1464,821,1387,833,1351,834,1314,829,1276,814,1236,787,1219,771,1209,754,1202,719,1200,682,1195,662,1187,641,1165,605,1144,577,1148,573,1170,602,1192,638,1201,661,1205,681,1207,719,1214,752,1223,767,1239,783,1279,809,1316,823,1351,829,1386,828,1463,816,1508,810,1559,807,1753,807,1798,803,1842,791,1883,773,1923,750,1990,701,2037,658"/>
+<area shape="rect" id="Node000028" href="$group__EEPROM__Private__Functions.html#gad111ea700245720d7f0cc24b0b8f4f58" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="1506,651,1614,676"/>
+<area shape="poly" id="edge55_Node000001_Node000028" title=" " alt="" coords="1993,644,1614,663,1614,658,1993,639"/>
+<area shape="rect" id="Node000043" href="$group__EEPROM__Exported__Functions.html#ga678d338529401e4c3e79235783f46a27" title="Erase group of pages which are erasing state, in IT mode." alt="" coords="1840,848,1959,873"/>
+<area shape="poly" id="edge51_Node000001_Node000043" title=" " alt="" coords="2055,664,2021,744,1994,789,1960,831,1933,850,1930,846,1957,827,1990,786,2016,741,2050,662"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1849,531,1791,552,1789,547,1848,526"/>
+<area shape="rect" id="Node000011" href="$nvs__config_8c.html#a9001a4d9eea93c6f521f1b94014e967a" title=" " alt="" coords="653,301,744,327"/>
+<area shape="poly" id="edge50_Node000002_Node000011" title=" " alt="" coords="1876,490,1825,441,1751,383,1707,357,1661,335,1612,321,1561,315,1133,315,744,316,744,311,1133,310,1561,310,1613,315,1662,330,1710,352,1754,379,1828,437,1879,486"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1698,565,1379,565,1379,559,1698,559"/>
+<area shape="poly" id="edge27_Node000003_Node000028" title=" " alt="" coords="1716,584,1586,653,1584,648,1713,579"/>
+<area shape="rect" id="Node000042" href="$group__EEPROM__Private__Functions.html#gaf47e9f09b5a17c1e9fafbd1ca8e967cc" title="Verify if pages are full then if not the case, writes variable in EEPROM." alt="" coords="1456,499,1664,524"/>
+<area shape="poly" id="edge46_Node000003_Node000042" title=" " alt="" coords="1698,551,1608,527,1609,521,1699,546"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1253,565,1168,565,1168,559,1253,559"/>
+<area shape="rect" id="Node000008" href="$group__EEPROM__Private__Functions.html#gab1030d083e54bb50edcd083851de0620" title="Writes/updates variable data in EEPROM Trig internal Pages transfer if half of the pages are full." alt="" coords="1079,449,1189,475"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="1284,545,1158,477,1160,472,1287,540"/>
+<area shape="rect" id="Node000006" href="$nvs__config_8c.html#a40eed21ee293313b466102cd353180c6" title="Unlock Flash and Init EEPROM Emulation." alt="" coords="660,549,737,575"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1087,565,738,565,738,559,1087,559"/>
+<area shape="rect" id="Node000007" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,649,151,675"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="647,575,578,587,388,614,199,641,140,652,139,647,198,635,388,608,577,582,646,570"/>
+<area shape="rect" id="Node000009" href="$group__EEPROM__Exported__Functions.html#ga56222a4e6cc365436e34da1e68cdeda4" title="Writes/updates variable data in EEPROM." alt="" coords="839,351,1012,376"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1107,442,1072,414,1030,390,998,379,1000,374,1032,385,1074,410,1110,438"/>
+<area shape="rect" id="Node000010" href="$group__EEPROM__Exported__Functions.html#ga8aeb1ab28357d073af8ed7e62c96877f" title="Writes/updates variable data in EEPROM." alt="" coords="839,400,1012,425"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="1068,449,1030,439,982,428,983,423,1031,434,1070,443"/>
+<area shape="rect" id="Node000026" href="$group__EEPROM__Exported__Functions.html#ga7133bc23467568daf0b52ff25e958a8e" title="Writes/updates variable data in EEPROM." alt="" coords="843,449,1008,475"/>
+<area shape="poly" id="edge25_Node000008_Node000026" title=" " alt="" coords="1065,465,1008,465,1008,459,1065,459"/>
+<area shape="rect" id="Node000027" href="$group__EEPROM__Exported__Functions.html#ga0a164053ef9fa4596d2c7ab6668d9e63" title="Writes/updates variable data in EEPROM." alt="" coords="839,499,1012,524"/>
+<area shape="poly" id="edge26_Node000008_Node000027" title=" " alt="" coords="1067,480,981,501,979,496,1066,475"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="844,399,819,390,761,359,715,329,718,325,764,355,821,385,846,394"/>
+<area shape="rect" id="Node000012" href="$cmd__interface_8c.html#a8d62ddad816faebffd6b3ce1eb69ee23" title=" " alt="" coords="437,301,529,327"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="639,317,529,317,529,311,639,311"/>
+<area shape="rect" id="Node000013" href="$cmd__interface_8c.html#a0829a343683a10c8b46e3e555d960141" title=" " alt="" coords="441,351,526,376"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="641,330,527,356,526,351,639,325"/>
+<area shape="rect" id="Node000014" href="$cmd__interface_8c.html#ab9b1f85f73eb8f0cf090404b16aab535" title=" " alt="" coords="437,400,529,425"/>
+<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="670,337,628,364,578,390,530,406,529,401,576,385,625,359,667,332"/>
+<area shape="rect" id="Node000015" href="$cmd__interface_8c.html#a96f1f5d0f266c2a2d29be6917c7e77f3" title=" " alt="" coords="434,449,533,475"/>
+<area shape="poly" id="edge14_Node000011_Node000015" title=" " alt="" coords="682,340,639,390,610,416,579,439,534,456,532,451,576,434,607,412,635,386,678,336"/>
+<area shape="rect" id="Node000016" href="$cmd__interface_8c.html#a750cb44a19509201ebaa3de659b434d0" title=" " alt="" coords="416,499,551,524"/>
+<area shape="poly" id="edge15_Node000011_Node000016" title=" " alt="" coords="689,341,672,374,648,414,617,454,579,488,552,502,550,497,576,484,613,451,643,411,667,372,684,338"/>
+<area shape="rect" id="Node000017" href="$cmd__interface_8c.html#a73611767caa272c8166e62aaa8279d7f" title=" " alt="" coords="408,548,559,573"/>
+<area shape="poly" id="edge16_Node000011_Node000017" title=" " alt="" coords="693,341,679,384,656,437,623,491,602,516,579,537,557,550,554,546,576,533,598,512,618,488,651,434,674,382,688,339"/>
+<area shape="rect" id="Node000018" href="$cmd__interface_8c.html#a849218a785209e69259ac0b9bd9bbd23" title=" " alt="" coords="412,5,555,31"/>
+<area shape="poly" id="edge17_Node000011_Node000018" title=" " alt="" coords="691,288,680,236,658,170,624,102,602,71,576,44,554,31,556,26,579,40,606,67,629,99,663,168,685,235,696,287"/>
+<area shape="rect" id="Node000019" href="$cmd__interface_8c.html#af99f2c7576338e31f5b707a6272c9b9c" title=" " alt="" coords="427,55,540,80"/>
+<area shape="poly" id="edge18_Node000011_Node000019" title=" " alt="" coords="688,289,674,246,651,193,619,139,599,115,576,93,558,83,539,76,541,71,561,78,579,89,602,111,623,136,656,190,679,244,693,287"/>
+<area shape="rect" id="Node000020" href="$cmd__interface_8c.html#a947223adc947591791664b600f889d7e" title=" " alt="" coords="441,104,526,129"/>
+<area shape="poly" id="edge19_Node000011_Node000020" title=" " alt="" coords="685,290,668,256,644,216,613,176,576,143,552,131,525,124,527,118,553,126,579,138,617,173,648,213,673,254,689,288"/>
+<area shape="rect" id="Node000021" href="$cmd__interface_8c.html#a0a2c132a3978fb3605049cd69d855e69" title=" " alt="" coords="432,153,535,179"/>
+<area shape="poly" id="edge20_Node000011_Node000021" title=" " alt="" coords="679,292,636,241,608,215,576,192,534,176,536,171,579,188,611,211,640,237,683,289"/>
+<area shape="rect" id="Node000022" href="$nvs__config_8c.html#adbd355e95694e999ec36e42edc586bd4" title=" " alt="" coords="389,203,577,228"/>
+<area shape="poly" id="edge21_Node000011_Node000022" title=" " alt="" coords="668,295,626,268,576,242,544,231,546,226,578,237,628,263,671,291"/>
+<area shape="rect" id="Node000023" href="$nvs__config_8c.html#a734183f29b003698ccadcade366e7306" title=" " alt="" coords="409,252,557,277"/>
+<area shape="poly" id="edge22_Node000011_Node000023" title=" " alt="" coords="639,303,539,280,540,275,641,298"/>
+<area shape="rect" id="Node000024" href="$cmd__interface_8c.html#aebe7b81b6c8e63dca0a157d58ce11af5" title=" " alt="" coords="211,228,329,253"/>
+<area shape="poly" id="edge23_Node000023_Node000024" title=" " alt="" coords="395,257,328,250,329,245,395,252"/>
+<area shape="rect" id="Node000025" href="$cmd__interface_8c.html#a17b431758d6294661d9adb69c55ba0dd" title=" " alt="" coords="212,277,328,303"/>
+<area shape="poly" id="edge24_Node000023_Node000025" title=" " alt="" coords="396,278,328,286,328,281,395,272"/>
+<area shape="poly" id="edge45_Node000028_Node000004" title=" " alt="" coords="1491,650,1455,634,1440,622,1430,610,1421,599,1407,588,1378,576,1380,571,1409,584,1425,595,1434,607,1443,618,1457,629,1494,645"/>
+<area shape="rect" id="Node000029" href="$group__EEPROM__Exported__Functions.html#ga8985f62cfd8bd312568a1740d96538d4" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="1237,747,1408,772"/>
+<area shape="poly" id="edge28_Node000028_Node000029" title=" " alt="" coords="1524,685,1471,711,1409,738,1375,749,1373,744,1407,733,1468,707,1522,680"/>
+<area shape="rect" id="Node000030" href="$group__EEPROM__Exported__Functions.html#gadd96f1176b1503cfbc15074faa9375b2" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="1237,599,1408,624"/>
+<area shape="poly" id="edge29_Node000028_Node000030" title=" " alt="" coords="1491,651,1381,627,1382,621,1493,646"/>
+<area shape="rect" id="Node000040" href="$group__EEPROM__Exported__Functions.html#gaa7fb81cd5fb8b9ec877074be3b29bc74" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="1241,697,1404,723"/>
+<area shape="poly" id="edge43_Node000028_Node000040" title=" " alt="" coords="1493,679,1388,700,1387,695,1492,674"/>
+<area shape="rect" id="Node000041" href="$group__EEPROM__Exported__Functions.html#ga885aea9eed61ae9c8f0578ad62a9a97b" title="Returns the last stored variable data, if found, which correspond to the passed virtual address." alt="" coords="1237,648,1408,673"/>
+<area shape="poly" id="edge44_Node000028_Node000041" title=" " alt="" coords="1492,665,1408,664,1408,659,1492,660"/>
+<area shape="rect" id="Node000031" href="$nvs__config_8c.html#aa9ef86be60e92cdb7220069d8653c66a" title=" " alt="" coords="1089,651,1179,676"/>
+<area shape="poly" id="edge30_Node000030_Node000031" title=" " alt="" coords="1264,630,1180,654,1178,649,1262,625"/>
+<area shape="rect" id="Node000032" href="$logger_8c.html#aaf6d07588cfc5fb4f43a946b1c0f9de6" title=" " alt="" coords="820,700,1031,725"/>
+<area shape="poly" id="edge31_Node000031_Node000032" title=" " alt="" coords="1077,680,1031,691,983,702,982,697,1030,686,1075,675"/>
+<area shape="rect" id="Node000034" href="$nvs__config_8c.html#a924f756b6492e945fdf2e73e9290e049" title=" " alt="" coords="851,651,1000,676"/>
+<area shape="poly" id="edge34_Node000031_Node000034" title=" " alt="" coords="1075,666,1000,666,1000,661,1075,661"/>
+<area shape="rect" id="Node000035" href="$nvs__config_8c.html#ad30a9d28942ae7f3b8ae3e244c083c09" title=" " alt="" coords="836,601,1015,627"/>
+<area shape="poly" id="edge36_Node000031_Node000035" title=" " alt="" coords="1075,652,979,629,980,624,1076,647"/>
+<area shape="rect" id="Node000039" href="$nvs__config_8c.html#a6d39a27e265f5d039fb96df6f8e6944a" title=" " alt="" coords="849,749,1001,775"/>
+<area shape="poly" id="edge42_Node000031_Node000039" title=" " alt="" coords="1110,688,1074,715,1032,740,1000,752,998,747,1030,736,1072,711,1107,684"/>
+<area shape="rect" id="Node000033" href="$logger_8c.html#a7f0a1ef369c8017a21abc0f68371b64e" title=" " alt="" coords="653,700,744,725"/>
+<area shape="poly" id="edge32_Node000032_Node000033" title=" " alt="" coords="806,715,745,715,745,710,806,710"/>
+<area shape="poly" id="edge33_Node000033_Node000007" title=" " alt="" coords="639,715,444,710,321,703,198,690,130,677,131,672,199,685,322,697,444,705,640,710"/>
+<area shape="poly" id="edge35_Node000034_Node000033" title=" " alt="" coords="854,682,745,706,743,700,852,676"/>
+<area shape="rect" id="Node000036" href="$rfm95w__task_8c.html#aec3803cc26789b3cbf72bb31223778d2" title=" " alt="" coords="625,651,772,676"/>
+<area shape="poly" id="edge37_Node000035_Node000036" title=" " alt="" coords="854,632,758,653,757,648,852,627"/>
+<area shape="rect" id="Node000037" href="$rfm95w__task_8c.html#af8b08547037ee5614a6b8e7f8bc00b23" title=" " alt="" coords="416,649,551,675"/>
+<area shape="poly" id="edge41_Node000035_Node000037" title=" " alt="" coords="822,623,626,642,551,653,550,648,625,637,822,618"/>
+<area shape="poly" id="edge38_Node000036_Node000037" title=" " alt="" coords="611,665,551,665,551,660,611,660"/>
+<area shape="rect" id="Node000038" href="$rfm95w__task_8c.html#a5766e691677be755740c5d264c637139" title=" " alt="" coords="199,649,341,675"/>
+<area shape="poly" id="edge39_Node000037_Node000038" title=" " alt="" coords="402,665,342,665,342,659,402,659"/>
+<area shape="poly" id="edge40_Node000038_Node000007" title=" " alt="" coords="185,665,151,665,151,659,185,659"/>
+<area shape="poly" id="edge48_Node000042_Node000004" title=" " alt="" coords="1487,530,1379,553,1378,548,1485,524"/>
+<area shape="poly" id="edge47_Node000042_Node000005" title=" " alt="" coords="1442,519,1342,526,1238,539,1168,555,1167,550,1237,534,1342,521,1442,513"/>
+<area shape="poly" id="edge49_Node000042_Node000008" title=" " alt="" coords="1443,500,1408,495,1189,471,1190,465,1408,490,1444,494"/>
 </map>

@@ -1,5 +1,7 @@
 <map id="SX1280complement2" name="SX1280complement2">
-<area shape="rect" id="node1" title="Compute the two&#39;s complement for a register of size lower than 32bits." alt="" coords="245,31,407,56"/>
-<area shape="rect" id="node2" href="$sx1280_8c.html#a83a3b438ff77c40e11276d8aa92ca48c" title="Return the Estimated Frequency Error in LORA and RANGING operations." alt="" coords="5,5,197,31"/>
-<area shape="rect" id="node3" href="$sx1280_8c.html#a17d5de63553dd70d443bc4ec852a0344" title="Return the ranging result value." alt="" coords="7,55,195,80"/>
+<area shape="rect" id="Node000001" title="Compute the two&#39;s complement for a register of size lower than 32bits." alt="" coords="245,31,407,56"/>
+<area shape="rect" id="Node000002" href="$sx1280_8c.html#a83a3b438ff77c40e11276d8aa92ca48c" title="Return the Estimated Frequency Error in LORA and RANGING operations." alt="" coords="5,5,197,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,35,197,31,198,26,232,30"/>
+<area shape="rect" id="Node000003" href="$sx1280_8c.html#a17d5de63553dd70d443bc4ec852a0344" title="Return the ranging result value." alt="" coords="7,55,195,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="232,56,196,60,195,55,232,51"/>
 </map>

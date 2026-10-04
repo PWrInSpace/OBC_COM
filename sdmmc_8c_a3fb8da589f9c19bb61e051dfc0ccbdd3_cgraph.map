@@ -1,4 +1,5 @@
 <map id="HAL_SD_MspInit" name="HAL_SD_MspInit">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,133,31"/>
-<area shape="rect" id="node2" href="$group__EEPROM__Emulation.html#gad4e07955fadfeb416e9620ddb42f8fe9" title="This function is executed in case of error occurrence." alt="" coords="181,5,292,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,133,31"/>
+<area shape="rect" id="Node000002" href="$group__EEPROM__Emulation.html#gad4e07955fadfeb416e9620ddb42f8fe9" title="This function is executed in case of error occurrence." alt="" coords="181,5,292,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,15,167,15,167,21,133,21"/>
 </map>

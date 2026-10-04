@@ -1,6 +1,9 @@
 <map id="app/include/led.h" name="app/include/led.h">
-<area shape="rect" id="node1" title=" " alt="" coords="227,5,360,31"/>
-<area shape="rect" id="node2" href="$app__freertos_8c.html" title=" " alt="" coords="5,79,179,104"/>
-<area shape="rect" id="node3" href="$stm32h5xx__it_8c.html" title="Interrupt Service Routines." alt="" coords="203,79,383,104"/>
-<area shape="rect" id="node4" href="$led_8c.html" title=" " alt="" coords="408,79,512,104"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="227,5,360,31"/>
+<area shape="rect" id="Node000002" href="$app__freertos_8c.html" title=" " alt="" coords="5,79,179,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="249,38,126,81,124,76,247,33"/>
+<area shape="rect" id="Node000003" href="$stm32h5xx__it_8c.html" title="Interrupt Service Routines." alt="" coords="203,79,383,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="296,44,296,79,291,79,291,44"/>
+<area shape="rect" id="Node000004" href="$led_8c.html" title=" " alt="" coords="408,79,512,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="334,34,434,76,432,81,332,38"/>
 </map>

@@ -1,8 +1,15 @@
 <map id="SX1280SetTx" name="SX1280SetTx">
-<area shape="rect" id="node1" title="Sets the radio in transmission mode." alt="" coords="5,81,113,107"/>
-<area shape="rect" id="node2" href="$sx1280_8c.html#a24c5e4e70bd2db5b0513a3610b43043f" title="Clears the IRQs." alt="" coords="167,5,330,31"/>
-<area shape="rect" id="node3" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="384,56,579,81"/>
-<area shape="rect" id="node5" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="165,107,332,132"/>
-<area shape="rect" id="node6" href="$sx1280_8c.html#a054708c6562732737571056e239285ac" title="Set the role of the radio during ranging operations." alt="" coords="161,156,336,181"/>
-<area shape="rect" id="node4" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="627,56,799,81"/>
+<area shape="rect" id="Node000001" title="Sets the radio in transmission mode." alt="" coords="5,81,113,107"/>
+<area shape="rect" id="Node000002" href="$sx1280_8c.html#a24c5e4e70bd2db5b0513a3610b43043f" title="Clears the IRQs." alt="" coords="167,5,330,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,79,160,48,198,33,200,38,162,52,90,84"/>
+<area shape="rect" id="Node000003" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="384,56,579,81"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="113,88,370,73,370,78,114,93"/>
+<area shape="rect" id="Node000005" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="165,107,332,132"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="114,99,152,104,151,109,113,104"/>
+<area shape="rect" id="Node000006" href="$sx1280_8c.html#a054708c6562732737571056e239285ac" title="Set the role of the radio during ranging operations." alt="" coords="161,156,336,181"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="85,104,162,141,187,149,185,154,160,146,83,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="309,28,410,50,409,56,307,33"/>
+<area shape="rect" id="Node000004" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="627,56,799,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="579,66,613,66,613,71,579,71"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="298,153,335,141,394,114,446,86,448,90,397,118,337,146,300,158"/>
 </map>

@@ -1,24 +1,59 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title="The application entry point." alt="" coords="5,425,60,451"/>
-<area shape="rect" id="node2" href="$main_8c.html#abfb869d326e776a98917f58b20748ccd" title="Kompleksowa inicjalizacja puli buforów i pierwsze uruchomienie DMA dla UART." alt="" coords="109,499,279,524"/>
-<area shape="rect" id="node4" href="$adc_8c.html#acccd58aa70215a6b184ad242312ffd0c" title=" " alt="" coords="137,5,251,31"/>
-<area shape="rect" id="node5" href="$crc_8c.html#a9f720fe95d685258cfe2ba29dc395c48" title=" " alt="" coords="141,696,247,721"/>
-<area shape="rect" id="node6" href="$fdcan_8c.html#af122e1c28b11c5b8771e82328e10fa2c" title=" " alt="" coords="128,55,260,80"/>
-<area shape="rect" id="node7" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="121,745,267,771"/>
-<area shape="rect" id="node8" href="$gpdma_8c.html#a582079fe71ee35836eb2241c852d080f" title=" " alt="" coords="127,795,261,820"/>
-<area shape="rect" id="node9" href="$gpio_8c.html#ac724e431d2af879252de35615be2bdea" title="Configure pins PH0&#45;OSC_IN(PH0) &#45;&#45;&#45;—&gt; RCC_OSC_IN PH1&#45;OSC_OUT(PH1) &#45;&#45;&#45;—&gt; RCC_OSC_OUT PA13(JTMS/SWDIO) &#45;..." alt="" coords="139,844,249,869"/>
-<area shape="rect" id="node10" href="$i2c_8c.html#aff347bba84984e13d80fbd89994ef3f7" title=" " alt="" coords="141,104,247,129"/>
-<area shape="rect" id="node11" href="$sdmmc_8c.html#aa2f8ae212178095807e5e647e686e719" title=" " alt="" coords="113,153,275,179"/>
-<area shape="rect" id="node12" href="$spi_8c.html#af81398f9775695df0b172367651ca3e6" title=" " alt="" coords="141,203,247,228"/>
-<area shape="rect" id="node13" href="$spi_8c.html#aea85daa666c03d85fd59edef711ebb08" title=" " alt="" coords="141,252,247,277"/>
-<area shape="rect" id="node14" href="$spi_8c.html#a5ea97db0d8624acd4fc61ff9c5cfcc9e" title=" " alt="" coords="141,301,247,327"/>
-<area shape="rect" id="node15" href="$tim_8c.html#a4b8ff887fd3fdf26605e35927e4ff202" title=" " alt="" coords="139,548,249,573"/>
-<area shape="rect" id="node17" href="$tim_8c.html#aef1e0b132b1af1c923cc420a57180c67" title=" " alt="" coords="139,597,249,623"/>
-<area shape="rect" id="node18" href="$usart_8c.html#a57d1167735baafab8e3288526c424929" title=" " alt="" coords="108,351,280,376"/>
-<area shape="rect" id="node19" href="$usart_8c.html#a052088fe5bb3f807a4b2502e664fd4fd" title=" " alt="" coords="108,400,280,425"/>
-<area shape="rect" id="node20" href="$usb_8c.html#acade11ca9152720e1fcaaf9efa6ed337" title=" " alt="" coords="125,449,263,475"/>
-<area shape="rect" id="node21" href="$main_8c.html#a70af21c671abfcc773614a9a4f63d920" title="System Clock Configuration." alt="" coords="117,647,271,672"/>
-<area shape="rect" id="node3" href="$group__EEPROM__Emulation.html#gad4e07955fadfeb416e9620ddb42f8fe9" title="This function is executed in case of error occurrence." alt="" coords="354,327,465,352"/>
-<area shape="rect" id="node16" href="$tim_8c.html#a708f19bbc41b292fccf38f2d9796c46a" title=" " alt="" coords="328,572,491,597"/>
-<area shape="rect" id="node22" href="$stm32h5xx__hal__timebase__tim_8c.html#a879cdb21ef051eb81ec51c18147397d5" title="This function configures the TIM6 as a time base source." alt="" coords="358,647,461,672"/>
+<area shape="rect" id="Node000001" title="The application entry point." alt="" coords="5,425,60,451"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#abfb869d326e776a98917f58b20748ccd" title="Kompleksowa inicjalizacja puli buforów i pierwsze uruchomienie DMA dla UART." alt="" coords="109,499,279,524"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,449,78,467,109,484,130,492,128,497,107,488,76,471,49,453"/>
+<area shape="rect" id="Node000004" href="$adc_8c.html#acccd58aa70215a6b184ad242312ffd0c" title=" " alt="" coords="137,5,251,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="32,425,37,347,50,232,72,117,87,72,106,40,122,28,125,32,110,44,92,74,77,118,55,233,43,347,37,425"/>
+<area shape="rect" id="Node000005" href="$crc_8c.html#a9f720fe95d685258cfe2ba29dc395c48" title=" " alt="" coords="141,696,247,721"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="37,451,39,494,49,556,58,590,71,623,88,654,110,681,130,695,127,699,106,685,83,657,66,626,53,592,43,558,34,495,31,451"/>
+<area shape="rect" id="Node000006" href="$fdcan_8c.html#af122e1c28b11c5b8771e82328e10fa2c" title=" " alt="" coords="128,55,260,80"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="32,425,39,356,53,255,75,156,89,117,106,90,114,82,118,86,110,93,94,119,80,157,58,256,44,356,38,425"/>
+<area shape="rect" id="Node000007" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="121,745,267,771"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="38,451,47,510,62,595,83,677,96,709,110,731,115,736,112,740,106,734,91,712,78,679,57,596,41,511,33,451"/>
+<area shape="rect" id="Node000008" href="$gpdma_8c.html#a582079fe71ee35836eb2241c852d080f" title=" " alt="" coords="127,795,261,820"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="38,451,44,519,58,619,80,717,94,756,110,782,117,788,113,792,106,785,89,758,75,719,53,620,39,520,32,451"/>
+<area shape="rect" id="Node000009" href="$gpio_8c.html#ac724e431d2af879252de35615be2bdea" title="Configure pins PH0&#45;OSC_IN(PH0) &#45;&#45;&#45;—&gt; RCC_OSC_IN PH1&#45;OSC_OUT(PH1) &#45;&#45;&#45;—&gt; RCC_OSC_OUT PA13(JTMS/SWDIO) &#45;..." alt="" coords="139,844,249,869"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="37,451,43,528,55,643,77,757,92,801,110,831,127,844,124,848,106,834,87,803,72,758,50,644,37,529,32,451"/>
+<area shape="rect" id="Node000010" href="$i2c_8c.html#aff347bba84984e13d80fbd89994ef3f7" title=" " alt="" coords="141,104,247,129"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="33,425,41,365,56,279,78,195,91,162,106,139,126,125,129,129,110,143,96,164,83,197,61,280,46,365,38,426"/>
+<area shape="rect" id="Node000011" href="$sdmmc_8c.html#aa2f8ae212178095807e5e647e686e719" title=" " alt="" coords="113,153,275,179"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="31,425,33,380,43,317,52,282,65,248,83,216,106,188,110,184,114,188,110,192,87,219,70,250,57,284,48,318,38,381,36,425"/>
+<area shape="rect" id="Node000012" href="$spi_8c.html#af81398f9775695df0b172367651ca3e6" title=" " alt="" coords="141,203,247,228"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="32,425,37,388,49,338,71,284,87,259,106,237,126,224,129,229,110,241,91,262,76,287,54,339,42,389,38,425"/>
+<area shape="rect" id="Node000013" href="$spi_8c.html#aea85daa666c03d85fd59edef711ebb08" title=" " alt="" coords="141,252,247,277"/>
+<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="34,424,42,396,56,359,77,320,106,287,126,275,129,279,110,291,81,323,61,361,47,397,39,426"/>
+<area shape="rect" id="Node000014" href="$spi_8c.html#a5ea97db0d8624acd4fc61ff9c5cfcc9e" title=" " alt="" coords="141,301,247,327"/>
+<area shape="poly" id="edge19_Node000001_Node000014" title=" " alt="" coords="38,424,63,381,83,356,106,336,127,325,129,330,110,340,87,360,68,384,42,426"/>
+<area shape="rect" id="Node000015" href="$tim_8c.html#a4b8ff887fd3fdf26605e35927e4ff202" title=" " alt="" coords="139,548,249,573"/>
+<area shape="poly" id="edge21_Node000001_Node000015" title=" " alt="" coords="43,449,68,491,87,514,110,533,127,543,124,547,106,538,83,517,64,494,38,452"/>
+<area shape="rect" id="Node000017" href="$tim_8c.html#aef1e0b132b1af1c923cc420a57180c67" title=" " alt="" coords="139,597,249,623"/>
+<area shape="poly" id="edge24_Node000001_Node000017" title=" " alt="" coords="39,450,47,478,61,513,82,551,110,583,127,594,124,598,106,587,77,554,56,516,42,479,34,451"/>
+<area shape="rect" id="Node000018" href="$usart_8c.html#a57d1167735baafab8e3288526c424929" title=" " alt="" coords="108,351,280,376"/>
+<area shape="poly" id="edge27_Node000001_Node000018" title=" " alt="" coords="48,423,75,404,107,385,124,378,126,383,109,390,77,408,51,427"/>
+<area shape="rect" id="Node000019" href="$usart_8c.html#a052088fe5bb3f807a4b2502e664fd4fd" title=" " alt="" coords="108,400,280,425"/>
+<area shape="poly" id="edge29_Node000001_Node000019" title=" " alt="" coords="60,431,99,425,100,430,61,436"/>
+<area shape="rect" id="Node000020" href="$usb_8c.html#acade11ca9152720e1fcaaf9efa6ed337" title=" " alt="" coords="125,449,263,475"/>
+<area shape="poly" id="edge31_Node000001_Node000020" title=" " alt="" coords="61,439,112,447,111,452,60,445"/>
+<area shape="rect" id="Node000021" href="$main_8c.html#a70af21c671abfcc773614a9a4f63d920" title="System Clock Configuration." alt="" coords="117,647,271,672"/>
+<area shape="poly" id="edge33_Node000001_Node000021" title=" " alt="" coords="38,451,43,487,55,536,76,587,91,611,110,632,117,638,113,642,106,636,87,614,71,590,50,537,38,488,32,452"/>
+<area shape="rect" id="Node000003" href="$group__EEPROM__Emulation.html#gad4e07955fadfeb416e9620ddb42f8fe9" title="This function is executed in case of error occurrence." alt="" coords="354,327,465,352"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="253,496,279,484,314,456,345,423,391,362,395,365,350,427,318,460,281,488,255,501"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="253,24,282,40,311,71,336,106,356,144,373,182,395,256,407,312,402,313,390,257,368,184,351,146,331,109,307,74,278,44,250,29"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="261,77,282,89,308,114,330,142,366,204,390,265,404,312,399,314,385,266,361,207,326,145,304,118,278,93,259,82"/>
+<area shape="poly" id="edge12_Node000010_Node000003" title=" " alt="" coords="249,123,282,138,324,179,358,227,384,274,401,313,396,315,379,276,354,230,320,183,278,143,247,128"/>
+<area shape="poly" id="edge14_Node000011_Node000003" title=" " alt="" coords="258,176,281,188,318,217,350,250,396,313,391,316,346,254,314,220,279,192,256,181"/>
+<area shape="poly" id="edge16_Node000012_Node000003" title=" " alt="" coords="249,224,281,237,341,275,387,315,384,319,337,280,279,242,247,229"/>
+<area shape="poly" id="edge18_Node000013_Node000003" title=" " alt="" coords="244,275,281,286,367,319,365,324,279,291,243,280"/>
+<area shape="poly" id="edge20_Node000014_Node000003" title=" " alt="" coords="248,318,341,329,340,334,247,323"/>
+<area shape="poly" id="edge22_Node000015_Node000003" title=" " alt="" coords="248,548,278,533,320,494,353,447,379,401,396,363,401,366,384,404,358,450,324,497,282,538,251,553"/>
+<area shape="rect" id="Node000016" href="$tim_8c.html#a708f19bbc41b292fccf38f2d9796c46a" title=" " alt="" coords="328,572,491,597"/>
+<area shape="poly" id="edge23_Node000015_Node000016" title=" " alt="" coords="250,564,314,571,314,577,249,569"/>
+<area shape="poly" id="edge25_Node000017_Node000003" title=" " alt="" coords="248,598,278,583,303,558,325,531,360,470,385,411,399,364,404,366,390,413,365,473,330,534,307,562,282,587,251,603"/>
+<area shape="poly" id="edge26_Node000017_Node000016" title=" " alt="" coords="249,601,314,593,314,598,250,606"/>
+<area shape="poly" id="edge28_Node000018_Node000003" title=" " alt="" coords="280,351,340,344,341,350,281,356"/>
+<area shape="poly" id="edge30_Node000019_Node000003" title=" " alt="" coords="239,397,279,385,362,355,364,360,281,390,241,402"/>
+<area shape="poly" id="edge32_Node000020_Node000003" title=" " alt="" coords="247,447,279,434,336,397,383,359,386,363,340,402,281,439,249,452"/>
+<area shape="poly" id="edge34_Node000021_Node000003" title=" " alt="" coords="259,644,278,632,294,613,312,584,346,508,398,364,403,366,351,510,316,586,299,616,282,636,261,649"/>
+<area shape="rect" id="Node000022" href="$stm32h5xx__hal__timebase__tim_8c.html#a879cdb21ef051eb81ec51c18147397d5" title="This function configures the TIM6 as a time base source." alt="" coords="358,647,461,672"/>
+<area shape="poly" id="edge35_Node000021_Node000022" title=" " alt="" coords="272,657,344,657,344,662,272,662"/>
 </map>

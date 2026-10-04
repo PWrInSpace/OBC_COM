@@ -1,5 +1,7 @@
 <map id="led_stop" name="led_stop">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,83,31"/>
-<area shape="rect" id="node2" href="$led_8c.html#a92042acbd604a83ddb34a02cd1fc057b" title=" " alt="" coords="131,5,223,31"/>
-<area shape="rect" id="node3" href="$led_8c.html#a7b41155cb8af3488e0cb31618d0d85b2" title=" " alt="" coords="271,5,340,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,83,31"/>
+<area shape="rect" id="Node000002" href="$led_8c.html#a92042acbd604a83ddb34a02cd1fc057b" title=" " alt="" coords="131,5,223,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,15,117,15,117,21,83,21"/>
+<area shape="rect" id="Node000003" href="$led_8c.html#a7b41155cb8af3488e0cb31618d0d85b2" title=" " alt="" coords="271,5,340,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="223,15,257,15,257,21,223,21"/>
 </map>

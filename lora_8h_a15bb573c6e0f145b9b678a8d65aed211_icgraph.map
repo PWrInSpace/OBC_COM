@@ -1,10 +1,17 @@
 <map id="obc_tanwa_frame_init" name="obc_tanwa_frame_init">
-<area shape="rect" id="node1" title=" " alt="" coords="709,109,876,134"/>
-<area shape="rect" id="node2" href="$lora_8c.html#a2621bdb892341e01faf4bed3df40a004" title=" " alt="" coords="477,5,654,45"/>
-<area shape="rect" id="node3" href="$lora_8c.html#ac82a7e61af5a6bda15b5b4233aa5da2f" title=" " alt="" coords="477,69,654,109"/>
-<area shape="rect" id="node7" href="$lora_8c.html#a0fca872f0705f46596a631ede702b410" title=" " alt="" coords="469,133,661,173"/>
-<area shape="rect" id="node8" href="$lora_8c.html#a62851fc5e0ab6d38c1f11921fe510658" title="Encoding and decoding of obc.TanwaFrame." alt="" coords="479,198,651,223"/>
-<area shape="rect" id="node4" href="$lora_8c.html#a911f54c53e03942a429649314182c8ab" title=" " alt="" coords="237,69,421,109"/>
-<area shape="rect" id="node5" href="$lora_8c.html#a3ca5f8e33640e696e4199bdac64dc905" title=" " alt="" coords="5,47,189,73"/>
-<area shape="rect" id="node6" href="$lora_8c.html#a1d33a9dd8efa437b0b5e14a0df0c44a2" title=" " alt="" coords="5,97,189,137"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="709,109,876,134"/>
+<area shape="rect" id="Node000002" href="$lora_8c.html#a2621bdb892341e01faf4bed3df40a004" title=" " alt="" coords="477,5,654,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="755,105,660,60,629,48,631,43,662,55,757,100"/>
+<area shape="rect" id="Node000003" href="$lora_8c.html#ac82a7e61af5a6bda15b5b4233aa5da2f" title=" " alt="" coords="477,69,654,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="695,110,654,104,655,99,696,105"/>
+<area shape="rect" id="Node000007" href="$lora_8c.html#a0fca872f0705f46596a631ede702b410" title=" " alt="" coords="469,133,661,173"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="696,138,662,142,661,137,695,132"/>
+<area shape="rect" id="Node000008" href="$lora_8c.html#a62851fc5e0ab6d38c1f11921fe510658" title="Encoding and decoding of obc.TanwaFrame." alt="" coords="479,198,651,223"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="758,143,713,166,662,188,622,201,621,195,660,183,711,161,756,138"/>
+<area shape="rect" id="Node000004" href="$lora_8c.html#a911f54c53e03942a429649314182c8ab" title=" " alt="" coords="237,69,421,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="463,92,421,92,421,87,463,87"/>
+<area shape="rect" id="Node000005" href="$lora_8c.html#a3ca5f8e33640e696e4199bdac64dc905" title=" " alt="" coords="5,47,189,73"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="223,79,189,74,190,69,223,73"/>
+<area shape="rect" id="Node000006" href="$lora_8c.html#a1d33a9dd8efa437b0b5e14a0df0c44a2" title=" " alt="" coords="5,97,189,137"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="223,105,190,109,189,104,223,99"/>
 </map>

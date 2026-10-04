@@ -1,9 +1,15 @@
 <map id="logger_get_bit_from_tag" name="logger_get_bit_from_tag">
-<area shape="rect" id="node1" title=" " alt="" coords="559,31,740,56"/>
-<area shape="rect" id="node2" href="$cmd__interface_8c.html#a750cb44a19509201ebaa3de659b434d0" title=" " alt="" coords="376,5,511,31"/>
-<area shape="rect" id="node3" href="$logger_8c.html#a363175b2f2034ae49ac2c5b079c11c85" title=" " alt="" coords="388,55,499,80"/>
-<area shape="rect" id="node4" href="$logger_8c.html#aa9fd7f0e91b44a3585b9d41cc7f4785c" title=" " alt="" coords="143,55,328,80"/>
-<area shape="rect" id="node5" href="$logger_8c.html#acd8d67d4016cde8855da412ed022b4c8" title=" " alt="" coords="5,5,95,31"/>
-<area shape="rect" id="node6" href="$logger_8c.html#adce29990727d7ac272748c939a614f8e" title=" " alt="" coords="10,55,90,80"/>
-<area shape="rect" id="node7" href="$logger_8c.html#a9bd31d71edf553f4e86c4f866ec33e99" title=" " alt="" coords="13,104,87,129"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="559,31,740,56"/>
+<area shape="rect" id="Node000002" href="$cmd__interface_8c.html#a750cb44a19509201ebaa3de659b434d0" title=" " alt="" coords="376,5,511,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="544,33,510,29,511,24,545,28"/>
+<area shape="rect" id="Node000003" href="$logger_8c.html#a363175b2f2034ae49ac2c5b079c11c85" title=" " alt="" coords="388,55,499,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="545,58,499,64,499,58,545,53"/>
+<area shape="rect" id="Node000004" href="$logger_8c.html#aa9fd7f0e91b44a3585b9d41cc7f4785c" title=" " alt="" coords="143,55,328,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="374,70,328,70,328,65,374,65"/>
+<area shape="rect" id="Node000005" href="$logger_8c.html#acd8d67d4016cde8855da412ed022b4c8" title=" " alt="" coords="5,5,95,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="173,54,94,32,96,27,175,49"/>
+<area shape="rect" id="Node000006" href="$logger_8c.html#adce29990727d7ac272748c939a614f8e" title=" " alt="" coords="10,55,90,80"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="128,70,90,70,90,65,128,65"/>
+<area shape="rect" id="Node000007" href="$logger_8c.html#a9bd31d71edf553f4e86c4f866ec33e99" title=" " alt="" coords="13,104,87,129"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="175,86,89,109,87,104,173,81"/>
 </map>

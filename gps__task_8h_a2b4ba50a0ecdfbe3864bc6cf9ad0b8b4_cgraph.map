@@ -1,9 +1,15 @@
 <map id="gps_task" name="gps_task">
-<area shape="rect" id="node1" title=" " alt="" coords="5,104,85,129"/>
-<area shape="rect" id="node2" href="$gps__task_8c.html#ae5fc8034e9ce13657187e2a7df794409" title=" " alt="" coords="155,5,267,31"/>
-<area shape="rect" id="node3" href="$GNSS_8c.html#aaba3740a3ad0f0f596ab5c8aee7da859" title="Parse received data from GPS module." alt="" coords="133,55,289,80"/>
-<area shape="rect" id="node4" href="$gps__task_8c.html#ac936b9a955932af5020b0aa7af8d09ad" title="Szuka nagłówka NAV&#45;PVT w buforze 256B i kopiuje 100B na początek bufora roboczego." alt="" coords="148,104,275,129"/>
-<area shape="rect" id="node5" href="$gps__task_8c.html#a6eae2e3cf49d0681be46c984ad81c1fa" title=" " alt="" coords="148,153,275,179"/>
-<area shape="rect" id="node6" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="155,203,267,228"/>
-<area shape="rect" id="node7" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="337,203,472,228"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,85,129"/>
+<area shape="rect" id="Node000002" href="$gps__task_8c.html#ae5fc8034e9ce13657187e2a7df794409" title=" " alt="" coords="155,5,267,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,102,89,71,132,40,145,33,147,38,135,44,92,75,60,106"/>
+<area shape="rect" id="Node000003" href="$GNSS_8c.html#aaba3740a3ad0f0f596ab5c8aee7da859" title="Parse received data from GPS module." alt="" coords="133,55,289,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="85,102,154,82,155,87,86,108"/>
+<area shape="rect" id="Node000004" href="$gps__task_8c.html#ac936b9a955932af5020b0aa7af8d09ad" title="Szuka nagłówka NAV&#45;PVT w buforze 256B i kopiuje 100B na początek bufora roboczego." alt="" coords="148,104,275,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="85,114,134,114,134,119,85,119"/>
+<area shape="rect" id="Node000005" href="$gps__task_8c.html#a6eae2e3cf49d0681be46c984ad81c1fa" title=" " alt="" coords="148,153,275,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="86,126,155,147,154,152,85,131"/>
+<area shape="rect" id="Node000006" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="155,203,267,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="61,128,93,158,135,188,150,195,148,200,132,192,89,162,57,132"/>
+<area shape="rect" id="Node000007" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="337,203,472,228"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="268,213,324,213,324,218,268,218"/>
 </map>

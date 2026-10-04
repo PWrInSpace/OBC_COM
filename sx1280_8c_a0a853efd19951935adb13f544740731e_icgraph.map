@@ -1,26 +1,50 @@
 <map id="SX1280GetPacketType" name="SX1280GetPacketType">
-<area shape="rect" id="node1" title="Gets the current radio protocol." alt="" coords="1137,351,1304,376"/>
-<area shape="rect" id="node2" href="$sx1280_8c.html#a83a3b438ff77c40e11276d8aa92ca48c" title="Return the Estimated Frequency Error in LORA and RANGING operations." alt="" coords="868,5,1060,31"/>
-<area shape="rect" id="node3" href="$sx1280_8c.html#a192c74d41297657ed93b4bea7d0f5538" title="Gets the last received packet payload length." alt="" coords="875,55,1053,80"/>
-<area shape="rect" id="node4" href="$sx1280_8c.html#a17d5de63553dd70d443bc4ec852a0344" title="Return the ranging result value." alt="" coords="870,104,1058,129"/>
-<area shape="rect" id="node5" href="$sx1280_8c.html#a01fc4b6e3bc159a906108e26d08fdc4a" title="Gets the last received packet buffer status." alt="" coords="869,153,1059,179"/>
-<area shape="rect" id="node10" href="$sx1280_8c.html#af08aac82fe5e983a4671967275b5dab8" title="Process the analysis of radio IRQs and calls callback functions depending on radio state." alt="" coords="891,203,1037,228"/>
-<area shape="rect" id="node12" href="$sx1280_8c.html#ad4bd9b6cb13697e45346a9c3817bb1ef" title="Sets the seed used for the CRC calculation." alt="" coords="871,252,1057,277"/>
-<area shape="rect" id="node13" href="$sx1280_8c.html#ac801f2566ba572ac6a288adb7d55f85b" title="Sets the Initial value for the LFSR used for the CRC calculation." alt="" coords="891,301,1037,327"/>
-<area shape="rect" id="node14" href="$sx1280_8c.html#aa5c52ba562ac2ec272975c3ed76e9b38" title="Sets ranging device id." alt="" coords="843,351,1085,376"/>
-<area shape="rect" id="node15" href="$sx1280_8c.html#a65893dd4a4968a2436a6575c62a17b6b" title="Sets the standard processing delay between Master and Slave." alt="" coords="856,400,1072,425"/>
-<area shape="rect" id="node16" href="$sx1280_8c.html#a6ec0596e20db056316d667e6fc48eee8" title="Sets the number of bits used to check that ranging request match ranging ID." alt="" coords="863,449,1065,475"/>
-<area shape="rect" id="node17" href="$sx1280_8c.html#abb9f4cd97533b23b761205d16e4349cf" title="Sets the device id to ping in a ranging request." alt="" coords="839,499,1089,524"/>
-<area shape="rect" id="node18" href="$sx1280_8c.html#a5c13f6957fa2593d47760a6062a21aac" title="Sets the radio in reception mode." alt="" coords="909,548,1019,573"/>
-<area shape="rect" id="node20" href="$sx1280_8c.html#a62396db5d9005980e27f483258a3e16b" title="Sets the Sync Word given by index used in GFSK, FLRC and BLE protocols." alt="" coords="886,597,1042,623"/>
-<area shape="rect" id="node21" href="$sx1280_8c.html#aec1515be5729bc30af9d9803c3f14e54" title="Sets the radio in transmission mode." alt="" coords="910,647,1018,672"/>
-<area shape="rect" id="node24" href="$sx1280_8c.html#a0bc70b7f827c9e2d82592c76d456de56" title="Sets the Initial value of the LFSR used for the whitening in GFSK, FLRC and BLE protocols." alt="" coords="869,696,1059,721"/>
-<area shape="rect" id="node6" href="$sx1280_8c.html#a88aa3739b37c983bbea244aa58fd4a6a" title="Reads the payload received." alt="" coords="641,153,786,179"/>
-<area shape="rect" id="node7" href="$sx1280__task_8c.html#a2558054bd23939c02ad7d8e95cd5a501" title=" " alt="" coords="432,231,588,271"/>
-<area shape="rect" id="node8" href="$sx1280__task_8c.html#ad29d477ada983b118b9139bafba10196" title=" " alt="" coords="245,283,384,308"/>
-<area shape="rect" id="node9" href="$sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0" title=" " alt="" coords="5,352,197,377"/>
-<area shape="rect" id="node11" href="$sx1280_8c.html#a4b390ccc0f9d28283afff36f11a94263" title="DIOs interrupt callback." alt="" coords="649,203,777,228"/>
-<area shape="rect" id="node19" href="$sx1280__task_8c.html#aeb43006f8eb6d0162d00590ffe9017f9" title=" " alt="" coords="279,376,351,401"/>
-<area shape="rect" id="node22" href="$sx1280_8c.html#a6e0b7882ef75caed036360ffbea723d2" title="Sends a payload." alt="" coords="636,647,791,672"/>
-<area shape="rect" id="node23" href="$sx1280__task_8c.html#aa3e5f314d579c8192dcfb785648bca96" title=" " alt="" coords="455,647,565,672"/>
+<area shape="rect" id="Node000001" title="Gets the current radio protocol." alt="" coords="1137,351,1304,376"/>
+<area shape="rect" id="Node000002" href="$sx1280_8c.html#a83a3b438ff77c40e11276d8aa92ca48c" title="Return the Estimated Frequency Error in LORA and RANGING operations." alt="" coords="868,5,1060,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1214,337,1205,276,1183,196,1167,154,1146,113,1119,76,1088,44,1059,28,1062,24,1091,40,1124,73,1150,111,1172,152,1188,195,1210,275,1220,337"/>
+<area shape="rect" id="Node000003" href="$sx1280_8c.html#a192c74d41297657ed93b4bea7d0f5538" title="Gets the last received packet payload length." alt="" coords="875,55,1053,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1212,338,1200,285,1176,219,1160,184,1140,150,1116,120,1088,93,1071,83,1052,76,1054,71,1073,78,1091,89,1120,116,1144,147,1165,181,1181,217,1205,284,1218,337"/>
+<area shape="rect" id="Node000004" href="$sx1280_8c.html#a17d5de63553dd70d443bc4ec852a0344" title="Return the ranging result value." alt="" coords="870,104,1058,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1209,338,1194,295,1169,241,1134,187,1112,163,1088,143,1057,128,1060,123,1091,138,1116,159,1138,184,1174,238,1199,293,1214,336"/>
+<area shape="rect" id="Node000005" href="$sx1280_8c.html#a01fc4b6e3bc159a906108e26d08fdc4a" title="Gets the last received packet buffer status." alt="" coords="869,153,1059,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1206,339,1187,305,1161,265,1128,225,1088,192,1058,179,1061,174,1091,188,1132,221,1166,262,1192,303,1210,337"/>
+<area shape="rect" id="Node000010" href="$sx1280_8c.html#af08aac82fe5e983a4671967275b5dab8" title="Process the analysis of radio IRQs and calls callback functions depending on radio state." alt="" coords="891,203,1037,228"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1200,341,1153,290,1122,263,1088,242,1063,231,1037,225,1038,220,1065,226,1091,237,1125,259,1157,286,1204,338"/>
+<area shape="rect" id="Node000012" href="$sx1280_8c.html#ad4bd9b6cb13697e45346a9c3817bb1ef" title="Sets the seed used for the CRC calculation." alt="" coords="871,252,1057,277"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1189,345,1143,317,1088,291,1050,280,1052,275,1090,286,1145,312,1192,341"/>
+<area shape="rect" id="Node000013" href="$sx1280_8c.html#ac801f2566ba572ac6a288adb7d55f85b" title="Sets the Initial value for the LFSR used for the CRC calculation." alt="" coords="891,301,1037,327"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1140,351,1089,341,1030,329,1031,324,1090,335,1141,345"/>
+<area shape="rect" id="Node000014" href="$sx1280_8c.html#aa5c52ba562ac2ec272975c3ed76e9b38" title="Sets ranging device id." alt="" coords="843,351,1085,376"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="1124,366,1085,366,1085,361,1124,361"/>
+<area shape="rect" id="Node000015" href="$sx1280_8c.html#a65893dd4a4968a2436a6575c62a17b6b" title="Sets the standard processing delay between Master and Slave." alt="" coords="856,400,1072,425"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1141,381,1031,403,1030,397,1140,376"/>
+<area shape="rect" id="Node000016" href="$sx1280_8c.html#a6ec0596e20db056316d667e6fc48eee8" title="Sets the number of bits used to check that ranging request match ranging ID." alt="" coords="863,449,1065,475"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="1191,386,1145,414,1090,439,1047,452,1046,447,1088,434,1142,409,1188,382"/>
+<area shape="rect" id="Node000017" href="$sx1280_8c.html#abb9f4cd97533b23b761205d16e4349cf" title="Sets the device id to ping in a ranging request." alt="" coords="839,499,1089,524"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="1204,388,1156,440,1125,466,1091,488,1058,501,1056,496,1088,484,1122,462,1153,436,1200,385"/>
+<area shape="rect" id="Node000018" href="$sx1280_8c.html#a5c13f6957fa2593d47760a6062a21aac" title="Sets the radio in reception mode." alt="" coords="909,548,1019,573"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="1210,390,1192,424,1165,464,1131,504,1091,538,1056,553,1020,561,1019,555,1054,548,1088,533,1128,501,1161,461,1187,421,1205,387"/>
+<area shape="rect" id="Node000020" href="$sx1280_8c.html#a62396db5d9005980e27f483258a3e16b" title="Sets the Sync Word given by index used in GFSK, FLRC and BLE protocols." alt="" coords="886,597,1042,623"/>
+<area shape="poly" id="edge20_Node000001_Node000020" title=" " alt="" coords="1214,390,1199,434,1174,488,1138,543,1116,567,1091,588,1068,601,1043,608,1041,603,1066,596,1088,584,1112,563,1134,539,1169,486,1194,432,1209,388"/>
+<area shape="rect" id="Node000021" href="$sx1280_8c.html#aec1515be5729bc30af9d9803c3f14e54" title="Sets the radio in transmission mode." alt="" coords="910,647,1018,672"/>
+<area shape="poly" id="edge21_Node000001_Node000021" title=" " alt="" coords="1218,390,1205,443,1181,510,1165,545,1144,579,1120,611,1091,638,1056,655,1019,662,1018,657,1055,650,1088,633,1116,607,1140,576,1160,543,1176,508,1200,441,1212,389"/>
+<area shape="rect" id="Node000024" href="$sx1280_8c.html#a0bc70b7f827c9e2d82592c76d456de56" title="Sets the Initial value of the LFSR used for the whitening in GFSK, FLRC and BLE protocols." alt="" coords="869,696,1059,721"/>
+<area shape="poly" id="edge24_Node000001_Node000024" title=" " alt="" coords="1220,390,1210,451,1188,532,1172,575,1150,616,1124,654,1091,687,1061,703,1059,698,1088,683,1119,651,1146,613,1167,573,1183,530,1205,450,1214,389"/>
+<area shape="rect" id="Node000006" href="$sx1280_8c.html#a88aa3739b37c983bbea244aa58fd4a6a" title="Reads the payload received." alt="" coords="641,153,786,179"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="855,169,786,169,786,163,855,163"/>
+<area shape="rect" id="Node000007" href="$sx1280__task_8c.html#a2558054bd23939c02ad7d8e95cd5a501" title=" " alt="" coords="432,231,588,271"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="656,186,637,192,549,234,547,229,635,188,654,181"/>
+<area shape="rect" id="Node000008" href="$sx1280__task_8c.html#ad29d477ada983b118b9139bafba10196" title=" " alt="" coords="245,283,384,308"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="419,274,372,285,371,280,418,269"/>
+<area shape="rect" id="Node000009" href="$sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0" title=" " alt="" coords="5,352,197,377"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="262,315,142,354,141,349,261,310"/>
+<area shape="rect" id="Node000011" href="$sx1280_8c.html#a4b390ccc0f9d28283afff36f11a94263" title="DIOs interrupt callback." alt="" coords="649,203,777,228"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="877,218,777,218,777,213,877,213"/>
+<area shape="rect" id="Node000019" href="$sx1280__task_8c.html#aeb43006f8eb6d0162d00590ffe9017f9" title=" " alt="" coords="279,376,351,401"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="895,550,838,538,556,463,351,402,352,397,558,458,839,533,896,545"/>
+<area shape="poly" id="edge19_Node000019_Node000009" title=" " alt="" coords="265,386,197,378,198,373,266,381"/>
+<area shape="rect" id="Node000022" href="$sx1280_8c.html#a6e0b7882ef75caed036360ffbea723d2" title="Sends a payload." alt="" coords="636,647,791,672"/>
+<area shape="poly" id="edge22_Node000021_Node000022" title=" " alt="" coords="896,662,791,662,791,657,896,657"/>
+<area shape="rect" id="Node000023" href="$sx1280__task_8c.html#aa3e5f314d579c8192dcfb785648bca96" title=" " alt="" coords="455,647,565,672"/>
+<area shape="poly" id="edge23_Node000022_Node000023" title=" " alt="" coords="622,662,566,662,566,657,622,657"/>
 </map>

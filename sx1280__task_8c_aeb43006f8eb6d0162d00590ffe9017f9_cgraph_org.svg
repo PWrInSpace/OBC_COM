@@ -9,121 +9,148 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 136)">
 <title>start_rx</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="54,-113 0,-113 0,-94 54,-94 54,-113"/>
 <text text-anchor="middle" x="27" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">start_rx</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="sx1280_8c.html#a24c5e4e70bd2db5b0513a3610b43043f" target="_top" xlink:title="Clears the IRQs.">
+<g id="a_Node000002"><a xlink:href="sx1280_8c.html#a24c5e4e70bd2db5b0513a3610b43043f" target="_top" xlink:title="Clears the IRQs.">
 <polygon fill="white" stroke="#666666" points="334.5,-132 212.5,-132 212.5,-113 334.5,-113 334.5,-132"/>
 <text text-anchor="middle" x="273.5" y="-120" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280ClearIrqStatus</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M54.17,-105.53C89.2,-108.26 152.68,-113.19 202.2,-117.04"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="201.98,-120.53 212.22,-117.82 202.52,-113.55 201.98,-120.53"/>
+</a>
+</g>
 </g>
 <!-- Node5 -->
-<g id="node5" class="node">
+<g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="sx1280_8c.html#a5c13f6957fa2593d47760a6062a21aac" target="_top" xlink:title="Sets the radio in reception mode.">
+<g id="a_Node000005"><a xlink:href="sx1280_8c.html#a5c13f6957fa2593d47760a6062a21aac" target="_top" xlink:title="Sets the radio in reception mode.">
 <polygon fill="white" stroke="#666666" points="172,-94 90,-94 90,-75 172,-75 172,-94"/>
 <text text-anchor="middle" x="131" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280SetRx</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
+<g id="edge4_Node000001_Node000005" class="edge">
 <title>Node1&#45;&gt;Node5</title>
+<g id="a_edge4_Node000001_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M54,-98.66C61.89,-97.19 70.84,-95.52 79.77,-93.86"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="80.57,-97.27 89.76,-91.99 79.29,-90.39 80.57,-97.27"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" target="_top" xlink:title="Send a command that write data to the radio.">
+<g id="a_Node000003"><a xlink:href="sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" target="_top" xlink:title="Send a command that write data to the radio.">
 <polygon fill="white" stroke="#666666" points="521,-94 375,-94 375,-75 521,-75 521,-94"/>
 <text text-anchor="middle" x="448" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWriteCommand</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M318.03,-112.91C341.1,-107.83 369.63,-101.54 393.98,-96.18"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="394.77,-99.59 403.78,-94.02 393.27,-92.75 394.77,-99.59"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
+<g id="a_Node000004"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
 <polygon fill="white" stroke="#666666" points="686,-94 557,-94 557,-75 686,-75 686,-94"/>
 <text text-anchor="middle" x="621.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWaitOnBusy</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
+<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M521.23,-84.5C529.63,-84.5 538.2,-84.5 546.62,-84.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="546.79,-88 556.79,-84.5 546.79,-81 546.79,-88"/>
+</a>
+</g>
 </g>
 <!-- Node5&#45;&gt;Node2 -->
-<g id="edge5" class="edge">
+<g id="edge5_Node000005_Node000002" class="edge">
 <title>Node5&#45;&gt;Node2</title>
+<g id="a_edge5_Node000005_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M167.45,-94.09C185.59,-98.99 207.87,-105.02 227.23,-110.26"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="226.49,-113.68 237.06,-112.91 228.32,-106.92 226.49,-113.68"/>
+</a>
+</g>
 </g>
 <!-- Node5&#45;&gt;Node3 -->
-<g id="edge7" class="edge">
+<g id="edge7_Node000005_Node000003" class="edge">
 <title>Node5&#45;&gt;Node3</title>
+<g id="a_edge7_Node000005_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M172.21,-84.5C220.53,-84.5 302.81,-84.5 364.77,-84.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="364.92,-88 374.92,-84.5 364.92,-81 364.92,-88"/>
+</a>
+</g>
 </g>
 <!-- Node6 -->
-<g id="node6" class="node">
+<g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="sx1280_8c.html#a0a853efd19951935adb13f544740731e" target="_top" xlink:title="Gets the current radio protocol.">
+<g id="a_Node000006"><a xlink:href="sx1280_8c.html#a0a853efd19951935adb13f544740731e" target="_top" xlink:title="Gets the current radio protocol.">
 <polygon fill="white" stroke="#666666" points="336,-56 211,-56 211,-37 336,-37 336,-56"/>
 <text text-anchor="middle" x="273.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280GetPacketType</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node6 -->
-<g id="edge6" class="edge">
+<g id="edge6_Node000005_Node000006" class="edge">
 <title>Node5&#45;&gt;Node6</title>
+<g id="a_edge6_Node000005_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M167.45,-74.91C185.59,-70.01 207.87,-63.98 227.23,-58.74"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="228.32,-62.08 237.06,-56.09 226.49,-55.32 228.32,-62.08"/>
+</a>
+</g>
 </g>
 <!-- Node7 -->
-<g id="node7" class="node">
+<g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="sx1280_8c.html#a054708c6562732737571056e239285ac" target="_top" xlink:title="Set the role of the radio during ranging operations.">
+<g id="a_Node000007"><a xlink:href="sx1280_8c.html#a054708c6562732737571056e239285ac" target="_top" xlink:title="Set the role of the radio during ranging operations.">
 <polygon fill="white" stroke="#666666" points="339,-19 208,-19 208,0 339,0 339,-19"/>
 <text text-anchor="middle" x="273.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280SetRangingRole</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node7 -->
-<g id="edge8" class="edge">
+<g id="edge8_Node000005_Node000007" class="edge">
 <title>Node5&#45;&gt;Node7</title>
+<g id="a_edge8_Node000005_Node000007"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M142.47,-74.61C156.4,-61.96 182.26,-40.18 208,-27.5 211.81,-25.62 215.85,-23.91 219.98,-22.36"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="221.36,-25.59 229.68,-19.03 219.09,-18.97 221.36,-25.59"/>
+</a>
+</g>
 </g>
 <!-- Node7&#45;&gt;Node3 -->
-<g id="edge9" class="edge">
+<g id="edge9_Node000007_Node000003" class="edge">
 <title>Node7&#45;&gt;Node3</title>
+<g id="a_edge9_Node000007_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M313.83,-19.03C322.25,-21.47 331.01,-24.32 339,-27.5 368.86,-39.39 401.22,-57.18 422.65,-69.72"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="421.02,-72.82 431.41,-74.9 424.59,-66.79 421.02,-72.82"/>
+</a>
+</g>
 </g>
 </g>
 </svg>

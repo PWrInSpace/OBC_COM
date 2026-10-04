@@ -1,6 +1,9 @@
 <map id="SX1280SetDeviceRangingAddress" name="SX1280SetDeviceRangingAddress">
-<area shape="rect" id="node1" title="Sets ranging device id." alt="" coords="5,31,248,56"/>
-<area shape="rect" id="node2" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="307,5,474,31"/>
-<area shape="rect" id="node3" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="296,55,485,80"/>
-<area shape="rect" id="node4" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="533,55,705,80"/>
+<area shape="rect" id="Node000001" title="Sets ranging device id." alt="" coords="5,31,248,56"/>
+<area shape="rect" id="Node000002" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="307,5,474,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,29,294,25,294,30,249,34"/>
+<area shape="rect" id="Node000003" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="296,55,485,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="249,52,283,55,282,60,248,57"/>
+<area shape="rect" id="Node000004" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="533,55,705,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="486,65,520,65,520,70,486,70"/>
 </map>

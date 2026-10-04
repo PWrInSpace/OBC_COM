@@ -1,4 +1,5 @@
 <map id="obc_tanwa_frame_encode" name="obc_tanwa_frame_encode">
-<area shape="rect" id="node1" title=" " alt="" coords="5,13,197,38"/>
-<area shape="rect" id="node2" href="$lora_8c.html#ace18a0fae7d1688f4f1323dbed6d5781" title=" " alt="" coords="245,5,437,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,13,197,38"/>
+<area shape="rect" id="Node000002" href="$lora_8c.html#ace18a0fae7d1688f4f1323dbed6d5781" title=" " alt="" coords="245,5,437,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,23,232,23,232,28,197,28"/>
 </map>

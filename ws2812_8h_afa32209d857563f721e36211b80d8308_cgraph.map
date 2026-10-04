@@ -1,4 +1,5 @@
 <map id="ws2812_show" name="ws2812_show">
-<area shape="rect" id="node1" title="Encode the frame and begin the DMA transfer (non&#45;blocking)" alt="" coords="5,5,119,31"/>
-<area shape="rect" id="node2" href="$ws2812_8c.html#aa57ef631af02e08bc7dc99c41fe8dfde" title=" " alt="" coords="167,5,293,31"/>
+<area shape="rect" id="Node000001" title="Encode the frame and begin the DMA transfer (non&#45;blocking)" alt="" coords="5,5,119,31"/>
+<area shape="rect" id="Node000002" href="$ws2812_8c.html#aa57ef631af02e08bc7dc99c41fe8dfde" title=" " alt="" coords="167,5,293,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,15,152,15,152,21,119,21"/>
 </map>

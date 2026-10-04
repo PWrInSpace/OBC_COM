@@ -1,7 +1,14 @@
 <map id="modules/sx1280/include/sx1280.h" name="modules/sx1280/include/sx1280.h">
-<area shape="rect" id="node1" title=" " alt="" coords="67,5,247,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,93,73,119"/>
-<area shape="rect" id="node3" title=" " alt="" coords="115,167,198,192"/>
-<area shape="rect" id="node4" title=" " alt="" coords="252,167,323,192"/>
-<area shape="rect" id="node5" href="$sx1280-hal_8h.html" title=" " alt="" coords="149,93,255,119"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="67,5,247,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,73,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,48,69,88,66,84,127,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="115,167,198,192"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,46,141,80,139,118,149,153,144,155,134,119,136,79,146,45"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="252,167,323,192"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="230,43,265,63,281,76,294,92,300,107,302,124,298,154,293,153,297,124,295,108,289,95,277,80,262,67,228,48"/>
+<area shape="rect" id="Node000005" href="$sx1280-hal_8h.html" title=" " alt="" coords="149,93,255,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="170,44,191,80,186,83,165,47"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="197,120,174,157,169,154,192,118"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="217,117,265,156,261,160,214,121"/>
+<area shape="poly" id="edge7_Node000005_Node000005" title=" " alt="" coords="238,91,267,92,278,97,282,106,279,113,272,118,252,122,251,117,270,113,275,110,277,106,274,101,266,97,238,96"/>
 </map>

@@ -1,6 +1,9 @@
 <map id="SX1280RangingSetFilterNumSamples" name="SX1280RangingSetFilterNumSamples">
-<area shape="rect" id="node1" title="Set the number of samples considered in the built&#45;in filter." alt="" coords="5,5,215,45"/>
-<area shape="rect" id="node2" href="$sx1280-hal_8c.html#a22d55eec45845b70b71327af666c9eb0" title="Write a single byte of data to the radio memory." alt="" coords="263,13,445,38"/>
-<area shape="rect" id="node3" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="493,13,683,38"/>
-<area shape="rect" id="node4" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="731,13,903,38"/>
+<area shape="rect" id="Node000001" title="Set the number of samples considered in the built&#45;in filter." alt="" coords="5,5,215,45"/>
+<area shape="rect" id="Node000002" href="$sx1280-hal_8c.html#a22d55eec45845b70b71327af666c9eb0" title="Write a single byte of data to the radio memory." alt="" coords="263,13,445,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,23,249,23,249,28,215,28"/>
+<area shape="rect" id="Node000003" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="493,13,683,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="445,23,480,23,480,28,445,28"/>
+<area shape="rect" id="Node000004" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="731,13,903,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="683,23,717,23,717,28,683,28"/>
 </map>

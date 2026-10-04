@@ -1,5 +1,7 @@
 <map id="SD_check_status" name="SD_check_status">
-<area shape="rect" id="node1" title="Check the status of the sd card." alt="" coords="156,31,288,56"/>
-<area shape="rect" id="node2" href="$sd__diskio_8c.html#a7a7db25b309942168851882967ddd49e" title="Initialize the SD Diskio lowlevel driver." alt="" coords="5,5,108,31"/>
-<area shape="rect" id="node3" href="$sd__diskio_8c.html#aaf8cae5cdeb02d586f2d18d19678021f" title="Get the Disk Status." alt="" coords="13,55,100,80"/>
+<area shape="rect" id="Node000001" title="Check the status of the sd card." alt="" coords="156,31,288,56"/>
+<area shape="rect" id="Node000002" href="$sd__diskio_8c.html#a7a7db25b309942168851882967ddd49e" title="Initialize the SD Diskio lowlevel driver." alt="" coords="5,5,108,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,34,108,29,109,23,143,29"/>
+<area shape="rect" id="Node000003" href="$sd__diskio_8c.html#aaf8cae5cdeb02d586f2d18d19678021f" title="Get the Disk Status." alt="" coords="13,55,100,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,57,100,64,100,58,142,52"/>
 </map>

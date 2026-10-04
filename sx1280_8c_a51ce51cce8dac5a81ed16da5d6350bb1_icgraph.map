@@ -1,10 +1,19 @@
 <map id="SX1280SetPacketType" name="SX1280SetPacketType">
-<area shape="rect" id="node1" title="Sets the radio for the given protocol." alt="" coords="640,54,804,80"/>
-<area shape="rect" id="node2" href="$lora__config_8c.html#ad1a1b26a7f98a0b3da77f219667b234b" title="RFM95W CODE:" alt="" coords="188,29,331,54"/>
-<area shape="rect" id="node4" href="$sx1280_8c.html#a69909f6f37cec7f935a475e7d780fdbb" title="Set the modulation parameters." alt="" coords="379,29,592,54"/>
-<area shape="rect" id="node5" href="$sx1280_8c.html#ab6a428414c21ce55c5f3682b51390194" title="Sets the packet parameters." alt="" coords="394,78,577,104"/>
-<area shape="rect" id="node6" href="$sx1280__task_8c.html#a08a0d39a0c2e7c960630f1125434da42" title=" " alt="" coords="439,128,531,153"/>
-<area shape="rect" id="node3" href="$lora__config_8c.html#aa1a41e7cceea88bf0cdc915ebc3e0b5a" title=" " alt="" coords="12,29,133,54"/>
-<area shape="rect" id="node7" href="$sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a" title=" " alt="" coords="193,128,325,153"/>
-<area shape="rect" id="node8" href="$sx1280__task_8c.html#ae81733e32db03c2f8c8859b7fa9cb942" title=" " alt="" coords="5,128,140,153"/>
+<area shape="rect" id="Node000001" title="Sets the radio for the given protocol." alt="" coords="640,54,804,80"/>
+<area shape="rect" id="Node000002" href="$lora__config_8c.html#ad1a1b26a7f98a0b3da77f219667b234b" title="RFM95W CODE:" alt="" coords="188,29,331,54"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="683,51,640,33,591,19,532,10,486,8,379,19,309,31,308,26,378,14,486,3,533,5,593,14,642,28,685,46"/>
+<area shape="rect" id="Node000004" href="$sx1280_8c.html#a69909f6f37cec7f935a475e7d780fdbb" title="Set the modulation parameters." alt="" coords="379,29,592,54"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="626,59,592,56,592,50,626,54"/>
+<area shape="rect" id="Node000005" href="$sx1280_8c.html#ab6a428414c21ce55c5f3682b51390194" title="Sets the packet parameters." alt="" coords="394,78,577,104"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="626,79,577,84,577,79,626,74"/>
+<area shape="rect" id="Node000006" href="$sx1280__task_8c.html#a08a0d39a0c2e7c960630f1125434da42" title=" " alt="" coords="439,128,531,153"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="679,87,593,119,532,134,531,129,591,114,677,82"/>
+<area shape="rect" id="Node000003" href="$lora__config_8c.html#aa1a41e7cceea88bf0cdc915ebc3e0b5a" title=" " alt="" coords="12,29,133,54"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="174,44,134,44,134,39,174,39"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="365,44,331,44,331,39,365,39"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="413,78,318,57,319,52,414,73"/>
+<area shape="rect" id="Node000007" href="$sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a" title=" " alt="" coords="193,128,325,153"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="425,143,326,143,326,138,425,138"/>
+<area shape="rect" id="Node000008" href="$sx1280__task_8c.html#ae81733e32db03c2f8c8859b7fa9cb942" title=" " alt="" coords="5,128,140,153"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="180,143,140,143,140,138,180,138"/>
 </map>

@@ -1,5 +1,7 @@
 <map id="SX1280HalInit" name="SX1280HalInit">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,120,56"/>
-<area shape="rect" id="node2" href="$sx1280-hal_8c.html#aceea5e604bb54817f0c8d38ebb554b27" title=" " alt="" coords="168,5,311,31"/>
-<area shape="rect" id="node3" href="$sx1280-hal_8c.html#ad166767283bbb3d7a387ecf2f089cd23" title="Soft resets the radio." alt="" coords="174,55,305,80"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,120,56"/>
+<area shape="rect" id="Node000002" href="$sx1280-hal_8c.html#aceea5e604bb54817f0c8d38ebb554b27" title=" " alt="" coords="168,5,311,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,33,154,28,154,33,120,38"/>
+<area shape="rect" id="Node000003" href="$sx1280-hal_8c.html#ad166767283bbb3d7a387ecf2f089cd23" title="Soft resets the radio." alt="" coords="174,55,305,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="120,48,161,54,160,59,120,54"/>
 </map>

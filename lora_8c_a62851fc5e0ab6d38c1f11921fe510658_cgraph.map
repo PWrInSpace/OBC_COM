@@ -1,4 +1,5 @@
 <map id="obc_tanwa_frame_new" name="obc_tanwa_frame_new">
-<area shape="rect" id="node1" title="Encoding and decoding of obc.TanwaFrame." alt="" coords="5,5,177,31"/>
-<area shape="rect" id="node2" href="$lora_8c.html#a15bb573c6e0f145b9b678a8d65aed211" title=" " alt="" coords="225,5,392,31"/>
+<area shape="rect" id="Node000001" title="Encoding and decoding of obc.TanwaFrame." alt="" coords="5,5,177,31"/>
+<area shape="rect" id="Node000002" href="$lora_8c.html#a15bb573c6e0f145b9b678a8d65aed211" title=" " alt="" coords="225,5,392,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,15,212,15,212,21,178,21"/>
 </map>

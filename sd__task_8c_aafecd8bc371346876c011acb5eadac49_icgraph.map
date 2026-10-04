@@ -1,5 +1,7 @@
 <map id="sd_detect_isr_notify" name="sd_detect_isr_notify">
-<area shape="rect" id="node1" title=" " alt="" coords="225,45,377,70"/>
-<area shape="rect" id="node2" href="$sd__task_8c.html#a0b334860563f4a109443e0a604af2300" title=" " alt="" coords="5,5,177,45"/>
-<area shape="rect" id="node3" href="$sd__task_8c.html#a537318eafe9182b60dc22ef54966c6a1" title=" " alt="" coords="6,69,177,109"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="225,45,377,70"/>
+<area shape="rect" id="Node000002" href="$sd__task_8c.html#a0b334860563f4a109443e0a604af2300" title=" " alt="" coords="5,5,177,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,46,177,41,178,36,212,41"/>
+<area shape="rect" id="Node000003" href="$sd__task_8c.html#a537318eafe9182b60dc22ef54966c6a1" title=" " alt="" coords="6,69,177,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="212,74,177,79,176,74,211,68"/>
 </map>

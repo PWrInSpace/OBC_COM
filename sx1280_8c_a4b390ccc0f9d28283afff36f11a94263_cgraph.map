@@ -1,11 +1,20 @@
 <map id="SX1280OnDioIrq" name="SX1280OnDioIrq">
-<area shape="rect" id="node1" title="DIOs interrupt callback." alt="" coords="5,80,133,105"/>
-<area shape="rect" id="node2" href="$sx1280_8c.html#af08aac82fe5e983a4671967275b5dab8" title="Process the analysis of radio IRQs and calls callback functions depending on radio state." alt="" coords="181,80,327,105"/>
-<area shape="rect" id="node3" href="$sx1280_8c.html#a24c5e4e70bd2db5b0513a3610b43043f" title="Clears the IRQs." alt="" coords="377,5,539,31"/>
-<area shape="rect" id="node6" href="$sx1280_8c.html#a31c7f2ce5f6193072f71565fa1b1b1fc" title="Returns the current IRQ status." alt="" coords="382,55,534,80"/>
-<area shape="rect" id="node8" href="$sx1280_8c.html#a1fc0c006b1a67d076823bd34811118bc" title="Gets the current Operation Mode of the Radio." alt="" coords="384,104,532,129"/>
-<area shape="rect" id="node9" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="375,153,541,179"/>
-<area shape="rect" id="node4" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="589,5,784,31"/>
-<area shape="rect" id="node5" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="832,31,1004,56"/>
-<area shape="rect" id="node7" href="$sx1280-hal_8c.html#abc1ed10f83057922610c0ef2b3893733" title="Send a command that read data from the radio." alt="" coords="590,55,783,80"/>
+<area shape="rect" id="Node000001" title="DIOs interrupt callback." alt="" coords="5,80,133,105"/>
+<area shape="rect" id="Node000002" href="$sx1280_8c.html#af08aac82fe5e983a4671967275b5dab8" title="Process the analysis of radio IRQs and calls callback functions depending on radio state." alt="" coords="181,80,327,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,90,167,90,167,95,134,95"/>
+<area shape="rect" id="Node000003" href="$sx1280_8c.html#a24c5e4e70bd2db5b0513a3610b43043f" title="Clears the IRQs." alt="" coords="377,5,539,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="282,77,374,40,396,32,397,37,376,44,284,82"/>
+<area shape="rect" id="Node000006" href="$sx1280_8c.html#a31c7f2ce5f6193072f71565fa1b1b1fc" title="Returns the current IRQ status." alt="" coords="382,55,534,80"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="327,81,368,76,369,81,327,86"/>
+<area shape="rect" id="Node000008" href="$sx1280_8c.html#a1fc0c006b1a67d076823bd34811118bc" title="Gets the current Operation Mode of the Radio." alt="" coords="384,104,532,129"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="327,99,371,104,370,109,327,104"/>
+<area shape="rect" id="Node000009" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="375,153,541,179"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="286,103,376,138,401,147,399,152,374,143,284,108"/>
+<area shape="rect" id="Node000004" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="589,5,784,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="540,15,575,15,575,21,540,21"/>
+<area shape="rect" id="Node000005" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="832,31,1004,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="785,26,818,30,818,35,784,31"/>
+<area shape="rect" id="Node000007" href="$sx1280-hal_8c.html#abc1ed10f83057922610c0ef2b3893733" title="Send a command that read data from the radio." alt="" coords="590,55,783,80"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="535,65,576,65,576,70,535,70"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="783,55,818,51,819,56,784,60"/>
 </map>

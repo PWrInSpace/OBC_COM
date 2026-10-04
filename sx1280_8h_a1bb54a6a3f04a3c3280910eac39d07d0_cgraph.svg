@@ -6,61 +6,95 @@
 <!-- Title: SX1280SetCrcPolynomial Pages: 1 -->
 <svg width="491pt" height="64pt"
  viewBox="0.00 0.00 491.00 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
+<style type="text/css"><![CDATA[
+.node, .edge {opacity: 0.7;}
+.node.selected, .edge.selected {opacity: 1;}
+.edge:hover path { stroke: red; }
+.edge:hover polygon { stroke: red; fill: red; }
+]]></style>
+<script type="application/ecmascript" xlink:href="svg.min.js"/>
+<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>SX1280SetCrcPolynomial</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Sets the seed used for the CRC calculation.">
+<g id="a_Node000001"><a xlink:title="Sets the seed used for the CRC calculation.">
 <polygon fill="#999999" stroke="#666666" points="140,-37 0,-37 0,-18 140,-18 140,-37"/>
 <text text-anchor="middle" x="70" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280SetCrcPolynomial</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="sx1280_8c.html#a0a853efd19951935adb13f544740731e" target="_top" xlink:title="Gets the current radio protocol.">
+<g id="a_Node000002"><a xlink:href="sx1280_8c.html#a0a853efd19951935adb13f544740731e" target="_top" xlink:title="Gets the current radio protocol.">
 <polygon fill="white" stroke="#666666" points="309.5,-56 184.5,-56 184.5,-37 309.5,-37 309.5,-56"/>
 <text text-anchor="middle" x="247" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280GetPacketType</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M140.16,-35.01C151.36,-36.22 162.97,-37.48 174.22,-38.71"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="174.11,-42.22 184.43,-39.82 174.86,-35.26 174.11,-42.22"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" target="_top" xlink:title="Write data to the radio memory.">
+<g id="a_Node000003"><a xlink:href="sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" target="_top" xlink:title="Write data to the radio memory.">
 <polygon fill="white" stroke="#666666" points="318,-19 176,-19 176,0 318,0 318,-19"/>
 <text text-anchor="middle" x="247" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWriteRegisters</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
+<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M140.16,-20.39C148.61,-19.52 157.3,-18.62 165.88,-17.74"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="166.31,-21.21 175.9,-16.71 165.6,-14.25 166.31,-21.21"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
+<g id="a_Node000004"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
 <polygon fill="white" stroke="#666666" points="483,-19 354,-19 354,0 483,0 483,-19"/>
 <text text-anchor="middle" x="418.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWaitOnBusy</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
+<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M318.41,-9.5C326.75,-9.5 335.29,-9.5 343.67,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="343.81,-13 353.81,-9.5 343.81,-6 343.81,-13"/>
+</a>
 </g>
 </g>
+</g>
+</svg>
+</svg>
+
+<style type='text/css'>
+<![CDATA[
+[data-mouse-over-selected='false'] { opacity: 0.7; }
+[data-mouse-over-selected='true']  { opacity: 1.0; }
+]]>
+</style>
+<script type="application/ecmascript"><![CDATA[
+document.addEventListener('DOMContentLoaded', (event) => {
+  highlightEdges();
+  highlightAdjacentNodes();
+});
+]]></script>
 </svg>

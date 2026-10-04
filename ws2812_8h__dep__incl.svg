@@ -6,12 +6,22 @@
 <!-- Title: modules/ws2812/Inc/ws2812.h Pages: 1 -->
 <svg width="222pt" height="104pt"
  viewBox="0.00 0.00 221.50 104.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
+<style type="text/css"><![CDATA[
+.node, .edge {opacity: 0.7;}
+.node.selected, .edge.selected {opacity: 1;}
+.edge:hover path { stroke: red; }
+.edge:hover polygon { stroke: red; fill: red; }
+]]></style>
+<script type="application/ecmascript" xlink:href="svg.min.js"/>
+<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 100)">
 <title>modules/ws2812/Inc/ws2812.h</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="155,-96 39,-96 39,-66 155,-66 155,-96"/>
 <text text-anchor="start" x="47" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">modules/ws2812/Inc</text>
 <text text-anchor="middle" x="97" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">/ws2812.h</text>
@@ -19,24 +29,27 @@
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="led_8c.html" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="led_8c.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="78,-24.5 0,-24.5 0,-5.5 78,-5.5 78,-24.5"/>
 <text text-anchor="middle" x="39" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">app/src/led.c</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M77.31,-58.27C66.95,-46.84 54.81,-33.44 47.02,-24.84"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="74.82,-60.74 84.13,-65.8 80.01,-56.04 74.82,-60.74"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="ws2812_8c.html" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="ws2812_8c.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="213.5,-30 96.5,-30 96.5,0 213.5,0 213.5,-30"/>
 <text text-anchor="start" x="104.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">modules/ws2812/Src</text>
 <text text-anchor="middle" x="155" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">/ws2812.c</text>
@@ -44,10 +57,28 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
+<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M116.6,-58.37C125.04,-49.06 134.66,-38.44 142.16,-30.16"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="113.99,-56.04 109.87,-65.8 119.18,-60.74 113.99,-56.04"/>
+</a>
 </g>
 </g>
+</g>
+</svg>
+</svg>
+
+<style type='text/css'>
+<![CDATA[
+[data-mouse-over-selected='false'] { opacity: 0.7; }
+[data-mouse-over-selected='true']  { opacity: 1.0; }
+]]>
+</style>
+<script type="application/ecmascript"><![CDATA[
+document.addEventListener('DOMContentLoaded', (event) => {
+  highlightEdges();
+  highlightAdjacentNodes();
+});
+]]></script>
 </svg>

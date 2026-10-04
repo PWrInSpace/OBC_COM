@@ -1,5 +1,7 @@
 <map id="Core/Inc/adc.h" name="Core/Inc/adc.h">
-<area shape="rect" id="node1" title="This file contains all the function prototypes for the adc.c file." alt="" coords="77,5,192,31"/>
-<area shape="rect" id="node2" href="$adc_8c.html" title="This file provides code for the configuration of the ADC instances." alt="" coords="5,79,120,104"/>
-<area shape="rect" id="node3" href="$main_8c.html" title=": Main program body" alt="" coords="145,79,269,104"/>
+<area shape="rect" id="Node000001" title="This file contains all the function prototypes for the adc.c file." alt="" coords="77,5,192,31"/>
+<area shape="rect" id="Node000002" href="$adc_8c.html" title="This file provides code for the configuration of the ADC instances." alt="" coords="5,79,120,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,43,76,80,72,77,111,39"/>
+<area shape="rect" id="Node000003" href="$main_8c.html" title=": Main program body" alt="" coords="145,79,269,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="158,39,197,77,193,80,155,43"/>
 </map>

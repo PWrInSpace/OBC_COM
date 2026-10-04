@@ -9,18 +9,18 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 34)">
 <title>SX1280GetPayload</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Reads the payload received.">
+<g id="a_Node000001"><a xlink:title="Reads the payload received.">
 <polygon fill="#999999" stroke="#666666" points="582,-24.5 473,-24.5 473,-5.5 582,-5.5 582,-24.5"/>
 <text text-anchor="middle" x="527.5" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280GetPayload</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="sx1280__task_8c.html#a2558054bd23939c02ad7d8e95cd5a501" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="sx1280__task_8c.html#a2558054bd23939c02ad7d8e95cd5a501" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="437,-30 320,-30 320,0 437,0 437,-30"/>
 <text text-anchor="start" x="328" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">handle_rx_done_and</text>
 <text text-anchor="middle" x="378.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_get_payload</text>
@@ -28,40 +28,49 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M462.51,-15C454.14,-15 445.61,-15 437.35,-15"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="462.6,-18.5 472.6,-15 462.6,-11.5 462.6,-18.5"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="sx1280__task_8c.html#ad29d477ada983b118b9139bafba10196" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="sx1280__task_8c.html#ad29d477ada983b118b9139bafba10196" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="284,-24.5 180,-24.5 180,-5.5 284,-5.5 284,-24.5"/>
 <text text-anchor="middle" x="232" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">rx_wait_for_event</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M309.91,-15C301.28,-15 292.56,-15 284.25,-15"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="309.97,-18.5 319.97,-15 309.97,-11.5 309.97,-18.5"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="144,-24.5 0,-24.5 0,-5.5 144,-5.5 144,-24.5"/>
 <text text-anchor="middle" x="72" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">sx1280_recv_once_ceiling</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
+<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M169.66,-15C161.3,-15 152.66,-15 144.14,-15"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="169.7,-18.5 179.7,-15 169.7,-11.5 169.7,-18.5"/>
+</a>
+</g>
 </g>
 </g>
 </svg>

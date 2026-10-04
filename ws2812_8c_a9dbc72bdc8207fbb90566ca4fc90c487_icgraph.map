@@ -1,8 +1,13 @@
 <map id="ws2812_hdma" name="ws2812_hdma">
-<area shape="rect" id="node1" title=" " alt="" coords="833,31,949,56"/>
-<area shape="rect" id="node2" href="$ws2812_8c.html#af345d63e55c471a0717d5bc9439c8a50" title=" " alt="" coords="611,31,785,56"/>
-<area shape="rect" id="node3" href="$led_8c.html#a574d5b595aad34aba3753bed55f2d73f" title=" " alt="" coords="403,5,523,31"/>
-<area shape="rect" id="node4" href="$ws2812_8c.html#ac74c81a843f133c7660347fc62cedc26" title=" " alt="" coords="363,55,563,80"/>
-<area shape="rect" id="node5" href="$led_8c.html#a0a16f10b59c73161b57d844082fa1dca" title=" " alt="" coords="196,55,315,80"/>
-<area shape="rect" id="node6" href="$stm32h5xx__it_8c.html#a2bffc10d5bd4106753b7c30e86903bea" title="This function handles Hard fault interrupt." alt="" coords="5,55,148,80"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="833,31,949,56"/>
+<area shape="rect" id="Node000002" href="$ws2812_8c.html#af345d63e55c471a0717d5bc9439c8a50" title=" " alt="" coords="611,31,785,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="820,46,785,46,785,41,820,41"/>
+<area shape="rect" id="Node000003" href="$led_8c.html#a574d5b595aad34aba3753bed55f2d73f" title=" " alt="" coords="403,5,523,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="596,35,523,27,523,22,597,30"/>
+<area shape="rect" id="Node000004" href="$ws2812_8c.html#ac74c81a843f133c7660347fc62cedc26" title=" " alt="" coords="363,55,563,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="597,56,563,60,563,54,596,51"/>
+<area shape="rect" id="Node000005" href="$led_8c.html#a0a16f10b59c73161b57d844082fa1dca" title=" " alt="" coords="196,55,315,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="349,70,315,70,315,65,349,65"/>
+<area shape="rect" id="Node000006" href="$stm32h5xx__it_8c.html#a2bffc10d5bd4106753b7c30e86903bea" title="This function handles Hard fault interrupt." alt="" coords="5,55,148,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="182,70,148,70,148,65,182,65"/>
 </map>

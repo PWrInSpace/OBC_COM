@@ -1,12 +1,24 @@
 <map id="modules/logger/src/logger_serial_output.c" name="modules/logger/src/logger_serial_output.c">
-<area shape="rect" id="node1" title=" " alt="" coords="367,5,537,45"/>
-<area shape="rect" id="node2" href="$logger__serial__output_8h.html" title=" " alt="" coords="79,93,246,119"/>
-<area shape="rect" id="node6" href="$usb__config_8h.html" title=" " alt="" coords="335,93,438,119"/>
-<area shape="rect" id="node8" title=" " alt="" coords="470,240,565,265"/>
-<area shape="rect" id="node9" href="$usbd__cdc__if_8h.html" title=" " alt="" coords="463,167,572,192"/>
-<area shape="rect" id="node3" href="$logger_8h.html" title=" " alt="" coords="60,167,135,192"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,240,88,265"/>
-<area shape="rect" id="node5" title=" " alt="" coords="113,240,183,265"/>
-<area shape="rect" id="node7" title=" " alt="" coords="159,167,259,192"/>
-<area shape="rect" id="node10" title=" " alt="" coords="335,167,438,192"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="367,5,537,45"/>
+<area shape="rect" id="Node000002" href="$logger__serial__output_8h.html" title=" " alt="" coords="79,93,246,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="383,48,219,92,218,87,382,43"/>
+<area shape="rect" id="Node000006" href="$usb__config_8h.html" title=" " alt="" coords="335,93,438,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="438,47,407,84,403,81,434,44"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="470,240,565,265"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="481,44,538,93,566,127,587,166,588,186,581,205,567,221,550,234,547,230,563,217,576,202,583,185,581,167,561,130,534,97,478,48"/>
+<area shape="rect" id="Node000009" href="$usbd__cdc__if_8h.html" title=" " alt="" coords="463,167,572,192"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="463,45,509,153,504,155,458,47"/>
+<area shape="rect" id="Node000003" href="$logger_8h.html" title=" " alt="" coords="60,167,135,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="154,121,119,158,115,155,150,117"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,240,88,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="91,194,65,230,61,227,87,191"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="113,240,183,265"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="108,191,134,227,130,230,104,194"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="159,167,259,192"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="359,121,252,164,250,159,357,116"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="369,121,348,135,330,153,320,172,321,181,325,190,352,216,385,233,421,243,457,248,456,253,420,248,383,238,349,220,321,194,315,183,315,171,326,150,345,131,365,117"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="409,116,485,158,483,162,406,121"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="335,167,438,192"/>
+<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="389,119,389,153,384,153,384,119"/>
+<area shape="poly" id="edge9_Node000009_Node000008" title=" " alt="" coords="520,192,520,226,515,226,515,192"/>
 </map>

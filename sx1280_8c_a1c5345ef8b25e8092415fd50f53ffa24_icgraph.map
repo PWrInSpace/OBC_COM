@@ -1,8 +1,13 @@
 <map id="SX1280SetTxParams" name="SX1280SetTxParams">
-<area shape="rect" id="node1" title="Sets the transmission parameters." alt="" coords="559,31,715,56"/>
-<area shape="rect" id="node2" href="$lora__config_8c.html#ad1a1b26a7f98a0b3da77f219667b234b" title="RFM95W CODE:" alt="" coords="368,5,511,31"/>
-<area shape="rect" id="node4" href="$sx1280__task_8c.html#a08a0d39a0c2e7c960630f1125434da42" title=" " alt="" coords="393,55,485,80"/>
-<area shape="rect" id="node3" href="$lora__config_8c.html#aa1a41e7cceea88bf0cdc915ebc3e0b5a" title=" " alt="" coords="193,5,315,31"/>
-<area shape="rect" id="node5" href="$sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a" title=" " alt="" coords="188,55,320,80"/>
-<area shape="rect" id="node6" href="$sx1280__task_8c.html#ae81733e32db03c2f8c8859b7fa9cb942" title=" " alt="" coords="5,55,140,80"/>
+<area shape="rect" id="Node000001" title="Sets the transmission parameters." alt="" coords="559,31,715,56"/>
+<area shape="rect" id="Node000002" href="$lora__config_8c.html#ad1a1b26a7f98a0b3da77f219667b234b" title="RFM95W CODE:" alt="" coords="368,5,511,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="545,34,510,30,511,24,545,29"/>
+<area shape="rect" id="Node000004" href="$sx1280__task_8c.html#a08a0d39a0c2e7c960630f1125434da42" title=" " alt="" coords="393,55,485,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="545,57,486,64,485,59,545,52"/>
+<area shape="rect" id="Node000003" href="$lora__config_8c.html#aa1a41e7cceea88bf0cdc915ebc3e0b5a" title=" " alt="" coords="193,5,315,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="354,21,315,21,315,15,354,15"/>
+<area shape="rect" id="Node000005" href="$sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a" title=" " alt="" coords="188,55,320,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="380,70,320,70,320,65,380,65"/>
+<area shape="rect" id="Node000006" href="$sx1280__task_8c.html#ae81733e32db03c2f8c8859b7fa9cb942" title=" " alt="" coords="5,55,140,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="174,70,140,70,140,65,174,65"/>
 </map>

@@ -6,61 +6,95 @@
 <!-- Title: lora_gs_tx_enqueue Pages: 1 -->
 <svg width="491pt" height="27pt"
  viewBox="0.00 0.00 491.00 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
+<style type="text/css"><![CDATA[
+.node, .edge {opacity: 0.7;}
+.node.selected, .edge.selected {opacity: 1;}
+.edge:hover path { stroke: red; }
+.edge:hover polygon { stroke: red; fill: red; }
+]]></style>
+<script type="application/ecmascript" xlink:href="svg.min.js"/>
+<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>lora_gs_tx_enqueue</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Queue a fully&#45;formed frame for the GS to transmit in its next slot.">
+<g id="a_Node000001"><a xlink:title="Queue a fully&#45;formed frame for the GS to transmit in its next slot.">
 <polygon fill="#999999" stroke="#666666" points="483,-19 369,-19 369,0 483,0 483,-19"/>
 <text text-anchor="middle" x="426" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">lora_gs_tx_enqueue</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="cmd__task_8c.html#a4277e3032edf4828adec6ef2f88ac235" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="cmd__task_8c.html#a4277e3032edf4828adec6ef2f88ac235" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="333,-19 269,-19 269,0 333,0 333,-19"/>
 <text text-anchor="middle" x="301" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">cmd_task</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M358.79,-9.5C349.85,-9.5 341.05,-9.5 333.14,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="358.9,-13 368.9,-9.5 358.9,-6 358.9,-13"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="cmd__task_8c.html#a2874a497f674aefb689fe541ead54c66" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="cmd__task_8c.html#a2874a497f674aefb689fe541ead54c66" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="233,-19 145,-19 145,0 233,0 233,-19"/>
 <text text-anchor="middle" x="189" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">CMD_Task_Init</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M258.57,-9.5C250.28,-9.5 241.56,-9.5 233.21,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="258.77,-13 268.77,-9.5 258.77,-6 258.77,-13"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="app__freertos_8c.html#abade755e13d07c10889ae83143656158" target="_top" xlink:title="FreeRTOS initialization.">
+<g id="a_Node000004"><a xlink:href="app__freertos_8c.html#abade755e13d07c10889ae83143656158" target="_top" xlink:title="FreeRTOS initialization.">
 <polygon fill="white" stroke="#666666" points="109,-19 0,-19 0,0 109,0 109,-19"/>
 <text text-anchor="middle" x="54.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">MX_FREERTOS_Init</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
+<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M134.93,-9.5C126.54,-9.5 117.85,-9.5 109.44,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="134.98,-13 144.98,-9.5 134.98,-6 134.98,-13"/>
+</a>
 </g>
 </g>
+</g>
+</svg>
+</svg>
+
+<style type='text/css'>
+<![CDATA[
+[data-mouse-over-selected='false'] { opacity: 0.7; }
+[data-mouse-over-selected='true']  { opacity: 1.0; }
+]]>
+</style>
+<script type="application/ecmascript"><![CDATA[
+document.addEventListener('DOMContentLoaded', (event) => {
+  highlightEdges();
+  highlightAdjacentNodes();
+});
+]]></script>
 </svg>

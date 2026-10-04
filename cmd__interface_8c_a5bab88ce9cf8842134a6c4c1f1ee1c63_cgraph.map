@@ -1,5 +1,7 @@
 <map id="handle_help" name="handle_help">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,107,31"/>
-<area shape="rect" id="node2" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="155,5,267,31"/>
-<area shape="rect" id="node3" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="315,5,449,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,107,31"/>
+<area shape="rect" id="Node000002" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="155,5,267,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,15,141,15,141,21,107,21"/>
+<area shape="rect" id="Node000003" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="315,5,449,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="267,15,301,15,301,21,267,21"/>
 </map>

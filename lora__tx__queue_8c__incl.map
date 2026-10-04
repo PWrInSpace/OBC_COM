@@ -1,8 +1,13 @@
 <map id="app/src/lora_tx_queue.c" name="app/src/lora_tx_queue.c">
-<area shape="rect" id="node1" title=" " alt="" coords="111,5,287,31"/>
-<area shape="rect" id="node2" href="$lora__tx__queue_8h.html" title=" " alt="" coords="75,79,201,104"/>
-<area shape="rect" id="node6" title=" " alt="" coords="225,79,296,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,152,76,177"/>
-<area shape="rect" id="node4" title=" " alt="" coords="101,152,175,177"/>
-<area shape="rect" id="node5" title=" " alt="" coords="199,152,282,177"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="111,5,287,31"/>
+<area shape="rect" id="Node000002" href="$lora__tx__queue_8h.html" title=" " alt="" coords="75,79,201,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,33,159,70,155,66,187,29"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="225,79,296,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="211,29,244,66,240,70,207,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,76,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="124,106,69,146,66,141,121,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="101,152,175,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="141,104,141,138,135,138,135,104"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="199,152,282,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="156,102,214,142,211,146,153,106"/>
 </map>

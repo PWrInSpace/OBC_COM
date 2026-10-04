@@ -1,4 +1,5 @@
 <map id="SX1280HalWriteBuffer" name="SX1280HalWriteBuffer">
-<area shape="rect" id="node1" title="Write data to the buffer holding the payload in the radio." alt="" coords="5,5,172,31"/>
-<area shape="rect" id="node2" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="220,5,392,31"/>
+<area shape="rect" id="Node000001" title="Write data to the buffer holding the payload in the radio." alt="" coords="5,5,172,31"/>
+<area shape="rect" id="Node000002" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="220,5,392,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,15,206,15,206,21,172,21"/>
 </map>

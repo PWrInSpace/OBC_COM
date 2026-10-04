@@ -1,5 +1,7 @@
 <map id="start_telemetry_task" name="start_telemetry_task">
-<area shape="rect" id="node1" title="Inicjalizuje i uruchamia wątek telemetrii." alt="" coords="5,5,164,31"/>
-<area shape="rect" id="node2" href="$telemetry__task_8c.html#adf01cf2576afc3ce53d9f36372a5748e" title="Główna pętla wątku telemetrii." alt="" coords="212,5,383,31"/>
-<area shape="rect" id="node3" href="$sd__task_8c.html#ac3aaa7f82771654888e7e93faf56d68c" title=" " alt="" coords="431,5,579,31"/>
+<area shape="rect" id="Node000001" title="Inicjalizuje i uruchamia wątek telemetrii." alt="" coords="5,5,164,31"/>
+<area shape="rect" id="Node000002" href="$telemetry__task_8c.html#adf01cf2576afc3ce53d9f36372a5748e" title="Główna pętla wątku telemetrii." alt="" coords="212,5,383,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,15,198,15,198,21,164,21"/>
+<area shape="rect" id="Node000003" href="$sd__task_8c.html#ac3aaa7f82771654888e7e93faf56d68c" title=" " alt="" coords="431,5,579,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="383,15,417,15,417,21,383,21"/>
 </map>

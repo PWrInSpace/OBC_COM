@@ -1,9 +1,15 @@
 <map id="logger_write_to_ring" name="logger_write_to_ring">
-<area shape="rect" id="node1" title=" " alt="" coords="432,105,587,131"/>
-<area shape="rect" id="node2" href="$logger_8c.html#aa9fd7f0e91b44a3585b9d41cc7f4785c" title=" " alt="" coords="199,68,384,93"/>
-<area shape="rect" id="node6" href="$logger_8c.html#a7f0a1ef369c8017a21abc0f68371b64e" title=" " alt="" coords="246,129,337,155"/>
-<area shape="rect" id="node3" href="$logger_8c.html#acd8d67d4016cde8855da412ed022b4c8" title=" " alt="" coords="33,5,123,31"/>
-<area shape="rect" id="node4" href="$logger_8c.html#adce29990727d7ac272748c939a614f8e" title=" " alt="" coords="38,55,118,80"/>
-<area shape="rect" id="node5" href="$logger_8c.html#a9bd31d71edf553f4e86c4f866ec33e99" title=" " alt="" coords="41,104,115,129"/>
-<area shape="rect" id="node7" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,153,151,179"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="432,105,587,131"/>
+<area shape="rect" id="Node000002" href="$logger_8c.html#aa9fd7f0e91b44a3585b9d41cc7f4785c" title=" " alt="" coords="199,68,384,93"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="421,106,365,96,366,91,422,100"/>
+<area shape="rect" id="Node000006" href="$logger_8c.html#a7f0a1ef369c8017a21abc0f68371b64e" title=" " alt="" coords="246,129,337,155"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="418,131,337,140,337,134,418,125"/>
+<area shape="rect" id="Node000003" href="$logger_8c.html#acd8d67d4016cde8855da412ed022b4c8" title=" " alt="" coords="33,5,123,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,67,122,33,123,28,235,62"/>
+<area shape="rect" id="Node000004" href="$logger_8c.html#adce29990727d7ac272748c939a614f8e" title=" " alt="" coords="38,55,118,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="184,77,118,72,118,67,184,71"/>
+<area shape="rect" id="Node000005" href="$logger_8c.html#a9bd31d71edf553f4e86c4f866ec33e99" title=" " alt="" coords="41,104,115,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="203,98,116,113,115,108,202,93"/>
+<area shape="rect" id="Node000007" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,153,151,179"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="233,151,151,161,150,155,232,146"/>
 </map>

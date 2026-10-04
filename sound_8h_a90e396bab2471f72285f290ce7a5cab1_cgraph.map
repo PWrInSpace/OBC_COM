@@ -1,7 +1,13 @@
 <map id="sound_init" name="sound_init">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,95,56"/>
-<area shape="rect" id="node2" href="$buzzer_8c.html#a67474891465afd17e4c01ba17d1a05bd" title=" " alt="" coords="275,5,368,31"/>
-<area shape="rect" id="node4" href="$sound_8c.html#a2db46f98f8f8fde5eba0156cacc10c51" title=" " alt="" coords="143,56,209,81"/>
-<area shape="rect" id="node3" href="$buzzer_8c.html#aa68304d0537a12b41497d1306904306c" title=" " alt="" coords="433,56,540,81"/>
-<area shape="rect" id="node5" href="$buzzer_8c.html#a8b5df1d0f87be9e9fdb23896369f96bf" title=" " alt="" coords="257,107,385,132"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,95,56"/>
+<area shape="rect" id="Node000002" href="$buzzer_8c.html#a67474891465afd17e4c01ba17d1a05bd" title=" " alt="" coords="275,5,368,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,37,261,21,261,26,95,42"/>
+<area shape="rect" id="Node000004" href="$sound_8c.html#a2db46f98f8f8fde5eba0156cacc10c51" title=" " alt="" coords="143,56,209,81"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="95,50,130,57,129,62,94,55"/>
+<area shape="rect" id="Node000003" href="$buzzer_8c.html#aa68304d0537a12b41497d1306904306c" title=" " alt="" coords="433,56,540,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="365,28,432,49,430,54,363,33"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="210,66,419,66,419,71,210,71"/>
+<area shape="rect" id="Node000005" href="$buzzer_8c.html#a8b5df1d0f87be9e9fdb23896369f96bf" title=" " alt="" coords="257,107,385,132"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="210,78,272,99,270,104,208,83"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="363,104,430,83,432,88,365,109"/>
 </map>

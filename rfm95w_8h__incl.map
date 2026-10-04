@@ -1,12 +1,22 @@
 <map id="modules/rfm95w/include/rfm95w.h" name="modules/rfm95w/include/rfm95w.h">
-<area shape="rect" id="node1" title=" " alt="" coords="313,5,496,45"/>
-<area shape="rect" id="node2" href="$usb__config_8h.html" title=" " alt="" coords="137,93,240,119"/>
-<area shape="rect" id="node7" title=" " alt="" coords="265,93,339,119"/>
-<area shape="rect" id="node8" title=" " alt="" coords="363,93,446,119"/>
-<area shape="rect" id="node9" title=" " alt="" coords="471,93,541,119"/>
-<area shape="rect" id="node10" title=" " alt="" coords="565,93,636,119"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,167,105,192"/>
-<area shape="rect" id="node4" title=" " alt="" coords="141,240,236,265"/>
-<area shape="rect" id="node5" href="$usbd__cdc__if_8h.html" title=" " alt="" coords="181,167,290,192"/>
-<area shape="rect" id="node6" title=" " alt="" coords="315,167,417,192"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="313,5,496,45"/>
+<area shape="rect" id="Node000002" href="$usb__config_8h.html" title=" " alt="" coords="137,93,240,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="354,48,234,91,232,86,352,43"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="265,93,339,119"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="381,48,330,87,326,83,378,43"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="363,93,446,119"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="407,46,407,79,402,79,402,46"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="471,93,541,119"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="431,43,481,82,478,87,428,48"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="565,93,636,119"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="453,43,560,86,558,91,451,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,105,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="168,121,90,162,88,158,166,116"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="141,240,236,265"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="186,120,171,167,172,198,180,227,175,228,167,199,166,166,181,118"/>
+<area shape="rect" id="Node000005" href="$usbd__cdc__if_8h.html" title=" " alt="" coords="181,167,290,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="199,118,222,154,218,157,194,120"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="315,167,417,192"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="218,116,326,159,324,164,216,121"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="230,194,206,230,202,227,225,191"/>
 </map>

@@ -1,9 +1,15 @@
 <map id="rfm95_default_config" name="rfm95_default_config">
-<area shape="rect" id="node1" title="Create default config and set parameters." alt="" coords="767,31,927,56"/>
-<area shape="rect" id="node2" href="$rfm95w_8c.html#af893da033abd0ab53bc63b539bc8b541" title="Perform hardware initialization." alt="" coords="601,5,690,31"/>
-<area shape="rect" id="node3" href="$lora__config_8c.html#ad5bfaa68e5000acde54daa44ae48f970" title=" " alt="" coords="572,55,719,80"/>
-<area shape="rect" id="node4" href="$lora__config_8c.html#aa1a41e7cceea88bf0cdc915ebc3e0b5a" title=" " alt="" coords="396,29,517,55"/>
-<area shape="rect" id="node5" href="$rfm95w__task_8c.html#af8b08547037ee5614a6b8e7f8bc00b23" title=" " alt="" coords="389,79,524,104"/>
-<area shape="rect" id="node6" href="$rfm95w__task_8c.html#a5766e691677be755740c5d264c637139" title=" " alt="" coords="199,79,341,104"/>
-<area shape="rect" id="node7" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,79,151,104"/>
+<area shape="rect" id="Node000001" title="Create default config and set parameters." alt="" coords="767,31,927,56"/>
+<area shape="rect" id="Node000002" href="$rfm95w_8c.html#af893da033abd0ab53bc63b539bc8b541" title="Perform hardware initialization." alt="" coords="601,5,690,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="752,34,690,26,690,21,753,29"/>
+<area shape="rect" id="Node000003" href="$lora__config_8c.html#ad5bfaa68e5000acde54daa44ae48f970" title=" " alt="" coords="572,55,719,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="753,57,719,61,719,56,753,52"/>
+<area shape="rect" id="Node000004" href="$lora__config_8c.html#aa1a41e7cceea88bf0cdc915ebc3e0b5a" title=" " alt="" coords="396,29,517,55"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="558,58,518,53,518,48,558,53"/>
+<area shape="rect" id="Node000005" href="$rfm95w__task_8c.html#af8b08547037ee5614a6b8e7f8bc00b23" title=" " alt="" coords="389,79,524,104"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="559,81,525,85,524,80,558,76"/>
+<area shape="rect" id="Node000006" href="$rfm95w__task_8c.html#a5766e691677be755740c5d264c637139" title=" " alt="" coords="199,79,341,104"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="375,94,341,94,341,89,375,89"/>
+<area shape="rect" id="Node000007" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,79,151,104"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="185,94,151,94,151,89,185,89"/>
 </map>

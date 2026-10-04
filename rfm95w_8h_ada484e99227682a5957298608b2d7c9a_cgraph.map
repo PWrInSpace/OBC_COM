@@ -1,4 +1,5 @@
 <map id="rfm95_check_tx_done" name="rfm95_check_tx_done">
-<area shape="rect" id="node1" title="Checks whether the transmission has finished." alt="" coords="5,5,171,31"/>
-<area shape="rect" id="node2" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="219,5,344,31"/>
+<area shape="rect" id="Node000001" title="Checks whether the transmission has finished." alt="" coords="5,5,171,31"/>
+<area shape="rect" id="Node000002" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="219,5,344,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,15,205,15,205,21,171,21"/>
 </map>

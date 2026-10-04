@@ -1,5 +1,7 @@
 <map id="buzzer_init" name="buzzer_init">
-<area shape="rect" id="node1" title=" " alt="" coords="336,5,429,31"/>
-<area shape="rect" id="node2" href="$sound_8c.html#a90e396bab2471f72285f290ce7a5cab1" title=" " alt="" coords="199,5,288,31"/>
-<area shape="rect" id="node3" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,5,151,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="336,5,429,31"/>
+<area shape="rect" id="Node000002" href="$sound_8c.html#a90e396bab2471f72285f290ce7a5cab1" title=" " alt="" coords="199,5,288,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="322,21,288,21,288,15,322,15"/>
+<area shape="rect" id="Node000003" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,5,151,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="185,21,151,21,151,15,185,15"/>
 </map>

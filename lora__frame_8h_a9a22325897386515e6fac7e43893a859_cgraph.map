@@ -1,12 +1,21 @@
 <map id="lora_frame_build_sync" name="lora_frame_build_sync">
-<area shape="rect" id="node1" title=" " alt="" coords="5,79,175,105"/>
-<area shape="rect" id="node2" href="$lora__frame_8c.html#a17239a709e6511cce2fa83ceaf2ab240" title=" " alt="" coords="223,79,429,105"/>
-<area shape="rect" id="node3" href="$lora__frame_8c.html#aeed92c1e040123a94781bba03eb08384" title=" " alt="" coords="486,30,653,55"/>
-<area shape="rect" id="node4" href="$lora_8c.html#a153c62304adcd257479820c3a6e449bb" title=" " alt="" coords="477,79,661,105"/>
-<area shape="rect" id="node9" href="$lora_8c.html#a0f0cadbda8aa2743424ebc36572c7222" title="Encoding and decoding of obc.LoRaFrame." alt="" coords="487,130,651,155"/>
-<area shape="rect" id="node5" href="$lora_8c.html#ac7be2e87f2ead7003e3f53b9956e5323" title=" " alt="" coords="709,69,893,109"/>
-<area shape="rect" id="node6" href="$lora_8c.html#a5ca7e087fe8a25070f7374ac03fcee42" title=" " alt="" coords="949,5,1125,45"/>
-<area shape="rect" id="node7" href="$lora_8c.html#aadfad1864ab4c2bab668ee2f6c5815f8" title=" " alt="" coords="947,69,1127,109"/>
-<area shape="rect" id="node8" href="$lora_8c.html#ace18a0fae7d1688f4f1323dbed6d5781" title=" " alt="" coords="941,133,1133,173"/>
-<area shape="rect" id="node10" href="$lora_8c.html#a5b8e0c9cb460db68ae694a1a72e3e609" title=" " alt="" coords="722,134,881,159"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,79,175,105"/>
+<area shape="rect" id="Node000002" href="$lora__frame_8c.html#a17239a709e6511cce2fa83ceaf2ab240" title=" " alt="" coords="223,79,429,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,89,209,89,209,95,175,95"/>
+<area shape="rect" id="Node000003" href="$lora__frame_8c.html#aeed92c1e040123a94781bba03eb08384" title=" " alt="" coords="486,30,653,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="389,77,492,56,493,61,390,82"/>
+<area shape="rect" id="Node000004" href="$lora_8c.html#a153c62304adcd257479820c3a6e449bb" title=" " alt="" coords="477,79,661,105"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="429,89,464,89,464,95,429,95"/>
+<area shape="rect" id="Node000009" href="$lora_8c.html#a0f0cadbda8aa2743424ebc36572c7222" title="Encoding and decoding of obc.LoRaFrame." alt="" coords="487,130,651,155"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="389,102,495,125,494,130,388,107"/>
+<area shape="rect" id="Node000005" href="$lora_8c.html#ac7be2e87f2ead7003e3f53b9956e5323" title=" " alt="" coords="709,69,893,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="662,88,695,88,696,93,662,94"/>
+<area shape="rect" id="Node000006" href="$lora_8c.html#a5ca7e087fe8a25070f7374ac03fcee42" title=" " alt="" coords="949,5,1125,45"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="875,67,949,46,951,51,877,72"/>
+<area shape="rect" id="Node000007" href="$lora_8c.html#aadfad1864ab4c2bab668ee2f6c5815f8" title=" " alt="" coords="947,69,1127,109"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="894,87,934,87,934,92,894,92"/>
+<area shape="rect" id="Node000008" href="$lora_8c.html#ace18a0fae7d1688f4f1323dbed6d5781" title=" " alt="" coords="941,133,1133,173"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="877,107,951,127,949,132,875,112"/>
+<area shape="rect" id="Node000010" href="$lora_8c.html#a5b8e0c9cb460db68ae694a1a72e3e609" title=" " alt="" coords="722,134,881,159"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="652,141,708,142,708,148,651,147"/>
 </map>

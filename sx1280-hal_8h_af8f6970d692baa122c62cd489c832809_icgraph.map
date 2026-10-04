@@ -1,16 +1,30 @@
 <map id="SX1280HalReadCommand" name="SX1280HalReadCommand">
-<area shape="rect" id="node1" title="Send a command that read data from the radio." alt="" coords="1068,130,1261,156"/>
-<area shape="rect" id="node2" href="$sx1280_8c.html#a31c7f2ce5f6193072f71565fa1b1b1fc" title="Returns the current IRQ status." alt="" coords="849,32,1001,57"/>
-<area shape="rect" id="node9" href="$sx1280_8c.html#a192c74d41297657ed93b4bea7d0f5538" title="Gets the last received packet payload length." alt="" coords="836,81,1013,106"/>
-<area shape="rect" id="node10" href="$sx1280_8c.html#a5240f8e59a3da601dadd9f390a057db6" title="Returns the instantaneous RSSI value for the last packet received." alt="" coords="852,130,997,156"/>
-<area shape="rect" id="node11" href="$sx1280_8c.html#a01fc4b6e3bc159a906108e26d08fdc4a" title="Gets the last received packet buffer status." alt="" coords="829,180,1020,205"/>
-<area shape="rect" id="node14" href="$sx1280_8c.html#af148fc2c2679679c0587f8e48e124be1" title="Gets the current radio status." alt="" coords="857,229,992,254"/>
-<area shape="rect" id="node3" href="$sx1280__task_8c.html#ad29d477ada983b118b9139bafba10196" title=" " alt="" coords="245,70,384,96"/>
-<area shape="rect" id="node5" href="$sx1280_8c.html#af08aac82fe5e983a4671967275b5dab8" title="Process the analysis of radio IRQs and calls callback functions depending on radio state." alt="" coords="636,37,781,62"/>
-<area shape="rect" id="node7" href="$sx1280__task_8c.html#ab2b4adc4b092efe2c6680ed44a07fe72" title=" " alt="" coords="641,86,776,112"/>
-<area shape="rect" id="node4" href="$sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0" title=" " alt="" coords="5,70,197,96"/>
-<area shape="rect" id="node6" href="$sx1280_8c.html#a4b390ccc0f9d28283afff36f11a94263" title="DIOs interrupt callback." alt="" coords="446,37,574,62"/>
-<area shape="rect" id="node8" href="$sx1280__task_8c.html#aa3e5f314d579c8192dcfb785648bca96" title=" " alt="" coords="455,86,565,112"/>
-<area shape="rect" id="node12" href="$sx1280_8c.html#a88aa3739b37c983bbea244aa58fd4a6a" title="Reads the payload received." alt="" coords="636,160,781,185"/>
-<area shape="rect" id="node13" href="$sx1280__task_8c.html#a2558054bd23939c02ad7d8e95cd5a501" title=" " alt="" coords="432,142,588,182"/>
+<area shape="rect" id="Node000001" title="Send a command that read data from the radio." alt="" coords="1068,130,1261,156"/>
+<area shape="rect" id="Node000002" href="$sx1280_8c.html#a31c7f2ce5f6193072f71565fa1b1b1fc" title="Returns the current IRQ status." alt="" coords="849,32,1001,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1129,126,1078,98,1019,72,980,59,982,54,1021,67,1080,94,1131,121"/>
+<area shape="rect" id="Node000009" href="$sx1280_8c.html#a192c74d41297657ed93b4bea7d0f5538" title="Gets the last received packet payload length." alt="" coords="836,81,1013,106"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1088,130,987,109,988,104,1090,125"/>
+<area shape="rect" id="Node000010" href="$sx1280_8c.html#a5240f8e59a3da601dadd9f390a057db6" title="Returns the instantaneous RSSI value for the last packet received." alt="" coords="852,130,997,156"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1054,146,998,146,998,140,1054,140"/>
+<area shape="rect" id="Node000011" href="$sx1280_8c.html#a01fc4b6e3bc159a906108e26d08fdc4a" title="Gets the last received packet buffer status." alt="" coords="829,180,1020,205"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1090,161,988,182,987,177,1088,156"/>
+<area shape="rect" id="Node000014" href="$sx1280_8c.html#af148fc2c2679679c0587f8e48e124be1" title="Gets the current radio status." alt="" coords="857,229,992,254"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="1132,165,1081,193,1021,220,986,231,984,226,1019,215,1079,188,1130,160"/>
+<area shape="rect" id="Node000003" href="$sx1280__task_8c.html#ad29d477ada983b118b9139bafba10196" title=" " alt="" coords="245,70,384,96"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="850,32,764,19,659,10,545,11,488,16,433,27,379,47,336,72,333,68,377,43,431,22,487,11,545,5,660,4,765,13,851,26"/>
+<area shape="rect" id="Node000005" href="$sx1280_8c.html#af08aac82fe5e983a4671967275b5dab8" title="Process the analysis of radio IRQs and calls callback functions depending on radio state." alt="" coords="636,37,781,62"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="835,49,782,50,782,45,835,44"/>
+<area shape="rect" id="Node000007" href="$sx1280__task_8c.html#ab2b4adc4b092efe2c6680ed44a07fe72" title=" " alt="" coords="641,86,776,112"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="862,63,760,89,759,84,860,58"/>
+<area shape="rect" id="Node000004" href="$sx1280__task_8c.html#a5d59cf5aadb1e137b4584044591c4dd0" title=" " alt="" coords="5,70,197,96"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="232,86,198,86,198,80,232,80"/>
+<area shape="rect" id="Node000006" href="$sx1280_8c.html#a4b390ccc0f9d28283afff36f11a94263" title="DIOs interrupt callback." alt="" coords="446,37,574,62"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="622,52,574,52,574,47,622,47"/>
+<area shape="rect" id="Node000008" href="$sx1280__task_8c.html#aa3e5f314d579c8192dcfb785648bca96" title=" " alt="" coords="455,86,565,112"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="628,102,566,102,566,96,628,96"/>
+<area shape="rect" id="Node000012" href="$sx1280_8c.html#a88aa3739b37c983bbea244aa58fd4a6a" title="Reads the payload received." alt="" coords="636,160,781,185"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="815,185,782,182,782,176,816,179"/>
+<area shape="rect" id="Node000013" href="$sx1280__task_8c.html#a2558054bd23939c02ad7d8e95cd5a501" title=" " alt="" coords="432,142,588,182"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="622,170,588,168,589,163,622,165"/>
+<area shape="poly" id="edge13_Node000013_Node000003" title=" " alt="" coords="446,139,347,98,349,93,448,134"/>
 </map>

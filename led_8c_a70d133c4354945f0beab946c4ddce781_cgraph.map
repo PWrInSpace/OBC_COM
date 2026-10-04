@@ -1,11 +1,19 @@
 <map id="led_cb" name="led_cb">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,69,105"/>
-<area shape="rect" id="node2" href="$led_8c.html#a911c1445888ee842028dabe011d0cbea" title=" " alt="" coords="153,5,219,31"/>
-<area shape="rect" id="node4" href="$led_8c.html#a9fd23871e64ce76441d76650cd8e9c34" title=" " alt="" coords="121,55,251,80"/>
-<area shape="rect" id="node7" href="$ws2812_8c.html#a1a336aa93a09eae96e568550794abdad" title=" " alt="" coords="117,104,255,129"/>
-<area shape="rect" id="node8" href="$ws2812_8c.html#afa32209d857563f721e36211b80d8308" title="Encode the frame and begin the DMA transfer (non&#45;blocking)" alt="" coords="129,153,243,179"/>
-<area shape="rect" id="node3" href="$led_8c.html#a64b160e194323340cb7afc6ad9a505f0" title=" " alt="" coords="338,5,394,31"/>
-<area shape="rect" id="node5" href="$led_8c.html#a992f9c52317e7e374b7463b240a4db94" title=" " alt="" coords="331,55,401,80"/>
-<area shape="rect" id="node6" href="$led_8c.html#a31772f07d54f0340d3b178fdb9d4a977" title=" " alt="" coords="335,104,397,129"/>
-<area shape="rect" id="node9" href="$ws2812_8c.html#aa57ef631af02e08bc7dc99c41fe8dfde" title=" " alt="" coords="303,153,429,179"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,69,105"/>
+<area shape="rect" id="Node000002" href="$led_8c.html#a911c1445888ee842028dabe011d0cbea" title=" " alt="" coords="153,5,219,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,78,116,40,139,30,141,35,119,44,57,82"/>
+<area shape="rect" id="Node000004" href="$led_8c.html#a9fd23871e64ce76441d76650cd8e9c34" title=" " alt="" coords="121,55,251,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="69,85,107,78,108,83,70,90"/>
+<area shape="rect" id="Node000007" href="$ws2812_8c.html#a1a336aa93a09eae96e568550794abdad" title=" " alt="" coords="117,104,255,129"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="70,95,104,101,103,106,69,100"/>
+<area shape="rect" id="Node000008" href="$ws2812_8c.html#afa32209d857563f721e36211b80d8308" title="Encode the frame and begin the DMA transfer (non&#45;blocking)" alt="" coords="129,153,243,179"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="59,103,119,138,136,146,133,151,116,143,56,108"/>
+<area shape="rect" id="Node000003" href="$led_8c.html#a64b160e194323340cb7afc6ad9a505f0" title=" " alt="" coords="338,5,394,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="219,15,324,15,324,21,219,21"/>
+<area shape="rect" id="Node000005" href="$led_8c.html#a992f9c52317e7e374b7463b240a4db94" title=" " alt="" coords="331,55,401,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="251,65,317,65,317,70,251,70"/>
+<area shape="rect" id="Node000006" href="$led_8c.html#a31772f07d54f0340d3b178fdb9d4a977" title=" " alt="" coords="335,104,397,129"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="234,77,323,102,322,107,232,83"/>
+<area shape="rect" id="Node000009" href="$ws2812_8c.html#aa57ef631af02e08bc7dc99c41fe8dfde" title=" " alt="" coords="303,153,429,179"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="243,163,289,163,289,169,243,169"/>
 </map>

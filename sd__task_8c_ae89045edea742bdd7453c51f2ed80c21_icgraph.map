@@ -1,6 +1,9 @@
 <map id="flush_active_buffer" name="flush_active_buffer">
-<area shape="rect" id="node1" title=" " alt="" coords="557,5,703,31"/>
-<area shape="rect" id="node2" href="$sd__task_8c.html#a3d0ac7cbbf5091a5473d4d99d63292dd" title=" " alt="" coords="360,5,509,31"/>
-<area shape="rect" id="node3" href="$sd__task_8c.html#ad2d90dfe4e88382623bd9874937356e5" title=" " alt="" coords="199,5,312,31"/>
-<area shape="rect" id="node4" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,5,151,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="557,5,703,31"/>
+<area shape="rect" id="Node000002" href="$sd__task_8c.html#a3d0ac7cbbf5091a5473d4d99d63292dd" title=" " alt="" coords="360,5,509,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="543,21,510,21,510,15,543,15"/>
+<area shape="rect" id="Node000003" href="$sd__task_8c.html#ad2d90dfe4e88382623bd9874937356e5" title=" " alt="" coords="199,5,312,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="346,21,312,21,312,15,346,15"/>
+<area shape="rect" id="Node000004" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,5,151,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="185,21,151,21,151,15,185,15"/>
 </map>

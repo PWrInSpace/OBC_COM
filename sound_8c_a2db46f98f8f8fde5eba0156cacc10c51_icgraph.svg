@@ -6,46 +6,77 @@
 <!-- Title: snd_cb Pages: 1 -->
 <svg width="306pt" height="27pt"
  viewBox="0.00 0.00 306.00 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
+<style type="text/css"><![CDATA[
+.node, .edge {opacity: 0.7;}
+.node.selected, .edge.selected {opacity: 1;}
+.edge:hover path { stroke: red; }
+.edge:hover polygon { stroke: red; fill: red; }
+]]></style>
+<script type="application/ecmascript" xlink:href="svg.min.js"/>
+<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>snd_cb</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="298,-19 248,-19 248,0 298,0 298,-19"/>
 <text text-anchor="middle" x="273" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">snd_cb</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="sound_8c.html#a90e396bab2471f72285f290ce7a5cab1" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="sound_8c.html#a90e396bab2471f72285f290ce7a5cab1" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="212,-19 145,-19 145,0 212,0 212,-19"/>
 <text text-anchor="middle" x="178.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">sound_init</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M237.6,-9.5C229.34,-9.5 220.53,-9.5 212.34,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="237.7,-13 247.7,-9.5 237.7,-6 237.7,-13"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="app__freertos_8c.html#abade755e13d07c10889ae83143656158" target="_top" xlink:title="FreeRTOS initialization.">
+<g id="a_Node000003"><a xlink:href="app__freertos_8c.html#abade755e13d07c10889ae83143656158" target="_top" xlink:title="FreeRTOS initialization.">
 <polygon fill="white" stroke="#666666" points="109,-19 0,-19 0,0 109,0 109,-19"/>
 <text text-anchor="middle" x="54.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">MX_FREERTOS_Init</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M134.63,-9.5C126.35,-9.5 117.59,-9.5 109.02,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="134.81,-13 144.81,-9.5 134.81,-6 134.81,-13"/>
+</a>
 </g>
 </g>
+</g>
+</svg>
+</svg>
+
+<style type='text/css'>
+<![CDATA[
+[data-mouse-over-selected='false'] { opacity: 0.7; }
+[data-mouse-over-selected='true']  { opacity: 1.0; }
+]]>
+</style>
+<script type="application/ecmascript"><![CDATA[
+document.addEventListener('DOMContentLoaded', (event) => {
+  highlightEdges();
+  highlightAdjacentNodes();
+});
+]]></script>
 </svg>

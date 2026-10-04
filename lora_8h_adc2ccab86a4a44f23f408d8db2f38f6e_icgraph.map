@@ -1,10 +1,17 @@
 <map id="obc_mcb_frame_init" name="obc_mcb_frame_init">
-<area shape="rect" id="node1" title="The MIT License (MIT)" alt="" coords="697,109,852,134"/>
-<area shape="rect" id="node2" href="$lora_8c.html#a20380476111188eef717b41534f75a68" title=" " alt="" coords="477,5,642,45"/>
-<area shape="rect" id="node3" href="$lora_8c.html#ab24a43129a28fc79be1616521e8893fe" title=" " alt="" coords="477,69,642,109"/>
-<area shape="rect" id="node7" href="$lora_8c.html#ace86b79a7fcc9d7ec617bf920931fe84" title=" " alt="" coords="469,133,649,173"/>
-<area shape="rect" id="node8" href="$lora_8c.html#a399374f7547413d99f9080ec4b1770e6" title="Encoding and decoding of obc.MCBFrame." alt="" coords="479,198,639,223"/>
-<area shape="rect" id="node4" href="$lora_8c.html#a911f54c53e03942a429649314182c8ab" title=" " alt="" coords="237,69,421,109"/>
-<area shape="rect" id="node5" href="$lora_8c.html#a3ca5f8e33640e696e4199bdac64dc905" title=" " alt="" coords="5,47,189,73"/>
-<area shape="rect" id="node6" href="$lora_8c.html#a1d33a9dd8efa437b0b5e14a0df0c44a2" title=" " alt="" coords="5,97,189,137"/>
+<area shape="rect" id="Node000001" title="The MIT License (MIT)" alt="" coords="697,109,852,134"/>
+<area shape="rect" id="Node000002" href="$lora_8c.html#a20380476111188eef717b41534f75a68" title=" " alt="" coords="477,5,642,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="738,104,648,60,619,48,621,43,650,55,740,100"/>
+<area shape="rect" id="Node000003" href="$lora_8c.html#ab24a43129a28fc79be1616521e8893fe" title=" " alt="" coords="477,69,642,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="683,110,642,104,642,99,684,105"/>
+<area shape="rect" id="Node000007" href="$lora_8c.html#ace86b79a7fcc9d7ec617bf920931fe84" title=" " alt="" coords="469,133,649,173"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="684,137,650,143,649,137,683,132"/>
+<area shape="rect" id="Node000008" href="$lora_8c.html#a399374f7547413d99f9080ec4b1770e6" title="Encoding and decoding of obc.MCBFrame." alt="" coords="479,198,639,223"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="741,143,699,166,650,188,613,200,611,195,648,183,696,161,739,138"/>
+<area shape="rect" id="Node000004" href="$lora_8c.html#a911f54c53e03942a429649314182c8ab" title=" " alt="" coords="237,69,421,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="463,92,422,92,422,87,463,87"/>
+<area shape="rect" id="Node000005" href="$lora_8c.html#a3ca5f8e33640e696e4199bdac64dc905" title=" " alt="" coords="5,47,189,73"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="223,79,189,74,190,69,223,73"/>
+<area shape="rect" id="Node000006" href="$lora_8c.html#a1d33a9dd8efa437b0b5e14a0df0c44a2" title=" " alt="" coords="5,97,189,137"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="223,105,190,109,189,104,223,99"/>
 </map>

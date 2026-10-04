@@ -1,5 +1,7 @@
 <map id="process_command" name="process_command">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,149,56"/>
-<area shape="rect" id="node2" href="$cmd__interface_8c.html#a57d85fd4fa4007c732e903f4847ca286" title=" " alt="" coords="197,5,368,31"/>
-<area shape="rect" id="node3" href="$cmd__interface_8c.html#a6a3cde87386a92623e597936724e60c4" title=" " alt="" coords="205,55,360,80"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,149,56"/>
+<area shape="rect" id="Node000002" href="$cmd__interface_8c.html#a57d85fd4fa4007c732e903f4847ca286" title=" " alt="" coords="197,5,368,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,32,183,28,184,33,150,37"/>
+<area shape="rect" id="Node000003" href="$cmd__interface_8c.html#a6a3cde87386a92623e597936724e60c4" title=" " alt="" coords="205,55,360,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,49,192,54,192,59,149,54"/>
 </map>

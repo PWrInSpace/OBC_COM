@@ -1,5 +1,7 @@
 <map id="SX1280SetTxContinuousPreamble" name="SX1280SetTxContinuousPreamble">
-<area shape="rect" id="node1" title="Sets the radio in continuous preamble transmission mode." alt="" coords="5,5,248,31"/>
-<area shape="rect" id="node2" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="296,5,491,31"/>
-<area shape="rect" id="node3" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="539,5,711,31"/>
+<area shape="rect" id="Node000001" title="Sets the radio in continuous preamble transmission mode." alt="" coords="5,5,248,31"/>
+<area shape="rect" id="Node000002" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="296,5,491,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,15,282,15,282,21,248,21"/>
+<area shape="rect" id="Node000003" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="539,5,711,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="491,15,525,15,525,21,491,21"/>
 </map>

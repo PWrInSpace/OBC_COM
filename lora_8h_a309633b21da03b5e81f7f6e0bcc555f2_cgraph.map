@@ -1,4 +1,5 @@
 <map id="obc_app_frame_encode" name="obc_app_frame_encode">
-<area shape="rect" id="node1" title=" " alt="" coords="5,13,181,38"/>
-<area shape="rect" id="node2" href="$lora_8c.html#a5ca7e087fe8a25070f7374ac03fcee42" title=" " alt="" coords="229,5,405,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,13,181,38"/>
+<area shape="rect" id="Node000002" href="$lora_8c.html#a5ca7e087fe8a25070f7374ac03fcee42" title=" " alt="" coords="229,5,405,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,23,215,23,215,28,182,28"/>
 </map>

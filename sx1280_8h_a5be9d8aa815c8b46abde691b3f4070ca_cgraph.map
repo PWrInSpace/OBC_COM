@@ -1,6 +1,9 @@
 <map id="SX1280GetFirmwareVersion" name="SX1280GetFirmwareVersion">
-<area shape="rect" id="node1" title="Returns the current device firmware version." alt="" coords="5,5,208,31"/>
-<area shape="rect" id="node2" href="$sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea" title="Read a single byte of data from the radio memory." alt="" coords="256,5,436,31"/>
-<area shape="rect" id="node3" href="$sx1280-hal_8c.html#a6a9c356cd998a6f2dad05049941b5939" title="Read data from the radio memory." alt="" coords="484,5,671,31"/>
-<area shape="rect" id="node4" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="719,5,891,31"/>
+<area shape="rect" id="Node000001" title="Returns the current device firmware version." alt="" coords="5,5,208,31"/>
+<area shape="rect" id="Node000002" href="$sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea" title="Read a single byte of data from the radio memory." alt="" coords="256,5,436,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,15,242,15,242,21,208,21"/>
+<area shape="rect" id="Node000003" href="$sx1280-hal_8c.html#a6a9c356cd998a6f2dad05049941b5939" title="Read data from the radio memory." alt="" coords="484,5,671,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="436,15,470,15,470,21,436,21"/>
+<area shape="rect" id="Node000004" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="719,5,891,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="671,15,705,15,705,21,671,21"/>
 </map>

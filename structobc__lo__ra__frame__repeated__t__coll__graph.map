@@ -1,7 +1,11 @@
 <map id="obc_lo_ra_frame_repeated_t" name="obc_lo_ra_frame_repeated_t">
-<area shape="rect" id="node1" title="Message obc.LoRaFrame." alt="" coords="141,181,347,207"/>
-<area shape="rect" id="node2" href="$structobc__lo__ra__frame__t.html" title=" " alt="" coords="173,93,315,119"/>
-<area shape="rect" id="node3" href="$structobc__mcb__frame__t.html" title=" " alt="" coords="5,5,144,31"/>
-<area shape="rect" id="node4" href="$structobc__tanwa__frame__t.html" title=" " alt="" coords="169,5,319,31"/>
-<area shape="rect" id="node5" href="$structobc__app__frame__t.html" title=" " alt="" coords="343,5,478,31"/>
+<area shape="rect" id="Node000001" title="Message obc.LoRaFrame." alt="" coords="141,181,347,207"/>
+<area shape="rect" id="Node000002" href="$structobc__lo__ra__frame__t.html" title=" " alt="" coords="173,93,315,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,133,247,181,241,181,241,133"/>
+<area shape="rect" id="Node000003" href="$structobc__mcb__frame__t.html" title=" " alt="" coords="5,5,144,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="101,37,147,67,206,91,204,96,144,72,98,42"/>
+<area shape="rect" id="Node000004" href="$structobc__tanwa__frame__t.html" title=" " alt="" coords="169,5,319,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="247,45,247,93,241,93,241,45"/>
+<area shape="rect" id="Node000005" href="$structobc__app__frame__t.html" title=" " alt="" coords="343,5,478,31"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="393,43,356,72,326,86,296,96,294,91,324,81,353,67,389,39"/>
 </map>

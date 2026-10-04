@@ -1,13 +1,23 @@
 <map id="led_init" name="led_init">
-<area shape="rect" id="node1" title=" " alt="" coords="5,105,76,131"/>
-<area shape="rect" id="node2" href="$led_8c.html#a70d133c4354945f0beab946c4ddce781" title=" " alt="" coords="142,80,206,105"/>
-<area shape="rect" id="node11" href="$ws2812_8c.html#ae59e7c649371df520f17e774767abb1a" title=" " alt="" coords="124,129,224,155"/>
-<area shape="rect" id="node3" href="$led_8c.html#a911c1445888ee842028dabe011d0cbea" title=" " alt="" coords="307,5,374,31"/>
-<area shape="rect" id="node5" href="$led_8c.html#a9fd23871e64ce76441d76650cd8e9c34" title=" " alt="" coords="276,55,405,80"/>
-<area shape="rect" id="node8" href="$ws2812_8c.html#a1a336aa93a09eae96e568550794abdad" title=" " alt="" coords="272,104,409,129"/>
-<area shape="rect" id="node9" href="$ws2812_8c.html#afa32209d857563f721e36211b80d8308" title="Encode the frame and begin the DMA transfer (non&#45;blocking)" alt="" coords="284,153,397,179"/>
-<area shape="rect" id="node4" href="$led_8c.html#a64b160e194323340cb7afc6ad9a505f0" title=" " alt="" coords="493,5,549,31"/>
-<area shape="rect" id="node6" href="$led_8c.html#a992f9c52317e7e374b7463b240a4db94" title=" " alt="" coords="486,55,555,80"/>
-<area shape="rect" id="node7" href="$led_8c.html#a31772f07d54f0340d3b178fdb9d4a977" title=" " alt="" coords="490,104,551,129"/>
-<area shape="rect" id="node10" href="$ws2812_8c.html#aa57ef631af02e08bc7dc99c41fe8dfde" title=" " alt="" coords="457,153,584,179"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,105,76,131"/>
+<area shape="rect" id="Node000002" href="$led_8c.html#a70d133c4354945f0beab946c4ddce781" title=" " alt="" coords="142,80,206,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,109,128,99,129,104,77,114"/>
+<area shape="rect" id="Node000011" href="$ws2812_8c.html#ae59e7c649371df520f17e774767abb1a" title=" " alt="" coords="124,129,224,155"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="77,122,111,128,110,133,76,127"/>
+<area shape="rect" id="Node000003" href="$led_8c.html#a911c1445888ee842028dabe011d0cbea" title=" " alt="" coords="307,5,374,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="196,78,271,40,293,31,295,36,273,44,199,82"/>
+<area shape="rect" id="Node000005" href="$led_8c.html#a9fd23871e64ce76441d76650cd8e9c34" title=" " alt="" coords="276,55,405,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="206,85,262,77,262,82,207,91"/>
+<area shape="rect" id="Node000008" href="$ws2812_8c.html#a1a336aa93a09eae96e568550794abdad" title=" " alt="" coords="272,104,409,129"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="207,95,259,102,258,107,206,100"/>
+<area shape="rect" id="Node000009" href="$ws2812_8c.html#afa32209d857563f721e36211b80d8308" title="Encode the frame and begin the DMA transfer (non&#45;blocking)" alt="" coords="284,153,397,179"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="202,103,225,114,273,138,292,146,290,151,271,143,223,119,200,108"/>
+<area shape="rect" id="Node000004" href="$led_8c.html#a64b160e194323340cb7afc6ad9a505f0" title=" " alt="" coords="493,5,549,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="374,15,478,15,478,21,374,21"/>
+<area shape="rect" id="Node000006" href="$led_8c.html#a992f9c52317e7e374b7463b240a4db94" title=" " alt="" coords="486,55,555,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="406,65,472,65,472,70,406,70"/>
+<area shape="rect" id="Node000007" href="$led_8c.html#a31772f07d54f0340d3b178fdb9d4a977" title=" " alt="" coords="490,104,551,129"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="388,77,478,102,476,107,387,83"/>
+<area shape="rect" id="Node000010" href="$ws2812_8c.html#aa57ef631af02e08bc7dc99c41fe8dfde" title=" " alt="" coords="457,153,584,179"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="398,163,444,163,444,169,398,169"/>
 </map>

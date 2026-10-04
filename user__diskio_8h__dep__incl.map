@@ -1,9 +1,16 @@
 <map id="Core/Inc/user_diskio.h" name="Core/Inc/user_diskio.h">
-<area shape="rect" id="node1" title=" " alt="" coords="379,5,544,31"/>
-<area shape="rect" id="node2" href="$user__diskio_8c.html" title=" " alt="" coords="191,79,356,104"/>
-<area shape="rect" id="node3" href="$sd__task_8h.html" title=" " alt="" coords="380,79,543,104"/>
-<area shape="rect" id="node6" href="$sd__task_8c.html" title=" " alt="" coords="577,152,711,177"/>
-<area shape="rect" id="node4" href="$app__freertos_8c.html" title=" " alt="" coords="5,152,179,177"/>
-<area shape="rect" id="node5" href="$gps__task_8c.html" title=" " alt="" coords="203,152,346,177"/>
-<area shape="rect" id="node7" href="$telemetry__task_8c.html" title=" " alt="" coords="370,152,553,177"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="379,5,544,31"/>
+<area shape="rect" id="Node000002" href="$user__diskio_8c.html" title=" " alt="" coords="191,79,356,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="419,38,305,81,303,76,418,33"/>
+<area shape="rect" id="Node000003" href="$sd__task_8h.html" title=" " alt="" coords="380,79,543,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="464,44,464,79,459,79,459,44"/>
+<area shape="rect" id="Node000006" href="$sd__task_8c.html" title=" " alt="" coords="577,152,711,177"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="495,36,556,77,601,116,635,150,631,154,597,120,553,81,492,40"/>
+<area shape="rect" id="Node000004" href="$app__freertos_8c.html" title=" " alt="" coords="5,152,179,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="389,109,152,155,151,149,388,104"/>
+<area shape="rect" id="Node000005" href="$gps__task_8c.html" title=" " alt="" coords="203,152,346,177"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="420,111,306,154,304,149,418,106"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="504,106,615,149,613,154,502,111"/>
+<area shape="rect" id="Node000007" href="$telemetry__task_8c.html" title=" " alt="" coords="370,152,553,177"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="464,118,464,152,459,152,459,118"/>
 </map>

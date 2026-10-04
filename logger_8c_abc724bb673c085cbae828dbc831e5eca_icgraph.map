@@ -1,4 +1,5 @@
 <map id="logger_get_buffer" name="logger_get_buffer">
-<area shape="rect" id="node1" title=" " alt="" coords="184,5,320,31"/>
-<area shape="rect" id="node2" href="$cmd__interface_8c.html#af8b24d2f89b1fc5e2ee9157347d10c68" title=" " alt="" coords="5,5,136,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="184,5,320,31"/>
+<area shape="rect" id="Node000002" href="$cmd__interface_8c.html#af8b24d2f89b1fc5e2ee9157347d10c68" title=" " alt="" coords="5,5,136,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,21,136,21,136,15,170,15"/>
 </map>

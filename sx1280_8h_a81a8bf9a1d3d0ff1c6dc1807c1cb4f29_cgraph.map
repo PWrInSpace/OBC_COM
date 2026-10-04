@@ -1,5 +1,7 @@
 <map id="SX1280StopAutoTx" name="SX1280StopAutoTx">
-<area shape="rect" id="node1" title="Stop the chip from automatically sending a packet after the end of a packet reception if previously a..." alt="" coords="5,5,152,31"/>
-<area shape="rect" id="node2" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="200,5,395,31"/>
-<area shape="rect" id="node3" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="443,5,615,31"/>
+<area shape="rect" id="Node000001" title="Stop the chip from automatically sending a packet after the end of a packet reception if previously a..." alt="" coords="5,5,152,31"/>
+<area shape="rect" id="Node000002" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="200,5,395,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,15,186,15,186,21,153,21"/>
+<area shape="rect" id="Node000003" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="443,5,615,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="395,15,429,15,429,21,395,21"/>
 </map>

@@ -9,73 +9,85 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>SX1280SetRangingCalibration</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Sets the standard processing delay between Master and Slave.">
+<g id="a_Node000001"><a xlink:title="Sets the standard processing delay between Master and Slave.">
 <polygon fill="#999999" stroke="#666666" points="162,-37 0,-37 0,-18 162,-18 162,-37"/>
 <text text-anchor="middle" x="81" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280SetRangingCalibration</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="sx1280_8c.html#a0a853efd19951935adb13f544740731e" target="_top" xlink:title="Gets the current radio protocol.">
+<g id="a_Node000002"><a xlink:href="sx1280_8c.html#a0a853efd19951935adb13f544740731e" target="_top" xlink:title="Gets the current radio protocol.">
 <polygon fill="white" stroke="#666666" points="329,-56 204,-56 204,-37 329,-37 329,-56"/>
 <text text-anchor="middle" x="266.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280GetPacketType</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M162.22,-35.81C172.71,-36.89 183.4,-38 193.74,-39.07"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="193.62,-42.58 203.93,-40.13 194.35,-35.61 193.62,-42.58"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="sx1280-hal_8c.html#a22d55eec45845b70b71327af666c9eb0" target="_top" xlink:title="Write a single byte of data to the radio memory.">
+<g id="a_Node000003"><a xlink:href="sx1280-hal_8c.html#a22d55eec45845b70b71327af666c9eb0" target="_top" xlink:title="Write a single byte of data to the radio memory.">
 <polygon fill="white" stroke="#666666" points="335,-19 198,-19 198,0 335,0 335,-19"/>
 <text text-anchor="middle" x="266.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWriteRegister</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
+<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M162.22,-19.63C170.65,-18.8 179.22,-17.96 187.62,-17.14"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="188.17,-20.6 197.78,-16.14 187.48,-13.64 188.17,-20.6"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" target="_top" xlink:title="Write data to the radio memory.">
+<g id="a_Node000004"><a xlink:href="sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" target="_top" xlink:title="Write data to the radio memory.">
 <polygon fill="white" stroke="#666666" points="513,-19 371,-19 371,0 513,0 513,-19"/>
 <text text-anchor="middle" x="442" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWriteRegisters</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
+<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M335.08,-9.5C343.49,-9.5 352.15,-9.5 360.73,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="360.75,-13 370.75,-9.5 360.75,-6 360.75,-13"/>
+</a>
+</g>
 </g>
 <!-- Node5 -->
-<g id="node5" class="node">
+<g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
+<g id="a_Node000005"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
 <polygon fill="white" stroke="#666666" points="678,-19 549,-19 549,0 678,0 678,-19"/>
 <text text-anchor="middle" x="613.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWaitOnBusy</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
+<g id="edge4_Node000004_Node000005" class="edge">
 <title>Node4&#45;&gt;Node5</title>
+<g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M513.41,-9.5C521.75,-9.5 530.29,-9.5 538.67,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="538.81,-13 548.81,-9.5 538.81,-6 538.81,-13"/>
+</a>
+</g>
 </g>
 </g>
 </svg>

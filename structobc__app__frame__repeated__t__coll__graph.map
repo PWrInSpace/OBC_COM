@@ -1,4 +1,5 @@
 <map id="obc_app_frame_repeated_t" name="obc_app_frame_repeated_t">
-<area shape="rect" id="node1" title="Message obc.AppFrame." alt="" coords="5,93,204,119"/>
-<area shape="rect" id="node2" href="$structobc__app__frame__t.html" title=" " alt="" coords="37,5,172,31"/>
+<area shape="rect" id="Node000001" title="Message obc.AppFrame." alt="" coords="5,93,204,119"/>
+<area shape="rect" id="Node000002" href="$structobc__app__frame__t.html" title=" " alt="" coords="37,5,172,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,45,107,93,102,93,102,45"/>
 </map>

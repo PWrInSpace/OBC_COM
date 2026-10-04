@@ -1,10 +1,21 @@
 <map id="rfm95_send_packet" name="rfm95_send_packet">
-<area shape="rect" id="node1" title="Send a packet." alt="" coords="5,113,155,139"/>
-<area shape="rect" id="node2" href="$rfm95w_8c.html#ada484e99227682a5957298608b2d7c9a" title="Checks whether the transmission has finished." alt="" coords="203,5,368,31"/>
-<area shape="rect" id="node3" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="448,13,573,39"/>
-<area shape="rect" id="node4" href="$rfm95w_8c.html#a6ff0eccd2a2bfbeb889d11249ca6e5db" title="Fills the REG_FIFO buffer with desired values, and the REG_PAYLOAD_LENGTH with buffer size." alt="" coords="215,106,355,146"/>
-<area shape="rect" id="node7" href="$rfm95w_8c.html#af86811708bcd2722cec9b0e8dab5276b" title="Writes the REG_OP_MODE to mode TX." alt="" coords="416,171,605,196"/>
-<area shape="rect" id="node8" href="$rfm95w_8c.html#a57c55bef3200c876fd87864d39ecbb17" title="Writes the REG_IRQ_FLAGS buffer with IRQ_TX_DONE_MASK." alt="" coords="204,221,367,247"/>
-<area shape="rect" id="node5" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="465,69,557,95"/>
-<area shape="rect" id="node6" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="653,145,783,171"/>
+<area shape="rect" id="Node000001" title="Send a packet." alt="" coords="5,113,155,139"/>
+<area shape="rect" id="Node000002" href="$rfm95w_8c.html#ada484e99227682a5957298608b2d7c9a" title="Checks whether the transmission has finished." alt="" coords="203,5,368,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,111,144,81,201,48,234,33,236,38,204,52,147,85,101,116"/>
+<area shape="rect" id="Node000003" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="448,13,573,39"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="127,111,202,91,435,39,436,44,203,97,129,116"/>
+<area shape="rect" id="Node000004" href="$rfm95w_8c.html#a6ff0eccd2a2bfbeb889d11249ca6e5db" title="Fills the REG_FIFO buffer with desired values, and the REG_PAYLOAD_LENGTH with buffer size." alt="" coords="215,106,355,146"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="155,123,202,123,202,129,155,129"/>
+<area shape="rect" id="Node000007" href="$rfm95w_8c.html#af86811708bcd2722cec9b0e8dab5276b" title="Writes the REG_OP_MODE to mode TX." alt="" coords="416,171,605,196"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="123,136,203,155,305,169,403,176,402,182,305,174,202,161,122,141"/>
+<area shape="rect" id="Node000008" href="$rfm95w_8c.html#a57c55bef3200c876fd87864d39ecbb17" title="Writes the REG_IRQ_FLAGS buffer with IRQ_TX_DONE_MASK." alt="" coords="204,221,367,247"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="101,136,147,167,204,200,236,214,234,219,201,204,144,171,98,141"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="368,18,434,21,434,26,368,24"/>
+<area shape="rect" id="Node000005" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="465,69,557,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="355,110,451,91,452,96,356,115"/>
+<area shape="rect" id="Node000006" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="653,145,783,171"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="356,128,640,150,639,155,356,134"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="551,92,606,111,674,138,672,143,604,117,549,97"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="605,169,640,165,640,170,606,174"/>
+<area shape="poly" id="edge11_Node000008_Node000006" title=" " alt="" coords="367,233,481,227,543,219,605,206,645,192,682,175,684,179,647,197,606,211,544,224,481,232,367,238"/>
 </map>

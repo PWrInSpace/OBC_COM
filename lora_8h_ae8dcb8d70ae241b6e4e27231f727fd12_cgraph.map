@@ -1,7 +1,11 @@
 <map id="obc_lo_ra_frame_encode_repeated_inner" name="obc_lo_ra_frame_encode_repeated_inner">
-<area shape="rect" id="node1" title=" " alt="" coords="5,69,189,109"/>
-<area shape="rect" id="node2" href="$lora_8c.html#ac7be2e87f2ead7003e3f53b9956e5323" title=" " alt="" coords="237,69,421,109"/>
-<area shape="rect" id="node3" href="$lora_8c.html#a5ca7e087fe8a25070f7374ac03fcee42" title=" " alt="" coords="477,5,653,45"/>
-<area shape="rect" id="node4" href="$lora_8c.html#aadfad1864ab4c2bab668ee2f6c5815f8" title=" " alt="" coords="475,69,655,109"/>
-<area shape="rect" id="node5" href="$lora_8c.html#ace18a0fae7d1688f4f1323dbed6d5781" title=" " alt="" coords="469,133,661,173"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,69,189,109"/>
+<area shape="rect" id="Node000002" href="$lora_8c.html#ac7be2e87f2ead7003e3f53b9956e5323" title=" " alt="" coords="237,69,421,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,87,223,87,223,92,190,92"/>
+<area shape="rect" id="Node000003" href="$lora_8c.html#a5ca7e087fe8a25070f7374ac03fcee42" title=" " alt="" coords="477,5,653,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="403,67,477,46,479,51,405,72"/>
+<area shape="rect" id="Node000004" href="$lora_8c.html#aadfad1864ab4c2bab668ee2f6c5815f8" title=" " alt="" coords="475,69,655,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="422,87,462,87,462,92,422,92"/>
+<area shape="rect" id="Node000005" href="$lora_8c.html#ace18a0fae7d1688f4f1323dbed6d5781" title=" " alt="" coords="469,133,661,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="405,107,479,127,477,132,403,112"/>
 </map>

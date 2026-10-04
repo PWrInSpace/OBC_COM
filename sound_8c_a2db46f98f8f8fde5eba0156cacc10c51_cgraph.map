@@ -1,5 +1,8 @@
 <map id="snd_cb" name="snd_cb">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,72,31"/>
-<area shape="rect" id="node2" href="$buzzer_8c.html#aa68304d0537a12b41497d1306904306c" title=" " alt="" coords="296,5,403,31"/>
-<area shape="rect" id="node3" href="$buzzer_8c.html#a8b5df1d0f87be9e9fdb23896369f96bf" title=" " alt="" coords="120,31,248,56"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,72,31"/>
+<area shape="rect" id="Node000002" href="$buzzer_8c.html#aa68304d0537a12b41497d1306904306c" title=" " alt="" coords="296,5,403,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,15,282,15,282,21,72,21"/>
+<area shape="rect" id="Node000003" href="$buzzer_8c.html#a8b5df1d0f87be9e9fdb23896369f96bf" title=" " alt="" coords="120,31,248,56"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="72,21,107,27,106,32,72,26"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="248,31,282,26,283,31,249,36"/>
 </map>

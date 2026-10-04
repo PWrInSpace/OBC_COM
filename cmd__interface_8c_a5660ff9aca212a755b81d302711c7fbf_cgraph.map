@@ -1,5 +1,7 @@
 <map id="handle_sx1280_tx" name="handle_sx1280_tx">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,145,31"/>
-<area shape="rect" id="node2" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="193,5,305,31"/>
-<area shape="rect" id="node3" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="353,5,488,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,145,31"/>
+<area shape="rect" id="Node000002" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="193,5,305,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,15,180,15,180,21,145,21"/>
+<area shape="rect" id="Node000003" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="353,5,488,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="305,15,340,15,340,21,305,21"/>
 </map>

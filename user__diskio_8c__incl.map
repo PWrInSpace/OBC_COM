@@ -1,9 +1,15 @@
 <map id="Core/Src/user_diskio.c" name="Core/Src/user_diskio.c">
-<area shape="rect" id="node1" title=" " alt="" coords="93,5,258,31"/>
-<area shape="rect" id="node2" href="$user__diskio_8h.html" title=" " alt="" coords="5,79,113,104"/>
-<area shape="rect" id="node4" href="$logger_8h.html" title=" " alt="" coords="138,79,213,104"/>
-<area shape="rect" id="node7" title=" " alt="" coords="237,79,372,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="9,152,110,177"/>
-<area shape="rect" id="node5" title=" " alt="" coords="134,152,217,177"/>
-<area shape="rect" id="node6" title=" " alt="" coords="241,152,312,177"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="93,5,258,31"/>
+<area shape="rect" id="Node000002" href="$user__diskio_8h.html" title=" " alt="" coords="5,79,113,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,33,91,74,89,69,155,28"/>
+<area shape="rect" id="Node000004" href="$logger_8h.html" title=" " alt="" coords="138,79,213,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="178,31,178,65,173,65,173,31"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="237,79,372,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="197,28,272,69,270,74,195,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="9,152,110,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="62,104,62,138,57,138,57,104"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="134,152,217,177"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="178,104,178,138,173,138,173,104"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="241,152,312,177"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="193,102,250,142,247,146,190,106"/>
 </map>

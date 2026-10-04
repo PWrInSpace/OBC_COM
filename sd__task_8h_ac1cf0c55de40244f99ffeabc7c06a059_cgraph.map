@@ -1,5 +1,7 @@
 <map id="sd_mount" name="sd_mount">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,92,56"/>
-<area shape="rect" id="node2" href="$board__data_8c.html#aba4f4450ce2fe899c33b54f6cbe46ec4" title=" " alt="" coords="140,5,315,31"/>
-<area shape="rect" id="node3" href="$sd__task_8c.html#a9bed749d1a272c2837109ba43a85984a" title=" " alt="" coords="154,55,301,80"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,92,56"/>
+<area shape="rect" id="Node000002" href="$board__data_8c.html#aba4f4450ce2fe899c33b54f6cbe46ec4" title=" " alt="" coords="140,5,315,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,35,126,30,127,35,93,40"/>
+<area shape="rect" id="Node000003" href="$sd__task_8c.html#a9bed749d1a272c2837109ba43a85984a" title=" " alt="" coords="154,55,301,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="93,46,141,53,140,58,92,52"/>
 </map>

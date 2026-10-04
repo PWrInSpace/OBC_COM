@@ -1,11 +1,19 @@
 <map id="SX1280HalReset" name="SX1280HalReset">
-<area shape="rect" id="node1" title="Soft resets the radio." alt="" coords="721,31,852,56"/>
-<area shape="rect" id="node2" href="$sx1280-hal_8c.html#a5d6637ee3fce18944e0dae57ca12995f" title=" " alt="" coords="559,5,673,31"/>
-<area shape="rect" id="node4" href="$sx1280_8c.html#ae97f22ad3f1cd7ff7daece379531a78d" title="Resets the radio." alt="" coords="562,55,670,80"/>
-<area shape="rect" id="node3" href="$sx1280_8c.html#ab12790b6acc261331b93caba77b310c3" title="Initializes the radio driver." alt="" coords="393,5,485,31"/>
-<area shape="rect" id="node5" href="$lora__config_8c.html#ad1a1b26a7f98a0b3da77f219667b234b" title="RFM95W CODE:" alt="" coords="368,55,511,80"/>
-<area shape="rect" id="node7" href="$sx1280__task_8c.html#a08a0d39a0c2e7c960630f1125434da42" title=" " alt="" coords="393,104,485,129"/>
-<area shape="rect" id="node6" href="$lora__config_8c.html#aa1a41e7cceea88bf0cdc915ebc3e0b5a" title=" " alt="" coords="193,55,315,80"/>
-<area shape="rect" id="node8" href="$sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a" title=" " alt="" coords="188,104,320,129"/>
-<area shape="rect" id="node9" href="$sx1280__task_8c.html#ae81733e32db03c2f8c8859b7fa9cb942" title=" " alt="" coords="5,104,140,129"/>
+<area shape="rect" id="Node000001" title="Soft resets the radio." alt="" coords="721,31,852,56"/>
+<area shape="rect" id="Node000002" href="$sx1280-hal_8c.html#a5d6637ee3fce18944e0dae57ca12995f" title=" " alt="" coords="559,5,673,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="707,34,673,29,674,24,708,29"/>
+<area shape="rect" id="Node000004" href="$sx1280_8c.html#ae97f22ad3f1cd7ff7daece379531a78d" title="Resets the radio." alt="" coords="562,55,670,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="708,57,671,62,670,57,707,52"/>
+<area shape="rect" id="Node000003" href="$sx1280_8c.html#ab12790b6acc261331b93caba77b310c3" title="Initializes the radio driver." alt="" coords="393,5,485,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="545,21,486,21,486,15,545,15"/>
+<area shape="rect" id="Node000005" href="$lora__config_8c.html#ad1a1b26a7f98a0b3da77f219667b234b" title="RFM95W CODE:" alt="" coords="368,55,511,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="549,70,511,70,511,65,549,65"/>
+<area shape="rect" id="Node000007" href="$sx1280__task_8c.html#a08a0d39a0c2e7c960630f1125434da42" title=" " alt="" coords="393,104,485,129"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="557,86,487,106,485,101,556,81"/>
+<area shape="rect" id="Node000006" href="$lora__config_8c.html#aa1a41e7cceea88bf0cdc915ebc3e0b5a" title=" " alt="" coords="193,55,315,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="354,70,315,70,315,65,354,65"/>
+<area shape="rect" id="Node000008" href="$sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a" title=" " alt="" coords="188,104,320,129"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="380,119,320,119,320,114,380,114"/>
+<area shape="rect" id="Node000009" href="$sx1280__task_8c.html#ae81733e32db03c2f8c8859b7fa9cb942" title=" " alt="" coords="5,104,140,129"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="174,119,140,119,140,114,174,114"/>
 </map>

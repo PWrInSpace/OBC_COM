@@ -6,46 +6,77 @@
 <!-- Title: Core/Inc/fdcan.h Pages: 1 -->
 <svg width="214pt" height="82pt"
  viewBox="0.00 0.00 214.00 82.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
+<style type="text/css"><![CDATA[
+.node, .edge {opacity: 0.7;}
+.node.selected, .edge.selected {opacity: 1;}
+.edge:hover path { stroke: red; }
+.edge:hover polygon { stroke: red; fill: red; }
+]]></style>
+<script type="application/ecmascript" xlink:href="svg.min.js"/>
+<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 78)">
 <title>Core/Inc/fdcan.h</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="This file contains all the function prototypes for the fdcan.c file.">
+<g id="a_Node000001"><a xlink:title="This file contains all the function prototypes for the fdcan.c file.">
 <polygon fill="#999999" stroke="#666666" points="151,-74 56,-74 56,-55 151,-55 151,-74"/>
 <text text-anchor="middle" x="103.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">Core/Inc/fdcan.h</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="fdcan_8c.html" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="fdcan_8c.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="95,-19 0,-19 0,0 95,0 95,-19"/>
 <text text-anchor="middle" x="47.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Core/Src/fdcan.c</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M87.17,-48.04C77.24,-38.64 64.91,-26.98 56.66,-19.17"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="84.83,-50.65 94.5,-54.98 89.65,-45.57 84.83,-50.65"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="main_8c.html" target="_top" xlink:title=": Main program body">
+<g id="a_Node000003"><a xlink:href="main_8c.html" target="_top" xlink:title=": Main program body">
 <polygon fill="white" stroke="#666666" points="206,-19 113,-19 113,0 206,0 206,-19"/>
 <text text-anchor="middle" x="159.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Core/Src/main.c</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
+<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M119.83,-48.04C129.76,-38.64 142.09,-26.98 150.34,-19.17"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="117.35,-45.57 112.5,-54.98 122.17,-50.65 117.35,-45.57"/>
+</a>
 </g>
 </g>
+</g>
+</svg>
+</svg>
+
+<style type='text/css'>
+<![CDATA[
+[data-mouse-over-selected='false'] { opacity: 0.7; }
+[data-mouse-over-selected='true']  { opacity: 1.0; }
+]]>
+</style>
+<script type="application/ecmascript"><![CDATA[
+document.addEventListener('DOMContentLoaded', (event) => {
+  highlightEdges();
+  highlightAdjacentNodes();
+});
+]]></script>
 </svg>

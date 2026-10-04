@@ -1,23 +1,47 @@
 <map id="nvs/src/nvs_config.c" name="nvs/src/nvs_config.c">
-<area shape="rect" id="node1" title=" " alt="" coords="715,5,867,31"/>
-<area shape="rect" id="node2" href="$nvs__config_8h.html" title=" " alt="" coords="576,79,679,104"/>
-<area shape="rect" id="node11" href="$rfm95w_8h.html" title=" " alt="" coords="671,152,754,177"/>
-<area shape="rect" id="node12" href="$usb__config_8h.html" title=" " alt="" coords="931,225,1033,251"/>
-<area shape="rect" id="node20" title=" " alt="" coords="829,79,925,104"/>
-<area shape="rect" id="node21" title=" " alt="" coords="949,79,1031,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="535,225,605,251"/>
-<area shape="rect" id="node4" href="$eeprom__emul_8h.html" title=" " alt="" coords="296,152,420,177"/>
-<area shape="rect" id="node5" href="$eeprom__emul__conf_8h.html" title="EEPROM emulation configuration file. This file should be copied to the application folder and renamed..." alt="" coords="5,225,164,251"/>
-<area shape="rect" id="node6" href="$eeprom__emul__types_8h.html" title=" " alt="" coords="188,225,355,251"/>
-<area shape="rect" id="node7" href="$flash__interface_8h.html" title=" " alt="" coords="379,225,510,251"/>
-<area shape="rect" id="node8" title=" " alt="" coords="545,299,680,324"/>
-<area shape="rect" id="node9" title=" " alt="" coords="196,299,344,324"/>
-<area shape="rect" id="node10" title=" " alt="" coords="369,299,521,324"/>
-<area shape="rect" id="node17" title=" " alt="" coords="725,225,799,251"/>
-<area shape="rect" id="node18" title=" " alt="" coords="823,225,906,251"/>
-<area shape="rect" id="node19" title=" " alt="" coords="629,225,700,251"/>
-<area shape="rect" id="node13" title=" " alt="" coords="881,299,981,324"/>
-<area shape="rect" id="node14" title=" " alt="" coords="1059,372,1153,397"/>
-<area shape="rect" id="node15" href="$usbd__cdc__if_8h.html" title=" " alt="" coords="1006,299,1115,324"/>
-<area shape="rect" id="node16" title=" " alt="" coords="755,299,857,324"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="715,5,867,31"/>
+<area shape="rect" id="Node000002" href="$nvs__config_8h.html" title=" " alt="" coords="576,79,679,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="766,33,668,76,665,71,764,28"/>
+<area shape="rect" id="Node000011" href="$rfm95w_8h.html" title=" " alt="" coords="671,152,754,177"/>
+<area shape="poly" id="edge23_Node000001_Node000011" title=" " alt="" coords="787,32,728,141,723,139,783,30"/>
+<area shape="rect" id="Node000012" href="$usb__config_8h.html" title=" " alt="" coords="931,225,1033,251"/>
+<area shape="poly" id="edge24_Node000001_Node000012" title=" " alt="" coords="795,31,802,65,819,103,848,138,883,170,950,216,947,220,880,174,845,142,814,105,797,66,790,32"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="829,79,925,104"/>
+<area shape="poly" id="edge21_Node000001_Node000020" title=" " alt="" coords="807,29,854,68,851,72,803,33"/>
+<area shape="rect" id="Node000021" title=" " alt="" coords="949,79,1031,104"/>
+<area shape="poly" id="edge22_Node000001_Node000021" title=" " alt="" coords="824,28,945,71,944,76,822,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="535,225,605,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="625,105,582,213,577,211,620,103"/>
+<area shape="rect" id="Node000004" href="$eeprom__emul_8h.html" title=" " alt="" coords="296,152,420,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="585,107,415,151,414,146,583,101"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="643,102,690,141,687,145,639,106"/>
+<area shape="rect" id="Node000005" href="$eeprom__emul__conf_8h.html" title="EEPROM emulation configuration file. This file should be copied to the application folder and renamed..." alt="" coords="5,225,164,251"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="315,180,143,224,141,219,313,175"/>
+<area shape="rect" id="Node000006" href="$eeprom__emul__types_8h.html" title=" " alt="" coords="188,225,355,251"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="346,179,298,219,294,214,342,175"/>
+<area shape="rect" id="Node000007" href="$flash__interface_8h.html" title=" " alt="" coords="379,225,510,251"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="374,175,422,214,418,219,370,179"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="545,299,680,324"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="473,248,574,291,572,296,471,253"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="196,299,344,324"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="418,253,312,296,310,291,416,248"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="369,299,521,324"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="447,251,447,285,442,285,442,251"/>
+<area shape="poly" id="edge19_Node000011_Node000003" title=" " alt="" coords="691,180,607,221,604,217,689,175"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="755,174,926,219,925,224,753,179"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="725,225,799,251"/>
+<area shape="poly" id="edge17_Node000011_Node000017" title=" " alt="" coords="723,176,748,213,744,216,719,179"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="823,225,906,251"/>
+<area shape="poly" id="edge18_Node000011_Node000018" title=" " alt="" coords="738,175,829,217,827,222,736,180"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="629,225,700,251"/>
+<area shape="poly" id="edge20_Node000011_Node000019" title=" " alt="" coords="707,179,682,216,678,213,703,176"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="881,299,981,324"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="976,253,950,289,945,286,971,249"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="1059,372,1153,397"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="1034,243,1086,261,1110,276,1130,297,1136,313,1135,330,1124,361,1119,359,1130,329,1130,314,1125,300,1107,280,1084,266,1033,248"/>
+<area shape="rect" id="Node000015" href="$usbd__cdc__if_8h.html" title=" " alt="" coords="1006,299,1115,324"/>
+<area shape="poly" id="edge14_Node000012_Node000015" title=" " alt="" coords="996,249,1040,288,1036,291,993,253"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="755,299,857,324"/>
+<area shape="poly" id="edge16_Node000012_Node000016" title=" " alt="" coords="955,253,849,296,847,291,953,248"/>
+<area shape="poly" id="edge15_Node000015_Node000014" title=" " alt="" coords="1070,323,1094,359,1089,362,1066,326"/>
 </map>

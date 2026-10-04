@@ -6,61 +6,95 @@
 <!-- Title: configure_gps Pages: 1 -->
 <svg width="457pt" height="27pt"
  viewBox="0.00 0.00 457.00 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
+<style type="text/css"><![CDATA[
+.node, .edge {opacity: 0.7;}
+.node.selected, .edge.selected {opacity: 1;}
+.edge:hover path { stroke: red; }
+.edge:hover polygon { stroke: red; fill: red; }
+]]></style>
+<script type="application/ecmascript" xlink:href="svg.min.js"/>
+<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>configure_gps</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="449,-19 365,-19 365,0 449,0 449,-19"/>
 <text text-anchor="middle" x="407" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">configure_gps</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="gps__task_8c.html#a2b4ba50a0ecdfbe3864bc6cf9ad0b8b4" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="gps__task_8c.html#a2b4ba50a0ecdfbe3864bc6cf9ad0b8b4" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="329,-19 269,-19 269,0 329,0 329,-19"/>
 <text text-anchor="middle" x="299" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">gps_task</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M354.57,-9.5C345.86,-9.5 337.09,-9.5 329.21,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="354.71,-13 364.71,-9.5 354.71,-6 354.71,-13"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="gps__task_8c.html#ae757343c80f47f1e3f63a2a86c62220a" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="gps__task_8c.html#ae757343c80f47f1e3f63a2a86c62220a" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="233,-19 145,-19 145,0 233,0 233,-19"/>
 <text text-anchor="middle" x="189" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">start_gps_task</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M258.58,-9.5C250.28,-9.5 241.47,-9.5 233.04,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="258.77,-13 268.77,-9.5 258.77,-6 258.77,-13"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="app__freertos_8c.html#abade755e13d07c10889ae83143656158" target="_top" xlink:title="FreeRTOS initialization.">
+<g id="a_Node000004"><a xlink:href="app__freertos_8c.html#abade755e13d07c10889ae83143656158" target="_top" xlink:title="FreeRTOS initialization.">
 <polygon fill="white" stroke="#666666" points="109,-19 0,-19 0,0 109,0 109,-19"/>
 <text text-anchor="middle" x="54.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">MX_FREERTOS_Init</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
+<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M134.93,-9.5C126.54,-9.5 117.85,-9.5 109.44,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="134.98,-13 144.98,-9.5 134.98,-6 134.98,-13"/>
+</a>
 </g>
 </g>
+</g>
+</svg>
+</svg>
+
+<style type='text/css'>
+<![CDATA[
+[data-mouse-over-selected='false'] { opacity: 0.7; }
+[data-mouse-over-selected='true']  { opacity: 1.0; }
+]]>
+</style>
+<script type="application/ecmascript"><![CDATA[
+document.addEventListener('DOMContentLoaded', (event) => {
+  highlightEdges();
+  highlightAdjacentNodes();
+});
+]]></script>
 </svg>

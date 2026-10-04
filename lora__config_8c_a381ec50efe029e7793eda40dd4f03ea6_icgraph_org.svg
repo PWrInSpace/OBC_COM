@@ -9,18 +9,18 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 137)">
 <title>get_lora_devs_instance</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="848,-57 717,-57 717,-38 848,-38 848,-57"/>
 <text text-anchor="middle" x="782.5" y="-45" font-family="Helvetica,sans-Serif" font-size="10.00">get_lora_devs_instance</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="lora__config_8c.html#addd84c4f747b3fd55b32ef082437cc21" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="lora__config_8c.html#addd84c4f747b3fd55b32ef082437cc21" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="681,-105.5 571,-105.5 571,-75.5 681,-75.5 681,-105.5"/>
 <text text-anchor="start" x="579" y="-93.5" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95w_config_init</text>
 <text text-anchor="middle" x="626" y="-82.5" font-family="Helvetica,sans-Serif" font-size="10.00">_param</text>
@@ -28,112 +28,139 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M737.23,-59.82C719.68,-64.71 699.32,-70.37 680.92,-75.49"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="738.52,-63.1 747.21,-57.04 736.64,-56.35 738.52,-63.1"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="rfm95w__task_8c.html#af8b08547037ee5614a6b8e7f8bc00b23" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="rfm95w__task_8c.html#af8b08547037ee5614a6b8e7f8bc00b23" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="389,-95 288,-95 288,-76 389,-76 389,-95"/>
 <text text-anchor="middle" x="338.5" y="-83" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95wTaskEntry</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge7" class="edge">
+<g id="edge7_Node000001_Node000004" class="edge">
 <title>Node1&#45;&gt;Node4</title>
+<g id="a_edge7_Node000001_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M706.56,-53.94C616.03,-61.73 466.27,-74.6 389.01,-81.24"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="707.09,-57.41 716.76,-53.07 706.49,-50.44 707.09,-57.41"/>
+</a>
+</g>
 </g>
 <!-- Node7 -->
-<g id="node7" class="node">
+<g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a" target="_top" xlink:title=" ">
+<g id="a_Node000007"><a xlink:href="sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="675.5,-19 576.5,-19 576.5,0 675.5,0 675.5,-19"/>
 <text text-anchor="middle" x="626" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">sx1280TaskEntry</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
-<g id="edge8" class="edge">
+<g id="edge8_Node000001_Node000007" class="edge">
 <title>Node1&#45;&gt;Node7</title>
+<g id="a_edge8_Node000001_Node000007"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M732.55,-35.46C710.96,-30.15 685.96,-24 665.71,-19.02"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="731.97,-38.92 742.51,-37.91 733.64,-32.12 731.97,-38.92"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="rfm95w__task_8c.html#aec3803cc26789b3cbf72bb31223778d2" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="rfm95w__task_8c.html#aec3803cc26789b3cbf72bb31223778d2" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="535,-133 425,-133 425,-114 535,-114 535,-133"/>
 <text text-anchor="middle" x="480" y="-121" font-family="Helvetica,sans-Serif" font-size="10.00">apply_nvs_settings</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M561.12,-105.14C548.1,-108.12 534.73,-111.19 522.73,-113.94"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="562,-108.53 570.97,-102.88 560.44,-101.7 562,-108.53"/>
+</a>
+</g>
 </g>
 <!-- Node2&#45;&gt;Node4 -->
-<g id="edge6" class="edge">
+<g id="edge6_Node000002_Node000004" class="edge">
 <title>Node2&#45;&gt;Node4</title>
+<g id="a_edge6_Node000002_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M560.85,-89.38C508.85,-88.47 436.63,-87.2 389.02,-86.37"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="560.9,-92.88 570.96,-89.55 561.03,-85.88 560.9,-92.88"/>
+</a>
+</g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
+<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M434.04,-111.25C414.82,-106.02 392.7,-99.99 374.69,-95.09"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="433.23,-114.66 443.8,-113.91 435.07,-107.91 433.23,-114.66"/>
+</a>
+</g>
 </g>
 <!-- Node5 -->
-<g id="node5" class="node">
+<g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="rfm95w__task_8c.html#a5766e691677be755740c5d264c637139" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="rfm95w__task_8c.html#a5766e691677be755740c5d264c637139" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="252,-95 145,-95 145,-76 252,-76 252,-95"/>
 <text text-anchor="middle" x="198.5" y="-83" font-family="Helvetica,sans-Serif" font-size="10.00">RFM95W_task_init</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
+<g id="edge4_Node000004_Node000005" class="edge">
 <title>Node4&#45;&gt;Node5</title>
+<g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M277.48,-85.5C269.01,-85.5 260.35,-85.5 252.04,-85.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="277.68,-89 287.68,-85.5 277.68,-82 277.68,-89"/>
+</a>
+</g>
 </g>
 <!-- Node6 -->
-<g id="node6" class="node">
+<g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="app__freertos_8c.html#abade755e13d07c10889ae83143656158" target="_top" xlink:title="FreeRTOS initialization.">
+<g id="a_Node000006"><a xlink:href="app__freertos_8c.html#abade755e13d07c10889ae83143656158" target="_top" xlink:title="FreeRTOS initialization.">
 <polygon fill="white" stroke="#666666" points="109,-95 0,-95 0,-76 109,-76 109,-95"/>
 <text text-anchor="middle" x="54.5" y="-83" font-family="Helvetica,sans-Serif" font-size="10.00">MX_FREERTOS_Init</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node6 -->
-<g id="edge5" class="edge">
+<g id="edge5_Node000005_Node000006" class="edge">
 <title>Node5&#45;&gt;Node6</title>
+<g id="a_edge5_Node000005_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M134.5,-85.5C126.12,-85.5 117.58,-85.5 109.37,-85.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="134.62,-89 144.62,-85.5 134.62,-82 134.62,-89"/>
+</a>
+</g>
 </g>
 <!-- Node8 -->
-<g id="node8" class="node">
+<g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="sx1280__task_8c.html#ae81733e32db03c2f8c8859b7fa9cb942" target="_top" xlink:title=" ">
+<g id="a_Node000008"><a xlink:href="sx1280__task_8c.html#ae81733e32db03c2f8c8859b7fa9cb942" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="530.5,-19 429.5,-19 429.5,0 530.5,0 530.5,-19"/>
 <text text-anchor="middle" x="480" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280_task_init</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node8 -->
-<g id="edge9" class="edge">
+<g id="edge9_Node000007_Node000008" class="edge">
 <title>Node7&#45;&gt;Node8</title>
+<g id="a_edge9_Node000007_Node000008"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M566.08,-9.5C554.32,-9.5 542.09,-9.5 530.68,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="566.25,-13 576.25,-9.5 566.25,-6 566.25,-13"/>
+</a>
+</g>
 </g>
 </g>
 </svg>

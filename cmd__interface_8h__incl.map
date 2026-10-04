@@ -1,7 +1,11 @@
 <map id="cmd/Inc/cmd_interface.h" name="cmd/Inc/cmd_interface.h">
-<area shape="rect" id="node1" title=" " alt="" coords="112,5,295,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,79,76,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="101,79,197,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="221,79,295,104"/>
-<area shape="rect" id="node5" title=" " alt="" coords="319,79,402,104"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="112,5,295,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,76,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,33,81,75,79,71,176,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="101,79,197,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,33,168,69,164,66,192,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="221,79,295,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="214,29,243,66,239,69,210,33"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="319,79,402,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="230,28,324,71,322,75,228,33"/>
 </map>

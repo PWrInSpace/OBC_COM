@@ -9,73 +9,85 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>lora_gs_tx_enqueue</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Queue a fully&#45;formed frame for the GS to transmit in its next slot.">
+<g id="a_Node000001"><a xlink:title="Queue a fully&#45;formed frame for the GS to transmit in its next slot.">
 <polygon fill="#999999" stroke="#666666" points="508,-37 394,-37 394,-18 508,-18 508,-37"/>
 <text text-anchor="middle" x="451" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">lora_gs_tx_enqueue</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="cmd__task_8c.html#a4277e3032edf4828adec6ef2f88ac235" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="cmd__task_8c.html#a4277e3032edf4828adec6ef2f88ac235" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="345.5,-56 281.5,-56 281.5,-37 345.5,-37 345.5,-56"/>
 <text text-anchor="middle" x="313.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">cmd_task</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M383.62,-36.81C370.36,-38.67 357.02,-40.54 345.65,-42.13"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="384.3,-40.25 393.71,-35.39 383.32,-33.32 384.3,-40.25"/>
+</a>
+</g>
 </g>
 <!-- Node5 -->
-<g id="node5" class="node">
+<g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="cmd__interface_8c.html#ae35b685f4185444b0179416b6efb0f1a" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="cmd__interface_8c.html#ae35b685f4185444b0179416b6efb0f1a" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="358,-19 269,-19 269,0 358,0 358,-19"/>
 <text text-anchor="middle" x="313.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">handle_lora_tx</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
+<g id="edge4_Node000001_Node000005" class="edge">
 <title>Node1&#45;&gt;Node5</title>
+<g id="a_edge4_Node000001_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M383.57,-18.68C374.89,-17.52 366.18,-16.37 358.01,-15.28"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="383.34,-22.18 393.71,-20.02 384.26,-15.24 383.34,-22.18"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="cmd__task_8c.html#a2874a497f674aefb689fe541ead54c66" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="cmd__task_8c.html#a2874a497f674aefb689fe541ead54c66" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="233,-56 145,-56 145,-37 233,-37 233,-56"/>
 <text text-anchor="middle" x="189" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">CMD_Task_Init</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M270.94,-46.5C258.77,-46.5 245.45,-46.5 233.19,-46.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="271.27,-50 281.27,-46.5 271.27,-43 271.27,-50"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="app__freertos_8c.html#abade755e13d07c10889ae83143656158" target="_top" xlink:title="FreeRTOS initialization.">
+<g id="a_Node000004"><a xlink:href="app__freertos_8c.html#abade755e13d07c10889ae83143656158" target="_top" xlink:title="FreeRTOS initialization.">
 <polygon fill="white" stroke="#666666" points="109,-56 0,-56 0,-37 109,-37 109,-56"/>
 <text text-anchor="middle" x="54.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">MX_FREERTOS_Init</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
+<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M134.93,-46.5C126.54,-46.5 117.85,-46.5 109.44,-46.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="134.98,-50 144.98,-46.5 134.98,-43 134.98,-50"/>
+</a>
+</g>
 </g>
 </g>
 </svg>

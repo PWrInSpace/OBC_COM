@@ -9,436 +9,544 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 566.97)">
 <title>lora_config_init</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="91,-260.64 0,-260.64 0,-241.64 91,-241.64 91,-260.64"/>
 <text text-anchor="middle" x="45.5" y="-248.64" font-family="Helvetica,sans-Serif" font-size="10.00">lora_config_init</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="lora__config_8c.html#ad5bfaa68e5000acde54daa44ae48f970" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="lora__config_8c.html#ad5bfaa68e5000acde54daa44ae48f970" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="242,-430.64 132,-430.64 132,-411.64 242,-411.64 242,-430.64"/>
 <text text-anchor="middle" x="187" y="-418.64" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95w_config_init</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M54.4,-260.76C77.04,-288.35 142.37,-367.97 171.59,-403.57"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="169.14,-406.1 178.19,-411.61 174.55,-401.66 169.14,-406.1"/>
+</a>
+</g>
 </g>
 <!-- Node10 -->
-<g id="node10" class="node">
+<g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="rfm95w__wrapper_8c.html#affc574a0f75691988acee68592158750" target="_top" xlink:title=" ">
+<g id="a_Node000010"><a xlink:href="rfm95w__wrapper_8c.html#affc574a0f75691988acee68592158750" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="247,-279.64 127,-279.64 127,-260.64 247,-260.64 247,-279.64"/>
 <text text-anchor="middle" x="187" y="-267.64" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95w_wrapper_init</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node10 -->
-<g id="edge12" class="edge">
+<g id="edge12_Node000001_Node000010" class="edge">
 <title>Node1&#45;&gt;Node10</title>
+<g id="a_edge12_Node000001_Node000010"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M91.02,-257.2C99.31,-258.33 108.14,-259.53 116.96,-260.73"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="116.5,-264.2 126.88,-262.08 117.44,-257.27 116.5,-264.2"/>
+</a>
+</g>
 </g>
 <!-- Node11 -->
-<g id="node11" class="node">
+<g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="lora__config_8c.html#ad1a1b26a7f98a0b3da77f219667b234b" target="_top" xlink:title="RFM95W CODE:">
+<g id="a_Node000011"><a xlink:href="lora__config_8c.html#ad1a1b26a7f98a0b3da77f219667b234b" target="_top" xlink:title="RFM95W CODE:">
 <polygon fill="white" stroke="#666666" points="240.5,-242.64 133.5,-242.64 133.5,-223.64 240.5,-223.64 240.5,-242.64"/>
 <text text-anchor="middle" x="187" y="-230.64" font-family="Helvetica,sans-Serif" font-size="10.00">sx1280_config_init</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node11 -->
-<g id="edge13" class="edge">
+<g id="edge13_Node000001_Node000011" class="edge">
 <title>Node1&#45;&gt;Node11</title>
+<g id="a_edge13_Node000001_Node000011"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M91.02,-245.39C101.17,-244.08 112.15,-242.66 122.91,-241.28"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="123.66,-244.71 133.13,-239.96 122.76,-237.77 123.66,-244.71"/>
+</a>
+</g>
 </g>
 <!-- Node24 -->
-<g id="node24" class="node">
+<g id="Node000024" class="node">
 <title>Node24</title>
-<g id="a_node24"><a xlink:href="sx1280__hal__wrapper_8c.html#a92cf59f4fdbb9f06f0d421fa3ec8af30" target="_top" xlink:title=" ">
+<g id="a_Node000024"><a xlink:href="sx1280__hal__wrapper_8c.html#a92cf59f4fdbb9f06f0d421fa3ec8af30" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="246,-205.64 128,-205.64 128,-186.64 246,-186.64 246,-205.64"/>
 <text text-anchor="middle" x="187" y="-193.64" font-family="Helvetica,sans-Serif" font-size="10.00">sx1280_wrapper_init</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node24 -->
-<g id="edge36" class="edge">
+<g id="edge36_Node000001_Node000024" class="edge">
 <title>Node1&#45;&gt;Node24</title>
+<g id="a_edge36_Node000001_Node000024"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M65.38,-241.58C81.5,-233.63 105.44,-222.34 127,-214.14 131.88,-212.28 137.04,-210.48 142.2,-208.78"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="143.57,-212.01 152.04,-205.64 141.45,-205.34 143.57,-212.01"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="rfm95w_8c.html#a6e61164f61a1f17347ebf79f2963b0d2" target="_top" xlink:title="Create default config and set parameters.">
+<g id="a_Node000003"><a xlink:href="rfm95w_8c.html#a6e61164f61a1f17347ebf79f2963b0d2" target="_top" xlink:title="Create default config and set parameters.">
 <polygon fill="white" stroke="#666666" points="423,-485.64 303,-485.64 303,-466.64 423,-466.64 423,-485.64"/>
 <text text-anchor="middle" x="363" y="-473.64" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95_default_config</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M218.31,-430.72C247.04,-439.8 290.38,-453.5 321.95,-463.47"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="321.16,-466.9 331.75,-466.57 323.27,-460.22 321.16,-466.9"/>
+</a>
+</g>
 </g>
 <!-- Node9 -->
-<g id="node9" class="node">
+<g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="rfm95w_8c.html#a2be2b59e8a8f0265803de985863cb3ec" target="_top" xlink:title="Perform physical reset on the Rfm95 chip.">
+<g id="a_Node000009"><a xlink:href="rfm95w_8c.html#a2be2b59e8a8f0265803de985863cb3ec" target="_top" xlink:title="Perform physical reset on the Rfm95 chip.">
 <polygon fill="white" stroke="#666666" points="401,-430.64 325,-430.64 325,-411.64 401,-411.64 401,-430.64"/>
 <text text-anchor="middle" x="363" y="-418.64" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95_reset</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node9 -->
-<g id="edge11" class="edge">
+<g id="edge11_Node000002_Node000009" class="edge">
 <title>Node2&#45;&gt;Node9</title>
+<g id="a_edge11_Node000002_Node000009"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M242.1,-421.14C265.27,-421.14 292.08,-421.14 314.48,-421.14"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="314.75,-424.64 324.75,-421.14 314.75,-417.64 314.75,-424.64"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" target="_top" xlink:title="Sets the radio transceiver in idle mode.">
+<g id="a_Node000004"><a xlink:href="rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" target="_top" xlink:title="Sets the radio transceiver in idle mode.">
 <polygon fill="white" stroke="#666666" points="580.5,-430.64 511.5,-430.64 511.5,-411.64 580.5,-411.64 580.5,-430.64"/>
 <text text-anchor="middle" x="546" y="-418.64" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95_idle</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
+<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M393.73,-466.62C416.91,-459.25 449.95,-448.86 479,-440.14 486.3,-437.94 494.08,-435.66 501.63,-433.46"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="502.74,-436.79 511.38,-430.65 500.8,-430.06 502.74,-436.79"/>
+</a>
+</g>
 </g>
 <!-- Node5 -->
-<g id="node5" class="node">
+<g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" target="_top" xlink:title="Write a value to a register.">
+<g id="a_Node000005"><a xlink:href="rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" target="_top" xlink:title="Write a value to a register.">
 <polygon fill="white" stroke="#666666" points="770.5,-504.64 673.5,-504.64 673.5,-485.64 770.5,-485.64 770.5,-504.64"/>
 <text text-anchor="middle" x="722" y="-492.64" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95_write_reg</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node5 -->
-<g id="edge10" class="edge">
+<g id="edge10_Node000003_Node000005" class="edge">
 <title>Node3&#45;&gt;Node5</title>
+<g id="a_edge10_Node000003_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M374.04,-485.68C392.82,-502.8 435.36,-538.16 479,-551.14 536.09,-568.11 555.14,-565.24 613,-551.14 645,-543.33 678.08,-524.26 699.06,-510.54"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="701.18,-513.33 707.53,-504.86 697.28,-507.52 701.18,-513.33"/>
+</a>
+</g>
 </g>
 <!-- Node6 -->
-<g id="node6" class="node">
+<g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" target="_top" xlink:title="Read the current value of a register.">
+<g id="a_Node000006"><a xlink:href="rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" target="_top" xlink:title="Read the current value of a register.">
 <polygon fill="white" stroke="#666666" points="593,-504.64 499,-504.64 499,-485.64 593,-485.64 593,-504.64"/>
 <text text-anchor="middle" x="546" y="-492.64" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95_read_reg</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node6 -->
-<g id="edge5" class="edge">
+<g id="edge5_Node000003_Node000006" class="edge">
 <title>Node3&#45;&gt;Node6</title>
+<g id="a_edge5_Node000003_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M423.27,-482.36C444.35,-484.57 468.02,-487.05 488.84,-489.24"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="488.5,-492.72 498.81,-490.29 489.23,-485.76 488.5,-492.72"/>
+</a>
+</g>
 </g>
 <!-- Node7 -->
-<g id="node7" class="node">
+<g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="rfm95w_8c.html#a084b810c8724c14b77c5f09bd602988f" target="_top" xlink:title="Configure power level for transmission.">
+<g id="a_Node000007"><a xlink:href="rfm95w_8c.html#a084b810c8724c14b77c5f09bd602988f" target="_top" xlink:title="Configure power level for transmission.">
 <polygon fill="white" stroke="#666666" points="604,-541.64 488,-541.64 488,-522.64 604,-522.64 604,-541.64"/>
 <text text-anchor="middle" x="546" y="-529.64" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95_set_tx_power</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node7 -->
-<g id="edge6" class="edge">
+<g id="edge6_Node000003_Node000007" class="edge">
 <title>Node3&#45;&gt;Node7</title>
+<g id="a_edge6_Node000003_Node000007"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M391.75,-485.76C414.97,-493.71 449,-505.1 479,-514.14 485.42,-516.07 492.21,-518.03 498.91,-519.9"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="498.02,-523.29 508.59,-522.58 499.88,-516.54 498.02,-523.29"/>
+</a>
+</g>
 </g>
 <!-- Node8 -->
-<g id="node8" class="node">
+<g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="rfm95w_8c.html#a33c72632717848203646e7d95c033057" target="_top" xlink:title="Sets the radio transceiver in sleep mode.">
+<g id="a_Node000008"><a xlink:href="rfm95w_8c.html#a33c72632717848203646e7d95c033057" target="_top" xlink:title="Sets the radio transceiver in sleep mode.">
 <polygon fill="white" stroke="#666666" points="584.5,-467.64 507.5,-467.64 507.5,-448.64 584.5,-448.64 584.5,-467.64"/>
 <text text-anchor="middle" x="546" y="-455.64" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95_sleep</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node8 -->
-<g id="edge8" class="edge">
+<g id="edge8_Node000003_Node000008" class="edge">
 <title>Node3&#45;&gt;Node8</title>
+<g id="a_edge8_Node000003_Node000008"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M423.27,-470.24C447.23,-467.86 474.52,-465.14 497.18,-462.89"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="497.63,-466.36 507.24,-461.89 496.94,-459.4 497.63,-466.36"/>
+</a>
+</g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
+<g id="edge4_Node000004_Node000005" class="edge">
 <title>Node4&#45;&gt;Node5</title>
+<g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M580.65,-429.49C591.15,-432.45 602.68,-436.07 613,-440.14 642.33,-451.7 674.32,-468.57 695.81,-480.57"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="694.19,-483.68 704.62,-485.55 697.64,-477.58 694.19,-483.68"/>
+</a>
+</g>
 </g>
 <!-- Node7&#45;&gt;Node5 -->
-<g id="edge7" class="edge">
+<g id="edge7_Node000007_Node000005" class="edge">
 <title>Node7&#45;&gt;Node5</title>
+<g id="a_edge7_Node000007_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M591.81,-522.61C614.45,-517.79 642.13,-511.91 666.05,-506.82"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="666.99,-510.2 676.04,-504.7 665.53,-503.35 666.99,-510.2"/>
+</a>
+</g>
 </g>
 <!-- Node8&#45;&gt;Node5 -->
-<g id="edge9" class="edge">
+<g id="edge9_Node000008_Node000005" class="edge">
 <title>Node8&#45;&gt;Node5</title>
+<g id="a_edge9_Node000008_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M584.76,-466.16C608.6,-471.23 639.79,-477.87 666.32,-483.51"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="665.72,-486.96 676.23,-485.62 667.18,-480.11 665.72,-486.96"/>
+</a>
+</g>
 </g>
 <!-- Node12 -->
-<g id="node12" class="node">
+<g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="sx1280_8c.html#a5c87eaffe8fd7c359c2d834e4c9917bc" target="_top" xlink:title="Calibrates the given radio block.">
+<g id="a_Node000012"><a xlink:href="sx1280_8c.html#a5c87eaffe8fd7c359c2d834e4c9917bc" target="_top" xlink:title="Calibrates the given radio block.">
 <polygon fill="white" stroke="#666666" points="595,-354.64 497,-354.64 497,-335.64 595,-335.64 595,-354.64"/>
 <text text-anchor="middle" x="546" y="-342.64" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280Calibrate</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node12 -->
-<g id="edge14" class="edge">
+<g id="edge14_Node000011_Node000012" class="edge">
 <title>Node11&#45;&gt;Node12</title>
+<g id="a_edge14_Node000011_Node000012"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M232.76,-242.64C237.88,-244.9 242.77,-247.69 247,-251.14 272.9,-272.24 255.22,-298.57 283,-317.14 343.34,-357.44 429.5,-358.55 486.31,-353.56"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="486.95,-357.01 496.56,-352.56 486.27,-350.05 486.95,-357.01"/>
+</a>
+</g>
 </g>
 <!-- Node14 -->
-<g id="node14" class="node">
+<g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
+<g id="a_Node000014"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
 <polygon fill="white" stroke="#666666" points="960,-128.64 831,-128.64 831,-109.64 960,-109.64 960,-128.64"/>
 <text text-anchor="middle" x="895.5" y="-116.64" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWaitOnBusy</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node14 -->
-<g id="edge17" class="edge">
+<g id="edge17_Node000011_Node000014" class="edge">
 <title>Node11&#45;&gt;Node14</title>
+<g id="a_edge17_Node000011_Node000014"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M234.32,-223.55C239.05,-221.09 243.42,-218.01 247,-214.14 293.86,-163.5 228.85,-105.89 283,-63.14 463.61,79.48 774.41,-58.23 867.43,-104.92"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="865.98,-108.1 876.48,-109.52 869.15,-101.86 865.98,-108.1"/>
+</a>
+</g>
 </g>
 <!-- Node15 -->
-<g id="node15" class="node">
+<g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="sx1280_8c.html#ae97f22ad3f1cd7ff7daece379531a78d" target="_top" xlink:title="Resets the radio.">
+<g id="a_Node000015"><a xlink:href="sx1280_8c.html#ae97f22ad3f1cd7ff7daece379531a78d" target="_top" xlink:title="Resets the radio.">
 <polygon fill="white" stroke="#666666" points="403.5,-279.64 322.5,-279.64 322.5,-260.64 403.5,-260.64 403.5,-279.64"/>
 <text text-anchor="middle" x="363" y="-267.64" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280Reset</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node15 -->
-<g id="edge18" class="edge">
+<g id="edge18_Node000011_Node000015" class="edge">
 <title>Node11&#45;&gt;Node15</title>
+<g id="a_edge18_Node000011_Node000015"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M232.81,-242.66C257.15,-247.84 287.3,-254.25 312.35,-259.58"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="311.87,-263.05 322.38,-261.71 313.33,-256.21 311.87,-263.05"/>
+</a>
+</g>
 </g>
 <!-- Node17 -->
-<g id="node17" class="node">
+<g id="Node000017" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="sx1280_8c.html#a9660cec41eed347d90d058fae6cb6fcb" target="_top" xlink:title="Sets the IRQ mask and DIO masks.">
+<g id="a_Node000017"><a xlink:href="sx1280_8c.html#a9660cec41eed347d90d058fae6cb6fcb" target="_top" xlink:title="Sets the IRQ mask and DIO masks.">
 <polygon fill="white" stroke="#666666" points="613,-317.64 479,-317.64 479,-298.64 613,-298.64 613,-317.64"/>
 <text text-anchor="middle" x="546" y="-305.64" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280SetDioIrqParams</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node17 -->
-<g id="edge20" class="edge">
+<g id="edge20_Node000011_Node000017" class="edge">
 <title>Node11&#45;&gt;Node17</title>
+<g id="a_edge20_Node000011_Node000017"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M228.84,-242.64C235.15,-244.93 241.42,-247.73 247,-251.14 266.59,-263.08 262.22,-278.41 283,-288.14 341.03,-315.29 414.25,-318.67 468.52,-316.19"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="468.97,-319.67 478.77,-315.64 468.6,-312.68 468.97,-319.67"/>
+</a>
+</g>
 </g>
 <!-- Node18 -->
-<g id="node18" class="node">
+<g id="Node000018" class="node">
 <title>Node18</title>
-<g id="a_node18"><a xlink:href="sx1280_8c.html#a69909f6f37cec7f935a475e7d780fdbb" target="_top" xlink:title="Set the modulation parameters.">
+<g id="a_Node000018"><a xlink:href="sx1280_8c.html#a69909f6f37cec7f935a475e7d780fdbb" target="_top" xlink:title="Set the modulation parameters.">
 <polygon fill="white" stroke="#666666" points="443,-242.64 283,-242.64 283,-223.64 443,-223.64 443,-242.64"/>
 <text text-anchor="middle" x="363" y="-230.64" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280SetModulationParams</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node18 -->
-<g id="edge22" class="edge">
+<g id="edge22_Node000011_Node000018" class="edge">
 <title>Node11&#45;&gt;Node18</title>
+<g id="a_edge22_Node000011_Node000018"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M240.68,-233.14C250.86,-233.14 261.8,-233.14 272.78,-233.14"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="272.85,-236.64 282.85,-233.14 272.85,-229.64 272.85,-236.64"/>
+</a>
+</g>
 </g>
 <!-- Node19 -->
-<g id="node19" class="node">
+<g id="Node000019" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="sx1280_8c.html#a51ce51cce8dac5a81ed16da5d6350bb1" target="_top" xlink:title="Sets the radio for the given protocol.">
+<g id="a_Node000019"><a xlink:href="sx1280_8c.html#a51ce51cce8dac5a81ed16da5d6350bb1" target="_top" xlink:title="Sets the radio for the given protocol.">
 <polygon fill="white" stroke="#666666" points="607.5,-204.64 484.5,-204.64 484.5,-185.64 607.5,-185.64 607.5,-204.64"/>
 <text text-anchor="middle" x="546" y="-192.64" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280SetPacketType</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node19 -->
-<g id="edge29" class="edge">
+<g id="edge29_Node000011_Node000019" class="edge">
 <title>Node11&#45;&gt;Node19</title>
+<g id="a_edge29_Node000011_Node000019"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M229.9,-223.58C246.37,-220.13 265.5,-216.51 283,-214.14 347.4,-205.4 421.28,-200.5 474.14,-197.87"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="474.6,-201.36 484.42,-197.38 474.27,-194.36 474.6,-201.36"/>
+</a>
+</g>
 </g>
 <!-- Node20 -->
-<g id="node20" class="node">
+<g id="Node000020" class="node">
 <title>Node20</title>
-<g id="a_node20"><a xlink:href="sx1280_8c.html#ab6a428414c21ce55c5f3682b51390194" target="_top" xlink:title="Sets the packet parameters.">
+<g id="a_Node000020"><a xlink:href="sx1280_8c.html#ab6a428414c21ce55c5f3682b51390194" target="_top" xlink:title="Sets the packet parameters.">
 <polygon fill="white" stroke="#666666" points="431.5,-166.64 294.5,-166.64 294.5,-147.64 431.5,-147.64 431.5,-166.64"/>
 <text text-anchor="middle" x="363" y="-154.64" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280SetPacketParams</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node20 -->
-<g id="edge26" class="edge">
+<g id="edge26_Node000011_Node000020" class="edge">
 <title>Node11&#45;&gt;Node20</title>
+<g id="a_edge26_Node000011_Node000020"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M225.87,-223.62C233.13,-221.06 240.49,-217.92 247,-214.14 265.76,-203.22 264.15,-191.89 283,-181.14 290.78,-176.7 299.47,-173 308.16,-169.94"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="309.5,-173.18 317.92,-166.75 307.33,-166.52 309.5,-173.18"/>
+</a>
+</g>
 </g>
 <!-- Node21 -->
-<g id="node21" class="node">
+<g id="Node000021" class="node">
 <title>Node21</title>
-<g id="a_node21"><a xlink:href="sx1280_8c.html#adc41cbbfa238d4ac463a93975f8c7eb1" target="_top" xlink:title="Sets the power regulators operating mode.">
+<g id="a_Node000021"><a xlink:href="sx1280_8c.html#adc41cbbfa238d4ac463a93975f8c7eb1" target="_top" xlink:title="Sets the power regulators operating mode.">
 <polygon fill="white" stroke="#666666" points="434.5,-129.64 291.5,-129.64 291.5,-110.64 434.5,-110.64 434.5,-129.64"/>
 <text text-anchor="middle" x="363" y="-117.64" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280SetRegulatorMode</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node21 -->
-<g id="edge30" class="edge">
+<g id="edge30_Node000011_Node000021" class="edge">
 <title>Node11&#45;&gt;Node21</title>
+<g id="a_edge30_Node000011_Node000021"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M231.77,-223.61C237.29,-221.14 242.55,-218.04 247,-214.14 275.1,-189.49 253.85,-161.53 283,-138.14 284.56,-136.88 286.2,-135.71 287.89,-134.62"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="289.66,-137.64 296.77,-129.79 286.32,-131.49 289.66,-137.64"/>
+</a>
+</g>
 </g>
 <!-- Node22 -->
-<g id="node22" class="node">
+<g id="Node000022" class="node">
 <title>Node22</title>
-<g id="a_node22"><a xlink:href="sx1280_8c.html#a4b53cd57d78c3bbc143164769912140a" target="_top" xlink:title="Sets the RF frequency.">
+<g id="a_Node000022"><a xlink:href="sx1280_8c.html#a4b53cd57d78c3bbc143164769912140a" target="_top" xlink:title="Sets the RF frequency.">
 <polygon fill="white" stroke="#666666" points="428,-91.64 298,-91.64 298,-72.64 428,-72.64 428,-91.64"/>
 <text text-anchor="middle" x="363" y="-79.64" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280SetRfFrequency</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node22 -->
-<g id="edge32" class="edge">
+<g id="edge32_Node000011_Node000022" class="edge">
 <title>Node11&#45;&gt;Node22</title>
+<g id="a_edge32_Node000011_Node000022"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M233.45,-223.57C238.45,-221.11 243.13,-218.02 247,-214.14 284.21,-176.81 244.4,-137.03 283,-101.14 284.9,-99.37 286.93,-97.76 289.07,-96.29"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="290.83,-99.31 297.78,-91.31 287.36,-93.24 290.83,-99.31"/>
+</a>
+</g>
 </g>
 <!-- Node23 -->
-<g id="node23" class="node">
+<g id="Node000023" class="node">
 <title>Node23</title>
-<g id="a_node23"><a xlink:href="sx1280_8c.html#a1c5345ef8b25e8092415fd50f53ffa24" target="_top" xlink:title="Sets the transmission parameters.">
+<g id="a_Node000023"><a xlink:href="sx1280_8c.html#a1c5345ef8b25e8092415fd50f53ffa24" target="_top" xlink:title="Sets the transmission parameters.">
 <polygon fill="white" stroke="#666666" points="421.5,-393.64 304.5,-393.64 304.5,-374.64 421.5,-374.64 421.5,-393.64"/>
 <text text-anchor="middle" x="363" y="-381.64" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280SetTxParams</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node23 -->
-<g id="edge34" class="edge">
+<g id="edge34_Node000011_Node000023" class="edge">
 <title>Node11&#45;&gt;Node23</title>
+<g id="a_edge34_Node000011_Node000023"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M234.86,-242.65C239.32,-244.91 243.48,-247.69 247,-251.14 283.49,-286.8 246.49,-324.5 283,-360.14 287.04,-364.08 291.7,-367.38 296.71,-370.13"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="295.48,-373.42 306.02,-374.54 298.47,-367.1 295.48,-373.42"/>
+</a>
+</g>
 </g>
 <!-- Node13 -->
-<g id="node13" class="node">
+<g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" target="_top" xlink:title="Send a command that write data to the radio.">
+<g id="a_Node000013"><a xlink:href="sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" target="_top" xlink:title="Send a command that write data to the radio.">
 <polygon fill="white" stroke="#666666" points="795,-204.64 649,-204.64 649,-185.64 795,-185.64 795,-204.64"/>
 <text text-anchor="middle" x="722" y="-192.64" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWriteCommand</text>
 </a>
 </g>
 </g>
 <!-- Node12&#45;&gt;Node13 -->
-<g id="edge15" class="edge">
+<g id="edge15_Node000012_Node000013" class="edge">
 <title>Node12&#45;&gt;Node13</title>
+<g id="a_edge15_Node000012_Node000013"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M593.65,-335.56C600.44,-333.09 607.12,-330 613,-326.14 658.19,-296.48 694.05,-242.09 710.77,-213.62"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="713.93,-215.13 715.86,-204.71 707.86,-211.65 713.93,-215.13"/>
+</a>
+</g>
 </g>
 <!-- Node13&#45;&gt;Node14 -->
-<g id="edge16" class="edge">
+<g id="edge16_Node000013_Node000014" class="edge">
 <title>Node13&#45;&gt;Node14</title>
+<g id="a_edge16_Node000013_Node000014"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M744.72,-185.51C774.75,-172.2 829.1,-148.12 863.42,-132.91"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="865.23,-135.93 872.96,-128.68 862.4,-129.53 865.23,-135.93"/>
+</a>
+</g>
 </g>
 <!-- Node16 -->
-<g id="node16" class="node">
+<g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_node16"><a xlink:href="sx1280-hal_8c.html#ad166767283bbb3d7a387ecf2f089cd23" target="_top" xlink:title="Soft resets the radio.">
+<g id="a_Node000016"><a xlink:href="sx1280-hal_8c.html#ad166767283bbb3d7a387ecf2f089cd23" target="_top" xlink:title="Soft resets the radio.">
 <polygon fill="white" stroke="#666666" points="595,-280.64 497,-280.64 497,-261.64 595,-261.64 595,-280.64"/>
 <text text-anchor="middle" x="546" y="-268.64" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalReset</text>
 </a>
 </g>
 </g>
 <!-- Node15&#45;&gt;Node16 -->
-<g id="edge19" class="edge">
+<g id="edge19_Node000015_Node000016" class="edge">
 <title>Node15&#45;&gt;Node16</title>
+<g id="a_edge19_Node000015_Node000016"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M403.72,-270.36C427.99,-270.49 459.46,-270.66 486.54,-270.81"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="486.66,-274.31 496.68,-270.87 486.7,-267.31 486.66,-274.31"/>
+</a>
+</g>
 </g>
 <!-- Node17&#45;&gt;Node13 -->
-<g id="edge21" class="edge">
+<g id="edge21_Node000017_Node000013" class="edge">
 <title>Node17&#45;&gt;Node13</title>
+<g id="a_edge21_Node000017_Node000013"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M590.33,-298.6C598.12,-296.07 605.98,-292.95 613,-289.14 650.59,-268.69 686.46,-233.23 705.93,-212.2"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="708.65,-214.41 712.78,-204.66 703.46,-209.71 708.65,-214.41"/>
+</a>
+</g>
 </g>
 <!-- Node18&#45;&gt;Node13 -->
-<g id="edge23" class="edge">
+<g id="edge23_Node000018_Node000013" class="edge">
 <title>Node18&#45;&gt;Node13</title>
+<g id="a_edge23_Node000018_Node000013"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M443.23,-228.5C492.25,-225.2 556.4,-220.11 613,-213.14 628.02,-211.28 644.15,-208.84 659.24,-206.36"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="660.21,-209.74 669.49,-204.64 659.05,-202.84 660.21,-209.74"/>
+</a>
+</g>
 </g>
 <!-- Node18&#45;&gt;Node19 -->
-<g id="edge24" class="edge">
+<g id="edge24_Node000018_Node000019" class="edge">
 <title>Node18&#45;&gt;Node19</title>
+<g id="a_edge24_Node000018_Node000019"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M409.67,-223.55C433.99,-218.44 464.08,-212.12 489.71,-206.74"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="490.59,-210.14 499.65,-204.66 489.15,-203.29 490.59,-210.14"/>
+</a>
+</g>
 </g>
 <!-- Node19&#45;&gt;Node13 -->
-<g id="edge25" class="edge">
+<g id="edge25_Node000019_Node000013" class="edge">
 <title>Node19&#45;&gt;Node13</title>
+<g id="a_edge25_Node000019_Node000013"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M607.86,-195.14C617.78,-195.14 628.2,-195.14 638.54,-195.14"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="638.83,-198.64 648.83,-195.14 638.83,-191.64 638.83,-198.64"/>
+</a>
+</g>
 </g>
 <!-- Node20&#45;&gt;Node13 -->
-<g id="edge27" class="edge">
+<g id="edge27_Node000020_Node000013" class="edge">
 <title>Node20&#45;&gt;Node13</title>
+<g id="a_edge27_Node000020_Node000013"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M431.55,-160.5C481.74,-163.43 551.81,-168.44 613,-176.14 629.11,-178.16 646.48,-180.95 662.48,-183.76"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="662.31,-187.29 672.77,-185.61 663.54,-180.4 662.31,-187.29"/>
+</a>
+</g>
 </g>
 <!-- Node20&#45;&gt;Node19 -->
-<g id="edge28" class="edge">
+<g id="edge28_Node000020_Node000019" class="edge">
 <title>Node20&#45;&gt;Node19</title>
+<g id="a_edge28_Node000020_Node000019"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M409.67,-166.72C433.99,-171.83 464.08,-178.15 489.71,-183.53"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="489.15,-186.99 499.65,-185.62 490.59,-180.14 489.15,-186.99"/>
+</a>
+</g>
 </g>
 <!-- Node21&#45;&gt;Node13 -->
-<g id="edge31" class="edge">
+<g id="edge31_Node000021_Node000013" class="edge">
 <title>Node21&#45;&gt;Node13</title>
+<g id="a_edge31_Node000021_Node000013"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M434.61,-128.53C484.77,-135.2 553.51,-145.81 613,-160.14 637.65,-166.07 664.79,-174.88 685.7,-182.17"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="684.54,-185.47 695.13,-185.51 686.87,-178.87 684.54,-185.47"/>
+</a>
+</g>
 </g>
 <!-- Node22&#45;&gt;Node13 -->
-<g id="edge33" class="edge">
+<g id="edge33_Node000022_Node000013" class="edge">
 <title>Node22&#45;&gt;Node13</title>
+<g id="a_edge33_Node000022_Node000013"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M428.03,-89.09C479.3,-96.04 552.41,-109.11 613,-132.14 644.96,-144.28 678.47,-165.33 699.53,-179.73"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="697.55,-182.61 707.75,-185.44 701.54,-176.86 697.55,-182.61"/>
+</a>
+</g>
 </g>
 <!-- Node23&#45;&gt;Node13 -->
-<g id="edge35" class="edge">
+<g id="edge35_Node000023_Node000013" class="edge">
 <title>Node23&#45;&gt;Node13</title>
+<g id="a_edge35_Node000023_Node000013"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M421.76,-393C475.24,-398.2 555.02,-398.04 613,-363.14 670.08,-328.78 702.31,-251.37 714.84,-214.88"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="718.31,-215.55 718.11,-204.96 711.66,-213.36 718.31,-215.55"/>
+</a>
+</g>
 </g>
 </g>
 </svg>

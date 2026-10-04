@@ -1,6 +1,9 @@
 <map id="led_set" name="led_set">
-<area shape="rect" id="node1" title=" " alt="" coords="339,31,408,56"/>
-<area shape="rect" id="node2" href="$led_8c.html#a92042acbd604a83ddb34a02cd1fc057b" title=" " alt="" coords="199,31,291,56"/>
-<area shape="rect" id="node3" href="$led_8c.html#a6c31782f208fdf14577a947a83dcfa8a" title=" " alt="" coords="39,5,117,31"/>
-<area shape="rect" id="node4" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,55,151,80"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="339,31,408,56"/>
+<area shape="rect" id="Node000002" href="$led_8c.html#a92042acbd604a83ddb34a02cd1fc057b" title=" " alt="" coords="199,31,291,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="325,46,291,46,291,41,325,41"/>
+<area shape="rect" id="Node000003" href="$led_8c.html#a6c31782f208fdf14577a947a83dcfa8a" title=" " alt="" coords="39,5,117,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="184,37,116,26,117,21,185,32"/>
+<area shape="rect" id="Node000004" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,55,151,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="185,55,152,59,151,54,185,49"/>
 </map>

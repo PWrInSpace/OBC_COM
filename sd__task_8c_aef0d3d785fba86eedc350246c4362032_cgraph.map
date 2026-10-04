@@ -1,4 +1,5 @@
 <map id="sd_unmount_removed" name="sd_unmount_removed">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,172,31"/>
-<area shape="rect" id="node2" href="$user__diskio_8c.html#a4353c16b6d5c8bd627871a468037e7ee" title=" " alt="" coords="220,5,395,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,172,31"/>
+<area shape="rect" id="Node000002" href="$user__diskio_8c.html#a4353c16b6d5c8bd627871a468037e7ee" title=" " alt="" coords="220,5,395,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,15,206,15,206,21,172,21"/>
 </map>

@@ -1,6 +1,9 @@
 <map id="SX1280SetSyncWord" name="SX1280SetSyncWord">
-<area shape="rect" id="node1" title="Sets the Sync Word given by index used in GFSK, FLRC and BLE protocols." alt="" coords="5,31,161,56"/>
-<area shape="rect" id="node2" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="221,5,387,31"/>
-<area shape="rect" id="node3" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="209,55,399,80"/>
-<area shape="rect" id="node4" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="447,55,619,80"/>
+<area shape="rect" id="Node000001" title="Sets the Sync Word given by index used in GFSK, FLRC and BLE protocols." alt="" coords="5,31,161,56"/>
+<area shape="rect" id="Node000002" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="221,5,387,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,32,207,26,208,32,162,37"/>
+<area shape="rect" id="Node000003" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="209,55,399,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="162,49,196,53,195,58,161,54"/>
+<area shape="rect" id="Node000004" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="447,55,619,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="399,65,433,65,433,70,399,70"/>
 </map>

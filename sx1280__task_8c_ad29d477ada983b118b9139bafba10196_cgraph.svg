@@ -5,83 +5,86 @@
  -->
 <!-- Title: rx_wait_for_event Pages: 1 -->
 <!--zoomable 171 -->
+
 <svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
 <style type="text/css"><![CDATA[
+.node, .edge {opacity: 0.7;}
+.node.selected, .edge.selected {opacity: 1;}
 .edge:hover path { stroke: red; }
 .edge:hover polygon { stroke: red; fill: red; }
 ]]></style>
-<script type="text/javascript"><![CDATA[
-var edges = document.getElementsByTagName('g');
-if (edges && edges.length) {
-  for (var i=0;i<edges.length;i++) {
-    if (edges[i].id.substr(0,4)=='edge') {
-      edges[i].setAttribute('class','edge');
-    }
-  }
-}
-]]></script>
-        <defs>
-                <circle id="rim" cx="0" cy="0" r="7"/>
-                <circle id="rim2" cx="0" cy="0" r="3.5"/>
-                <g id="zoomPlus">
-                        <use xlink:href="#rim" fill="#404040">
-                                <set attributeName="fill" to="#808080" begin="zoomplus.mouseover" end="zoomplus.mouseout"/>
-                        </use>
-                        <path d="M-4,0h8M0,-4v8" fill="none" stroke="white" stroke-width="1.5" pointer-events="none"/>
-                </g>
-                <g id="zoomMin">
-                        <use xlink:href="#rim" fill="#404040">
-                                <set attributeName="fill" to="#808080" begin="zoomminus.mouseover" end="zoomminus.mouseout"/>
-                        </use>
-                        <path d="M-4,0h8" fill="none" stroke="white" stroke-width="1.5" pointer-events="none"/>
-                </g>
-                <g id="dirArrow">
-                        <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
-                </g>
-               <g id="resetDef">
-                       <use xlink:href="#rim2" fill="#404040">
-                               <set attributeName="fill" to="#808080" begin="reset.mouseover" end="reset.mouseout"/>
-                       </use>
-               </g>
-        </defs>
 
-<script type="text/javascript">
+<defs>
+  <circle id="rim" cx="0" cy="0" r="7"/>
+  <circle id="rim2" cx="0" cy="0" r="3.5"/>
+  <g id="zoomPlus">
+    <use xlink:href="#rim" fill="#404040"><set attributeName="fill" to="#808080" begin="zoomplus.mouseover" end="zoomplus.mouseout"/></use>
+    <path d="M-4,0h8M0,-4v8" fill="none" stroke="white" stroke-width="1.5" pointer-events="none"/>
+  </g>
+  <g id="zoomMin">
+    <use xlink:href="#rim" fill="#404040"><set attributeName="fill" to="#808080" begin="zoomminus.mouseover" end="zoomminus.mouseout"/></use>
+    <path d="M-4,0h8" fill="none" stroke="white" stroke-width="1.5" pointer-events="none"/>
+  </g>
+  <g id="arrowUp" transform="translate(30 24)">
+    <use xlink:href="#rim"/>
+    <path pointer-events="none" fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
+  </g>
+  <g id="arrowRight" transform="rotate(90) translate(36 -43)">
+    <use xlink:href="#rim"/>
+    <path pointer-events="none" fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
+  </g>
+  <g id="arrowDown" transform="rotate(180) translate(-30 -48)">
+    <use xlink:href="#rim"/>
+    <path pointer-events="none" fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
+  </g>
+  <g id="arrowLeft" transform="rotate(270) translate(-36 17)">
+    <use xlink:href="#rim"/>
+    <path pointer-events="none" fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
+  </g>
+  <g id="resetDef">
+    <use xlink:href="#rim2" fill="#404040"><set attributeName="fill" to="#808080" begin="reset.mouseover" end="reset.mouseout"/></use>
+  </g>
+</defs>
+<script type="application/ecmascript">
 var viewWidth = 1141;
 var viewHeight = 171;
 var sectionId = 'dynsection-6';
 </script>
-<script xlink:href="svgpan.js"/>
+<script type="application/ecmascript" xlink:href="svg.min.js"/>
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>rx_wait_for_event</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="104,-86 0,-86 0,-67 104,-67 104,-86"/>
 <text text-anchor="middle" x="52" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">rx_wait_for_event</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="sx1280__task_8c.html#a811104046034a4384c8ceb110e8b50d2" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="sx1280__task_8c.html#a811104046034a4384c8ceb110e8b50d2" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="271,-129 140,-129 140,-110 271,-110 271,-129"/>
 <text text-anchor="middle" x="205.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">clear_irqs_and_standby</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M86.62,-86.04C108.59,-92.28 137.49,-100.48 161.17,-107.2"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="160.4,-110.62 170.97,-109.98 162.31,-103.89 160.4,-110.62"/>
+</a>
+</g>
 </g>
 <!-- Node7 -->
-<g id="node7" class="node">
+<g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="sx1280__task_8c.html#a2558054bd23939c02ad7d8e95cd5a501" target="_top" xlink:title=" ">
+<g id="a_Node000007"><a xlink:href="sx1280__task_8c.html#a2558054bd23939c02ad7d8e95cd5a501" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="264,-91.5 147,-91.5 147,-61.5 264,-61.5 264,-91.5"/>
 <text text-anchor="start" x="155" y="-79.5" font-family="Helvetica,sans-Serif" font-size="10.00">handle_rx_done_and</text>
 <text text-anchor="middle" x="205.5" y="-68.5" font-family="Helvetica,sans-Serif" font-size="10.00">_get_payload</text>
@@ -89,268 +92,319 @@ var sectionId = 'dynsection-6';
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
-<g id="edge7" class="edge">
+<g id="edge7_Node000001_Node000007" class="edge">
 <title>Node1&#45;&gt;Node7</title>
+<g id="a_edge7_Node000001_Node000007"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M104.29,-76.5C114.63,-76.5 125.66,-76.5 136.47,-76.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="136.74,-80 146.74,-76.5 136.74,-73 136.74,-80"/>
+</a>
+</g>
 </g>
 <!-- Node15 -->
-<g id="node15" class="node">
+<g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="sx1280_8c.html#a31c7f2ce5f6193072f71565fa1b1b1fc" target="_top" xlink:title="Returns the current IRQ status.">
+<g id="a_Node000015"><a xlink:href="sx1280_8c.html#a31c7f2ce5f6193072f71565fa1b1b1fc" target="_top" xlink:title="Returns the current IRQ status.">
 <polygon fill="white" stroke="#666666" points="262.5,-35 148.5,-35 148.5,-16 262.5,-16 262.5,-35"/>
 <text text-anchor="middle" x="205.5" y="-23" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280GetIrqStatus</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node15 -->
-<g id="edge19" class="edge">
+<g id="edge19_Node000001_Node000015" class="edge">
 <title>Node1&#45;&gt;Node15</title>
+<g id="a_edge19_Node000001_Node000015"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M81.5,-66.91C105.51,-58.82 140.08,-47.18 166.46,-38.3"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="167.77,-41.56 176.13,-35.05 165.54,-34.92 167.77,-41.56"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="sx1280_8c.html#a24c5e4e70bd2db5b0513a3610b43043f" target="_top" xlink:title="Clears the IRQs.">
+<g id="a_Node000003"><a xlink:href="sx1280_8c.html#a24c5e4e70bd2db5b0513a3610b43043f" target="_top" xlink:title="Clears the IRQs.">
 <polygon fill="white" stroke="#666666" points="429,-126 307,-126 307,-107 429,-107 429,-126"/>
 <text text-anchor="middle" x="368" y="-114" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280ClearIrqStatus</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M271.32,-118.29C279.67,-118.13 288.25,-117.97 296.68,-117.81"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="296.94,-121.31 306.87,-117.62 296.81,-114.31 296.94,-121.31"/>
+</a>
+</g>
 </g>
 <!-- Node6 -->
-<g id="node6" class="node">
+<g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="sx1280_8c.html#a074d83ce6ba238f9af19b8bdbff61360" target="_top" xlink:title="Sets the radio in configuration mode.">
+<g id="a_Node000006"><a xlink:href="sx1280_8c.html#a074d83ce6ba238f9af19b8bdbff61360" target="_top" xlink:title="Sets the radio in configuration mode.">
 <polygon fill="white" stroke="#666666" points="422.5,-163 313.5,-163 313.5,-144 422.5,-144 422.5,-163"/>
 <text text-anchor="middle" x="368" y="-151" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280SetStandby</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node6 -->
-<g id="edge5" class="edge">
+<g id="edge5_Node000002_Node000006" class="edge">
 <title>Node2&#45;&gt;Node6</title>
+<g id="a_edge5_Node000002_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M251.64,-129.06C270.35,-133.03 292.23,-137.66 311.88,-141.82"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="311.42,-145.3 321.93,-143.95 312.87,-138.46 311.42,-145.3"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" target="_top" xlink:title="Send a command that write data to the radio.">
+<g id="a_Node000004"><a xlink:href="sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" target="_top" xlink:title="Send a command that write data to the radio.">
 <polygon fill="white" stroke="#666666" points="611,-163 465,-163 465,-144 611,-144 611,-163"/>
 <text text-anchor="middle" x="538" y="-151" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWriteCommand</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
+<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M412.26,-126.03C434.03,-130.82 460.61,-136.68 483.63,-141.75"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="483.07,-145.21 493.59,-143.94 484.58,-138.37 483.07,-145.21"/>
+</a>
+</g>
 </g>
 <!-- Node5 -->
-<g id="node5" class="node">
+<g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
+<g id="a_Node000005"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
 <polygon fill="white" stroke="#666666" points="1133,-76 1004,-76 1004,-57 1133,-57 1133,-76"/>
 <text text-anchor="middle" x="1068.5" y="-64" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWaitOnBusy</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
+<g id="edge4_Node000004_Node000005" class="edge">
 <title>Node4&#45;&gt;Node5</title>
+<g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M611.24,-153.13C661.99,-152.13 731.37,-149.26 792,-141.5 871.29,-131.35 891.32,-127.05 968,-104.5 991.22,-97.67 1016.71,-87.89 1036.07,-79.96"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1037.42,-83.19 1045.32,-76.13 1034.74,-76.73 1037.42,-83.19"/>
+</a>
+</g>
 </g>
 <!-- Node6&#45;&gt;Node4 -->
-<g id="edge6" class="edge">
+<g id="edge6_Node000006_Node000004" class="edge">
 <title>Node6&#45;&gt;Node4</title>
+<g id="a_edge6_Node000006_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M422.62,-153.5C432.91,-153.5 443.91,-153.5 454.86,-153.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="454.89,-157 464.89,-153.5 454.89,-150 454.89,-157"/>
+</a>
+</g>
 </g>
 <!-- Node7&#45;&gt;Node3 -->
-<g id="edge8" class="edge">
+<g id="edge8_Node000007_Node000003" class="edge">
 <title>Node7&#45;&gt;Node3</title>
+<g id="a_edge8_Node000007_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M264.44,-90.94C282.31,-95.39 301.77,-100.24 318.9,-104.51"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="318.13,-107.93 328.68,-106.95 319.83,-101.14 318.13,-107.93"/>
+</a>
+</g>
 </g>
 <!-- Node8 -->
-<g id="node8" class="node">
+<g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="sx1280_8c.html#a88aa3739b37c983bbea244aa58fd4a6a" target="_top" xlink:title="Reads the payload received.">
+<g id="a_Node000008"><a xlink:href="sx1280_8c.html#a88aa3739b37c983bbea244aa58fd4a6a" target="_top" xlink:title="Reads the payload received.">
 <polygon fill="white" stroke="#666666" points="422.5,-86 313.5,-86 313.5,-67 422.5,-67 422.5,-86"/>
 <text text-anchor="middle" x="368" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280GetPayload</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node8 -->
-<g id="edge9" class="edge">
+<g id="edge9_Node000007_Node000008" class="edge">
 <title>Node7&#45;&gt;Node8</title>
+<g id="a_edge9_Node000007_Node000008"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M264.44,-76.5C277.06,-76.5 290.47,-76.5 303.29,-76.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="303.42,-80 313.42,-76.5 303.42,-73 303.42,-80"/>
+</a>
+</g>
 </g>
 <!-- Node9 -->
-<g id="node9" class="node">
+<g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="sx1280_8c.html#a01fc4b6e3bc159a906108e26d08fdc4a" target="_top" xlink:title="Gets the last received packet buffer status.">
+<g id="a_Node000009"><a xlink:href="sx1280_8c.html#a01fc4b6e3bc159a906108e26d08fdc4a" target="_top" xlink:title="Gets the last received packet buffer status.">
 <polygon fill="white" stroke="#666666" points="609.5,-95 466.5,-95 466.5,-76 609.5,-76 609.5,-95"/>
 <text text-anchor="middle" x="538" y="-83" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280GetRxBufferStatus</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node9 -->
-<g id="edge10" class="edge">
+<g id="edge10_Node000008_Node000009" class="edge">
 <title>Node8&#45;&gt;Node9</title>
+<g id="a_edge10_Node000008_Node000009"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M422.62,-79.37C433.39,-79.95 444.93,-80.57 456.38,-81.18"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="456.23,-84.68 466.41,-81.72 456.61,-77.69 456.23,-84.68"/>
+</a>
+</g>
 </g>
 <!-- Node14 -->
-<g id="node14" class="node">
+<g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="sx1280-hal_8c.html#a92ac9625cd9b4efdb6facffe6fdaaa4b" target="_top" xlink:title="Read data from the buffer holding the payload in the radio.">
+<g id="a_Node000014"><a xlink:href="sx1280-hal_8c.html#a92ac9625cd9b4efdb6facffe6fdaaa4b" target="_top" xlink:title="Read data from the buffer holding the payload in the radio.">
 <polygon fill="white" stroke="#666666" points="960,-58 836,-58 836,-39 960,-39 960,-58"/>
 <text text-anchor="middle" x="898" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalReadBuffer</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node14 -->
-<g id="edge17" class="edge">
+<g id="edge17_Node000008_Node000014" class="edge">
 <title>Node8&#45;&gt;Node14</title>
+<g id="a_edge17_Node000008_Node000014"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M422.53,-71.01C436.35,-69.72 451.22,-68.45 465,-67.5 591.85,-58.77 739.94,-53.28 825.64,-50.56"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="825.89,-54.05 835.78,-50.24 825.67,-47.05 825.89,-54.05"/>
+</a>
+</g>
 </g>
 <!-- Node10 -->
-<g id="node10" class="node">
+<g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="sx1280_8c.html#a0a853efd19951935adb13f544740731e" target="_top" xlink:title="Gets the current radio protocol.">
+<g id="a_Node000010"><a xlink:href="sx1280_8c.html#a0a853efd19951935adb13f544740731e" target="_top" xlink:title="Gets the current radio protocol.">
 <polygon fill="white" stroke="#666666" points="782,-132 657,-132 657,-113 782,-113 782,-132"/>
 <text text-anchor="middle" x="719.5" y="-120" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280GetPacketType</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node10 -->
-<g id="edge11" class="edge">
+<g id="edge11_Node000009_Node000010" class="edge">
 <title>Node9&#45;&gt;Node10</title>
+<g id="a_edge11_Node000009_Node000010"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M585.23,-95.03C608.69,-99.86 637.39,-105.78 662.14,-110.88"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="661.62,-114.35 672.12,-112.94 663.03,-107.49 661.62,-114.35"/>
+</a>
+</g>
 </g>
 <!-- Node11 -->
-<g id="node11" class="node">
+<g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="sx1280-hal_8c.html#abc1ed10f83057922610c0ef2b3893733" target="_top" xlink:title="Send a command that read data from the radio.">
+<g id="a_Node000011"><a xlink:href="sx1280-hal_8c.html#abc1ed10f83057922610c0ef2b3893733" target="_top" xlink:title="Send a command that read data from the radio.">
 <polygon fill="white" stroke="#666666" points="792,-19 647,-19 647,0 792,0 792,-19"/>
 <text text-anchor="middle" x="719.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalReadCommand</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node11 -->
-<g id="edge12" class="edge">
+<g id="edge12_Node000009_Node000011" class="edge">
 <title>Node9&#45;&gt;Node11</title>
+<g id="a_edge12_Node000009_Node000011"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M561.73,-75.87C593.29,-62.51 650.54,-38.27 686.43,-23.08"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="688.11,-26.17 695.95,-19.05 685.38,-19.72 688.11,-26.17"/>
+</a>
+</g>
 </g>
 <!-- Node12 -->
-<g id="node12" class="node">
+<g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea" target="_top" xlink:title="Read a single byte of data from the radio memory.">
+<g id="a_Node000012"><a xlink:href="sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea" target="_top" xlink:title="Read a single byte of data from the radio memory.">
 <polygon fill="white" stroke="#666666" points="787,-95 652,-95 652,-76 787,-76 787,-95"/>
 <text text-anchor="middle" x="719.5" y="-83" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalReadRegister</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node12 -->
-<g id="edge14" class="edge">
+<g id="edge14_Node000009_Node000012" class="edge">
 <title>Node9&#45;&gt;Node12</title>
+<g id="a_edge14_Node000009_Node000012"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M609.69,-85.5C620.24,-85.5 631.17,-85.5 641.84,-85.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="641.98,-89 651.98,-85.5 641.98,-82 641.98,-89"/>
+</a>
+</g>
 </g>
 <!-- Node11&#45;&gt;Node5 -->
-<g id="edge13" class="edge">
+<g id="edge13_Node000011_Node000005" class="edge">
 <title>Node11&#45;&gt;Node5</title>
+<g id="a_edge13_Node000011_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M792.22,-10.1C842.05,-11.78 909.71,-16.57 968,-29.5 992.17,-34.86 1018.36,-44.78 1037.81,-53"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1036.47,-56.24 1047.04,-56.99 1039.25,-49.81 1036.47,-56.24"/>
+</a>
+</g>
 </g>
 <!-- Node13 -->
-<g id="node13" class="node">
+<g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="sx1280-hal_8c.html#a6a9c356cd998a6f2dad05049941b5939" target="_top" xlink:title="Read data from the radio memory.">
+<g id="a_Node000013"><a xlink:href="sx1280-hal_8c.html#a6a9c356cd998a6f2dad05049941b5939" target="_top" xlink:title="Read data from the radio memory.">
 <polygon fill="white" stroke="#666666" points="968,-95 828,-95 828,-76 968,-76 968,-95"/>
 <text text-anchor="middle" x="898" y="-83" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalReadRegisters</text>
 </a>
 </g>
 </g>
 <!-- Node12&#45;&gt;Node13 -->
-<g id="edge15" class="edge">
+<g id="edge15_Node000012_Node000013" class="edge">
 <title>Node12&#45;&gt;Node13</title>
+<g id="a_edge15_Node000012_Node000013"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M787.23,-85.5C797.18,-85.5 807.53,-85.5 817.72,-85.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="817.83,-89 827.83,-85.5 817.83,-82 817.83,-89"/>
+</a>
+</g>
 </g>
 <!-- Node13&#45;&gt;Node5 -->
-<g id="edge16" class="edge">
+<g id="edge16_Node000013_Node000005" class="edge">
 <title>Node13&#45;&gt;Node5</title>
+<g id="a_edge16_Node000013_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M968.02,-77.72C976.51,-76.76 985.22,-75.78 993.78,-74.81"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="994.19,-78.29 1003.74,-73.69 993.41,-71.33 994.19,-78.29"/>
+</a>
+</g>
 </g>
 <!-- Node14&#45;&gt;Node5 -->
-<g id="edge18" class="edge">
+<g id="edge18_Node000014_Node000005" class="edge">
 <title>Node14&#45;&gt;Node5</title>
+<g id="a_edge18_Node000014_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M960.31,-55.05C971.19,-56.21 982.62,-57.43 993.8,-58.63"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="993.66,-62.13 1003.97,-59.71 994.4,-55.17 993.66,-62.13"/>
+</a>
+</g>
 </g>
 <!-- Node15&#45;&gt;Node11 -->
-<g id="edge20" class="edge">
+<g id="edge20_Node000015_Node000011" class="edge">
 <title>Node15&#45;&gt;Node11</title>
+<g id="a_edge20_Node000015_Node000011"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M262.76,-23.74C353.26,-20.91 531.62,-15.34 636.36,-12.07"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="636.69,-15.56 646.58,-11.75 636.47,-8.56 636.69,-15.56"/>
+</a>
+</g>
 </g>
 </g>
 </svg>
-        <g id="navigator" transform="translate(0 0)" fill="#404254">
-                <rect fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width=".5" x="0" y="0" width="60" height="60"/>
-                <use id="zoomplus" xlink:href="#zoomPlus" x="17" y="9" onmousedown="handleZoom(evt,'in')"/>
-                <use id="zoomminus" xlink:href="#zoomMin" x="42" y="9" onmousedown="handleZoom(evt,'out')"/>
-                <use id="reset" xlink:href="#resetDef" x="30" y="36" onmousedown="handleReset()"/>
-                <g id="arrowUp" xlink:href="#dirArrow" transform="translate(30 24)" onmousedown="handlePan(0,-1)">
-                  <use xlink:href="#rim" fill="#404040">
-                        <set attributeName="fill" to="#808080" begin="arrowUp.mouseover" end="arrowUp.mouseout"/>
-                  </use>
-                  <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
-                </g>
-                <g id="arrowRight" xlink:href="#dirArrow" transform="rotate(90) translate(36 -43)" onmousedown="handlePan(1,0)">
-                  <use xlink:href="#rim" fill="#404040">
-                        <set attributeName="fill" to="#808080" begin="arrowRight.mouseover" end="arrowRight.mouseout"/>
-                  </use>
-                  <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
-                </g>
-                <g id="arrowDown" xlink:href="#dirArrow" transform="rotate(180) translate(-30 -48)" onmousedown="handlePan(0,1)">
-                  <use xlink:href="#rim" fill="#404040">
-                        <set attributeName="fill" to="#808080" begin="arrowDown.mouseover" end="arrowDown.mouseout"/>
-                  </use>
-                  <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
-                </g>
-                <g id="arrowLeft" xlink:href="#dirArrow" transform="rotate(270) translate(-36 17)" onmousedown="handlePan(-1,0)">
-                  <use xlink:href="#rim" fill="#404040">
-                        <set attributeName="fill" to="#808080" begin="arrowLeft.mouseover" end="arrowLeft.mouseout"/>
-                  </use>
-                  <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
-                </g>
-        </g>
-        <svg viewBox="0 0 15 15" width="100%" height="30px" preserveAspectRatio="xMaxYMin meet">
-         <g id="arrow_out" transform="scale(0.3 0.3)">
-          <a xlink:href="sx1280__task_8c_ad29d477ada983b118b9139bafba10196_cgraph_org.svg" target="_base">
-           <rect id="button" ry="5" rx="5" y="6" x="6" height="38" width="38"
-                fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width="1.0"/>
-           <path id="arrow"
-             d="M 11.500037,31.436501 C 11.940474,20.09759 22.043105,11.32322 32.158766,21.979434 L 37.068811,17.246167 C 37.068811,17.246167 37.088388,32 37.088388,32 L 22.160133,31.978069 C 22.160133,31.978069 26.997745,27.140456 26.997745,27.140456 C 18.528582,18.264221 13.291696,25.230495 11.500037,31.436501 z"
-             style="fill:#404040;"/>
-          </a>
-         </g>
-        </svg>
+
+<g id="navigator" transform="translate(0 0)" fill="#404254">
+  <rect fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width=".5" x="0" y="0" width="60" height="60"/>
+  <use id="zoomplus" xlink:href="#zoomPlus" x="17" y="9" onmousedown="handleZoom(evt,'in')"/>
+  <use id="zoomminus" xlink:href="#zoomMin" x="42" y="9" onmousedown="handleZoom(evt,'out')"/>
+  <use id="reset" xlink:href="#resetDef" x="30" y="36" onmousedown="handleReset()"/>
+   <use id="arrowup" xlink:href="#arrowUp" x="0" y="0" onmousedown="handlePan(0,-1)"/>
+  <use id="arrowright" xlink:href="#arrowRight" x="0" y="0" onmousedown="handlePan(1,0)"/>
+  <use id="arrowdown" xlink:href="#arrowDown" x="0" y="0" onmousedown="handlePan(0,1)"/>
+  <use id="arrowleft" xlink:href="#arrowLeft" x="0" y="0" onmousedown="handlePan(-1,0)"/>
+</g>
+<svg viewBox="0 0 15 15" width="100%" height="30px" preserveAspectRatio="xMaxYMin meet">
+ <g id="arrow_out" transform="scale(0.3 0.3)">
+  <a xlink:href="sx1280__task_8c_ad29d477ada983b118b9139bafba10196_cgraph_org.svg" target="_base">
+   <rect id="button" ry="5" rx="5" y="6" x="6" height="38" width="38"
+        fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width="1.0"/>
+   <path id="arrow"
+     d="M 11.500037,31.436501 C 11.940474,20.09759 22.043105,11.32322 32.158766,21.979434 L 37.068811,17.246167 C 37.068811,17.246167 37.088388,32 37.088388,32 L 22.160133,31.978069 C 22.160133,31.978069 26.997745,27.140456 26.997745,27.140456 C 18.528582,18.264221 13.291696,25.230495 11.500037,31.436501 z"
+     style="fill:#404040;"/>
+  </a>
+ </g>
+</svg>
+
+<style type='text/css'>
+<![CDATA[
+[data-mouse-over-selected='false'] { opacity: 0.7; }
+[data-mouse-over-selected='true']  { opacity: 1.0; }
+]]>
+</style>
+<script type="application/ecmascript"><![CDATA[
+document.addEventListener('DOMContentLoaded', (event) => {
+  highlightEdges();
+  highlightAdjacentNodes();
+});
+]]></script>
 </svg>

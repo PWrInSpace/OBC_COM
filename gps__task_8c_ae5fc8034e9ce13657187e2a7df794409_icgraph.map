@@ -1,6 +1,9 @@
 <map id="configure_gps" name="configure_gps">
-<area shape="rect" id="node1" title=" " alt="" coords="492,5,604,31"/>
-<area shape="rect" id="node2" href="$gps__task_8c.html#a2b4ba50a0ecdfbe3864bc6cf9ad0b8b4" title=" " alt="" coords="364,5,444,31"/>
-<area shape="rect" id="node3" href="$gps__task_8c.html#ae757343c80f47f1e3f63a2a86c62220a" title=" " alt="" coords="199,5,316,31"/>
-<area shape="rect" id="node4" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,5,151,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="492,5,604,31"/>
+<area shape="rect" id="Node000002" href="$gps__task_8c.html#a2b4ba50a0ecdfbe3864bc6cf9ad0b8b4" title=" " alt="" coords="364,5,444,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="478,21,444,21,444,15,478,15"/>
+<area shape="rect" id="Node000003" href="$gps__task_8c.html#ae757343c80f47f1e3f63a2a86c62220a" title=" " alt="" coords="199,5,316,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="350,21,316,21,316,15,350,15"/>
+<area shape="rect" id="Node000004" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,5,151,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="185,21,151,21,151,15,185,15"/>
 </map>

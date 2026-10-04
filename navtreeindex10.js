@@ -1,6 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"sx1280__hal__wrapper_8h_source.html":[4,0,6,2,0,0],
 "sx1280__task_8c.html":[4,0,0,1,11],
 "sx1280__task_8c.html#a08a0d39a0c2e7c960630f1125434da42":[4,0,0,1,11,15],
 "sx1280__task_8c.html#a0faca5fd33e0f8bb20eb73cebb4a9005":[4,0,0,1,11,4],
@@ -56,6 +55,7 @@ var NAVTREEINDEX10 =
 "tim_8h.html#ae70bce6c39d0b570a7523b86738cec4b":[4,0,2,0,13,0],
 "tim_8h.html#aef1e0b132b1af1c923cc420a57180c67":[4,0,2,0,13,2],
 "tim_8h_source.html":[4,0,2,0,13],
+"topics.html":[2],
 "uart__task_8c.html":[4,0,0,1,13],
 "uart__task_8c_source.html":[4,0,0,1,13],
 "uart__task_8h.html":[4,0,0,0,14],
@@ -65,8 +65,8 @@ var NAVTREEINDEX10 =
 "unionRadioStatus__t.html":[3,0,28],
 "unionRadioStatus__t.html#a1c100ece490af5693ff8f4b03ae471b9":[3,0,28,3],
 "unionRadioStatus__t.html#a8ba961caa459db467b195b6602f88b5b":[3,0,28,0],
+"unionRadioStatus__t.html#a9feaa6437047b771c8469977789c5050":[3,0,28,4],
 "unionRadioStatus__t.html#ac664d60f5d4bda0bc082d2a8f928dac0":[3,0,28,5],
-"unionRadioStatus__t.html#ae53f7fd76b164f02d62f820b7327b938":[3,0,28,4],
 "unionRadioStatus__t.html#af14f941ae3a873fc21ffe090bf87164d":[3,0,28,2],
 "unionRadioStatus__t.html#af7f1a77fc58a179289235c43f97ca7f4":[3,0,28,1],
 "unioni__Long.html":[3,0,8],

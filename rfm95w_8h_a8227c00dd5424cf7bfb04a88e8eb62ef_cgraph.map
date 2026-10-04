@@ -1,5 +1,7 @@
 <map id="rfm95_disable_crc" name="rfm95_disable_crc">
-<area shape="rect" id="node1" title="Disable appending/verifying packet CRC." alt="" coords="5,31,147,56"/>
-<area shape="rect" id="node2" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="197,5,322,31"/>
-<area shape="rect" id="node3" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="195,55,324,80"/>
+<area shape="rect" id="Node000001" title="Disable appending/verifying packet CRC." alt="" coords="5,31,147,56"/>
+<area shape="rect" id="Node000002" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="197,5,322,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,31,183,26,183,31,147,36"/>
+<area shape="rect" id="Node000003" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="195,55,324,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="147,50,182,54,181,60,146,55"/>
 </map>

@@ -1,7 +1,13 @@
 <map id="app/include/gs_scheduler.h" name="app/include/gs_scheduler.h">
-<area shape="rect" id="node1" title=" " alt="" coords="43,5,241,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,152,76,177"/>
-<area shape="rect" id="node3" title=" " alt="" coords="207,152,282,177"/>
-<area shape="rect" id="node4" href="$lora__tx__queue_8h.html" title=" " alt="" coords="79,79,205,104"/>
-<area shape="rect" id="node5" title=" " alt="" coords="101,152,183,177"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="43,5,241,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,152,76,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,33,94,53,68,80,54,110,47,139,41,138,49,108,64,77,91,49,119,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="207,152,282,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,29,193,49,220,77,235,108,244,138,238,139,230,110,216,80,190,53,161,33"/>
+<area shape="rect" id="Node000004" href="$lora__tx__queue_8h.html" title=" " alt="" coords="79,79,205,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="145,31,145,65,139,65,139,31"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="127,106,70,146,67,142,124,102"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="160,102,218,142,215,146,157,106"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="101,152,183,177"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="145,104,145,138,139,138,139,104"/>
 </map>

@@ -1,9 +1,16 @@
 <map id="SX1280SetRangingIdLength" name="SX1280SetRangingIdLength">
-<area shape="rect" id="node1" title="Sets the number of bits used to check that ranging request match ranging ID." alt="" coords="5,55,207,80"/>
-<area shape="rect" id="node2" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="263,5,429,31"/>
-<area shape="rect" id="node3" href="$sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea" title="Read a single byte of data from the radio memory." alt="" coords="256,55,436,80"/>
-<area shape="rect" id="node6" href="$sx1280-hal_8c.html#a22d55eec45845b70b71327af666c9eb0" title="Write a single byte of data to the radio memory." alt="" coords="255,104,437,129"/>
-<area shape="rect" id="node4" href="$sx1280-hal_8c.html#a6a9c356cd998a6f2dad05049941b5939" title="Read data from the radio memory." alt="" coords="487,55,673,80"/>
-<area shape="rect" id="node5" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="723,80,895,105"/>
-<area shape="rect" id="node7" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="485,104,675,129"/>
+<area shape="rect" id="Node000001" title="Sets the number of bits used to check that ranging request match ranging ID." alt="" coords="5,55,207,80"/>
+<area shape="rect" id="Node000002" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="263,5,429,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,52,270,31,271,36,169,57"/>
+<area shape="rect" id="Node000003" href="$sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea" title="Read a single byte of data from the radio memory." alt="" coords="256,55,436,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,65,242,65,242,70,207,70"/>
+<area shape="rect" id="Node000006" href="$sx1280-hal_8c.html#a22d55eec45845b70b71327af666c9eb0" title="Write a single byte of data to the radio memory." alt="" coords="255,104,437,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="169,77,271,99,270,104,168,83"/>
+<area shape="rect" id="Node000004" href="$sx1280-hal_8c.html#a6a9c356cd998a6f2dad05049941b5939" title="Read data from the radio memory." alt="" coords="487,55,673,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="436,65,473,65,473,70,436,70"/>
+<area shape="rect" id="Node000005" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="723,80,895,105"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="674,75,709,79,709,84,674,80"/>
+<area shape="rect" id="Node000007" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="485,104,675,129"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="437,114,472,114,472,119,437,119"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="675,104,709,100,709,106,675,109"/>
 </map>

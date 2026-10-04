@@ -1,6 +1,9 @@
 <map id="EE_Format" name="EE_Format">
-<area shape="rect" id="node1" title="Erases all flash pages of eeprom emulation, and set first page header as ACTIVE." alt="" coords="439,5,529,31"/>
-<area shape="rect" id="node2" href="$group__EEPROM__Exported__Functions.html#ga08e3105698f17d96ff57c20e0b44517c" title="Restore the pages to a known good state in case of power loss." alt="" coords="324,5,391,31"/>
-<area shape="rect" id="node3" href="$nvs__config_8c.html#a40eed21ee293313b466102cd353180c6" title="Unlock Flash and Init EEPROM Emulation." alt="" coords="199,5,276,31"/>
-<area shape="rect" id="node4" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,5,151,31"/>
+<area shape="rect" id="Node000001" title="Erases all flash pages of eeprom emulation, and set first page header as ACTIVE." alt="" coords="439,5,529,31"/>
+<area shape="rect" id="Node000002" href="$group__EEPROM__Exported__Functions.html#ga08e3105698f17d96ff57c20e0b44517c" title="Restore the pages to a known good state in case of power loss." alt="" coords="324,5,391,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="425,21,391,21,391,15,425,15"/>
+<area shape="rect" id="Node000003" href="$nvs__config_8c.html#a40eed21ee293313b466102cd353180c6" title="Unlock Flash and Init EEPROM Emulation." alt="" coords="199,5,276,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="311,21,276,21,276,15,311,15"/>
+<area shape="rect" id="Node000004" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,5,151,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="185,21,151,21,151,15,185,15"/>
 </map>

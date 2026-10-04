@@ -1,12 +1,29 @@
 <map id="rfm95_send_window" name="rfm95_send_window">
-<area shape="rect" id="node1" title=" " alt="" coords="5,225,161,250"/>
-<area shape="rect" id="node2" href="$rfm95w_8c.html#ada484e99227682a5957298608b2d7c9a" title="Checks whether the transmission has finished." alt="" coords="452,326,617,352"/>
-<area shape="rect" id="node4" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="714,73,806,98"/>
-<area shape="rect" id="node5" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="903,149,1032,174"/>
-<area shape="rect" id="node6" href="$rfm95w_8c.html#a0229ba67005c578a5bc1f3db8f1549c0" title="Send a packet." alt="" coords="232,225,381,250"/>
-<area shape="rect" id="node10" href="$rfm95w_8c.html#a3adc3507c8b3ca5e44045380b6e3797a" title="Sets the radio transceiver in transmit mode." alt="" coords="209,9,404,34"/>
-<area shape="rect" id="node3" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="697,301,823,326"/>
-<area shape="rect" id="node7" href="$rfm95w_8c.html#a6ff0eccd2a2bfbeb889d11249ca6e5db" title="Fills the REG_FIFO buffer with desired values, and the REG_PAYLOAD_LENGTH with buffer size." alt="" coords="465,110,605,150"/>
-<area shape="rect" id="node8" href="$rfm95w_8c.html#af86811708bcd2722cec9b0e8dab5276b" title="Writes the REG_OP_MODE to mode TX." alt="" coords="665,225,855,250"/>
-<area shape="rect" id="node9" href="$rfm95w_8c.html#a57c55bef3200c876fd87864d39ecbb17" title="Writes the REG_IRQ_FLAGS buffer with IRQ_TX_DONE_MASK." alt="" coords="453,174,616,200"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,225,161,250"/>
+<area shape="rect" id="Node000002" href="$rfm95w_8c.html#ada484e99227682a5957298608b2d7c9a" title="Checks whether the transmission has finished." alt="" coords="452,326,617,352"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,248,465,321,463,326,140,253"/>
+<area shape="rect" id="Node000004" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="714,73,806,98"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="108,223,168,194,251,158,349,123,451,95,518,85,585,80,701,80,701,85,585,85,518,90,453,100,351,128,253,163,170,199,111,227"/>
+<area shape="rect" id="Node000005" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="903,149,1032,174"/>
+<area shape="poly" id="edge17_Node000001_Node000005" title=" " alt="" coords="103,248,150,280,210,311,320,349,365,359,409,365,500,367,617,362,687,363,742,368,768,368,794,363,822,354,853,337,891,304,920,264,941,222,955,187,960,189,946,225,925,267,895,308,856,341,824,358,795,369,768,373,742,373,686,369,617,367,501,373,408,371,365,364,318,354,208,316,147,285,100,253"/>
+<area shape="rect" id="Node000006" href="$rfm95w_8c.html#a0229ba67005c578a5bc1f3db8f1549c0" title="Send a packet." alt="" coords="232,225,381,250"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="162,235,218,235,218,240,162,240"/>
+<area shape="rect" id="Node000010" href="$rfm95w_8c.html#a3adc3507c8b3ca5e44045380b6e3797a" title="Sets the radio transceiver in transmit mode." alt="" coords="209,9,404,34"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="87,224,103,190,129,143,164,94,208,52,233,37,235,42,211,56,168,98,133,146,108,192,92,226"/>
+<area shape="rect" id="Node000003" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="697,301,823,326"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="617,327,683,320,684,325,618,332"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="801,96,856,115,923,141,921,146,854,120,799,101"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="334,248,453,305,488,319,486,324,451,309,332,253"/>
+<area shape="poly" id="edge10_Node000006_Node000003" title=" " alt="" coords="382,247,684,298,683,304,381,253"/>
+<area shape="rect" id="Node000007" href="$rfm95w_8c.html#a6ff0eccd2a2bfbeb889d11249ca6e5db" title="Fills the REG_FIFO buffer with desired values, and the REG_PAYLOAD_LENGTH with buffer size." alt="" coords="465,110,605,150"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="330,223,451,161,469,153,471,158,453,165,332,227"/>
+<area shape="rect" id="Node000008" href="$rfm95w_8c.html#af86811708bcd2722cec9b0e8dab5276b" title="Writes the REG_OP_MODE to mode TX." alt="" coords="665,225,855,250"/>
+<area shape="poly" id="edge11_Node000006_Node000008" title=" " alt="" coords="381,235,651,235,651,240,381,240"/>
+<area shape="rect" id="Node000009" href="$rfm95w_8c.html#a57c55bef3200c876fd87864d39ecbb17" title="Writes the REG_IRQ_FLAGS buffer with IRQ_TX_DONE_MASK." alt="" coords="453,174,616,200"/>
+<area shape="poly" id="edge13_Node000006_Node000009" title=" " alt="" coords="364,222,463,200,464,205,365,228"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="605,113,700,95,701,100,606,119"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="605,132,889,153,889,159,605,138"/>
+<area shape="poly" id="edge12_Node000008_Node000005" title=" " alt="" coords="799,223,854,203,921,177,923,182,856,208,801,228"/>
+<area shape="poly" id="edge14_Node000009_Node000005" title=" " alt="" coords="616,180,889,164,889,169,617,185"/>
+<area shape="poly" id="edge16_Node000010_Node000005" title=" " alt="" coords="404,8,501,3,617,7,677,13,738,23,798,39,856,59,884,75,910,95,950,136,946,140,907,99,881,79,854,64,797,44,737,29,677,18,616,12,501,9,404,13"/>
 </map>

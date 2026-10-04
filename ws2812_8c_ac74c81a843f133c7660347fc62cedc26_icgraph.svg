@@ -6,46 +6,77 @@
 <!-- Title: ws2812_set_color_blocking Pages: 1 -->
 <svg width="426pt" height="27pt"
  viewBox="0.00 0.00 426.00 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
+<style type="text/css"><![CDATA[
+.node, .edge {opacity: 0.7;}
+.node.selected, .edge.selected {opacity: 1;}
+.edge:hover path { stroke: red; }
+.edge:hover polygon { stroke: red; fill: red; }
+]]></style>
+<script type="application/ecmascript" xlink:href="svg.min.js"/>
+<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>ws2812_set_color_blocking</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="418,-19 268,-19 268,0 418,0 418,-19"/>
 <text text-anchor="middle" x="343" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ws2812_set_color_blocking</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="led_8c.html#a0a16f10b59c73161b57d844082fa1dca" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="led_8c.html#a0a16f10b59c73161b57d844082fa1dca" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="232,-19 143,-19 143,0 232,0 232,-19"/>
 <text text-anchor="middle" x="187.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">led_fault_color</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M257.89,-9.5C249.01,-9.5 240.26,-9.5 232.13,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="257.95,-13 267.95,-9.5 257.95,-6 257.95,-13"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="stm32h5xx__it_8c.html#a2bffc10d5bd4106753b7c30e86903bea" target="_top" xlink:title="This function handles Hard fault interrupt.">
+<g id="a_Node000003"><a xlink:href="stm32h5xx__it_8c.html#a2bffc10d5bd4106753b7c30e86903bea" target="_top" xlink:title="This function handles Hard fault interrupt.">
 <polygon fill="white" stroke="#666666" points="107,-19 0,-19 0,0 107,0 107,-19"/>
 <text text-anchor="middle" x="53.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">HardFault_Handler</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M132.8,-9.5C124.36,-9.5 115.65,-9.5 107.23,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="132.91,-13 142.91,-9.5 132.91,-6 132.91,-13"/>
+</a>
 </g>
 </g>
+</g>
+</svg>
+</svg>
+
+<style type='text/css'>
+<![CDATA[
+[data-mouse-over-selected='false'] { opacity: 0.7; }
+[data-mouse-over-selected='true']  { opacity: 1.0; }
+]]>
+</style>
+<script type="application/ecmascript"><![CDATA[
+document.addEventListener('DOMContentLoaded', (event) => {
+  highlightEdges();
+  highlightAdjacentNodes();
+});
+]]></script>
 </svg>

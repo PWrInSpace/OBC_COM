@@ -1,6 +1,9 @@
 <map id="SX1280SetCrcSeed" name="SX1280SetCrcSeed">
-<area shape="rect" id="node1" title="Sets the Initial value for the LFSR used for the CRC calculation." alt="" coords="5,31,151,56"/>
-<area shape="rect" id="node2" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="210,5,377,31"/>
-<area shape="rect" id="node3" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="199,55,388,80"/>
-<area shape="rect" id="node4" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="436,55,608,80"/>
+<area shape="rect" id="Node000001" title="Sets the Initial value for the LFSR used for the CRC calculation." alt="" coords="5,31,151,56"/>
+<area shape="rect" id="Node000002" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="210,5,377,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,32,196,27,197,32,151,37"/>
+<area shape="rect" id="Node000003" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="199,55,388,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,49,185,53,185,58,150,54"/>
+<area shape="rect" id="Node000004" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="436,55,608,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="389,65,422,65,422,70,389,70"/>
 </map>

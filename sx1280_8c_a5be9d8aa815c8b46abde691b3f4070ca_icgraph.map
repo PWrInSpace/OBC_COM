@@ -1,5 +1,7 @@
 <map id="SX1280GetFirmwareVersion" name="SX1280GetFirmwareVersion">
-<area shape="rect" id="node1" title="Returns the current device firmware version." alt="" coords="368,5,571,31"/>
-<area shape="rect" id="node2" href="$sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a" title=" " alt="" coords="188,5,320,31"/>
-<area shape="rect" id="node3" href="$sx1280__task_8c.html#ae81733e32db03c2f8c8859b7fa9cb942" title=" " alt="" coords="5,5,140,31"/>
+<area shape="rect" id="Node000001" title="Returns the current device firmware version." alt="" coords="368,5,571,31"/>
+<area shape="rect" id="Node000002" href="$sx1280__task_8c.html#aaf2d304e2214ba2dc986b387877b666a" title=" " alt="" coords="188,5,320,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="354,21,320,21,320,15,354,15"/>
+<area shape="rect" id="Node000003" href="$sx1280__task_8c.html#ae81733e32db03c2f8c8859b7fa9cb942" title=" " alt="" coords="5,5,140,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="174,21,140,21,140,15,174,15"/>
 </map>

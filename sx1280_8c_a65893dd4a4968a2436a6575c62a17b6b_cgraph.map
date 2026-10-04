@@ -1,7 +1,11 @@
 <map id="SX1280SetRangingCalibration" name="SX1280SetRangingCalibration">
-<area shape="rect" id="node1" title="Sets the standard processing delay between Master and Slave." alt="" coords="5,31,221,56"/>
-<area shape="rect" id="node2" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="277,5,444,31"/>
-<area shape="rect" id="node3" href="$sx1280-hal_8c.html#a22d55eec45845b70b71327af666c9eb0" title="Write a single byte of data to the radio memory." alt="" coords="269,55,452,80"/>
-<area shape="rect" id="node4" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="500,55,689,80"/>
-<area shape="rect" id="node5" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="737,55,909,80"/>
+<area shape="rect" id="Node000001" title="Sets the standard processing delay between Master and Slave." alt="" coords="5,31,221,56"/>
+<area shape="rect" id="Node000002" href="$sx1280_8c.html#a0a853efd19951935adb13f544740731e" title="Gets the current radio protocol." alt="" coords="277,5,444,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,30,263,25,264,31,222,35"/>
+<area shape="rect" id="Node000003" href="$sx1280-hal_8c.html#a22d55eec45845b70b71327af666c9eb0" title="Write a single byte of data to the radio memory." alt="" coords="269,55,452,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="222,51,256,54,255,60,221,56"/>
+<area shape="rect" id="Node000004" href="$sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" title="Write data to the radio memory." alt="" coords="500,55,689,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="452,65,486,65,486,70,452,70"/>
+<area shape="rect" id="Node000005" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="737,55,909,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="690,65,724,65,724,70,690,70"/>
 </map>

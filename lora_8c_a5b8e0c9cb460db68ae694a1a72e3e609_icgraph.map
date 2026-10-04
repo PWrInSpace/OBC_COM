@@ -1,11 +1,19 @@
 <map id="obc_lo_ra_frame_init" name="obc_lo_ra_frame_init">
-<area shape="rect" id="node1" title=" " alt="" coords="1431,42,1589,67"/>
-<area shape="rect" id="node2" href="$lora_8c.html#a1d33a9dd8efa437b0b5e14a0df0c44a2" title=" " alt="" coords="1199,5,1383,45"/>
-<area shape="rect" id="node3" href="$lora_8c.html#a0f0cadbda8aa2743424ebc36572c7222" title="Encoding and decoding of obc.LoRaFrame." alt="" coords="1209,70,1373,95"/>
-<area shape="rect" id="node4" href="$lora__frame_8c.html#a17239a709e6511cce2fa83ceaf2ab240" title=" " alt="" coords="944,70,1151,95"/>
-<area shape="rect" id="node5" href="$lora__frame_8c.html#a9a22325897386515e6fac7e43893a859" title=" " alt="" coords="727,70,896,95"/>
-<area shape="rect" id="node6" href="$gs__scheduler_8c.html#a815b48fae98b1fdf545b4693a720cca3" title=" " alt="" coords="572,70,679,95"/>
-<area shape="rect" id="node7" href="$rfm95w__task_8c.html#af8b08547037ee5614a6b8e7f8bc00b23" title=" " alt="" coords="389,70,524,95"/>
-<area shape="rect" id="node8" href="$rfm95w__task_8c.html#a5766e691677be755740c5d264c637139" title=" " alt="" coords="199,70,341,95"/>
-<area shape="rect" id="node9" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,70,151,95"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="1431,42,1589,67"/>
+<area shape="rect" id="Node000002" href="$lora_8c.html#a1d33a9dd8efa437b0b5e14a0df0c44a2" title=" " alt="" coords="1199,5,1383,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1417,45,1383,40,1383,35,1417,40"/>
+<area shape="rect" id="Node000003" href="$lora_8c.html#a0f0cadbda8aa2743424ebc36572c7222" title="Encoding and decoding of obc.LoRaFrame." alt="" coords="1209,70,1373,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1417,69,1373,75,1373,70,1417,64"/>
+<area shape="rect" id="Node000004" href="$lora__frame_8c.html#a17239a709e6511cce2fa83ceaf2ab240" title=" " alt="" coords="944,70,1151,95"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1195,85,1151,85,1151,80,1195,80"/>
+<area shape="rect" id="Node000005" href="$lora__frame_8c.html#a9a22325897386515e6fac7e43893a859" title=" " alt="" coords="727,70,896,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="930,85,896,85,896,80,930,80"/>
+<area shape="rect" id="Node000006" href="$gs__scheduler_8c.html#a815b48fae98b1fdf545b4693a720cca3" title=" " alt="" coords="572,70,679,95"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="713,85,679,85,679,80,713,80"/>
+<area shape="rect" id="Node000007" href="$rfm95w__task_8c.html#af8b08547037ee5614a6b8e7f8bc00b23" title=" " alt="" coords="389,70,524,95"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="559,85,525,85,525,80,559,80"/>
+<area shape="rect" id="Node000008" href="$rfm95w__task_8c.html#a5766e691677be755740c5d264c637139" title=" " alt="" coords="199,70,341,95"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="375,85,341,85,341,80,375,80"/>
+<area shape="rect" id="Node000009" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,70,151,95"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="185,85,151,85,151,80,185,80"/>
 </map>

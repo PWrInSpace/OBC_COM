@@ -1,11 +1,22 @@
 <map id="verify_freq" name="verify_freq">
-<area shape="rect" id="node1" title=" " alt="" coords="5,104,97,129"/>
-<area shape="rect" id="node2" href="$sx1280_8c.html#ae97f22ad3f1cd7ff7daece379531a78d" title="Resets the radio." alt="" coords="178,5,286,31"/>
-<area shape="rect" id="node4" href="$sx1280_8c.html#a51ce51cce8dac5a81ed16da5d6350bb1" title="Sets the radio for the given protocol." alt="" coords="150,55,314,80"/>
-<area shape="rect" id="node7" href="$sx1280_8c.html#a4b53cd57d78c3bbc143164769912140a" title="Sets the RF frequency." alt="" coords="145,104,319,129"/>
-<area shape="rect" id="node8" href="$sx1280_8c.html#a074d83ce6ba238f9af19b8bdbff61360" title="Sets the radio in configuration mode." alt="" coords="159,153,305,179"/>
-<area shape="rect" id="node9" href="$sx1280_8c.html#a1c5345ef8b25e8092415fd50f53ffa24" title="Sets the transmission parameters." alt="" coords="154,203,310,228"/>
-<area shape="rect" id="node3" href="$sx1280-hal_8c.html#ad166767283bbb3d7a387ecf2f089cd23" title="Soft resets the radio." alt="" coords="399,5,529,31"/>
-<area shape="rect" id="node5" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="367,128,561,153"/>
-<area shape="rect" id="node6" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="609,128,781,153"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,97,129"/>
+<area shape="rect" id="Node000002" href="$sx1280_8c.html#ae97f22ad3f1cd7ff7daece379531a78d" title="Resets the radio." alt="" coords="178,5,286,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,102,98,71,144,40,164,31,166,36,147,44,101,75,67,106"/>
+<area shape="rect" id="Node000004" href="$sx1280_8c.html#a51ce51cce8dac5a81ed16da5d6350bb1" title="Sets the radio for the given protocol." alt="" coords="150,55,314,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="97,102,171,81,172,86,98,107"/>
+<area shape="rect" id="Node000007" href="$sx1280_8c.html#a4b53cd57d78c3bbc143164769912140a" title="Sets the RF frequency." alt="" coords="145,104,319,129"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="98,114,132,114,132,119,98,119"/>
+<area shape="rect" id="Node000008" href="$sx1280_8c.html#a074d83ce6ba238f9af19b8bdbff61360" title="Sets the radio in configuration mode." alt="" coords="159,153,305,179"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="98,127,172,147,171,152,97,132"/>
+<area shape="rect" id="Node000009" href="$sx1280_8c.html#a1c5345ef8b25e8092415fd50f53ffa24" title="Sets the transmission parameters." alt="" coords="154,203,310,228"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="67,127,101,157,147,188,164,196,162,200,144,192,98,162,64,131"/>
+<area shape="rect" id="Node000003" href="$sx1280-hal_8c.html#ad166767283bbb3d7a387ecf2f089cd23" title="Soft resets the radio." alt="" coords="399,5,529,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="287,15,385,15,385,21,287,21"/>
+<area shape="rect" id="Node000005" href="$sx1280-hal_8c.html#a0f829303c184f799accc7c0f86775284" title="Send a command that write data to the radio." alt="" coords="367,128,561,153"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="281,78,319,89,416,121,414,126,318,94,280,83"/>
+<area shape="rect" id="Node000006" href="$sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" title="Used to block execution waiting for low state on radio busy pin." alt="" coords="609,128,781,153"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="562,138,595,138,595,143,562,143"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="319,123,353,127,353,132,318,128"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="305,155,353,150,353,155,306,161"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="277,200,318,187,413,155,415,160,319,193,278,205"/>
 </map>

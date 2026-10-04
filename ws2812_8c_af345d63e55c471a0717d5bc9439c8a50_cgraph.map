@@ -1,5 +1,7 @@
 <map id="ws2812_show_blocking" name="ws2812_show_blocking">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,180,56"/>
-<area shape="rect" id="node2" href="$ws2812_8c.html#aa57ef631af02e08bc7dc99c41fe8dfde" title=" " alt="" coords="228,5,355,31"/>
-<area shape="rect" id="node3" href="$ws2812_8c.html#a9dbc72bdc8207fbb90566ca4fc90c487" title=" " alt="" coords="233,55,349,80"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,180,56"/>
+<area shape="rect" id="Node000002" href="$ws2812_8c.html#aa57ef631af02e08bc7dc99c41fe8dfde" title=" " alt="" coords="228,5,355,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,30,214,25,214,30,181,35"/>
+<area shape="rect" id="Node000003" href="$ws2812_8c.html#a9dbc72bdc8207fbb90566ca4fc90c487" title=" " alt="" coords="233,55,349,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,51,220,56,219,61,180,57"/>
 </map>

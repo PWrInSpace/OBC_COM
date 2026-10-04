@@ -1,8 +1,17 @@
 <map id="gs_poll_rx" name="gs_poll_rx">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,93,107"/>
-<area shape="rect" id="node2" href="$rfm95w_8c.html#aa38e58dba103790e491c5b9e760d32dd" title=" " alt="" coords="154,5,295,31"/>
-<area shape="rect" id="node3" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="356,31,481,56"/>
-<area shape="rect" id="node4" href="$rfm95w_8c.html#a1c2af535e7de30ee4a285c490a4cee6c" title="Read a received packet." alt="" coords="141,107,308,132"/>
-<area shape="rect" id="node6" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="529,131,659,156"/>
-<area shape="rect" id="node5" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="373,80,465,105"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,93,107"/>
+<area shape="rect" id="Node000002" href="$rfm95w_8c.html#aa38e58dba103790e491c5b9e760d32dd" title=" " alt="" coords="154,5,295,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,79,140,48,175,33,177,38,142,52,77,84"/>
+<area shape="rect" id="Node000003" href="$rfm95w_8c.html#a08bd56c31ba2eb30679127ad53b580cb" title="Read the current value of a register." alt="" coords="356,31,481,56"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="93,85,342,51,343,56,94,91"/>
+<area shape="rect" id="Node000004" href="$rfm95w_8c.html#a1c2af535e7de30ee4a285c490a4cee6c" title="Read a received packet." alt="" coords="141,107,308,132"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="94,98,128,103,127,108,93,103"/>
+<area shape="rect" id="Node000006" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="529,131,659,156"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="69,105,102,125,142,142,191,153,241,159,342,164,436,161,515,153,516,158,437,166,342,169,241,165,190,158,141,147,99,130,66,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="296,25,343,31,342,36,295,30"/>
+<area shape="poly" id="edge7_Node000004_Node000003" title=" " alt="" coords="258,104,307,85,355,65,370,59,372,64,357,70,309,90,260,109"/>
+<area shape="rect" id="Node000005" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="373,80,465,105"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="308,105,359,98,359,103,309,111"/>
+<area shape="poly" id="edge8_Node000004_Node000006" title=" " alt="" coords="308,122,516,136,515,141,308,127"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="464,103,536,124,535,129,463,108"/>
 </map>

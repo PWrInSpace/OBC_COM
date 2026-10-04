@@ -1,7 +1,11 @@
 <map id="app/include/lora_frame.h" name="app/include/lora_frame.h">
-<area shape="rect" id="node1" title=" " alt="" coords="97,5,281,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,79,76,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="101,79,175,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="199,79,282,104"/>
-<area shape="rect" id="node5" href="$lora__commands_8h.html" title=" " alt="" coords="306,79,445,104"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="97,5,281,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,76,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,33,78,75,76,70,164,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="101,79,175,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,33,156,69,152,66,178,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="199,79,282,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="199,29,226,66,222,69,195,33"/>
+<area shape="rect" id="Node000005" href="$lora__commands_8h.html" title=" " alt="" coords="306,79,445,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="220,28,333,71,331,76,218,33"/>
 </map>

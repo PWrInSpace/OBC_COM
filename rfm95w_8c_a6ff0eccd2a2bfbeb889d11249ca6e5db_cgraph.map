@@ -1,5 +1,8 @@
 <map id="rfm95_fill_fifo_buf_to_send" name="rfm95_fill_fifo_buf_to_send">
-<area shape="rect" id="node1" title="Fills the REG_FIFO buffer with desired values, and the REG_PAYLOAD_LENGTH with buffer size." alt="" coords="5,23,145,63"/>
-<area shape="rect" id="node2" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="193,5,285,31"/>
-<area shape="rect" id="node3" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="333,31,463,56"/>
+<area shape="rect" id="Node000001" title="Fills the REG_FIFO buffer with desired values, and the REG_PAYLOAD_LENGTH with buffer size." alt="" coords="5,23,145,63"/>
+<area shape="rect" id="Node000002" href="$rfm95w_8c.html#adf4948272c012e4fccdec02a90318c63" title="Sets the radio transceiver in idle mode." alt="" coords="193,5,285,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,30,180,24,180,30,146,35"/>
+<area shape="rect" id="Node000003" href="$rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" title="Write a value to a register." alt="" coords="333,31,463,56"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="146,41,320,41,320,46,146,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="286,23,320,28,319,33,285,28"/>
 </map>

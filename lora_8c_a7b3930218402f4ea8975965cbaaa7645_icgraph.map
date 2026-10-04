@@ -1,10 +1,17 @@
 <map id="obc_app_frame_init" name="obc_app_frame_init">
-<area shape="rect" id="node1" title=" " alt="" coords="693,99,844,125"/>
-<area shape="rect" id="node2" href="$lora_8c.html#ab2ee6f9586407b3298765c765493d808" title=" " alt="" coords="469,5,645,45"/>
-<area shape="rect" id="node3" href="$lora_8c.html#a13d566965b76d557a227e61cc157039a" title="Encoding and decoding of obc.AppFrame." alt="" coords="479,70,635,95"/>
-<area shape="rect" id="node4" href="$lora_8c.html#a2ba5d055370c2b14455cdeb102210c14" title=" " alt="" coords="477,120,638,160"/>
-<area shape="rect" id="node5" href="$lora_8c.html#abc3032706c4f9ff60e305c10e9a9347b" title=" " alt="" coords="477,184,638,224"/>
-<area shape="rect" id="node6" href="$lora_8c.html#a911f54c53e03942a429649314182c8ab" title=" " alt="" coords="237,184,421,224"/>
-<area shape="rect" id="node7" href="$lora_8c.html#a3ca5f8e33640e696e4199bdac64dc905" title=" " alt="" coords="5,162,189,187"/>
-<area shape="rect" id="node8" href="$lora_8c.html#a1d33a9dd8efa437b0b5e14a0df0c44a2" title=" " alt="" coords="5,212,189,252"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="693,99,844,125"/>
+<area shape="rect" id="Node000002" href="$lora_8c.html#ab2ee6f9586407b3298765c765493d808" title=" " alt="" coords="469,5,645,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="727,96,644,60,614,48,616,43,646,55,729,91"/>
+<area shape="rect" id="Node000003" href="$lora_8c.html#a13d566965b76d557a227e61cc157039a" title="Encoding and decoding of obc.AppFrame." alt="" coords="479,70,635,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="679,102,635,96,636,91,680,97"/>
+<area shape="rect" id="Node000004" href="$lora_8c.html#a2ba5d055370c2b14455cdeb102210c14" title=" " alt="" coords="477,120,638,160"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="680,126,639,132,638,127,679,121"/>
+<area shape="rect" id="Node000005" href="$lora_8c.html#abc3032706c4f9ff60e305c10e9a9347b" title=" " alt="" coords="477,184,638,224"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="732,134,646,174,617,186,615,181,644,170,730,129"/>
+<area shape="rect" id="Node000006" href="$lora_8c.html#a911f54c53e03942a429649314182c8ab" title=" " alt="" coords="237,184,421,224"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="463,207,422,207,422,201,463,201"/>
+<area shape="rect" id="Node000007" href="$lora_8c.html#a3ca5f8e33640e696e4199bdac64dc905" title=" " alt="" coords="5,162,189,187"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="223,193,189,189,190,184,223,188"/>
+<area shape="rect" id="Node000008" href="$lora_8c.html#a1d33a9dd8efa437b0b5e14a0df0c44a2" title=" " alt="" coords="5,212,189,252"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="223,219,190,224,189,218,223,214"/>
 </map>

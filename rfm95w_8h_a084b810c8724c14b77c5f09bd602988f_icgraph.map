@@ -1,13 +1,25 @@
 <map id="rfm95_set_tx_power" name="rfm95_set_tx_power">
-<area shape="rect" id="node1" title="Configure power level for transmission." alt="" coords="1169,84,1324,109"/>
-<area shape="rect" id="node2" href="$rfm95w_8c.html#a6e61164f61a1f17347ebf79f2963b0d2" title="Create default config and set parameters." alt="" coords="961,55,1121,80"/>
-<area shape="rect" id="node9" href="$rfm95w_8c.html#a4f47d99ceb32427929eb25c0ed306183" title=" " alt="" coords="961,105,1121,145"/>
-<area shape="rect" id="node3" href="$rfm95w_8c.html#af893da033abd0ab53bc63b539bc8b541" title="Perform hardware initialization." alt="" coords="795,5,885,31"/>
-<area shape="rect" id="node4" href="$lora__config_8c.html#ad5bfaa68e5000acde54daa44ae48f970" title=" " alt="" coords="767,55,913,80"/>
-<area shape="rect" id="node5" href="$lora__config_8c.html#aa1a41e7cceea88bf0cdc915ebc3e0b5a" title=" " alt="" coords="585,7,706,32"/>
-<area shape="rect" id="node6" href="$rfm95w__task_8c.html#af8b08547037ee5614a6b8e7f8bc00b23" title=" " alt="" coords="389,108,524,133"/>
-<area shape="rect" id="node7" href="$rfm95w__task_8c.html#a5766e691677be755740c5d264c637139" title=" " alt="" coords="199,108,341,133"/>
-<area shape="rect" id="node8" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,108,151,133"/>
-<area shape="rect" id="node10" href="$lora__config_8c.html#addd84c4f747b3fd55b32ef082437cc21" title=" " alt="" coords="767,105,913,145"/>
-<area shape="rect" id="node11" href="$rfm95w__task_8c.html#aec3803cc26789b3cbf72bb31223778d2" title=" " alt="" coords="572,159,719,184"/>
+<area shape="rect" id="Node000001" title="Configure power level for transmission." alt="" coords="1169,84,1324,109"/>
+<area shape="rect" id="Node000002" href="$rfm95w_8c.html#a6e61164f61a1f17347ebf79f2963b0d2" title="Create default config and set parameters." alt="" coords="961,55,1121,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1156,86,1121,81,1122,76,1156,81"/>
+<area shape="rect" id="Node000009" href="$rfm95w_8c.html#a4f47d99ceb32427929eb25c0ed306183" title=" " alt="" coords="961,105,1121,145"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1156,112,1122,116,1121,111,1156,106"/>
+<area shape="rect" id="Node000003" href="$rfm95w_8c.html#af893da033abd0ab53bc63b539bc8b541" title="Perform hardware initialization." alt="" coords="795,5,885,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="975,54,884,31,886,26,976,49"/>
+<area shape="rect" id="Node000004" href="$lora__config_8c.html#ad5bfaa68e5000acde54daa44ae48f970" title=" " alt="" coords="767,55,913,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="947,70,914,70,914,65,947,65"/>
+<area shape="rect" id="Node000005" href="$lora__config_8c.html#aa1a41e7cceea88bf0cdc915ebc3e0b5a" title=" " alt="" coords="585,7,706,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="774,54,697,35,698,30,775,49"/>
+<area shape="rect" id="Node000006" href="$rfm95w__task_8c.html#af8b08547037ee5614a6b8e7f8bc00b23" title=" " alt="" coords="389,108,524,133"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="753,81,572,106,525,113,524,108,572,101,753,76"/>
+<area shape="rect" id="Node000007" href="$rfm95w__task_8c.html#a5766e691677be755740c5d264c637139" title=" " alt="" coords="199,108,341,133"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="375,123,341,123,341,118,375,118"/>
+<area shape="rect" id="Node000008" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,108,151,133"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="185,123,151,123,151,118,185,118"/>
+<area shape="rect" id="Node000010" href="$lora__config_8c.html#addd84c4f747b3fd55b32ef082437cc21" title=" " alt="" coords="767,105,913,145"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="947,127,914,127,914,122,947,122"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="753,126,524,124,524,119,753,121"/>
+<area shape="rect" id="Node000011" href="$rfm95w__task_8c.html#aec3803cc26789b3cbf72bb31223778d2" title=" " alt="" coords="572,159,719,184"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="754,148,700,161,699,156,753,143"/>
+<area shape="poly" id="edge11_Node000011_Node000006" title=" " alt="" coords="583,158,504,136,506,131,585,152"/>
 </map>

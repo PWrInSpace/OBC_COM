@@ -1,4 +1,5 @@
 <map id="forward_window" name="forward_window">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,135,31"/>
-<area shape="rect" id="node2" href="$gs__scheduler_8c.html#a7ddee0a85ef16df4042b9861638153b6" title=" " alt="" coords="183,5,297,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,135,31"/>
+<area shape="rect" id="Node000002" href="$gs__scheduler_8c.html#a7ddee0a85ef16df4042b9861638153b6" title=" " alt="" coords="183,5,297,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,15,169,15,169,21,135,21"/>
 </map>

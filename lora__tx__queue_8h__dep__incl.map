@@ -1,7 +1,12 @@
 <map id="app/include/lora_tx_queue.h" name="app/include/lora_tx_queue.h">
-<area shape="rect" id="node1" title=" " alt="" coords="209,5,356,45"/>
-<area shape="rect" id="node2" href="$gs__scheduler_8h.html" title=" " alt="" coords="48,93,245,119"/>
-<area shape="rect" id="node4" href="$rfm95w__task_8c.html" title=" " alt="" coords="198,167,367,192"/>
-<area shape="rect" id="node5" href="$lora__tx__queue_8c.html" title=" " alt="" coords="320,93,496,119"/>
-<area shape="rect" id="node3" href="$gs__scheduler_8c.html" title=" " alt="" coords="5,167,173,192"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="209,5,356,45"/>
+<area shape="rect" id="Node000002" href="$gs__scheduler_8h.html" title=" " alt="" coords="48,93,245,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,55,168,95,165,91,237,50"/>
+<area shape="rect" id="Node000004" href="$rfm95w__task_8c.html" title=" " alt="" coords="198,167,367,192"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="285,60,285,166,280,166,280,60"/>
+<area shape="rect" id="Node000005" href="$lora__tx__queue_8c.html" title=" " alt="" coords="320,93,496,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="326,51,391,91,388,95,323,55"/>
+<area shape="rect" id="Node000003" href="$gs__scheduler_8c.html" title=" " alt="" coords="5,167,173,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="131,131,101,168,97,165,127,128"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="182,122,262,164,259,169,179,127"/>
 </map>

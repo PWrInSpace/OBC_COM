@@ -6,121 +6,167 @@
 <!-- Title: start_gps_task Pages: 1 -->
 <svg width="482pt" height="175pt"
  viewBox="0.00 0.00 482.00 175.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
+<style type="text/css"><![CDATA[
+.node, .edge {opacity: 0.7;}
+.node.selected, .edge.selected {opacity: 1;}
+.edge:hover path { stroke: red; }
+.edge:hover polygon { stroke: red; fill: red; }
+]]></style>
+<script type="application/ecmascript" xlink:href="svg.min.js"/>
+<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 171)">
 <title>start_gps_task</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="88,-93 0,-93 0,-74 88,-74 88,-93"/>
 <text text-anchor="middle" x="44" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">start_gps_task</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="gps__task_8c.html#a2b4ba50a0ecdfbe3864bc6cf9ad0b8b4" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="gps__task_8c.html#a2b4ba50a0ecdfbe3864bc6cf9ad0b8b4" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="184,-93 124,-93 124,-74 184,-74 184,-93"/>
 <text text-anchor="middle" x="154" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">gps_task</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M88.31,-83.5C96.72,-83.5 105.5,-83.5 113.78,-83.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="113.93,-87 123.93,-83.5 113.93,-80 113.93,-87"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="gps__task_8c.html#ae5fc8034e9ce13657187e2a7df794409" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="gps__task_8c.html#ae5fc8034e9ce13657187e2a7df794409" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="320.5,-167 236.5,-167 236.5,-148 320.5,-148 320.5,-167"/>
 <text text-anchor="middle" x="278.5" y="-155" font-family="Helvetica,sans-Serif" font-size="10.00">configure_gps</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M163.76,-93.18C175.46,-105.56 197.35,-126.91 220,-139.5 223.06,-141.2 226.31,-142.77 229.64,-144.2"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="228.57,-147.54 239.16,-147.91 231.11,-141.02 228.57,-147.54"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="GNSS_8c.html#aaba3740a3ad0f0f596ab5c8aee7da859" target="_top" xlink:title="Parse received data from GPS module.">
+<g id="a_Node000004"><a xlink:href="GNSS_8c.html#aaba3740a3ad0f0f596ab5c8aee7da859" target="_top" xlink:title="Parse received data from GPS module.">
 <polygon fill="white" stroke="#666666" points="337,-130 220,-130 220,-111 337,-111 337,-130"/>
 <text text-anchor="middle" x="278.5" y="-118" font-family="Helvetica,sans-Serif" font-size="10.00">GNSS_ParsePVTData</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000002_Node000004" class="edge">
 <title>Node2&#45;&gt;Node4</title>
+<g id="a_edge3_Node000002_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M184.03,-92.27C199.53,-96.95 218.87,-102.79 235.93,-107.94"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="235.08,-111.34 245.67,-110.89 237.11,-104.64 235.08,-111.34"/>
+</a>
+</g>
 </g>
 <!-- Node5 -->
-<g id="node5" class="node">
+<g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="gps__task_8c.html#ac936b9a955932af5020b0aa7af8d09ad" target="_top" xlink:title="Szuka nagłówka NAV&#45;PVT w buforze 256B i kopiuje 100B na początek bufora roboczego.">
+<g id="a_Node000005"><a xlink:href="gps__task_8c.html#ac936b9a955932af5020b0aa7af8d09ad" target="_top" xlink:title="Szuka nagłówka NAV&#45;PVT w buforze 256B i kopiuje 100B na początek bufora roboczego.">
 <polygon fill="white" stroke="#666666" points="326,-93 231,-93 231,-74 326,-74 326,-93"/>
 <text text-anchor="middle" x="278.5" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">GPS_AlignBuffer</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
+<g id="edge4_Node000002_Node000005" class="edge">
 <title>Node2&#45;&gt;Node5</title>
+<g id="a_edge4_Node000002_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M184.03,-83.5C195.08,-83.5 208.1,-83.5 220.84,-83.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="220.96,-87 230.96,-83.5 220.96,-80 220.96,-87"/>
+</a>
+</g>
 </g>
 <!-- Node6 -->
-<g id="node6" class="node">
+<g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="gps__task_8c.html#a6eae2e3cf49d0681be46c984ad81c1fa" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="gps__task_8c.html#a6eae2e3cf49d0681be46c984ad81c1fa" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="326,-56 231,-56 231,-37 326,-37 326,-56"/>
 <text text-anchor="middle" x="278.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">GPS_PrintStatus</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node6 -->
-<g id="edge5" class="edge">
+<g id="edge5_Node000002_Node000006" class="edge">
 <title>Node2&#45;&gt;Node6</title>
+<g id="a_edge5_Node000002_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M184.03,-74.73C199.53,-70.05 218.87,-64.21 235.93,-59.06"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="237.11,-62.36 245.67,-56.11 235.08,-55.66 237.11,-62.36"/>
+</a>
+</g>
 </g>
 <!-- Node7 -->
-<g id="node7" class="node">
+<g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" target="_top" xlink:title=" ">
+<g id="a_Node000007"><a xlink:href="usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="320.5,-19 236.5,-19 236.5,0 320.5,0 320.5,-19"/>
 <text text-anchor="middle" x="278.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">USB_Transmit</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node7 -->
-<g id="edge6" class="edge">
+<g id="edge6_Node000002_Node000007" class="edge">
 <title>Node2&#45;&gt;Node7</title>
+<g id="a_edge6_Node000002_Node000007"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M164.24,-73.64C176.1,-61.48 197.82,-40.93 220,-28.5 223.71,-26.42 227.69,-24.52 231.76,-22.8"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="233.26,-25.97 241.32,-19.1 230.73,-19.44 233.26,-25.97"/>
+</a>
+</g>
 </g>
 <!-- Node8 -->
-<g id="node8" class="node">
+<g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" target="_top" xlink:title=" ">
+<g id="a_Node000008"><a xlink:href="group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="474,-19 373,-19 373,0 474,0 474,-19"/>
 <text text-anchor="middle" x="423.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">CDC_Transmit_FS</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node8 -->
-<g id="edge7" class="edge">
+<g id="edge7_Node000007_Node000008" class="edge">
 <title>Node7&#45;&gt;Node8</title>
+<g id="a_edge7_Node000007_Node000008"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M320.86,-9.5C333.94,-9.5 348.66,-9.5 362.76,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="362.88,-13 372.88,-9.5 362.88,-6 362.88,-13"/>
+</a>
 </g>
 </g>
+</g>
+</svg>
+</svg>
+
+<style type='text/css'>
+<![CDATA[
+[data-mouse-over-selected='false'] { opacity: 0.7; }
+[data-mouse-over-selected='true']  { opacity: 1.0; }
+]]>
+</style>
+<script type="application/ecmascript"><![CDATA[
+document.addEventListener('DOMContentLoaded', (event) => {
+  highlightEdges();
+  highlightAdjacentNodes();
+});
+]]></script>
 </svg>

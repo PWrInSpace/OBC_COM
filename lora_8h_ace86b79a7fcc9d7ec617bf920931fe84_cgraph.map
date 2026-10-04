@@ -1,5 +1,7 @@
 <map id="obc_mcb_frame_decode_repeated_inner" name="obc_mcb_frame_decode_repeated_inner">
-<area shape="rect" id="node1" title=" " alt="" coords="5,35,185,75"/>
-<area shape="rect" id="node2" href="$lora_8c.html#aa02ce0f5f38965a22b3b99a1ace29508" title=" " alt="" coords="233,5,413,45"/>
-<area shape="rect" id="node3" href="$lora_8c.html#adc2ccab86a4a44f23f408d8db2f38f6e" title="The MIT License (MIT)" alt="" coords="246,70,401,95"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,185,75"/>
+<area shape="rect" id="Node000002" href="$lora_8c.html#aa02ce0f5f38965a22b3b99a1ace29508" title=" " alt="" coords="233,5,413,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,40,220,36,220,41,186,46"/>
+<area shape="rect" id="Node000003" href="$lora_8c.html#adc2ccab86a4a44f23f408d8db2f38f6e" title="The MIT License (MIT)" alt="" coords="246,70,401,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,63,233,69,232,74,185,68"/>
 </map>

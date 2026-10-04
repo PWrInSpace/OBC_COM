@@ -5,68 +5,68 @@
  -->
 <!-- Title: handle_bw Pages: 1 -->
 <!--zoomable 240 -->
+
 <svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
 <style type="text/css"><![CDATA[
+.node, .edge {opacity: 0.7;}
+.node.selected, .edge.selected {opacity: 1;}
 .edge:hover path { stroke: red; }
 .edge:hover polygon { stroke: red; fill: red; }
 ]]></style>
-<script type="text/javascript"><![CDATA[
-var edges = document.getElementsByTagName('g');
-if (edges && edges.length) {
-  for (var i=0;i<edges.length;i++) {
-    if (edges[i].id.substr(0,4)=='edge') {
-      edges[i].setAttribute('class','edge');
-    }
-  }
-}
-]]></script>
-        <defs>
-                <circle id="rim" cx="0" cy="0" r="7"/>
-                <circle id="rim2" cx="0" cy="0" r="3.5"/>
-                <g id="zoomPlus">
-                        <use xlink:href="#rim" fill="#404040">
-                                <set attributeName="fill" to="#808080" begin="zoomplus.mouseover" end="zoomplus.mouseout"/>
-                        </use>
-                        <path d="M-4,0h8M0,-4v8" fill="none" stroke="white" stroke-width="1.5" pointer-events="none"/>
-                </g>
-                <g id="zoomMin">
-                        <use xlink:href="#rim" fill="#404040">
-                                <set attributeName="fill" to="#808080" begin="zoomminus.mouseover" end="zoomminus.mouseout"/>
-                        </use>
-                        <path d="M-4,0h8" fill="none" stroke="white" stroke-width="1.5" pointer-events="none"/>
-                </g>
-                <g id="dirArrow">
-                        <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
-                </g>
-               <g id="resetDef">
-                       <use xlink:href="#rim2" fill="#404040">
-                               <set attributeName="fill" to="#808080" begin="reset.mouseover" end="reset.mouseout"/>
-                       </use>
-               </g>
-        </defs>
 
-<script type="text/javascript">
+<defs>
+  <circle id="rim" cx="0" cy="0" r="7"/>
+  <circle id="rim2" cx="0" cy="0" r="3.5"/>
+  <g id="zoomPlus">
+    <use xlink:href="#rim" fill="#404040"><set attributeName="fill" to="#808080" begin="zoomplus.mouseover" end="zoomplus.mouseout"/></use>
+    <path d="M-4,0h8M0,-4v8" fill="none" stroke="white" stroke-width="1.5" pointer-events="none"/>
+  </g>
+  <g id="zoomMin">
+    <use xlink:href="#rim" fill="#404040"><set attributeName="fill" to="#808080" begin="zoomminus.mouseover" end="zoomminus.mouseout"/></use>
+    <path d="M-4,0h8" fill="none" stroke="white" stroke-width="1.5" pointer-events="none"/>
+  </g>
+  <g id="arrowUp" transform="translate(30 24)">
+    <use xlink:href="#rim"/>
+    <path pointer-events="none" fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
+  </g>
+  <g id="arrowRight" transform="rotate(90) translate(36 -43)">
+    <use xlink:href="#rim"/>
+    <path pointer-events="none" fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
+  </g>
+  <g id="arrowDown" transform="rotate(180) translate(-30 -48)">
+    <use xlink:href="#rim"/>
+    <path pointer-events="none" fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
+  </g>
+  <g id="arrowLeft" transform="rotate(270) translate(-36 17)">
+    <use xlink:href="#rim"/>
+    <path pointer-events="none" fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
+  </g>
+  <g id="resetDef">
+    <use xlink:href="#rim2" fill="#404040"><set attributeName="fill" to="#808080" begin="reset.mouseover" end="reset.mouseout"/></use>
+  </g>
+</defs>
+<script type="application/ecmascript">
 var viewWidth = 1220;
 var viewHeight = 240;
 var sectionId = 'dynsection-2';
 </script>
-<script xlink:href="svgpan.js"/>
+<script type="application/ecmascript" xlink:href="svg.min.js"/>
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>handle_bw</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="69,-119.6 0,-119.6 0,-100.6 69,-100.6 69,-119.6"/>
 <text text-anchor="middle" x="34.5" y="-107.6" font-family="Helvetica,sans-Serif" font-size="10.00">handle_bw</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="rfm95w__task_8c.html#ab703cdbff7041f98030e2b45663ffcfa" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="rfm95w__task_8c.html#ab703cdbff7041f98030e2b45663ffcfa" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="232,-168.1 105,-168.1 105,-138.1 232,-138.1 232,-168.1"/>
 <text text-anchor="start" x="113" y="-156.1" font-family="Helvetica,sans-Serif" font-size="10.00">lora_gs_mark_settings</text>
 <text text-anchor="middle" x="168.5" y="-145.1" font-family="Helvetica,sans-Serif" font-size="10.00">_dirty</text>
@@ -74,352 +74,427 @@ var sectionId = 'dynsection-2';
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M64.8,-119.64C78.57,-124.13 95.47,-129.64 111.56,-134.88"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="110.84,-138.32 121.43,-138.09 113.01,-131.67 110.84,-138.32"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="nvs__config_8c.html#a9001a4d9eea93c6f521f1b94014e967a" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="nvs__config_8c.html#a9001a4d9eea93c6f521f1b94014e967a" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="202.5,-119.6 134.5,-119.6 134.5,-100.6 202.5,-100.6 202.5,-119.6"/>
 <text text-anchor="middle" x="168.5" y="-107.6" font-family="Helvetica,sans-Serif" font-size="10.00">NVS_Write</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
+<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M69.15,-110.1C85.88,-110.1 106.29,-110.1 124.18,-110.1"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="124.37,-113.6 134.37,-110.1 124.37,-106.6 124.37,-113.6"/>
+</a>
+</g>
 </g>
 <!-- Node17 -->
-<g id="node17" class="node">
+<g id="Node000017" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" target="_top" xlink:title=" ">
+<g id="a_Node000017"><a xlink:href="usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="210.5,-82.6 126.5,-82.6 126.5,-63.6 210.5,-63.6 210.5,-82.6"/>
 <text text-anchor="middle" x="168.5" y="-70.6" font-family="Helvetica,sans-Serif" font-size="10.00">USB_Transmit</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node17 -->
-<g id="edge26" class="edge">
+<g id="edge26_Node000001_Node000017" class="edge">
 <title>Node1&#45;&gt;Node17</title>
+<g id="a_edge26_Node000001_Node000017"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M69.15,-100.67C85.62,-96.05 105.67,-90.43 123.36,-85.47"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="124.77,-88.71 133.45,-82.64 122.88,-81.97 124.77,-88.71"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="group__EEPROM__Exported__Functions.html#gaa5483980e10a634ccae116ca5afcb911" target="_top" xlink:title="Erase group of pages which are erasing state, in polling mode.">
+<g id="a_Node000004"><a xlink:href="group__EEPROM__Exported__Functions.html#gaa5483980e10a634ccae116ca5afcb911" target="_top" xlink:title="Erase group of pages which are erasing state, in polling mode.">
 <polygon fill="white" stroke="#666666" points="1057,-213.6 982,-213.6 982,-194.6 1057,-194.6 1057,-213.6"/>
 <text text-anchor="middle" x="1019.5" y="-201.6" font-family="Helvetica,sans-Serif" font-size="10.00">EE_CleanUp</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
+<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M200.98,-119.64C210.91,-122.66 221.92,-126.01 232,-129.1 339.86,-162.17 361.69,-204.1 474.5,-204.1 474.5,-204.1 474.5,-204.1 752,-204.1 828.99,-204.1 918.5,-204.1 971.71,-204.1"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="971.86,-207.6 981.86,-204.1 971.86,-200.6 971.86,-207.6"/>
+</a>
+</g>
 </g>
 <!-- Node8 -->
-<g id="node8" class="node">
+<g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="group__EEPROM__Exported__Functions.html#ga8aeb1ab28357d073af8ed7e62c96877f" target="_top" xlink:title="Writes/updates variable data in EEPROM.">
+<g id="a_Node000008"><a xlink:href="group__EEPROM__Exported__Functions.html#ga8aeb1ab28357d073af8ed7e62c96877f" target="_top" xlink:title="Writes/updates variable data in EEPROM.">
 <polygon fill="white" stroke="#666666" points="398,-119.6 268,-119.6 268,-100.6 398,-100.6 398,-119.6"/>
 <text text-anchor="middle" x="333" y="-107.6" font-family="Helvetica,sans-Serif" font-size="10.00">EE_WriteVariable32bits</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node8 -->
-<g id="edge7" class="edge">
+<g id="edge7_Node000003_Node000008" class="edge">
 <title>Node3&#45;&gt;Node8</title>
+<g id="a_edge7_Node000003_Node000008"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M202.78,-110.1C218.75,-110.1 238.57,-110.1 257.86,-110.1"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="257.88,-113.6 267.88,-110.1 257.88,-106.6 257.88,-113.6"/>
+</a>
+</g>
 </g>
 <!-- Node5 -->
-<g id="node5" class="node">
+<g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="group__EEPROM__Private__Functions.html#ga4375dd5bf83e259a3481a83b5993a1a3" target="_top" xlink:title="Flush the caches if needed to keep coherency when the flash content is modified.">
+<g id="a_Node000005"><a xlink:href="group__EEPROM__Private__Functions.html#ga4375dd5bf83e259a3481a83b5993a1a3" target="_top" xlink:title="Flush the caches if needed to keep coherency when the flash content is modified.">
 <polygon fill="white" stroke="#666666" points="1197.5,-231.6 1110.5,-231.6 1110.5,-212.6 1197.5,-212.6 1197.5,-231.6"/>
 <text text-anchor="middle" x="1154" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.00">FI_CacheFlush</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
+<g id="edge4_Node000004_Node000005" class="edge">
 <title>Node4&#45;&gt;Node5</title>
+<g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M1057.06,-209.07C1070.37,-210.88 1085.7,-212.96 1100.15,-214.92"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1100.09,-218.44 1110.47,-216.32 1101.03,-211.51 1100.09,-218.44"/>
+</a>
+</g>
 </g>
 <!-- Node6 -->
-<g id="node6" class="node">
+<g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="group__EEPROM__Private__Functions.html#gaf950461e14bae3fd51f89e9dd59db26b" target="_top" xlink:title="Erase a page in polling mode.">
+<g id="a_Node000006"><a xlink:href="group__EEPROM__Private__Functions.html#gaf950461e14bae3fd51f89e9dd59db26b" target="_top" xlink:title="Erase a page in polling mode.">
 <polygon fill="white" stroke="#666666" points="1194.5,-194.6 1113.5,-194.6 1113.5,-175.6 1194.5,-175.6 1194.5,-194.6"/>
 <text text-anchor="middle" x="1154" y="-182.6" font-family="Helvetica,sans-Serif" font-size="10.00">FI_PageErase</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node6 -->
-<g id="edge5" class="edge">
+<g id="edge5_Node000004_Node000006" class="edge">
 <title>Node4&#45;&gt;Node6</title>
+<g id="a_edge5_Node000004_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M1057.06,-198.86C1071.25,-196.82 1087.73,-194.46 1102.99,-192.27"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1103.91,-195.68 1113.31,-190.79 1102.91,-188.75 1103.91,-195.68"/>
+</a>
+</g>
 </g>
 <!-- Node7 -->
-<g id="node7" class="node">
+<g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="group__EEPROM__Private__Functions.html#ga2304deed602aa5aa10ecebbf7de5352c" target="_top" xlink:title="Get page state in page header.">
+<g id="a_Node000007"><a xlink:href="group__EEPROM__Private__Functions.html#ga2304deed602aa5aa10ecebbf7de5352c" target="_top" xlink:title="Get page state in page header.">
 <polygon fill="white" stroke="#666666" points="1195.5,-147.6 1112.5,-147.6 1112.5,-128.6 1195.5,-128.6 1195.5,-147.6"/>
 <text text-anchor="middle" x="1154" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.00">GetPageState</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node7 -->
-<g id="edge6" class="edge">
+<g id="edge6_Node000004_Node000007" class="edge">
 <title>Node4&#45;&gt;Node7</title>
+<g id="a_edge6_Node000004_Node000007"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M1039.77,-194.5C1062.04,-183.41 1098.92,-165.04 1124.51,-152.29"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1126.32,-155.3 1133.71,-147.71 1123.2,-149.03 1126.32,-155.3"/>
+</a>
+</g>
 </g>
 <!-- Node9 -->
-<g id="node9" class="node">
+<g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="group__EEPROM__Private__Functions.html#gab1030d083e54bb50edcd083851de0620" target="_top" xlink:title="Writes/updates variable data in EEPROM Trig internal Pages transfer if half of the pages are full.">
+<g id="a_Node000009"><a xlink:href="group__EEPROM__Private__Functions.html#gab1030d083e54bb50edcd083851de0620" target="_top" xlink:title="Writes/updates variable data in EEPROM Trig internal Pages transfer if half of the pages are full.">
 <polygon fill="white" stroke="#666666" points="517,-81.6 434,-81.6 434,-62.6 517,-62.6 517,-81.6"/>
 <text text-anchor="middle" x="475.5" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.00">WriteVariable</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node9 -->
-<g id="edge8" class="edge">
+<g id="edge8_Node000008_Node000009" class="edge">
 <title>Node8&#45;&gt;Node9</title>
+<g id="a_edge8_Node000008_Node000009"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M369.45,-100.51C387.59,-95.61 409.87,-89.58 429.23,-84.34"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="430.32,-87.68 439.06,-81.69 428.49,-80.92 430.32,-87.68"/>
+</a>
+</g>
 </g>
 <!-- Node10 -->
-<g id="node10" class="node">
+<g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="group__EEPROM__Private__Functions.html#ga8d8715ee491b7eae710c3deabc74dd0d" target="_top" xlink:title="Writes a new variable data in fresh new page in case of normal transfer, and transfers last updated e...">
+<g id="a_Node000010"><a xlink:href="group__EEPROM__Private__Functions.html#ga8d8715ee491b7eae710c3deabc74dd0d" target="_top" xlink:title="Writes a new variable data in fresh new page in case of normal transfer, and transfers last updated e...">
 <polygon fill="white" stroke="#666666" points="637,-81.6 553,-81.6 553,-62.6 637,-62.6 637,-81.6"/>
 <text text-anchor="middle" x="595" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.00">PagesTransfer</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node10 -->
-<g id="edge9" class="edge">
+<g id="edge9_Node000009_Node000010" class="edge">
 <title>Node9&#45;&gt;Node10</title>
+<g id="a_edge9_Node000009_Node000010"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M517.27,-72.1C525.47,-72.1 534.18,-72.1 542.69,-72.1"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="542.91,-75.6 552.91,-72.1 542.91,-68.6 542.91,-75.6"/>
+</a>
+</g>
 </g>
 <!-- Node16 -->
-<g id="node16" class="node">
+<g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_node16"><a xlink:href="group__EEPROM__Private__Functions.html#gaf47e9f09b5a17c1e9fafbd1ca8e967cc" target="_top" xlink:title="Verify if pages are full then if not the case, writes variable in EEPROM.">
+<g id="a_Node000016"><a xlink:href="group__EEPROM__Private__Functions.html#gaf47e9f09b5a17c1e9fafbd1ca8e967cc" target="_top" xlink:title="Verify if pages are full then if not the case, writes variable in EEPROM.">
 <polygon fill="white" stroke="#666666" points="829,-43.6 673,-43.6 673,-24.6 829,-24.6 829,-43.6"/>
 <text text-anchor="middle" x="751" y="-31.6" font-family="Helvetica,sans-Serif" font-size="10.00">VerifyPagesFullWriteVariable</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node16 -->
-<g id="edge25" class="edge">
+<g id="edge25_Node000009_Node000016" class="edge">
 <title>Node9&#45;&gt;Node16</title>
+<g id="a_edge25_Node000009_Node000016"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M510.55,-62.5C523.72,-59.09 538.97,-55.51 553,-53.1 588.76,-46.97 628.53,-42.67 662.92,-39.72"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="663.26,-43.21 672.94,-38.89 662.68,-36.23 663.26,-43.21"/>
+</a>
+</g>
 </g>
 <!-- Node10&#45;&gt;Node7 -->
-<g id="edge15" class="edge">
+<g id="edge15_Node000010_Node000007" class="edge">
 <title>Node10&#45;&gt;Node7</title>
+<g id="a_edge15_Node000010_Node000007"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M605.32,-82C618.76,-95.53 645.09,-119.23 673,-129.1 821.68,-181.67 1012.79,-161.45 1102.39,-147.32"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1102.98,-150.77 1112.29,-145.72 1101.86,-143.86 1102.98,-150.77"/>
+</a>
+</g>
 </g>
 <!-- Node11 -->
-<g id="node11" class="node">
+<g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="group__EEPROM__Private__Functions.html#ga155bacb56c1c6ea24464cdd408fc8ebb" target="_top" xlink:title="Find suitable page for read/write/erase operation.">
+<g id="a_Node000011"><a xlink:href="group__EEPROM__Private__Functions.html#ga155bacb56c1c6ea24464cdd408fc8ebb" target="_top" xlink:title="Find suitable page for read/write/erase operation.">
 <polygon fill="white" stroke="#666666" points="934,-62.6 874,-62.6 874,-43.6 934,-43.6 934,-62.6"/>
 <text text-anchor="middle" x="904" y="-50.6" font-family="Helvetica,sans-Serif" font-size="10.00">FindPage</text>
 </a>
 </g>
 </g>
 <!-- Node10&#45;&gt;Node11 -->
-<g id="edge10" class="edge">
+<g id="edge10_Node000010_Node000011" class="edge">
 <title>Node10&#45;&gt;Node11</title>
+<g id="a_edge10_Node000010_Node000011"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M637.08,-69.56C696.3,-65.89 804.93,-59.17 863.35,-55.55"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="863.88,-59.03 873.64,-54.92 863.45,-52.04 863.88,-59.03"/>
+</a>
+</g>
 </g>
 <!-- Node12 -->
-<g id="node12" class="node">
+<g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="group__EEPROM__Private__Functions.html#gab2cc682a7689c76d4188bda3af6e9b0f" target="_top" xlink:title="Set page state in page header.">
+<g id="a_Node000012"><a xlink:href="group__EEPROM__Private__Functions.html#gab2cc682a7689c76d4188bda3af6e9b0f" target="_top" xlink:title="Set page state in page header.">
 <polygon fill="white" stroke="#666666" points="1060,-61.6 979,-61.6 979,-42.6 1060,-42.6 1060,-61.6"/>
 <text text-anchor="middle" x="1019.5" y="-49.6" font-family="Helvetica,sans-Serif" font-size="10.00">SetPageState</text>
 </a>
 </g>
 </g>
 <!-- Node10&#45;&gt;Node12 -->
-<g id="edge20" class="edge">
+<g id="edge20_Node000010_Node000012" class="edge">
 <title>Node10&#45;&gt;Node12</title>
+<g id="a_edge20_Node000010_Node000012"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M604.81,-62.49C618.05,-48.85 644.57,-24.48 673,-15.1 782.3,20.95 920.59,-17.28 983.95,-39.1"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="982.86,-42.43 993.46,-42.45 985.18,-35.83 982.86,-42.43"/>
+</a>
+</g>
 </g>
 <!-- Node14 -->
-<g id="node14" class="node">
+<g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="group__EEPROM__Private__Functions.html#gad111ea700245720d7f0cc24b0b8f4f58" target="_top" xlink:title="Returns the last stored variable data, if found, which correspond to the passed virtual address.">
+<g id="a_Node000014"><a xlink:href="group__EEPROM__Private__Functions.html#gad111ea700245720d7f0cc24b0b8f4f58" target="_top" xlink:title="Returns the last stored variable data, if found, which correspond to the passed virtual address.">
 <polygon fill="white" stroke="#666666" points="791.5,-119.6 710.5,-119.6 710.5,-100.6 791.5,-100.6 791.5,-119.6"/>
 <text text-anchor="middle" x="751" y="-107.6" font-family="Helvetica,sans-Serif" font-size="10.00">ReadVariable</text>
 </a>
 </g>
 </g>
 <!-- Node10&#45;&gt;Node14 -->
-<g id="edge16" class="edge">
+<g id="edge16_Node000010_Node000014" class="edge">
 <title>Node10&#45;&gt;Node14</title>
+<g id="a_edge16_Node000010_Node000014"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M634.86,-81.69C655.09,-86.68 680.02,-92.83 701.5,-98.13"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="700.87,-101.58 711.42,-100.58 702.55,-94.79 700.87,-101.58"/>
+</a>
+</g>
 </g>
 <!-- Node10&#45;&gt;Node16 -->
-<g id="edge21" class="edge">
+<g id="edge21_Node000010_Node000016" class="edge">
 <title>Node10&#45;&gt;Node16</title>
+<g id="a_edge21_Node000010_Node000016"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M634.86,-62.51C655.09,-57.52 680.02,-51.37 701.5,-46.07"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="702.55,-49.41 711.42,-43.62 700.87,-42.62 702.55,-49.41"/>
+</a>
+</g>
 </g>
 <!-- Node11&#45;&gt;Node4 -->
-<g id="edge11" class="edge">
+<g id="edge11_Node000011_Node000004" class="edge">
 <title>Node11&#45;&gt;Node4</title>
+<g id="a_edge11_Node000011_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M929.69,-62.78C934.45,-65.35 939.14,-68.45 943,-72.1 977.7,-104.91 1001.06,-157.26 1011.78,-185.15"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1008.5,-186.4 1015.26,-194.55 1015.07,-183.96 1008.5,-186.4"/>
+</a>
+</g>
 </g>
 <!-- Node11&#45;&gt;Node7 -->
-<g id="edge12" class="edge">
+<g id="edge12_Node000011_Node000007" class="edge">
 <title>Node11&#45;&gt;Node7</title>
+<g id="a_edge12_Node000011_Node000007"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M932.97,-62.69C977.74,-78.03 1065.55,-108.13 1115.64,-125.3"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1114.54,-128.62 1125.14,-128.55 1116.81,-122 1114.54,-128.62"/>
+</a>
+</g>
 </g>
 <!-- Node11&#45;&gt;Node12 -->
-<g id="edge13" class="edge">
+<g id="edge13_Node000011_Node000012" class="edge">
 <title>Node11&#45;&gt;Node12</title>
+<g id="a_edge13_Node000011_Node000012"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M934.23,-52.84C944.69,-52.75 956.81,-52.64 968.53,-52.54"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="968.71,-56.04 978.68,-52.45 968.65,-49.04 968.71,-56.04"/>
+</a>
+</g>
 </g>
 <!-- Node13 -->
-<g id="node13" class="node">
+<g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="group__EEPROM__Private__Functions.html#gaaf190b387699ec8d894cfe8449522084" target="_top" xlink:title="Write a quad word at the given address in Flash (function is called FI_WriteDoubleWord to respect leg...">
+<g id="a_Node000013"><a xlink:href="group__EEPROM__Private__Functions.html#gaaf190b387699ec8d894cfe8449522084" target="_top" xlink:title="Write a quad word at the given address in Flash (function is called FI_WriteDoubleWord to respect leg...">
 <polygon fill="white" stroke="#666666" points="1212,-42.6 1096,-42.6 1096,-23.6 1212,-23.6 1212,-42.6"/>
 <text text-anchor="middle" x="1154" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.00">FI_WriteDoubleWord</text>
 </a>
 </g>
 </g>
 <!-- Node12&#45;&gt;Node13 -->
-<g id="edge14" class="edge">
+<g id="edge14_Node000012_Node000013" class="edge">
 <title>Node12&#45;&gt;Node13</title>
+<g id="a_edge14_Node000012_Node000013"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M1060.25,-46.4C1068.25,-45.25 1076.87,-44.02 1085.51,-42.78"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1086.24,-46.21 1095.64,-41.33 1085.24,-39.28 1086.24,-46.21"/>
+</a>
+</g>
 </g>
 <!-- Node14&#45;&gt;Node7 -->
-<g id="edge19" class="edge">
+<g id="edge19_Node000014_Node000007" class="edge">
 <title>Node14&#45;&gt;Node7</title>
+<g id="a_edge19_Node000014_Node000007"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M791.55,-112.86C864.63,-117.97 1020.77,-128.87 1101.81,-134.53"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1102.04,-138.05 1112.26,-135.26 1102.53,-131.07 1102.04,-138.05"/>
+</a>
+</g>
 </g>
 <!-- Node14&#45;&gt;Node11 -->
-<g id="edge18" class="edge">
+<g id="edge18_Node000014_Node000011" class="edge">
 <title>Node14&#45;&gt;Node11</title>
+<g id="a_edge18_Node000014_Node000011"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M785.64,-100.55C799.23,-96.45 814.98,-91.39 829,-86.1 844.04,-80.43 860.4,-73.24 873.9,-67.03"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="875.58,-70.11 883.16,-62.71 872.62,-63.76 875.58,-70.11"/>
+</a>
+</g>
 </g>
 <!-- Node15 -->
-<g id="node15" class="node">
+<g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="group__EEPROM__Private__Functions.html#ga3c5f9766c0fb9b289576dabfc958c0f9" target="_top" xlink:title="This function performs CRC calculation on Data and Virtual Address.">
+<g id="a_Node000015"><a xlink:href="group__EEPROM__Private__Functions.html#ga3c5f9766c0fb9b289576dabfc958c0f9" target="_top" xlink:title="This function performs CRC calculation on Data and Virtual Address.">
 <polygon fill="white" stroke="#666666" points="943,-99.6 865,-99.6 865,-80.6 943,-80.6 943,-99.6"/>
 <text text-anchor="middle" x="904" y="-87.6" font-family="Helvetica,sans-Serif" font-size="10.00">CalculateCrc</text>
 </a>
 </g>
 </g>
 <!-- Node14&#45;&gt;Node15 -->
-<g id="edge17" class="edge">
+<g id="edge17_Node000014_Node000015" class="edge">
 <title>Node14&#45;&gt;Node15</title>
+<g id="a_edge17_Node000014_Node000015"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M791.67,-104.85C811.03,-102.28 834.49,-99.18 854.86,-96.48"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="855.44,-99.93 864.89,-95.15 854.52,-92.99 855.44,-99.93"/>
+</a>
+</g>
 </g>
 <!-- Node16&#45;&gt;Node11 -->
-<g id="edge24" class="edge">
+<g id="edge24_Node000016_Node000011" class="edge">
 <title>Node16&#45;&gt;Node11</title>
+<g id="a_edge24_Node000016_Node000011"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M827.94,-43.66C840.3,-45.21 852.64,-46.76 863.64,-48.15"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="863.37,-51.64 873.73,-49.42 864.25,-44.7 863.37,-51.64"/>
+</a>
+</g>
 </g>
 <!-- Node16&#45;&gt;Node13 -->
-<g id="edge23" class="edge">
+<g id="edge23_Node000016_Node000013" class="edge">
 <title>Node16&#45;&gt;Node13</title>
+<g id="a_edge23_Node000016_Node000013"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M829.22,-33.68C873.13,-33.46 929.15,-33.21 979,-33.1 1014.16,-33.02 1053.32,-33.02 1085.58,-33.03"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1085.79,-36.53 1095.79,-33.04 1085.79,-29.53 1085.79,-36.53"/>
+</a>
+</g>
 </g>
 <!-- Node16&#45;&gt;Node15 -->
-<g id="edge22" class="edge">
+<g id="edge22_Node000016_Node000015" class="edge">
 <title>Node16&#45;&gt;Node15</title>
+<g id="a_edge22_Node000016_Node000015"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M777.96,-43.73C802.74,-52.92 840.27,-66.84 867.75,-77.03"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="866.79,-80.4 877.38,-80.6 869.22,-73.84 866.79,-80.4"/>
+</a>
+</g>
 </g>
 <!-- Node18 -->
-<g id="node18" class="node">
+<g id="Node000018" class="node">
 <title>Node18</title>
-<g id="a_node18"><a xlink:href="group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" target="_top" xlink:title=" ">
+<g id="a_Node000018"><a xlink:href="group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="383.5,-82.6 282.5,-82.6 282.5,-63.6 383.5,-63.6 383.5,-82.6"/>
 <text text-anchor="middle" x="333" y="-70.6" font-family="Helvetica,sans-Serif" font-size="10.00">CDC_Transmit_FS</text>
 </a>
 </g>
 </g>
 <!-- Node17&#45;&gt;Node18 -->
-<g id="edge27" class="edge">
+<g id="edge27_Node000017_Node000018" class="edge">
 <title>Node17&#45;&gt;Node18</title>
+<g id="a_edge27_Node000017_Node000018"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M210.51,-73.1C229.17,-73.1 251.62,-73.1 272.11,-73.1"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="272.31,-76.6 282.31,-73.1 272.31,-69.6 272.31,-76.6"/>
+</a>
+</g>
 </g>
 </g>
 </svg>
-        <g id="navigator" transform="translate(0 0)" fill="#404254">
-                <rect fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width=".5" x="0" y="0" width="60" height="60"/>
-                <use id="zoomplus" xlink:href="#zoomPlus" x="17" y="9" onmousedown="handleZoom(evt,'in')"/>
-                <use id="zoomminus" xlink:href="#zoomMin" x="42" y="9" onmousedown="handleZoom(evt,'out')"/>
-                <use id="reset" xlink:href="#resetDef" x="30" y="36" onmousedown="handleReset()"/>
-                <g id="arrowUp" xlink:href="#dirArrow" transform="translate(30 24)" onmousedown="handlePan(0,-1)">
-                  <use xlink:href="#rim" fill="#404040">
-                        <set attributeName="fill" to="#808080" begin="arrowUp.mouseover" end="arrowUp.mouseout"/>
-                  </use>
-                  <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
-                </g>
-                <g id="arrowRight" xlink:href="#dirArrow" transform="rotate(90) translate(36 -43)" onmousedown="handlePan(1,0)">
-                  <use xlink:href="#rim" fill="#404040">
-                        <set attributeName="fill" to="#808080" begin="arrowRight.mouseover" end="arrowRight.mouseout"/>
-                  </use>
-                  <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
-                </g>
-                <g id="arrowDown" xlink:href="#dirArrow" transform="rotate(180) translate(-30 -48)" onmousedown="handlePan(0,1)">
-                  <use xlink:href="#rim" fill="#404040">
-                        <set attributeName="fill" to="#808080" begin="arrowDown.mouseover" end="arrowDown.mouseout"/>
-                  </use>
-                  <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
-                </g>
-                <g id="arrowLeft" xlink:href="#dirArrow" transform="rotate(270) translate(-36 17)" onmousedown="handlePan(-1,0)">
-                  <use xlink:href="#rim" fill="#404040">
-                        <set attributeName="fill" to="#808080" begin="arrowLeft.mouseover" end="arrowLeft.mouseout"/>
-                  </use>
-                  <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
-                </g>
-        </g>
-        <svg viewBox="0 0 15 15" width="100%" height="30px" preserveAspectRatio="xMaxYMin meet">
-         <g id="arrow_out" transform="scale(0.3 0.3)">
-          <a xlink:href="cmd__interface_8h_a8d62ddad816faebffd6b3ce1eb69ee23_cgraph_org.svg" target="_base">
-           <rect id="button" ry="5" rx="5" y="6" x="6" height="38" width="38"
-                fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width="1.0"/>
-           <path id="arrow"
-             d="M 11.500037,31.436501 C 11.940474,20.09759 22.043105,11.32322 32.158766,21.979434 L 37.068811,17.246167 C 37.068811,17.246167 37.088388,32 37.088388,32 L 22.160133,31.978069 C 22.160133,31.978069 26.997745,27.140456 26.997745,27.140456 C 18.528582,18.264221 13.291696,25.230495 11.500037,31.436501 z"
-             style="fill:#404040;"/>
-          </a>
-         </g>
-        </svg>
+
+<g id="navigator" transform="translate(0 0)" fill="#404254">
+  <rect fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width=".5" x="0" y="0" width="60" height="60"/>
+  <use id="zoomplus" xlink:href="#zoomPlus" x="17" y="9" onmousedown="handleZoom(evt,'in')"/>
+  <use id="zoomminus" xlink:href="#zoomMin" x="42" y="9" onmousedown="handleZoom(evt,'out')"/>
+  <use id="reset" xlink:href="#resetDef" x="30" y="36" onmousedown="handleReset()"/>
+   <use id="arrowup" xlink:href="#arrowUp" x="0" y="0" onmousedown="handlePan(0,-1)"/>
+  <use id="arrowright" xlink:href="#arrowRight" x="0" y="0" onmousedown="handlePan(1,0)"/>
+  <use id="arrowdown" xlink:href="#arrowDown" x="0" y="0" onmousedown="handlePan(0,1)"/>
+  <use id="arrowleft" xlink:href="#arrowLeft" x="0" y="0" onmousedown="handlePan(-1,0)"/>
+</g>
+<svg viewBox="0 0 15 15" width="100%" height="30px" preserveAspectRatio="xMaxYMin meet">
+ <g id="arrow_out" transform="scale(0.3 0.3)">
+  <a xlink:href="cmd__interface_8h_a8d62ddad816faebffd6b3ce1eb69ee23_cgraph_org.svg" target="_base">
+   <rect id="button" ry="5" rx="5" y="6" x="6" height="38" width="38"
+        fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width="1.0"/>
+   <path id="arrow"
+     d="M 11.500037,31.436501 C 11.940474,20.09759 22.043105,11.32322 32.158766,21.979434 L 37.068811,17.246167 C 37.068811,17.246167 37.088388,32 37.088388,32 L 22.160133,31.978069 C 22.160133,31.978069 26.997745,27.140456 26.997745,27.140456 C 18.528582,18.264221 13.291696,25.230495 11.500037,31.436501 z"
+     style="fill:#404040;"/>
+  </a>
+ </g>
+</svg>
+
+<style type='text/css'>
+<![CDATA[
+[data-mouse-over-selected='false'] { opacity: 0.7; }
+[data-mouse-over-selected='true']  { opacity: 1.0; }
+]]>
+</style>
+<script type="application/ecmascript"><![CDATA[
+document.addEventListener('DOMContentLoaded', (event) => {
+  highlightEdges();
+  highlightAdjacentNodes();
+});
+]]></script>
 </svg>

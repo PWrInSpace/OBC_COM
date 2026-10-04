@@ -6,52 +6,86 @@
 <!-- Title: gs_enter_rx Pages: 1 -->
 <svg width="391pt" height="46pt"
  viewBox="0.00 0.00 391.00 46.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
+<style type="text/css"><![CDATA[
+.node, .edge {opacity: 0.7;}
+.node.selected, .edge.selected {opacity: 1;}
+.edge:hover path { stroke: red; }
+.edge:hover polygon { stroke: red; fill: red; }
+]]></style>
+<script type="application/ecmascript" xlink:href="svg.min.js"/>
+<svg id="graph" class="graph">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 42)">
 <title>gs_enter_rx</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="74,-19 0,-19 0,0 74,0 74,-19"/>
 <text text-anchor="middle" x="37" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">gs_enter_rx</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="rfm95w_8c.html#aec391f2d77ea33a0a3a3c51a0856396c" target="_top" xlink:title="Sets the radio transceiver in receive mode.">
+<g id="a_Node000002"><a xlink:href="rfm95w_8c.html#aec391f2d77ea33a0a3a3c51a0856396c" target="_top" xlink:title="Sets the radio transceiver in receive mode.">
 <polygon fill="white" stroke="#666666" points="250,-38 110,-38 110,-19 250,-19 250,-38"/>
 <text text-anchor="middle" x="180" y="-26" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95_set_receive_mode</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M74.31,-14.39C82.26,-15.46 90.96,-16.64 99.86,-17.84"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="99.57,-21.33 109.95,-19.2 100.51,-14.39 99.57,-21.33"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" target="_top" xlink:title="Write a value to a register.">
+<g id="a_Node000003"><a xlink:href="rfm95w_8c.html#a5d88d3bd401b1b1b74f1c00c55275aee" target="_top" xlink:title="Write a value to a register.">
 <polygon fill="white" stroke="#666666" points="383,-19 286,-19 286,0 383,0 383,-19"/>
 <text text-anchor="middle" x="334.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95_write_reg</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
+<g id="a_edge3_Node000001_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M74.23,-9.5C124.57,-9.5 216.19,-9.5 275.94,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="275.97,-13 285.97,-9.5 275.97,-6 275.97,-13"/>
+</a>
+</g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M250.11,-19.89C258.63,-18.83 267.26,-17.75 275.59,-16.72"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="276.07,-20.18 285.56,-15.47 275.21,-13.24 276.07,-20.18"/>
+</a>
 </g>
 </g>
+</g>
+</svg>
+</svg>
+
+<style type='text/css'>
+<![CDATA[
+[data-mouse-over-selected='false'] { opacity: 0.7; }
+[data-mouse-over-selected='true']  { opacity: 1.0; }
+]]>
+</style>
+<script type="application/ecmascript"><![CDATA[
+document.addEventListener('DOMContentLoaded', (event) => {
+  highlightEdges();
+  highlightAdjacentNodes();
+});
+]]></script>
 </svg>

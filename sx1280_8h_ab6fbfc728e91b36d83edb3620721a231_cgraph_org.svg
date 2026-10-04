@@ -9,58 +9,67 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>SX1280SetRegistersDefault</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Initializes the radio registers to the recommended default values.">
+<g id="a_Node000001"><a xlink:title="Initializes the radio registers to the recommended default values.">
 <polygon fill="#999999" stroke="#666666" points="151,-19 0,-19 0,0 151,0 151,-19"/>
 <text text-anchor="middle" x="75.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280SetRegistersDefault</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="sx1280-hal_8c.html#a22d55eec45845b70b71327af666c9eb0" target="_top" xlink:title="Write a single byte of data to the radio memory.">
+<g id="a_Node000002"><a xlink:href="sx1280-hal_8c.html#a22d55eec45845b70b71327af666c9eb0" target="_top" xlink:title="Write a single byte of data to the radio memory.">
 <polygon fill="white" stroke="#666666" points="324,-19 187,-19 187,0 324,0 324,-19"/>
 <text text-anchor="middle" x="255.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWriteRegister</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M151.21,-9.5C159.6,-9.5 168.16,-9.5 176.59,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="176.78,-13 186.78,-9.5 176.78,-6 176.78,-13"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" target="_top" xlink:title="Write data to the radio memory.">
+<g id="a_Node000003"><a xlink:href="sx1280-hal_8c.html#ae119d1f319bab7b61b23e04e52699ebc" target="_top" xlink:title="Write data to the radio memory.">
 <polygon fill="white" stroke="#666666" points="502,-19 360,-19 360,0 502,0 502,-19"/>
 <text text-anchor="middle" x="431" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWriteRegisters</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M324.08,-9.5C332.49,-9.5 341.15,-9.5 349.73,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="349.75,-13 359.75,-9.5 349.75,-6 349.75,-13"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
+<g id="a_Node000004"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
 <polygon fill="white" stroke="#666666" points="667,-19 538,-19 538,0 667,0 667,-19"/>
 <text text-anchor="middle" x="602.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWaitOnBusy</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
+<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M502.41,-9.5C510.75,-9.5 519.29,-9.5 527.67,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="527.81,-13 537.81,-9.5 527.81,-6 527.81,-13"/>
+</a>
+</g>
 </g>
 </g>
 </svg>

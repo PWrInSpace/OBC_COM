@@ -1,6 +1,9 @@
 <map id="handle_lora_tx" name="handle_lora_tx">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,124,56"/>
-<area shape="rect" id="node2" href="$rfm95w__task_8c.html#aa4d6b5c21ad55e5a3fa935e378767e09" title="Queue a fully&#45;formed frame for the GS to transmit in its next slot." alt="" coords="172,5,324,31"/>
-<area shape="rect" id="node3" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="192,55,304,80"/>
-<area shape="rect" id="node4" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="372,55,507,80"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,124,56"/>
+<area shape="rect" id="Node000002" href="$rfm95w__task_8c.html#aa4d6b5c21ad55e5a3fa935e378767e09" title="Queue a fully&#45;formed frame for the GS to transmit in its next slot." alt="" coords="172,5,324,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,33,158,28,158,33,125,38"/>
+<area shape="rect" id="Node000003" href="$usb__config_8c.html#aa2441e04fd44ec2f8c7b9d3029a426b6" title=" " alt="" coords="192,55,304,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,48,179,56,178,61,124,54"/>
+<area shape="rect" id="Node000004" href="$group__USBD__CDC__Private__FunctionPrototypes.html#ga5137d6201dbdef2bf351c5b4941c24f4" title=" " alt="" coords="372,55,507,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="304,65,358,65,358,70,304,70"/>
 </map>

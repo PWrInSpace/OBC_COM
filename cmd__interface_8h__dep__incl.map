@@ -1,5 +1,7 @@
 <map id="cmd/Inc/cmd_interface.h" name="cmd/Inc/cmd_interface.h">
-<area shape="rect" id="node1" title=" " alt="" coords="82,5,265,31"/>
-<area shape="rect" id="node2" href="$cmd__task_8c.html" title=" " alt="" coords="5,79,152,104"/>
-<area shape="rect" id="node3" href="$cmd__interface_8c.html" title=" " alt="" coords="177,79,359,104"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="82,5,265,31"/>
+<area shape="rect" id="Node000002" href="$cmd__task_8c.html" title=" " alt="" coords="5,79,152,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,41,96,81,93,76,146,37"/>
+<area shape="rect" id="Node000003" href="$cmd__interface_8c.html" title=" " alt="" coords="177,79,359,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,37,254,76,251,81,198,41"/>
 </map>

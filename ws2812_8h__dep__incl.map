@@ -1,5 +1,7 @@
 <map id="modules/ws2812/Inc/ws2812.h" name="modules/ws2812/Inc/ws2812.h">
-<area shape="rect" id="node1" title=" " alt="" coords="57,5,212,45"/>
-<area shape="rect" id="node2" href="$led_8c.html" title=" " alt="" coords="5,101,109,126"/>
-<area shape="rect" id="node3" href="$ws2812_8c.html" title=" " alt="" coords="134,93,290,133"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="57,5,212,45"/>
+<area shape="rect" id="Node000002" href="$led_8c.html" title=" " alt="" coords="5,101,109,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,57,70,102,66,98,106,54"/>
+<area shape="rect" id="Node000003" href="$ws2812_8c.html" title=" " alt="" coords="134,93,290,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,54,197,91,193,95,159,57"/>
 </map>

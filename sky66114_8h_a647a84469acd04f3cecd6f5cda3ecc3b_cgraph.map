@@ -1,5 +1,7 @@
 <map id="sky66114_init_all" name="sky66114_init_all">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,140,31"/>
-<area shape="rect" id="node2" href="$sky66114_8c.html#a8b4c6e8f485b9e6b6abdec62967bb602" title=" " alt="" coords="188,5,300,31"/>
-<area shape="rect" id="node3" href="$sky66114_8c.html#a939adbab935cb7b407fbb4dacaa0b4d0" title=" " alt="" coords="348,5,503,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,140,31"/>
+<area shape="rect" id="Node000002" href="$sky66114_8c.html#a8b4c6e8f485b9e6b6abdec62967bb602" title=" " alt="" coords="188,5,300,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,15,174,15,174,21,140,21"/>
+<area shape="rect" id="Node000003" href="$sky66114_8c.html#a939adbab935cb7b407fbb4dacaa0b4d0" title=" " alt="" coords="348,5,503,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="300,15,334,15,334,21,300,21"/>
 </map>

@@ -9,58 +9,67 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>SX1280GetFirmwareVersion</title>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Returns the current device firmware version.">
+<g id="a_Node000001"><a xlink:title="Returns the current device firmware version.">
 <polygon fill="#999999" stroke="#666666" points="152,-19 0,-19 0,0 152,0 152,-19"/>
 <text text-anchor="middle" x="76" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280GetFirmwareVersion</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea" target="_top" xlink:title="Read a single byte of data from the radio memory.">
+<g id="a_Node000002"><a xlink:href="sx1280-hal_8c.html#a524a5157b1dcf068aca1240dc6e10aea" target="_top" xlink:title="Read a single byte of data from the radio memory.">
 <polygon fill="white" stroke="#666666" points="323,-19 188,-19 188,0 323,0 323,-19"/>
 <text text-anchor="middle" x="255.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalReadRegister</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M152.02,-9.5C160.49,-9.5 169.14,-9.5 177.64,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="177.91,-13 187.91,-9.5 177.91,-6 177.91,-13"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="sx1280-hal_8c.html#a6a9c356cd998a6f2dad05049941b5939" target="_top" xlink:title="Read data from the radio memory.">
+<g id="a_Node000003"><a xlink:href="sx1280-hal_8c.html#a6a9c356cd998a6f2dad05049941b5939" target="_top" xlink:title="Read data from the radio memory.">
 <polygon fill="white" stroke="#666666" points="499,-19 359,-19 359,0 499,0 499,-19"/>
 <text text-anchor="middle" x="429" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalReadRegisters</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M323.3,-9.5C331.59,-9.5 340.13,-9.5 348.59,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="348.84,-13 358.84,-9.5 348.84,-6 348.84,-13"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
+<g id="a_Node000004"><a xlink:href="sx1280-hal_8c.html#af63c987628865d85cf78fde47290858a" target="_top" xlink:title="Used to block execution waiting for low state on radio busy pin.">
 <polygon fill="white" stroke="#666666" points="664,-19 535,-19 535,0 664,0 664,-19"/>
 <text text-anchor="middle" x="599.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">SX1280HalWaitOnBusy</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
+<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M499.02,-9.5C507.42,-9.5 516.03,-9.5 524.5,-9.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="524.74,-13 534.74,-9.5 524.74,-6 524.74,-13"/>
+</a>
+</g>
 </g>
 </g>
 </svg>

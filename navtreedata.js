@@ -38,7 +38,7 @@ var NAVTREE =
         [ "Step 3: Define Command Handler", "cmd_module.html#autotoc_md21", null ]
       ] ]
     ] ],
-    [ "Modules", "modules.html", "modules" ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -69,12 +69,12 @@ var NAVTREEINDEX =
 "group__EEPROM__Private__Macros.html",
 "logger_8h.html#a98121d38a8cf3daf5246a349f912ca1d",
 "main_8h.html#a12c42ba76b3b14ea44c7ebc33c8103e6",
-"rfm95w_8h.html#a6ff0eccd2a2bfbeb889d11249ca6e5db",
-"sound_8c.html#a304d30fa9be20c63c38c57787d037855",
-"structPacketStatus__t.html#a53f05f65c4a661b7239953bc47689f4c",
-"sx1280-hal_8h.html#af8f6970d692baa122c62cd489c832809",
-"sx1280_8h.html#a7c1d244a48abeb98b6bf3f0ada087df6aad7bf546a6d287d025a16a742e6f2bcd",
-"sx1280__hal__wrapper_8h_source.html"
+"rfm95w_8h.html#a70616dfa9fac771817ed31fbcae5d2ae",
+"sound_8c.html#a441475178599565b3dd4572cebbdf28c",
+"structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab",
+"sx1280-hal_8h_source.html",
+"sx1280_8h.html#a7f2a1138e63d652499230db510694503",
+"sx1280__task_8c.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

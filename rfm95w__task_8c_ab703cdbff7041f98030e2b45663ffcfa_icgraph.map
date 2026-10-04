@@ -1,11 +1,19 @@
 <map id="lora_gs_mark_settings_dirty" name="lora_gs_mark_settings_dirty">
-<area shape="rect" id="node1" title=" " alt="" coords="196,171,365,211"/>
-<area shape="rect" id="node2" href="$cmd__interface_8c.html#a8d62ddad816faebffd6b3ce1eb69ee23" title=" " alt="" coords="31,5,123,31"/>
-<area shape="rect" id="node3" href="$cmd__interface_8c.html#a0829a343683a10c8b46e3e555d960141" title=" " alt="" coords="34,55,119,80"/>
-<area shape="rect" id="node4" href="$cmd__interface_8c.html#ab9b1f85f73eb8f0cf090404b16aab535" title=" " alt="" coords="31,104,123,129"/>
-<area shape="rect" id="node5" href="$cmd__interface_8c.html#a96f1f5d0f266c2a2d29be6917c7e77f3" title=" " alt="" coords="27,153,126,179"/>
-<area shape="rect" id="node6" href="$cmd__interface_8c.html#a849218a785209e69259ac0b9bd9bbd23" title=" " alt="" coords="5,203,148,228"/>
-<area shape="rect" id="node7" href="$cmd__interface_8c.html#af99f2c7576338e31f5b707a6272c9b9c" title=" " alt="" coords="20,252,133,277"/>
-<area shape="rect" id="node8" href="$cmd__interface_8c.html#a947223adc947591791664b600f889d7e" title=" " alt="" coords="34,301,119,327"/>
-<area shape="rect" id="node9" href="$cmd__interface_8c.html#a0a2c132a3978fb3605049cd69d855e69" title=" " alt="" coords="25,351,128,376"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="196,171,365,211"/>
+<area shape="rect" id="Node000002" href="$cmd__interface_8c.html#a8d62ddad816faebffd6b3ce1eb69ee23" title=" " alt="" coords="31,5,123,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="257,161,210,102,180,71,147,44,122,32,124,27,149,40,184,67,214,98,261,158"/>
+<area shape="rect" id="Node000003" href="$cmd__interface_8c.html#a0829a343683a10c8b46e3e555d960141" title=" " alt="" coords="34,55,119,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="246,164,200,128,147,94,119,82,121,77,149,89,204,124,249,160"/>
+<area shape="rect" id="Node000004" href="$cmd__interface_8c.html#ab9b1f85f73eb8f0cf090404b16aab535" title=" " alt="" coords="31,104,123,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="214,169,147,143,115,132,117,127,149,138,216,164"/>
+<area shape="rect" id="Node000005" href="$cmd__interface_8c.html#a96f1f5d0f266c2a2d29be6917c7e77f3" title=" " alt="" coords="27,153,126,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="182,182,126,175,127,169,183,176"/>
+<area shape="rect" id="Node000006" href="$cmd__interface_8c.html#a849218a785209e69259ac0b9bd9bbd23" title=" " alt="" coords="5,203,148,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="183,206,149,210,148,204,182,200"/>
+<area shape="rect" id="Node000007" href="$cmd__interface_8c.html#af99f2c7576338e31f5b707a6272c9b9c" title=" " alt="" coords="20,252,133,277"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="212,219,149,242,114,254,112,249,147,237,210,214"/>
+<area shape="rect" id="Node000008" href="$cmd__interface_8c.html#a947223adc947591791664b600f889d7e" title=" " alt="" coords="34,301,119,327"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="248,222,202,257,149,291,121,304,119,299,147,286,199,253,244,218"/>
+<area shape="rect" id="Node000009" href="$cmd__interface_8c.html#a0a2c132a3978fb3605049cd69d855e69" title=" " alt="" coords="25,351,128,376"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="260,225,214,283,183,313,149,340,125,353,122,348,147,336,180,310,210,279,256,221"/>
 </map>

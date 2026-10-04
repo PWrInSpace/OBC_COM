@@ -1,8 +1,13 @@
 <map id="log_info" name="log_info">
-<area shape="rect" id="node1" title=" " alt="" coords="5,55,80,80"/>
-<area shape="rect" id="node2" href="$logger_8c.html#aa9fd7f0e91b44a3585b9d41cc7f4785c" title=" " alt="" coords="128,55,313,80"/>
-<area shape="rect" id="node3" href="$logger_8c.html#a363175b2f2034ae49ac2c5b079c11c85" title=" " alt="" coords="401,5,511,31"/>
-<area shape="rect" id="node5" href="$logger_8c.html#a2ab2980703006ec95542d4d5dabc9c89" title=" " alt="" coords="361,55,551,80"/>
-<area shape="rect" id="node6" href="$logger_8c.html#a002c8213d7f7b4c21f85c7d07e45435d" title=" " alt="" coords="379,104,533,129"/>
-<area shape="rect" id="node4" href="$logger_8c.html#a104095aeba3dd479c48e63e4e67eefca" title=" " alt="" coords="599,5,780,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,80,80"/>
+<area shape="rect" id="Node000002" href="$logger_8c.html#aa9fd7f0e91b44a3585b9d41cc7f4785c" title=" " alt="" coords="128,55,313,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,65,114,65,114,70,80,70"/>
+<area shape="rect" id="Node000003" href="$logger_8c.html#a363175b2f2034ae49ac2c5b079c11c85" title=" " alt="" coords="401,5,511,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="281,52,387,30,388,35,282,57"/>
+<area shape="rect" id="Node000005" href="$logger_8c.html#a2ab2980703006ec95542d4d5dabc9c89" title=" " alt="" coords="361,55,551,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="314,65,348,65,348,70,314,70"/>
+<area shape="rect" id="Node000006" href="$logger_8c.html#a002c8213d7f7b4c21f85c7d07e45435d" title=" " alt="" coords="379,104,533,129"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="282,77,382,98,381,104,281,83"/>
+<area shape="rect" id="Node000004" href="$logger_8c.html#a104095aeba3dd479c48e63e4e67eefca" title=" " alt="" coords="599,5,780,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="511,15,585,15,585,21,511,21"/>
 </map>

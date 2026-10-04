@@ -1,10 +1,17 @@
 <map id="nvs/src/eeprom_emul.c" name="nvs/src/eeprom_emul.c">
-<area shape="rect" id="node1" title=" " alt="" coords="185,5,358,31"/>
-<area shape="rect" id="node2" href="$eeprom__emul_8h.html" title=" " alt="" coords="209,79,333,104"/>
-<area shape="rect" id="node3" href="$eeprom__emul__conf_8h.html" title="EEPROM emulation configuration file. This file should be copied to the application folder and renamed..." alt="" coords="5,152,164,177"/>
-<area shape="rect" id="node4" href="$eeprom__emul__types_8h.html" title=" " alt="" coords="188,152,355,177"/>
-<area shape="rect" id="node5" href="$flash__interface_8h.html" title=" " alt="" coords="379,152,510,177"/>
-<area shape="rect" id="node6" title=" " alt="" coords="212,225,347,251"/>
-<area shape="rect" id="node7" title=" " alt="" coords="371,225,519,251"/>
-<area shape="rect" id="node8" title=" " alt="" coords="543,225,695,251"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="185,5,358,31"/>
+<area shape="rect" id="Node000002" href="$eeprom__emul_8h.html" title=" " alt="" coords="209,79,333,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="274,31,274,65,269,65,269,31"/>
+<area shape="rect" id="Node000003" href="$eeprom__emul__conf_8h.html" title="EEPROM emulation configuration file. This file should be copied to the application folder and renamed..." alt="" coords="5,152,164,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="242,107,129,149,127,145,240,102"/>
+<area shape="rect" id="Node000004" href="$eeprom__emul__types_8h.html" title=" " alt="" coords="188,152,355,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="274,104,274,138,269,138,269,104"/>
+<area shape="rect" id="Node000005" href="$flash__interface_8h.html" title=" " alt="" coords="379,152,510,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="300,102,405,144,403,149,298,106"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="212,225,347,251"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="419,180,320,222,318,217,417,175"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="371,225,519,251"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="447,178,447,212,442,212,442,178"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="543,225,695,251"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="474,175,579,218,577,222,472,180"/>
 </map>

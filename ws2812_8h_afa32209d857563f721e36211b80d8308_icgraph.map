@@ -1,6 +1,9 @@
 <map id="ws2812_show" name="ws2812_show">
-<area shape="rect" id="node1" title="Encode the frame and begin the DMA transfer (non&#45;blocking)" alt="" coords="429,5,543,31"/>
-<area shape="rect" id="node2" href="$led_8c.html#a70d133c4354945f0beab946c4ddce781" title=" " alt="" coords="317,5,381,31"/>
-<area shape="rect" id="node3" href="$led_8c.html#a7eb4d382bdd4b42c57dbb7154d03ac66" title=" " alt="" coords="199,5,269,31"/>
-<area shape="rect" id="node4" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,5,151,31"/>
+<area shape="rect" id="Node000001" title="Encode the frame and begin the DMA transfer (non&#45;blocking)" alt="" coords="429,5,543,31"/>
+<area shape="rect" id="Node000002" href="$led_8c.html#a70d133c4354945f0beab946c4ddce781" title=" " alt="" coords="317,5,381,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="416,21,381,21,381,15,416,15"/>
+<area shape="rect" id="Node000003" href="$led_8c.html#a7eb4d382bdd4b42c57dbb7154d03ac66" title=" " alt="" coords="199,5,269,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="304,21,270,21,270,15,304,15"/>
+<area shape="rect" id="Node000004" href="$app__freertos_8c.html#abade755e13d07c10889ae83143656158" title="FreeRTOS initialization." alt="" coords="5,5,151,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="185,21,151,21,151,15,185,15"/>
 </map>

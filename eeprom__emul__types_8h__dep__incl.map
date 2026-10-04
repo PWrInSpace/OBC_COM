@@ -1,12 +1,22 @@
 <map id="nvs/Inc/eeprom_emul_types.h" name="nvs/Inc/eeprom_emul_types.h">
-<area shape="rect" id="node1" title=" " alt="" coords="400,5,563,45"/>
-<area shape="rect" id="node2" href="$eeprom__emul_8h.html" title=" " alt="" coords="394,93,569,119"/>
-<area shape="rect" id="node3" href="$app__freertos_8c.html" title=" " alt="" coords="5,247,179,273"/>
-<area shape="rect" id="node4" href="$nvs__config_8h.html" title=" " alt="" coords="311,167,465,192"/>
-<area shape="rect" id="node9" href="$eeprom__emul_8c.html" title=" " alt="" coords="489,167,663,192"/>
-<area shape="rect" id="node10" href="$flash__interface_8c.html" title=" " alt="" coords="687,167,865,192"/>
-<area shape="rect" id="node5" href="$rfm95w__task_8c.html" title=" " alt="" coords="203,247,373,273"/>
-<area shape="rect" id="node6" href="$cmd__interface_8c.html" title=" " alt="" coords="397,247,579,273"/>
-<area shape="rect" id="node7" href="$logger_8c.html" title=" " alt="" coords="604,240,751,280"/>
-<area shape="rect" id="node8" href="$nvs__config_8c.html" title=" " alt="" coords="775,247,927,273"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="400,5,563,45"/>
+<area shape="rect" id="Node000002" href="$eeprom__emul_8h.html" title=" " alt="" coords="394,93,569,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="484,59,484,93,479,93,479,59"/>
+<area shape="rect" id="Node000003" href="$app__freertos_8c.html" title=" " alt="" coords="5,247,179,273"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="430,125,300,169,197,212,117,249,115,245,195,207,298,164,429,120"/>
+<area shape="rect" id="Node000004" href="$nvs__config_8h.html" title=" " alt="" coords="311,167,465,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="457,129,405,169,402,164,454,125"/>
+<area shape="rect" id="Node000009" href="$eeprom__emul_8c.html" title=" " alt="" coords="489,167,663,192"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="509,125,562,164,559,169,506,129"/>
+<area shape="rect" id="Node000010" href="$flash__interface_8c.html" title=" " alt="" coords="687,167,865,192"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="542,119,729,164,728,169,541,124"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="332,198,136,250,134,245,331,193"/>
+<area shape="rect" id="Node000005" href="$rfm95w__task_8c.html" title=" " alt="" coords="203,247,373,273"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="364,203,304,249,301,245,361,199"/>
+<area shape="rect" id="Node000006" href="$cmd__interface_8c.html" title=" " alt="" coords="397,247,579,273"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="415,199,475,245,472,249,412,203"/>
+<area shape="rect" id="Node000007" href="$logger_8c.html" title=" " alt="" coords="604,240,751,280"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="444,193,608,237,607,242,443,198"/>
+<area shape="rect" id="Node000008" href="$nvs__config_8c.html" title=" " alt="" coords="775,247,927,273"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="479,191,763,237,800,245,799,250,762,243,478,196"/>
 </map>

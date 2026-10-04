@@ -1,10 +1,22 @@
 <map id="app/src/gs_scheduler.c" name="app/src/gs_scheduler.c">
-<area shape="rect" id="node1" title=" " alt="" coords="92,5,260,31"/>
-<area shape="rect" id="node2" href="$gs__scheduler_8h.html" title=" " alt="" coords="69,79,187,104"/>
-<area shape="rect" id="node7" href="$lora__frame_8h.html" title=" " alt="" coords="194,152,299,177"/>
-<area shape="rect" id="node3" title=" " alt="" coords="211,225,282,251"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,225,80,251"/>
-<area shape="rect" id="node5" href="$lora__tx__queue_8h.html" title=" " alt="" coords="43,152,170,177"/>
-<area shape="rect" id="node6" title=" " alt="" coords="104,225,187,251"/>
-<area shape="rect" id="node8" href="$lora__commands_8h.html" title=" " alt="" coords="307,225,445,251"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="92,5,260,31"/>
+<area shape="rect" id="Node000002" href="$gs__scheduler_8h.html" title=" " alt="" coords="69,79,187,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,33,146,69,141,66,166,30"/>
+<area shape="rect" id="Node000007" href="$lora__frame_8h.html" title=" " alt="" coords="194,152,299,177"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="184,30,237,138,233,141,179,32"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="211,225,282,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="188,92,221,98,255,108,287,125,313,151,318,170,311,188,297,205,279,220,276,216,293,201,307,186,313,169,308,153,284,130,253,113,220,103,187,97"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,225,80,251"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="94,106,60,125,45,138,33,153,28,167,27,182,34,212,29,213,22,183,23,166,28,151,41,134,57,120,91,102"/>
+<area shape="rect" id="Node000005" href="$lora__tx__queue_8h.html" title=" " alt="" coords="43,152,170,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="127,105,117,140,111,138,122,104"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="130,175,213,217,211,221,128,180"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="98,179,64,217,60,213,94,176"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="104,225,187,251"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="115,176,135,212,130,215,111,179"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="249,178,249,212,244,212,244,178"/>
+<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="215,180,89,223,88,218,213,175"/>
+<area shape="poly" id="edge11_Node000007_Node000006" title=" " alt="" coords="232,180,175,219,172,215,229,175"/>
+<area shape="rect" id="Node000008" href="$lora__commands_8h.html" title=" " alt="" coords="307,225,445,251"/>
+<area shape="poly" id="edge12_Node000007_Node000008" title=" " alt="" coords="269,175,344,216,341,221,266,180"/>
 </map>

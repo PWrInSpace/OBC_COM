@@ -1,11 +1,21 @@
 <map id="VerifyPagesFullWriteVariable" name="VerifyPagesFullWriteVariable">
-<area shape="rect" id="node1" title="Verify if pages are full then if not the case, writes variable in EEPROM." alt="" coords="5,56,213,81"/>
-<area shape="rect" id="node2" href="$group__EEPROM__Private__Functions.html#ga3c5f9766c0fb9b289576dabfc958c0f9" title="This function performs CRC calculation on Data and Virtual Address." alt="" coords="261,5,365,31"/>
-<area shape="rect" id="node3" href="$group__EEPROM__Private__Functions.html#gaaf190b387699ec8d894cfe8449522084" title="Write a quad word at the given address in Flash (function is called FI_WriteDoubleWord to respect leg..." alt="" coords="569,57,724,83"/>
-<area shape="rect" id="node4" href="$group__EEPROM__Private__Functions.html#ga155bacb56c1c6ea24464cdd408fc8ebb" title="Find suitable page for read/write/erase operation." alt="" coords="273,131,353,156"/>
-<area shape="rect" id="node5" href="$group__EEPROM__Exported__Functions.html#gaa5483980e10a634ccae116ca5afcb911" title="Erase group of pages which are erasing state, in polling mode." alt="" coords="417,156,517,181"/>
-<area shape="rect" id="node8" href="$group__EEPROM__Private__Functions.html#ga2304deed602aa5aa10ecebbf7de5352c" title="Get page state in page header." alt="" coords="591,207,702,232"/>
-<area shape="rect" id="node9" href="$group__EEPROM__Private__Functions.html#gab2cc682a7689c76d4188bda3af6e9b0f" title="Set page state in page header." alt="" coords="413,107,521,132"/>
-<area shape="rect" id="node6" href="$group__EEPROM__Private__Functions.html#ga4375dd5bf83e259a3481a83b5993a1a3" title="Flush the caches if needed to keep coherency when the flash content is modified." alt="" coords="589,108,705,133"/>
-<area shape="rect" id="node7" href="$group__EEPROM__Private__Functions.html#gaf950461e14bae3fd51f89e9dd59db26b" title="Erase a page in polling mode." alt="" coords="593,157,701,183"/>
+<area shape="rect" id="Node000001" title="Verify if pages are full then if not the case, writes variable in EEPROM." alt="" coords="5,56,213,81"/>
+<area shape="rect" id="Node000002" href="$group__EEPROM__Private__Functions.html#ga3c5f9766c0fb9b289576dabfc958c0f9" title="This function performs CRC calculation on Data and Virtual Address." alt="" coords="261,5,365,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,53,248,31,249,37,162,58"/>
+<area shape="rect" id="Node000003" href="$group__EEPROM__Private__Functions.html#gaaf190b387699ec8d894cfe8449522084" title="Write a quad word at the given address in Flash (function is called FI_WriteDoubleWord to respect leg..." alt="" coords="569,57,724,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,66,556,67,556,72,214,72"/>
+<area shape="rect" id="Node000004" href="$group__EEPROM__Private__Functions.html#ga155bacb56c1c6ea24464cdd408fc8ebb" title="Find suitable page for read/write/erase operation." alt="" coords="273,131,353,156"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="146,79,266,123,264,128,144,84"/>
+<area shape="rect" id="Node000005" href="$group__EEPROM__Exported__Functions.html#gaa5483980e10a634ccae116ca5afcb911" title="Erase group of pages which are erasing state, in polling mode." alt="" coords="417,156,517,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="354,147,404,156,403,161,353,152"/>
+<area shape="rect" id="Node000008" href="$group__EEPROM__Private__Functions.html#ga2304deed602aa5aa10ecebbf7de5352c" title="Get page state in page header." alt="" coords="591,207,702,232"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="335,154,371,174,414,191,499,209,578,216,578,221,498,214,413,197,369,179,333,158"/>
+<area shape="rect" id="Node000009" href="$group__EEPROM__Private__Functions.html#gab2cc682a7689c76d4188bda3af6e9b0f" title="Set page state in page header." alt="" coords="413,107,521,132"/>
+<area shape="poly" id="edge9_Node000004_Node000009" title=" " alt="" coords="353,135,399,127,400,133,354,140"/>
+<area shape="rect" id="Node000006" href="$group__EEPROM__Private__Functions.html#ga4375dd5bf83e259a3481a83b5993a1a3" title="Flush the caches if needed to keep coherency when the flash content is modified." alt="" coords="589,108,705,133"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="515,153,585,134,586,140,516,159"/>
+<area shape="rect" id="Node000007" href="$group__EEPROM__Private__Functions.html#gaf950461e14bae3fd51f89e9dd59db26b" title="Erase a page in polling mode." alt="" coords="593,157,701,183"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="517,166,579,167,579,172,517,172"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="514,179,588,200,587,205,513,184"/>
+<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="513,104,585,84,587,89,515,109"/>
 </map>
