@@ -10,5 +10,5 @@
 #include "queue.h"
 #include "cmsis_os2.h"
 void usart_task(void *argument);
-void USART_Task_Init(void); 
-void 
+void USART_Task_Init(void);
+void

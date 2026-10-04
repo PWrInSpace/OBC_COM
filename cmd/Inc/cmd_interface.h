@@ -7,7 +7,7 @@
 #include "queue.h"
 #include "stdbool.h"
 
-#define MAX_CMD_LEN  512
+#define MAX_CMD_LEN 512
 
 typedef enum {
     CMD_UNKNOWN = 0x00,
@@ -33,9 +33,9 @@ typedef enum {
 } Command_t;
 
 typedef struct {
-    uint8_t *data;    
-    uint16_t len;     
-    bool is_binary;   
+    uint8_t *data;
+    uint16_t len;
+    bool is_binary;
 } cmd_params_t;
 
 typedef void (*cmd_handler_t)(cmd_params_t *params);
@@ -67,11 +67,8 @@ void handle_sync(cmd_params_t *params);
 void handle_lora_mode(cmd_params_t *params);
 void handle_logdump(cmd_params_t *params);
 
-
 #define LORA_BUFF_SIZE 512
 extern uint8_t LoraRxBuffer[LORA_BUFF_SIZE];
 extern volatile uint16_t lora_cmd_len;
-
-
 
 #endif

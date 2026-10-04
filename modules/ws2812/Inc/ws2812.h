@@ -12,15 +12,15 @@
 #define WS2812_MAX_LEDS 5
 
 typedef enum {
-  WS2812_OK = 0,
-  WS2812_ERROR = 1,
-  WS2812_BUSY = 2,
+    WS2812_OK = 0,
+    WS2812_ERROR = 1,
+    WS2812_BUSY = 2,
 } ws2812_error_t;
 
 typedef struct {
-  TIM_HandleTypeDef *htim;
-  uint32_t channel;
-  uint16_t num_leds;
+    TIM_HandleTypeDef *htim;
+    uint32_t channel;
+    uint16_t num_leds;
 } ws2812_t;
 
 ws2812_error_t ws2812_init(ws2812_t *dev, const ws2812_t *config);

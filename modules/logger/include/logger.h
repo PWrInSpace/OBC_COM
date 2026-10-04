@@ -14,11 +14,11 @@
 #endif
 
 typedef enum {
-  LOG_LEVEL_DEBUG = 0,
-  LOG_LEVEL_INFO = 1,
-  LOG_LEVEL_ERROR = 2,
-  LOG_LEVEL_NONE = 3,
-  LOG_LEVEL_MAX
+    LOG_LEVEL_DEBUG = 0,
+    LOG_LEVEL_INFO = 1,
+    LOG_LEVEL_ERROR = 2,
+    LOG_LEVEL_NONE = 3,
+    LOG_LEVEL_MAX
 } log_level_t;
 
 /* Callback dla wysyłania logów w real-time */
@@ -39,12 +39,12 @@ void logger_clear(void);
 #define LOG_ERROR(fmt, ...) ((void)0)
 #define LOG_DEBUG(fmt, ...) ((void)0)
 #else
-#define LOG_INFO(fmt, ...)                                                     \
-  log_info(TAG, "INFO", __FILE__, __LINE__, fmt, ##__VA_ARGS__)
-#define LOG_ERROR(fmt, ...)                                                    \
-  log_error(TAG, "ERROR", __FILE__, __LINE__, fmt, ##__VA_ARGS__)
-#define LOG_DEBUG(fmt, ...)                                                    \
-  log_debug(TAG, "DEBUG", __FILE__, __LINE__, fmt, ##__VA_ARGS__)
+#define LOG_INFO(fmt, ...) \
+    log_info(TAG, "INFO", __FILE__, __LINE__, fmt, ##__VA_ARGS__)
+#define LOG_ERROR(fmt, ...) \
+    log_error(TAG, "ERROR", __FILE__, __LINE__, fmt, ##__VA_ARGS__)
+#define LOG_DEBUG(fmt, ...) \
+    log_debug(TAG, "DEBUG", __FILE__, __LINE__, fmt, ##__VA_ARGS__)
 #endif
 
 // Deklaracje funkcji (dodajemy parametr 'level')

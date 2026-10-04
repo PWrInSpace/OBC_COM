@@ -71,18 +71,18 @@
   \brief Rfm95 functions return values enum
 */
 typedef enum {
-  RFM95_OK = 0,
-  RFM95_INIT_ERR,
-  RFM95_WRITE_ERR,
-  RFM95_TRANSMIT_ERR,
-  RFM95_RECEIVE_ERR,
-  RFM95_CONFIG_ERR
+    RFM95_OK = 0,
+    RFM95_INIT_ERR,
+    RFM95_WRITE_ERR,
+    RFM95_TRANSMIT_ERR,
+    RFM95_RECEIVE_ERR,
+    RFM95_CONFIG_ERR
 } rfm95_err_t;
 
 typedef enum {
-  RFM95_GPIO_MODE_DISABLE = 0,
-  RFM95_GPIO_MODE_INPUT,
-  RFM95_GPIO_MODE_OUTPUT
+    RFM95_GPIO_MODE_DISABLE = 0,
+    RFM95_GPIO_MODE_INPUT,
+    RFM95_GPIO_MODE_OUTPUT
 } rfm95_gpio_mode_t;
 
 // Transceiver modes
@@ -96,34 +96,34 @@ typedef enum {
 // 111 Æ reserved
 
 typedef enum {
-  SLEEP_MODE = 0,
-  STDBY_MODE,
-  FSTx_MODE,
-  TX_MODE,
-  FSRx_MODE,
-  RX_MODE,
+    SLEEP_MODE = 0,
+    STDBY_MODE,
+    FSTx_MODE,
+    TX_MODE,
+    FSRx_MODE,
+    RX_MODE,
 } rfm95_mode_t;
 
 typedef enum {
-  RFM95_IRQ_D0_RXDONE = 0x00,
-  RFM95_IRQ_D0_TXDONE = 0x01,
-  RFM95_IRQ_D0_CADDONE = 0x10,
+    RFM95_IRQ_D0_RXDONE = 0x00,
+    RFM95_IRQ_D0_TXDONE = 0x01,
+    RFM95_IRQ_D0_CADDONE = 0x10,
 } rfm95_dio0_mapping_t;
 
 /*!
  * \brief Enum for Rfm95 bandwith in Hz
  */
 typedef enum {
-  RFM95_BW_7_8_kHz = 0,
-  RFM95_BW_10_4_kHz,
-  RFM95_BW_15_6_kHz,
-  RFM95_BW_20_8_kHz,
-  RFM95_BW_31_25_kHz,
-  RFM95_BW_41_7_kHz,
-  RFM95_BW_62_5_kHz,
-  RFM95_BW_125_kHz,
-  RFM95_BW_250_kHz,
-  RFM95_BW_500_kHz,
+    RFM95_BW_7_8_kHz = 0,
+    RFM95_BW_10_4_kHz,
+    RFM95_BW_15_6_kHz,
+    RFM95_BW_20_8_kHz,
+    RFM95_BW_31_25_kHz,
+    RFM95_BW_41_7_kHz,
+    RFM95_BW_62_5_kHz,
+    RFM95_BW_125_kHz,
+    RFM95_BW_250_kHz,
+    RFM95_BW_500_kHz,
 } rfm95_bandwith_t;
 
 /*!
@@ -131,13 +131,13 @@ typedef enum {
  *        Used in the rfm95_set_spreading_factor method
  */
 typedef enum {
-  RFM95_SF_64_CoS = 6,
-  RFM95_SF_128_CoS,
-  RFM95_SF_256_CoS,
-  RFM95_SF_512_CoS,
-  RFM95_SF_1024_CoS,
-  RFM95_SF_2048_CoS,
-  RFM95_SF_4096_CoS
+    RFM95_SF_64_CoS = 6,
+    RFM95_SF_128_CoS,
+    RFM95_SF_256_CoS,
+    RFM95_SF_512_CoS,
+    RFM95_SF_1024_CoS,
+    RFM95_SF_2048_CoS,
+    RFM95_SF_4096_CoS
 } rfm95_spreading_factor_t;
 
 /*!
@@ -145,8 +145,8 @@ typedef enum {
  */
 // TODO(Glibus): check if it is ok
 typedef enum {
-  RFM95_TX_POWER_14_dBm = 2,
-  RFM95_TX_POWER_17_dBm = 17
+    RFM95_TX_POWER_14_dBm = 2,
+    RFM95_TX_POWER_17_dBm = 17
 } rfm95_tx_power_t;
 
 typedef bool (*rfm95_SPI_transmit)(uint8_t *in, uint8_t *out);
@@ -155,34 +155,33 @@ typedef bool (*rfm95_GPIO_set_level)(uint16_t _gpio_num, uint8_t _level);
 typedef void (*rfm95_log)(const char *info);
 
 typedef struct {
+    uint8_t state;
+    uint64_t frequency;
+    uint8_t power;
+    uint8_t LoRa_Rate;
+    uint8_t LoRa_BW;
+    bool crc;
+    int16_t CR;
+    int16_t sync;
+    uint8_t packetLength;
 
-  uint8_t state;
-  uint64_t frequency;
-  uint8_t power;
-  uint8_t LoRa_Rate;
-  uint8_t LoRa_BW;
-  bool crc;
-  int16_t CR;
-  int16_t sync;
-  uint8_t packetLength;
-
-  uint8_t rxBuffer[256];
-  uint8_t readBytes;
-  int16_t last_pkt_RSSI;
-  float last_pkt_SNR;
+    uint8_t rxBuffer[256];
+    uint8_t readBytes;
+    int16_t last_pkt_RSSI;
+    float last_pkt_SNR;
 } RFM95_param_t;
 
 typedef struct {
-  rfm95_SPI_transmit _spi_transmit;
-  rfm95_delay _delay;
-  rfm95_GPIO_set_level _gpio_set_level;
-  rfm95_log log;
-  uint16_t rst_gpio_num;
-  uint16_t cs_gpio_num;
-  uint16_t d0_gpio_num;
-  int16_t implicit_header;
-  int32_t frequency;
-  RFM95_param_t *param;
+    rfm95_SPI_transmit _spi_transmit;
+    rfm95_delay _delay;
+    rfm95_GPIO_set_level _gpio_set_level;
+    rfm95_log log;
+    uint16_t rst_gpio_num;
+    uint16_t cs_gpio_num;
+    uint16_t d0_gpio_num;
+    int16_t implicit_header;
+    int32_t frequency;
+    RFM95_param_t *param;
 
 } rfm95_t;
 

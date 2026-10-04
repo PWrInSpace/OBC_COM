@@ -14,18 +14,18 @@
 #include "usb_config.h"
 #include "usart.h"
 #include "stream_buffer.h"
-QueueHandle_t cmd_queue = NULL; 
+QueueHandle_t cmd_queue = NULL;
 osThreadId_t cmdTaskHandle = NULL;
 
 void CMD_Task_Init(void) {
     if (cmd_queue == NULL) {
-        cmd_queue = xQueueCreate(POOL_SIZE, sizeof(CMD_Buffer_t*));
+        cmd_queue = xQueueCreate(POOL_SIZE, sizeof(CMD_Buffer_t *));
     }
 
     const osThreadAttr_t cmdTask_attributes = {
         .name = "usbCmdTask",
         .stack_size = 4096,
-        .priority = (osPriority_t) osPriorityNormal,
+        .priority = (osPriority_t)osPriorityNormal,
     };
 
     cmdTaskHandle = osThreadNew(cmd_task, NULL, &cmdTask_attributes);
@@ -35,20 +35,19 @@ extern volatile uint16_t USB_Rx_Data_Len;
 extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
 void cmd_task(void *argument) {
     (void)argument;
-    
+
     CMD_Buffer_t *received_ptr = NULL;
     uint8_t usb_byte;
     static uint8_t usb_frame_buf[BUFFER_SIZE];
     static uint16_t usb_idx = 0;
     uint32_t ulNotifiedValue;
 
-    for(;;) {
-
+    for (;;) {
         xTaskNotifyWait(0, 0xFFFFFFFF, &ulNotifiedValue, portMAX_DELAY);
 
         while (xStreamBufferReceive(xUsbStreamBuffer, &usb_byte, 1, 0) > 0) {
             if (usb_idx == 0 && (usb_byte == '\n' || usb_byte == '\r' || usb_byte == ' ')) {
-                continue; 
+                continue;
             }
 
             if (usb_idx < BUFFER_SIZE - 1) {
@@ -56,14 +55,13 @@ void cmd_task(void *argument) {
             }
 
             if (usb_byte == '\n' || usb_byte == '\r') {
-                usb_idx--; 
+                usb_idx--;
                 usb_frame_buf[usb_idx] = '\0';
 
                 if (usb_idx >= 4 && memcmp(usb_frame_buf, "CMD;", 4) == 0) {
                     process_command(usb_frame_buf, usb_idx);
-                } 
-                else if (usb_idx > 0) {
-                    USB_Transmit((uint8_t*)"Unknown command format\r\n", 24);
+                } else if (usb_idx > 0) {
+                    USB_Transmit((uint8_t *)"Unknown command format\r\n", 24);
                     lora_gs_tx_enqueue(usb_frame_buf, usb_idx);
                 }
 
@@ -82,16 +80,16 @@ void cmd_task(void *argument) {
                     actual_len = data[2] + 5;
                     if (actual_len > BUFFER_SIZE) actual_len = BUFFER_SIZE;
 
-                    USB_Transmit((uint8_t*)"RX BIN CMD (HEX): ", 18); 
+                    USB_Transmit((uint8_t *)"RX BIN CMD (HEX): ", 18);
                     //USB_Transmit_Hex(data, actual_len);
                 } else {
                     // Regular text command
                     actual_len = received_ptr->len;
-                    USB_Transmit((uint8_t*)"RX CMD: ", 8); 
+                    USB_Transmit((uint8_t *)"RX CMD: ", 8);
                     USB_Transmit(data, actual_len);
                 }
 
-                USB_Transmit((uint8_t*)"\r\n", 2);
+                USB_Transmit((uint8_t *)"\r\n", 2);
                 process_command(data, actual_len);
                 memset(data, 0, BUFFER_SIZE);
                 xQueueSend(free_pool_queue, &received_ptr, 0);
@@ -99,4 +97,3 @@ void cmd_task(void *argument) {
         }
     }
 }
-

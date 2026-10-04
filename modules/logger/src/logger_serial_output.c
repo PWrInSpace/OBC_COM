@@ -19,5 +19,5 @@
 #include "usbd_cdc_if.h"
 
 void logger_serial_output_callback(const char *data, uint16_t len) {
-  USB_Transmit((uint8_t *)data, len);
+    USB_Transmit((uint8_t *)data, len);
 }

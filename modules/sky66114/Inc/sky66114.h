@@ -28,34 +28,34 @@
 #endif
 
 typedef enum {
-  SKY66114_MODE_SLEEP_0 = 0,
-  SKY66114_MODE_RX_LNA = 1,
-  SKY66114_MODE_TX_HIGH = 2,
-  SKY66114_MODE_TX_LOW = 3,
-  SKY66114_MODE_RX_BYP = 4,
-  SKY66114_MODE_TX_BYP = 5,
-  SKY66114_MODE_SLEEP_6 = 6
+    SKY66114_MODE_SLEEP_0 = 0,
+    SKY66114_MODE_RX_LNA = 1,
+    SKY66114_MODE_TX_HIGH = 2,
+    SKY66114_MODE_TX_LOW = 3,
+    SKY66114_MODE_RX_BYP = 4,
+    SKY66114_MODE_TX_BYP = 5,
+    SKY66114_MODE_SLEEP_6 = 6
 } sky66114_mode_t;
 
 typedef enum {
-  SKY66114_OK = 0,
-  SKY66114_ERROR = 1,
+    SKY66114_OK = 0,
+    SKY66114_ERROR = 1,
 } sky66114_error_t;
 
 typedef struct {
-  GPIO_TypeDef *csd_port;
-  uint16_t csd_pin;
-  GPIO_TypeDef *cps_port;
-  uint16_t cps_pin;
-  GPIO_TypeDef *crx_port;
-  uint16_t crx_pin;
-  GPIO_TypeDef *ctx_port;
-  uint16_t ctx_pin;
-  GPIO_TypeDef *chl_port;
-  uint16_t chl_pin;
+    GPIO_TypeDef *csd_port;
+    uint16_t csd_pin;
+    GPIO_TypeDef *cps_port;
+    uint16_t cps_pin;
+    GPIO_TypeDef *crx_port;
+    uint16_t crx_pin;
+    GPIO_TypeDef *ctx_port;
+    uint16_t ctx_pin;
+    GPIO_TypeDef *chl_port;
+    uint16_t chl_pin;
 
-  GPIO_TypeDef *enable_port;
-  uint16_t enable_pin;
+    GPIO_TypeDef *enable_port;
+    uint16_t enable_pin;
 } sky66114_t;
 
 extern sky66114_t sky66114_default_config;
