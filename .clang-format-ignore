@@ -16,6 +16,9 @@ modules/USB/**
 # --- driver Semtech SX1280 (upstream) ---
 modules/sx1280/**
 
+# --- wygenerowany protobuf (lora.*) + biblioteka pbtools ---
+proto/**
+
 # --- emulacja EEPROM (ST X-CUBE-EEPROM) ---
 nvs/Inc/eeprom_emul*.h
 nvs/Inc/flash_interface.h
