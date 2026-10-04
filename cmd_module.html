@@ -98,20 +98,20 @@ $(document).ready(function(){initNavTree('cmd_module.html',''); initResizable();
 <h1><a class="anchor" id="autotoc_md1"></a>
 ⚙️ Protocol Architecture</h1>
 <p>The module automatically detects the incoming packet type based on the initial bytes:</p>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md2"></a>
 1. Text Protocol (ASCII)</h2>
 <p>Designed for manual debugging via serial terminal (e.g., PuTTY, TeraTerm).</p><ul>
 <li><b>Format:</b> <code>CMD:[COMMAND]:[VALUE]</code></li>
 <li><b>Example:</b> <code>CMD:FREQ:868000000</code> (Sets frequency to 868 MHz)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md3"></a>
 2. Binary Protocol</h2>
 <p>Designed for automated communication between ground stations or other flight computers.</p><ul>
 <li><b>Format:</b> <code>[Header 0x32][Data Length][Command ID][Payload...]</code></li>
 <li><b>Example:</b> <code>32 04 01 00 CA 9A 3B</code> (Binary equivalent of setting frequency)</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 📜 Supported Commands</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('cmd_module.html',''); initResizable();
 <td class="markdownTableBodyLeft">**<code>RESET</code>**   </td><td class="markdownTableBodyLeft"><code>0x03</code>   </td><td class="markdownTableBodyLeft">Triggers a hardware <code>NVIC_SystemReset()</code>.   </td><td class="markdownTableBodyLeft"><code>CMD:RESET</code>   </td></tr>
 </table>
 <hr  />
-<h1><a class="anchor" id="autotoc_md17"></a>
+<h1><a class="anchor" id="autotoc_md18"></a>
 🛠 Developer Guide: Adding New Commands</h1>
 <p>To add a new command to the system, follow these three steps:</p>
 <h2><a class="anchor" id="autotoc_md19"></a>

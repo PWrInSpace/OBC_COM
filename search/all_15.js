@@ -24,7 +24,7 @@ var searchData=
   ['telemetrytask_5fattributes_21',['telemetryTask_attributes',['../telemetry__task_8c.html#aae9f6c6dc147401a834fb1901dd049bb',1,'telemetry_task.c']]],
   ['telemetrytaskhandle_22',['telemetryTaskHandle',['../telemetry__task_8c.html#af308a24db4546ecee674fd0c87faca03',1,'telemetry_task.c']]],
   ['temperature_23',['temperature',['../structBoardData__t.html#a062b027f6b00f029c8f9177e62fa3f6e',1,'BoardData_t']]],
-  ['text_20protocol_20ascii_24',['1. Text Protocol (ASCII)',['../cmd_module.html#autotoc_md3',1,'']]],
+  ['text_20protocol_20ascii_24',['1. Text Protocol (ASCII)',['../cmd_module.html#autotoc_md2',1,'']]],
   ['ticktime_5ft_25',['TickTime_t',['../structTickTime__t.html',1,'']]],
   ['tim_2ec_26',['tim.c',['../tim_8c.html',1,'']]],
   ['tim_2eh_27',['tim.h',['../tim_8h.html',1,'']]],

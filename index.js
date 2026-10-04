@@ -1,6 +1,6 @@
 var index =
 [
-    [ "📂 Project Structure", "index.html#autotoc_md4", null ],
+    [ "📂 Project Structure", "index.html#autotoc_md7", null ],
     [ "🛠 VS Code Automation & Build Process", "index.html#autotoc_md9", [
       [ "Required Configuration for Flashing:", "index.html#autotoc_md10", null ]
     ] ],
@@ -9,5 +9,5 @@ var index =
       [ "Step 1: Programming Mode (Bootloader)", "index.html#autotoc_md13", null ],
       [ "Step 2: Execution Mode (Run)", "index.html#autotoc_md14", null ]
     ] ],
-    [ "🛠 STM32CubeMX Notes", "index.html#autotoc_md18", null ]
+    [ "🛠 STM32CubeMX Notes", "index.html#autotoc_md16", null ]
 ];

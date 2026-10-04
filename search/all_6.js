@@ -106,7 +106,7 @@ var searchData=
   ['command_20struct_103',['Step 2: Define Command Struct',['../cmd_module.html#autotoc_md20',1,'']]],
   ['command_5ft_104',['Command_t',['../cmd__interface_8h.html#afe8d33d42ee3ed4867090180ef38afbd',1,'cmd_interface.h']]],
   ['commandmap_5ft_105',['CommandMap_t',['../structCommandMap__t.html',1,'']]],
-  ['commands_106',['commands',['../cmd_module.html#autotoc_md7',1,'📜 Supported Commands'],['../cmd_module.html#autotoc_md17',1,'🛠 Developer Guide: Adding New Commands']]],
+  ['commands_106',['commands',['../cmd_module.html#autotoc_md6',1,'📜 Supported Commands'],['../cmd_module.html#autotoc_md18',1,'🛠 Developer Guide: Adding New Commands']]],
   ['configuration_20constants_107',['configuration constants',['../group__Exported__Configuration__Constants.html',1,'Exported Configuration Constants'],['../group__Private__Configuration__Constants.html',1,'Private Configuration Constants']]],
   ['configuration_20for_20flashing_3a_108',['Required Configuration for Flashing:',['../index.html#autotoc_md10',1,'']]],
   ['configure_5fgps_109',['configure_gps',['../gps__task_8c.html#ae5fc8034e9ce13657187e2a7df794409',1,'gps_task.c']]],

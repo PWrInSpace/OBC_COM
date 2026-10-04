@@ -28,11 +28,11 @@ var NAVTREE =
     [ "OBC_COM", "index.html", "index" ],
     [ "CMD Module (Command Line Interface)", "cmd_module.html", [
       [ "⚙️ Protocol Architecture", "cmd_module.html#autotoc_md1", [
-        [ "1. Text Protocol (ASCII)", "cmd_module.html#autotoc_md3", null ],
-        [ "2. Binary Protocol", "cmd_module.html#autotoc_md5", null ]
+        [ "1. Text Protocol (ASCII)", "cmd_module.html#autotoc_md2", null ],
+        [ "2. Binary Protocol", "cmd_module.html#autotoc_md3", null ]
       ] ],
-      [ "📜 Supported Commands", "cmd_module.html#autotoc_md7", null ],
-      [ "🛠 Developer Guide: Adding New Commands", "cmd_module.html#autotoc_md17", [
+      [ "📜 Supported Commands", "cmd_module.html#autotoc_md6", null ],
+      [ "🛠 Developer Guide: Adding New Commands", "cmd_module.html#autotoc_md18", [
         [ "Step 1: Define Command ID", "cmd_module.html#autotoc_md19", null ],
         [ "Step 2: Define Command Struct", "cmd_module.html#autotoc_md20", null ],
         [ "Step 3: Define Command Handler", "cmd_module.html#autotoc_md21", null ]

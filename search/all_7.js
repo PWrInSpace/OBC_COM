@@ -14,7 +14,7 @@ var searchData=
   ['define_20command_20struct_11',['Step 2: Define Command Struct',['../cmd_module.html#autotoc_md20',1,'']]],
   ['delay_5fms_12',['delay_ms',['../structSX1280__s.html#a5d5a1d99c5545c55c87ade621f513ab3',1,'SX1280_s']]],
   ['delayms_13',['DelayMs',['../sx1280_8h.html#a57e9f7580b7bc3e84918442712d5add4',1,'sx1280.h']]],
-  ['developer_20guide_3a_20adding_20new_20commands_14',['🛠 Developer Guide: Adding New Commands',['../cmd_module.html#autotoc_md17',1,'']]],
+  ['developer_20guide_3a_20adding_20new_20commands_14',['🛠 Developer Guide: Adding New Commands',['../cmd_module.html#autotoc_md18',1,'']]],
   ['dfu_20mode_15',['🚀 Flashing Instructions (USB DFU Mode)',['../index.html#autotoc_md12',1,'']]],
   ['dioirq_16',['DioIrq',['../sx1280_8c.html#a54dad26405aa74d20ad277910373da2f',1,'sx1280.c']]],
   ['dioirqhandler_17',['dioirqhandler',['../sx1280-hal_8h.html#ad305110185e3cf2fdae15324c3819d49',1,'DioIrqHandler:&#160;sx1280-hal.h'],['../sx1280_8h.html#ad305110185e3cf2fdae15324c3819d49',1,'DioIrqHandler:&#160;sx1280.h']]],

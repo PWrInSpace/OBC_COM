@@ -113,5 +113,5 @@ var searchData=
   ['gs_5fsend_110',['gs_send',['../rfm95w__task_8c.html#ad09b3088ae86c18f441bef09676c7933',1,'rfm95w_task.c']]],
   ['gspeed_111',['gspeed',['../structGNSS__StateHandle.html#aa6b5b757e969e8b39dc57fb12a35c1cc',1,'GNSS_StateHandle::gSpeed'],['../structBoardData__t.html#a6a75b2f83273b109281e5e1e1f0d0452',1,'BoardData_t::gSpeed']]],
   ['guard_5fpages_5fnumber_112',['GUARD_PAGES_NUMBER',['../group__Private__Configuration__Constants.html#ga1756db6f424bbf876480d37774828ca8',1,'eeprom_emul_conf.h']]],
-  ['guide_3a_20adding_20new_20commands_113',['🛠 Developer Guide: Adding New Commands',['../cmd_module.html#autotoc_md17',1,'']]]
+  ['guide_3a_20adding_20new_20commands_113',['🛠 Developer Guide: Adding New Commands',['../cmd_module.html#autotoc_md18',1,'']]]
 ];

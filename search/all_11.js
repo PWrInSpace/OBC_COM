@@ -73,8 +73,8 @@ var searchData=
   ['process_5fcommand_70',['process_command',['../cmd__interface_8c.html#a9fbe128e63157dbdbd120e0a1f114c8e',1,'process_command(uint8_t *rx_buf, uint16_t len):&#160;cmd_interface.c'],['../cmd__interface_8h.html#a9fbe128e63157dbdbd120e0a1f114c8e',1,'process_command(uint8_t *rx_buf, uint16_t len):&#160;cmd_interface.c']]],
   ['process_5ftext_5fpacket_71',['process_text_packet',['../cmd__interface_8c.html#a6a3cde87386a92623e597936724e60c4',1,'cmd_interface.c']]],
   ['programming_20mode_20bootloader_72',['Step 1: Programming Mode (Bootloader)',['../index.html#autotoc_md13',1,'']]],
-  ['project_20structure_73',['📂 Project Structure',['../index.html#autotoc_md4',1,'']]],
-  ['protocol_74',['2. Binary Protocol',['../cmd_module.html#autotoc_md5',1,'']]],
+  ['project_20structure_73',['📂 Project Structure',['../index.html#autotoc_md7',1,'']]],
+  ['protocol_74',['2. Binary Protocol',['../cmd_module.html#autotoc_md3',1,'']]],
   ['protocol_20architecture_75',['⚙️ Protocol Architecture',['../cmd_module.html#autotoc_md1',1,'']]],
-  ['protocol_20ascii_76',['1. Text Protocol (ASCII)',['../cmd_module.html#autotoc_md3',1,'']]]
+  ['protocol_20ascii_76',['1. Text Protocol (ASCII)',['../cmd_module.html#autotoc_md2',1,'']]]
 ];
