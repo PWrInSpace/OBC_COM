@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OBC-COM: Microchip PIC Chipidea FS Driver</title>
+<title>OBC-COM: OBC_COM</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,49 +70,69 @@ $(function() {
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Microchip PIC Chipidea FS Driver </div></div>
+  <div class="headertitle"><div class="title">OBC_COM </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_Core_tinyusbsrc_portable_microchip_pic_README"></a> This driver adds support for Microchip PIC microcontrollers with full-speed Chipidea USB peripheral to the TinyUSB stack. It supports the following families:</p>
+<div class="textblock"><p><a class="anchor" id="mainpage"></a> <img src="https://img.shields.io/badge/MCU-STM32H563-blue.svg" alt="MCU" style="pointer-events: none;" class="inline"/> <img src="https://img.shields.io/badge/RTOS-FreeRTOS%20CMSIS--V2-green.svg" alt="RTOS" style="pointer-events: none;" class="inline"/> <img src="https://img.shields.io/badge/Build-CMake-orange.svg" alt="Build" style="pointer-events: none;" class="inline"/> <img src="https://img.shields.io/badge/Code_Style-Clang--Format-blueviolet.svg" alt="Code Style" style="pointer-events: none;" class="inline"/></p>
+<p>Firmware for the On-Board Computer (OBC) communication subsystem. This project is based on the <b>STM32H563</b> processor, chosen for its high reliability and integrated security features—essential requirements for robust communication systems in aerospace.</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md33"></a>
+📂 Project Structure</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Directory   </th><th class="markdownTableHeadLeft">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">**<code>app/</code>**   </td><td class="markdownTableBodyLeft">High-level application logic and FreeRTOS task initializations (CMSIS V2).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">**<code>modules/</code>**   </td><td class="markdownTableBodyLeft">Component drivers (RF_driver, GPS, USB, logger, NVS, etc.).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">**<code>cmd/</code>**   </td><td class="markdownTableBodyLeft">Command handling and instruction parsing logic.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">**<code>wrappers/</code>**   </td><td class="markdownTableBodyLeft">Hardware abstraction layers for simplified peripheral access.   </td></tr>
+</table>
+<hr  />
+<h1><a class="anchor" id="autotoc_md35"></a>
+🛠 VS Code Automation &amp; Build Process</h1>
+<p>The repository is configured to streamline development and enforce code quality using automated VS Code tasks (<code>.vscode/tasks.json</code>).</p>
 <ul>
-<li>PIC32MX (untested)</li>
-<li>PIC32MM</li>
-<li>PIC32MK (untested)</li>
-<li>PIC24FJ</li>
-<li>PIC24EP (untested)</li>
-<li>dsPIC33EP (untested)</li>
+<li>**Format &amp; Build (<code>CTRL + SHIFT + B</code>)**: Pressing this shortcut will automatically run <code>clang-format</code> to style your C/C++ files, and then build the project using CMake.</li>
+<li><b>Flash Firmware</b>: To upload the code, go to <b>Terminal -&gt; Run Task...</b> in the top menu and select **<code>Flash DFU</code>**.</li>
 </ul>
-<p>Currently only the device mode is supported.</p>
-<h1><a class="anchor" id="autotoc_md43"></a>
-Important Notes</h1>
-<h2><a class="anchor" id="autotoc_md44"></a>
-Handling of shared VBUS &amp; GPIO pin</h2>
-<p>Some PICs have the USB VBUS pin bonded with a GPIO pin in the chip package. This driver does <b>NOT</b> handle the potential conflict between the VBUS and GPIO functionalities.</p>
-<p>Developers must ensure that the GPIO pin is tristated when the VBUS pin is managed by the USB peripheral in order to prevent damaging the chip.</p>
-<p>This design choice allows developers the flexibility to use the GPIO functionality for controlling VBUS in device mode if desired.</p>
-<h1><a class="anchor" id="autotoc_md45"></a>
-TODO</h1>
-<h2><a class="anchor" id="autotoc_md46"></a>
-Handle USB remote wakeup timing correctly</h2>
-<p>The Chipidea FS IP doesn't handle the RESUME signal automatically and it must be managed in software. It needs to be asserted for exactly 10ms, and this is impossible to do without per-device support due to BSP differences. For now, a simple for-based loop is used.</p>
-<h2><a class="anchor" id="autotoc_md47"></a>
-8-bit PIC support</h2>
-<p>The 8-bit PICs also uses the Chipidea FS IP. Technically it's possible to support them as well.</p>
-<p>Possible difficulties:</p><ul>
-<li>Memory size constraints (1KB/8KB ballpark)</li>
-<li>A third BDT layout (now we have two)</li>
-<li>Different compiler-specific directives</li>
-<li>Compiler bugs if you use SDCC</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md48"></a>
-Author</h1>
-<p><a href="https://github.com/ReimuNotMoe">ReimuNotMoe</a> at SudoMaker, Ltd.</p>
-<h1><a class="anchor" id="autotoc_md49"></a>
-Credits</h1>
-<p>This driver is based on:</p><ul>
-<li>Microchip's USB driver (usb_device.c)</li>
-<li>TinyUSB's NXP KHCI driver (<a class="el" href="dcd__khci_8c.html">dcd_khci.c</a>) </li>
-</ul>
+<h2><a class="anchor" id="autotoc_md36"></a>
+Required Configuration for Flashing:</h2>
+<p>Before flashing for the first time, check the <code>Flash DFU</code> task in <code>.vscode/tasks.json</code>:</p><ol type="1">
+<li><b>Programmer Path</b>: Ensure the path to the <code>STM32_Programmer_CLI</code> matches your local <b>STM32CubeProgrammer</b> installation.</li>
+<li><b>Port</b>: Set the specific port (e.g., <code>port=usb1</code> or <code>COM3</code>) assigned to your device in the <code>args</code> array.</li>
+</ol>
+<blockquote class="doxtable">
+<p>&zwj;[!IMPORTANT] <br  />
+ <b>Build before flashing:</b> The flash task targets the **<code>.bin</code>** file. You must successfully build the project (<code>CTRL + SHIFT + B</code>) before flashing to ensure the binary is up-to-date. </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md37"></a>
+&lt;/blockquote&gt;</h1>
+<h1><a class="anchor" id="autotoc_md38"></a>
+🚀 Flashing Instructions (USB DFU Mode)</h1>
+<p>The board uses USB DFU for firmware updates. Follow these steps to toggle between programming and execution modes:</p>
+<h2><a class="anchor" id="autotoc_md39"></a>
+Step 1: Programming Mode (Bootloader)</h2>
+<ol type="1">
+<li>Set the <b>BOOT0</b> jumper/switch to <b>GND</b>.</li>
+<li>Press the <b>RESET (RST)</b> button.</li>
+<li>In VS Code, navigate to <b>Terminal -&gt; Run Task...</b> and select **<code>Flash DFU</code>**. The system will automatically upload the binary.</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md40"></a>
+Step 2: Execution Mode (Run)</h2>
+<ol type="1">
+<li>Once the upload is complete, move the <b>BOOT0</b> switch to <b>3V3 (VCC)</b>.</li>
+<li>Press the <b>RESET (RST)</b> button again.</li>
+<li>The firmware will now start executing from the Flash memory.</li>
+</ol>
+<hr  />
+<h1><a class="anchor" id="autotoc_md42"></a>
+🛠 STM32CubeMX Notes</h1>
+<ol type="1">
+<li>After STM32CubeMX code generation, change the <code>cmake/stm32cubemx/CMakeLists.txt</code> file as follows: ```cmake set(MX_LINK_LIBS STM32_Drivers ${TOOLCHAIN_LINK_LIBRARIES} RTOS2 "-u _printf_float" ) </li>
+</ol>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

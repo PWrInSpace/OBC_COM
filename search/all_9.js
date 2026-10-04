@@ -65,7 +65,7 @@ var searchData=
   ['indicator_5fpass_5fthrough_62',['indicator_pass_through',['../structdwc2__gusbcfg__t_1_1TU__ATTR__PACKED.html#aeed8a4fc1155556a292fb3b73a8616e5',1,'dwc2_gusbcfg_t::TU_ATTR_PACKED']]],
   ['information_63',['information',['../structTU__ATTR__PACKED.html#a21f484d1f764f80dfeb45ffe47cc0ead',1,'TU_ATTR_PACKED']]],
   ['init_64',['init',['../structusbh__class__driver__t.html#aca53e23658c6ce5cbb97e9ab100d017c',1,'usbh_class_driver_t']]],
-  ['init_65',['Init',['../struct__Device__cb.html#a912aa4e59cf96fbe7f59466964eb7983',1,'_Device_cb::Init()'],['../struct__USBD__CDC__Itf.html#a58cd27783f2568c1d23367d54a496c96',1,'_USBD_CDC_Itf::Init()']]],
+  ['init_65',['Init',['../struct__Device__cb.html#a912aa4e59cf96fbe7f59466964eb7983',1,'_Device_cb']]],
   ['init_66',['init',['../structusbd__class__driver__t.html#a826cfe798a778a64819bb8f650e340a8',1,'usbd_class_driver_t']]],
   ['initialise_5fmonitor_5fhandles_67',['initialise_monitor_handles',['../syscalls_8c.html#a25c7f100d498300fff65568c2fcfe639',1,'syscalls.c']]],
   ['input_68',['input',['../structTU__ATTR__PACKED.html#a69bfeedfb7f89c3b6dbe7eb3467b5288',1,'TU_ATTR_PACKED']]],

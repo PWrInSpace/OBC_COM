@@ -42,6 +42,5 @@ var searchData=
   ['_5f_5fusbhs_5ftype0_5ft_39',['__USBHS_TYPE0_t',['../union____USBHS__TYPE0__t.html',1,'']]],
   ['_5fccrx_5fevenaccess_40',['_ccrx_evenaccess',['../struct__ccrx__evenaccess.html',1,'']]],
   ['_5fdevice_5fcb_41',['_Device_cb',['../struct__Device__cb.html',1,'']]],
-  ['_5fusbd_5fcdc_5fitf_42',['_USBD_CDC_Itf',['../struct__USBD__CDC__Itf.html',1,'']]],
-  ['_5fusbd_5fhandletypedef_43',['_USBD_HandleTypeDef',['../struct__USBD__HandleTypeDef.html',1,'']]]
+  ['_5fusbd_5fhandletypedef_42',['_USBD_HandleTypeDef',['../struct__USBD__HandleTypeDef.html',1,'']]]
 ];

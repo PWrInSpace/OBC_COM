@@ -1,9 +1,0 @@
-<map id="modules/USB/Class" name="modules/USB/Class">
-<area shape="rect" id="node1" href="dir_c51ddf88f45de10df62605b0493d2786.html" title="Core" alt="" coords="37,136,89,161"/>
-<area shape="rect" id="node3" href="dir_1e96cd26cb29a0e05f853c9fb2ba2eff.html" title="CDC" alt="" coords="37,63,88,88"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000007_000016.html" title="2" alt="" coords="66,110,76,125"/>
-<area shape="rect" id="node4" href="dir_c6310732a22f63c0c2fc5595561e68f1.html" title="Core" alt="" coords="203,136,255,161"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000007_000015.html" title="1" alt="" coords="184,116,194,131"/>
-<area shape="rect" id="clust2" href="dir_e24c1b65cb8846fbe40d34d22fc575a2.html" alt="" coords="27,52,181,99"/>
-<area shape="rect" id="clust1" href="dir_baf73fd3981f0969eeb3b8e5d6a1e1bc.html" title="USB" alt="" coords="16,16,192,172"/>
-</map>

@@ -45,10 +45,8 @@ var searchData=
   ['dwc2_5fefm32_2eh_42',['dwc2_efm32.h',['../dwc2__efm32_8h.html',1,'']]],
   ['dwc2_5fesp32_2eh_43',['dwc2_esp32.h',['../dwc2__esp32_8h.html',1,'']]],
   ['dwc2_5fgd32_2eh_44',['dwc2_gd32.h',['../dwc2__gd32_8h.html',1,'']]],
-  ['dwc2_5finfo_2emd_45',['dwc2_info.md',['../dwc2__info_8md.html',1,'']]],
-  ['dwc2_5finfo_2epy_46',['dwc2_info.py',['../dwc2__info_8py.html',1,'']]],
-  ['dwc2_5fnrf_2eh_47',['dwc2_nrf.h',['../dwc2__nrf_8h.html',1,'']]],
-  ['dwc2_5fstm32_2eh_48',['dwc2_stm32.h',['../dwc2__stm32_8h.html',1,'']]],
-  ['dwc2_5ftype_2eh_49',['dwc2_type.h',['../dwc2__type_8h.html',1,'']]],
-  ['dwc2_5fxmc_2eh_50',['dwc2_xmc.h',['../dwc2__xmc_8h.html',1,'']]]
+  ['dwc2_5fnrf_2eh_45',['dwc2_nrf.h',['../dwc2__nrf_8h.html',1,'']]],
+  ['dwc2_5fstm32_2eh_46',['dwc2_stm32.h',['../dwc2__stm32_8h.html',1,'']]],
+  ['dwc2_5ftype_2eh_47',['dwc2_type.h',['../dwc2__type_8h.html',1,'']]],
+  ['dwc2_5fxmc_2eh_48',['dwc2_xmc.h',['../dwc2__xmc_8h.html',1,'']]]
 ];

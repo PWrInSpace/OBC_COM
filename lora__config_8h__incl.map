@@ -1,39 +1,39 @@
 <map id="app/include/lora_config.h" name="app/include/lora_config.h">
-<area shape="rect" id="node1" title=" " alt="" coords="358,5,542,31"/>
-<area shape="rect" id="node2" href="$sx1280_8h.html" title=" " alt="" coords="259,79,340,104"/>
-<area shape="rect" id="node7" href="$rfm95w_8h.html" title=" " alt="" coords="409,152,491,177"/>
-<area shape="rect" id="node22" href="$spi_8h.html" title="This file contains all the function prototypes for the spi.c file." alt="" coords="1102,79,1155,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="265,152,333,177"/>
-<area shape="rect" id="node4" title=" " alt="" coords="213,225,295,251"/>
-<area shape="rect" id="node5" title=" " alt="" coords="117,225,188,251"/>
-<area shape="rect" id="node6" href="$sx1280-hal_8h.html" title=" " alt="" coords="110,152,217,177"/>
-<area shape="rect" id="node8" href="$usb__config_8h.html" title=" " alt="" coords="320,225,423,251"/>
-<area shape="rect" id="node14" title=" " alt="" coords="357,665,428,691"/>
-<area shape="rect" id="node21" title=" " alt="" coords="498,225,573,251"/>
-<area shape="rect" id="node9" href="$usbd__core_8h.html" title="Header file for usbd_core.c file." alt="" coords="59,372,159,397"/>
-<area shape="rect" id="node18" href="$usbd__cdc_8h.html" title="header file for the usbd_cdc.c file." alt="" coords="193,372,288,397"/>
-<area shape="rect" id="node19" href="$usbd__cdc__if_8h.html" title=" " alt="" coords="186,299,295,324"/>
-<area shape="rect" id="node20" href="$usbd__desc_8h.html" title=" " alt="" coords="320,299,423,324"/>
-<area shape="rect" id="node10" href="$usbd__conf_8h.html" title=" " alt="" coords="105,592,203,617"/>
-<area shape="rect" id="node15" href="$usbd__ctlreq_8h.html" title=" " alt="" coords="65,445,174,471"/>
-<area shape="rect" id="node16" href="$usbd__def_8h.html" title="General defines for the usb device library." alt="" coords="108,519,200,544"/>
-<area shape="rect" id="node17" href="$usbd__ioreq_8h.html" title="Header file for the usbd_ioreq.c file." alt="" coords="199,445,304,471"/>
-<area shape="rect" id="node11" title=" " alt="" coords="101,665,207,691"/>
-<area shape="rect" id="node12" title=" " alt="" coords="231,665,298,691"/>
-<area shape="rect" id="node13" title=" " alt="" coords="5,665,76,691"/>
-<area shape="rect" id="node23" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="1722,152,1789,177"/>
-<area shape="rect" id="node24" title=" " alt="" coords="2783,225,2917,251"/>
-<area shape="rect" id="node25" title=" " alt="" coords="597,225,749,251"/>
-<area shape="rect" id="node26" title=" " alt="" coords="773,225,943,251"/>
-<area shape="rect" id="node27" title=" " alt="" coords="968,225,1116,251"/>
-<area shape="rect" id="node28" title=" " alt="" coords="1140,225,1299,251"/>
-<area shape="rect" id="node29" title=" " alt="" coords="1323,225,1481,251"/>
-<area shape="rect" id="node30" title=" " alt="" coords="1505,225,1657,251"/>
-<area shape="rect" id="node31" title=" " alt="" coords="1681,225,1829,251"/>
-<area shape="rect" id="node32" title=" " alt="" coords="1853,225,2031,251"/>
-<area shape="rect" id="node33" title=" " alt="" coords="2055,225,2213,251"/>
-<area shape="rect" id="node34" title=" " alt="" coords="2237,225,2391,251"/>
-<area shape="rect" id="node35" title=" " alt="" coords="2415,225,2511,251"/>
-<area shape="rect" id="node36" title=" " alt="" coords="2535,225,2610,251"/>
-<area shape="rect" id="node37" title=" " alt="" coords="2635,225,2759,251"/>
+<area shape="rect" id="node1" title=" " alt="" coords="271,5,455,31"/>
+<area shape="rect" id="node2" href="$sx1280_8h.html" title=" " alt="" coords="172,79,253,104"/>
+<area shape="rect" id="node7" href="$rfm95w_8h.html" title=" " alt="" coords="322,152,404,177"/>
+<area shape="rect" id="node22" href="$spi_8h.html" title="This file contains all the function prototypes for the spi.c file." alt="" coords="1047,79,1100,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="178,152,246,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="152,225,235,251"/>
+<area shape="rect" id="node5" title=" " alt="" coords="41,225,112,251"/>
+<area shape="rect" id="node6" href="$sx1280-hal_8h.html" title=" " alt="" coords="23,152,130,177"/>
+<area shape="rect" id="node8" href="$usb__config_8h.html" title=" " alt="" coords="454,225,557,251"/>
+<area shape="rect" id="node14" title=" " alt="" coords="237,592,308,617"/>
+<area shape="rect" id="node21" title=" " alt="" coords="326,225,400,251"/>
+<area shape="rect" id="node9" href="$usbd__core_8h.html" title="Header file for usbd_core.c file." alt="" coords="357,299,457,324"/>
+<area shape="rect" id="node18" title=" " alt="" coords="481,299,576,324"/>
+<area shape="rect" id="node19" title=" " alt="" coords="600,299,710,324"/>
+<area shape="rect" id="node20" href="$usbd__desc_8h.html" title=" " alt="" coords="689,372,792,397"/>
+<area shape="rect" id="node10" href="$usbd__conf_8h.html" title=" " alt="" coords="363,519,462,544"/>
+<area shape="rect" id="node15" href="$usbd__ctlreq_8h.html" title=" " alt="" coords="542,372,651,397"/>
+<area shape="rect" id="node16" href="$usbd__def_8h.html" title="General defines for the usb device library." alt="" coords="458,445,550,471"/>
+<area shape="rect" id="node17" href="$usbd__ioreq_8h.html" title="Header file for the usbd_ioreq.c file." alt="" coords="361,372,466,397"/>
+<area shape="rect" id="node11" title=" " alt="" coords="519,592,626,617"/>
+<area shape="rect" id="node12" title=" " alt="" coords="332,592,399,617"/>
+<area shape="rect" id="node13" title=" " alt="" coords="424,592,494,617"/>
+<area shape="rect" id="node23" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="1688,152,1755,177"/>
+<area shape="rect" id="node24" title=" " alt="" coords="2041,225,2176,251"/>
+<area shape="rect" id="node25" title=" " alt="" coords="2200,225,2352,251"/>
+<area shape="rect" id="node26" title=" " alt="" coords="2376,225,2547,251"/>
+<area shape="rect" id="node27" title=" " alt="" coords="2572,225,2720,251"/>
+<area shape="rect" id="node28" title=" " alt="" coords="2744,225,2902,251"/>
+<area shape="rect" id="node29" title=" " alt="" coords="582,225,739,251"/>
+<area shape="rect" id="node30" title=" " alt="" coords="763,225,915,251"/>
+<area shape="rect" id="node31" title=" " alt="" coords="940,225,1088,251"/>
+<area shape="rect" id="node32" title=" " alt="" coords="1112,225,1289,251"/>
+<area shape="rect" id="node33" title=" " alt="" coords="1314,225,1471,251"/>
+<area shape="rect" id="node34" title=" " alt="" coords="1495,225,1650,251"/>
+<area shape="rect" id="node35" title=" " alt="" coords="1674,225,1770,251"/>
+<area shape="rect" id="node36" title=" " alt="" coords="1794,225,1868,251"/>
+<area shape="rect" id="node37" title=" " alt="" coords="1893,225,2017,251"/>
 </map>
