@@ -1,16 +1,23 @@
-name: Doxygen GitHub Pages Deploy Action
+name: Generate and Deploy Doxygen
 
 on:
   push:
-    branches:
-      - master
+    # Uruchomi się automatycznie przy pushu na main, master i wszystkie gałęzie dev/
+    branches: [ "main", "master", "dev/*" ]
+  workflow_dispatch: 
+    # Pozwala na ręczne odpalenie akcji z zakładki "Actions" na GitHubie
 
 jobs:
-  deploy:
+  deploy-docs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
-      - uses: DenverCoder1/doxygen-github-pages-action@v2.0.0
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate and Deploy Doxygen
+        uses: DenverCoder1/doxygen-github-pages-action@v2.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
