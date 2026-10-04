@@ -34,7 +34,7 @@ bool lora_txq_pop(lora_tx_queue_t *q, uint8_t *data, uint16_t *len) {
     if (q == NULL || data == NULL || len == NULL) return false;
 
     uint8_t head = q->head;
-    if (head == q->tail) return false; // empty 
+    if (head == q->tail) return false; // empty
 
     *len = q->items[head].len;
     memcpy(data, q->items[head].data, q->items[head].len);

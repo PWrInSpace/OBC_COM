@@ -3,13 +3,12 @@
 
 #include "stm32h5xx.h"
 
+#include "nvs_config.h"
 #include <stdarg.h>
 #include <stdio.h>
-#include "nvs_config.h"
-
 
 #define LOGGER_BUFFER_SIZE 4096
-//#define EXTENDED_LOG 1
+// #define EXTENDED_LOG 1
 
 static char logger_buffer[512];
 static char log_ring_buffer[LOGGER_BUFFER_SIZE];
@@ -18,7 +17,8 @@ static log_level_t current_log_level = LOG_LEVEL_INFO;
 static logger_output_callback_t output_callback = NULL;
 
 #define MAX_FILTERED_TAGS 10
-static char filtered_tags[MAX_FILTERED_TAGS][12]; // Tablica 10 tagów po max 12 znaków
+static char filtered_tags[MAX_FILTERED_TAGS]
+                         [12]; // Tablica 10 tagów po max 12 znaków
 static uint8_t filtered_tags_count = 0;
 
 uint32_t current_log_mute_mask = 0;
@@ -31,17 +31,22 @@ void logger_sync_mask_from_nvs(void) {
     }
 }
 
-uint32_t logger_get_bit_from_tag(const char* tag) {
-    if (strcmp(tag, "GPS") == 0)    return (1 << 0);
-    if (strcmp(tag, "RFM95") == 0)  return (1 << 1);
-    if (strcmp(tag, "USB") == 0)    return (1 << 2);
-    if (strcmp(tag, "SYSTEM") == 0) return (1 << 3);
+uint32_t logger_get_bit_from_tag(const char *tag) {
+    if (strcmp(tag, "GPS") == 0)
+        return (1 << 0);
+    if (strcmp(tag, "RFM95") == 0)
+        return (1 << 1);
+    if (strcmp(tag, "USB") == 0)
+        return (1 << 2);
+    if (strcmp(tag, "SYSTEM") == 0)
+        return (1 << 3);
     return 0;
 }
 
-static bool is_tag_muted(const char* tag) {
+static bool is_tag_muted(const char *tag) {
     uint32_t bit = logger_get_bit_from_tag(tag);
-    if (bit == 0) return false;
+    if (bit == 0)
+        return false;
     return (current_log_mute_mask & bit) != 0;
 }
 
@@ -49,18 +54,19 @@ void logger_enable(bool enable) {
     global_log_enabled = enable;
 }
 
-static void logger_write_to_ring(const char* msg) {
-    if (msg == NULL) return;
-    
+static void logger_write_to_ring(const char *msg) {
+    if (msg == NULL)
+        return;
+
     uint16_t len = strlen(msg);
-    
+
     for (uint16_t i = 0; i < len; i++) {
         log_ring_buffer[ring_write_pos] = msg[i];
         ring_write_pos = (ring_write_pos + 1) % LOGGER_BUFFER_SIZE;
     }
 }
 
-void logger_filter_add(const char* tag) {
+void logger_filter_add(const char *tag) {
     if (filtered_tags_count < MAX_FILTERED_TAGS) {
         strncpy(filtered_tags[filtered_tags_count], tag, 11);
         filtered_tags[filtered_tags_count][11] = '\0';
@@ -72,24 +78,20 @@ void logger_filter_clear(void) {
     filtered_tags_count = 0;
 }
 
-
-
-static void logger_send_via_callback(const char* msg) {
+static void logger_send_via_callback(const char *msg) {
     if (output_callback != NULL && msg != NULL) {
         uint16_t len = strlen(msg);
         output_callback(msg, len);
     }
-}static void logger_format_and_write(const char* tag, 
-                                    const char* level, 
-                                    const char* file, 
-                                    int line, 
-                                    const char* fmt, 
-                                    va_list args)
-{
+}
+static void logger_format_and_write(const char *tag, const char *level,
+                                    const char *file, int line, const char *fmt,
+                                    va_list args) {
+    if (!global_log_enabled)
+        return;
 
-    if (!global_log_enabled) return;
-
-    if (is_tag_muted(tag)) return;
+    if (is_tag_muted(tag))
+        return;
     /* 1. Formatuj treść użytkownika */
     vsnprintf(logger_buffer, sizeof(logger_buffer), fmt, args);
 
@@ -110,14 +112,12 @@ static void logger_send_via_callback(const char* msg) {
     }
 
     // Format rozszerzony: [Czas] [TAG:LEVEL] Plik:Linia - Wiadomość
-    snprintf(formatted, sizeof(formatted),
-             "[%lu ms] [%s:%s] %s:%d - %s\r\n",
+    snprintf(formatted, sizeof(formatted), "[%lu ms] [%s:%s] %s:%d - %s\r\n",
              timestamp, tag, level, filename, line, logger_buffer);
 #else
     // Format lekki: [Czas] [TAG:LEVEL] Wiadomość
-    snprintf(formatted, sizeof(formatted),
-             "[%lu ms] [%s:%s] %s\r\n",
-             timestamp, tag, level, logger_buffer);
+    snprintf(formatted, sizeof(formatted), "[%lu ms] [%s:%s] %s\r\n", timestamp,
+             tag, level, logger_buffer);
 #endif
 
     logger_write_to_ring(formatted);
@@ -125,7 +125,6 @@ static void logger_send_via_callback(const char* msg) {
 }
 
 void logger_init(void) {
-
     bool is_muted = false;
     nvs_get_log_muted(&is_muted);
     global_log_enabled = !is_muted;
@@ -146,8 +145,10 @@ void logger_set_output_callback(logger_output_callback_t callback) {
     output_callback = callback;
 }
 
-void log_info(const char* tag, const char* level, const char* file, int line, const char* fmt, ...) {
-    if (current_log_level > LOG_LEVEL_INFO) return;
+void log_info(const char *tag, const char *level, const char *file, int line,
+              const char *fmt, ...) {
+    if (current_log_level > LOG_LEVEL_INFO)
+        return;
 
     va_list args;
     va_start(args, fmt);
@@ -155,8 +156,10 @@ void log_info(const char* tag, const char* level, const char* file, int line, co
     va_end(args);
 }
 
-void log_error(const char* tag, const char* level, const char* file, int line, const char* fmt, ...) {
-    if (current_log_level > LOG_LEVEL_ERROR) return;
+void log_error(const char *tag, const char *level, const char *file, int line,
+               const char *fmt, ...) {
+    if (current_log_level > LOG_LEVEL_ERROR)
+        return;
 
     va_list args;
     va_start(args, fmt);
@@ -164,8 +167,10 @@ void log_error(const char* tag, const char* level, const char* file, int line, c
     va_end(args);
 }
 
-void log_debug(const char* tag, const char* level, const char* file, int line, const char* fmt, ...) {
-    if (current_log_level > LOG_LEVEL_DEBUG) return;
+void log_debug(const char *tag, const char *level, const char *file, int line,
+               const char *fmt, ...) {
+    if (current_log_level > LOG_LEVEL_DEBUG)
+        return;
 
     va_list args;
     va_start(args, fmt);
@@ -174,7 +179,7 @@ void log_debug(const char* tag, const char* level, const char* file, int line, c
 }
 
 /* Publiczne API do odczytu logów (np. przez debugger lub USART) */
-const char* logger_get_buffer(void) {
+const char *logger_get_buffer(void) {
     return log_ring_buffer;
 }
 

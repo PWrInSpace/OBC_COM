@@ -37,7 +37,7 @@ void led_set_all(led_effect_t effect, led_color_t color);
 void led_stop(void);
 
 // Emergency (fault handler) helpers: synchronous, no RTOS. Use ONLY when the
-// system is presumed dead (e.g. hardfault). 
+// system is presumed dead (e.g. hardfault).
 // Whole strip one colour
 void led_fault_color(led_color_t color);
 // Per-LED: set individual pixels, then flush them with led_fault_show()

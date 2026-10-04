@@ -1,0 +1,29 @@
+# clang-format: pliki pomijane przy formatowaniu.
+
+# --- STM32CubeMX: Core (peryferia, HAL glue, startup, system, it, msp, main, freertos) ---
+Core/**
+
+# --- HAL + CMSIS ---
+Drivers/**
+
+# --- Middleware (FreeRTOS, FatFs, USB device stack) ---
+Middlewares/**
+My_Middlewares/**
+
+# --- stack USB device (ST) ---
+modules/USB/**
+
+# --- driver Semtech SX1280 (upstream) ---
+modules/sx1280/**
+
+# --- wygenerowany protobuf (lora.*) + biblioteka pbtools ---
+proto/**
+
+# --- emulacja EEPROM (ST X-CUBE-EEPROM) ---
+nvs/Inc/eeprom_emul*.h
+nvs/Inc/flash_interface.h
+nvs/src/eeprom_emul.c
+nvs/src/flash_interface.c
+
+# !Core/Src/user_diskio.c
+# !Core/Inc/user_diskio.h

@@ -9,7 +9,7 @@ SemaphoreHandle_t sx1280_spi_sem = NULL;
 
 void Radio_Buffer_Init(void) {
     sx1280_spi_sem = xSemaphoreCreateBinary();
-    xSemaphoreGive(sx1280_spi_sem); 
+    xSemaphoreGive(sx1280_spi_sem);
 }
 
 // --- CALLBACKS ---

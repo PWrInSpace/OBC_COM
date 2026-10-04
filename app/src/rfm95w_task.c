@@ -32,10 +32,9 @@
 
 osThreadId_t rfm95wTaskHandle = NULL;
 const osThreadAttr_t rfm95wTask_attributes = {
-  .name = "rfm95wTask",
-  .priority = (osPriority_t) osPriorityAboveNormal,
-  .stack_size = 4096
-};
+    .name = "rfm95wTask",
+    .priority = (osPriority_t)osPriorityAboveNormal,
+    .stack_size = 4096};
 
 static lora_tx_queue_t s_txq;
 static volatile bool s_settings_dirty = false;
@@ -73,7 +72,7 @@ static uint32_t gs_now_ms(void *ctx) {
 
 static void gs_enter_rx(void *ctx) {
     rfm95_t *radio = (rfm95_t *)ctx;
-    rfm95_write_reg(radio, REG_IRQ_FLAGS, IRQ_ALL);  // W1C: clear, drop DIO0
+    rfm95_write_reg(radio, REG_IRQ_FLAGS, IRQ_ALL); // W1C: clear, drop DIO0
     rfm95_set_receive_mode(radio);
 }
 

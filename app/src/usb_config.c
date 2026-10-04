@@ -18,30 +18,27 @@ extern USBD_DescriptorsTypeDef FS_Desc;
 
 extern osMutexId_t usbMutexHandle;
 
-void USB_CDC_Config(void) 
-{
+void USB_CDC_Config(void) {
     hpcd_USB_DRD_FS.pData = &hUsbDeviceFS;
-    if(USBD_Init(&hUsbDeviceFS, &FS_Desc, 0) != USBD_OK)
+    if (USBD_Init(&hUsbDeviceFS, &FS_Desc, 0) != USBD_OK)
         Error_Handler();
 
     if (USBD_RegisterClass(&hUsbDeviceFS, &USBD_CDC) != USBD_OK)
         Error_Handler();
 
-    if(USBD_CDC_RegisterInterface(&hUsbDeviceFS, &USBD_CDC_Template_fops) != USBD_OK)
+    if (USBD_CDC_RegisterInterface(&hUsbDeviceFS, &USBD_CDC_Template_fops) != USBD_OK)
         Error_Handler();
 
-    if(USBD_Start(&hUsbDeviceFS) != USBD_OK)
+    if (USBD_Start(&hUsbDeviceFS) != USBD_OK)
         Error_Handler();
 }
 
-void USB_Transmit(uint8_t* Buf, uint16_t Len) {
-
+void USB_Transmit(uint8_t *Buf, uint16_t Len) {
     if (osMutexAcquire(usbMutexHandle, 100) == osOK) {
-        
         uint8_t result = CDC_Transmit_FS(Buf, Len);
-        
+
         if (result == 0) { // USBD_OK
-            osDelay(10); 
+            osDelay(10);
         }
 
         osMutexRelease(usbMutexHandle);
@@ -49,11 +46,11 @@ void USB_Transmit(uint8_t* Buf, uint16_t Len) {
 }
 
 //CZACIOR NASZPONCIL COS DO DEBUGOWANIA
-void USB_Transmit_Hex(uint8_t* data, uint16_t len) {
-    static char large_hex_buf[1024]; 
+void USB_Transmit_Hex(uint8_t *data, uint16_t len) {
+    static char large_hex_buf[1024];
     char header_buf[48];
     static const char hex_chars[] = "0123456789ABCDEF";
-    
+
     if (data == NULL || len == 0) return;
     int header_len = snprintf(header_buf, sizeof(header_buf), "Sent %u bytes as hex:\r\n", (unsigned int)len);
     //USB_Transmit((uint8_t*)header_buf, (uint16_t)header_len);
@@ -66,10 +63,10 @@ void USB_Transmit_Hex(uint8_t* data, uint16_t len) {
         *ptr++ = hex_chars[data[i] & 0x0F];
         *ptr++ = ' ';
     }
-    *ptr++ = '\r'; 
+    *ptr++ = '\r';
     *ptr++ = '\n';
     *ptr = '\0';
 
     // 4. Wysyłka całego bufora danych
-    USB_Transmit((uint8_t*)large_hex_buf, (uint16_t)(ptr - large_hex_buf));
+    USB_Transmit((uint8_t *)large_hex_buf, (uint16_t)(ptr - large_hex_buf));
 }

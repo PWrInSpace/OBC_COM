@@ -5,8 +5,8 @@
  */
 #pragma once
 
-#include <stdint.h>
 #include "main.h"
+#include <stdint.h>
 
 typedef enum {
     BUZZER_OK = 0,

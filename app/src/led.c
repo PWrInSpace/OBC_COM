@@ -11,20 +11,20 @@
 #include "task.h"
 #include <stdint.h>
 
-#define LED_COUNT                   5U
+#define LED_COUNT 5U
 
-#define LED_REFRESH_RATE_HZ         45U
-#define LED_FRAME_MS                (1000U / LED_REFRESH_RATE_HZ)
+#define LED_REFRESH_RATE_HZ 45U
+#define LED_FRAME_MS (1000U / LED_REFRESH_RATE_HZ)
 
-#define LED_BRIGHTNESS_PERCENT      50U
+#define LED_BRIGHTNESS_PERCENT 50U
 
-#define RAINBOW_HUE_STEP_PER_FRAME  1U
-#define RAINBOW_HUE_STEP_PER_LED    (256U / LED_COUNT)
+#define RAINBOW_HUE_STEP_PER_FRAME 1U
+#define RAINBOW_HUE_STEP_PER_LED (256U / LED_COUNT)
 
-#define LED_BLINK_ON_MS             300U
-#define LED_BLINK_OFF_MS            300U
-#define LED_BLINK_ON_FRAMES         (LED_BLINK_ON_MS  / LED_FRAME_MS)
-#define LED_BLINK_OFF_FRAMES        (LED_BLINK_OFF_MS / LED_FRAME_MS)
+#define LED_BLINK_ON_MS 300U
+#define LED_BLINK_OFF_MS 300U
+#define LED_BLINK_ON_FRAMES (LED_BLINK_ON_MS / LED_FRAME_MS)
+#define LED_BLINK_OFF_FRAMES (LED_BLINK_OFF_MS / LED_FRAME_MS)
 
 static ws2812_t g_ws;
 static osTimerId_t g_timer;
@@ -33,28 +33,32 @@ static volatile led_effect_t g_effect[LED_COUNT];
 static volatile led_color_t g_color[LED_COUNT];
 static uint32_t g_frame;
 
-static inline uint8_t scale(uint8_t c) { return (uint8_t)(((uint16_t)c * LED_BRIGHTNESS_PERCENT) / 100u); }
+static inline uint8_t scale(uint8_t c) {
+    return (uint8_t)(((uint16_t)c * LED_BRIGHTNESS_PERCENT) / 100u);
+}
 
 // Gamma ~2.8 LUT
 static const uint8_t gamma8[256] = {
-    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
-    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,
-    1,  1,  1,  1,  1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,  2,
-    2,  3,  3,  3,  3,  3,  3,  3,  4,  4,  4,  4,  4,  5,  5,  5,
-    5,  6,  6,  6,  6,  7,  7,  7,  7,  8,  8,  8,  9,  9,  9, 10,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2,
+    2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5,
+    5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 9, 9, 9, 10,
     10, 10, 11, 11, 11, 12, 12, 13, 13, 13, 14, 14, 15, 15, 16, 16,
     17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 24, 24, 25,
     25, 26, 27, 27, 28, 29, 29, 30, 31, 32, 32, 33, 34, 35, 35, 36,
     37, 38, 39, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 50,
     51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 66, 67, 68,
     69, 70, 72, 73, 74, 75, 77, 78, 79, 81, 82, 83, 85, 86, 87, 89,
-    90, 92, 93, 95, 96, 98, 99,101,102,104,105,107,109,110,112,114,
-    115,117,119,120,122,124,126,127,129,131,133,135,137,138,140,142,
-    144,146,148,150,152,154,156,158,160,162,164,167,169,171,173,175,
-    177,180,182,184,186,189,191,193,196,198,200,203,205,208,210,213,
-    215,218,220,223,225,228,231,233,236,239,241,244,247,249,252,255 };
+    90, 92, 93, 95, 96, 98, 99, 101, 102, 104, 105, 107, 109, 110, 112, 114,
+    115, 117, 119, 120, 122, 124, 126, 127, 129, 131, 133, 135, 137, 138, 140, 142,
+    144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 167, 169, 171, 173, 175,
+    177, 180, 182, 184, 186, 189, 191, 193, 196, 198, 200, 203, 205, 208, 210, 213,
+    215, 218, 220, 223, 225, 228, 231, 233, 236, 239, 241, 244, 247, 249, 252, 255};
 
-static inline uint8_t correct(uint8_t c) { return scale(gamma8[c]); }
+static inline uint8_t correct(uint8_t c) {
+    return scale(gamma8[c]);
+}
 
 static inline void unpack(led_color_t c, uint8_t *r, uint8_t *g, uint8_t *b) {
     *r = (uint8_t)((c >> 16) & 0xFFu);
@@ -83,7 +87,9 @@ static void wheel(uint8_t pos, uint8_t *r, uint8_t *g, uint8_t *b) {
 }
 
 static void led_render_pixel(uint16_t i, uint8_t *r, uint8_t *g, uint8_t *b) {
-    *r = 0u; *g = 0u; *b = 0u;
+    *r = 0u;
+    *g = 0u;
+    *b = 0u;
 
     switch (g_effect[i]) {
         case LED_EFFECT_SOLID:
@@ -100,7 +106,8 @@ static void led_render_pixel(uint16_t i, uint8_t *r, uint8_t *g, uint8_t *b) {
             wheel((uint8_t)(g_frame * RAINBOW_HUE_STEP_PER_FRAME + i * RAINBOW_HUE_STEP_PER_LED), r, g, b);
             break;
 
-        default: break;
+        default:
+            break;
     }
 }
 
@@ -117,7 +124,7 @@ static void led_cb(void *arg) {
 }
 
 void led_init(void) {
-    const ws2812_t cfg = { .htim = &htim4, .channel = TIM_CHANNEL_4, .num_leds = LED_COUNT };
+    const ws2812_t cfg = {.htim = &htim4, .channel = TIM_CHANNEL_4, .num_leds = LED_COUNT};
     ws2812_init(&g_ws, &cfg);
 
     for (uint16_t i = 0; i < LED_COUNT; i++) {
@@ -138,8 +145,12 @@ void led_set(uint16_t index, led_effect_t effect, led_color_t color) {
     taskEXIT_CRITICAL();
 }
 
-void led_set_all(led_effect_t effect, led_color_t color) { for (uint16_t i = 0; i < LED_COUNT; i++) led_set(i, effect, color); }
-void led_stop(void) { led_set_all(LED_EFFECT_OFF, LED_COLOR_OFF); }
+void led_set_all(led_effect_t effect, led_color_t color) {
+    for (uint16_t i = 0; i < LED_COUNT; i++) led_set(i, effect, color);
+}
+void led_stop(void) {
+    led_set_all(LED_EFFECT_OFF, LED_COLOR_OFF);
+}
 
 void led_fault_color(led_color_t color) {
     uint8_t r, g, b;
@@ -153,4 +164,6 @@ void led_fault_pixel(uint16_t index, led_color_t color) {
     ws2812_set_pixel(&g_ws, index, r, g, b);
 }
 
-void led_fault_show(void) { ws2812_show_blocking(&g_ws); }
+void led_fault_show(void) {
+    ws2812_show_blocking(&g_ws);
+}
