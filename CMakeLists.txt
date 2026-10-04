@@ -124,8 +124,7 @@ file(GLOB_RECURSE FORMAT_SOURCES
     "modules/*.h"
 )
 
-# 2. Usuń z listy pliki wygenerowane przez CubeMX
-list(FILTER FORMAT_SOURCES EXCLUDE REGEX "system_stm32.*|stm32h5xx_it.*|stm32h5xx_hal_msp.*")
+list(FILTER FORMAT_SOURCES EXCLUDE REGEX "system_stm32.*|stm32h5xx_it.*|stm32h5xx_hal_msp.*|stm32h5xx_hal_conf.*")
 
 # 3. Utwórz cel wywołujący clang-format
 add_custom_target(format
