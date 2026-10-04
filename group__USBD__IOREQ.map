@@ -1,0 +1,15 @@
+<map id="USBD_IOREQ" name="USBD_IOREQ">
+<area shape="rect" id="node1" href="$group__STM32__USB__DEVICE__LIBRARY.html" title=" " alt="" coords="5,333,221,358"/>
+<area shape="rect" id="node2" title="header file for the usbd_ioreq.c file" alt="" coords="269,333,376,358"/>
+<area shape="rect" id="node3" href="$group__USBD__IOREQ__Exported__Defines.html" title=" " alt="" coords="424,5,596,45"/>
+<area shape="rect" id="node4" href="$group__USBD__IOREQ__Exported__FunctionsPrototype.html" title=" " alt="" coords="424,69,596,109"/>
+<area shape="rect" id="node5" href="$group__USBD__IOREQ__Exported__Macros.html" title=" " alt="" coords="424,133,596,173"/>
+<area shape="rect" id="node6" href="$group__USBD__IOREQ__Exported__Types.html" title=" " alt="" coords="424,197,596,237"/>
+<area shape="rect" id="node7" href="$group__USBD__IOREQ__Exported__Variables.html" title=" " alt="" coords="424,261,596,301"/>
+<area shape="rect" id="node8" href="$group__USBD__IOREQ__Private__Defines.html" title=" " alt="" coords="430,325,590,365"/>
+<area shape="rect" id="node9" href="$group__USBD__IOREQ__Private__FunctionPrototypes.html" title=" " alt="" coords="430,389,590,429"/>
+<area shape="rect" id="node10" href="$group__USBD__IOREQ__Private__Functions.html" title=" " alt="" coords="430,453,590,493"/>
+<area shape="rect" id="node11" href="$group__USBD__IOREQ__Private__Macros.html" title=" " alt="" coords="430,517,590,557"/>
+<area shape="rect" id="node12" href="$group__USBD__IOREQ__Private__TypesDefinitions.html" title=" " alt="" coords="430,581,590,621"/>
+<area shape="rect" id="node13" href="$group__USBD__IOREQ__Private__Variables.html" title=" " alt="" coords="430,645,590,685"/>
+</map>

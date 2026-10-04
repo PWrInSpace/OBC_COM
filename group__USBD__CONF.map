@@ -1,0 +1,5 @@
+<map id="USBD_CONF" name="USBD_CONF">
+<area shape="rect" id="node1" href="$group__STM32__USB__DEVICE__LIBRARY.html" title=" " alt="" coords="5,13,221,38"/>
+<area shape="rect" id="node2" title="USB device low level driver configuration file." alt="" coords="269,13,372,38"/>
+<area shape="rect" id="node3" href="$group__USBD__CONF__Exported__Defines.html" title=" " alt="" coords="420,5,588,45"/>
+</map>

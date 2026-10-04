@@ -1,0 +1,5 @@
+<map id="Core/Inc/crc.h" name="Core/Inc/crc.h">
+<area shape="rect" id="node1" title="This file contains all the function prototypes for the crc.c file." alt="" coords="76,5,187,31"/>
+<area shape="rect" id="node2" href="$crc_8c.html" title="This file provides code for the configuration of the CRC instances." alt="" coords="5,79,116,104"/>
+<area shape="rect" id="node3" href="$main_8c.html" title=": Main program body" alt="" coords="140,79,264,104"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="modules/USB/Class/CDC/Inc/usbd_cdc.h" name="modules/USB/Class/CDC/Inc/usbd_cdc.h">
+<area shape="rect" id="node1" title="header file for the usbd_cdc.c file." alt="" coords="201,5,381,45"/>
+<area shape="rect" id="node2" href="$usbd__ioreq_8h.html" title="Header file for the usbd_ioreq.c file." alt="" coords="238,93,343,119"/>
+<area shape="rect" id="node3" href="$usbd__core_8h.html" title="Header file for usbd_core.c file." alt="" coords="241,167,341,192"/>
+<area shape="rect" id="node10" href="$usbd__def_8h.html" title="General defines for the usb device library." alt="" coords="262,313,354,339"/>
+<area shape="rect" id="node4" href="$usbd__conf_8h.html" title=" " alt="" coords="167,387,265,412"/>
+<area shape="rect" id="node9" href="$usbd__ctlreq_8h.html" title=" " alt="" coords="208,240,317,265"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,460,112,485"/>
+<area shape="rect" id="node6" title=" " alt="" coords="136,460,203,485"/>
+<area shape="rect" id="node7" title=" " alt="" coords="227,460,298,485"/>
+<area shape="rect" id="node8" title=" " alt="" coords="322,460,393,485"/>
+</map>

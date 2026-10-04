@@ -1,0 +1,9 @@
+<map id="Core/Inc/usart.h" name="Core/Inc/usart.h">
+<area shape="rect" id="node1" title="This file contains all the function prototypes for the usart.c file." alt="" coords="467,5,591,31"/>
+<area shape="rect" id="node2" href="$app__freertos_8c.html" title=" " alt="" coords="5,79,179,104"/>
+<area shape="rect" id="node3" href="$main_8c.html" title=": Main program body" alt="" coords="203,79,327,104"/>
+<area shape="rect" id="node4" href="$stm32h5xx__it_8c.html" title="Interrupt Service Routines." alt="" coords="351,79,531,104"/>
+<area shape="rect" id="node5" href="$usart_8c.html" title=" " alt="" coords="555,79,679,104"/>
+<area shape="rect" id="node6" href="$cmd__task_8c.html" title=" " alt="" coords="704,79,851,104"/>
+<area shape="rect" id="node7" href="$gps__task_8c.html" title=" " alt="" coords="875,79,1018,104"/>
+</map>

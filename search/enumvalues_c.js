@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['ncm_5fdata_5fprotocol_5fnetwork_5ftransfer_5fblock_0',['NCM_DATA_PROTOCOL_NETWORK_TRANSFER_BLOCK',['../net__device_8h.html#a497ff51696dfbe323f89e9b46e1b76d8a2fbdb28fcba72987bf76ca3b219fc3cd',1,'net_device.h']]],
+  ['ncm_5fget_5fcrc_5fmode_1',['NCM_GET_CRC_MODE',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5cae04ea42eb79363e8311c53e0b7d10da4',1,'ncm.h']]],
+  ['ncm_5fget_5fethernet_5fpower_5fmanagement_5fpattern_5ffilter_2',['NCM_GET_ETHERNET_POWER_MANAGEMENT_PATTERN_FILTER',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5cae7830d46a3be39babfcfd2759cb7152e',1,'ncm.h']]],
+  ['ncm_5fget_5fethernet_5fstatistic_3',['NCM_GET_ETHERNET_STATISTIC',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5caf90fa4300253a4131dc0bef8b416c244',1,'ncm.h']]],
+  ['ncm_5fget_5fmax_5fdatagram_5fsize_4',['NCM_GET_MAX_DATAGRAM_SIZE',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5ca5160478f97819f32a993bb84b03cac98',1,'ncm.h']]],
+  ['ncm_5fget_5fnet_5faddress_5',['NCM_GET_NET_ADDRESS',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5caf674bea2fa08b834fefd481165dcd12d',1,'ncm.h']]],
+  ['ncm_5fget_5fntb_5fformat_6',['NCM_GET_NTB_FORMAT',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5ca7044d2427fb87d478b711d2994f9bbb1',1,'ncm.h']]],
+  ['ncm_5fget_5fntb_5finput_5fsize_7',['NCM_GET_NTB_INPUT_SIZE',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5ca87248162d4f1b447615361db9f11ae79',1,'ncm.h']]],
+  ['ncm_5fget_5fntb_5fparameters_8',['NCM_GET_NTB_PARAMETERS',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5cad08c0e0299628aad982f8afc55b4a4ba',1,'ncm.h']]],
+  ['ncm_5fset_5fcrc_5fmode_9',['NCM_SET_CRC_MODE',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5ca1ba1e58f85cad39b3750dd3e6c2c9647',1,'ncm.h']]],
+  ['ncm_5fset_5fethernet_5fmulticast_5ffilters_10',['NCM_SET_ETHERNET_MULTICAST_FILTERS',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5ca85451d7addc2d520c08ed3e7af1eb6fb',1,'ncm.h']]],
+  ['ncm_5fset_5fethernet_5fpacket_5ffilter_11',['NCM_SET_ETHERNET_PACKET_FILTER',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5ca5e7d252536f444e964d67d1025d44c63',1,'ncm.h']]],
+  ['ncm_5fset_5fethernet_5fpower_5fmanagement_5fpattern_5ffilter_12',['NCM_SET_ETHERNET_POWER_MANAGEMENT_PATTERN_FILTER',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5cae4e06de0c9fa04f0d4af7056b4e8ef31',1,'ncm.h']]],
+  ['ncm_5fset_5fmax_5fdatagram_5fsize_13',['NCM_SET_MAX_DATAGRAM_SIZE',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5ca8b4d92ac16c1479351fbab7a04d9b371',1,'ncm.h']]],
+  ['ncm_5fset_5fnet_5faddress_14',['NCM_SET_NET_ADDRESS',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5cad506367d2bfca1b0c95af6ea37cf2222',1,'ncm.h']]],
+  ['ncm_5fset_5fntb_5fformat_15',['NCM_SET_NTB_FORMAT',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5ca3aacf825977044f3f822c1e04263e005',1,'ncm.h']]],
+  ['ncm_5fset_5fntb_5finput_5fsize_16',['NCM_SET_NTB_INPUT_SIZE',['../ncm_8h.html#ab21175e0f6ed055ffc578453fe52fe5ca29daa52b43ee38a31dfce0a094e9f115',1,'ncm.h']]]
+];

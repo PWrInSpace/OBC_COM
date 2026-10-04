@@ -1,0 +1,17 @@
+<map id="Core/tinyusbsrc/typec/usbc.h" name="Core/tinyusbsrc/typec/usbc.h">
+<area shape="rect" id="node1" title=" " alt="" coords="170,5,333,45"/>
+<area shape="rect" id="node2" href="$tusb__common_8h.html" title=" " alt="" coords="332,93,518,119"/>
+<area shape="rect" id="node15" href="$pd__types_8h.html" title=" " alt="" coords="32,167,125,192"/>
+<area shape="rect" id="node3" title=" " alt="" coords="297,240,380,265"/>
+<area shape="rect" id="node4" title=" " alt="" coords="135,240,206,265"/>
+<area shape="rect" id="node5" title=" " alt="" coords="382,167,468,192"/>
+<area shape="rect" id="node6" title=" " alt="" coords="493,167,568,192"/>
+<area shape="rect" id="node7" title=" " alt="" coords="592,167,663,192"/>
+<area shape="rect" id="node8" href="$tusb__option_8h.html" title=" " alt="" coords="818,240,928,265"/>
+<area shape="rect" id="node9" href="$tusb__compiler_8h.html" title=" " alt="" coords="160,313,346,339"/>
+<area shape="rect" id="node12" href="$tusb__verify_8h.html" title=" " alt="" coords="821,167,925,192"/>
+<area shape="rect" id="node13" href="$tusb__types_8h.html" title=" " alt="" coords="200,167,306,192"/>
+<area shape="rect" id="node14" href="$tusb__debug_8h.html" title=" " alt="" coords="688,167,797,192"/>
+<area shape="rect" id="node10" title=" " alt="" coords="740,313,848,339"/>
+<area shape="rect" id="node11" href="$tusb__mcu_8h.html" title=" " alt="" coords="872,313,1031,339"/>
+</map>

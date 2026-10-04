@@ -1,0 +1,10 @@
+<map id="Keyboard" name="Keyboard">
+<area shape="rect" id="node1" href="$group__ClassDriver__Audio.html" title=" " alt="" coords="531,5,589,31"/>
+<area shape="rect" id="node2" href="$group__ClassDriver__CDC__Common.html" title=" " alt="" coords="483,55,637,80"/>
+<area shape="rect" id="node3" href="$group__ClassDriver__HID.html" title=" " alt="" coords="5,122,185,162"/>
+<area shape="rect" id="node6" title=" " alt="" coords="235,129,317,155"/>
+<area shape="rect" id="node4" href="$group__ClassDriver__HID__Common.html" title=" " alt="" coords="483,104,637,129"/>
+<area shape="rect" id="node5" href="$group__ClassDriver__HID__Gamepad.html" title=" " alt="" coords="517,153,603,179"/>
+<area shape="rect" id="node7" href="$group__ClassDriver__HID__Mouse.html" title=" " alt="" coords="527,203,593,228"/>
+<area shape="rect" id="node8" href="$group__ClassDriver__HID__Stylus.html" title=" " alt="" coords="529,252,591,277"/>
+</map>

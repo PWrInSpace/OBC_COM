@@ -1,0 +1,8 @@
+<map id="Core/Inc/tim.h" name="Core/Inc/tim.h">
+<area shape="rect" id="node1" title="This file contains all the function prototypes for the tim.c file." alt="" coords="287,5,400,31"/>
+<area shape="rect" id="node2" href="$main_8c.html" title=": Main program body" alt="" coords="5,86,129,111"/>
+<area shape="rect" id="node3" href="$tim_8c.html" title="This file provides code for the configuration of the TIM instances." alt="" coords="153,86,267,111"/>
+<area shape="rect" id="node4" href="$led_8c.html" title=" " alt="" coords="291,86,395,111"/>
+<area shape="rect" id="node5" href="$sound_8c.html" title=" " alt="" coords="419,86,542,111"/>
+<area shape="rect" id="node6" href="$ws2812_8c.html" title=" " alt="" coords="567,79,723,119"/>
+</map>

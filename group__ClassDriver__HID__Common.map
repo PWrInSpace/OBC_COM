@@ -1,0 +1,10 @@
+<map id="Common Definitions" name="Common Definitions">
+<area shape="rect" id="node1" href="$group__ClassDriver__Audio.html" title=" " alt="" coords="603,5,661,31"/>
+<area shape="rect" id="node2" href="$group__ClassDriver__CDC__Common.html" title=" " alt="" coords="555,55,709,80"/>
+<area shape="rect" id="node3" href="$group__ClassDriver__HID.html" title=" " alt="" coords="5,122,185,162"/>
+<area shape="rect" id="node4" title=" " alt="" coords="235,129,389,155"/>
+<area shape="rect" id="node5" href="$group__ClassDriver__HID__Gamepad.html" title=" " alt="" coords="589,104,675,129"/>
+<area shape="rect" id="node6" href="$group__ClassDriver__HID__Keyboard.html" title=" " alt="" coords="591,153,673,179"/>
+<area shape="rect" id="node7" href="$group__ClassDriver__HID__Mouse.html" title=" " alt="" coords="599,203,665,228"/>
+<area shape="rect" id="node8" href="$group__ClassDriver__HID__Stylus.html" title=" " alt="" coords="601,252,663,277"/>
+</map>
