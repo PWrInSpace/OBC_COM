@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
- ******************************************************************************
- * @file           : main.h
- * @brief          : Header for main.c file.
- *                   This file contains the common defines of the application.
- ******************************************************************************
- * @attention
- *
- * Copyright (c) 2025 STMicroelectronics.
- * All rights reserved.
- *
- * This software is licensed under terms that can be found in the LICENSE file
- * in the root directory of this software component.
- * If no LICENSE file comes with this software, it is provided AS-IS.
- *
- ******************************************************************************
- */
+  ******************************************************************************
+  * @file           : main.h
+  * @brief          : Header for main.c file.
+  *                   This file contains the common defines of the application.
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2025 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
 /* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
@@ -29,15 +29,15 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "stm32h5xx_hal.h"
 
+#include "stm32h5xx_ll_crc.h"
 #include "stm32h5xx_ll_bus.h"
 #include "stm32h5xx_ll_cortex.h"
-#include "stm32h5xx_ll_crc.h"
-#include "stm32h5xx_ll_dma.h"
-#include "stm32h5xx_ll_gpio.h"
-#include "stm32h5xx_ll_pwr.h"
 #include "stm32h5xx_ll_rcc.h"
 #include "stm32h5xx_ll_system.h"
 #include "stm32h5xx_ll_utils.h"
+#include "stm32h5xx_ll_pwr.h"
+#include "stm32h5xx_ll_gpio.h"
+#include "stm32h5xx_ll_dma.h"
 
 #include "stm32h5xx_ll_exti.h"
 
@@ -61,15 +61,15 @@ extern volatile uint8_t rx_buffer[RX_BUF_SIZE];
 #define POOL_SIZE 8
 #define BUFFER_SIZE 512
 
-#define USB_EVENT_BIT (1 << 2)
-#define USART_LORA_EVENT_BIT (1 << 3)
-#define USART_LORA_EVENT_BIT (1 << 3)
-#define LORA_TX_EVENT_BIT (1 << 4)
-#define SETTINGS_CHANGE_EVENT_BIT (1 << 5)
+#define USB_EVENT_BIT                 ( 1 << 2 )
+#define USART_LORA_EVENT_BIT          ( 1 << 3 )
+#define USART_LORA_EVENT_BIT          ( 1 << 3 )
+#define LORA_TX_EVENT_BIT             ( 1 << 4 )
+#define SETTINGS_CHANGE_EVENT_BIT     ( 1 << 5 )
 
 typedef struct {
-  uint8_t data[BUFFER_SIZE];
-  uint16_t len;
+    uint8_t data[BUFFER_SIZE];
+    uint16_t len;
 } CMD_Buffer_t;
 extern QueueHandle_t free_pool_queue;
 

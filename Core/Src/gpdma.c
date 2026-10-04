@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
- ******************************************************************************
- * @file    gpdma.c
- * @brief   This file provides code for the configuration
- *          of the GPDMA instances.
- ******************************************************************************
- * @attention
- *
- * Copyright (c) 2026 STMicroelectronics.
- * All rights reserved.
- *
- * This software is licensed under terms that can be found in the LICENSE file
- * in the root directory of this software component.
- * If no LICENSE file comes with this software, it is provided AS-IS.
- *
- ******************************************************************************
- */
+  ******************************************************************************
+  * @file    gpdma.c
+  * @brief   This file provides code for the configuration
+  *          of the GPDMA instances.
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2026 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "gpdma.h"
@@ -25,7 +25,8 @@
 /* USER CODE END 0 */
 
 /* GPDMA1 init function */
-void MX_GPDMA1_Init(void) {
+void MX_GPDMA1_Init(void)
+{
 
   /* USER CODE BEGIN GPDMA1_Init 0 */
 
@@ -35,16 +36,16 @@ void MX_GPDMA1_Init(void) {
   __HAL_RCC_GPDMA1_CLK_ENABLE();
 
   /* GPDMA1 interrupt Init */
-  HAL_NVIC_SetPriority(GPDMA1_Channel0_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(GPDMA1_Channel0_IRQn);
-  HAL_NVIC_SetPriority(GPDMA1_Channel2_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(GPDMA1_Channel2_IRQn);
-  HAL_NVIC_SetPriority(GPDMA1_Channel5_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(GPDMA1_Channel5_IRQn);
-  HAL_NVIC_SetPriority(GPDMA1_Channel6_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(GPDMA1_Channel6_IRQn);
-  HAL_NVIC_SetPriority(GPDMA1_Channel7_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(GPDMA1_Channel7_IRQn);
+    HAL_NVIC_SetPriority(GPDMA1_Channel0_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(GPDMA1_Channel0_IRQn);
+    HAL_NVIC_SetPriority(GPDMA1_Channel2_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(GPDMA1_Channel2_IRQn);
+    HAL_NVIC_SetPriority(GPDMA1_Channel5_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(GPDMA1_Channel5_IRQn);
+    HAL_NVIC_SetPriority(GPDMA1_Channel6_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(GPDMA1_Channel6_IRQn);
+    HAL_NVIC_SetPriority(GPDMA1_Channel7_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(GPDMA1_Channel7_IRQn);
 
   /* USER CODE BEGIN GPDMA1_Init 1 */
 
@@ -52,6 +53,7 @@ void MX_GPDMA1_Init(void) {
   /* USER CODE BEGIN GPDMA1_Init 2 */
 
   /* USER CODE END GPDMA1_Init 2 */
+
 }
 
 /* USER CODE BEGIN 1 */

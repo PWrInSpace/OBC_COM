@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
- ******************************************************************************
- * @file    sdmmc.c
- * @brief   This file provides code for the configuration
- *          of the SDMMC instances.
- ******************************************************************************
- * @attention
- *
- * Copyright (c) 2026 STMicroelectronics.
- * All rights reserved.
- *
- * This software is licensed under terms that can be found in the LICENSE file
- * in the root directory of this software component.
- * If no LICENSE file comes with this software, it is provided AS-IS.
- *
- ******************************************************************************
- */
+  ******************************************************************************
+  * @file    sdmmc.c
+  * @brief   This file provides code for the configuration
+  *          of the SDMMC instances.
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2026 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "sdmmc.h"
@@ -28,7 +28,8 @@ SD_HandleTypeDef hsd1;
 
 /* SDMMC1 init function */
 
-void MX_SDMMC1_SD_Init(void) {
+void MX_SDMMC1_SD_Init(void)
+{
 
   /* USER CODE BEGIN SDMMC1_Init 0 */
 
@@ -43,28 +44,33 @@ void MX_SDMMC1_SD_Init(void) {
   hsd1.Init.BusWide = SDMMC_BUS_WIDE_4B;
   hsd1.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_ENABLE;
   hsd1.Init.ClockDiv = 0;
-  if (HAL_SD_Init(&hsd1) != HAL_OK) {
+  if (HAL_SD_Init(&hsd1) != HAL_OK)
+  {
     Error_Handler();
   }
   /* USER CODE BEGIN SDMMC1_Init 2 */
 
   /* USER CODE END SDMMC1_Init 2 */
+
 }
 
-void HAL_SD_MspInit(SD_HandleTypeDef *sdHandle) {
+void HAL_SD_MspInit(SD_HandleTypeDef* sdHandle)
+{
 
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
-  if (sdHandle->Instance == SDMMC1) {
-    /* USER CODE BEGIN SDMMC1_MspInit 0 */
+  if(sdHandle->Instance==SDMMC1)
+  {
+  /* USER CODE BEGIN SDMMC1_MspInit 0 */
 
-    /* USER CODE END SDMMC1_MspInit 0 */
+  /* USER CODE END SDMMC1_MspInit 0 */
 
-    /** Initializes the peripherals clock
-     */
+  /** Initializes the peripherals clock
+  */
     PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_SDMMC1;
     PeriphClkInitStruct.Sdmmc1ClockSelection = RCC_SDMMC1CLKSOURCE_PLL1Q;
-    if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK) {
+    if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
+    {
       Error_Handler();
     }
 
@@ -81,8 +87,8 @@ void HAL_SD_MspInit(SD_HandleTypeDef *sdHandle) {
     PC12     ------> SDMMC1_CK
     PD2     ------> SDMMC1_CMD
     */
-    GPIO_InitStruct.Pin =
-        GPIO_PIN_8 | GPIO_PIN_9 | GPIO_PIN_10 | GPIO_PIN_11 | GPIO_PIN_12;
+    GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_11
+                          |GPIO_PIN_12;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
@@ -99,18 +105,20 @@ void HAL_SD_MspInit(SD_HandleTypeDef *sdHandle) {
     /* SDMMC1 interrupt Init */
     HAL_NVIC_SetPriority(SDMMC1_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(SDMMC1_IRQn);
-    /* USER CODE BEGIN SDMMC1_MspInit 1 */
+  /* USER CODE BEGIN SDMMC1_MspInit 1 */
 
-    /* USER CODE END SDMMC1_MspInit 1 */
+  /* USER CODE END SDMMC1_MspInit 1 */
   }
 }
 
-void HAL_SD_MspDeInit(SD_HandleTypeDef *sdHandle) {
+void HAL_SD_MspDeInit(SD_HandleTypeDef* sdHandle)
+{
 
-  if (sdHandle->Instance == SDMMC1) {
-    /* USER CODE BEGIN SDMMC1_MspDeInit 0 */
+  if(sdHandle->Instance==SDMMC1)
+  {
+  /* USER CODE BEGIN SDMMC1_MspDeInit 0 */
 
-    /* USER CODE END SDMMC1_MspDeInit 0 */
+  /* USER CODE END SDMMC1_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_SDMMC1_CLK_DISABLE();
 
@@ -122,16 +130,16 @@ void HAL_SD_MspDeInit(SD_HandleTypeDef *sdHandle) {
     PC12     ------> SDMMC1_CK
     PD2     ------> SDMMC1_CMD
     */
-    HAL_GPIO_DeInit(GPIOC, GPIO_PIN_8 | GPIO_PIN_9 | GPIO_PIN_10 | GPIO_PIN_11 |
-                               GPIO_PIN_12);
+    HAL_GPIO_DeInit(GPIOC, GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_11
+                          |GPIO_PIN_12);
 
     HAL_GPIO_DeInit(SD_CMD_GPIO_Port, SD_CMD_Pin);
 
     /* SDMMC1 interrupt Deinit */
     HAL_NVIC_DisableIRQ(SDMMC1_IRQn);
-    /* USER CODE BEGIN SDMMC1_MspDeInit 1 */
+  /* USER CODE BEGIN SDMMC1_MspDeInit 1 */
 
-    /* USER CODE END SDMMC1_MspDeInit 1 */
+  /* USER CODE END SDMMC1_MspDeInit 1 */
   }
 }
 
