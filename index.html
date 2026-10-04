@@ -133,14 +133,14 @@ Required Configuration for Flashing:</h2>
 <h1><a class="anchor" id="autotoc_md12"></a>
 🚀 Flashing Instructions (USB DFU Mode)</h1>
 <p>The board uses USB DFU for firmware updates. Follow these steps to toggle between programming and execution modes:</p>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Step 1: Programming Mode (Bootloader)</h2>
 <ol type="1">
 <li>Set the <b>BOOT0</b> jumper/switch to <b>GND</b>.</li>
 <li>Press the <b>RESET (RST)</b> button.</li>
 <li>In VS Code, navigate to <b>Terminal -&gt; Run Task...</b> and select **<code>Flash DFU</code>**. The system will automatically upload the binary.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Step 2: Execution Mode (Run)</h2>
 <ol type="1">
 <li>Once the upload is complete, move the <b>BOOT0</b> switch to <b>3V3 (VCC)</b>.</li>
@@ -148,7 +148,7 @@ Step 2: Execution Mode (Run)</h2>
 <li>The firmware will now start executing from the Flash memory.</li>
 </ol>
 <hr  />
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md18"></a>
 🛠 STM32CubeMX Notes</h1>
 <ol type="1">
 <li>After STM32CubeMX code generation, change the <code>cmake/stm32cubemx/CMakeLists.txt</code> file as follows: ```cmake set(MX_LINK_LIBS STM32_Drivers ${TOOLCHAIN_LINK_LIBRARIES} RTOS2 "-u _printf_float" ) </li>

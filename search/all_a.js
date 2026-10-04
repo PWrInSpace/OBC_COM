@@ -19,7 +19,7 @@ var searchData=
   ['get_5frfm95_5fid_16',['GET_RFM95_ID',['../nvs__config_8h.html#a05b56bbd84b352b718378a345b3b3044',1,'nvs_config.h']]],
   ['get_5fsx1280_5fid_17',['GET_SX1280_ID',['../nvs__config_8h.html#abadf5841214a04705dc91d18a497c01f',1,'nvs_config.h']]],
   ['getpagestate_18',['GetPageState',['../group__EEPROM__Private__Functions.html#ga2304deed602aa5aa10ecebbf7de5352c',1,'eeprom_emul.c']]],
-  ['gfsk_19',['gfsk',['../structPacketStatus__t.html#aa8fea1cefb4d766bc86d260f7b1f424f',1,'PacketStatus_t::Gfsk'],['../structRxCounter__t.html#a8f4acfa422fa4abb866c3e2b6b1e5232',1,'RxCounter_t::Gfsk'],['../structPacketParams__t.html#a9f9a3a2ee88e8feafb796c814ea2a8f6',1,'PacketParams_t::Gfsk'],['../structModulationParams__t.html#adbd392cb606e8f2e5f9e8e79fbbb54b9',1,'ModulationParams_t::Gfsk']]],
+  ['gfsk_19',['gfsk',['../structPacketStatus__t.html#a9a7b5feec5a00804be78d581fac6d13d',1,'PacketStatus_t::Gfsk'],['../structRxCounter__t.html#ad14da1719274377b3fa0546a0715a0ab',1,'RxCounter_t::Gfsk'],['../structPacketParams__t.html#abc8c9fafddcf1baa0e7b050897fbd527',1,'PacketParams_t::Gfsk'],['../structModulationParams__t.html#a7a9702bffe0c98b9e461d29bf49e0935',1,'ModulationParams_t::Gfsk']]],
   ['gfsk_5fble_5fbr_5f0_5f125_5fbw_5f0_5f3_20',['GFSK_BLE_BR_0_125_BW_0_3',['../sx1280_8h.html#ae60e06224cbad7d557048bb9b26741a3a2eade7439915113f7dd8f0e2444cf889',1,'sx1280.h']]],
   ['gfsk_5fble_5fbr_5f0_5f250_5fbw_5f0_5f3_21',['GFSK_BLE_BR_0_250_BW_0_3',['../sx1280_8h.html#ae60e06224cbad7d557048bb9b26741a3a4df89561222ac00ef1d2feb3ce034ab7',1,'sx1280.h']]],
   ['gfsk_5fble_5fbr_5f0_5f250_5fbw_5f0_5f6_22',['GFSK_BLE_BR_0_250_BW_0_6',['../sx1280_8h.html#ae60e06224cbad7d557048bb9b26741a3a8b9c6502e063c55fa7060cd427d7000a',1,'sx1280.h']]],
@@ -85,12 +85,12 @@ var searchData=
   ['gps_5falignbuffer_82',['GPS_AlignBuffer',['../gps__task_8c.html#ac936b9a955932af5020b0aa7af8d09ad',1,'gps_task.c']]],
   ['gps_5finit_5fgpio_5fport_83',['GPS_INIT_GPIO_Port',['../main_8h.html#a38f511e408f9d780f82f908da6524f85',1,'main.h']]],
   ['gps_5finit_5fpin_84',['GPS_INIT_Pin',['../main_8h.html#a439a83b0ed879b9c3ce84fe4809c607d',1,'main.h']]],
-  ['gps_5flat_85',['gps_lat',['../structobc__mcb__frame__t.html#a10d319915d06745aaeed236a971b8922',1,'obc_mcb_frame_t']]],
-  ['gps_5flong_86',['gps_long',['../structobc__mcb__frame__t.html#a61afdb360ce441d159f3a2aad5d88009',1,'obc_mcb_frame_t']]],
+  ['gps_5flat_85',['gps_lat',['../structobc__mcb__frame__t.html#a2bb005fcaf48ae1abd8df7092bc26964',1,'obc_mcb_frame_t']]],
+  ['gps_5flong_86',['gps_long',['../structobc__mcb__frame__t.html#ad104dfdc8d8ab956dacf727327067212',1,'obc_mcb_frame_t']]],
   ['gps_5fprintstatus_87',['GPS_PrintStatus',['../gps__task_8c.html#a6eae2e3cf49d0681be46c984ad81c1fa',1,'gps_task.c']]],
   ['gps_5frst_5fgpio_5fport_88',['GPS_RST_GPIO_Port',['../main_8h.html#a04ab858598fb14f0aedcbc2174960fae',1,'main.h']]],
   ['gps_5frst_5fpin_89',['GPS_RST_Pin',['../main_8h.html#ac8b369de9af0db02c43a0395214bc006',1,'main.h']]],
-  ['gps_5fsat_5fok_90',['gps_sat_ok',['../structobc__mcb__frame__t.html#acddbba79690019326ab90e415a8a8b54',1,'obc_mcb_frame_t']]],
+  ['gps_5fsat_5fok_90',['gps_sat_ok',['../structobc__mcb__frame__t.html#ab19f01a43e38fb813d10440cbd811f3b',1,'obc_mcb_frame_t']]],
   ['gps_5ftask_91',['gps_task',['../gps__task_8h.html#a2b4ba50a0ecdfbe3864bc6cf9ad0b8b4',1,'gps_task(void *argument):&#160;gps_task.c'],['../gps__task_8c.html#a2b4ba50a0ecdfbe3864bc6cf9ad0b8b4',1,'gps_task(void *argument):&#160;gps_task.c']]],
   ['gps_5ftask_2ec_92',['gps_task.c',['../gps__task_8c.html',1,'']]],
   ['gps_5ftask_2eh_93',['gps_task.h',['../gps__task_8h.html',1,'']]],
@@ -113,5 +113,5 @@ var searchData=
   ['gs_5fsend_110',['gs_send',['../rfm95w__task_8c.html#ad09b3088ae86c18f441bef09676c7933',1,'rfm95w_task.c']]],
   ['gspeed_111',['gspeed',['../structGNSS__StateHandle.html#aa6b5b757e969e8b39dc57fb12a35c1cc',1,'GNSS_StateHandle::gSpeed'],['../structBoardData__t.html#a6a75b2f83273b109281e5e1e1f0d0452',1,'BoardData_t::gSpeed']]],
   ['guard_5fpages_5fnumber_112',['GUARD_PAGES_NUMBER',['../group__Private__Configuration__Constants.html#ga1756db6f424bbf876480d37774828ca8',1,'eeprom_emul_conf.h']]],
-  ['guide_3a_20adding_20new_20commands_113',['🛠 Developer Guide: Adding New Commands',['../cmd_module.html#autotoc_md14',1,'']]]
+  ['guide_3a_20adding_20new_20commands_113',['🛠 Developer Guide: Adding New Commands',['../cmd_module.html#autotoc_md17',1,'']]]
 ];

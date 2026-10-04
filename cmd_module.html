@@ -136,10 +136,10 @@ $(document).ready(function(){initNavTree('cmd_module.html',''); initResizable();
 <td class="markdownTableBodyLeft">**<code>RESET</code>**   </td><td class="markdownTableBodyLeft"><code>0x03</code>   </td><td class="markdownTableBodyLeft">Triggers a hardware <code>NVIC_SystemReset()</code>.   </td><td class="markdownTableBodyLeft"><code>CMD:RESET</code>   </td></tr>
 </table>
 <hr  />
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
 🛠 Developer Guide: Adding New Commands</h1>
 <p>To add a new command to the system, follow these three steps:</p>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 Step 1: Define Command ID</h2>
 <p>Open <code><a class="el" href="cmd__interface_8h.html">cmd_interface.h</a></code> and add your new command to the <code>Command_t</code> enum. This ID is mandatory for binary protocol support. </p><div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
 <div class="line">    <a class="code hl_enumvalue" href="cmd__interface_8h.html#afe8d33d42ee3ed4867090180ef38afbdac370f7a4093cca35301ea2e00b3c47a3">CMD_HELP</a> = 0x00,</div>
@@ -149,7 +149,7 @@ Step 1: Define Command ID</h2>
 <div class="line">} <a class="code hl_enumeration" href="cmd__interface_8h.html#afe8d33d42ee3ed4867090180ef38afbd">Command_t</a>;</div>
 <div class="ttc" id="acmd__interface_8h_html_afe8d33d42ee3ed4867090180ef38afbd"><div class="ttname"><a href="cmd__interface_8h.html#afe8d33d42ee3ed4867090180ef38afbd">Command_t</a></div><div class="ttdeci">Command_t</div><div class="ttdef"><b>Definition</b> <a href="cmd__interface_8h_source.html#l00012">cmd_interface.h:12</a></div></div>
 <div class="ttc" id="acmd__interface_8h_html_afe8d33d42ee3ed4867090180ef38afbdac370f7a4093cca35301ea2e00b3c47a3"><div class="ttname"><a href="cmd__interface_8h.html#afe8d33d42ee3ed4867090180ef38afbdac370f7a4093cca35301ea2e00b3c47a3">CMD_HELP</a></div><div class="ttdeci">@ CMD_HELP</div><div class="ttdef"><b>Definition</b> <a href="cmd__interface_8h_source.html#l00014">cmd_interface.h:14</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md17"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md20"></a>
 Step 2: Define Command Struct</h2>
 <div class="fragment"><div class="line">add in <a class="code hl_struct" href="structCommandMap__t.html">CommandMap_t</a> <a class="code hl_variable" href="cmd__interface_8c.html#a29744e531f4bd346d80b9fcaae2bd077">cmd_map</a>[] the command with handler etc...</div>
 <div class="line"> </div>
@@ -159,7 +159,7 @@ Step 2: Define Command Struct</h2>
 <div class="line">};</div>
 <div class="ttc" id="acmd__interface_8c_html_a29744e531f4bd346d80b9fcaae2bd077"><div class="ttname"><a href="cmd__interface_8c.html#a29744e531f4bd346d80b9fcaae2bd077">cmd_map</a></div><div class="ttdeci">static const CommandMap_t cmd_map[]</div><div class="ttdef"><b>Definition</b> <a href="cmd__interface_8c_source.html#l00025">cmd_interface.c:25</a></div></div>
 <div class="ttc" id="astructCommandMap__t_html"><div class="ttname"><a href="structCommandMap__t.html">CommandMap_t</a></div><div class="ttdef"><b>Definition</b> <a href="cmd__interface_8h_source.html#l00043">cmd_interface.h:43</a></div></div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md19"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md21"></a>
 Step 3: Define Command Handler</h2>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> my_new_handler(<a class="code hl_struct" href="structcmd__params__t.html">cmd_params_t</a> *params) {</div>
 <div class="line"> </div>

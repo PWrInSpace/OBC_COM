@@ -32,10 +32,10 @@ var NAVTREE =
         [ "2. Binary Protocol", "cmd_module.html#autotoc_md5", null ]
       ] ],
       [ "📜 Supported Commands", "cmd_module.html#autotoc_md7", null ],
-      [ "🛠 Developer Guide: Adding New Commands", "cmd_module.html#autotoc_md14", [
-        [ "Step 1: Define Command ID", "cmd_module.html#autotoc_md15", null ],
-        [ "Step 2: Define Command Struct", "cmd_module.html#autotoc_md17", null ],
-        [ "Step 3: Define Command Handler", "cmd_module.html#autotoc_md19", null ]
+      [ "🛠 Developer Guide: Adding New Commands", "cmd_module.html#autotoc_md17", [
+        [ "Step 1: Define Command ID", "cmd_module.html#autotoc_md19", null ],
+        [ "Step 2: Define Command Struct", "cmd_module.html#autotoc_md20", null ],
+        [ "Step 3: Define Command Handler", "cmd_module.html#autotoc_md21", null ]
       ] ]
     ] ],
     [ "Topics", "topics.html", "topics" ],
@@ -71,7 +71,7 @@ var NAVTREEINDEX =
 "main_8h.html#a12c42ba76b3b14ea44c7ebc33c8103e6",
 "rfm95w_8h.html#a70616dfa9fac771817ed31fbcae5d2ae",
 "sound_8c.html#a441475178599565b3dd4572cebbdf28c",
-"structPacketStatus__t.html#a553ab2c03146758690ab0437171895ab",
+"structPacketStatus__t.html#a87db1ffa2ec08c849e6b2286d07e0a1e",
 "sx1280-hal_8h_source.html",
 "sx1280_8h.html#a7f2a1138e63d652499230db510694503",
 "sx1280__task_8c.html"
