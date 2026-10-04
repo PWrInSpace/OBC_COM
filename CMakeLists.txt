@@ -117,14 +117,20 @@ if(UNIX AND NOT APPLE)
     )
 endif()
 
-file(GLOB_RECURSE FORMAT_SOURCES
-    "Core/Src/*.c"
-    "Core/Inc/*.h"
-    "modules/*.c"
-    "modules/*.h"
+file(GLOB_RECURSE FORMAT_SOURCES CONFIGURE_DEPENDS
+    "${CMAKE_SOURCE_DIR}/app/*.c"
+    "${CMAKE_SOURCE_DIR}/app/*.h"
+    "${CMAKE_SOURCE_DIR}/cmd/*.c"
+    "${CMAKE_SOURCE_DIR}/cmd/*.h"
+    "${CMAKE_SOURCE_DIR}/nvs/*.c"
+    "${CMAKE_SOURCE_DIR}/nvs/*.h"
+    "${CMAKE_SOURCE_DIR}/wrappers/*.c"
+    "${CMAKE_SOURCE_DIR}/wrappers/*.h"
+    "${CMAKE_SOURCE_DIR}/modules/*.c"
+    "${CMAKE_SOURCE_DIR}/modules/*.h"
+    "${CMAKE_SOURCE_DIR}/Core/*.c"
+    "${CMAKE_SOURCE_DIR}/Core/*.h"
 )
-
-list(FILTER FORMAT_SOURCES EXCLUDE REGEX "system_stm32.*|stm32h5xx_it.*|stm32h5xx_hal_msp.*|stm32h5xx_hal_conf.*")
 
 # 3. Utwórz cel wywołujący clang-format
 add_custom_target(format

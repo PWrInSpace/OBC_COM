@@ -16,5 +16,11 @@ modules/USB/**
 # --- driver Semtech SX1280 (upstream) ---
 modules/sx1280/**
 
+# --- emulacja EEPROM (ST X-CUBE-EEPROM) ---
+nvs/Inc/eeprom_emul*.h
+nvs/Inc/flash_interface.h
+nvs/src/eeprom_emul.c
+nvs/src/flash_interface.c
+
 # !Core/Src/user_diskio.c
 # !Core/Inc/user_diskio.h
