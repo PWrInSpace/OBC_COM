@@ -117,3 +117,25 @@ if(UNIX AND NOT APPLE)
         COMMENT "Linux Post-Build: Generating .bin and .hex files from ELF"
     )
 endif()
+
+file(GLOB_RECURSE FORMAT_SOURCES CONFIGURE_DEPENDS
+    "${CMAKE_SOURCE_DIR}/app/*.c"
+    "${CMAKE_SOURCE_DIR}/app/*.h"
+    "${CMAKE_SOURCE_DIR}/cmd/*.c"
+    "${CMAKE_SOURCE_DIR}/cmd/*.h"
+    "${CMAKE_SOURCE_DIR}/nvs/*.c"
+    "${CMAKE_SOURCE_DIR}/nvs/*.h"
+    "${CMAKE_SOURCE_DIR}/wrappers/*.c"
+    "${CMAKE_SOURCE_DIR}/wrappers/*.h"
+    "${CMAKE_SOURCE_DIR}/modules/*.c"
+    "${CMAKE_SOURCE_DIR}/modules/*.h"
+    "${CMAKE_SOURCE_DIR}/Core/*.c"
+    "${CMAKE_SOURCE_DIR}/Core/*.h"
+)
+
+# 3. Utwórz cel wywołujący clang-format
+add_custom_target(format
+    COMMAND clang-format -i ${FORMAT_SOURCES}
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    COMMENT "Formatowanie plików źródłowych za pomocą clang-format..."
+)

@@ -1,4 +1,4 @@
-# CMD Module (Command Line Interface)
+# CMD Module (Command Line Interface) {#cmd_module}
 
 The **CMD Module** provides a robust interface for controlling the OBC via USB or Radio. It is designed to be highly extensible, supporting both **Human-Readable (ASCII)** and **Binary** communication protocols.
 

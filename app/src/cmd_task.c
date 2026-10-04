@@ -18,13 +18,13 @@ osThreadId_t cmdTaskHandle = NULL;
 
 void CMD_Task_Init(void) {
     if (cmd_queue == NULL) {
-        cmd_queue = xQueueCreate(POOL_SIZE, sizeof(CMD_Buffer_t*));
+        cmd_queue = xQueueCreate(POOL_SIZE, sizeof(CMD_Buffer_t *));
     }
 
     const osThreadAttr_t cmdTask_attributes = {
         .name = "usbCmdTask",
         .stack_size = 4096,
-        .priority = (osPriority_t) osPriorityNormal,
+        .priority = (osPriority_t)osPriorityNormal,
     };
 
     cmdTaskHandle = osThreadNew(cmd_task, NULL, &cmdTask_attributes);

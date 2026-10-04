@@ -20,32 +20,32 @@ typedef struct {
     uint16_t ms;
 } note_t;
 
-#define REST     0u
-#define NOTE_F4  349u
-#define NOTE_A4  440u
-#define NOTE_C5  523u
-#define NOTE_E5  659u
-#define NOTE_G5  784u
-#define NOTE_A5  880u
-#define NOTE_B5  988u
-#define NOTE_C6  1047u
-#define NOTE_E6  1319u
-#define NOTE_G6  1568u
-#define NOTE_C7  2093u
+#define REST 0u
+#define NOTE_F4 349u
+#define NOTE_A4 440u
+#define NOTE_C5 523u
+#define NOTE_E5 659u
+#define NOTE_G5 784u
+#define NOTE_A5 880u
+#define NOTE_B5 988u
+#define NOTE_C6 1047u
+#define NOTE_E6 1319u
+#define NOTE_G6 1568u
+#define NOTE_C7 2093u
 
-static const note_t snd_startup[] = { {NOTE_C6, 90}, {REST, 30}, {NOTE_E6, 90}, {REST, 30}, {NOTE_G6, 120}, {REST, 30}, {NOTE_C7, 320} };
-static const note_t snd_ack[] = { {NOTE_E6, 50}, {NOTE_G6, 50}, {NOTE_C7, 90} };
-static const note_t snd_error[] = { {NOTE_A4, 200}, {REST, 60}, {NOTE_F4, 260} };
-static const note_t snd_warning[] = { {NOTE_B5, 110}, {REST, 70}, {NOTE_B5, 110} };
-static const note_t snd_sd_mount[] = { {NOTE_C6, 60}, {NOTE_G6, 90} };
-static const note_t snd_sd_unmount[] = { {NOTE_G6, 60}, {NOTE_C6, 90} };
+static const note_t snd_startup[] = {{NOTE_C6, 90}, {REST, 30}, {NOTE_E6, 90}, {REST, 30}, {NOTE_G6, 120}, {REST, 30}, {NOTE_C7, 320}};
+static const note_t snd_ack[] = {{NOTE_E6, 50}, {NOTE_G6, 50}, {NOTE_C7, 90}};
+static const note_t snd_error[] = {{NOTE_A4, 200}, {REST, 60}, {NOTE_F4, 260}};
+static const note_t snd_warning[] = {{NOTE_B5, 110}, {REST, 70}, {NOTE_B5, 110}};
+static const note_t snd_sd_mount[] = {{NOTE_C6, 60}, {NOTE_G6, 90}};
+static const note_t snd_sd_unmount[] = {{NOTE_G6, 60}, {NOTE_C6, 90}};
 
 typedef struct {
     const note_t *seq;
     uint16_t len;
 } melody_t;
 
-#define MELODY(arr) { (arr), (uint16_t)(sizeof(arr) / sizeof((arr)[0])) }
+#define MELODY(arr) {(arr), (uint16_t)(sizeof(arr) / sizeof((arr)[0]))}
 
 static const melody_t g_melodies[SOUND_COUNT] = {
     [SOUND_STARTUP] = MELODY(snd_startup),
@@ -77,8 +77,10 @@ static void snd_cb(void *arg) {
         return;
     }
 
-    if (n.freq_hz != 0u) buzzer_set_tone(&g_buzzer, n.freq_hz);
-    else buzzer_mute(&g_buzzer);
+    if (n.freq_hz != 0u)
+        buzzer_set_tone(&g_buzzer, n.freq_hz);
+    else
+        buzzer_mute(&g_buzzer);
 
     osTimerStart(g_timer, pdMS_TO_TICKS(n.ms != 0u ? n.ms : 1u));
 }

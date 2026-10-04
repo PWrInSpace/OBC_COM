@@ -1,0 +1,26 @@
+name: Generate and Deploy Doxygen
+
+on:
+  push:
+    # Uruchomi się automatycznie przy pushu na main, master i wszystkie gałęzie dev/
+    branches: [ "main", "master", "dev/*" ]
+  workflow_dispatch: 
+    # Pozwala na ręczne odpalenie akcji z zakładki "Actions" na GitHubie
+
+jobs:
+  deploy-docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate and Deploy Doxygen
+        uses: DenverCoder1/doxygen-github-pages-action@v2.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          config_file: Doxyfile
+          folder: docs/html
+          doxygen_version: 1.9.8

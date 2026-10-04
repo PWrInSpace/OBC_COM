@@ -24,7 +24,7 @@ typedef struct gs_radio_iface {
     void (*send)(void *ctx, const uint8_t *buf, size_t len);  // Transmit len bytes, blocking until done
     void (*forward)(void *ctx, const uint8_t *buf, size_t len);  // Hand a received frame to the app link
 
-    void *ctx;  // radio handle
+    void *ctx; // radio handle
     lora_tx_queue_t *txq;
 } gs_radio_iface_t;
 

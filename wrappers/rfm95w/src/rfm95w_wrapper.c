@@ -4,7 +4,6 @@
  * Date: 29.01.2026
  */
 
-
 #include "rfm95w_wrapper.h"
 #include "spi.h"
 #include "stm32h5xx_hal_spi.h"
@@ -17,7 +16,7 @@ SemaphoreHandle_t rfm95w_spi_sem = NULL;
 
 void rfm95w_wrapper_init(void) {
     rfm95w_spi_sem = xSemaphoreCreateBinary();
-    xSemaphoreGive(rfm95w_spi_sem); 
+    xSemaphoreGive(rfm95w_spi_sem);
 }
 
 bool rfm95w_spi_transmit(uint8_t *in, uint8_t *out) {
@@ -45,11 +44,9 @@ bool rfm95w_gpio_set_level(uint16_t _gpio_num, uint8_t _level) {
         return true;
     }
 
-    return false; 
+    return false;
 }
 
 void rfm95w_log(const char *info) {
     // Implement logging mechanism if needed
 }
-
-

@@ -29,10 +29,14 @@ size_t lora_frame_encode_appcmd(uint8_t *out, size_t cap, uint32_t lora_dev_id, 
     frame->frame = obc_lo_ra_frame_frame_app_frame_e;
     frame->app_frame_p = &app;
 
-    app.lora_dev_id.is_present = true;  app.lora_dev_id.value = lora_dev_id;
-    app.sys_dev_id.is_present  = true;  app.sys_dev_id.value  = sys_dev_id;
-    app.command.is_present     = true;  app.command.value     = command;
-    app.payload.is_present     = true;  app.payload.value     = payload;
+    app.lora_dev_id.is_present = true;
+    app.lora_dev_id.value = lora_dev_id;
+    app.sys_dev_id.is_present = true;
+    app.sys_dev_id.value = sys_dev_id;
+    app.command.is_present = true;
+    app.command.value = command;
+    app.payload.is_present = true;
+    app.payload.value = payload;
 
     int pb_len = obc_lo_ra_frame_encode(frame, out + off, cap - off - 1u);
     if (pb_len <= 0) {
