@@ -30,10 +30,10 @@
 #endif
 #define TAG "RFM95"
 
-#define RFM_DIO0_EVT 0x01U              // thread flag set by the DIO0 ISR
-#define RFM_DIO0_MAP_TXDONE (1U << 6)   // REG_DIO_MAPPING_1[7:6]=01 -> DIO0 = TxDone
-#define RFM_DIO0_MAP_RXDONE (0U << 6)   // REG_DIO_MAPPING_1[7:6]=00 -> DIO0 = RxDone
-#define RFM_TX_TIMEOUT_MS 1500U         // hang backstop only; DIO0 ends TX immediately
+#define RFM_DIO0_EVT 0x01U            // thread flag set by the DIO0 ISR
+#define RFM_DIO0_MAP_TXDONE (1U << 6) // REG_DIO_MAPPING_1[7:6]=01 -> DIO0 = TxDone
+#define RFM_DIO0_MAP_RXDONE (0U << 6) // REG_DIO_MAPPING_1[7:6]=00 -> DIO0 = RxDone
+#define RFM_TX_TIMEOUT_MS 1500U       // hang backstop only; DIO0 ends TX immediately
 
 osThreadId_t rfm95wTaskHandle = NULL;
 const osThreadAttr_t rfm95wTask_attributes = {
@@ -66,7 +66,7 @@ void rfm95_send_window(rfm95_t *radio, const uint8_t *payload, uint8_t payload_l
     rfm95_write_reg(radio, REG_DIO_MAPPING_1, RFM_DIO0_MAP_TXDONE);
 
     rfm95_fill_fifo_buf_to_send(radio, (uint8_t *)payload, payload_len);
-    rfm95_start_transmission(radio);  // MODE_TX
+    rfm95_start_transmission(radio); // MODE_TX
 
     uint32_t fl = osThreadFlagsWait(RFM_DIO0_EVT, osFlagsWaitAny, pdMS_TO_TICKS(RFM_TX_TIMEOUT_MS));
     if ((fl & osFlagsError) != 0U) {
@@ -84,9 +84,9 @@ static uint32_t gs_now_ms(void *ctx) {
 
 static void gs_enter_rx(void *ctx) {
     rfm95_t *radio = (rfm95_t *)ctx;
-    (void)osThreadFlagsClear(RFM_DIO0_EVT);          // drop edge (e.g. leftover TxDone)
-    rfm95_write_reg(radio, REG_IRQ_FLAGS, IRQ_ALL);  // W1C: clear, drop DIO0
-    rfm95_set_receive_mode(radio);                   // MODE_RX_CONT + DIO0 = RxDone (0x00)
+    (void)osThreadFlagsClear(RFM_DIO0_EVT);         // drop edge (e.g. leftover TxDone)
+    rfm95_write_reg(radio, REG_IRQ_FLAGS, IRQ_ALL); // W1C: clear, drop DIO0
+    rfm95_set_receive_mode(radio);                  // MODE_RX_CONT + DIO0 = RxDone (0x00)
 }
 
 static size_t gs_await_rx(void *ctx, uint8_t *buf, size_t cap, uint32_t timeout_ms) {
@@ -96,11 +96,11 @@ static size_t gs_await_rx(void *ctx, uint8_t *buf, size_t cap, uint32_t timeout_
     if ((fl & osFlagsError) != 0U) return 0;
 
     uint8_t irq = rfm95_read_reg(radio, REG_IRQ_FLAGS);
-    if (!(irq & IRQ_RX_DONE_MASK)) return 0;  // woke, but not RxDone
+    if (!(irq & IRQ_RX_DONE_MASK)) return 0; // woke, but not RxDone
 
     uint8_t max = (cap > 255U) ? 255U : (uint8_t)cap;
     uint8_t n = rfm95_receive_packet(radio, buf, max);
-    rfm95_write_reg(radio, REG_IRQ_FLAGS, IRQ_ALL);  // clear -> DIO0 re-arm
+    rfm95_write_reg(radio, REG_IRQ_FLAGS, IRQ_ALL); // clear -> DIO0 re-arm
     if (n == 0U) return 0;
 
     int16_t rssi = rfm95_packet_rssi(radio);

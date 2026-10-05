@@ -219,7 +219,7 @@ void handle_sf(cmd_params_t *params) {
     if (sf < 6 || sf > 12) {
         char e[48];
         int el = snprintf(e, sizeof(e), "ERR: SF %d out of range (6-12)\r\n", sf);
-        USB_Transmit((uint8_t*)e, el);
+        USB_Transmit((uint8_t *)e, el);
         return;
     }
     NVS_Write((RFM95W_PARAM_SF), (uint32_t)sf);
@@ -239,7 +239,7 @@ void handle_bw(cmd_params_t *params) {
     if (bw < 0 || bw > 9) {
         char e[48];
         int el = snprintf(e, sizeof(e), "ERR: BW %d out of range (0-9)\r\n", bw);
-        USB_Transmit((uint8_t*)e, el);
+        USB_Transmit((uint8_t *)e, el);
         return;
     }
     NVS_Write((RFM95W_PARAM_BW), (uint32_t)bw);
@@ -259,7 +259,7 @@ void handle_cr(cmd_params_t *params) {
     if (cr < 5 || cr > 8) {
         char e[48];
         int el = snprintf(e, sizeof(e), "ERR: CR %d out of range (5-8)\r\n", cr);
-        USB_Transmit((uint8_t*)e, el);
+        USB_Transmit((uint8_t *)e, el);
         return;
     }
     NVS_Write((RFM95W_PARAM_CR), (uint32_t)cr);

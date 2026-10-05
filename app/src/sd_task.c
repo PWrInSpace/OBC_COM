@@ -353,5 +353,7 @@ void sd_task_exti_notify(uint16_t GPIO_Pin) {
 }
 
 #else
-void sd_task_exti_notify(uint16_t GPIO_Pin) { (void)GPIO_Pin; } // if SD_DETECT_PIN_OPERATIONAL not compiled, prevent crashes in exti_callbacks
+void sd_task_exti_notify(uint16_t GPIO_Pin) {
+    (void)GPIO_Pin;
+} // if SD_DETECT_PIN_OPERATIONAL not compiled, prevent crashes in exti_callbacks
 #endif /* SD_DETECT_PIN_OPERATIONAL */

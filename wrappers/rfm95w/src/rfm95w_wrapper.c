@@ -28,8 +28,8 @@ bool rfm95w_spi_transmit(uint8_t *in, uint8_t *out) {
     HAL_StatusTypeDef status = HAL_SPI_TransmitReceive(&hspi2, out, in, 2, 1000);
 
     HAL_GPIO_WritePin(RFM95W_CS_GPIO_Port, RFM95W_CS_Pin, GPIO_PIN_SET);
-    
-    return (status == HAL_OK);  // contract: true = success
+
+    return (status == HAL_OK); // contract: true = success
 }
 
 void rfm95w_delay(uint32_t ms) {
