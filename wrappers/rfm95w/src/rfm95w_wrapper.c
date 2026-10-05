@@ -20,7 +20,7 @@ void rfm95w_wrapper_init(void) {
 }
 
 bool rfm95w_spi_transmit(uint8_t *in, uint8_t *out) {
-    if (in == NULL || out == NULL) return HAL_ERROR;
+    if (in == NULL || out == NULL) return false;
 
     HAL_GPIO_WritePin(RFM95W_CS_GPIO_Port, RFM95W_CS_Pin, GPIO_PIN_RESET);
 
@@ -29,7 +29,7 @@ bool rfm95w_spi_transmit(uint8_t *in, uint8_t *out) {
 
     HAL_GPIO_WritePin(RFM95W_CS_GPIO_Port, RFM95W_CS_Pin, GPIO_PIN_SET);
 
-    return status;
+    return (status == HAL_OK); // contract: true = success
 }
 
 void rfm95w_delay(uint32_t ms) {

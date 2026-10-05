@@ -87,6 +87,7 @@ static void logger_send_via_callback(const char *msg) {
 static void logger_format_and_write(const char *tag, const char *level,
                                     const char *file, int line, const char *fmt,
                                     va_list args) {
+    (void)file, (void)line;
     if (!global_log_enabled)
         return;
 

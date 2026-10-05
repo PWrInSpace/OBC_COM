@@ -127,7 +127,7 @@ rfm95_err_t rfm95_write_reg(rfm95_t *rfm95, int16_t reg, int16_t val) {
         return RFM95_WRITE_ERR;
     }
 
-    return rfm95->_spi_transmit(in, out) == 1 ? RFM95_OK : RFM95_WRITE_ERR;
+    return rfm95->_spi_transmit(in, out) ? RFM95_OK : RFM95_WRITE_ERR;
 }
 
 uint8_t rfm95_read_reg(rfm95_t *rfm95, int16_t reg) {
@@ -345,9 +345,15 @@ rfm95_err_t rfm95_send_packet(rfm95_t *rfm95, uint8_t *buf, int16_t size) {
     ret |= rfm95_fill_fifo_buf_to_send(rfm95, buf, size);
     ret |= rfm95_start_transmission(rfm95);
 
+    // idk czemu tutaj taki timeout, niby ma być dłuższe niż najdłuższa możliwa transmisja (nie do końca rozumiem co AI mi próbowało wytłumaczyć, ale zostawię)
+    // realnie ta funkcja i tak nie jest teraz używana
+    uint16_t tx_guard = 0;
     while (!rfm95_check_tx_done(rfm95)) {
-        int8_t read_reg = rfm95_read_reg(rfm95, REG_IRQ_FLAGS);
         rfm95->_delay(2);
+        if (++tx_guard > 750U) {
+            ret |= RFM95_TRANSMIT_ERR;
+            break;
+        }
     }
 
     ret |= rfm95_write_irq_flags(rfm95);

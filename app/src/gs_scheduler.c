@@ -13,10 +13,11 @@ static inline uint32_t elapsed_since(const gs_radio_iface_t *io, uint32_t start)
 static void forward_window(const gs_radio_iface_t *io, uint32_t duration_ms) {
     uint8_t buf[LORA_FRAME_MAX];
     uint32_t start = io->now_ms(io->ctx);
+    uint32_t elapsed;
 
     io->enter_rx(io->ctx);
-    while (elapsed_since(io, start) < duration_ms) {
-        size_t n = io->poll_rx(io->ctx, buf, sizeof(buf));
+    while ((elapsed = elapsed_since(io, start)) < duration_ms) {
+        size_t n = io->await_rx(io->ctx, buf, sizeof(buf), duration_ms - elapsed);
         if (n > 0U) {
             io->forward(io->ctx, buf, n);
             io->enter_rx(io->ctx);
@@ -30,10 +31,11 @@ static void send_one_from_queue(const gs_radio_iface_t *io, uint32_t duration_ms
     uint16_t tx_len = 0U;
     bool sent = false;
     uint32_t start = io->now_ms(io->ctx);
+    uint32_t elapsed;
 
     io->enter_rx(io->ctx);
-    while (elapsed_since(io, start) < duration_ms) {
-        if (!sent && elapsed_since(io, start) < start_deadline_ms &&
+    while ((elapsed = elapsed_since(io, start)) < duration_ms) {
+        if (!sent && elapsed < start_deadline_ms &&
             lora_txq_pop(io->txq, tx, &tx_len)) {
             io->send(io->ctx, tx, tx_len);
             io->enter_rx(io->ctx);
@@ -41,7 +43,9 @@ static void send_one_from_queue(const gs_radio_iface_t *io, uint32_t duration_ms
             continue;
         }
 
-        size_t n = io->poll_rx(io->ctx, rx, sizeof(rx));
+        uint32_t remaining = duration_ms - elapsed;
+        uint32_t wait = (remaining < LORA_MIX_POLL_MS) ? remaining : LORA_MIX_POLL_MS;
+        size_t n = io->await_rx(io->ctx, rx, sizeof(rx), wait);
         if (n > 0U) {
             io->forward(io->ctx, rx, n);
             io->enter_rx(io->ctx);
@@ -54,16 +58,19 @@ static void drain_queue(const gs_radio_iface_t *io, uint32_t duration_ms) {
     uint8_t rx[LORA_FRAME_MAX];
     uint16_t tx_len = 0U;
     uint32_t start = io->now_ms(io->ctx);
+    uint32_t elapsed;
 
     io->enter_rx(io->ctx);
-    while (elapsed_since(io, start) < duration_ms) {
+    while ((elapsed = elapsed_since(io, start)) < duration_ms) {
         if (lora_txq_pop(io->txq, tx, &tx_len)) {
             io->send(io->ctx, tx, tx_len);
             io->enter_rx(io->ctx);
             continue;
         }
 
-        size_t n = io->poll_rx(io->ctx, rx, sizeof(rx));
+        uint32_t remaining = duration_ms - elapsed;
+        uint32_t wait = (remaining < LORA_MIX_POLL_MS) ? remaining : LORA_MIX_POLL_MS;
+        size_t n = io->await_rx(io->ctx, rx, sizeof(rx), wait);
         if (n > 0U) {
             io->forward(io->ctx, rx, n);
             io->enter_rx(io->ctx);
@@ -78,7 +85,7 @@ static void drain_queue(const gs_radio_iface_t *io, uint32_t duration_ms) {
 
 void gs_run_cycle(const gs_radio_iface_t *io) {
     if (io == NULL || io->now_ms == NULL || io->enter_rx == NULL ||
-        io->poll_rx == NULL || io->send == NULL || io->forward == NULL ||
+        io->await_rx == NULL || io->send == NULL || io->forward == NULL ||
         io->txq == NULL) {
         return;
     }

@@ -55,6 +55,7 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Core/Src/user_diskio.c
+    app/src/exti_callbacks.c # exti_callbacks.c MUST be compiled into the executable, because of HAL's __weak EXTI callbacks
     # Add user sources here
 )
 
