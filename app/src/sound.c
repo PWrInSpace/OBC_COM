@@ -35,7 +35,7 @@ typedef struct {
 #define NOTE_D5  587u
 #define NOTE_DS5 622u   // D#5
 #define NOTE_E5  659u
-// #define NOTE_F5  698u
+#define NOTE_F5  698u
 #define NOTE_FS5 740u   // F#5
 #define NOTE_G5  784u
 #define NOTE_GS5 831u   // G#5
@@ -229,7 +229,38 @@ static const melody_t g_melodies[SOUND_COUNT] = {
     [SOUND_X_GON_GIVE_IT_TO_YA] = MELODY(snd_x_gon_give_it),
     [SOUND_DOOM_E1M1] = MELODY(snd_doom_e1m1),
     [SOUND_BRAINPOWER] = MELODY(snd_brainpower)
+    // [SOUND_EVERYTHING_IS_AWESOME] = MELODY(snd_everything_is_awesome) // DMA + PWN [no DAC :(]. ultra high pwm freq (50kHz), and DMA controls duty cycle
 };
+
+#ifdef BUZZER_POLY_ENABLE
+/* --- Polyphony (PWM-as-DAC). Needs BUZZER_POLY_ENABLE + D4 + TIM2_CH1 DMA (CubeMX). --- */
+#define SND_POLY_CARRIER_HZ 48000u
+#define SND_POLY_N          4096u   // duty buffer capacity (samples); RAM = 2*N*2B = 16 KB
+#define SND_POLY_MAX_VOICES 3u
+
+typedef struct {
+    uint16_t freqs[SND_POLY_MAX_VOICES];  // Hz per voice; nvoices == 0 -> rest
+    uint8_t nvoices;
+    uint16_t ms;
+} chord_t;
+
+static const chord_t snd_chord_demo[] = {
+    {{NOTE_C5, NOTE_E5, NOTE_G5}, 3, 500}, // C major
+    {{NOTE_C5, NOTE_F5, NOTE_A5}, 3, 500}, // F major
+    {{NOTE_B4, NOTE_D5, NOTE_G5}, 3, 500}, // G major
+    {{NOTE_C5, NOTE_E5, NOTE_G5}, 3, 700}, // C major
+    {{0, 0, 0}, 0, 200},                   // rest
+};
+
+static uint16_t g_duty[2][SND_POLY_N]; // double buffer (DMA-reachable SRAM, like WS2812)
+static uint8_t g_dbuf;
+static uint32_t g_fs;
+static uint16_t g_duty_steps;
+static const chord_t *g_cseq;
+static uint16_t g_clen;
+static uint16_t g_cidx;
+static volatile bool g_poly_active;
+#endif /* BUZZER_POLY_ENABLE */
 
 static buzzer_t g_buzzer;
 static osTimerId_t g_timer;
@@ -237,8 +268,48 @@ static const note_t *g_seq;
 static uint16_t g_len;
 static uint16_t g_idx;
 
+#ifdef BUZZER_POLY_ENABLE
+/* osTimer callback for the poly engine: render the current chord into the idle
+ * buffer and swap the DMA to it, then arm the timer for the chord duration. */
+static void poly_advance(void) {
+    chord_t c;
+    bool play;
+
+    taskENTER_CRITICAL();
+    play = (g_cseq != NULL) && (g_cidx < g_clen);
+    if (play) c = g_cseq[g_cidx++];
+    taskEXIT_CRITICAL();
+
+    if (!play) {
+        buzzer_poly_stop(&g_buzzer);
+        buzzer_tone_enter(&g_buzzer); // restore mono timing
+        g_poly_active = false;
+        return;
+    }
+
+    if (c.nvoices == 0u) {
+        buzzer_poly_stop(&g_buzzer); // rest: silent, stay in carrier mode
+    } else {
+        uint8_t nv = (c.nvoices > SND_POLY_MAX_VOICES) ? SND_POLY_MAX_VOICES : c.nvoices;
+        g_dbuf ^= 1u;
+        uint16_t len = 0u;
+        if (buzzer_render_chord(c.freqs, nv, g_duty[g_dbuf], (uint16_t)SND_POLY_N, g_fs, g_duty_steps, &len) == BUZZER_OK && len > 0u) {
+            buzzer_poly_swap(&g_buzzer, g_duty[g_dbuf], len);
+        }
+    }
+
+    osTimerStart(g_timer, pdMS_TO_TICKS(c.ms != 0u ? c.ms : 1u));
+}
+#endif /* BUZZER_POLY_ENABLE */
+
 static void snd_cb(void *arg) {
     (void)arg;
+#ifdef BUZZER_POLY_ENABLE
+    if (g_poly_active) {
+        poly_advance();
+        return;
+    }
+#endif
     note_t n;
     bool play;
 
@@ -263,6 +334,9 @@ void sound_init(void) {
         .htim = &htim2,
         .channel = TIM_CHANNEL_1,
         .timer_hz = BUZZER_TIMER_HZ,
+#ifdef BUZZER_POLY_ENABLE
+        .carrier_hz = SND_POLY_CARRIER_HZ,
+#endif
     };
     buzzer_init(&g_buzzer, &cfg);
 
@@ -291,8 +365,20 @@ void sound_stop(void) {
     g_seq = NULL;
     g_len = 0u;
     g_idx = 0u;
+#ifdef BUZZER_POLY_ENABLE
+    g_cseq = NULL;
+    g_clen = 0u;
+    g_cidx = 0u;
+#endif
     taskEXIT_CRITICAL();
 
     if (g_timer != NULL) osTimerStop(g_timer);
+#ifdef BUZZER_POLY_ENABLE
+    if (g_poly_active) {
+        buzzer_poly_stop(&g_buzzer);
+        buzzer_tone_enter(&g_buzzer);
+        g_poly_active = false;
+    }
+#endif
     buzzer_mute(&g_buzzer);
 }

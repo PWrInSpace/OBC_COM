@@ -18,6 +18,7 @@ typedef enum {
     SOUND_X_GON_GIVE_IT_TO_YA,
     SOUND_DOOM_E1M1,
     SOUND_BRAINPOWER,
+    // SOUND_EVERYTHING_IS_AWESOME,
     SOUND_COUNT
 } sound_id_t;
 
