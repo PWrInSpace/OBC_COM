@@ -35,3 +35,5 @@ void sd_unmount(void);
 bool sd_remount(void);
 void sd_sync(void);
 bool sd_is_mounted(void);
+
+void sd_task_exti_notify(uint16_t GPIO_Pin);

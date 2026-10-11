@@ -346,17 +346,14 @@ static void monitor_task_thread(void *arg) {
     }
 }
 
-static inline void sd_detect_isr_notify(uint16_t GPIO_Pin) {
+void sd_task_exti_notify(uint16_t GPIO_Pin) {
     if (GPIO_Pin == SD_DETECT_Pin && monitor_task_id != NULL) {
         osThreadFlagsSet(monitor_task_id, SD_DETECT_EVENT_FLAG);
     }
 }
 
-void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin) {
-    sd_detect_isr_notify(GPIO_Pin);
-}
-void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin) {
-    sd_detect_isr_notify(GPIO_Pin);
-}
-
-#endif
+#else
+void sd_task_exti_notify(uint16_t GPIO_Pin) {
+    (void)GPIO_Pin;
+} // if SD_DETECT_PIN_OPERATIONAL not compiled, prevent crashes in exti_callbacks
+#endif /* SD_DETECT_PIN_OPERATIONAL */

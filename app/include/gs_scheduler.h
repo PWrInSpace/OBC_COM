@@ -15,13 +15,14 @@
 #define LORA_SEND_MS_1 100U               // send one queued frame
 #define LORA_FORWARD_MS_2 200U            // listen and relay to app (TANWA)
 #define LORA_DRAIN_QUEUE_MS 400U          // trailing listen + guarantee empty queue
+#define LORA_MIX_POLL_MS 20U              // in TX/RX windows: max RX block before re-checking the TX queue
 
 typedef struct gs_radio_iface {
-    uint32_t (*now_ms)(void *ctx);                              // e.g. HAL_GetTick()
-    void (*enter_rx)(void *ctx);                                // Put the radio into continuous receive
-    size_t (*poll_rx)(void *ctx, uint8_t *buf, size_t cap);     // Poll for a received packet, copy up to cap bytes, return length
-    void (*send)(void *ctx, const uint8_t *buf, size_t len);    // Transmit len bytes, blocking until done
-    void (*forward)(void *ctx, const uint8_t *buf, size_t len); // Hand a received frame to the app link
+    uint32_t (*now_ms)(void *ctx);                                                // e.g. HAL_GetTick()
+    void (*enter_rx)(void *ctx);                                                  // Put the radio into continuous receive
+    size_t (*await_rx)(void *ctx, uint8_t *buf, size_t cap, uint32_t timeout_ms); // Block up to timeout_ms for one packet (DIO0 event), copy up to cap bytes, return length (0 = none)
+    void (*send)(void *ctx, const uint8_t *buf, size_t len);                      // Transmit len bytes, blocking until done
+    void (*forward)(void *ctx, const uint8_t *buf, size_t len);                   // Hand a received frame to the app link
 
     void *ctx; // radio handle
     lora_tx_queue_t *txq;
