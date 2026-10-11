@@ -1,5 +1,14 @@
 var NAVTREEINDEX9 =
 {
+"sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aeaf18cf726988103e927c6bf8dc0a9981f":[4,0,3,5,0,1,65,6],
+"sx1280_8h.html#a7c0c90acc37e4cf528c66b46362b8f83":[4,0,3,5,0,1,93],
+"sx1280_8h.html#a7c0c90acc37e4cf528c66b46362b8f83a5a6a549e66aa54871013a612aa2aba45":[4,0,3,5,0,1,93,1],
+"sx1280_8h.html#a7c0c90acc37e4cf528c66b46362b8f83a6798b346c6d95e2970d33ccd04c5d39c":[4,0,3,5,0,1,93,3],
+"sx1280_8h.html#a7c0c90acc37e4cf528c66b46362b8f83a89c1ff89fc074c1c80f96d186c99f899":[4,0,3,5,0,1,93,0],
+"sx1280_8h.html#a7c0c90acc37e4cf528c66b46362b8f83add0cb5bc08318df9a5e688f4802ed99d":[4,0,3,5,0,1,93,2],
+"sx1280_8h.html#a7c1d244a48abeb98b6bf3f0ada087df6":[4,0,3,5,0,1,84],
+"sx1280_8h.html#a7c1d244a48abeb98b6bf3f0ada087df6a902ce14d15f16ba1b3bea47fe9d88fd4":[4,0,3,5,0,1,84,1],
+"sx1280_8h.html#a7c1d244a48abeb98b6bf3f0ada087df6aad7bf546a6d287d025a16a742e6f2bcd":[4,0,3,5,0,1,84,0],
 "sx1280_8h.html#a7f2a1138e63d652499230db510694503":[4,0,3,5,0,1,25],
 "sx1280_8h.html#a7ffa12faccfb445a786d3c98a1ff1bf2":[4,0,3,5,0,1,164],
 "sx1280_8h.html#a81867641163d73ef995945ae1e721a20":[4,0,3,5,0,1,49],
@@ -240,14 +249,5 @@ var NAVTREEINDEX9 =
 "sx1280__hal__wrapper_8c_source.html":[4,0,6,2,1,0],
 "sx1280__hal__wrapper_8h.html":[4,0,6,2,0,0],
 "sx1280__hal__wrapper_8h.html#a11472d290017b973b19ffecd71ca3d6c":[4,0,6,2,0,0,8],
-"sx1280__hal__wrapper_8h.html#a3c7a2ad21cb8a59c651d5fc2355df6b3":[4,0,6,2,0,0,7],
-"sx1280__hal__wrapper_8h.html#a417de486ecdb3e148edafbe2b1753ec1":[4,0,6,2,0,0,4],
-"sx1280__hal__wrapper_8h.html#a7bef1a617e678c5d92c9678304f68da5":[4,0,6,2,0,0,1],
-"sx1280__hal__wrapper_8h.html#a877be19611dfb83a5d90953bc47fbb10":[4,0,6,2,0,0,5],
-"sx1280__hal__wrapper_8h.html#a92cf59f4fdbb9f06f0d421fa3ec8af30":[4,0,6,2,0,0,9],
-"sx1280__hal__wrapper_8h.html#ab7c31fdc0296e796f1f6a37d062243b6":[4,0,6,2,0,0,2],
-"sx1280__hal__wrapper_8h.html#ab8478d2dce4bb3c35421a4bfe49957e9":[4,0,6,2,0,0,6],
-"sx1280__hal__wrapper_8h.html#ae931bcde8e5386d12c6b62325595d8d4":[4,0,6,2,0,0,3],
-"sx1280__hal__wrapper_8h.html#af5056fc5085c914a4229c712307af987":[4,0,6,2,0,0,0],
-"sx1280__hal__wrapper_8h_source.html":[4,0,6,2,0,0]
+"sx1280__hal__wrapper_8h.html#a3c7a2ad21cb8a59c651d5fc2355df6b3":[4,0,6,2,0,0,7]
 };

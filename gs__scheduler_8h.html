@@ -130,6 +130,8 @@ Macros</h2></td></tr>
 <tr class="separator:a681fff5688854e35f76a6f76bc19050b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fc469c17ebecc2ec7039edfe2b9f84c" id="r_a8fc469c17ebecc2ec7039edfe2b9f84c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gs__scheduler_8h.html#a8fc469c17ebecc2ec7039edfe2b9f84c">LORA_DRAIN_QUEUE_MS</a>&#160;&#160;&#160;400U</td></tr>
 <tr class="separator:a8fc469c17ebecc2ec7039edfe2b9f84c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1673e6a140d7b50a7c9d35ce4eae8291" id="r_a1673e6a140d7b50a7c9d35ce4eae8291"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gs__scheduler_8h.html#a1673e6a140d7b50a7c9d35ce4eae8291">LORA_MIX_POLL_MS</a>&#160;&#160;&#160;20U</td></tr>
+<tr class="separator:a1673e6a140d7b50a7c9d35ce4eae8291"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -185,6 +187,22 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a1673e6a140d7b50a7c9d35ce4eae8291" name="a1673e6a140d7b50a7c9d35ce4eae8291"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1673e6a140d7b50a7c9d35ce4eae8291">&#9670;&#160;</a></span>LORA_MIX_POLL_MS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LORA_MIX_POLL_MS&#160;&#160;&#160;20U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gs__scheduler_8h_source.html#l00018">18</a> of file <a class="el" href="gs__scheduler_8h_source.html">gs_scheduler.h</a>.</p>
+
+</div>
+</div>
 <a id="a3565d47f3ac0b18e803689c388f8e1ca" name="a3565d47f3ac0b18e803689c388f8e1ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3565d47f3ac0b18e803689c388f8e1ca">&#9670;&#160;</a></span>LORA_SEND_MS_1</h2>
 
@@ -234,11 +252,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gs__scheduler_8c_source.html#l00079">79</a> of file <a class="el" href="gs__scheduler_8c_source.html">gs_scheduler.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gs__scheduler_8c_source.html#l00086">86</a> of file <a class="el" href="gs__scheduler_8c_source.html">gs_scheduler.c</a>.</p>
 
-<p class="reference">References <a class="el" href="gs__scheduler_8h_source.html#l00026">gs_radio_iface_t::ctx</a>, <a class="el" href="gs__scheduler_8c_source.html#l00052">drain_queue()</a>, <a class="el" href="gs__scheduler_8h_source.html#l00021">gs_radio_iface_t::enter_rx</a>, <a class="el" href="gs__scheduler_8h_source.html#l00024">gs_radio_iface_t::forward</a>, <a class="el" href="gs__scheduler_8c_source.html#l00013">forward_window()</a>, <a class="el" href="gs__scheduler_8h_source.html#l00017">LORA_DRAIN_QUEUE_MS</a>, <a class="el" href="gs__scheduler_8h_source.html#l00013">LORA_FORWARD_MS_1</a>, <a class="el" href="gs__scheduler_8h_source.html#l00016">LORA_FORWARD_MS_2</a>, <a class="el" href="lora__frame_8c_source.html#l00053">lora_frame_build_sync()</a>, <a class="el" href="lora__frame_8h_source.html#l00017">LORA_FRAME_MAX</a>, <a class="el" href="gs__scheduler_8h_source.html#l00015">LORA_SEND_MS_1</a>, <a class="el" href="gs__scheduler_8h_source.html#l00014">LORA_SEND_MS_1_START_DEADLINE</a>, <a class="el" href="gs__scheduler_8h_source.html#l00020">gs_radio_iface_t::now_ms</a>, <a class="el" href="gs__scheduler_8h_source.html#l00022">gs_radio_iface_t::poll_rx</a>, <a class="el" href="gs__scheduler_8h_source.html#l00023">gs_radio_iface_t::send</a>, <a class="el" href="gs__scheduler_8c_source.html#l00027">send_one_from_queue()</a>, and <a class="el" href="gs__scheduler_8h_source.html#l00027">gs_radio_iface_t::txq</a>.</p>
+<p class="reference">References <a class="el" href="gs__scheduler_8h_source.html#l00023">gs_radio_iface_t::await_rx</a>, <a class="el" href="gs__scheduler_8h_source.html#l00027">gs_radio_iface_t::ctx</a>, <a class="el" href="gs__scheduler_8c_source.html#l00056">drain_queue()</a>, <a class="el" href="gs__scheduler_8h_source.html#l00022">gs_radio_iface_t::enter_rx</a>, <a class="el" href="gs__scheduler_8h_source.html#l00025">gs_radio_iface_t::forward</a>, <a class="el" href="gs__scheduler_8c_source.html#l00013">forward_window()</a>, <a class="el" href="gs__scheduler_8h_source.html#l00017">LORA_DRAIN_QUEUE_MS</a>, <a class="el" href="gs__scheduler_8h_source.html#l00013">LORA_FORWARD_MS_1</a>, <a class="el" href="gs__scheduler_8h_source.html#l00016">LORA_FORWARD_MS_2</a>, <a class="el" href="lora__frame_8c_source.html#l00053">lora_frame_build_sync()</a>, <a class="el" href="lora__frame_8h_source.html#l00017">LORA_FRAME_MAX</a>, <a class="el" href="gs__scheduler_8h_source.html#l00015">LORA_SEND_MS_1</a>, <a class="el" href="gs__scheduler_8h_source.html#l00014">LORA_SEND_MS_1_START_DEADLINE</a>, <a class="el" href="gs__scheduler_8h_source.html#l00021">gs_radio_iface_t::now_ms</a>, <a class="el" href="gs__scheduler_8h_source.html#l00024">gs_radio_iface_t::send</a>, <a class="el" href="gs__scheduler_8c_source.html#l00028">send_one_from_queue()</a>, and <a class="el" href="gs__scheduler_8h_source.html#l00028">gs_radio_iface_t::txq</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00124">rfm95wTaskEntry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00133">rfm95wTaskEntry()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

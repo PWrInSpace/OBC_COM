@@ -95,23 +95,23 @@ $(document).ready(function(){initNavTree('cmd_module.html',''); initResizable();
 <div class="contents">
 <div class="textblock"><p>The <b>CMD Module</b> provides a robust interface for controlling the OBC via USB or Radio. It is designed to be highly extensible, supporting both <b>Human-Readable (ASCII)</b> and <b>Binary</b> communication protocols.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md1"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 ⚙️ Protocol Architecture</h1>
 <p>The module automatically detects the incoming packet type based on the initial bytes:</p>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 1. Text Protocol (ASCII)</h2>
 <p>Designed for manual debugging via serial terminal (e.g., PuTTY, TeraTerm).</p><ul>
 <li><b>Format:</b> <code>CMD:[COMMAND]:[VALUE]</code></li>
 <li><b>Example:</b> <code>CMD:FREQ:868000000</code> (Sets frequency to 868 MHz)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 2. Binary Protocol</h2>
 <p>Designed for automated communication between ground stations or other flight computers.</p><ul>
 <li><b>Format:</b> <code>[Header 0x32][Data Length][Command ID][Payload...]</code></li>
 <li><b>Example:</b> <code>32 04 01 00 CA 9A 3B</code> (Binary equivalent of setting frequency)</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 📜 Supported Commands</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">

@@ -27,11 +27,11 @@ var NAVTREE =
   [ "OBC-COM", "index.html", [
     [ "OBC_COM", "index.html", "index" ],
     [ "CMD Module (Command Line Interface)", "cmd_module.html", [
-      [ "⚙️ Protocol Architecture", "cmd_module.html#autotoc_md1", [
-        [ "1. Text Protocol (ASCII)", "cmd_module.html#autotoc_md2", null ],
-        [ "2. Binary Protocol", "cmd_module.html#autotoc_md3", null ]
+      [ "⚙️ Protocol Architecture", "cmd_module.html#autotoc_md12", [
+        [ "1. Text Protocol (ASCII)", "cmd_module.html#autotoc_md13", null ],
+        [ "2. Binary Protocol", "cmd_module.html#autotoc_md14", null ]
       ] ],
-      [ "📜 Supported Commands", "cmd_module.html#autotoc_md6", null ],
+      [ "📜 Supported Commands", "cmd_module.html#autotoc_md16", null ],
       [ "🛠 Developer Guide: Adding New Commands", "cmd_module.html#autotoc_md18", [
         [ "Step 1: Define Command ID", "cmd_module.html#autotoc_md19", null ],
         [ "Step 2: Define Command Struct", "cmd_module.html#autotoc_md20", null ],
@@ -65,16 +65,16 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "GNSS_8c.html",
-"dir_f3ba9384b4e92985372d849f6c14f251.html",
-"group__EEPROM__Private__Macros.html",
-"logger_8h.html#a98121d38a8cf3daf5246a349f912ca1d",
-"main_8h.html#a12c42ba76b3b14ea44c7ebc33c8103e6",
-"rfm95w_8h.html#a70616dfa9fac771817ed31fbcae5d2ae",
-"sound_8c.html#a441475178599565b3dd4572cebbdf28c",
-"structPacketStatus__t.html#a87db1ffa2ec08c849e6b2286d07e0a1e",
-"sx1280-hal_8h_source.html",
-"sx1280_8h.html#a7f2a1138e63d652499230db510694503",
-"sx1280__task_8c.html"
+"dir_f7d9de7b7cbaebec72fab52eb5a0c8a3.html",
+"group__EEPROM__Private__Functions.html#gaf47e9f09b5a17c1e9fafbd1ca8e967cc",
+"logger_8h.html#a4ed463eb643d27a37e46005c332f5947",
+"main_8h.html#a0c7d0200649f5ff6ed068e581e14e2a2",
+"rfm95w_8h.html#a5e931712eaa4377c0ea89af339147cd4",
+"sky66114_8h.html#af3bcc265a797af3caa7c139a27fe42c9",
+"structPacketStatus__t.html#a2af10b8fc21c683043ada02e04fdb8e0",
+"sx1280-hal_8h.html#aceea5e604bb54817f0c8d38ebb554b27",
+"sx1280_8h.html#a7a29eba4eba7a75ad05805ee42d6d1aeaf18cf726988103e927c6bf8dc0a9981f",
+"sx1280__hal__wrapper_8h.html#a417de486ecdb3e148edafbe2b1753ec1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

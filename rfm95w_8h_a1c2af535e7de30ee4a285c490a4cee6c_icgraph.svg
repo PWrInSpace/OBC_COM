@@ -46,7 +46,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 660;
+var viewWidth = 669;
 var viewHeight = 27;
 var sectionId = 'dynsection-27';
 </script>
@@ -58,17 +58,17 @@ var sectionId = 'dynsection-27';
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Read a received packet.">
-<polygon fill="#999999" stroke="#666666" points="652,-19 527,-19 527,0 652,0 652,-19"/>
-<text text-anchor="middle" x="589.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95_receive_packet</text>
+<polygon fill="#999999" stroke="#666666" points="661,-19 536,-19 536,0 661,0 661,-19"/>
+<text text-anchor="middle" x="598.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">rfm95_receive_packet</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="rfm95w__task_8c.html#ad7d1019d680c0f36e69f6ed82a3f2fd1" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="491,-19 425,-19 425,0 491,0 491,-19"/>
-<text text-anchor="middle" x="458" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">gs_poll_rx</text>
+<g id="a_Node000002"><a xlink:href="rfm95w__task_8c.html#ac6f15cba9be6c5ff1c2b9bc1e7f26df4" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="500,-19 425,-19 425,0 500,0 500,-19"/>
+<text text-anchor="middle" x="462.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">gs_await_rx</text>
 </a>
 </g>
 </g>
@@ -76,8 +76,8 @@ var sectionId = 'dynsection-27';
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M516.63,-9.5C507.68,-9.5 498.91,-9.5 491.02,-9.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="516.78,-13 526.78,-9.5 516.78,-6 516.78,-13"/>
+<path fill="none" stroke="#63b8ff" d="M525.92,-9.5C517.02,-9.5 508.22,-9.5 500.16,-9.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="525.99,-13 535.99,-9.5 525.99,-6 525.99,-13"/>
 </a>
 </g>
 </g>
@@ -94,8 +94,8 @@ var sectionId = 'dynsection-27';
 <g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
 <g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M414.73,-9.5C406.46,-9.5 397.71,-9.5 389.22,-9.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="414.89,-13 424.89,-9.5 414.89,-6 414.89,-13"/>
+<path fill="none" stroke="#63b8ff" d="M414.87,-9.5C406.46,-9.5 397.66,-9.5 389.17,-9.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="414.9,-13 424.9,-9.5 414.9,-6 414.9,-13"/>
 </a>
 </g>
 </g>

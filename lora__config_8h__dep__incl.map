@@ -1,16 +1,18 @@
 <map id="app/include/lora_config.h" name="app/include/lora_config.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="407,5,591,31"/>
-<area shape="rect" id="Node000002" href="$rfm95w__task_8h.html" title=" " alt="" coords="235,79,386,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="460,38,357,81,355,76,458,33"/>
-<area shape="rect" id="Node000005" href="$rfm95w__task_8c.html" title=" " alt="" coords="374,167,543,192"/>
-<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="486,44,469,79,461,127,461,166,455,166,456,126,464,78,481,41"/>
-<area shape="rect" id="Node000006" href="$lora__config_8c.html" title=" " alt="" coords="479,86,633,111"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="517,40,550,84,545,87,513,43"/>
-<area shape="rect" id="Node000007" href="$sx1280__task_8c.html" title=" " alt="" coords="658,86,825,111"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="548,32,707,83,705,89,546,37"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="583,5,767,31"/>
+<area shape="rect" id="Node000002" href="$rfm95w__task_8h.html" title=" " alt="" coords="387,79,538,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="632,38,515,81,513,76,630,33"/>
+<area shape="rect" id="Node000006" href="$rfm95w__task_8c.html" title=" " alt="" coords="575,167,745,192"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="661,43,645,79,643,103,646,127,657,165,652,167,640,128,637,103,640,78,656,41"/>
+<area shape="rect" id="Node000007" href="$lora__config_8c.html" title=" " alt="" coords="655,86,809,111"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="693,40,726,84,721,87,689,43"/>
+<area shape="rect" id="Node000008" href="$sx1280__task_8c.html" title=" " alt="" coords="834,86,1001,111"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="724,32,883,83,881,89,722,37"/>
 <area shape="rect" id="Node000003" href="$app__freertos_8c.html" title=" " alt="" coords="5,167,179,192"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="247,126,125,169,123,164,245,121"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="374,121,147,169,146,164,373,116"/>
 <area shape="rect" id="Node000004" href="$cmd__task_8c.html" title=" " alt="" coords="203,167,349,192"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="299,132,284,167,279,165,294,130"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="359,123,438,164,436,169,357,127"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="406,126,305,169,303,164,404,121"/>
+<area shape="rect" id="Node000005" href="$exti__callbacks_8c.html" title=" " alt="" coords="374,167,551,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="465,132,465,166,460,166,460,132"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="524,121,632,164,630,169,522,126"/>
 </map>

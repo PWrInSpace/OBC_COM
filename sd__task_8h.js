@@ -15,5 +15,6 @@ var sd__task_8h =
     [ "sd_mount", "sd__task_8h.html#ac1cf0c55de40244f99ffeabc7c06a059", null ],
     [ "sd_remount", "sd__task_8h.html#a84e74a0658ac9c470c3e09eb0cc58f62", null ],
     [ "sd_sync", "sd__task_8h.html#a36e28e893929ecb62e8c54acebdec9e4", null ],
+    [ "sd_task_exti_notify", "sd__task_8h.html#a5c8d2f6cfb563fdfa42214e2398d1c02", null ],
     [ "sd_unmount", "sd__task_8h.html#abc34183a78c00656584eb7eed83e8f47", null ]
 ];

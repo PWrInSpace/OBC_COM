@@ -106,7 +106,7 @@ Include dependency graph for rfm95w_task.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8h__dep__incl.svg" width="550" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8h__dep__incl.svg" width="100%" height="393"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="rfm95w__task_8h_source.html">Go to the source code of this file.</a></p>
@@ -117,6 +117,9 @@ Functions</h2></td></tr>
 <tr class="separator:a5766e691677be755740c5d264c637139"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c30eab59ae461a939754514c289fb43" id="r_a8c30eab59ae461a939754514c289fb43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8h.html#a8c30eab59ae461a939754514c289fb43">rfm95_send_window</a> (<a class="el" href="structrfm95__t.html">rfm95_t</a> *radio, const uint8_t *payload, uint8_t payload_len, uint32_t window_ms)</td></tr>
 <tr class="separator:a8c30eab59ae461a939754514c289fb43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d857474990f32b9e49cc5f0f2345e83" id="r_a5d857474990f32b9e49cc5f0f2345e83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8h.html#a5d857474990f32b9e49cc5f0f2345e83">rfm95_dio0_isr_notify</a> (void)</td></tr>
+<tr class="memdesc:a5d857474990f32b9e49cc5f0f2345e83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify the RFM task from the DIO0 EXTI ISR (TxDone/RxDone).  <br /></td></tr>
+<tr class="separator:a5d857474990f32b9e49cc5f0f2345e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4d6b5c21ad55e5a3fa935e378767e09" id="r_aa4d6b5c21ad55e5a3fa935e378767e09"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rfm95w__task_8h.html#aa4d6b5c21ad55e5a3fa935e378767e09">lora_gs_tx_enqueue</a> (const uint8_t *buf, uint16_t len)</td></tr>
 <tr class="memdesc:aa4d6b5c21ad55e5a3fa935e378767e09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue a fully-formed frame for the GS to transmit in its next slot.  <br /></td></tr>
 <tr class="separator:aa4d6b5c21ad55e5a3fa935e378767e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,9 +143,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00046">46</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00051">51</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
 
-<p class="reference">References <a class="el" href="rfm95w__task_8c_source.html#l00040">s_settings_dirty</a>.</p>
+<p class="reference">References <a class="el" href="rfm95w__task_8c_source.html#l00045">s_settings_dirty</a>.</p>
 
 </div>
 </div>
@@ -175,11 +178,11 @@ Functions</h2></td></tr>
 <p>Queue a fully-formed frame for the GS to transmit in its next slot. </p>
 <dl class="section return"><dt>Returns</dt><dd>false if the queue is full. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00042">42</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00047">47</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
 
-<p class="reference">References <a class="el" href="lora__tx__queue_8c_source.html#l00020">lora_txq_push()</a>, and <a class="el" href="rfm95w__task_8c_source.html#l00039">s_txq</a>.</p>
+<p class="reference">References <a class="el" href="lora__tx__queue_8c_source.html#l00020">lora_txq_push()</a>, and <a class="el" href="rfm95w__task_8c_source.html#l00044">s_txq</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="cmd__task_8c_source.html#l00036">cmd_task()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="cmd__task_8c_source.html#l00033">cmd_task()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -189,6 +192,37 @@ Here is the call graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8h_aa4d6b5c21ad55e5a3fa935e378767e09_icgraph.svg" width="655" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a5d857474990f32b9e49cc5f0f2345e83" name="a5d857474990f32b9e49cc5f0f2345e83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d857474990f32b9e49cc5f0f2345e83">&#9670;&#160;</a></span>rfm95_dio0_isr_notify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rfm95_dio0_isr_notify </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Notify the RFM task from the DIO0 EXTI ISR (TxDone/RxDone). </p>
+
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00055">55</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="rfm95w__task_8c_source.html#l00038">rfm95wTaskHandle</a>, and <a class="el" href="rfm95w__task_8c_source.html#l00033">RFM_DIO0_EVT</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="exti__callbacks_8c_source.html#l00011">HAL_GPIO_EXTI_Rising_Callback()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8h_a5d857474990f32b9e49cc5f0f2345e83_icgraph.svg" width="392" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -231,15 +265,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00050">50</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00061">61</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
 
-<p class="reference">References <a class="el" href="rfm95w_8h_source.html#l00017">IRQ_ALL</a>, <a class="el" href="rfm95w_8h_source.html#l00038">REG_IRQ_FLAGS</a>, <a class="el" href="rfm95w_8c_source.html#l00335">rfm95_check_tx_done()</a>, <a class="el" href="rfm95w_8c_source.html#l00173">rfm95_idle()</a>, <a class="el" href="rfm95w_8c_source.html#l00343">rfm95_send_packet()</a>, <a class="el" href="rfm95w_8c_source.html#l00193">rfm95_set_transmit_mode()</a>, and <a class="el" href="rfm95w_8c_source.html#l00122">rfm95_write_reg()</a>.</p>
+<p class="reference">References <a class="el" href="rfm95w_8h_source.html#l00017">IRQ_ALL</a>, <a class="el" href="logger_8h_source.html#l00042">LOG_INFO</a>, <a class="el" href="rfm95w_8h_source.html#l00052">REG_DIO_MAPPING_1</a>, <a class="el" href="rfm95w_8h_source.html#l00038">REG_IRQ_FLAGS</a>, <a class="el" href="rfm95w_8c_source.html#l00312">rfm95_fill_fifo_buf_to_send()</a>, <a class="el" href="rfm95w_8c_source.html#l00173">rfm95_idle()</a>, <a class="el" href="rfm95w_8c_source.html#l00328">rfm95_start_transmission()</a>, <a class="el" href="rfm95w_8c_source.html#l00122">rfm95_write_reg()</a>, <a class="el" href="rfm95w__task_8c_source.html#l00033">RFM_DIO0_EVT</a>, <a class="el" href="rfm95w__task_8c_source.html#l00034">RFM_DIO0_MAP_TXDONE</a>, and <a class="el" href="rfm95w__task_8c_source.html#l00036">RFM_TX_TIMEOUT_MS</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00106">gs_send()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="rfm95w__task_8c_source.html#l00116">gs_send()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8h_a8c30eab59ae461a939754514c289fb43_cgraph.svg" width="100%" height="582"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="rfm95w__task_8h_a8c30eab59ae461a939754514c289fb43_cgraph.svg" width="100%" height="441"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -265,9 +299,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00159">159</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rfm95w__task_8c_source.html#l00166">166</a> of file <a class="el" href="rfm95w__task_8c_source.html">rfm95w_task.c</a>.</p>
 
-<p class="reference">References <a class="el" href="logger_8h_source.html#l00044">LOG_ERROR</a>, <a class="el" href="rfm95w__task_8c_source.html#l00034">rfm95wTask_attributes</a>, <a class="el" href="rfm95w__task_8c_source.html#l00124">rfm95wTaskEntry()</a>, <a class="el" href="rfm95w__task_8c_source.html#l00033">rfm95wTaskHandle</a>, and <a class="el" href="rfm95w__task_8c_source.html#l00031">TAG</a>.</p>
+<p class="reference">References <a class="el" href="logger_8h_source.html#l00044">LOG_ERROR</a>, <a class="el" href="rfm95w__task_8c_source.html#l00039">rfm95wTask_attributes</a>, <a class="el" href="rfm95w__task_8c_source.html#l00133">rfm95wTaskEntry()</a>, <a class="el" href="rfm95w__task_8c_source.html#l00038">rfm95wTaskHandle</a>, and <a class="el" href="rfm95w__task_8c_source.html#l00031">TAG</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="app__freertos_8c_source.html#l00100">MX_FREERTOS_Init()</a>.</p>
 <div class="dynheader">

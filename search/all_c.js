@@ -12,7 +12,7 @@ var searchData=
   ['ilong_9',['ilong',['../unioni__Long.html#ae9bfcc598ff15c21ac62543992950b51',1,'i_Long::iLong'],['../GNSS_8c.html#a776d0eb374fadf821cf7bd618596792a',1,'iLong:&#160;GNSS.c']]],
   ['implicit_5fheader_10',['implicit_header',['../structrfm95__t.html#a2a9110746e964f1d33595aad393e4075',1,'rfm95_t']]],
   ['instructionramretention_11',['InstructionRamRetention',['../structSleepParams__t.html#af83f7dfb1c7bb9057d0833a1d563962e',1,'SleepParams_t']]],
-  ['instructions_20usb_20dfu_20mode_12',['🚀 Flashing Instructions (USB DFU Mode)',['../index.html#autotoc_md12',1,'']]],
+  ['instructions_20usb_20dfu_20mode_12',['🚀 Flashing Instructions (USB DFU Mode)',['../index.html#autotoc_md6',1,'']]],
   ['interface_13',['CMD Module (Command Line Interface)',['../cmd_module.html',1,'']]],
   ['invertiq_14',['InvertIQ',['../structPacketParams__t.html#a3b76a1da4fd3d71e2509790cce45533f',1,'PacketParams_t']]],
   ['iram_5fsize_15',['IRAM_SIZE',['../sx1280_8h.html#a4775852a1e015079ff229262a49be918',1,'sx1280.h']]],

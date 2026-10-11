@@ -162,12 +162,8 @@ Functions</h2></td></tr>
 <tr class="separator:aef0d3d785fba86eedc350246c4362032"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f51bc671c8cb315e9e6ac9d50f0157f" id="r_a8f51bc671c8cb315e9e6ac9d50f0157f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a8f51bc671c8cb315e9e6ac9d50f0157f">sd_detect_sync</a> (bool announce)</td></tr>
 <tr class="separator:a8f51bc671c8cb315e9e6ac9d50f0157f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafecd8bc371346876c011acb5eadac49" id="r_aafecd8bc371346876c011acb5eadac49"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#aafecd8bc371346876c011acb5eadac49">sd_detect_isr_notify</a> (uint16_t GPIO_Pin)</td></tr>
-<tr class="separator:aafecd8bc371346876c011acb5eadac49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a537318eafe9182b60dc22ef54966c6a1" id="r_a537318eafe9182b60dc22ef54966c6a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a537318eafe9182b60dc22ef54966c6a1">HAL_GPIO_EXTI_Rising_Callback</a> (uint16_t GPIO_Pin)</td></tr>
-<tr class="separator:a537318eafe9182b60dc22ef54966c6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b334860563f4a109443e0a604af2300" id="r_a0b334860563f4a109443e0a604af2300"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a0b334860563f4a109443e0a604af2300">HAL_GPIO_EXTI_Falling_Callback</a> (uint16_t GPIO_Pin)</td></tr>
-<tr class="separator:a0b334860563f4a109443e0a604af2300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c8d2f6cfb563fdfa42214e2398d1c02" id="r_a5c8d2f6cfb563fdfa42214e2398d1c02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sd__task_8c.html#a5c8d2f6cfb563fdfa42214e2398d1c02">sd_task_exti_notify</a> (uint16_t GPIO_Pin)</td></tr>
+<tr class="separator:a5c8d2f6cfb563fdfa42214e2398d1c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -327,60 +323,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a0b334860563f4a109443e0a604af2300" name="a0b334860563f4a109443e0a604af2300"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b334860563f4a109443e0a604af2300">&#9670;&#160;</a></span>HAL_GPIO_EXTI_Falling_Callback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void HAL_GPIO_EXTI_Falling_Callback </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>GPIO_Pin</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00358">358</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
-
-<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00349">sd_detect_isr_notify()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a0b334860563f4a109443e0a604af2300_cgraph.svg" width="383" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a537318eafe9182b60dc22ef54966c6a1" name="a537318eafe9182b60dc22ef54966c6a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a537318eafe9182b60dc22ef54966c6a1">&#9670;&#160;</a></span>HAL_GPIO_EXTI_Rising_Callback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void HAL_GPIO_EXTI_Rising_Callback </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>GPIO_Pin</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00355">355</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
-
-<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00349">sd_detect_isr_notify()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a537318eafe9182b60dc22ef54966c6a1_cgraph.svg" width="382" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
 <a id="a0db1b2ecd079a48393cae891b54c5926" name="a0db1b2ecd079a48393cae891b54c5926"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0db1b2ecd079a48393cae891b54c5926">&#9670;&#160;</a></span>monitor_task_thread()</h2>
 
@@ -461,43 +403,6 @@ Here is the call graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a3d0ac7cbbf5091a5473d4d99d63292dd_icgraph.svg" width="515" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="aafecd8bc371346876c011acb5eadac49" name="aafecd8bc371346876c011acb5eadac49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafecd8bc371346876c011acb5eadac49">&#9670;&#160;</a></span>sd_detect_isr_notify()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void sd_detect_isr_notify </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>GPIO_Pin</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00349">349</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
-
-<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00046">monitor_task_id</a>, <a class="el" href="sd__task_8c_source.html#l00312">SD_DETECT_EVENT_FLAG</a>, and <a class="el" href="main_8h_source.html#l00163">SD_DETECT_Pin</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00358">HAL_GPIO_EXTI_Falling_Callback()</a>, and <a class="el" href="sd__task_8c_source.html#l00355">HAL_GPIO_EXTI_Rising_Callback()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_aafecd8bc371346876c011acb5eadac49_icgraph.svg" width="383" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -709,6 +614,35 @@ Here is the call graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00154">154</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
 
 <p class="reference">References <a class="el" href="sd__task_8c_source.html#l00054">is_mounted</a>, <a class="el" href="sd__task_8c_source.html#l00053">log_file</a>, and <a class="el" href="sd__task_8c_source.html#l00050">sd_mutex_id</a>.</p>
+
+</div>
+</div>
+<a id="a5c8d2f6cfb563fdfa42214e2398d1c02" name="a5c8d2f6cfb563fdfa42214e2398d1c02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c8d2f6cfb563fdfa42214e2398d1c02">&#9670;&#160;</a></span>sd_task_exti_notify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sd_task_exti_notify </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>GPIO_Pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00349">349</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
+
+<p class="reference">References <a class="el" href="sd__task_8c_source.html#l00046">monitor_task_id</a>, <a class="el" href="sd__task_8c_source.html#l00312">SD_DETECT_EVENT_FLAG</a>, and <a class="el" href="main_8h_source.html#l00163">SD_DETECT_Pin</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="exti__callbacks_8c_source.html#l00017">HAL_GPIO_EXTI_Falling_Callback()</a>, and <a class="el" href="exti__callbacks_8c_source.html#l00011">HAL_GPIO_EXTI_Rising_Callback()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sd__task_8c_a5c8d2f6cfb563fdfa42214e2398d1c02_icgraph.svg" width="379" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -1229,7 +1163,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="sd__task_8c_source.html#l00046">46</a> of file <a class="el" href="sd__task_8c_source.html">sd_task.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00349">sd_detect_isr_notify()</a>, and <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sd__task_8c_source.html#l00164">sd_logger_init()</a>, and <a class="el" href="sd__task_8c_source.html#l00349">sd_task_exti_notify()</a>.</p>
 
 </div>
 </div>

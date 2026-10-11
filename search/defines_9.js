@@ -28,12 +28,13 @@ var searchData=
   ['lora_5fforward_5fms_5f1_25',['LORA_FORWARD_MS_1',['../gs__scheduler_8h.html#abadcacef4cf52c10c1525de70e9854d6',1,'gs_scheduler.h']]],
   ['lora_5fforward_5fms_5f2_26',['LORA_FORWARD_MS_2',['../gs__scheduler_8h.html#a681fff5688854e35f76a6f76bc19050b',1,'gs_scheduler.h']]],
   ['lora_5fframe_5fmax_27',['LORA_FRAME_MAX',['../lora__frame_8h.html#a977961674ea91675808e689235bc3a92',1,'lora_frame.h']]],
-  ['lora_5fpacket_5fprefix_28',['LORA_PACKET_PREFIX',['../lora__frame_8h.html#ac3f48fde6896c4ded86cdff8cfe1b502',1,'lora_frame.h']]],
-  ['lora_5fpacket_5fprefix_5flen_29',['LORA_PACKET_PREFIX_LEN',['../lora__frame_8h.html#ae213e30445eaf29d825ae459b28903de',1,'lora_frame.h']]],
-  ['lora_5fsend_5fms_5f1_30',['LORA_SEND_MS_1',['../gs__scheduler_8h.html#a3565d47f3ac0b18e803689c388f8e1ca',1,'gs_scheduler.h']]],
-  ['lora_5fsend_5fms_5f1_5fstart_5fdeadline_31',['LORA_SEND_MS_1_START_DEADLINE',['../gs__scheduler_8h.html#abd3ee1633d9ff4e2eb1f23c5f189a0d0',1,'gs_scheduler.h']]],
-  ['lora_5fsys_5fid_5fmcb_32',['LORA_SYS_ID_MCB',['../lora__frame_8h.html#a4a5e9a77699bdfaff999972d14d35a2c',1,'lora_frame.h']]],
-  ['lora_5ftx_5fevent_5fbit_33',['LORA_TX_EVENT_BIT',['../main_8h.html#a7b60b900af3dfd199bd747e1a1a4aba5',1,'main.h']]],
-  ['lora_5ftx_5fpacket_5fmax_34',['LORA_TX_PACKET_MAX',['../lora__tx__queue_8h.html#a95ae1feefaeb26c046d0d793957391e1',1,'lora_tx_queue.h']]],
-  ['lora_5ftx_5fqueue_5fdepth_35',['LORA_TX_QUEUE_DEPTH',['../lora__tx__queue_8h.html#ad74f91e3b9bc6e068efb18ac2f24b7a5',1,'lora_tx_queue.h']]]
+  ['lora_5fmix_5fpoll_5fms_28',['LORA_MIX_POLL_MS',['../gs__scheduler_8h.html#a1673e6a140d7b50a7c9d35ce4eae8291',1,'gs_scheduler.h']]],
+  ['lora_5fpacket_5fprefix_29',['LORA_PACKET_PREFIX',['../lora__frame_8h.html#ac3f48fde6896c4ded86cdff8cfe1b502',1,'lora_frame.h']]],
+  ['lora_5fpacket_5fprefix_5flen_30',['LORA_PACKET_PREFIX_LEN',['../lora__frame_8h.html#ae213e30445eaf29d825ae459b28903de',1,'lora_frame.h']]],
+  ['lora_5fsend_5fms_5f1_31',['LORA_SEND_MS_1',['../gs__scheduler_8h.html#a3565d47f3ac0b18e803689c388f8e1ca',1,'gs_scheduler.h']]],
+  ['lora_5fsend_5fms_5f1_5fstart_5fdeadline_32',['LORA_SEND_MS_1_START_DEADLINE',['../gs__scheduler_8h.html#abd3ee1633d9ff4e2eb1f23c5f189a0d0',1,'gs_scheduler.h']]],
+  ['lora_5fsys_5fid_5fmcb_33',['LORA_SYS_ID_MCB',['../lora__frame_8h.html#a4a5e9a77699bdfaff999972d14d35a2c',1,'lora_frame.h']]],
+  ['lora_5ftx_5fevent_5fbit_34',['LORA_TX_EVENT_BIT',['../main_8h.html#a7b60b900af3dfd199bd747e1a1a4aba5',1,'main.h']]],
+  ['lora_5ftx_5fpacket_5fmax_35',['LORA_TX_PACKET_MAX',['../lora__tx__queue_8h.html#a95ae1feefaeb26c046d0d793957391e1',1,'lora_tx_queue.h']]],
+  ['lora_5ftx_5fqueue_5fdepth_36',['LORA_TX_QUEUE_DEPTH',['../lora__tx__queue_8h.html#ad74f91e3b9bc6e068efb18ac2f24b7a5',1,'lora_tx_queue.h']]]
 ];

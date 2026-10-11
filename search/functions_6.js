@@ -23,10 +23,10 @@ var searchData=
   ['gps_5falignbuffer_20',['GPS_AlignBuffer',['../gps__task_8c.html#ac936b9a955932af5020b0aa7af8d09ad',1,'gps_task.c']]],
   ['gps_5fprintstatus_21',['GPS_PrintStatus',['../gps__task_8c.html#a6eae2e3cf49d0681be46c984ad81c1fa',1,'gps_task.c']]],
   ['gps_5ftask_22',['gps_task',['../gps__task_8h.html#a2b4ba50a0ecdfbe3864bc6cf9ad0b8b4',1,'gps_task(void *argument):&#160;gps_task.c'],['../gps__task_8c.html#a2b4ba50a0ecdfbe3864bc6cf9ad0b8b4',1,'gps_task(void *argument):&#160;gps_task.c']]],
-  ['gs_5fenter_5frx_23',['gs_enter_rx',['../rfm95w__task_8c.html#a3d5edaf75b38f61868f1c2416cd0ae9e',1,'rfm95w_task.c']]],
-  ['gs_5fforward_24',['gs_forward',['../rfm95w__task_8c.html#afc9e5aad71050eafeeaed4d72e1af8fc',1,'rfm95w_task.c']]],
-  ['gs_5fnow_5fms_25',['gs_now_ms',['../rfm95w__task_8c.html#a99167165b4cfbfc7129d98dd170893fd',1,'rfm95w_task.c']]],
-  ['gs_5fpoll_5frx_26',['gs_poll_rx',['../rfm95w__task_8c.html#ad7d1019d680c0f36e69f6ed82a3f2fd1',1,'rfm95w_task.c']]],
+  ['gs_5fawait_5frx_23',['gs_await_rx',['../rfm95w__task_8c.html#ac6f15cba9be6c5ff1c2b9bc1e7f26df4',1,'rfm95w_task.c']]],
+  ['gs_5fenter_5frx_24',['gs_enter_rx',['../rfm95w__task_8c.html#a3d5edaf75b38f61868f1c2416cd0ae9e',1,'rfm95w_task.c']]],
+  ['gs_5fforward_25',['gs_forward',['../rfm95w__task_8c.html#afc9e5aad71050eafeeaed4d72e1af8fc',1,'rfm95w_task.c']]],
+  ['gs_5fnow_5fms_26',['gs_now_ms',['../rfm95w__task_8c.html#a99167165b4cfbfc7129d98dd170893fd',1,'rfm95w_task.c']]],
   ['gs_5frun_5fcycle_27',['gs_run_cycle',['../gs__scheduler_8h.html#a815b48fae98b1fdf545b4693a720cca3',1,'gs_run_cycle(const gs_radio_iface_t *io):&#160;gs_scheduler.c'],['../gs__scheduler_8c.html#a815b48fae98b1fdf545b4693a720cca3',1,'gs_run_cycle(const gs_radio_iface_t *io):&#160;gs_scheduler.c']]],
   ['gs_5fsend_28',['gs_send',['../rfm95w__task_8c.html#ad09b3088ae86c18f441bef09676c7933',1,'rfm95w_task.c']]]
 ];
